@@ -143,16 +143,18 @@
       inversecolor.textContent=`inverse color`;
       
       inversecolor.onclick=()=>{
-        if(whetherfillbackground){
-          if(whetherinversecolor){
-            whetherinversecolor=false;
-            inversecolor.textContent=`inverse color`;
-          }else{
-            whetherinversecolor=true;
-            inversecolor.textContent=`original color`;
-          }
+        
+        if(whetherinversecolor){
+          whetherinversecolor=false;
+          inversecolor.textContent=`inverse color`;
         }else{
-          alert(`plz Make the background non-transparent by click button below`)
+          whetherinversecolor=true;
+          inversecolor.textContent=`original color`;
+        }
+        if(!whetherfillbackground&&whetherinversecolor){
+          document.body.style.backgroundColor='#400040';
+        }else{
+          document.body.style.backgroundColor='#000000';
         }
         
         
@@ -201,7 +203,7 @@
       
       adjustsizeofquietzone.value = 0.2;
       
-      adjustsizeofquietzone.step=0.1;
+      adjustsizeofquietzone.step=0.01;
       
       txtquietzone.textContent=`⬇ ratio of quiet zone is ${shellratio}.(0.2 is recommended)`;
       
@@ -331,7 +333,7 @@
         }
         
         
-        let inputedtxt=textarea.value;
+        let inputedtxt=completenl(textarea.value);
         
         whetherconverted=true;
         
@@ -460,7 +462,7 @@
             }
             
           
-            nlqr1ctx.fillRect(shellsize + i * cellsize, shellsize + cellsize, cellsize, cellsize * lineratio);
+            nlqr1ctx.fillRect(shellsize + i * cellsize, shellsize, cellsize, cellsize * lineratio);
           
           }
           
@@ -588,6 +590,12 @@
           
         }
         
+        
+      }
+      
+      function completenl(p){
+       
+       return p.replace(/\s/g, '');
         
       }
       
