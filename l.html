@@ -13,7 +13,8 @@
     pre{
       white-space: pre-wrap;
       word-break: break-word;
-      
+      max-width: 100vw;
+      overflow-wrap: anywhere;
     }
     img{
       width:var(--s);
@@ -23,6 +24,7 @@
       font-weight: bold;
       color:#FF8800;
       font-size: calc(var(--s) / 12);
+      
     }
   </style>
     <meta charset="UTF-8">
@@ -41,8 +43,7 @@
     }
     document.documentElement.style.setProperty('--s', String(smallerline/3*2) + 'px');
   </script>
-  <pre>If you view this document in portrait mode, it will be more convenient because you can see more text at once.
-
+  <pre>
 This artificial language is called epluial(Efficient Perfect Logical Unambigious International Auxiliary Language) in English.
 
 ▶persuasion{
