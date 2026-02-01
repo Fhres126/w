@@ -1,0 +1,3319 @@
+▶example sentence{
+
+▶'oa doea od'{
+
+oa o!1p=this A.
+
+'1p' mean 1th parameter. type of this word is type of parameter.
+
+doea !t=time.
+
+'t' mean 'time' so type of this word is time.
+
+od !t=now.//c this, time,
+
+'c' is an abbreviation for 'compound word'.
+
+'c A, B' mean 'this word consist of word A and word B'.
+
+if there are '//c' then the word is compound word or abbreviation.
+
+'od' is abbreviation for 'oa doea'. 'oa doea' mean 'this time'.
+
+in this case, 'c' used to mean 'abbreviation'.
+
+4bit is from 'oa'(0111,0000).
+
+4bit is from 'doea'(1100,011100100000).
+
+structure: (oa doea) = od.
+
+literal translation: now is this time.
+
+}◀
+
+▶'jd cf fojb bd oe'{
+
+just saying 'jd cf fojb bd' is enough.
+
+jd o!r=thing that imagine A.
+
+cf s!r=situation that A2 is A1.
+
+the 's' is an abbreviation for 'sentence'. 's' is like 'o,o' so 'A1' mean first 'o'. 'A2' mean second 'o'.
+
+fojb !r=alive thing.
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (jd (cf fojb bd)) = oe.
+
+literal translation: i am thing that imagine situation that you are alive thing.
+
+free translation: i imagine that you are alive.
+
+}◀
+
+▶'mc bc oe'{
+
+mc s,n!r=thing that hope A2 is A1.//e B is degree of hope.
+
+'n' mean 'number'. this word have number type parameter too but other type is in number type parameter so it is automatically omitted.
+
+bc !si=symbol that omit two parameter.
+
+structure: (mc bc) = oe.
+
+literal translation: i am thing that hope.
+
+free translation: i hope.
+
+}◀
+
+▶'higina  af elga oe'{
+
+af o,o!1p=A of B.//c A that is B, element,
+
+this function need two parameter. and parameter type is object and object.
+
+B is second input object of this function.
+
+third is C. fourth is D...
+
+eg 'af A B' mean 'A of B'.
+
+reason why 'af' is 'c A that is B, element' is that 'ab A hc B' mean 'A that is (element of B)'.
+
+ab o,o!1p=A that is B.
+
+hc o!1p=element of A.
+
+'c A that is B, element,' seems 'ah' since first letter of 'ab' and 'hc' is 'a' and 'h'.
+
+only number word must be in between 'ag' and 'ph'.(eg 'ag', 'bg', 'cg'....'ph')
+
+'ah' is in it so 'ah'(00001110) become 'af'(00001010).
+
+elga !r=name.
+
+oe !r=i.//c this,assert,
+
+structure: higina = (af elga oe).
+
+literal translation: name of me is higina.
+
+free translation: 'my name is higina'.
+
+}◀
+
+▶'fc fojb bd oe'{
+
+just saying 'fc fojb' is enough.
+
+fc o,o!r=thing that ask B about A.//c command, reply,,e omitted B mean 'you'.
+
+fojb !r=alive thing.
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (fc fojb bd) = oe.
+
+literal translation: i am thing that ask you about human.
+
+free translation: 'what is alive? i ask you'.
+
+}◀
+
+▶'fc nb bd bd oe'{
+
+just saying 'fc nb bd' is enough.
+
+fc o,o!r=thing that ask B about A.//c command, reply,,e omitted B mean 'you'.
+
+nb o!r=location of A.
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (fc (nb bd) bd) = oe.
+
+literal translation: i am thing that ask you about location of you.
+
+free translation: 'where are you?,i ask you'.
+
+}◀
+
+▶'fc gc fojb bd bd oe'{
+
+just saying 'fc gc fojb bd' is enough.
+
+fc o,o!r=thing that ask B about A.//c command, reply,,e omitted B mean 'you'.
+
+gc s,n!r=reason why A2 is A1.
+
+fojb !r=alive thing.
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (fc (gc fojb bd) bd) = oe.
+
+literal translation: i am thing that ask you about reason why you are alive thing.
+
+free translation:'why do you live'.
+
+}◀
+
+▶'fc jf fojb bd bd oe'{
+
+just saying 'fc jf fojb bd' is enough.
+
+fc o,o!r=thing that ask B about A.//c command, reply,,e omitted B mean 'you'.
+
+jf s,n!r=result of A2 being A1.//a reason,
+
+fojb !r=alive thing.
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (fc (jf fojb bd) bd) = oe.
+
+literal translation: i am thing that ask you about result if you are alive.
+
+free translation:'what if you are alive? i ask you'.
+
+}◀
+
+▶'fc ja fojb bd bd oe'{
+
+just saying 'fc ja fojb bd' is enough.
+
+fc o,o!r=thing that ask B about A.//c command, reply,,e omitted B mean 'you'.
+
+ja s!r=whether A2 is A1.
+
+fojb !r=alive thing.
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (fc (ja fojb bd) bd) = oe.
+
+literal translation: i am thing that ask you about whether you are alive thing.
+
+free translation: 'are you alive?'.
+
+}◀
+
+▶'kf ff'{
+
+kf o,o!r=thing that reply A to B.//a ask,
+
+ff !r=true.
+
+free translation: yes.
+
+literal translation: i am thing that reply true.
+
+}◀
+
+▶'fc ec fojb bd bd oe'{
+
+just saying 'fc ec fojb bd' is enough.
+
+fc o,o!r=thing that ask B about A.//c command, reply,,e omitted B mean 'you'.
+
+ec s,n!r=how A2 is A1.
+
+fojb !r=alive thing.
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (fc (ec fojb bd) bd) = oe.
+
+literal translation: i am thing that ask you about how you are alive thing.
+
+free translation: 'how you are alive?'.
+
+}◀
+
+▶'fc ekfb fojb bd oe'{
+
+just saying 'fc ekfb fojb' is enough.
+
+fc o,o!r=thing that ask B about A.//c command, reply,,e omitted B mean 'you'.
+
+ekfb o,n!1p=how to be A.//c how,normal,
+
+fojb !r=alive thing.
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (fc (ekfb fojb) bd) = oe.
+
+literal translation: i am thing that ask you about how to become alive thing.
+
+free translation: 'how to be alive?'.
+
+'how to open this' is considered as 'how normal thing open this' in this language.
+
+}◀
+
+▶'fc ee fojb bd bd oe'{
+
+just saying 'fc ee fojb bd' is enough.
+
+fc o,o!r=thing that ask B about A.//c command, reply,,e omitted B mean 'you'.
+
+ee s!t=time when A2 is A1.//c what,thing that be B when A,
+
+'t' mean 'time'. type of this word is time.
+
+fojb !r=alive thing.
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (fc (ee fojb bd) bd) = oe
+
+literal translation: i am thing that ask you about time when you are alive.
+
+free translation: 'when you are alive?'.
+
+}◀
+
+▶'jd cf kjca oe bd oe'{
+
+just saying 'jd cf kjca oe bd' is enough.
+
+jd o!r=thing that imagine A.
+
+cf s!r=situation that A2 is A1.
+
+kjca o!r=thing that see A.//c sense,photon,
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (jd (cf (kjca oe) bd)) = oe.
+
+literal translation: i am thing that imagine that you see me.
+
+free translation: 'i imagine that you see me'.
+
+}◀
+
+▶how to use word 'ea' basic{
+
+In this language, the word for 'what'(as in 'what I love') is 'ea'.
+
+if i love you, then you are what i love. we can know word for 'what' return direct object.
+
+'mkfd bd oe' mean 'i love you'.
+
+'ea mkfd oe bd' mean you are what i love. 'ea mkfd oe' mean 'what i love'.
+
+happily, word 'ea' can express more thing.
+
+let's see definition of word 'mkfd'.
+
+mkfd o,n!r=thing that love A.//e B is degree of love,
+
+yes, second parameter is degree of love so if we make word 'ea' return second parameter, then we can express degree of love(how much do i love you).
+
+'ea nh' return second parameter cuz 'nh' mean 2.
+
+'ea nh mkfd bd oe' mean 'how much do i love you'.
+
+'he mkfd bd oe' mean same cuz word 'he' is 'ea nh'. this word is for efficient.
+
+'ea mkfd bd pa oe' mean same. word 'pa' is in place for expressing degree of love.
+
+We will learn how to apply this.
+
+}how to use word 'ea'. basic◀
+
+▶'lf fojb bd oe'{
+
+just saying 'lf fojb bd' is enough.
+
+lf s!r=thing that believe that A2 is A1.//c know,as,true,whether,
+
+fojb !r=alive thing.
+
+bd !r=you.//a i,
+
+oe !r=i.//c this,assert,
+
+structure: (lf fojb bd) = oe.
+
+literal translation: i am thing that belive that you are alive.
+
+free translation: 'i belive that you are alive', 'you seems alive'(maybe sometime).
+
+'i belive that A is B' mean 'i belive that situation that A is B is true'. we will learn how to express 'my belief'. tbh i dont know how to explain it in english. i belive that you can understand if you remember all what i said.
+
+'he lf ff oe' mean 'my belief' or 'What I believe to be true'.
+
+ff !r=true.
+
+'ea lf bd oe' mean 'My belief in you' or 'what i think about you' or 'My thoughts about you'.
+
+'ea lf ff oe' mean 'What do i believe the definition of a fact is'.
+
+}◀
+
+▶'fa fojb bd oe'{
+
+just saying 'fa fojb' is enough.
+
+fa s!r=thing that commands A2 to be A1.
+
+fojb !r=alive.
+
+structure: (fa fojb bd) = oe.
+
+literal translation: i am thing that commands you to be alive.
+
+free translation: 'hey you, be alive!'.
+
+}◀
+
+▶'cf mkcd ad oe jf kjhf hnmc oe'{
+
+cf s!r=situation that A2 is A2.
+
+mkcd o,n!r=thing that feel pleasure for A.
+
+ad !si=symbol that omit one parameter.
+
+oe !r=i.//c this,assert,
+
+jf s,n!r=result of A2 being A1.//a reason,
+
+kjhf o!r=thing that listen A.//c sense,sound,.
+
+hnmc !r=music.//c sound,pleasure,.
+
+structure: (cf (mkcd ad) oe) = (jf (kjhf hnmc) oe).
+
+literal translation: result if im thing that listen to music is situation that im thing that feel pleasure.
+
+free translation: 'if i listen music, i am happy'.
+
+}◀
+
+▶'mb ee kjhf hnmc oe mkcd ad oe'{
+
+mb t,o!2p=thing that is B when A.
+
+ee s!t=time when A2 is A1.//c what,thing that be B when A,
+
+free translation: 'I am happy when I listen to music'.
+
+structrue: (mb (ee (kjhf hnmc) oe) (mkcd ad)) = oe.
+
+literal translation: i am thing that feel pleasure in something when im thing that listen to music.
+
+}◀
+
+▶'ef cf kjhf hnmc oe mkcd ad oe'{
+
+ef o,o,n!2p=thing that become B by A.
+
+cf s!r=situation that A2 is A1.
+
+structure: (ef (cf (kjhf hnmc) oe) (mkcd ad)) = oe.
+
+literal translation: i am (thing that feel pleasure in something) that is by situation that i am thing that listen to music.
+
+free translation: 'i am happy cuz i listen to music'.
+
+}◀
+
+▶'oc kjhf hnmc oe mkcd ad oe'{
+
+oc s,o!2p=thing that is B despite A2 being A1.
+
+structure: (oc (kjhf hnmc) oe (mkcd ad)) = oe.
+
+literal translation: i am thing that feel pleasure despite i am thing that listen to music.
+
+free translation: 'i listen music but im happy'.
+
+}◀
+
+▶'anga oe'{
+
+free translation: i am people now.
+
+}◀
+
+▶'ed kjed pf oe'{
+
+ed o!1p=thing that was A.
+
+kjed o!r=thing that read A.//c sense,code,
+
+structure: (ed (kjed pf)) = oe.
+
+literal translation: i am thing that was thing that read it.
+
+free translation: 'i readed it'.
+
+}◀
+
+▶'le kjed ad oe'{
+
+le o!1p=thing that will be A.//a was,
+
+structure: (le (jokb dd)) = oe.
+
+literal translation: i am thing that will be thing that read.
+
+free translation: 'i will read'.
+
+}◀
+
+▶'eb ed kjgg oe'{
+
+eb o!v=thing that is not A.
+
+structure: (eb (ed kjgg)) =,oe.
+
+literal translation: i am thing that is not thing that was dead.
+
+free translation: 'i have never died'.
+
+}◀
+
+▶'mb midg mkfd bd nide'{
+
+midg !t=always.//c all,time,
+
+nide !r=he.//c the,men,
+
+structure: (mb midg (mkfd bd)) nide.
+
+free translation: 'he always loves you'.
+
+}◀
+
+▶'mb dh od foea ph kjca bd oe'{
+
+dh n or t!o,o!t=A minus B.//a plus,
+
+od !t=now.//c this,time,
+
+foea n!t=A minute.//n second,
+
+'//n A' mean that this word is next word of A.
+
+eoea n!t=A second.//n time,
+
+foea n!t=A minute.//n second,
+
+goea n!t=A hour.//n minute,
+
+hoea n!t=A day.//n hour,
+
+ioea n!t=A week.//n day,
+
+joea n!t=A month.//n week,
+
+koea n!t=A year.//n month,
+
+ph !n=three.
+
+kjca o!r=thing that see A.//c sense,photon,
+
+'dh od foea ph' mean 'now - three minute' or 'three minutes ago'.
+
+structure: (mb (dh od (foea ph)) (kjca bd)) = oe.
+
+literal translation: i am thing that see you when now minus 3minute.
+
+free translation: 'I saw you 3 minutes ago'.
+
+}◀
+
+▶'dnfd be bd dnfd bd bc oe'{
+
+be c o!1p=A1 and A2 and....
+
+'c A' mean that this word have A type parameter until it met symbol that omit parameter.
+
+eg 'be A A A ad' mean 'A and A and A'.
+
+structure: (dnfd (be bd (dnfd bd)) bc) = oe.
+
+literal translation: i am thing that hate you and thing that hate you.
+
+free translation: 'i hate you and thing that hate you'.
+
+in this siruation, it should omit two parameter so 'bc' is used instead of 'ad'.
+
+the first omitted parameter is 2nd parameter of 'dnfd'.
+
+second omitted parameter is parameter of 'be'.
+
+ad !si=symbol that omit one parameter. 
+
+bc !si=symbol that omit two parameter.
+
+cc !si=symbol that omit three parameter.
+
+dc !si=symbol that omit four parameter.
+
+}◀
+
+▶'nlga ma bd oe' {
+
+juat saying 'nlga ma bd' is enough.
+
+nlga o!r=thing that greet A.//s call,
+
+'s A B' mean 'letter of this word is similar to word A of language B'. if B is omitted, B is this language.
+
+ma o!1p=all A.//m every,
+
+'//m A' mean that this word can be used to mean A.
+
+bd !r=you.//a i,
+
+structure: (nlga (ma bd)) = oe.
+
+literal translation: i am thing that greet all you.
+
+free translation: 'hello everyone'.
+
+}◀
+
+▶'na anga'{
+
+na o!1p=the A.
+
+free translation: the human.
+
+}◀
+
+▶'cb anga'{
+
+cb n,o!v=A B.
+
+example of 'number' + 'word' in english is 'one apple'.
+
+lh !n=one.
+
+eg 'cb lh anga' mean 'one people'.
+
+if parameter 'n' of 'cb' is omitted, it is one. eg 'cb anga' mean 'one human' or 'a human'.
+
+translation: a human.
+
+}◀
+
+▶'ac kjca bd inef oe'{
+
+ac o,o!1p=A that is in B.
+
+kjca o!r=thing that see A.//c sense,photon,
+
+inef !r=country.//c group,big,
+
+free tanslation: i see you in country.
+
+structure: (ac (kjca bd) inef) = oe.
+
+literal translation: i am (thing that see you) that is in country.
+
+}◀
+
+▶'ob nide fojb oe'{
+
+ob o,o,n!1p=thing that is B with A.
+
+nide !r=he.//c the,men,
+
+fojb !r=alive thing.
+
+free translation: 'i am alive with he'.
+
+structure: (ob nide fojb) = oe.
+
+literal translation: i am thing that alive thing with he. 
+
+}◀
+
+▶'lb ca anga oe nide'{
+
+lb o!r=thing that know A.
+
+ca o,o!1p=B as A.
+
+free translation: he know me as human.('as' as in 'i describe me as human').
+
+structute: (lb (ca anga oe)) = nide.
+
+literal translation: he is thing that know me as human.
+
+}◀
+
+▶'ed ld cd mmlb pf fd oe'{
+
+ld o,n!r=thing that intend to be A.
+
+cd o,o,n!2p=thing that is B by being A.
+
+mmlb o!r=thing that learn A.//c becoming,know,
+
+pf !o=it.
+
+free translation: 'i learned it to gain profit'.
+
+structure: (ed (ld (cd (mmlb pf) fd))) = oe.
+
+literal translation: 'i am thing that was thing that intend to be (thing that gains profit by being thing that learn it).
+
+}◀
+
+▶'mkfd bd lh oe'{
+
+lh !n=one.
+
+free translation: 'i love you by 100percent'.
+
+structure: (mkfd bd lh) = oe.
+
+second parameter of 'mkfd' is 'intensity of love'.
+
+1 is 100percent.
+
+0.5 is 50percent.
+
+}◀
+
+▶'mkfd bd pg nide oe'{
+
+pg o!n=A that is converted into number.//c B converted into A,number,
+
+nide !r=he.//c the,men,
+
+if word that is not a numeric type is in parameter of 'pg', it automatically converted into number.
+
+'pg nide' converted into 'pg he mkfd nide oe'.
+
+it tend to target number.
+
+free translation: 'I love you as much as I love him'.
+
+structure: (mkfd bd (pg nide)) = oe.
+
+}◀
+
+▶'mkfd bd kg nimd oe'{
+
+kg o!n=thing that is less than A.
+
+nimd !r=she.//c the,women,.
+
+free translation: 'i love you less than she'.
+
+structure: (mkfd bd (kg nimd)) = oe.
+
+literal translation: i am thing that love you less than she.
+
+}◀
+
+▶'mkfd bd fh nimd oe'{
+
+free translation: 'i love you more than she'.
+
+structure: (mkfd bd (fh nimd)) = oe.
+
+literal translation: i am thing that love you more than she.
+
+fh o!n=thing that is more than A.//a less,
+
+}◀
+
+'ab mipa foad oa'{
+
+ab o,o!1p=A that is B.
+
+mipa !r=green.
+
+foad !r=ore.
+
+structure: (ab mipa foad) = oa.
+
+literal translation: this is green ore.
+
+green ore is green that is ore.
+
+if you think that it is efficient, then you can make compound word.
+
+the result is 'mipifoad', 
+
+}◀
+
+'eye doctor' dont mean 'eye that is doctor'.
+
+'eye doctor' mean 'doctor that promise to fix eye'. it is expressed as 'ab doee doba gjfg hlca'.
+
+doee !r=doctor.//c promise,fix,organism,
+
+doba o,o,o!r=thing that promise that B if myself is A then B becomes C.
+
+gjfg o,n!r=thing that fix A.//c cause,profit,
+
+hkca !r=eye.//c engine,sense,photon,
+
+but is is inefficient so it become compoumd word.
+
+the result is 'doemhlca'.
+
+'doemhlca' is compound word of 'doctor' and 'eye'
+
+and compound word of 'eye' and 'doctor' is prohibited cuz in compound word functuon must be in after if order is not matter(situation that order is not matter is following. 'A that is B' is 'B that is A')
+
+'hlca' is not function but in defenition, it is in parameter of function.
+
+gmkg o,o!r=thing that is quikly A than B.//c GMDA,less,
+
+adverb word have adverb in definition.
+
+'gmkg jokb anga ad oe' mean 'i quikly kill human'.
+
+'gmkg jokb anga bd oe' mean 'i quikly kill human than you'.
+
+some people think that this conlang is ineffcient
+
+this conlang sentence consist of 16letter and subject can be omitted.
+
+this english sentence consist of 20letter.(english must have whitespace)
+
+this language can express interjection 'wow'
+
+▶how to use word 'ea'. advanced{
+
+ab o,o!1p=A that is B.
+
+'ab anga ea mkfd oe' mean 'human that is what i love' and 'human that i love'.
+
+we have new word for efficient.
+
+'ae anga mkfd oe' mean 'ab anga ea mkfd oe'. if you wanna make it return other parameter, then the number must attach to word 'ae'.
+
+eg 'ae nh anga ed mkfd oe' mean 'ab anga ea nh ed mkfd oe'.
+
+if you think that this expression is inefficient, then we can use word 'ne'. word 'ne' mean 'ae nh' so 'ne anga ed mkfd oe' mean 'ae nh anga ed mkfd oe'.
+
+well... how to express 'my hope'.
+
+sentence 'i hope i am human' mean 'i hope situation that i am human is true'.
+
+so you can express 'my hope' as 'he mc ff oe'.
+
+mc s,n!r=thing that hope A2 is A1.//e B is degree of hope.
+
+'ff' mean 'true'.
+
+you can use word 'pc' to explain it.
+
+word 'pc' make word 'ea' return sentence.
+
+'ea mc pc oe' mean 'my hope'.
+
+}how to use word 'ea'. advanced◀
+
+▶'mkid fgkkkkba oe'{
+
+fg dec!n=.//e this word is for expressing decimal number.
+
+free translation: i like 10000.
+
+structure: (mkid fgkkkkba) oe.
+
+'dec' is abbreviation for 'decimal number'.
+
+this word is for expressing decimal number.
+
+4bit express one number.
+
+'fg ja' mean 9.
+
+'j' in dec is 9.
+
+'a' finish parameter dec.
+
+'b' is 1. 'c' is 2. 'd' is 3. 'e' is 4. 'f' is 5. 'g' is 6. 'h' is 7. 'i' is 8. 'j' is 9.
+
+'k' is 0 since if 'a' is '0' it cant be visible in NLQR.
+
+'fgbcda' is 321.
+
+'b' is 1. 'c' is 2. 'd' is 3.
+
+so it seems 123 but this language use little andian so it is reversed.
+
+}◀
+
+▶'mkmd bd ah fa oe'{
+
+mkmd o,n!r=thing that feel A is cute.//c like,baby,,e B ia degree of cute.
+
+ah dec,dec!n=decimal rational number.
+
+first 'dec' ia fractional part.
+
+this language emphasizes efficiency.
+
+expressing fractional part firstly is efficient when expressing 0.5 because it does not need to express integers. 
+
+bd !r=you=//a i,
+
+free translation: you are cute for me. and degree of cute is 50percent.
+
+structure: (mkmd bd (ah fa)) = oe.
+
+}◀
+
+▶'mkid elfa anga oe'{
+
+mkid o,n!r=thing that like A.//e B is degree of like.
+
+elfa int!r=word A.
+
+word that is in parameter of word 'elfa' dont have parameter.
+
+free translation: i like word human
+
+structure: (mkid elfa anga) oe.
+
+}◀
+
+▶'mb pf mc kjca bd'{
+
+mb t,o!2p=thing that is B when A.//e if A2 is omitted, it is self.
+
+pf !o=it.
+
+'o' type can be inputed in any parameter type. so this word is in first parameter of 'mb' now.
+
+mc s,n!=thing that hope A2 is A1.//e B is degree of hope.
+
+kjca o!r=thing that see A.//c sense,photon,
+
+free translation: at that time, i wanna see you.
+
+structure: (mb pf (mc (kjca bd))).
+
+}◀
+
+▶efficient number{
+
+ih~ph is for efficient number.
+
+it is for expressing number efficiently.
+
+ih !n=zero.
+
+lh !n=one.
+
+binary of 'lh' is '11011110'.
+
+first bit is sign of number.
+
+1 make positive number.
+
+0 make negative number.
+
+2~3th bit is absolute value.
+
+so
+
+nh !n=two
+
+ph !n=three.
+
+if first bit is 0 then result is following.
+
+kh !n=minus one.
+
+mh !n=minus two.
+
+oh !n=minus three.
+
+i didnt say 'jh'.}it seems zero but zero is already exist so it is four.
+
+and i effort to make only latin letter is in definition so i didnt use number symbol.
+
+}efficient number◀
+
+▶'hoag bb ea mkid oe'{
+
+hoag !r=shift.
+
+'ea mkid oe' mean 'what i like'.
+
+'hoag ea mkid oe' mean 'what i like has changed'.
+
+if what i like is human, then 'hoag bb ea mkid oe' mean human is changed.
+
+bb o!v=result value of A.
+
+ib o!v=freezed word A.
+
+'ja lh lh' mean 'whether one is one'.
+
+sentence 'whether one is one is true' is true.
+
+sentence 'whether one is one is whether one is one' is true.
+
+so we can know 'ja lh lh' have two value. it is 'true' and 'whether 1 is 1'.
+
+but 'bb ja lh lh' mean only 'true' so 'eb lb bb ja lh lh oe' mean 'i dont know true'.
+
+'ib ja lh lh' cant mean true.
+
+}◀
+
+▶'kjca cf alnd dd nide oe'{
+
+kjca o!r=thing that see A.//c sense,photon,
+
+cf s!r=situation that A2 is A1.
+
+alnd o!r=thing that touch A.
+
+dd !r=self.//c DB, LH,
+
+capital letter is word of this artificial language.
+
+we talk about word 'dd'.
+
+if subject is lot then word 'self' is ambiguous.
+
+we should know word 'db' firstly.
+
+db n!v=Ath subject.
+
+lb cf dnhe db lh 'bd' 'oe'.
+
+in this sentence, subject is two.
+
+subject 'bd' near word 'db' than word 'oe'. so subject 'bd' is first subject. subject 'oe' is second subject.
+
+word 'lh' is in parameter of word 'db'. and word 'lh' mean 'one'. so the 'db lh' return first subject. and it is subject 'bd'. this is why word 'dd' is abbreviation for word 'db' and word 'lh'. word 'dd' return first subject. if parameter of word 'db' is omitted, then it return second subject.
+
+free translatio: i see that he touch himself.
+
+}◀
+
+▶'ancjeg oe mkfd cjeoog oe'{
+
+ancjeg !r=german people.//c people, germany,
+
+cjeoog !r=germany.//p deutschland de,
+
+'p' is an abbreviation for 'pronunciation'.
+
+'p A B' means that the pronunciation of this word is derived from the word A of language B.
+
+language name in ISO code alpha2 is in B.
+
+if it is omitted, it is this language.
+
+loanword must have 24 or more bit.
+
+russia is pronunced as 'rosiya' in russian.
+
+rosiya -> fjpoee.
+
+free translation: im german people, i love germany
+
+structure: ancjeg = oe. (mkfd cjeoog) = oe.
+
+}◀
+
+▶'mpgf elmb oe'{
+
+mp- = -ing.
+
+gf o,n!r=thing that make A.//c cause,exist,,e B signifies the extent of its contribution to making this.
+
+suffix mp- mean -ing so mpgf mean making.
+
+elmb !r=language.//s code,
+
+free translation: i making language.
+
+structure: (mpgf elmb) = oe.
+
+}◀
+
+▶'ed elca bc oe nide'{
+
+elca s,o!r=thing that assert that A2 is A1 to B.
+
+nide !r=he.//c the,men,
+
+bc !si=symbol that omit two parameter.
+
+free translation: he asserted to me.
+
+structure: (ed (elca bc oe)) = nide.
+
+}◀
+
+▶'dnhe oa jpelad oe'{
+
+dnhe o,n!r=thing that dislike A.//a like,,e B is degree od dislike.
+
+oa o!1p=this A.
+
+elad o,o!r=thing that express A to B.//c assert, AD,,
+
+why word 'elad' is abbreviation for 'elca' and 'ad'?
+
+cuz 'elca ad A B' mean asserting about A to B.
+
+suffix jp- is like -tion so jpelad mean expression.
+
+free translation: i dislike this expression.
+
+structure: (dnhe (oa jpelad)) = oe.
+
+}◀
+
+▶'fc ab lnac domb inef'{
+
+fc o,o!r=thing that ask B about A.
+
+ab o,o!1p=A that is B.
+
+lnac n!r=Aliter.//c meter^3, times, AH, 0.1,,
+
+domb !o=less-est.
+
+inef !r=country.//c group,big,
+
+free translation: what is smallest country.
+
+}◀
+
+▶'oilb llmf jokb na anga oe'{
+
+oilb o,o,n!r=thing that need A to be B.
+
+llmf !r=knife.//c stick,sharp,
+
+jokb o,n!r=thing that kill A.//a save,
+
+na o!1p=the A.
+
+anga !r=human.
+
+oe !r=i.//c this,assert,
+
+free translation: i need knife to kill the human.
+
+structure: (oilb llmf (jokb (na anga))) = oe.
+
+}◀
+
+▶'oidd kjgg ad bd'{
+
+oidd o,o,n!r=thing that need to be A to be B.//c need,AB,self,
+
+reason why word 'oidd' is abbreviation fot 'oilb' and 'ab' and 'dd'?
+
+ab o,o!1p=A that is B.
+
+dd !r=self.
+
+'oilb ab dd A B' mean 'thing that need (oneself that is A) for being B'.
+
+This expreasion is a bit awkward so i will explain with an example.
+
+sentence 'oilb ab dd A B C' mean 'C need C that is A to be B'. 
+
+The floor of 16 divided by 3 is 5 but this compound word is not made by 5bits cuz the length of element word in the compound word must be a power of 2.
+
+so 'oidd' is 4bit + 4bit + 8bit.
+
+it is 0111 + 0000 + 11001100.
+
+8th bit become 1.
+
+8bit + 4bit + 4bit is prohibited cuz the earlier-used word should be made with fewer bits but if quantity of bit of element word is 8 or more, then all bit dont need to be reduced.
+
+as i mentioned, 'c' can mean abbreviation.
+
+'i dislike being human' can be translated into 'dnfd ab dd anga oe'.
+
+kjgg !r=dead thing.//a alive,
+
+free translation: you need to be dead.
+
+}◀
+
+▶'ed gb fmgg pf oe'{
+
+gb s,n!r=thing that cause A2 be A1.//e B is contribution.
+
+fmgg !r=opened thing.//a closed,,s on,
+
+free translation: i caused it to open.
+
+structure: (ed (gb fmgg pf)) = oe.
+
+but we have word for open.
+
+gjfe o!r=thing that open A.//c cause, opened thing,
+
+}◀
+
+▶'oc hnda eg jh af elda bd oe eb hnda af elda bd'{
+
+oc s,o,n!2p=thing that is B despite A2 being A1.
+
+hnda o,o!r=thing that say A to B.
+
+'eg n,str...!r=.//e this word is for expressing text.'
+
+parameter int ≠ parameter str.
+
+parameter 'str' is used to express string.
+
+str that have 8n-th bit that is 1 dont become longer unlike parameter int.
+
+'...' in right of str is the quantity of parameter is determnined by number that is around.
+
+eg 'eg lh ba' is text 'ba'.
+
+eg 'eg nh baba' is text 'baba'.
+
+[ i say your name ] mean i say pronunciation of 'your name'(saying /jɔːr neɪm/)
+
+if your name is 'mark', then 'i say your name' mean i say 'mark'.
+
+free translation: i said "your name" but i dont say your name.
+
+}◀
+
+▶'mc if mlba anga '{
+
+mlba o!1p=new A.//s become,,r if i become member i am new member.
+
+'r' is abbreviation for 'reason'.
+
+'r' is used to explain why this word is made this way.
+
+free translation: i wanna have new human.
+
+}◀
+
+▶'mkod oa olib oe'{
+
+mkod o,n!r=thing that feel A is delicious.//c pleasure,food,
+
+olib !r=food.
+
+free translation: this food is delicious for me.
+
+structure: (mkod (oa olib)) = oe.
+
+literal translation: i am thing that feel this food is delisious.
+
+}◀
+
+▶'ph mg lh nh'{
+
+ph !n=three.
+
+mg o,o!1p=A plus B.
+
+lh !n=one.
+
+nh !n=two.
+
+free translation: 1 + 2 = 3.
+
+structure: ph = (mh lh nh).
+
+}◀
+
+▶'eb lb ea elea oa elcf'{
+
+elea o!1p=thing that mean A.//s code,
+
+elcf !r=sentence.//c code,situation,,r sentence code that explain situation.
+
+free translation: i dont know meaning of this sentence.
+
+structure: (eb (lb (ea elea (oa elcf)))).
+
+}◀
+
+▶'nd amae    fa gjif goae oe'{
+
+nd o!r=thing that call A.
+
+amae !r=mom.//p mama baby,
+gjif o,o,n!r=thing that give A to B.//c cuase,have,
+
+goae !r=milk.//c liquid,mom,,
+
+free tranation: hey mom, give me milk.
+
+structure: (nd amae).    (fa (gjif goae oe))
+
+}◀
+
+▶'inmg goee ma olma'{
+
+inmg o!r=thing that include A.//a part,,s have,
+
+goee !r=blood.//c liquid,organism,
+
+ma o!1p=all A.
+
+olma !r=animal.
+
+paraphrase: all animal include blood.
+
+}◀
+
+▶'mc eb knba bd'{
+
+knba o,o!t=thing that communicate with A about B.//s reply,
+
+paraphrase: i wanna dont communicate with you.
+
+}◀
+
+▶'fc pe cmfc oa'{
+
+pe o,o!1p=B that is converted into A.
+
+cmfc n!r=A dollar.//p dollar en.
+
+paraphrase: how much is this.
+
+structure: (fc (pe cmfc oa)).
+
+}◀
+
+▶'fc pe doea od'{
+
+doea !t=time.
+od !t=now.//c this,time,
+
+paraphrase = what time is it now?
+
+}◀
+
+▶'kigg goga oe'{
+
+kigg o!r=thing that drink A.//c inhale,liquid,
+
+goga !r=water.//s liquid,
+
+paraphrase = i drink water.
+
+}◀
+
+▶'fc ja lb elcjeg nide bd'{
+
+elcjeg !r=german language.//c language, germany,
+
+nide !r=he.//c the,men,
+
+paraphrase = does he know german language?
+
+}◀
+
+▶'bpeg oa elcg mmlb gilb oe'{
+
+bpeg o,o,n!r=thing that dont need A to be B.//a need,,e B is hindrance. this word dont mean just 'dont need'.
+
+elcg !r=document.//c file,text,,r file that include text.
+
+mmlb o!r=thing that learn A.//c becoming,know,
+
+gilb !r=math.//c number,know,,r knowledge about number.
+
+paraphrase = to learn math, this document is useless for me.
+
+structure = ((bpeg (oa elcg) (mmlb gilb)) = oe.
+
+}◀
+
+▶'boeg nimd mlif pf oe'{
+
+boeg o,o!r=thing that compete to being B with A.//A is like enemy,,s dont need,
+
+mlif o!r=thing that get A.//c become,have,.
+
+paraphrase = i comepete to get it with she.
+
+structure: (boeg nimd (mlif pf)) = oe.
+
+}◀
+
+▶'eb mkdd kjca bomc oe'{
+
+mkdd o,n!r=thing that enjoy be A.//c pleasure,self,
+
+kjca o!r=thing that see A.//c sense,photon,
+
+bomc !r=sports.//c compete,pleasure
+
+paraphrase = i dont enjoy see sports.
+
+}◀
+
+▶'doba gjif cnih bd bd gjif olib'{
+
+doba o,o,o!r=promise.//e if myself/i is A, then B is C. that is what the promise contains.
+
+cnih !r=money.//c dollar,FH,zero,,r dollar that exceeding 0.
+
+olib !r=food.
+
+it is realy untranslated sentence.. they trade for food.
+
+}◀
+
+▶'fe jjmg oe'{
+
+fe s!r=thing that prohibit A2 to be A1.//c command,not,
+
+jjmg o,o,o,n!r=thing that push A into B from C.//a pull,
+
+paraphrase = dont push me!
+
+}◀
+
+▶'ga ad ae hnmc mkid oe'{
+
+ga o!1p=only A.
+
+'ga ad' is like 'undefined' in programming language(eg javascript).
+
+paraphrase = music that is good for me is none.
+
+}◀
+
+▶'fifd af iiha oe      kpke hd inef'{
+
+fifd o!r=thing that hail A.//c command,profit,
+
+iiha !r=empire.//c country,rule,other,country,,r empire is country that rule other country.,
+
+kpke o!r=thing that curse A.//a hail,
+
+paraphrase = hail my empire!   fucking other country!
+
+structure: fifd (af iiha oe).     kpke (hd inef)
+
+}◀
+
+▶'ia jiod anga af mkaf'{
+
+ia o,n!1p=thing that tends to be A.
+
+jiod o,n!r=thing that bite A.//b inhale food,
+
+'//b A' mean that this word is before word of A. bit of before word is decread.
+
+anga !r=human.
+
+mkaf !r=dog.//c friend,human,
+
+paraphrase = my dog tend to bite human.
+
+second parameter of word 'af' is omitted, so it mean 'self'. and self is me in this case.
+
+}◀
+
+▶'lc lb hmlc lb pf bd oe'{
+
+lc o,n!1p=thing that can be A with B percent probability.
+
+hmlc s!r=probability that A2 is A1.//c HE,can,
+
+paraphrase = I can know the probability that you know it.
+
+}◀
+
+▶'djlc mkfd bd koea lh oe'{
+
+djlc o,t!1p=thing that remain A for time B.
+
+koea n!t=A year.
+
+paraphrase = i love you for one year.
+
+}◀
+
+▶'djfb koea bg pb oe'{
+
+djfb t!r=A old.//c remain,exist,
+
+bg int!n=.//e this word is for expressing number by binary.
+
+'int' is an abbreviation for 'integer'.
+
+first bit determines whether the number is positive or negative.
+
+if first bit is zero, number is negative.
+
+'pb' is in parameter of word 'bg'.
+
+integer 'pb' is '11111000'.
+
+(2nd bit)*1=1. (3rd bit)*2=2. (4th bit)*4=4. (5th bit)*8=8. (6th bit)*16=0. (7th bit)*32=0.
+
+1 + 2 + 4 + 8 = 15. so 'bgpb' is 15.
+
+if u wanna express negative then reverse all bit.
+
+paraphrase = i am 15years old.
+
+}◀
+
+▶'cd knee dmdg gnmd ad mlmb'{
+
+knee o!r=thing that sex with A.//c connected,organism,
+
+dmdg !r=men.//a women,
+
+gnmd o!r=thing that breed with A.//c make,baby,
+
+mlmb !r=women.
+
+paraphrase = women breed by sex with men.
+
+}◀
+
+▶'joke dd knee dd'{
+
+joke o,n!r=thing that harmful A.//a benefical,
+
+dd !r=self.
+
+paraphrase = Masturbation is harmful to oneself.
+
+structure: (joke dd) = (knee dd).
+
+}◀
+
+▶'if nkmd mlmb if nkde dmdg'{
+
+nkde !r=penis.//c genitalia, men,,d25.12.5.0.
+
+nkmd !r=pussy.//c genitalia, women,,d25.12.5.0.
+
+paraphrase = women bave pussy. men have penis.
+
+}◀
+
+▶'inmd af amae      mc kjca mlee'{
+
+inmd !r=pregnant.//c include, baby
+
+mlee !r=baby.//c new,organism,
+paraphrase: my mom pregnant. i am wanna see baby.
+
+second parameter of word 'af' is omitted, so it mean 'self'. and self is me in this case.
+
+}◀
+
+▶'mkid id boba'{
+
+id !r=each other.//c what,interface,self,.
+
+boba !r=we.//c and,i,you,AD,
+
+free translation: we like each other.
+
+}◀
+
+▶'hoga comc mkoe'{
+
+hoga o!r=thing that play A.//e 'play' as in 'play game'.
+
+comc !r=game.//c tool,pleaaure,, r tool that provide pleasure.
+
+mkoe !r=we.//c friend,i,
+
+word 'we' have two meaning. it is 'you and me' and 'freind of me'.
+
+paraphrase = we play game.
+
+}◀
+
+▶'hf ab joda hmkd johe'{
+
+hf n,o!1p=thing that similar to A.
+
+joda !r=fermented thing.
+
+hmkd !r=wheat.
+
+johe !r=bread.//c fermented,wheat,,
+
+free translation: bread is similar to fermented wheat
+
+}◀
+
+▶'djlb af elga na eldg'{
+
+djlb o!r=thing that remember A.//c remain, know,
+
+eldg !r=clock.//c express,time,,u25.12.9.1.
+
+paraphrase = i remember name of the clock.
+
+structure: (djlb (af elga (na eldg))).
+
+}◀
+
+▶'mlfb cf mklb pf oe'{
+
+mlfb !r=occur.//c become, exist,
+
+mklb o,n!r=thing that wonder about A.//c hope,know,
+
+paraphrase = situation that i wonder about it is occur.
+
+structure: mlfb = (cf (mklb pf) oe).
+
+}◀
+
+▶'cd mkka dodd kiod pf oe'{
+
+cd o,o,n!1p=thing that is B by being A.//c use,A that is B,self,.
+
+mkka n!r=thing that is hungry.//c hope,eat,
+
+dodd o!r=thing that decide to be A.//c promise, self,,r promise to self.
+
+kiod o!r=thing that put A into mouth of myself.//c inhale,food,,n bite,
+
+paraphrase = i am hungry so i decide to eat it.
+
+structure: (cd (mkka (dodd (kiod pf)))) = oe.
+
+}◀
+
+▶'lmle cf mjme mmlb bmpe pf nide oe'{
+
+lmle o,n!r=thing that feel A is funny.//p haha people,
+
+cf s!r=situation that A2 is A1.
+
+mjme o!r=thing that give up being A.//a decide,
+
+mmlb o!r=thing that learn A.//c becoming,know,.
+
+bmpe o!1p=even A.//s too,
+
+structure: (lmle (cf (mjme (mmlb (bmpe pf))) nide)) = oe.
+
+paraphrase = i think that situation that he give up leaning even it is funny.
+
+}◀
+
+▶'fe dida ca kobg oe'{
+
+fe o,o!r=thing that prohibits A from becoming B.//c command,not,
+
+ca o,o!1p=B as A.
+
+dida o,o!r=thing that mention A to B.
+
+kobg n!r=abnormal.//a normal,
+
+paraphrase = dont call me abnormal.
+
+call mean only call in this language. we use word for mention.
+
+}◀
+
+▶'mmgg af fofd'{
+
+mmgg !r=melt.//c becoming,liquid,
+
+fofd !r=ice.//c solid,cold,
+
+paraphrase = my ice is melting.
+
+structure=mmgg = af fofd.
+
+}◀
+
+▶'if elee olmc'{
+
+elee !r=gene.//c code,organism,, r code in organism.
+
+olmc !r=cat.//c animal,cute,
+
+papaphrace: cat have gene.
+
+}◀
+
+▶'mc ge jokobg kjgg ab anga jnke gkid'{
+
+jokobg !r=eugenics.//c kill, abnormal,
+
+jnke o!r=thing that attack A.//s harmful,
+
+gkid !r=family.//c protect,each other,
+
+paraphrace: i hope human who attack family be dead by eugenics.
+
+}◀
+
+▶'dnle bd ioke'{
+
+dnle o,n!r=what A dangerous for.//a safe,
+
+ioke !r=fire.//c plasma,hot,
+
+paraphrace: fire is dangerous for you.
+
+}◀
+
+▶'dned djif pf oe'{
+
+dned o,n!r=thing that regret A.//c dread,was,
+
+djif o,t!r=thing that keep A.//c remain,have,
+
+paraphrace: i regret keeping it.
+
+}◀
+
+▶'dnkg ejkjca na mkcb'{
+dnkg o,n!r=thing that pity A.//c dread, abnormal,,r dread someone being abnormal.
+
+ejkjca !r=blind.//c not,sense,photon,
+
+mkcb n!r=introvert.//c like,inside,
+
+paraphrase: the introvert pities the blind.
+
+}◀
+
+▶'mc if llka'{
+
+llka !r=chopstick.//c stick,inhale,,r stick that is used when inhaling.
+
+paraphrace: i want chopstick.
+
+}◀
+
+▶'cd llff llee le gf llgf oe'{
+
+llff o!r=thing that research A.//c intend,know,true,,
+
+llee !r=biomimicry.//c imitate, nature,
+
+llgf !r=artificial.//c intend,make,,r intentionally made.
+
+paraphrace: i will make artificial by researching biomimicry.
+
+}◀
+
+▶'mkgd ae emjc kb oe'{
+
+mkgd o,n!r=thing that feel A is beauty.//s love,
+
+kb o!r=thing that sense A.
+
+emjc !r=nature.//a artificial,
+
+paraphrace: nature that i sense is beauty.
+
+}◀
+
+▶'cd ld ad iiod bd oe'{
+
+cd o,o,n!2p=thing that is B by being A.//c use,A that is B,self,.
+
+ld o,n!1p=thing that intend to be A.
+
+iiod o!r=thing that kiss A.//b bite,
+
+parahprace: i intentionally kissed you.
+
+}◀
+
+▶'oa anga ne anga lf jkkg bd oe'{
+
+jkkg o!r=thing that is shorter than A.//c meter,less,
+
+paraphrace: human that seems shorter than you is this human.
+
+}◀
+
+▶'hb pf oa anga ad hc oe'{
+
+hb c o!r=.//untranslated word
+
+'hb A B ad' can mean (A) and (B) and (A and B). it dont same as word 'and' and word 'or'. this word is for compliance some logic.
+
+oa o!1p=this A.
+
+hc o!1p=element of A.
+
+oe !r=i.//c this,assert,
+
+free translation: mine is it and this human.
+
+stucture=(hb pf (oa anga)) = (hc oe).
+
+}◀
+
+}◀example sentence
+
+▶'ef eoof of bd ad oe'{
+
+ef o,o,n!2p=thing that is B by A.
+
+of o,o!r=thing that move from B to A.
+
+eoof !r=vehicle.//c machine,move,
+
+free translation: i go to you by car
+
+structure: (ef eoof (of bd ad)) = oe.
+
+literal translation: i am thing that go to you by car.
+
+}◀
+
+▶'da !si=line break'{
+
+'si' is abbreviation for 'sign'.
+
+this word is used to express only line break(aka new line).
+
+'si' type words don't interface with all words.
+
+eg sentence 'jd da bd oe' means 'jd bd oe' because the word doesn't interface with 'si' type words in default.
+}◀
+
+▶'mkid o,n!r=thing that like A.//s love,'{
+
+}◀
+
+▶'ih !n=zero'{
+
+'n' is abbreviation for 'number'.
+
+'ag' ~ 'ph' is number word.
+
+}◀
+
+▶ 'mkfd o,n!r=thing that love A.//e B is degree of love'{
+
+',,' finished 'c'.
+
+this symbol is used when word need more explaination.
+
+B is second parameter.
+
+}◀
+
+▶'oa o!1p=this A'{
+
+'p' is abbreviation for 'parameter'.
+
+'1p' mean 'first parameter'.
+
+parameter value determines type of this word.
+
+eg 'oa fojb' is reality type cuz fojb is reality type object.
+
+}◀
+
+▶eoea n!t=Asecond.{
+
+'t' is abbreviation for 'time'.
+
+}◀
+
+▶'ma o!1p=all A.//m every'{
+
+'m A' mean that this word can mean A too.
+
+}◀
+
+kjca o!r=thing that see A.//c sense,photon,.
+
+cf s!r=situation that A2 is A1.
+
+gjif o,o,n!r=thing that give A to B.//c cause,have,
+
+olib !r=food.
+
+nimd !r=she.//c the,women,.
+
+reason why word 'give' is 'c cause,have,' is following.
+
+word 'cause' in additional expression mean this word 'gb <o-o>-n!r=thing that cause A to become B.//s reason,'.
+
+if o!r=thing that have A.//a element,
+
+'gb if A B' mean 'thing that cause B to become thing that have A'.
+
+▶'mkfd bd oe'{
+
+free translation: 'i love you'.
+
+sturcture: (mkfd bd) oe.
+
+translation whose only words are translated: '(something that love you) is me'.
+
+literal translation: 'i am something that love you'.
+
+mkfd o,n!r=thing that love A with B percent power.//c hope,profit,,The love between a family and a child,,
+
+bd !r=you.//a i,
+
+oe !r=i.
+
+as we can see, word 'mkfd' have number type parameter.
+
+'mkfd bd ih' mean 'thing that love you with zero percent power'.
+
+this expression might be awkward.
+
+'thing that love you with zero percent power' mean 'thing that dont love you'.
+
+ih !n=zero.
+
+in this sentence, 'oe' automatically omit second parameter 'n' of 'mkfd' cuz number type didnt be inputed in the number parameter.
+
+i will explain reason why 'love' is 'c hope, profit'.
+
+Love has various meanings.
+
+There is the love between parents and children, and romantic love.
+
+This word refers to the love between a parent and a child.
+
+mc s,n!r=thing that hope that A2 is A1 by B percent power.
+
+fd n!r=thing that gains profit.
+
+'mc fd A' mean 'thing that hope that A is thing that gains profit'.
+
+FYR: (mc fd A).
+
+parent tend to hope child gain profit since most organism is selfish.
+
+}◀
+
+hg •1 •2 •3 ◇ arm ◇ AND •1, •2, •3,
+
+◇ arm ◇ MOV R1, R2
+
+bb hh gh ad ◇ arm ◇ LDR R1, [R2]
+
+of ▪︎1 ◇ arm ◇ A:
+
+of bpph ad ◇ arm ◇ B BPPH
+
+encf gh ph of bpph cc ◇ arm ◇ cmp r1, #3 ◇ beq npph
+
+'if()' and 'for()' can be implemented by ARM.
+
+ib lh gh ♤ Assign 0 to the variable named 'gh' ◇ js ◇ var a=0;
+
+gc cglhoa ac cgnhfobg gh bc ♤ replace the string 'fobg' in gh with 'oa' ◇ js ◇ gh.replace('fobg', 'oa');
+
+ja njef cglhjb cgnhfobg ♧ whether the variable named fobg has the character 'jb' ◇ js ◇ fobg.includes('jb'); 
+
+cncf kb gh ad kf gh bc gdda.
+function A(var a){
+console.log(a);
+return a;
+}.
+
+janahb A B ad.
+it is true when either A is true, B is true, or both A and B are true.
+A||B.
+
+janabe A B ad.
+it is true only when both A and B are true."
+A&&B.
+
+ackddhdpphadbpph.
+call the method dh of the object bpph, passing dpph as an parameter.
+bpph.dh(dpph);.
+
+try{ throw() }catch{ }.
+
+import { add } from './math.js';.
+
+typeof().
+
+getElementById().
+
+ifcbphheadA.
+var A=new Array(3);.
+
+icohheA.
+second element of A.
+A[3].
+
+ibgaadgh.
+var a=underfined;.
+
+jalhnh.
+whether 2 is 1.
+2==1;.
+
+bblhbeghhhad.
+let a = b = 1;.
+
+let bpph={gh:1, hh: 2};
+for(let gh in bpph){
+
+console.log(gh);
+
+}
+
+lnlf lh gh nh hh ad bpph
+
+let bpph=[1, 2];
+for(let gh of bpph){
+
+console.log(gh);
+
+}
+
+do{}while().
+
+document.createElement().
+
+document.body.style.backgroundColor = 'yellow';.
+
+canvas.style='#FF0000';
+canvas.fillRect(0,0,1,1);.
+
+if ka B C ad A.
+var A =[B, C].
+
+A.pop();.
+
+ic kh he A
+A[0].
+
+import
+
+}exam
+
+▶canvas is work as window
+
+}javascript instructions to ECL
+
+▶python instructions to ECL{
+
+//if ursina is imported
+
+from A import B.
+
+if key == 'right button down':
+
+box = Button(color=color.white, model='cube', position(i,0,j), texture='grass.png', parent=scene, origin_y=0.5)
+
+}python instructions to ECL
+
+▶english to ecl{
+
+A = B + 1.
+mg B lh A.
+
+A = A + 1.
+mg dd lh A.
+
+making layer.
+
+making window.
+
+set size of window.
+
+show window.
+
+drawing.
+
+connected device.
+(device type,id)
+
+finding device by id.
+
+'hello'.
+@5hello.//only expressing foreign language.
+
+}english to ecl
+
+'oc anga fobg ie amae fjde' = 'he is people whose mother is die'.
+
+'jf mklb pf fh ea jd oa fjmd' = 'She seems more wonder in it than I thought.'.
+
+'mb midd mklb gb pf fjda fjmd' = 'I always wondered why he did that'.
+
+'ae anga mmkd oa' = 'people that i love', 'lovely people'.
+
+'ab anga mkfd bd' = 'people that love you'.
+
+'fc ac kmga bd' = 'what is your emotion'
+
+'fa ka of inda of jnda' = 'Go straight ahead, then turn left'.
+
+'enfb pe anga lb anga' = 'this people is bigger than average people'
+
+'kb cf anga fjde oa' = 'i express he as people'.
+
+'fc ea bida fjde'='what he say?'
+
+'fc ie lkkg mocg hb oa bd' = 'Who's bigger, you or me?'.
+
+'hc hf anga oa '= 'probability that i am people'
+
+'ac dmca bd ajlb oa' = 'i see you in here'.
+
+'' = 'this is explanation of this language'. 
+
+'pf oa' = 'me too'.
+
+'mmid fjde' = 'he is good'.
+
+'nd ae anga mmid' = 'hey good people'.
+
+'fc ea jf oa bd' = 'What do you think of me?'
+
+'iokg dmcd lb' = 'this is easy to read'.
+
+'fc pc ilda bd' = 'what is your weight?'.
+
+'kf ilda jh'= '4kg!(reply)'.
+
+'mklb ea cd okne lb eoda pa bd' = 'Im curious about what you are trying to do by learning this language'
+
+'ge eb A jokb bd'='i kill you without A'.
+
+'fe gc of mmda A'='dont pull A up'.
+
+'olga hc bd lb' = 'this is for you'.
+
+'enfb pf lb'= 'this is big'.
+
+'' = 'Have you ever been kicked at the speed of light?'
+
+'ed doda mb gd md kjgg bd jnjb bd bc fjde ' = 'He promised to bury you if you die'.
+
+'hf okne pf fh ' = 'it is easy to leran'.
+
+word that will be created(it is for only developer){
+
+o!p=standard of A.//s middle,
+
+!r=mass.//c converted,kg,
+
+anenfb !r=titan.//people,big,.
+
+!r=intellect.//c use,logic,.
+
+o!1p=thing whose A is role.
+
+o!1p=thing that act A.//s role,
+
+!ns=example.
+
+o!r=map of A.//c converted,image,
+
+!r=video.//c image,image,.
+
+o,o!r=thing that discriminates against A to B.//c treat,all,
+
+dec!n=decimal number.
+
+o!p=thing that return A.
+
+!n,ns=integer.//c number,.
+
+o!r=thing that try be A.
+
+!r=trade.
+
+!r=thing.
+
+!r=bad.
+
+o,n!r=thing that feel A is disgusting.
+
+!r=powder.//c particle,gather,
+
+!r=nugget.//a powder,
+
+o!r=thing that conversation with A.
+
+=flat.//p taira jp,
+
+=equality.//a flat,
+
+!r=shiver.//n fear,,m vibration,
+
+=parent.//c make,
+
+o,n!r=thing that fear A.//c thing that believe that A2 is A1,enemy,strong,
+
+o!r=thing that feel that A is strange.
+
+o,n!r=thing that feel A is weird.
+
+=path.
+
+o!p=thing that suddenly become A.
+
+s!r=thing that agree A.//c promise,not,cause,not,
+
+o-o!p=B per A.
+
+s!r=thing that dont interveing A.
+
+s!r=thing that intervening in A.//a dont interveing,
+
+o-o!v=define B as A.
+
+!r=satisfied.
+
+!r=main.
+
+!r=assistance.//a main,
+
+glkc s!r=thing that wait for the A2 to be A1.//c past,fixed,
+
+!r=dictionary.
+
+!r=pramater.
+
+!r=value.
+
+o!r=thing that ride A.//s control,
+
+o!p=thing that is detail than A.
+
+!r=advantage.//s normal,
+
+!r=disadvanges.//a advantages,
+
+o,n!r=thing that is sad about A.//s pain,
+
+!r=transistor.
+
+ljba !r=shop.
+
+o!r=thing that is famous in A.
+
+!r=app.
+
+o,n!r=kind of A.
+
+hpke n!r=kind.//a selfish,
+
+o!r=thing that peace with A.
+
+elba n!r=digit.
+
+!r=consistent.//s contious,
+
+o!r=law of A.//c rule,crime,
+
+!r=initial-consonant.
+
+!r=oil.//s liquid,
+
+o!r=thing that subscribe A.
+
+nifa o:standard,o,n=rank.
+
+!r=mountain.
+
+s!2p=plan of A.//s process,
+
+o!p=property of A.
+
+n!r=political party,
+
+!r=book.//c union,document,
+
+n:'number of id'-id:'words'-str:'structure of parameter'=expressing-mean-of-word.
+
+o!r=daily of A.
+
+o!r=structure of A.//c process,work,
+
+s!r=principle that A2 is A2.//s process,
+
+!r=gun.
+
+o!//r=thing that aim A.//c intend,toward,
+
+olca o!r=terrain of A.
+
+!r=form.
+
+//gmca o!r=thing that select A.
+
+!r=planet.
+
+!r=sun.
+
+onca o!r=standard of A.
+
+//o:target,o:location=pros of A.
+
+//o,o=cons of A.//a pros,.
+
+//!r=natural-phenomenon.
+
+o!p=limit of A.
+
+//=legend.
+
+//!r=pregnancy.//c include,baby,
+
+//bkda o=value of A.
+
+//!r=capital.
+
+//hkda int,int,int!r=rgb.
+
+//=IPA.
+
+//hnda o=direction of A.
+
+n!r=thing whose A is angular momemtum.
+
+kijc n!r=thing whose A is momemtum.//c kg,speed,
+
+ !r=religion.
+
+!r=civilzation.//c
+
+s!=request of A.
+
+flea o,o,o!r=thing that trade with A.
+
+!r=peninsula.
+
+kmba o,o!r=think that thankful that A is B.
+
+o!r=entropy.
+
+onba !r=mistake.
+
+!r=cpu.
+
+n!r=thing whose A is wages.
+
+n!r=company.
+
+o!r=thing that vote A.
+
+o!p=thing that determine A.//s make,
+
+n!r=mosfet.int:<number of oord>-ni:<targeting parameter>-int<word>-int<structure>=mean of function.
+
+n!r=thing that laughs.//c assert,fun,,ori com use,fun,o,express,.
+
+s!r=thing that worries that A2 is A1.
+
+type that A.
+
+o!p=yet A.
+
+hfph o!p=inevitably A.//c can, ph,
+
+o!v=order of A.
+
+glcg o!r=thing thtat name A.//c create,name of,
+
+olph o!r=thing that focus be A.//c intend,ph,.
+
+ejcf !r=logic.//c how,true,situation,.
+
+!r=objective.//c what,beilive,true,logic,.
+
+o!r=A taster.//c know, part,.
+
+=justice.//c objectice,equality,.
+
+=consistency.//a logic,
+
+o-o-o!r=thing that exchanges A for B with C.
+
+!r=thing that trade A with B.
+
+o!p=thing that just be A.
+
+=thing that send A to B.//cause,around,
+
+fiof o,o!r=thing that invite A to B.//c command,go,,m recruit,
+
+!r=copy.//a original,
+
+!r=official.
+
+s!r=cost.
+
+!r=default.
+
+!r=ambiguous.//a specific,
+
+!r=thing that says A.
+
+!r=original.//a broken,
+
+!r=illegal.
+
+c o!r=union of A1 and A2.//a split,
+
+o-o!r=thing that lack A to be B.
+
+o-o!r=thing that enough A to be B.//a lack,
+
+!r=menu.//
+
+!r=option.//s menu,
+
+!=listed.
+
+ancf o-s!1p=A whose B2 is B1.//c A that is B,include,that A2 is A1,
+
+!r=border.
+
+s!r=thing that prove that A2 is A1.
+
+o!r=thing that associates with A.
+
+!r=omit.
+
+ojda !r=crops.
+
+!r=mistake.//a well,
+
+!r=moon.
+
+!r=handle.
+
+o!r=thing that lie down on A.//a sit,
+
+o!r=thing that get up from A.//a lie down,
+
+o!r=thing that sit on A.
+
+o!r=thing that jump from A.//a sit,
+
+!r=bird.//c fly,animal,
+
+!r=bounce.
+
+!r=boom.//c collapse,increase,
+
+!r=brave.
+
+!r=bump.//a attack,
+
+!r=bed.
+
+!r=bag.//s include,
+
+!r=block.
+
+o!r=boring.
+
+!r=busy.//a boring,
+
+!r=bend.
+
+o!r=thing that take responsibility for A.
+
+o!r=thing that act like A.//s similar,,
+
+!r=spraied.
+
+!r=shaked.
+
+!r=basic.
+
+!r=advanced.//a basic,
+
+n!r=hentai.
+
+!r=bright.
+
+!r=fair.
+
+!r=disability.
+
+!r=illness.
+
+o!p=almost A.//c similar,over,
+
+eojf !r=weapon.//c tool,attack,
+
+!r=straight.
+
+!r=curved.//a straight,
+
+o!r=thing superior to A.//a inferior,
+
+o!r=thing inferior to A.//c superiorty,less,
+
+!r=symmetry.
+
+scientificformula!r=scientific formula.
+
+n!r=free thing.
+
+micg !r=international.//c all,country,
+
+!r=absorb.//a reflect,
+
+!r=miror.//c glass,reflect,
+
+n!r=transparent.
+
+!r=glass.//s transparent,
+
+!r=star.//s light,
+
+o!n=thing that is proportional to A.
+
+o!r=thing that detatch to A.//a hang,
+
+!r=reptiles.
+
+!r=amphibians.
+
+emgg !r=fish.//c organism,water,
+
+!r=arthropods.
+
+!r=mollusks.
+
+!r=algae.
+
+!r=fungi.
+
+!r=protists.
+
+!r=prokaryotes.
+
+o,o!r=plan for B to become A.
+
+!r=rule.//c explain,should,
+
+!r=resume document.
+
+n!r=A perfection pevel.
+
+o!r=thing that is more perfect than A.
+
+o!p=thing that is usually be A.//c tend,
+
+n-o!2p=Apercent of one B.
+
+n-o!2p=Apercent of Bs.
+
+!r=guest.
+
+o!r=thing that pracitice A.
+
+o,n!r=thing whose A is annoying./s hate,
+
+hoig !r=fire.//c gas,plasma,
+
+!r=milk.//s liquid,
+
+!r=joke.//c intend,cause,fun,
+
+!r=mute.
+
+o!r=skip.
+
+!r=block.
+
+o!p=thing that derived from A.
+
+o!1p=thing that depend A.//s derived,
+
+o!r=thing that judge A.//s think,
+
+o!r=thing that invent A.//s create,
+
+!r=parking.
+
+!r=fried.
+
+!r=dried.
+
+n!r=wet.//a dried,
+
+c o!r=thing that compare A1 and A2 and.
+
+o!r=thing that act as a lawyer for A.
+
+o!r=thing that raise A.//c cause,grow,
+
+!r=thing that is grow up.
+
+o!r=thing that run on A.//c walk,fast,
+
+!r=pet.
+
+//ajed o!p=that A.//c A that is B,pointed,
+
+o,n!r=thing that surprise at A.
+
+o!1p=thing that be only A.
+
+!r=whole.//a broken,
+
+ioph !si=!.
+
+o!r=thing that surrender.
+
+o!r=thing that roll A.//s fold,
+
+o,n!r=thing that feel that A is amaze.
+
+!r=fire fighter.
+
+n!r=thing that is folded at an angle of A degrees.
+
+!r=bicycle.
+
+o!r=inherit A.//s give,
+
+!o=thing that waste A.
+
+o,o!r=thing that force B to A.
+
+!r=discuss.//c communicate, whether,
+
+iikobg !r=obsessive compulsive disorder.//c tend,abnormal,
+
+!r=season.
+
+int!r=Aist.//c
+
+o!r=thing that support A.//s benefical,
+
+!r=agianst.//a support,
+
+!r=physicist.//c research,physics,
+
+n!r=thing that great as A.
+
+!r=valuable.
+
+o!r=thing that reach A.
+
+!r=airplane.//c machine,fly,
+
+!r=abbreviation.//c word,summary,
+
+!r=congress.//e as politics.
+
+!r=experience.//c what,was,
+
+!r=beliefs.//m ideology,
+
+!r=zone.//m area,
+
+!r=computer.
+
+o!r=thing that replace A.//s delete,
+
+o!r=thing that omit A.//s delete,
+
+o!1p=obvious A.
+
+o!r=thing that abusive A.
+
+dobiglgb !r=prehistoric era.//c era,none,history,
+
+dodmfoga !r=paleolithic era.//c era,old,stone,
+
+domlfoga !r=neolithic era.//c era,new,tool,stone,
+
+dofh !t=era.//c time,over,
+
+goef !r=sea.//c liquid,big,
+
+!r=responsible thing.
+
+s,n!r=thing that doubt that A2 is A1.
+
+!r=lids.
+
+!r=bottle.//c box,lids,
+
+c o!r=function that have parameter A1 and A2.
+
+o!1p=even A.//s too,
+
+!r=decoration.
+
+lplf o!r=thing that impersonate A.//c cause,can,belive,Ath subject,
+
+o!r=thing that operate A.
+
+!=surgery.//c situation,operated on,
+
+!r=homosexuals.//c attractive,gender,self,
+
+!r=individual.//s alone,
+
+!r=gender.
+
+!r=pipe.//empty,circle,
+
+!r=vocal cord.//c engine,
+
+o!r=thing that pronounce A.
+
+!r=asshole.//c hole,ass,
+
+!r=side.
+
+!r=note.
+
+!r=fist.//c folded,hand,
+
+!r=fair.//s justice,
+
+o!r=thing that dissect A.
+
+!r=grammar.//c law,lamguage,
+
+!r=plant.//c photon,
+
+!r=seed.//c child,plant,
+
+o,o!r=thing that transfer A to B.//c cause,go,
+
+!r=crime.//c not,rule,
+
+o!r=violate.
+
+o,n!r=thing that ready to A.
+
+!r=knife.//c tool,sharp,
+
+!r=public.//a private,
+
+o!r=thing that gather at A.
+
+o!r=thing that slash A.
+
+o!r=thing that stab A.
+
+o!r=thing that governing A.
+
+o!r=thinf that cook A.//c operate,food,
+
+o!r=thing that is clearn than A.
+
+o!r=thing that clean A.
+
+//efw
+
+}word that will be created(it is for only developer)
+
+mid{
+
+mid = anto - ori.
+
+//emi
+
+}mid
+
+!r=thing that rest.//s stay,
+
+bo !r=alone.//a individual,
+
+!r=discontinuity.//s alone,
+
+o,o!r=thing that mix A and B.//c cause,unite,
+
+!r=genital.
+
+!r=pussy.//c hole,women,
+
+!r=cock.//c stick, men,
+
+o-o!r=thing that move from A to B.//s go,
+
+s!r=thing that consider A2 is A1.//s assert,
+
+unit{
+
+n!r=superiority.
+
+!r=A quality.
+
+}unit
+
+meaning of braille depending on the language.
+
+shape of letter 'a' in english braille is shape of 'b' in Chinese Braille.(chinese braille use latin alphabet so This will cause a lot of inconvenience.
+
+▶nletter{
+
+if specific word is not exist in norlang, then explain pronunciation using nletter temporary like 'AINC.YTAIN'(einstein) but word that is made ny nletter cant be function.
+
+nletter must be capital letter if it is used in norlang.
+
+symbol '.' make pronunciation stronger. eg .a is [ja]. .k is [k͈]
+
+this alphabet have only 24letter(english have 26letter) but it express many pronunciation than other system.
+
+▶initial consonant{
+
+left is IPA. right is nletter.
+
+[b] = b.
+
+[p] = p.
+
+[p͈] = .p.
+
+[d] = d.
+
+[t] = t.
+
+[t͈] = .t.
+
+[n] = n.
+
+[g] = q.
+
+[k] = k.
+
+[k͈] = .k.
+
+[∅] = v.
+
+[s] = c.
+
+[s͈] = .c.
+
+[tɕ] = j.
+
+[tɕ͈] = .j.
+
+[tɕʰ] = z.
+
+[h] = x.
+
+[ɾ] = l.
+
+[m] = m.
+
+}initial consonant
+
+▶vowel{
+
+[a] = a.
+
+[ja] = .a.
+
+[ɛ] = e.
+
+[jɛ] = .e.
+
+[ʌ] = r.
+
+[jʌ] = .r.
+
+[o] = o.
+
+[jo] = .o.
+
+[i] = i.
+
+[wi] = .i.
+
+[wʌ] = w.
+
+[we] = .w.
+
+[ɯ] = u.
+
+[wa] = .u.
+
+[u] = y.
+
+[ju] = .y.
+
+}nletter
+
+'ae anga mkfd oe' = 'ab anga ea mkfd oe'{
+
+free translation: 'people that i love', 'lovely people'.
+
+FYR: (ae anga mkfd oe), (ab anga (ea mkfd oe)).
+
+literal translation: 'people that is what i love'.
+
+ae <c n>,o,s!v=A that C2 C1.//C2 is subject,,C1 is verb,,c A that is B,what,
+
+ab o-o!p=A that is B.
+
+'ae anga mkfd oe' mean 'ab anga ea mkfd oe'.
+
+'ab anga ea mkfd oe' mean 'people that are what i love'.
+
+'ae' is for efficient.
+
+}
+
+'
+
+We will learn some words that work like abbreviations.
+
+'he' is 'ea nh' so 'he mkfd bd oe' is 'ea mh mkfd bd oe'.
+
+and it mean 'how much I love you'.
+
+'ne' is 'ae mh' so 'ne anga ed mkfd oe' is 'ae mh anga ed mkfd oe'.
+
+and it means 'people that i loved'.
+
+'bd ea mkfd oe' = 'mkfd bd oe'{
+
+free translation: 'what i love is you', 'i love you'.
+
+FYR: bd (ea mkfd oe), (mkfd bd) oe.
+
+literal translation: 'you are what i love', 'i am thing that love you'.
+
+'ea' is similar to 'what' of english so 'ea' have sentence type parameter but some function in sentence of 'ea' dont have some parameter.
+
+'ea' mean n-th parameter.
+
+'ea mkfd oe' mean first parameter of 'mkfd'.
+
+if i love you, 'ea mkfd oe' mean you.
+
+so To know the meaning, you need to list the parameters of all function in parameter sentence of the 'ea'.
+
+mkfd is in sentence of 'ea'.
+
+mkfd o,n!r=thing that love A with B percent power.
+
+first parameter is 'o' of 'mkfd'.(what it loves)
+
+second parameter is 'n' of 'mkfd'.(how much it loves)
+
+if word 'ea' target second parameter like it mean 'how much it loves'.
+
+}
+
+word 'ea' is expressed in word dictionary but it cant be expressed using symbols of word dictionary so it is for only reference.
+
+ea c n,s!v=what.//this word remove Ath parameter.
+
+'ea nh mkfd bd oe'{
+
+nh !n=two.
+
+'nh' is in parameter 'c n' of 'ea' so 'ea mh' mean second parameter.
+
+To know the meaning, you need to list the parameters of all function in parameter sentence of the 'ea'.
+
+mkfd o,n!r=thing that love A with B percent power.
+
+first parameter is 'o' of 'mkfd'.(what it loves)
+
+second parameter is 'n' of 'mkfd'.(how much it loves)
+
+so 'n' of 'mkfd' is deleted, and 'ea nh mkfd bd oe' mean 'how much i love you'.
+
+}
+
+'bd ea mkfd pa oe' = 'mkfd bd oe'{
+
+free translation: ''you are what i love', 'i love you'.
+
+FYR: 'bd (ea mkfd pa oe)', '(mkfd bd) oe'.
+
+literal translation: 'you are what i know', 'i am thing that know you'.
+
+The 'pa' is in parameter that i wanna express.
+
+parameter of 'lb' is 'what it know'.
+
+}
+
+'ea mkfd bd' = 'ea lh mkfd bd' = 'ea mkfd pa bd'{
+
+there three mean same.
+
+}
+
+'ined !r=folder.//c group,code,,g AB,group,for being,include,code,'{
+
+'g' is abbreviation for 'grammar'.
+
+'g A, B' mean definition of this word is 'A B' in norlang grammar.
+
+the capital letter 'AB' in 'g AB, group...' is norlang word.
+
+it is used for words that cannot be translated into English or when the definition of a word is too long.
+
+ab o-o!r=A that is B.
+
+'g AB,group,include,code,' mean 'group for being thing that include code' in literal translation.
+
+but this word is 'c group,code' since it is important word.
+
+word maker should make order is ramained.
+
+someome can think this word can be expressed as 'g AB,include,code,group,' instead of 'g AB,group,include,code,'
+
+if word order is not important, function should be in after.
+
+}
+
+'ab o-o!1p=A that is B'{
+
+'A-B' means that if the A is omitted by symbol that omit parameter then the B is automatically omitted.
+
+originally 'ad' can omit one parameter but 'o-o' can be omitted by only one 'ad'.
+
+If one parameter of this word is omitted, why this word is used?
+
+it is not needed.
+
+if parameter of this word is 'o,o', then 'ab ad A' mean just 'A'.
+
+this is for efficient so you can use few symbol that omit parameter.
+
+}
+
+'ge <o-o>-n!2p=thing that use A to become B.'{
+
+inside '<' and '>' is one group.
+
+so in <A-B>-C, if <A-B> is omitted by symbol that omit parameter then C is automatically omitted.
+
+<A-B>-C can be omitted by only one symbol that omit parameter.
+
+word 'ge' whose first parameter is omitted is dont needed cuz word that mean 'become' is exist.
+
+}
+
+IIIIISVVVFFFPPPW
+
+'I' mean 'initial consonant'.
+
+'S' make vowel stronger.
+
+'V' mean 'vowel'.
+
+'F' mean 'final consonant'.
+
+'P' mean 'punctuation' like '?', '!', '~'.
+
+second 'W' mean whether to dont make.(0 finish).
+
+eg adpa(00001.1.001.111.0000) is /s͈ja/
+
+chart for 'I'{
+
+00001 is [s͈].
+
+10001 is slient vowel.
+01001 is h.
+
+}chart for 'I'
+
+chart for 'F'{
+
+ is none consonant.
+
+}chart for 'F'
+
+chart for 'P'{
+
+100 is '~'.
+
+010 is '!'.
+
+110 mean none.
+
+001 is '?'.
+
+}chart for 'P'
+
+if u wanna know unexplained pronunciation, see pronunciation chart in
+
+function{
+
+official is starting with 0.
+
+ca n!n=differential.
+
+ea n-n:from-n:until=integral.
+
+ga=buffer gate.
+
+ia=not.
+
+ka n:base-n=log.
+
+ma n:'from'-<n:'until'-n>=right-hand-lim.
+
+oa n:'from'-<n:'until'-n>=left-hand-lim.
+
+ed n-<n-w>=lim A->B.
+
+eb s:'bottom'-n:'top'=sigma,
+
+ac n=sin A.
+
+ab n=cos A.
+
+ag n=tan A.
+
+i=factorization.
+
+}function
+
+'ge af dkee oe dmca bd'{
+
+free translation: 'i see you using my eye'.
+
+FYR: (ge (af dkee oe) (dmca bd)).
+
+translation whose only words are translated: 'thing that use eye of me to become thing that see you is me'.
+
+literal translation: i am thing that use eye of me to be thing that see you.
+
+ge <o-o>-n!p=thing that use A to become B.
+
+af o-o!2p=A of B.//c A that is B,element,.
+
+dkee !r=eye.//c see,organism,
+
+dmca o!r=thing that see A.//c sense,photon,
+
+}
+
+'anmd o!p=her A.//c of,she,.'{
+
+fjmd !r=she.//c the A,women,.
+
+compound word of 'of' and 'she' seems 'anea'.
+
+but word 'anea' already exsit so element of compound word is splited to be smaller.
+
+word 'af' wont be smaller cuz it is already 8bit.
+
+af o-o!2p=A of B.//c A that is B,element,.
+
+take initial of 'fjda', 'mlmb'.
+
+it is 'e', 'm'.
+
+combined is 'em'(00100011).
+
+and Set the 8th bit to 0.
+
+so result is 'ee'.
+
+'an'+'ee'='anee'.
+
+}
+
+if A know B and C.
+
+and D mean 'what A know'.
+
+'what A know died' mean 'B died' or 'C died' or 'B and C died'.
+
+change 'what A know' to 'B and C' since what A know is B and C.
+
+is 'B and C died' our intend?
+
+no.
+
+new data type is 'hb'.
+
+research data{
+
+logic{
+
+'rio see poeple' mean 'rio see part of people' since we cant sense whole people.
+
+'i dont know you' mean 'i know that you are only'...
+
+ae anga de de bf ih oa ad' is 'people that is 0' and 'people that is me' but we couldnt find other word.
+
+default time of sentence type parameter is not specific.
+
+sentence 'men is people' express people and men.
+
+'mmfd bd' mean 'i love you now' so 'gc fd eida oa' mean 'mb ld gc fd eida oa'.
+
+NL sentence 'A B' mean 'thing that is about B is exactly same as A'.
+
+}logic
+
+}research data
+
+WL{
+
+it is incomplete.plz ignore WL,go to BWTL,
+sound of WL{
+
+xxyyyyyy{
+
+xx is frequency type,
+
+yy is frequency,
+
+}
+
+(2bit:s or t or q or a.6bit:32n+32= of 8bit,
+
+pronunciation expressed using NL ipa.
+
+sin
+
+32n{
+
+aa:du. ea: bu. ia:'tu. ma:ju.
+
+ab:lu.eb:'t'i.ib:dud.mb:dul.
+
+ac:bws.ec:mus.ic:dup.mc:cub.
+
+ad:y.ed:do.id:bul.md:qul.
+
+ae:rm.ee:ym.ie:'trm.me:'twm.
+
+}32n
+
+maybe 128n{
+
+aeim
+
+ae:'vu.ee:mo.ie:'cu.me:dum,
+
+af:'vo.ef:mom.if:'tum.mf:'co,
+
+ag:om.eg:'pon.ig:'tus.mg:'nom,
+
+ah:'pos.eh:'cus.ih:'trm.mh:'kuk,
+
+ai:'tym.ei:'tu.ii:'pun.mi:'po,
+
+aj:'jo.ej:'tos.ij:'k.mj:'pum,
+
+ak:'tom.ek:'mo.ik:mu.mk:mr,
+
+al:m'r.el:'t'r.il:'tw.ml:'tr,
+
+| . .'tun |. . .'tom | .. .'ty |... .'ku ,
+
+| . .'p'r |. . .'toq | . . .'tob |.. . .'prm ,
+
+| .. .'kos |. .. .'kr | ... .'j |.... .'jum ,
+
+| ..'kw |. ..'tul | . ..'cin |.. ..'tin ,
+
+| . ..'pis |. . .'tis | .. ..'cun |... ..'ti ,
+
+| ...'pin |. ...'p'is | . ...'tim |.. ...'t'i ,
+
+| ....'k'is |. ....'t'is | .....'p'ipp'p'in ,
+
+}maybe 128n
+
+}sound of WL,
+
+WCL{
+
+}WCL
+
+WML{
+
+<Number of expression objects,Number of cases,frame,Minimum force,what compare>
+-><dimension,bit,strength,frame,case>
+
+sign{
+
+rank of priority{
+
+sev is several,
+r is relative,
+infi is infinity,
+}rank of priority
+}sign
+a=finish-sentence-and-standard,
+ad=finish-sentence,
+world<0,0,0,0>,
+none<0,0,0,0>,
+time<0,0,0,2>,
+elementary-particle<1,1,sev,1,19>,
+exist<1,1,r,1,infi>,
+
+atom<1,100~300,1,1.67×10^−27kg>,
+molecule<1,300~,1,2×1.67×10^−27kg>,
+appear/disappear<1,2,2,1>,
+none change/change(s,r,p=<1,2,2,1>
+light/heavy,(become light/become heavy=<1,2,2,2>,
+(become low/become many=<1,2,2,mc^2>,
+square<1,1,1,srpr>,
+number<1,2,1,srpr>(1,
+inner/out<1,2,1,1,7>,
+this i/this u<1,2,1,2,1>,
+under/down/left/up/right/on<1,6,1,1,7>,
+line<2,1,1,2,6>,
+move to (under/down/left/up/right/on=<1,6,2,2,14>,
+stay/move<1,2,1,2,14>,
+split/combine<(1'2.,2,2,2×mason,13>,
+decrease/gain<(1'2.,2,2,3,13>,
+
+}WML,
+
+}WL,
