@@ -286,6 +286,8 @@ alphabet.
 
 pronunciation.
 
+slowly learn.
+
 ▶quickly learn(for smart person){
 
 how to interpret word dictionary.
@@ -301,14 +303,6 @@ example sentence that teach words.
 how to programming using this language.
 
 }◀
-
-▶slowly learn{
-
-logic.
-
-how to programming using this language.
-
-}◀slowly learn
 
 }◀table of content
 
@@ -470,7 +464,7 @@ nb !r=i.//c this, assert,
 
 additional explanation is in right of the dot. you should see additional explaination to easily remember word.
 
-in this lecture, i wont use word that you didnt learn.
+in this lecture, i wont use word that i didnt teach.
 
 sentence 'anga nb' mean 'i am human'. the word 'anga' is in left hand side. the word 'nb' is in right hand side. if you didnt speak right hand side then right hand side automatically be 'i'. so just speaking 'anga' is enough to mean 'i am human'. we use word 'i' lot so this mechanism increace efficiency of language. if you didnt write right hand side then right hand side automatically be 'this' so building that is labeled 'restaurant' means that 'this is a restaurant'.
 
@@ -486,13 +480,15 @@ all sentence of this language consist of left hand side and right hand side.
 
 in sentence 'fc anga nb nb', parameter of 'fc' is full so this function cant have manier parameter so place for left hand side is done. you must remember this mechanism to recognize what is left hand side and right hand side.
 
-we will learn how to say 'what is your name' so we need to learn word for of and word for name and word for you.
+we will learn how to say 'what is your name?' so we need to learn word for of and word for name and word for you.
 
 word 'af' mean 'of'. this word must have two object as parameter. type of word 'af' is type of first input parameter. this word is expressed as following in word dictionary.
 
-af o,o!1p=A of B.//c A that is B, element of A,
+af o,o!1p=A of B.//c A that is B, element of A,//r pencil that is element of me is pencil of me.
 
 the '1p' mean type of this word is type of first input parameter.
+
+additional explanation '//r' is used to explaining why this word is made in this way.
 
 word 'blga' mean name. meaning of name similar to meaning of code so form of word for name similar to word for code. '//s code,' that is in additional explanation mean form of this word similar to word for code. word for name is expressed as following in word dictionary.
 
@@ -524,7 +520,7 @@ od o!r=thing that call A.
 
 form of this word is similar in binary. this language dont need word 'hello' and 'hey'. sentence 'olga' mean 'hello' and 'i am thing that greet'. sentence 'od' mean 'hey' and 'i am thing that call'.
 
-bjjh o!r=thing that bye A.
+bjjh o!r=thing that bye A.//a greet,
 
 you can use this word to bye.
 
@@ -560,7 +556,7 @@ mjib o,n!r=thing that like A.//s love,//e B is degree of love.
 
 in sentence 'mjib anga nb', second parameter of word 'mjib' automatically be omitted by other type word. this sentence mean 'i am thing that like you'.
 
-word 'ea' is 'what' as in 'what i love'. word 'ea' reurn n-th parameter. word 'lh' is one so 'ea lh' return first parameter.
+word 'ea' is 'what' as in 'what you like'. word 'ea' reurn n-th parameter. word 'lh' is one so 'ea lh' return first parameter.
 
 in sentence 'mjib anga cg', the word 'anga' is in first parameter of the sentence so 'ea lh mjib cg' return 'anga'. word 'ea' that dont have number type parameter automatically return first parameter.
 
@@ -574,7 +570,7 @@ word 'eienpd' mean 'united states of america'. pronunciation of this word is der
 
 eienpd !r=united states of america.//p USA, en,
 
-in sentence 'ondb eienpd nb', first parameter of word 'ondb' is omitted so this sentence mean 'i am from united states of america'.
+in sentence 'ondb eienpd nb' mean 'i am from united states of america'.
 
 we learn this language so lets learn how to say 'i learn veluil'.
 
@@ -588,13 +584,13 @@ we will learn how to say 'can you speak veluil?'.
 
 lg o,n!p=thing that can be A with B percent probability.
 
-hnda o,o!r=thing that speak A to B.
+hnda o,o!r=thing that speak A to B.//c sound,mention,
 
 sentence 'fc ja lg hnda pmag' mean 'can you speak veluil?'.
 
 ff !r=true.
 
-sentence 'kf ff' mean 'i am thing that answer you to true'and 'yes'.
+sentence 'kf ff' mean 'i am thing that answer you to true' and 'yes'.
 
 we will learn how to say number.
 
@@ -602,68 +598,147 @@ word 'kg' is for explainng decimal number.
 
 kg dec!n=.//e this word is for explainng decimal number.
 
-binary that is in dec type parameter is not word. 'b' is in dec type parameter is 1.
+binary that is in dec type parameter is not word. 'b' that is in dec type parameter is 1. 'a' that is in dec type parameter finish dec type parameter.
 
 'kg ba' mean 'one'.
-
-'a' that is in dec type parameter finish dec type parameter.
 
 c is 2. d is 3. e is 4. f is 5. g is 6. h is 7. i is 8. j is 9. k is 0.
 
 this language use little andian so 'kg bcdefgka' mean '654321'.
 
+we can say some number shortly.
 
+ih !n=zero.
 
+lh !n=one.
 
+nh !n=two.
 
+ph !n=three.
 
+jh !n=four.
 
+kh !n=minus one.
 
+mh !n=minus two.
 
+oh !n=minus three.
 
+we will learn how to say 'meet at 9a.m!'.
 
+word 'goea' mean hour. type of this word is time. this word is next word of word for minute. next word is one bit higher than original word. 
 
+goea n!t=A hour.//n minute,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-word 'pf' can be inputed in every parameter by being object type word. this word is expressed as following in word dictionary.
-
-pf !o=it.
-
-you can use tense using word 'mb'. parameter of this word is time and object. this word is expressed as following.
+foea n!t=A minute.//n second,
 
 mc t,o!2p=thing that is B when A.
 
+nnad o!r=thing that met A.//a around,
+
+sentence 'fa mc goea kg ja nnad' mean 'meet at 9a.m!'.
+
+we will learn how to say 'at that time, i see you'.
+
+word 'pf' can be inputed in every parameter by being object type word.
+
+pf !o=it.
+
 if word 'pf' is inputed in time type parameter then this word must be time so word 'pf' that is in time type parameter is translated as 'that time'.
 
-sentence 'mb pf anga oe' mean 'i am thing that human at that time'.
+lica o!r=thing that see A.//c sense,photon,
+
+sentence 'mb pf lica cg nb' mean 'i am thing that see you at that time'.
+
+we will learn tense.
+
+ed o!1p=thing that was A.
+
+sentence 'ed mjib cg nb' mean 'i was thing that like you'.
+
+suffix ep- mean was.
+
+sentence 'epmjib cg nb' mean 'i was thing that like you'.
+
+but this suffix can be used for only function.
+
+le o!1p=thing that will be A.//a was,
+
+sentence 'le mjib cg nb' mean 'i will be thing that like you'.
+
+suffix lp- mean will.
+
+sentence 'lpmjib cg nb' mean 'i will be thing that like you'.
+
+we will learn singular.
+
+if first parameter of word 'ie' is omitted then the first parameter is one.
+
+ie n,o!1p=A B.//e omitted A is one.
+
+'ie anga' mean 'a human'.
+
+we will learn plural.
+
+suffix gp- make plural.
+
+'gpanga' mean humans.
+
+you can say 'i see human' even if you see lot of human.
+
+we will learn pronoun.
+
+na o!1p=this A.
+
+oa o!1p=that A.
+
+pa o!1p=the A.
+
+pimd !r=she.//c the,women,
+
+pide !r=he.//c the,men,
+
+word for we can mean 'me and you' and 'friend of me'.
+
+boba !r=we.//e me and you.
+
+mjnb !r=we.//c friend,me,//e friend of me.
+
+we will learn how to say oneself and themselves and yourself and myself etc.
+
+db n!r=Ath right hand side.
+
+'db lh' return first right hand side.
+
+sentence 'mjib db lh nb' mean 'i love myself'.
+
+'i love myself' mean 'i love me'.
+
+word that mean me is in first right hand side so 'db lh' can be work as oneself and themselves and yourself and myself etc.
+
+dd !r=self.//c DB,LH,
+
+we will learn all word that omit parameter.
+
+ad !si=word that omit one parameter.
+
+bc !si=word that omit two parameter.
+
+cc !si=word that omit three parameter.
+
+dc !si=word that omit four parameter.
+
+we will learn word for and.
+
+word 'be' have object type parameter until this word met symbol that omit parameter.
+
+be c o!1p=A1 and A2 and A3 and...
+
+'be cg pf ad' mean 'you and it'.
+
+if there function word then you should use more word that omit parameter.
+
+in 'be cg lb ad ad' first 'ad' omit parameter of word 'lb'. second 'ad' finish parameter of word 'be'. you can say it as 'be cg lb bc'.
 
 
 
@@ -674,69 +749,16 @@ sentence 'mb pf anga oe' mean 'i am thing that human at that time'.
 
 
 
+we will learn word 'hb'.
 
+For the sentence “A is animal” to be true, what A must be?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-▶logic{
-
-For the sentence “A is B” to be true, what A must be?
-
-If A is “B that is C,” then the statement “A is B” is true.
-For example, if you are a human that is man, then you are a human is true.
-
-However, if A is B that is C, only 'A is B' can be true; 'B is A' cannot be true.
-but there are sentence that is true despite position is reversed.
-If A is element of B, then 'A is element of B' is true. 'element of B is A' is also true.
-
-Why does this phenomenon occur? what is value of A?
-This value cannot be expressed in English.
-In this language, that value is expressed by the word “hb".
+if A is pig then it is true but animal is pig is false but 'wheel is part of car' and 'part of car is wheel' is true cuz 'part of car' is defined by word 'hb'.
 
 hb c o!1p=.
 
-if A is 'hb B C ad' then 'A is B' and 'A is C' and 'A is B and C' and 'B is A' and 'C is A' and 'B and C is A' is true.
 
-if A have pen and pig. animal that is element of A is only pig cuz pig is animal.
 
-if A have B and C, then element of A is expressed as 'hb B C ad'. 
-
-we can know how to say 'what do you like? A or B?' in this language.
-
-it is 'fc ae hb A B ad mkid bd'.
-
-}◀logic
 
 }◀slowly learn
 
@@ -758,7 +780,7 @@ explanation in word dictionary consist of following.
 
 [this language word] [parameter that this word must have]![word type]=[meaning].//[addiotional explanation]
 
-fojb !r=alive thing.
+oojb !r=alive thing.
 
 word is expressed as it in word dictionary.
 
