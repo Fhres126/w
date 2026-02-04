@@ -31,8 +31,11 @@
 -webkit-background-clip: text;
 color: transparent;
     }
-    button{
+    .setcolor{
       width:calc(var(--s) / 12);
+      height: calc(var(--s) / 12);
+    }
+    .freewidthbutton{
       height: calc(var(--s) / 12);
     }
   </style>
@@ -41,36 +44,36 @@ color: transparent;
     <title>lecture for veluil</title>
 </head>
 <body>
-  <button onclick="document.querySelectorAll('pre').forEach(e=>{
+  <button class = 'setcolor' onclick="document.querySelectorAll('pre').forEach(e=>{
   e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';
   e.style.webkitBackgroundClip='text';
   e.style.webkitTextFillColor='transparent';
 })">
 </button>
 
-<button onclick="document.querySelectorAll('pre').forEach(e=>{
+<button class = 'setcolor' onclick="document.querySelectorAll('pre').forEach(e=>{
   e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';
   e.style.webkitBackgroundClip='text';
   e.style.webkitTextFillColor='transparent';
 })">
 </button>
   
-  <button style="background-color:#ff0000;" onclick="document.querySelectorAll('body *').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('body *').forEach(e=>{
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('body *').forEach(e=>e.style.color='#ff0000')"></button>
   
-  <button style="background-color:#ff8800;" onclick="document.querySelectorAll('body *').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#ff8800;" onclick="document.querySelectorAll('body *').forEach(e=>{
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('body *').forEach(e=>e.style.color='#ff8800')"></button>
   
-  <button style="background-color:#00ff00;" onclick="document.querySelectorAll('body *').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('body *').forEach(e=>{
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('body *').forEach(e=>e.style.color='#00ff00')"></button>
   
-  <button style="background-color:#ffffff;" onclick="document.querySelectorAll('body *').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('body *').forEach(e=>{
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('body *').forEach(e=>e.style.color='#ffffff')"></button>
@@ -158,9 +161,9 @@ this language use phonetic script but this language is pronounced differently fr
 
 most words are not randomly made.
 
-lot of words is compound words.(eg word 'hnmc' mean music. word 'hnmc' is compound word of sound and fun. word 'bomc' mean sports. it is compound word of compete and fun)
+lot of words is compound words.(eg word 'hnmb' mean music. word 'hnmb' is compound word of sound and fun. word 'bomb' mean sports. it is compound word of compete and fun)
 
-lot of words is abbreviations.(eg word 'od' mean now. word 'od' is abbreviation for 'Oa Doea'(this time))
+lot of words is abbreviations.(eg word 'nd' mean now. word 'nd' is abbreviation for 'Na Doea'(this time))
 
 lot of words are arranged in an orderly way.(eg bihd mean hydrogen(Atomic number 1). cihd mean helium(Atomic number 2). dihd mean lithium(Atomic number 3). eihd mean beryllium(Atomic number 4))
 
@@ -219,6 +222,8 @@ An ambiguous IAL creates misunderstandings and promotes conflict.
 it make easy communication between disabled people and non-disabled.
 
 unlogical IAL make mankind uncivilized.
+
+this language pronounce binary so we dont need to learn name when use this language. for example, we dont need to learn this language version of name of ∀, ∞ so it help scholarship.
     
 }◀why this language must be IAL
 
@@ -236,7 +241,7 @@ concerns: i hate this wrting system. it cant explain interjection and foreign wo
 
 refute: no, this writing system can express interjection and foreign word using specific parameter type. if we change alphabet then we cant use world most efficient system(NLQR, NLmorse). this alphabet make we can easily pronunce all that can be expressed as binary so we can pronunce 🕎 without learning name.
 
-other refute to concerns is appear when explain new thing. Even if I refute it now, you won’t know what I’m talking about.
+other refute to concerns is appear when explain new thing. Even if I refute it now, you won’t know what I’m talking about. if there are problem we can change.
 
 }◀refute to concerns
 
@@ -260,7 +265,7 @@ site for searching word: https://fhres126.github.io/w/worddictionary.html
 
 }◀evidence
 
-this language is beta version. making this language is started in 2023year 2month. if this language can become more perfect then it is changed so you can provide feedback for this language or this doucment. also you can ask me using this:
+this language is beta version. making this language is started in 2023year second month. if this language can become more perfect then it is changed so you can provide feedback for this language or this doucment. also you can ask me using this:
 
 telegram: https://t.me/+PLg57eWiUEU3Nzg1
 
@@ -268,7 +273,7 @@ Our chat room: https://discord.gg/VhHBjXbpkz
 
 email: fhres126@gmail.com
 
-YouTube: @normallanguage (all URL in bio)
+YouTube: @veluil (all URL in bio)
 
 ▶table of content{
 
@@ -285,12 +290,13 @@ word spacing.
 alphabet.
 
 pronunciation.
+</pre>
 
-slowly learn.
+<button class="freewidthbutton" onclick="window.find('▶slowly learn')">slowly learn.</button><br><br>
+<button class="freewidthbutton" onclick="window.find('▶quickly learn')">▶quickly learn(for smart person){
+</button>
 
-▶quickly learn(for smart person){
-
-how to interpret word dictionary.
+<pre>how to interpret word dictionary.
 
 suffix.
 
@@ -298,7 +304,7 @@ grammar.
 
 logic.
 
-example sentence that teach words.
+how to use tool that search word.
 
 how to programming using this language.
 
@@ -377,7 +383,6 @@ purpose of this section: making you know how to pronunce binary.
 * Two letters make one syllable.
 
 * (2n-1)th letter is pronounced as initial consonant. 
-
 * 2n-th letter is pronounced as vowel and final consonant.
 
 eg 'bb anba' is pronounced as [ bo membu ].
@@ -416,7 +421,11 @@ m = /tɕ/, /am/. n = /t͈ɕ/, /ɛm/. o = /t͡ʃ/, /im/. p: /s/, /wɛ/.
 
 initial consonant that is easy to distinguish is 19.
 
+/m/, /b/, /d/, /g/, /n/, /l/, /p͈/, /t͈/, /k͈/, /p/, /t/, /k/, /tɕ/, /tɕ͈/, /tɕʰ/, /s/, /s͈/, /∅/ ,/h/.
+
 vowel that is easy to distinguish is 10.
+
+/u/, /o/, /ʌ/, /ɯ/, /a/, /ɛ/, /i/, /wʌ/, /wi/, /wɛ/.
 
 silent final consonant and h aren't used cuz it make problem.
 
@@ -426,9 +435,7 @@ The pronunciation [ta] is made by quickly saying [d] and [ha].
 
 sometime we can interpret 'ta' as 'd ha' if we talk slowly.
 
-if word is long then there are final consonant 'm'.
-
-This mechanism makes long word difficult to say so user dont wanna made long word so it becomes efficient.
+if word is long then there are final consonant. This mechanism makes long word difficult to say so user dont wanna made long word so it becomes efficient.
 
 pronuncing binary make we can pronunce all without learning name.
 
@@ -436,17 +443,13 @@ pronuncing binary make we can pronunce all without learning name.
 
 }◀pronunciation
 
+
+
+
+
+
+
 you can learn using quickly learn section or slowly learn section.
-
-
-
-
-
-
-
-
-
-
 
 ▶slowly learn(not finished but can helpful){
 
@@ -478,7 +481,7 @@ the capital letter in between equal sign and dot must be changed into input valu
 
 all sentence of this language consist of left hand side and right hand side. 
 
-in sentence 'fc anga nb nb', parameter of 'fc' is full so this function cant have manier parameter so place for left hand side is done. you must remember this mechanism to recognize what is left hand side and right hand side.
+in sentence 'fc anga nb nb', parameter of 'fc' is full so this function cant have manier parameter so place for left hand side is done. you must remember this mechanism to recognize what is left hand side and right hand side and one sentence.
 
 we will learn how to say 'what is your name?' so we need to learn word for of and word for name and word for you.
 
@@ -512,6 +515,14 @@ sentence 'kf bicc' is sentence 'i am thing that answer bicc to you'.
 
 sentence 'gillpa af blga nb' mean 'my name is gillpa' but you can omit second parameter of word 'af'.
 
+we will learn how to say 'where is bathroom?'.
+
+ne o!r=location of A.
+
+nnfd !r=bathroom.//c place,emit,shit,
+
+sentence 'fc ne nnfd' mean 'i am thing that ask you about location of bathroom'.
+
 we will learn how to say hello.
 
 olga o!r=thing that greet A.//s call,
@@ -524,7 +535,9 @@ bjjh o!r=thing that bye A.//a greet,
 
 you can use this word to bye.
 
-we will learn how to say 'do you have water?' so we will learn word for whether and word for have and word for water. word 'ja' must have sentence as parameter. this word is expressed as following in word dictionary.
+we will learn how to say 'do you have water?'.
+
+word 'ja' must have sentence as parameter. this word is expressed as following in word dictionary.
 
 ja s!r=whether A2 is A1.
 
@@ -550,27 +563,47 @@ mood o,n!r=thing that thank A.//e B is degree of thank.
 
 sentence 'mood cg' mean 'thank you'.
 
-word 'mjib' must have object and number as parameter. the number is for explainng degree of love.
+word 'mjib' must have object and number as parameter. the number is for explainng degree of like.
 
-mjib o,n!r=thing that like A.//s love,//e B is degree of love.
+mjib o,n!r=thing that like A.//s love,//e B is degree of like.
 
-in sentence 'mjib anga nb', second parameter of word 'mjib' automatically be omitted by other type word. this sentence mean 'i am thing that like you'.
+in sentence 'mjib anga nb', second parameter of word 'mjib' automatically be omitted by other type word. this sentence mean 'i am thing that like you'. the degree of like is expressed as number between zero and one. word 'lh' mean one so sentence 'mjib cg lh nb' mean 'I like you with 100% intensity'.
 
-word 'ea' is 'what' as in 'what you like'. word 'ea' reurn n-th parameter. word 'lh' is one so 'ea lh' return first parameter.
+word 'ea' is 'what' as in 'what you like'. word 'ea' return n-th parameter. word 'lh' is one so 'ea lh' return first parameter.
 
 in sentence 'mjib anga cg', the word 'anga' is in first parameter of the sentence so 'ea lh mjib cg' return 'anga'. word 'ea' that dont have number type parameter automatically return first parameter.
 
-sentence 'fc ea mjib cg' mean 'i am thing that ask you about what you like' and 'what do you like?'.
+if word 'ea' target second parameter of word 'mjib' then we can say 'how much you like human'.
 
-we will learn how to say 'i am from united states of america'.
+nh !n=two.
 
-ondb o!r=thing that come from A.//c move,DB,
+'ea nh mjib anga cg' mean 'how much you like human'.
 
-word 'eienpd' mean 'united states of america'. pronunciation of this word is derived from 'USA' of english. additional explanation '//p A, B,' mean pronunciation of this word similar to A in language B. ISO 639-1 code is in the B. this word is expressed as following in word dictionary.
+we will learn comparative.
 
-eienpd !r=united states of america.//p USA, en,
+jkca n!r=Ameter.
 
-in sentence 'ondb eienpd nb' mean 'i am from united states of america'.
+bb o!n=thing that is less than A.
+
+'jkca bb lh' mean 'thing that is shorter than one meter'.
+
+'ea jkca nb' can be translated as 'my meter' and 'my length'.
+
+'jkca bb ea jkca nb' mean 'thing that is shorter than me'. it can be simplified as 'jkca bb nb'. and there are abbreviation.
+
+jkbb o!r=thing that is shorter than A.//c meter,less,
+
+og o!n=thing that is more than A.//a less,
+
+'jkca og nb' mean 'thing that is longer than me'.
+
+gnog o!r=thing that is longer than A.//a short,
+
+sentence 'mjib nb og cg nb' mean 'i am thing that like me than you'.
+
+pg o!n=A that is converted into number.
+
+'jkca pg nb' mean 'thing that is same height as me'.
 
 we learn this language so lets learn how to say 'i learn veluil'.
 
@@ -650,25 +683,41 @@ lica o!r=thing that see A.//c sense,photon,
 
 sentence 'mb pf lica cg nb' mean 'i am thing that see you at that time'.
 
+we will learn how to say 'can you speak it agian?'.
+
+lg o,n!p=thing that can be A with B percent probability.
+
+imea n,o!1p=thing that repeat B at A times.
+
+sentence 'fc ja lg imea hnda pf cg' mean 'i am thing that ask you about whether you are thing that can be thing that repeat be thing that speak it'.
+
 we will learn tense.
 
 ed o!1p=thing that was A.
 
 sentence 'ed mjib cg nb' mean 'i was thing that like you'.
 
-suffix ep- mean was.
+suffix ep- mean was. this suffix can be used for only function.
 
 sentence 'epmjib cg nb' mean 'i was thing that like you'.
-
-but this suffix can be used for only function.
 
 le o!1p=thing that will be A.//a was,
 
 sentence 'le mjib cg nb' mean 'i will be thing that like you'.
 
-suffix lp- mean will.
+suffix lp- mean will. this suffix can be used for only function.
 
 sentence 'lpmjib cg nb' mean 'i will be thing that like you'.
+
+we will learn how to say 'i am from united states of america'.
+
+ondb o!r=thing that come from A.//c move,DB,
+
+word 'eienpd' mean 'united states of america'. pronunciation of this word is derived from 'USA' of english. additional explanation '//p A, B,' mean pronunciation of this word similar to A in language B. ISO 639-1 code is in the B. this word is expressed as following in word dictionary.
+
+eienpd !r=united states of america.//p USA, en,
+
+in sentence 'ed ondb eienpd nb' mean 'i am came from united states of america'.
 
 we will learn singular.
 
@@ -700,7 +749,7 @@ pide !r=he.//c the,men,
 
 word for we can mean 'me and you' and 'friend of me'.
 
-boba !r=we.//e me and you.
+bnca !r=we.//e me and you.
 
 mjnb !r=we.//c friend,me,//e friend of me.
 
@@ -740,6 +789,54 @@ if there function word then you should use more word that omit parameter.
 
 in 'be cg lb ad ad' first 'ad' omit parameter of word 'lb'. second 'ad' finish parameter of word 'be'. you can say it as 'be cg lb bc'.
 
+we will learn how to say 'why you cant do it?'.
+
+gc s,n!r=why A2 is A1.
+
+eb o!1p=thing that is not A.
+
+sentence 'fc gc eb lg pf cg' mean 'i am thing that ask you about why you are thing that is not thing that can be it' and 'why you cant do it?'.
+
+we will learn how to say 'what if he dislike it?'.
+
+jf s,n!r=result of A2 being A1.//a reason,
+
+dohg o,n!r=thing that dislike A.//a like,
+
+pide !r=he.//c the,men,
+
+sentence 'fc jf dohg pf pide' mean 'i am thing that ask you about result of he being thing that dislike it'.
+
+we will how to say 'if you hurry, we can ride bus'.
+
+cf s!r=situation that A2 is A1.
+
+gmbb o,o!1p=thing that be A quickly than B.//c GMDA,less,
+
+flfa o!r=thing that is in A.//s part of,
+
+bkpd !r=bus.//p bus, en,
+
+sentence 'cf lg flfa bkpd bnca jf gmbb bc cg' mean 'result of you being thing that quickly be something is situation that we are thing that can be in bus'.
+
+here we will learn how to say 'she listen to music'.
+
+lihf o!r=thing that listen to A.//c sense,sound,
+
+hnmb !r=music.//c sound,like,
+
+sentence 'lihf hnmb pimd' mean 'she is thing that listen to music'.
+
+we will learn how to say 'what song do you like?'.
+
+ab o,o!1p=A that is B.
+
+sentence 'fc ab hnmb ea mjib cg' mean 'i am thing that ask you about music that is what you like'.
+
+there are abbreviation.
+
+'ae hnmb mjib cg' mean 'ab hnmb ea mjib cg'.
+
 
 
 
@@ -757,66 +854,53 @@ if A is pig then it is true but animal is pig is false but 'wheel is part of car
 
 hb c o!1p=.
 
-
-
-
 }◀slowly learn
 
-▶quickly learn(for smart){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+▶quickly learn(not finished but can be helpful. for smart){
 
 this section quickly teach so remember all that is in this section.
 
-in this document, object mean noun or function.
+grammar is easy so learning words is impotant so we will learn how to interpret word dictionary formular firstly.
 
-explaing logical language using unlogical language is difficult so sometime i will use this language to explain this language so you should well understand.
+word 'anga' mean 'human'. and in word dictionary, it is expressed as follwing.
 
-you need to learn how to interpret word dictionary to learn words. here is basic.
+anga !r=human.
 
-▶basics of interpreting a word dictionary{
+this is called word dictionary formular. word dictionary formular is for efficiently explaining words. the 'r' is in place for explaining word type. the 'r' mean 'realty' so this word type is 'reality'. only thing that can be in reality must be reality type word.
 
-purpose of this section: making you know basic how to interpret word dictionary.
+word 'nb' mean 'i' and 'me'. it is abbreviation for 'Na Blca'(this who assert). and in word dictionary, it is expressed as following.
 
-explanation in word dictionary consist of following.
+nb !r=i.//c this, assert,
 
-[this language word] [parameter that this word must have]![word type]=[meaning].//[addiotional explanation]
+additional explanation is in right of the dot. you should see additional explaination to easily remember word.
 
-oojb !r=alive thing.
+in this lecture, i wont use word that i didnt teach.
 
-word is expressed as it in word dictionary.
+we will learn function word here. you should know object mean noun or function. word 'fc' is function that must have two object type parameter. word 'fc' is abbreviation for 'fa kf'. 'fa kf' is 'thing that command to answer'. and in word dictionary, it is expressed as following.
 
-* far left is this language word.
+fc o,o!r=thing that ask B about A.//c command,answer,//e omitted B is you.
 
-* between '!' and '=' is word type.
+the 'o' is in place for explaining parameter that function must have. the 'o' is abbreviation for 'object' so object can be inputed in this function as parameter.
 
-* right of '=' is meaning of this word.
+the capital letter in between equal sign and dot must be changed into input value. A must be changed into first input value. B must be changed into second input value. C must be changed into third input value... 'fc anga nb' mean 'thing that ask me about human'. '//e' is used to explain word using sentence.
 
-* 'r' is an abbreviation for 'reality'. it is type of only word that is not number or etc.
+▶parameter dictionary{
 
-jd o!r=thing that imagine A.
-
-between this language word and '!' is parameter type that this function must have. if it is exist then this word should have parameter.
-
-'o' is an abbreviation for 'object' so all object can be inputed in this function.
-
-there are capital letter in right of '='. A is first inputed value. B is second inputed value. C is third inputed value... change the capital letter to inputed value of function.
-
-for example, 'jd bd' mean 'thing that imagine you' cuz 'bd' mean 'you'.
-
-of o,o!r=thing that go from B to A.
-
-B is second inputed parameter. third is C.
-
-'of ajoa fodg' mean 'thing that go from house to here' cuz 'ajoa' mean 'here'. 'fodg' mean 'house'.
-
-Q: this word should have parameter so how to say 'i dont know word imagine' in this language?
-
-A: it is 'eb lb elfa jd', word in parameter of 'elfa' deosnt have parameter.
-
-▶type dictionary{
-
-'o' is abbreviation for object. word whose this is parameter can have every type parameter. word whose this is word type can be inputed in every type parameter.
-
-'si' type word dont impact to grammar defautly. for example, line break is si type.
+'o' is abbreviation for object.
 
 'n' is abbreviation for number.
 
@@ -828,7 +912,7 @@ cf s!r=situation that A2 is A1.
 
 'A1' mean first 'o'. 'A2' is second 'o'.
 
-parameter type 'what' is like 'what' as in ' what i know'.
+'what' is 'what' as in 'what i know'.
 
 ea what!r=.
 
@@ -842,7 +926,7 @@ jd o!r=thing that imagine A.
 
 'int' is binary string that consist of integer multiple of 8 bits. for example,
 
-elfa int!r=word A.
+blfa int!r=word A.
 
 object that is inputed in this function dont have parameter.
 
@@ -850,59 +934,9 @@ object that is inputed in this function dont have parameter.
 
 for example,
 
-fg dec!=.
+kg dec!n=.
 
-'a' finish parameter dec. 'b' is 1. 'c' is 2. 'd' is 3. 'e' is 4. 'f' is 5. 'g' is 6. 'h' is 7. 'i' is 8. 'j' is 9. 'k' is 0 since if 'a' is '0' it cant be visible in NLQR. this language use little andian so 'fg bc ka' is 21.
-
-}◀type dictionary
-
-▶addiotional explanation dictionary{
-
-kjgg !r=dead thing.//a alive,
-
-'//' is for an additional explanation.
-
-'a' is an abbreviation for 'antonym'.
-
-* 'a A' mean 'this word is antonym of A'.
-
-* The antonym form is the inversion of the original word's bits. 0 becomes 1. 1 becomes 0.
-
-for example, antonym of 
-'fojb'(10100111,10011000) is 
-'kjgg'(01011001,01100110).
-
-'//a alive,' is same as '//a FOJB,'.
-
-8n-th bit dont be changed since it is for explaining length of word.
-
-'n A' mean this word is next word of A.  for example,
-
-hoea n!t=A hour.//n minute,
-
-goea n!t=A minute.//n second,
-
-the letter is increaced. g into h.
-
-'c A, B,' mean this word consist of A and B. if there are it then this word is compound word or abbreviation. for example,
-
-od !t=now.//c this, time,
-
-this word is abbreviation for 'Oa Deoa'(this time).
-
-'d A' mean this word is made in time A. 
-
-'e A' mean explanation of this word is A.
-
-'u A' mean form of this word is changed in time A.
-
-'p A B' mean pronunciation of this word similar to A in language B.
-
-'s A B' mean form of this word similar to word A in language B. if there are no B then the word is derived from this language.
-
-}◀additional explanation dictionary
-
-▶other code{
+'a' finish parameter dec. 'b' is 1. 'c' is 2. 'd' is 3. 'e' is 4. 'f' is 5. 'g' is 6. 'h' is 7. 'i' is 8. 'j' is 9. 'k' is 0 since if 'a' is '0' it cant be visible in NLQR. this language use little andian so 'fg bcdeghka' is 7654321.
 
 be c o!1p=A1 and A2 and...
 
@@ -910,9 +944,51 @@ parameter 'c A' mean this word have parameter until this word met symbol that om
 
 'be A A A ad' mean 'A and A and A'.
 
-}◀other code
+}◀parameter dictionary
 
-}◀basics of interpreting a dictionary
+▶addiotional explanation dictionary{
+
+'//a A' mean 'this word is antonym of A'. The antonym form is the inversion of the original word's bits. 0 becomes 1. 1 becomes 0. for example, antonym of 
+'oojb'(01110111,10011000) is 
+'bjgg'(10001001,01100110). '//a alive,' is '//a OOJB,'. 8n-th bit dont be changed since it is for explaining length of word.
+
+'//n A' mean this word is next word of A.  for example,
+
+hoea n!t=A hour.//n minute,
+
+goea n!t=A minute.//n second,
+
+the letter is increaced. g into h.
+
+'//c A, B,' mean this word consist of A and B. if there are it then this word is compound word or abbreviation. for example,
+
+nd !t=now.//c this, time,
+
+this word is abbreviation for 'Na Deoa'(this time).
+
+'//d A,' mean this word is made in time A. 
+
+'//e A,' mean explanation of this word is A.
+
+'//u A,' mean form of this word is changed in time A.
+
+'//p A, B,' mean pronunciation of this word similar to A in language B.
+
+'//s A, B,' mean form of this word similar to word A in language B. if there are no B then the word is derived from this language.
+
+}◀additional explanation dictionary
+
+▶word type dictionary{
+
+'si' type word dont impact to grammar defautly. for example, line break is si type.
+
+n mean number.
+
+r mean reality.
+
+t mean time.
+
+}◀word type dictionary
 
 ▶words that cant be explained by this syntax{
 
@@ -926,6 +1002,8 @@ suffix 'ep-' and suffix 'lp-' can be used to mean tense but it can be used for o
 
 'epjd A' mean 'thing that imagined A'. 'lpjd' mean 'thing that will imagine A'.
 
+suffix 'ip-' mean '-tion'.
+
 }◀suffix
 
 ▶words that is used lot{
@@ -938,55 +1016,29 @@ suffix 'ep-' and suffix 'lp-' can be used to mean tense but it can be used for o
 
 purpose of this section: making you can know structure of sentence.
 
-* grammar of this language similar to VOS cuz it is efficient for logical language but this language user dont need to use be verb.
+all sentence of this language consist of left hand side and right hand side. 
 
-* structure of all sentence consist of left hand side and right hand side. in sentence 'A B' if A and B is object then it mean 'B is A'. A is in left hand side. B is in right hand side.
-
-for example, 'anga oe' mean 'i am human'.
-
-anga !r=human.
-
-oe !r=i.//c this,assert,,r this who assert.
-
-* if you didnt speak subject then subject automatically be 'i'. so just saying 'anga' is enough to mean 'i am human'. we use word 'i' lot so this mechanism increace efficiency of language. if you didnt write subject then subject automatically be 'this' so building that is labeled 'restaurant' means that 'this is a restaurant'.
-
-we will learn sentence that have function here.
-
-'jd bd oe' mean 'i am thing that imagine you'.
-
-jd o!r=thing that imagine A.
-
-bd !r=you.//a i,
-
-oe !r=i.//c this,assert,
-
-structure: (jd bd) = oe.
-
-between '(' and ')' is one function.
-
-'jd bd' is one object since function is object.
-
-this grammar can express every meaning. for example, 'The happy boy gives her a small book in the today and smiles.' is expressed as 'mb oihg cd gb if ab elenlkkg nimd lmle ad ab nide mkcd'.
+in sentence 'fc anga nb nb', parameter of 'fc' is full so this function cant have manier parameter so place for left hand side is done. you must remember this mechanism to recognize what is left hand side and right hand side and one sentence.
 
 }◀grammar
 
 ▶logic{
 
-elca s,o!r=thing that assert that A2 is A1 to B.
+blca s,o!r=thing that assert that A2 is A1 to B.
 
 we will learn how to say 'i assert to you' here.
 
 bc !si=symbol that omit two parameter.
 
-if you omit two parameter in this function then you can say it. 'elca bc bd' mean 'thing that assert to you'.
+if you omit two parameter in this function then you can say it. 'blca bc cg' mean 'thing that assert to you'.
 
 ▶word 'db'{
 
-db n!r=Ath subject.
+db n!r=Ath right hand side.
 
-'jd db lh oe'
+'jd db lh nb'
 
-this 'db lh' return first subject. the word 'oe' is in subject so.
+this 'db lh' return first subject. the word 'nb' is in subject so.
 
 so 'db lh' can mean oneself, myself, themselves, youself etc.
 
@@ -999,20 +1051,6 @@ word 'db' that dont have parameter is 'db nh'.
 }◀word 'db'
 
 ▶word 'hb'{
-
-hb c o!1p=.
-
-if A is 'hb B C ad'.
-
-A is B is true. A is C is true. A is B and C is true.
-
-if B is pig and C is pencil then A that is animal is only B.
-
-if i am human that is boy then sentence 'i am human' is true but 'boy is me' is false.
-
-if i have pen and dog then element of me is pen is true. pen is element of me is true cuz the value is defined using word 'hb'.
-
-'i am human' is true but 'human is me' is false. 'i am human' mean 'i have property of human' so subject is not smaller concept than direct object but something that is defined by word 'hb' is not. word 'hb' is exact value of possessive and relative pronoun. for example, 'element of D is E' is true. 'E is element of D' is true.
 
 }◀word 'hb'
 
@@ -1040,117 +1078,33 @@ you can know why i say it i guess.
 
 ▶how to programming using this language{
 
-you can understand well if you know EML and ECL words.
-
-sentence 'A B' command B to be A.
-
-We’ll learn some rules that help me explain it more efficiently.
-
-A ◇ B ◇ C. A is ECL code. B is programming language name. C is code that is wrriten by A.
-
-eg, ja •1 •2 ◇ js ◇ •2 == •1. •1 is first variable. •2 is second variable. in real, you should input variable name instead of •1.
-
-'A ♤ B' mean 'B is explanation of A'.
-
-▶example{
-
-•1 •2 ♤ make variable called •2. assign •1 into •2.
-
-mg •1 •2 •3 ♤ •3 is •1 + •2.
-
-coda •1 ♧ •1 is printed. if right of expression is none then it command to system.
-
-encf •1 •2 ◇ js ◇ if( •2 == •1)
-
-▶word dictionary{
-
-goic s,s,o,c s=for(A2=A1;B;C;){D}.
-
-encf s,c s!v=cmp A2, A1.//in asm,,c by,situation that A2 is A1,
-
-bb o!o=variable A declared with let.//like let A=1;
-
-ib o!o=variable A declared with var.//like var A=1;
-
-fifa c s!r=starting ecl./c command,comand,
-
-lnlf c s!r={A2:A1, A4 : A3}.//c whose,whose,,js's object.
-
-}◀word dictionary
-
-▶other{
-
-dont need main(){}.
-
-screen work like html.
-
-}other◀
-
 }◀how to programming using this language
 
 ▶word formation rule{
 
-▶'gjfg o,n!r=thing that save A.//c cause, alive'{
+The reason happens before the result, so the word "reason" was created earlier than the word "result." so word reason must have smaller bit than word result. antonym should have bigger bit than original word that is randomly made.
 
-antonym of save is kill.
+'sound that average human feel pleasure from' is expressed as 'ae hnih mjcb kd anga'. but if this word is made by 5 words then most people dont know element word or the word would be very long. important word in it is 'hnib'(sound) and 'mjcb'(pleasure). it is made by the two words. it is abbreviation. earlier used word must be earlier so this compound word must be compund word of 'sound' + 'pleasure' instead of 'pleasure' + 'sound'.
 
-we learned int type parameter.
+why this word is not made by word formation rule for antonym.
 
-if bits of word alive and dead is converted into binary, it is 'fojb(1010011110011000) < kjgg(0101100101100110)'.
+if pronunciation of antonym similar to original word then the word is made as compound word.
 
-word alive is smaller than word dead if it is converted into number.
+mjob o,n!r=thing that love A.//c hope,profit,
 
-compound word that have antonym is made by word that have smaller bit.
+doob o,n!r=thing that hate A.//c dread, profit,
 
-word 'kill' can be 'c cause,dead' but alive have smaller bit than dead so word 'kill' is made as antonym.
-
-}◀
-
-▶'jf s,n!r=result of A2 being A1.//a reason,'{
-
-gc s,n!r=reason why A2 is A2.
-
-'gc' is '0 1 1 0 0 1 0 0'.
-
-'jf' is '1 0 0 1 1 0 1 0'.
-
-word reason is randomly made.
-
-The reason happens before the result, so the word "reason" was created earlier than the word "result." so word reason must have smaller bit than word result.
-
-* antonym should have bigger bit than original word that is randomly made.
-
-}◀
-
-
-▶'hnmc !r=music.//c sound,pleasure,'{
-
-'sound that i feel pleasure from' is expressed as 'ae hnih mkcd oe'.
-
-but if this word is made by 4 words then people cant know element word.
-
-important word in it is 'hnih'(sound) and 'mkcd'(pleasure).
-
-it is made by the two words.
-
-it is abbreviation.
-
-earlier used word must be earlier so this compound word must be compund word of 'sound' + 'pleasure' instead of 'pleasure' + 'sound'.
-
-}◀
-
-▶'dnfd o,n!r=thing that hate A.//c dread, profit,'{
-
-why this word is not made by antonym.
-
-if it is made by antonym then it is dnke so form and sound of it is similar to dfke and meaning of dfke similar to love cuz it mean thing that dread that something become victim.
-
-}◀
+word for hate didnt be made by word formation rule for antonym. pronunciation of 'dobg' similar to 'dgbg'. meaning of dgbg similar to love cuz it mean thing that dread that something become victim.
 
 }◀word formation rule
 
-}◀quickly learn.
+▶how to use tool that search word{
 
+}◀how to use tool that search word
+
+finish.
+
+}◀quickly learn.
 
 ▶complex sentences{
 
@@ -1162,17 +1116,9 @@ how to make this language to english i guess:
 
 }◀program for this language.
 
-release date: 2026.1.14.
+release date: 2026.2.4.
 
 obey lisence rule. https://github.com/Fhres126/nl/blob/main/co.txt
-
-▶trash{
-
-we will learn what max object mean. max object is firstly used=
-
-we will learn what is max object here. max object mean object that fill whole left hand side or whole right hand side. parameter of max object cant be increaced by being already inputed. one sentence consist of only two max object.
-
-}◀trash
 
   
   </pre>
