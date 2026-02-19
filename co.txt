@@ -140,25 +140,25 @@ cc !si=symbol that omit three parameter.//n symbol that omit one parameter.
 
 dc !si=symbol that omit four parameter.//n symbol that omit three parameter,
 
-}symbol that omit parameter◀
+}◀symbol that omit parameter
 
 ▶time{
 
 doea !t=time.//b second,
 
-eoea n!t=A second.//n time,
+eoea n!t=x1 second.//n time,
 
-foea n!t=A minute.//n second,
+foea n!t=x1 minute.//n second,
 
-goea n!t=A hour.//n minute,
+goea n!t=x1 hour.//n minute,
 
-hoea n!t=A day.//n hour,
+hoea n!t=x1 day.//n hour,
 
-ioea n!t=A week.//n day,
+ioea n!t=x1 week.//n day,
 
-joea n!t=A month.//n week,
+joea n!t=x1 month.//n week,
 
-koea n!t=A year.//n month,
+koea n!t=x1 year.//n month,
 
 }◀time
 
@@ -238,33 +238,51 @@ lnjd !r=east.//m south,//u25.12.16.19.
 
 ▶size{
 
-jkca n!r=A meter.//n size,//u26.1.30.8.
+jkca n!r=x1 meter.//n size,//u26.1.30.8.
 
-kkca n!r=A meter^2.//n meter,//u26.1.30.8.
+kkca n!r=x1 meter^2.//n meter,//u26.1.30.8.
 
-lkca n!r=A meter^3.//n meter^2,//u26.1.30.8.
+lkca n!r=x1 meter^3.//n meter^2,//u26.1.30.8.
 
 }◀size
 
 ▶eat{
 
-iiod o!r=thing that kiss A.//b bite,
+iiod o!r=thing that kiss x1.//b bite,
 
-jiod o,n!r=thing that bite A.//b inhale food,
+jiod o,n!r=thing that bite x1.//b eat,
 
-kiod o!r=thing that put A into mouth of myself.//c inhale,food,//n bite,
+kiod o!r=thing that eat x1.//c inhale,food,//n bite,
 
-liod o,n!r=thing that chew A.//n inhale food,
+liod o,n!r=thing that chew x1.//n eat,
 
-miod o,n!r=thing that swallows A.//n chew,
+miod o,n!r=thing that swallows x1.//n chew,
 
-niod o,n!r=thing that glup down A.//n swallow,
+niod o,n!r=thing that glup down x1.//n swallow,
 
-oiod o,n!r=thing that digest A.//n swallows,
+oiod o,n!r=thing that digest x1.//n swallows,
 
 piod !r=shit.//n digest,
 
-}eat◀
+}◀eat
+
+▶day of the week{
+
+jlhg !t=sunday.//d26.2.11.16.
+
+klhg !t=monday.//n sunday,//d26.2.11.16.
+
+llhg !t=tuesday.//n monday,//d26.2.11.16.
+
+mlhg !r=wedsenday.//n tuesday,//d26.2.11.16.
+
+nlhg !t=thusday//n wedsensay,//d26.2.11.16.
+
+olhg !t=friday.//n thusday,//d26.2.11.16.
+
+plhg !t=saturday.//n friday,//d26.2.11.16.
+
+}◀day of the week
 
 }other◀
 
@@ -272,9 +290,9 @@ piod !r=shit.//n digest,
 
 ▶a.a{
 
-alhg o!p=right hand side of sentence whose A is left hand side.//a about,
+alhg o!p=right hand side of sentence whose x1 is left hand side.//a about,
 
-}a.a◀
+}◀a.a
 
 ▶a.b{
 
@@ -282,35 +300,35 @@ alhg o!p=right hand side of sentence whose A is left hand side.//a about,
 
 ▶a.c{
 
-ae unexpressable!p=.//c A that is B,what,
+ae unexpressable!p=.//c x1 that is x2,what,
 
-af o,o!2p=A of B.//c A that is B,element,//ab A hc B.
+af o,o!2p=x1 of x2.//c x1 that is x2,element,//ab x1 hc x2.
 
-anmd o!p=her A.//c of,the,women,.
+anmd o!p=her x1.//c of,the,women,.
 
-ajab c o!p=A1 that is A2 and.//c A that is B,A that is B,
+ajab c o!p=1x1 that is 2x1 and.//c x1 that is x2,x1 that is x2,
 
-anaf c o!p=A1 of A2 of.//c of,of,
+anaf c o!p=1x1 of 2x1 of.//c of,of,
 
-andg o!p=minimum of A.//c of, minus most,
+andg o!p=minimum of x1.//c of, minus most,
 
-anmb o!p=maximum of A.//c of,most,
+anmb o!p=maximum of x1.//c of,most,
 
 ajoa !r=here.//c also cast,this,
 
 ancjeg !r=german poeple.//c people,germany,
 
-afde o!p=his A.//c of,the,men,
+afde o!p=his x1.//c of,the,men,
 
 amge !r=parent.//c mom,fafher,
 
 aomb !r=circle.//c gon,infinity,
 
-aocb o!r=thing that swim in A.//c walk,inside,
+aocb o!r=thing that swim in x1.//c walk,inside,
 
-ajfb n,o!2p=well A.//c AB, normal,//d25.12.28.14.
+ajfb n,o!2p=well x1.//c x1x2, normal,//d25.12.28.14.
 
-aojf o,o!r=thing that kick A into B.//c foot,attack,//r attack using foot,//u25.12.29.22.
+aojf o,o!r=thing that kick x1 into x2.//c foot,attack,//r attack using foot,//u25.12.29.22.
 
 }a.c◀
 
@@ -322,15 +340,19 @@ aojf o,o!r=thing that kick A into B.//c foot,attack,//r attack using foot,//u25.
 
 amae r!=mother.//p mama baby.
 
-}a.p◀
+aime utf8v!r=.//e if scan this word then url is opened. this word is for express letter by utf8. Leading x2yte must move to 8nth bit.//p utf8, en,//d26.2.14.15.
+
+aikg utf8v!=.//e this word is for express letter by utf8. Leading x2yte must move to 8nth bit.//d26.2.13.18.//p utf8, en,//u26.2.14.15.
+
+}◀a.p
 
 ▶a.r{
 
 aa !si=finish all.
 
-ab o,o!r=A that is B.//no c but intend c be,and,.
+ab o,o!r=x1 that is x2.//no c but intend c be,and,.
 
-ac o,o!p=A that is in B.
+ac o,o!p=x1 that is in x2.
 
 ag int,n!n=.//e word for explaining rational number.
 
@@ -338,37 +360,37 @@ ah dec,dec!n=decimal rational number.
 
 anga !r=human.
 
-alha o!p=any A.
+alha o!p=any x1.
 
-alnd o!r=thing that touch A.
+alnd o!r=thing that touch x1.
 
 akcg !r=ass.
 
-}a.r◀
+}◀a.r
 
 ▶a.s{
 
-aond o!r=thing that walk on A.//s touch,
+aond o!r=thing that walk on x1.//s touch,
 
 aopg !r=foot.//s walk,u26.1.9.16.
 
-}a.s◀
+}◀a.s
 
-}a◀
+}◀a
 
 ▶b{
 
 ▶b.a{
 
-bf o!1p=return value of A.//a OC,
+bf o!1p=return value of x1.//a Ox3,
 
 bh
 
-bkng o,o!r=thing that leave A.//a enter,
+bkng o,o!r=thing that leave x1.//a enter,
 
-bpeg o,o,n!r=thing that dont need A to be B.//a need,
+bpeg o,o,n!r=thing that dont need x1 to be x2.//a need,
 
-bpme o,o,n=thing that dont need to be A to be B.//a need to,//g OIDD AB DD EB,
+bpme o,o,n=thing that dont need to be x1 to be x2.//a need to,//g OIx4x4 x1x2 x4x4 Ex2,
 
 bjgg !r=dead thing.//a alive,//u26.2.8.1.
 
@@ -378,17 +400,17 @@ bmbg n!r=abnormal.//a normal,//u26.2.8.4.
 
 ▶b.b{
 
-}b.b◀
+}◀b.b
 
 ▶b.c{
 
-be c o!p=A1 and A2 and.//c or,most,
+be c o!p=1x1 and 2x1 and.//c or,most,
 
-blkg o!r=thing that is more inflexible than A.//c flexibility,less,
+blkg o!r=thing that is more inflexible than x1.//c flexibility,less,
 
-bnca !r=we.//c and,i,you,AD,//u26.1.30.8.
+bnca !r=we.//c and,i,you,x1x4,//u26.1.30.8.
 
-kigg o!r=thing that drink A.//c inhale,liquid,//u25.12.9.12.
+kigg o!r=thing that drink x1.//c inhale,liquid,//u25.12.9.12.
 
 bnih !r=wave.//c hz,over,zero,.
 
@@ -396,21 +418,25 @@ bomc !r=sports.//c compete,pleasure,//r enjoyed compete.
 
 boag !r=soccer.//c sports,kick,//r soccer include sports for kick.,//u25.12.29.22.
 
-bocd o!r=thing that war with A.//c fight,politics,
+bocd o!r=thing that war with x1.//c fight,politics,
 
 bicb !r=empty.//c none,inside,
 
 bild !r=tubular.//c empty,loaf,
 
-bpog o!n=|A|.//c root,square,
+bpog o!n=|x1|.//c root,square,
 
 bilb !r=omitted.//c none, interpret,//r Interpretable non-existence.
 
 bogg !r=world war.//c war, earth,
 
-bmpf o!p=A too.//c and,it,//u 2025.11.11.8
+bmpf o!p=x1 too.//c and,it,//u 2025.11.11.8
 
-blkc s,o!r=thing that lie to B by asserting A2 is A1.//c assert,false,//d26.2.9.2.
+blkc o,o,o!r=thing that lie to x3 by asserting x2 is x1.//c assert,false,//d26.2.9.2.
+
+blgd !r=history.//s assert,past,//u26.2.15.20.
+
+bmge o!r=thing that waste x1.//c abnormal, use,//d26.2.17.7.
 
 }◀b.c
 
@@ -422,19 +448,19 @@ blkc s,o!r=thing that lie to B by asserting A2 is A1.//c assert,false,//d26.2.9.
 
 ba !si=whitespace.
 
-bb o!n=thing that is less than A.//u26.1.28.
+bb o!n=thing that is less than x1.//u26.1.28.
 
-bd <c o>-n!p=A1 or A2 or.//u26.2.8.17.
+bd c o,n!p=1x1 or 2x1 or.//u26.2.8.17.
 
 bg n!r=victim.//a profit,//u26.1.28.
 
  int!n..//e this word is to express integer..u 2025.11.21.17.52.
 
-blda n!r=A flexibility.
+blda n!r=x1 flexibility.
 
-bmga o!v=Ahz.
+bmga o!v=x1hz.
 
-blnd o!r=thing that hold A.
+blnd o!r=thing that hold x1.
 
 bmhg !r=poison.//a food,
 
@@ -442,19 +468,19 @@ bnjb !r=off.//s die,//u26.2.8.1.
 
 bljb !r=closed.//s off,//u26.2.8.1.
 
-}b.r◀
+}◀b.r
 
 ▶b.s{
 
 blba !o=code.//u26.1.28.
 
-blca s!r=thing that assert that A2 is A1.//s mean,u26.1.28.
+blca o,o,o!r=thing that assert that x2 is x1 to x3.//s mean,u26.1.28.
 
 blda !r=word.//s code,//u26.1.28.
 
-blea o!p=thing that mean A.//s code,//u26.1.28.
+blea o!p=thing that mean x1.//s code,//u26.1.28.
 
-blfa int!r=word A.//s code,//u26.1.28.
+blfa int!r=word x1.//s code,//u26.1.28.
 
 blga !r=name.//s code,//u26.1.28.
 
@@ -470,13 +496,13 @@ blmb !r=language.//s code,//u26.1.28.
 
 bode !r=body.//s body en.
 
-boeg o,o!r=thing that compete to being B with A.//A is like enemy,s dont need,
+boeg o,o!r=thing that compete to being x2 with x1.//x1 is like enemy,s dont need,
 
-bojf o!r=thing that fight with A.//s compete,
+bojf o!r=thing that fight with x1.//s compete,
 
 bjlb !r=logic.//s true,d 2025.11.7.9.25.
 
-bmpe o!1p=even A.//s too,
+bmpe o!1p=even x1.//s too,
 
 blng !r=hand.//s hold,//u26.1.9.16.
 
@@ -488,9 +514,9 @@ blng !r=hand.//s hold,//u26.1.9.16.
 
 ▶c.a{
 
-ckhg o!r=thing that is until A.//a from,//d 13092025,
+ckhg o!r=thing that is until x1.//a from,//d 13092025,
 
-ckpe o!r=thing that avoid A.//a met,
+ckpe o!r=thing that avoid x1.//a met,
 
 }c.a◀
 
@@ -500,31 +526,31 @@ ckpe o!r=thing that avoid A.//a met,
 
 ▶c.c{
 
-cd o,o,n!p=thing that is B by being A.//c use,A that is B,self,.
+cd o,o,n!p=thing that is x2 by being x1.//c use,x1 that is x2,self,.
 
-cmkg o!r=thing that is cheaper than A.//c dollar,less,
+cmkg o!r=thing that is cheaper than x1.//c dollar,less,
 
-cjkg o!r=thing that is fewer than A.//c quantity,less,
+cjkg o!r=thing that is fewer than x1.//c quantity,less,
 
 cnih !r=money.//c dollar,over,zero,
 
-cnda o!p=lot of A.//s-c quantity,over,four,
+cnda o!p=lot of x1.//s-c quantity,over,four,
 
 cngjlb !r=education.//c situation,teach,
 
-cjfh o!p=more A.//c quantity, more,
+cjfh o!p=more x1.//c quantity, more,
 
-ckkg o!r=thing that is thin than A.//c thickness,less,
+ckkg o!r=thing that is thin than x1.//c thickness,less,
 
 cnkd !r=crowd.//c lot of,average,//u25.12.9.12.
 
-ciih !=byte.//c CB,BG,eight,bit,//u25.12.9.12.
+ciih !=byte.//c x3x2,x2G,eight,bit,//u25.12.9.12.
 
-cjfa s!r=thing that coerce A2 to be A1.//c repeat,command,
+cjfa o,o!r=thing that coerce x2 to be x1.//c repeat,command,
 
 cnga !r=mathematical expression.//c situation,number,//r situation that include number.
 
-clpd o!r=thing that control A.//c GB,EA,LD,GB,PA,DB,DB,//d 23.10.2025.
+clpd o!r=thing that control x1.//c Gx2,Ex1,Lx4,Gx2,Px1,x4x2,x4x2,//d 23.10.2025.
 
 cicg !r=image.//c photon,machine,//u26.1.11.1.
 
@@ -534,7 +560,7 @@ clmb !r=differentiated.//c divided by,one,infinite,
 
 comc !r=game.//c tool,pleaaure,//r tool that provide pleasure.
 
-coka !r=pill.//c tool,inhale,//A small, round or oval piece of medicine that you swallow whole with water.
+coka !r=pill.//c tool,inhale,//x1 small, round or oval piece of medicine that you swallow whole with water.
 
 cogc !r=shield.//c tool,protect,
 
@@ -542,11 +568,11 @@ coof !r=vehicle.//c machine,go,//m car,
 
 coif !r=box.//c tool,have,//r box is tool thing to have someting.
 
-cnbc !r=situation.//c situation that A2 is A1,BC,//u 2025.11.17.21.39.
+cnbc !r=situation.//c CF,AD,//u 2025.11.17.21.39.
 
 cnjc !r=context.//c situation,ralated,//d 2025.11.22.16.10,//u2025.11.27.21.25.
 
-coda o,o!r=thing that write A at B.//c text,mention,//u 2025.11.22.23.50.
+coda o,o!r=thing that write x1 at x2.//c text,mention,//u 2025.11.22.23.50.
 
 cocg !r=keyboard.//c tool,write,//u2025.11.17.21.25.
 
@@ -560,7 +586,7 @@ cohf !r=instrument.//c tool,sound,
 
 ▶c.p{
 
-cmfc o!p=A dollar.//p dollar en.
+cmfc o!p=x1 dollar.//p dollar en.
 
 cjeoog !r=germany.//p deutschland de,
 
@@ -568,23 +594,23 @@ cjeoog !r=germany.//p deutschland de,
 
 ▶c.r{
 
-ca o,o!1p=B as A.
+ca o,o!1p=x2 as x1.
 
-cb o!n=thing that is A or less.//a bellow,//A<=//u26.1.28.
+cb o!n=thing that is x1 or less.//a bellow,//x1<=//u26.1.28.
 
 ce o!1p=symbol that change parameter to object type.
 
-cf s!r=situation that A2 is A1.
+cf o,o!r=situation that x2 is x1.
 
 cg !r=you.//a i,//u26.1.28.
 
-ch  s,o!p=thing that is B despite A2 being A1.//m but, even,//u26.2.8.17.
+ch  o,o,o!3p=thing that is x3 despite x2 being x1.//m but, even,//u26.2.8.17.
 
- int!n=Ath value.//u 2025.11.21.17.52.
+ int!n=x1th value.//u 2025.11.21.17.52.
 
-coea c n!t=A1year A2month A3day A4hour A5minute A6second.
+coea c n!t=1x1year 2x1month 3x1day 4x1hour 5x1minute 6x1second.
 
-ckjb n!r=A thickness.
+ckjb n!r=x1 thickness.
 
 conb !r=tool.
 
@@ -598,15 +624,15 @@ cmig !r=oil.//d25.11.30.17.
 
 ▶c.s{
 
-cmda o!r=As.//s c quantity,more,two,.
+cmda o!r=x1s.//s c quantity,more,two,.
 
 clpg !r=politician.//s control,
 
-coca c o!r=ratio of A1 to A2 to.//s divided by,//u 26.1.4.23.
+coca c o!r=ratio of 1x1 to 2x1 to.//s divided by,//u 26.1.4.23.
 
 cida !r=color.//s photon,//d 2025.11.6.19.53.//u 2025.11.20.19.49.
 
-cjca o!1p=some A.//s CB,//d2025.11.26.22.41.
+cjca o!1p=some x1.//s x3x2,//d2025.11.26.22.41.
 
 cnig !r=economy.//s money,//d25.12.31.17.
 
@@ -618,45 +644,45 @@ cnig !r=economy.//s money,//d25.12.31.17.
 
 ▶d.a{
 
-dg s,n!r=thing that dread A with B percent intensity,//a hope,//u26.1.30.8.
+dg o,o,n!r=thing that dread x2 be x1.//a hope,//e x3 is degree of dread.//u26.1.30.8.
 
 dh
 
-dogg o,n!r=thing that feel A is disgusting.//a holy,//u26.2.1.
+dogg o,n!r=thing that feel x1 is disgusting.//a holy,//u26.2.1.
 
-dong o,n!r=thing that feel pain about A.//a pleasure,//u26.2.1.
+dong o,n!r=thing that feel pain about x1.//a pleasure,//u26.2.1.
 
-dohg o,n!r=thing that dislike A.//a like,//u26.2.1.
+dohg o,n!r=thing that dislike x1.//a like,//u26.2.1.
 
-dojg o,n!r=thing that feels uneasy being A.//a comfortable,//m uncomfortable,//u26.1.11.16.//u26.2.1.
+dojg o,n!r=thing that feels uneasy being x1.//a comfortable,//m uncomfortable,//u26.1.11.16.//u26.2.1.
 
-doge o,n!r=thing that feel that A is ugly.//a beauty,//u26.1.11.16.//u26.2.1.
+doge o,n!r=thing that feel that x1 is ugly.//a beauty,//u26.1.11.16.//u26.2.1.
 
-dolg o,n!r=what A dangerous for.//a safe,//u 2025.11.6.14.32.//u26.2.1.
+dolg o,n!r=what x1 dangerous for.//a safe,//u 2025.11.6.14.32.//u26.2.1.
 
-dodg o,n!r=thing that is scare of A.//a cute,//u 2025.11.6.14.31.//u26.2.1.
+dodg o,n!r=thing that is scare of x1.//a cute,//u 2025.11.6.14.31.//u26.2.1.
 
-doeg o,n!r=thing that feel that A is annoying.//a intersting,//u26.2.1.
+doeg o,n!r=thing that feel that x1 is annoying.//a intersting,//u26.2.1.
 
 dmfb !r=increasing.//a decreasing,
 
-dmhc o!r=thing that lost A.//a get,//u25.12.9.17.
+dmhc o!r=thing that lost x1.//a get,//u25.12.9.17.
 
 dmld !r=adult.//a baby,
 
-dnme o,n!r=thing that suffers by being A.//a enjoy,//u 2025.11.5.
+dnme o,n!r=thing that suffers by being x1.//a enjoy,//u 2025.11.5.
 
 dmdg !r=men.//a women,
 
-dljf o,n!r=ashamed of A.//a proud,
+dljf o,n!r=ashamed of x1.//a proud,
 
 dmch !r=deleted.//a created,
 
-dkgg c o!v=diffrence between A1 and A2.//a similarity,//s minus,
+dkgg c o!v=diffrence between 1x1 and 1x1.//a similarity,//s minus,
 
-dkfb o!r=thing that is duller than A.//a sharp,
+dkfb o!r=thing that is duller than x1.//a sharp,
 
-dnjb s!r=thing that reject that A2 is A1.//s dread,
+dnjb o,o!r=thing that reject that x2 is x1.//s dread,
 
 }◀d.a
 
@@ -666,29 +692,29 @@ dnjb s!r=thing that reject that A2 is A1.//s dread,
 
 ▶d.c{
 
-dd !r=self.//c Ath subject,+1eni.
+dd !r=self.//c x1th subject,+1eni.
 
-de n,int...,o!1p=thing that tell C to B.//c mention,EG,//u 2025.11.21.17.48.
+de n,int...,o!1p=thing that tell x3 to x2.//c mention,EG,//u 2025.11.21.17.48.
 
-dnfd o,n!r=thing that hate A.//c dread,porift,
+doob o,n!r=thing that hate x1.//c dread,porift,//u26.2.12.17.
 
 dlhc !t=yesterday.//c minus,today,day,one,
 
-djlb o!r=thing that remember A.//c remain, know,
+djlb o!r=thing that remember x1.//c remain, know,
 
-djif o,t!r=thing that keep A.//c remain,have,
+djif o,t!r=thing that keep x1.//c remain,have,
 
-dned o,n!r=thing that regret A.//c dread,was,
+dned o,n!r=thing that regret x1.//c dread,was,
 
-dohc o!r=thing that dwells in A.//c decide,is in,
+dohc o!r=thing that dwells in x1.//c decide,is in,
 
-djhc c o!r=thing that stay in A.//c remain,is in,
+djhc c o!r=thing that stay in x1.//c remain,is in,
 
 djcg !r=clothes.//c shell,tool,
 
-djeb !r=skin.//c shell,out,// r 'mf DJBA EJBA',//intersection of shell and thing that touch outside.
+djeb !r=skin.//c shell,out,// r 'mf x4Jx2x1 EJx2x1',//intersection of shell and thing that touch outside.
 
-dkpe o!p=features of A.//c difference,average,
+dkpe o!p=features of x1.//c difference,average,
 
 dolb !r=physics.//c essense,know,//r knowledge about essence,
 
@@ -704,27 +730,27 @@ dolh !r=official.//c promise,strong,//r what strong thing promise.
 
 dmmkid !r=gentle man.//c man,like,
 
-djfb t!r=A old.//c remain,exist,//u 2025.11.22.10.32.
+djfb t!r=x1 old.//c remain,exist,//u 2025.11.22.10.32.
 
-djkg o!r=thing that is younger than A.//c A old, less,
+djkg o!r=thing that is younger than x1.//c x1 old, less,
 
 dncb n!r=extrovert.//c dislike,inside,
 
-dnod o,n!r=thing that feel that A is tasteless.//c pain,food,//u 2025.11.5.
+dnod o,n!r=thing that feel that x1 is tasteless.//c pain,food,//u 2025.11.5.
 
 jokobg !r=eugenics.//c kill, abnormal,//u 2025.12.10.1
 
 doed !r=antonym.//c minus, word,//d 2025.11.13.2.14.
 
-dnlh o,n!r=thing that is jealous of A.//c dread, strong,//d 2025.11.16.14.//u2025.11.27.17.9.
+dnlh o,n!r=thing that is jealous of x1.//c dread, strong,//d 2025.11.16.14.//u2025.11.27.17.9.
 
-dnkg o,n!r=thing that pity A.//c dread, abnormal,//u 2025.11.18.17.7.//d 2025.11.11.22.53..
+dnkg o,n!r=thing that pity x1.//c dread, abnormal,//u 2025.11.18.17.7.//d 2025.11.11.22.53..
 
-doge o!r=thing that select A.//c decide,use,//d 2025.11.20.21.41.
+doge o!r=thing that select x1.//c decide,use,//d 2025.11.20.21.41.
 
 doff !r=logic.//c essence,true,//r essence that assert true,//d25.12.20.12.
 
-domc o!r=thing that marry A.//c promise,love,//d25.12.30.3.
+domc o!r=thing that marry x1.//c promise,love,//d25.12.30.3.
 
 doef !t=era.//c time,big,//d26.1.21.12.
 
@@ -740,33 +766,33 @@ dnmb !o=minus most.//c minus,most,//u26.2.6.12.
 
 da !si=line break.
 
-db n!v=Ath subject.
+db n!v=x1th subject.
 
-df o!e=minus of A.//u26.1.31.19.
+df o!e=minus of x1.//u26.1.31.19.
 
-djlc o!p=thing that remain A for time A.
+djlc o!p=thing that remain x1 for time x1.
 
 dlee !r=tree.
 
 diba !r=electron.
 
-dida o,o!r=thing that mention A to B.//u 2025.11.21.19.40.
+dida o,o!r=thing that mention x1 to x2.//u 2025.11.21.19.40.
 
 }◀d.r
 
 ▶d.s{
 
-dnkb o!r=thing whose A is enemy.//s hate,
+dnkb o!r=thing whose x1 is enemy.//s hate,
 
 doda !r=essence.//s minus most,
 
-doca o!1p=un A.//s minus,
+doca o!1p=un x1.//s minus,
 
-djdc o!1p=already A.//s remain,//d2025.11.10.8
+djdc o!1p=already x1.//s remain,//d2025.11.10.8
 
-djjc o!1p=yet A.//s remain,//d2025.11.10.9.1,//m still,
+djjc o!1p=yet x1.//s remain,//d2025.11.10.9.1,//m still,
 
-diga o,o!r=thing that mark A to B.//s mention,//2025.11.21.19.43.
+diga o,o!r=thing that mark x1 to x2.//s mention,//2025.11.21.19.43.
 
 }◀d.s
 
@@ -776,13 +802,11 @@ diga o,o!r=thing that mark A to B.//s mention,//2025.11.21.19.43.
 
 ▶e.a{
 
-eh
+enog o!r=thing that bigger than x1.//a smaller,//u26.2.3.1.
 
-enog o!r=thing that bigger than A.//a smaller,//u26.2.3.1.
+ench n!r=impossible with x1percent.//a possible,
 
-ench n!r=impossible with Apercent.//a possible,
-
-emge o!r=thing that ignore A.//a mind,
+emge o!r=thing that ignore x1.//a mind,
 
 emoe !r=hole.//a stick,
 
@@ -790,7 +814,7 @@ emjc !r=nature.//a artificial,
 
 eofb !r=public.//a private,
 
-ekhg s!r=thing that doubt A2 is A1.//a sure,
+ekhg o,o!r=thing that doubt x2 is x1.//a sure,
 
 }◀e.a
 
@@ -800,22 +824,22 @@ ekhg s!r=thing that doubt A2 is A1.//a sure,
 
 ▶e.c{
 
-ee s!t=time when A2 is A1.//c what,thing that be B when A,
+ee o,o!t=time when x2 is x1.//c what,thing that be x2 when x1,
 
 enef c o!p=c by.//c by,by,.
 
-eiga o!p=sole A.//c what,only,//u25.12.10.1.
+eiga o!p=sole x1.//c what,only,//u25.12.10.1.
 
 elhf !r=phonetic alphabet.//c letter,sound,
 
 elcjeg !r=german language.//c language,germany,
 
-elkg o-o!r=thing that efficiently become A than B.//co
+elkg o-o!r=thing that efficiently become x1 than x2.//co
  efficiency,less,
 
 eleodd !r=english.//c language,england,dofocd !r=english.//c language,england,
 
-eicd c o,n!2p=process of A1 becoming A2 becoming.//c what,CD,
+eicd c o,n!2p=process of 1x1 becoming x21 becoming.//c what,x3x4,
 
 elmc !r=novel.//c document,fun,//u25.12.9.17.
 
@@ -827,7 +851,7 @@ emfg !r=organism.//c was,become,alive,//r thing that became alive.,//u26.1.1.16.
 
 elld !r=conlang.//c language,artificial,//u 2025.11.7.18.10.//r conlang is language that is made.
 
-elfd s!r=thing that recommend A2 to become A1.//c assert,profit,
+elfd o,o!r=thing that recommend x2 to become x1.//c assert,profit,
 
 emfh !r=mammal.//c organism,nipple,//r organism that have nipple.
 
@@ -835,41 +859,39 @@ elee !r=gene.//c code,organism,//r code in organism.
 
 ekca !r=blind.//c not,sense,photon,//r thing that can not sense photon.//u26.1.1.11.
 
-elog s,o!r=thing that denies that A2 is A1 to B.//c assert,false,
-
 ejaipa !r=albino.//c not,black,//r thing cant make melanin.//u2025.11.27.21.23.
 
 elng !r=flag.//c symbol,image,
 
-elmg c o!=compound word of A1 and A2 and.//c word,combine,
+elmg c o!=compound word of 1x1 and 2x1 and.//c word,combine,
 
-eleg s,o!r=thing that declare A2 is A1 to B.//c assert,public,//r assert something in public
+eleg o,o,o!r=thing that declare x2 is x1 to x3.//c assert,public,//r assert something in public
 
-endc c o!r=thing that distinguish A1 and A2 and.//c depend,diffrence,//r distinguishing being changes according to difference.
+endc c o!r=thing that distinguish 1x1 and 2x1 and.//c depend,diffrence,//r distinguishing being changes according to difference.
 
 elajpd !r=morse code.//c code,morse,//r morse code is code that morse made.
 
 ejdf n!r=ethic.//c not,pain,.
 
-encb o!n=quantity of A.//c EA,NA,CB,
+encb o!n=quantity of x1.//c Ex1,Nx1,x3x2,
 
 ellb !r=knowledge.//c code,know,
 
-eldd o!r=thing that succeed to be A.//c what,intend,self,//d 2025.11.6.20.31.
+eldd o!r=thing that succeed to be x1.//c what,intend,self,//d 2025.11.6.20.31.
 
 elmknd !r=bibble.//c file,holy,//d 2025.11.6.22.40.//u 25.12.9.0.
 
-endb o!r=thing that obey A.//c EA,FA,DB,//d 2025.11.6.22.49.
+endb o!r=thing that obey x1.//c Ex1,Fx1,x4x2,//d 2025.11.6.22.49.
 
 elfh !r=ambigious.//c mean,FH,//d 2025.11.17.23.44.
 
 elff !r=video.//c code, shift,//d 2025.11.20.21.37.
 
-elad o,o!r=thing that express A to B.//c assert, AD,//r expressing A is maybe assert about A.//m explain,//u 2025.11.21.17.29.
+elad o,o!r=thing that express x1 to x2.//c assert, x1x4,//r expressing x1 is maybe assert about x1.//m explain,//u 2025.11.21.17.29.
 
 elfb !r=religion.//c assert, world,//d2025.11.27.20.12.
 
-eikg o!r=thing that is weaker than A.//c newton,less,
+eibb o!r=thing that is weaker than x1.//c newton,less,//u26.2.13.18.
 
 elgb !r=post.//c doucment,give,//u25.12.3.12.
 
@@ -877,7 +899,7 @@ elcg !r=document.//c file, text,//r file that include text.//u25.12.4.12.
 
 emde !r=sperm.//c organism,men,//d25.12.5.14.
 
-ekfb s!v=evidence that A2 is A1.//c express,that A2 is A1,true,whether,//u25.12.9.0.
+//ekfb o,o!v=evidence that x2 is x1.//c express,CF,true,whether,//u25.12.9.0.
 
 eldg !r=clock.//c express,time,//u25.12.9.1.
 
@@ -905,37 +927,39 @@ gmkf !r=QR code.//c quick,reply,//d26.1.13.18.
 
 eodlff !r=england.//p england en,
 
-eikc n!r=Anewton.//p newton en.
+eikc n!r=x1newton.//p newton en.
 
-}e.p◀
+}◀e.p
 
 ▶e.r{
 
-ea c n,s!v=what.//ea remove targeted parameter by A,//target,certainty,pronoun,
+ea c n,s!v=what.//ea remove targeted parameter by x1,//target,certainty,pronoun,
 
-eb o!p=thing that is not A.
+eb o!p=thing that is not x1.
 
 ec n,str...!v=string.//u 2025.11.21.17.50.//u26.2.1.3.
 
-ed o!p=thing that was A.//cant c b when a,past,o,.
+ed o!p=thing that was x1.//cant c b when a,past,o,.
 
-ef o,o!1p=intersection of A and B,//c A that is B,part,part,//u26.2.8.17.
+ef o,o!1p=intersection of x1 and x2,//c x1 that is x2,part,part,//u26.2.8.17.
 
-eg s,n!r=how A2 is A1.//what,need to,//u26.2.1.3.57.
+eg o,o,n!r=how x2 is x1.//what,need to,//u26.2.1.3.57.
+
+eh o,o,n!2p=x2 that is with x1.//u26.2.15.19.
 
 elle !r=life.
 
-eljg n-o=thing that become B with A efficiency.//n is damage/gain,
+eljg n-o=thing that become x2 with x1 efficiency.//n is damage/gain,
 
-eoga o!p=same A.
+eoga o!p=same x1.
 
 }◀e.r
 
 ▶e.s{
 
-ejpb o,o!r=thing that revenge A for B that A did.//s win,
+ejpb o,o!r=thing that revenge x1 for x2 that x1 did.//s win,
 
-enga o!r=thing that react to A.//s by,
+enga o!r=thing that react to x1.//s by,
 
 eilc !r=energy.//s newtow,//d26.1.12.21.
 
@@ -949,35 +973,35 @@ eilc !r=energy.//s newtow,//d26.1.12.21.
 
 fh
 
-fnog o!r=thing that wider than A.//a narrower,//u26.2.3.1.
+fnog o!r=thing that wider than x1.//a narrower,//u26.2.3.1.
 
-fpmg o,o!r=thing that emit A into B.//a inhale,.
+fpmg o,o!r=thing that emit x1 into x2.//a inhale,.
 
-fjfb o!r=thing that is smarter than A.//a dumb,
+fjfb o!r=thing that is smarter than x1.//a dumb,
 
 }◀f.a
 
 ▶f.b{
 
-fjif o,o!r=thing that send A to B.//b give,
+fjif o,o!r=thing that send x1 to x2.//b give,
 
 }◀f.b
 
 ▶f.c{
 
-fc o,o!r=thing that ask B about A,//c command,reply,
+fc o,o!r=thing that ask x2 about x1.//c command,reply,
 
-fe o,o!r=thing that prohibits A from becoming B.//c command,not,
+fe o,o!r=thing that prohibits x1 from becoming x2.//c command,not,
 
-ff !r=true.//c BB,whether,two,two,//u 2025.11.17.10.9
+ff !r=true.//c x2x2,whether,two,two,//u 2025.11.17.10.9
 
 fodg !r=home.//c building,live,
 
 hnmc !r=music.//c sound,pleasure,
 
-fifd o!r=thing that hail A.//c command,profit,
+fifd o!r=thing that hail x1.//c command,profit,
 
-filg o,o!r=thing that apologize to A about B.//c please,forgive,
+filg o,o!r=thing that apologize to x1 about x2.//c please,forgive,
 
 foef !r=continent.//c land,big,//u 2025.11.20.22.56
 
@@ -985,13 +1009,13 @@ fmld n!r=lucky.//c profit,not,intend,
 
 fofd !r=ice.//c solid,cold,
 
-flkg o!r=thing that is colder than A.//degree celsius,less,
+flkg o!r=thing that is colder than x1.//degree celsius,less,
 
 fpgg !r=nipple.//c emit,milk,
 
 foff !r=bag.//c box,wear,
 
-fnld o!r=thing that hang from A.//c wear,loaf,
+fnld o!r=thing that hang from x1.//c wear,loaf,
 
 fnee !r=muscle.//c shift,organsim,//r shift thing that is in organism.
 
@@ -1007,13 +1031,13 @@ fogc !r=wall.//c solid,protect,//r wall is solid that protect.
 
 foee !r=bone.//c solid,organism,//r solid that is in organism.
 
-fkpe o,o!r=thing that ask B about who is A.//c ask,about,//d 2025.11.5.15.13.8//u26.1.28.
+fkpe o,o!r=thing that ask x2 about who is x1.//c ask,about,//d 2025.11.5.15.13.8//u26.1.28.
 
 fooa !r=building.//c solid, need,//u 2025.11.6.16.15.
 
-fjkg o!r=thing that is inferior than A.//c normal, less,//d 2025.11.9.11.
+fjkg o!r=thing that is inferior than x1.//c normal, less,//d 2025.11.9.11.
 
-filc s,o!r=thing that pray to B to make A2 is A1.//c command, god,//d 2025.11.16.22.39.
+filc o,o,o!r=thing that pray to x3 to make x2 is x1.//c command, god,//d 2025.11.16.22.39.
 
 fiif !r=rule.//c command,group,//d 2025.11.17.21.15.
 
@@ -1035,15 +1059,15 @@ fjkb !r=corpse.//c exist,dead,//d26.1.11.4.
 
 ▶f.r{
 
-fa o,o!r=thing that command B to become A.
+fa o,o!r=thing that command x2 to become x1.
 
-fd o!p=element of A.//include promise.//u26.1.28.
+fd o!p=element of x1.//include promise.//u26.1.28.
 
  !si=continue say.
 
-fg o,o!n=A root B.//a squared,//u26.1.28.
+fg o,o!n=x1 root x2.//a squared,//u26.1.28.
 
-flda n!r=A°c.
+flda n!r=x1°c.
 
 }◀f.r
 
@@ -1051,9 +1075,9 @@ flda n!r=A°c.
 
 fb !r=exist.//u 2025.11.22.10.32.//s true,
 
-fida o,o!r=thing that requests that B become A.//mean please,//s command,
+fida o,o!r=thing that requests that x2 become x1.//mean please,//s command,
 
-fpig o!r=thing that reflect A.//s emit,
+fpig o!r=thing that reflect x1.//s emit,
 
 fnjb !r=work.//s normal,
 
@@ -1069,9 +1093,9 @@ fjda !r=reality.//s exist,//u26.1.1.17.
 
 fjga !r=world.//s exist,//u26.1.1.17.
 
-fldb o!1p=part of A.//s element,//u26.2.2.21.
+fldb o!1p=part of x1.//s element,//u26.2.2.21.
 
-flfa o!r=thing that is in A.//s part,//u 2025.11.21.21.22.//u26.2.3.20.
+flfa o!r=thing that is in x1.//s part,//u 2025.11.21.21.22.//u26.2.3.20.
 
 }◀f.s
 
@@ -1081,11 +1105,11 @@ flfa o!r=thing that is in A.//s part,//u 2025.11.21.21.22.//u26.2.3.20.
 
 ▶g.a{
 
-gnog o!r=thing that longer than A.//a shorter,//u26.2.2.21.
+gnog o!r=thing that longer than x1.//a shorter,//u26.2.2.21.
 
-gkog o!r=thing that protect A.//a attack,//u26.2.2.21.
+gkog o!r=thing that protect x1.//a attack,//u26.2.2.21.
 
-gmog o!r=smarter than A.//a stupid,//u26.2.2.21.
+gmog o!r=smarter than x1.//a stupid,//u26.2.2.21.
 
 }◀g.a
 
@@ -1095,67 +1119,65 @@ gmog o!r=smarter than A.//a stupid,//u26.2.2.21.
 
 ▶g.c{
 
-gf o!r=thing that make A.//c cause,exist,
+gf o!r=thing that make x1.//c cause,exist,
 
-gjob o,n!r=thing that beneficial A.//c cause,profit,//m help,support,//u26.2.2.21.
+gjob o,n!r=thing that beneficial x1.//c cause,profit,//m help,support,//u26.2.2.21.
 
-gjke o,o,n!r=thing that give A to B.//c cause,have,//u26.2.2.21.
+gjke o,o,n!r=thing that give x1 to x2.//c cause,have,//u26.2.2.21.
 
-gjlb o,o!r=thing that teach A to B.//c cause,know,//u26.2.2.21.
+gjlb o,o!r=thing that teach x1 to x2.//c cause,know,//u26.2.2.21.
 
-gjla o,o!r=thing that shows A to B.//c cause,sense,//u 2025.11.21.21.17.//u26.2.2.21.
+gjla o,o!r=thing that shows x1 to x2.//c cause,sense,//u 2025.11.21.21.17.//u26.2.2.21.
 
-gjad o,n!r=thing that impact A,//c cause,AD,//u26.2.2.21.
+gjad o,n!r=thing that impact x1,//c cause,x1x4,//u26.2.2.21.
 
-gjog o,n!r=thing that save A.//c cause,alive,//u26.2.2.21.
+gjog o,n!r=thing that save x1.//c cause,alive,//u26.2.2.21.
 
-gjod o,n!r=thing that fix A.//c cause,normal,//u26.2.2.21.
+gjod o,n!r=thing that fix x1.//c cause,normal,//u26.2.2.21.
 
-gjoe o,n!r=thing that open A.//c cause,opened,//u26.2.2.21.
+gjoe o,n!r=thing that open x1.//c cause,opened,//u26.2.2.21.
 
-gjbd o,o!r=thing that define A as B.//c cause,mean,//u 2025.11.20.19.44.//u26.2.2.21.
+gjbd o,o!r=thing that define x1 as x2.//c cause,mean,//u 2025.11.20.19.44.//u26.2.2.21.
 
-gjoc o!r=thing that turn on A.//c cause,on,//u26.2.2.21.
+gjoc o!r=thing that turn on x1.//c cause,on,//u26.2.2.21.
 
-gjof o,n!r=thing that repair A.//c cause,again,work,//u26.2.2.21.
+gjof o,n!r=thing that repair x1.//c cause,again,work,//u26.2.2.21.
 
 gich !n=rational number.//c number, divided by,.
 
-gocb o,o,n!r=thing that put B into A.//c cause,move,inside,
+gocb o,o,n!r=thing that put x2 into x1.//c cause,move,inside,
 
-glbb o!r=thing that is simpler than A.//c complexity,less,//u26.2.2.21.
+glbb o!r=thing that is simpler than x1.//c complexity,less,//u26.2.2.21.
 
-gnbd o!r=thing that name A.//c make,name,//u26.2.2.21.
+gnbd o!r=thing that name x1.//c make,name,//u26.2.2.21.
 
-gjlf o,o,o,n!r=thing that incited A into believing that C is B.//c cause,beilve,
+gjlf o,o,o,n!r=thing that incited x1 into believing that x3 is x2.//c cause,beilve,
 
 goee !r=blood.//c liquid,organism,
 
 gieg !r=equation.//c number, method,//u26.2.2.21.
 
-gmbb o,o!r=thing that be A quikly than B.//c using time,less,//u26.2.2.21.
+gmbb o,o!r=thing that be x1 quikly than x2.//c using time,less,//u26.2.2.21.
 
-glgd !r=history.//s past,record,//r history is recorded past.
-
-gmda o,o!r=thing that be B using time A.//s-c use,time,//A is time.
+gmda o,o!r=thing that be x2 using time x1.//s-c use,time,//x1 is time.
 
 goae !r=milk.//c liquid,mom,
 
 gomc !r=tea.//c liquid,delicious,
 
-gmeg o!r=thing that arming A.//c use,weapon,
+gmeg o!r=thing that arming x1.//c use,weapon,
 
-gplb o,o,n!r=thing that promote A to B.//c cause,about,know,//To make people aware of a product, service, idea, or event, and encourage them to use, buy, or support it.
+gplb o,o,n!r=thing that promote x1 to x2.//c cause,about,know,//To make people aware of a product, service, idea, or event, and encourage them to use, buy, or support it.
 
 gilb !r=math.//c number,know,//r knowledge about number.
 
 gooa !r=saliva.//c liquid,digest,//r liquid that help digest.
 
-gjjg o,o,o!r=thing that exchange C for B and received A.//c give,receive,
+gjjg o,o,o!r=thing that exchange x3 for x2 and received x1.//c give,receive,
 
-godb o,o,o,n!r=thing that pull A into B from C.//c cause,go,Ath subject,
+godb o,o,o,n!r=thing that pull x1 into x2 from x3.//c cause,go,x1th subject,
 
-gnmd o!r=thing that breed with A.//c make,baby,
+gnmd o!r=thing that breed with x1.//c make,baby,
 
 gjflhg !r=air conditioning.//c cause,cold,gas,
 
@@ -1163,7 +1185,7 @@ gjflod !r=refrigerator.//c cause,cold,food,
 
 gjfoba !r=freezer.//c cause, solid,
 
-gijg o!r=thing that parasitize A.//c only, harmful,
+gijg o!r=thing that parasitize x1.//c only, harmful,
 
 gold !r=river.//c water,line,
 
@@ -1173,11 +1195,11 @@ goef !r=celestial body.//c gtavity,big,//celestial body became group using gravi
 
 gikc !n=constant.//c number,fixed,
 
-gieb !n=euler number.//c conatant, euler,
+giab !n=euler number.//c consatant, euler,//u26.2.20.1.
 
-gnpe o,o!r=thing that translate B into A.//c make,PC,//u 2025.11.22.21.29.
+gnpe o,o!r=thing that translate x2 into x1.//c make,Px3,//u 2025.11.22.21.29.
 
-goge o,o!r=thing that convert B into A.//c cause,GE,GE,
+goge o,o!r=thing that convert x2 into x1.//c cause,GE,GE,
 
 gjha o!r=thing that create.//c cause,thing,
 
@@ -1207,39 +1229,39 @@ gmge !r=father.//p papa baby.
 
 ▶g.r{
 
-ga o!p=only A.
+ga o!p=only x1.
 
-gc s,n!r=reason why A2 is A1.
+gc o,o,n!r=reason why x2 is x1.
 
-gd s!t=past of A.
+gd s!t=past of x1.
 
-ge o,o,n!p=thing that is B using A.
+ge o,o,n!p=thing that is x2 using x1.
 
-gg o,o!n=A divided by B.//a times,//u26.1.28.
+gg o,o!n=x1 divided by x2.//a times,//u26.1.28.
 
 gh !n=x.
 
-gmgd o,o!r=thing that win A in competition of being B.
+gmgd o,o!r=thing that win x1 in competition of being x2.
 
 gida !n,ns=number.//u 2025.11.14.10.30
 
-glba n!r=A complexity.
+glba n!r=x1 complexity.
 
 }◀g.r
 
 ▶g.s{
 
-gb o,o,n!r=thing that cause A2 to be A1.//s reason,
+gb o,o,n!r=thing that cause x2 to be x1.//s reason,
 
 goga !r=water.//s liquid,
 
-gllb o,o!r=thing that record A at B.//s teach,
+gllb o,o!r=thing that record x1 at x2.//s teach,
 
 gljb !r=before.//s past,
 
-golb o,o!r=thing that report A to B.//s teach,//u26.1.2.21.
+golb o,o!r=thing that report x1 to x2.//s teach,//u26.1.2.21.
 
-gmkd o!r=thing that suddenly be A.//s quik,
+gmkd o!r=thing that suddenly be x1.//s quik,
 
 }◀g.s
 
@@ -1249,11 +1271,11 @@ gmkd o!r=thing that suddenly be A.//s quik,
 
 ▶h.a{
 
-hjfb o-o!2p=thing that is more difficult to become A than being B.//a easy,
+hjfb o-o!2p=thing that is more difficult to become x1 than being x2.//a easy,
 
-hmfb o!r=thing that is heavier than A.//a lighter,
+hmfb o!r=thing that is heavier than x1.//a lighter,
 
-fofb o!r=thing that is harder than A.//a soft,
+fofb o!r=thing that is harder than x1.//a soft,
 
 hoag n!r=shift.//a stop,//m action,
 
@@ -1273,31 +1295,31 @@ hidg !r=certain time.//c certain,time,
 
 hlif !r=foreign.//c other,country,
 
-hkhd o!r=thing that immigrate A.//c live,foreign,
+hkhd o!r=thing that immigrate x1.//c live,foreign,
 
-hmlc s!r=probability that A2 is A1.//c HE,can,
+hmlc o,o!r=probability that x2 is x1.//c HE,can,
 
-hnhf o!r=thing that sing A.//c speak,music,
+hnhf o!r=thing that sing x1.//c speak,music,
 
-hkkg !r=disabled.//c engine,abnormal,//r 'inba ab HKGA KOBG',
+hkkg !r=disabled.//c engine,abnormal,//r 'inba ab HKGx1 KOx2G',
 
 hngg !r=cry.//c eye,emit,liquid,//r cry thing include eye that emit liquid.
 
-hmef !r=life.//c HE, MB, when, exist,
+hmef !r=life.//c HE, Mx2, when, exist,
 
-hnda o!r=thing that speak A.//c sound,mention,//ori use,sound,mention,//u 2025.11.21.19.41.
+hnda o!r=thing that speak x1.//c sound,mention,//ori use,sound,mention,//u 2025.11.21.19.41.
 
-hokg o!r=thing that is quieter than A.//c decibel,less,//d 2025.11.8.11.46.
+hokg o!r=thing that is quieter than x1.//c decibel,less,//d 2025.11.8.11.46.
 
 hodg !r=silent.//c decibel, minus most,//d 2025.11.8.11.47.
 
-hmog o,o!r=log A B.//c HE,OG,//u 2025.11.15.7.51.
+hmog o,o!r=log x1 x2.//c HE,OG,//u 2025.11.15.7.51.
 
 hned !r=anthem.//c music, symbolize,//d 2025.11.15.20.10.//u 2025.11.15.20.12
 
 hkif !r=member.//c element, organization,//d2025.11.25.14.3
 
-hjkg o!r=thing that is clean than A.//c cleanliness,less,//d25.12.31.17.
+hjkg o!r=thing that is clean than x1.//c cleanliness,less,//d25.12.31.17.
 
 hkoa !r=summary, abstract,.//c part,need,//d26.1.2.1.
 
@@ -1315,25 +1337,25 @@ hoje !t=tomorrow.//c day,future,//d26.1.2.6.
 
 ha !r=thing.
 
-hc c o!p=between A1 and A2 and.
+hc c o!p=between 1x1 and 2x1 and.
 
-hd o!p=other A.//cant c A that is B,not,wtdoc,.
+hd o!p=other x1.//cant c x1 that is x2,not,wtdoc,.
 
 he//g what,two,.
 
-hf n,o!p=thing that similar to A.
+hf n,o!p=thing that similar to x1.
 
-hg o,o!n=A minus B.//a plus.//u26.1.28.
+hg o,o!n=x1 minus x2.//a plus.//u26.1.28.
 
 hh !n=y.
 
 hmkd !r=wheat.
 
-hnca n!r=Adecibel.//u25.12.2.10.
+hnca n!r=x1decibel.//u25.12.2.10.
 
 hnib !r=sound.
 
-hoga o!r=thing that play A.//e 'play' as in 'play game'.
+hoga o!r=thing that play x1.//e 'play' as in 'play game'.
 
 higa !r=smell.//d26.1.1.11.
 
@@ -1343,9 +1365,9 @@ higa !r=smell.//d26.1.1.11.
 
 hida !r=object.//s certain,
 
-hica o!p=each A.
+hica o!p=each x1.
 
-hifa o!p=specific A.//u 2025.11.17.19.56
+hifa o!p=specific x1.//u 2025.11.17.19.56
 
 hoda !r=air.//s gas,
 
@@ -1357,7 +1379,7 @@ hilg !r=door.//s binary,
 
 hiad !r=lever.//s binary,
 
-hkga o!r=engine that is A.//s element,//r if i see you then it mean that element of me is engine that see you yes the engine mean eye of me yes eye of me see you,//e This word has a slightly different meaning than 'engine that is A' yes it must be essence.
+hkga o!r=engine that is x1.//s element,//r if i see you then it mean that element of me is engine that see you yes the engine mean eye of me yes eye of me see you,//e This word has a slightly different meaning than 'engine that is x1' yes it must be essence.
 
 hlda o!1p=left.//s other,
 
@@ -1371,9 +1393,9 @@ hlda o!1p=left.//s other,
 
 if
 
-inea o!r=whole A.//s-a part,
+inea o!r=whole x1.//s-a part,
 
-ijfb o!r=thing that is noisier than A.//a quite,//d 2025.11.8.11.48
+ijfb o!r=thing that is noisier than x1.//a quite,//d 2025.11.8.11.48
 
 }◀i.a
 
@@ -1387,21 +1409,21 @@ id !r=each other.//c what,interface,self,.
 
 iifd n!r=selfish.//c tend, profit,
 
-ilkg o!r=thing that is lighter than A.//c Akg,less,
+ilkg o!r=thing that is lighter than x1.//c x1kg,less,
 
 iicb n!r=lazy.//c tend,rest,.
 
-kjkg o!r=thing that is softer than A.//c hardness,less,
+kjkg o!r=thing that is softer than x1.//c hardness,less,
 
-iokg o-o!2p=thing that easily become A than being B.//c difficulty level,less,
+iokg o-o!2p=thing that easily become x1 than being x2.//c difficulty level,less,
 
-iimc o,n!r=thing whose A is hobby.//c tend,enjoy,
+iimc o,n!r=thing whose x1 is hobby.//c tend,enjoy,
 
 iiha !r=empire.//c country,rule,other,country,//r empire is country that rule other country.//u 2025.11.11.9.
 
 ijjf !r=school.//c buliding,student,
 
-ined !r=folder.//c group,code,//g AB,group,for being,include,code,
+ined !r=folder.//c group,code,//g x1x2,group,for being,include,code,
 
 ioke !r=fire.//c plasma,hot,
 
@@ -1419,13 +1441,13 @@ inmd !r=pregnant.//c include, baby,//d 2025.11.21.22.36.
 
 inob !r=organization.//c group,cooperate,//d 2025.11.25.14.2.
 
-inab s,o!1p=B whose A2 is A1.//c include,AB,
+inab o,o,o!1p=x2 whose x2 is x1.//c include,x1x2,
 
 ijmc !r=rest.//c stop, comfortable,//d25.12.1.12.
 
 indd !r=homeland.//c country, self,//d25.12.2.23.
 
-imea n,o!1p=thing that repeat B at A times.//s-c IE,was,//u26.2.3.18.
+imea n,o!1p=thing that repeat x2 at x1 times.//s-c IE,was,//u26.2.3.18.
 
 }◀i.c
 
@@ -1435,31 +1457,31 @@ imea n,o!1p=thing that repeat B at A times.//s-c IE,was,//u26.2.3.18.
 
 ▶i.r{
 
-ia o,n!p=thing that tends to be A.
+ia o,n!p=thing that tends to be x1.
 
-ib o,o!n=A plus B.//u26.1.28.
+ib o,o!n=x1 plus x2.//u26.1.28.
 
-ic o!n=not A.//e logic gate.//u26.1.30.8.
+ic o!n=not x1.//e logic gate.//u26.1.30.8.
 
-ie n,o!p=A B.//eg two apple.//u26.2.2.22.
+ie n,o!p=x1 x2.//eg two apple.//u26.2.2.22.
 
-if  n,o!=B that has id A.//u2025.11.25.16.16.//u26.2.2.22.
+if  n,o!=x2 that has id x1.//u2025.11.25.16.16.//u26.2.2.22.
 
-ig n,o!2p=Ath B.//u26.2.2.22.
+ig n,o!2p=x1th x2.//u26.2.2.22.
 
 ih !n=zero.
 
-ikba n!r=thing whose A is size.
+ikba n!r=thing whose x1 is size.
 
-ioda o-n!2p=thing that is become A with Bdifficulty level.
+ioda o-n!2p=thing that is become x1 with x2difficulty level.
 
 kjba n!r=hardness.
 
-ilda n!r=Akg.
+ilda n!r=x1kg.
 
-ikba n!r=A size.
+ikba n!r=x1 size.
 
-innb o,n!r=thing that surround A.//s have,//m encircle,
+innb o,n!r=thing that surround x1.//s have,//m encircle,
 
 ijpb !r=stop.//e stay still.
 
@@ -1475,7 +1497,7 @@ inea !r=together.//a alone,
 
 inga !r=country.//s group,
 
-inib o!r=thing that rule A.//s have,
+inib o!r=thing that rule x1.//s have,
 
 }◀i.s
 
@@ -1485,37 +1507,37 @@ inib o!r=thing that rule A.//s have,
 
 ▶j.a{
 
-jf s,n!p=result of A2 being A1.//a reason.
+jf o,o,n!p=result of x2 being x1.//a reason.
 
-jlje o-o!r=thing that lose to A in competition of being B.,//a win,.
+jlje o-o!r=thing that lose to x1 in competition of being x2.,//a win,.
 
 joeg !r=student.//a teach,
 
-jjng o,o,n!r=thing that take B out of A.//a put,
+jjng o,o,n!r=thing that take x2 out of x1.//a put,
 
-joke o,n!r=thing that harmful A.//a benefical,
+joke o,n!r=thing that harmful x1.//a benefical,
 
-jokb o,n!r=thing that kill A.//a save,
+jobb o,n!r=thing that kill x1.//a save,//u26.2.12.2.
 
-jokd o,n!r=thing that close A.//a open,
+jokd o,n!r=thing that close x1.//a open,
 
-jofg o,o,n!r=thing that hide A from B.//a show,//u2025.11.23.10.55.
+jofg o,o,n!r=thing that hide x1 from x2.//a show,//u2025.11.23.10.55.
 
-jmfb o!r=thing that is more complex than A.//a simple,
+jmfb o!r=thing that is more complex than x1.//a simple,
 
-joch o-n!r=thing that delete A.//a create,
+jkba o,n!r=thing that delete x1.//a make,//u26.2.10.15.
 
-jokf o!r=thing that turn off A.//a turn on,
+jokf o!r=thing that turn off x1.//a turn on,
 
-jokc o!r=thing that broke A.//a repair,
+jokc o!r=thing that broke x1.//a repair,
 
-jlfb o,o!r=thing that is slowly be A than B.//a quik,
+jlfb o,o!r=thing that is slowly be x1 than x2.//a quik,
 
 jmgg !r=after.//a before,
 
-johc o,o!r=thing that receive A from B.//a give,
+johc o,o!r=thing that receive x1 from x2.//a give,
 
-jjmg o,o,o,n!r=thing that push A into B from C.//a pull,
+jjmg o,o,o,n!r=thing that push x1 into x2 from x3.//a pull,
 
 }◀j.a
 
@@ -1525,7 +1547,7 @@ jjmg o,o,o,n!r=thing that push A into B from C.//a pull,
 
 ▶j.c{
 
-jkkg o!r=thing that is shorter than A.//c meter,less,
+jkkg o!r=thing that is shorter than x1.//c meter,less,
 
 johe !r=bread.//c fermented,wheat,
 
@@ -1537,19 +1559,19 @@ jllb !r=geometry.//c shape,know,//r knowledge about shape.
 
 jomkod !r=cake.//c bread,delicuous,
 
-joed o!r=thing that censor A.//c delete,code,
+joed o!r=thing that censor x1.//c delete,code,
 
-jlkg o!r=thing that stupid than A.//c iq,less,
+jlkg o!r=thing that stupid than x1.//c iq,less,
 
 joee !r=disease.//c harmful,organism,
 
 jkbf n!r=wavelength.//c length, wave,//d 2025.11.20.19.43.
 
-jibc !r=proposition.//c whether, BC,//d 2025.11.24.11.24.//u 2025.11.25.1.46
+jibc !r=proposition.//c whether, x2x3,//d 2025.11.24.11.24.//u 2025.11.25.1.46
 
 jngd !r=revolution.//c attack, past,//d25.12.1.18.
 
-jkjb c o!n=distance of between A1 and B2.//meter,between,//u25.12.9.12.
+jkjb c o!n=distance of between x11 and x22.//meter,between,//u25.12.9.12.
 
 jodd !r=suicide.//c kill,self,//d25.12.18.3.
 
@@ -1565,15 +1587,15 @@ jndd !r=self harm.//c attack,self,//u25.12.16.19.
 
 ▶j.r{
 
-ja s=whether A is true.//zero is true.cuz true is important.exist made false.one is exist.
+ja s=whether x1 is true.//zero is true.cuz true is important.exist made false.one is exist.
 
-jb o,o!n=A times B.//u26.1.28.
+jb o,o!n=x1 times x2.//u26.1.28.
 
-jc o,o!n=and A B.//u26.1.30.8.
+jc o,o!n=and x1 x2.//u26.1.30.8.
 
-jd o!r=thing that Imagine A.
+jd o!r=thing that Imagine x1.
 
-je s!t=future of A.//a past,
+je s!t=future of x1.//a past,
 
 jg
 
@@ -1581,25 +1603,31 @@ jh !n=four.
 
 joda !r=fermented thing.
 
-jkib o!r=thing that stick to A.
+jkib o!r=thing that stick to x1.
 
-jikc o!n=A!.//d26.1.18.11.
+jikc o!n=x1!.//d26.1.18.11.
 
 }◀j.r
 
 ▶j.s{
 
-jnke o!r=thing that attack A.//s harmful,
+jnke o!r=thing that attack x1.//s harmful,
 
-jnhc o,o!r=thing that steal A from B.//s recive,
+jnhc o,o!r=thing that steal x1 from x2.//s recive,
 
-jjcb s!r=routine of A2 being A1.//s JB,//d 2025.11.20.19.33.
+jjcb s!r=routine of x12 being x11.//s Jx2,//d 2025.11.20.19.33.
 
-jkca o,n!1p=thing that is related to A.//s accoding,//d25.12.3.3.
+jkca o,n!1p=thing that is related to x1.//s accoding,//d25.12.3.3.
 
 jlag !r=brain.//s imagine,//u26.1.9.17.
 
 }◀j.s
+
+▶j.p{
+
+jmje o,n!r=thing that feel x1 is funny.//p haha, people,//u26.2.19.9.
+
+}◀j.p
 
 }◀j
 
@@ -1607,27 +1635,27 @@ jlag !r=brain.//s imagine,//u26.1.9.17.
 
 ▶k.a{
 
-ke o!r=thing that have A.//a element,//including promise
+ke o!r=thing that have x1.//a element,//including promise
 
-kf o,o!r=thing that reply to B by saying A..//a ask,
+kf o,o!r=thing that reply to x2 by saying x1..//a ask,
 
-kpbc o,o!r=thing that ban A from B.//a invite,
+kpbc o,o!r=thing that ban x1 from x2.//a invite,
 
 kjbg !r=sky.//a land,
 
 kkgg !r=broken.//a work,
 
-kmfb o!r=thing that is hotter than A.//a cold,
+kmfb o!r=thing that is hotter than x1.//a cold,
 
-kpke o!r=thing that curse A.//a hail,
+kpke o!r=thing that curse x1.//a hail,
 
-kkdg o!r=thing that take off A.//a wear,
+kkdg o!r=thing that take off x1.//a wear,
 
-kofb o!r=thing that is superior than A.//a inferior,//d 2025.11.9.11.
+kofb o!r=thing that is superior than x1.//a inferior,//d 2025.11.9.11.
 
 kkba !r=false.//a true,//u 2025.11.21.19.26.//u26.1.30.9.
 
-kmmg o!r=thing that include A.//a part,//s have,//u26.2.2.
+kmmg o!r=thing that include x1.//a part,//s have,//u26.2.2.
 
 }◀k.a
 
@@ -1637,13 +1665,13 @@ kmmg o!r=thing that include A.//a part,//s have,//u26.2.2.
 
 ▶k.c{
 
-kkkg o!r=thing that is narrower than A.//c meter2,less,
+kkkg o!r=thing that is narrower than x1.//c meter2,less,
 
-kidb o,o!r=thing that inhale A into B.//c cause,go,ac,inside,Ath subject,
+kidb o,o!r=thing that inhale x1 into x2.//c cause,go,ac,inside,x1th subject,
 
-kicb o!r=thing that suck A.//c inhale,inside,
+kicb o!r=thing that suck x1.//c inhale,inside,
 
-koog o!r=thing that is dumber than A.//c iq, less,//m stupid,
+koog o!r=thing that is dumber than x1.//c iq, less,//m stupid,
 
 kjif !r=collapce.//c broken,whole,//g lf kjinea.
 
@@ -1651,7 +1679,7 @@ kled !r=braille.//c point,//g whose,*point,*code,
 
 kihg !r=thing that breathe.//c inhale,air,
 
-knee o!r=thing that sex with A.//c connected,organism,
+knee o!r=thing that sex with x1.//c connected,organism,
 
 kica !r=grass.//c inhale,photon,//r grass inhale photon,
 
@@ -1661,19 +1689,19 @@ kpif !r=international.//c connected with,other,country,
 
 kndd !r=masturbate.//c sex,self,
 
-kkbc !r=function.//c KC,BC,//u 2025.11.17.21.39.
+kkbc !r=function.//c Kx3,x2x3,//u 2025.11.17.21.39.
 
-kjca o!r=thing that see A.//c sense,photon,//u2025.11.21.19.47.
+kjca o!r=thing that see x1.//c sense,photon,//u2025.11.21.19.47.
 
-kjhf o!r=thing that listen to A.//c sense,sound,//u 2025.11.21.21.15.
+kjhf o!r=thing that listen to x1.//c sense,sound,//u 2025.11.21.21.15.
 
-kjed o!r=thing that read A.//c sense, code,//u26.1.9.16.
+kjed o!r=thing that read x1.//c sense, code,//u26.1.9.16.
 
-kjja s!r=thing that check whether A2 is A1.//c sense,whether,//u 2025.11.21.21.17.
+kjja s!r=thing that check whether x12 is x11.//c sense,whether,//u 2025.11.21.21.17.
 
 kmkf n!r=pervert.//abnormal,hope,sex,//u2025.11.27.15.52.
 
-kjha o!r=thing that smell A.//c sense,smell,//d26.1.1.12.
+kjha o!r=thing that smell x1.//c sense,smell,//d26.1.1.12.
 
 goke !r=lava.//c liquid,hot,//d26.1.18.18.
 
@@ -1685,15 +1713,15 @@ goke !r=lava.//c liquid,hot,//d26.1.18.18.
 
 ▶k.r{
 
-ka c o!p=[A1, A2,].
+ka c o!p=[x11, x12,].
 
-kb o,o!n=A square B.//u26.1.28.
+kb o,o!n=x1 square x2.//u26.1.28.
 
-kc o,o!n=or A B.//u26.1.30.8.
+kc o,o!n=or x1 x2.//u26.1.30.8.
 
- <c o>, c s!n=f(A1, A2, A3,){B}.//e for make function.//u 2025.11.17.21.6,//u 2025.11.16.23.39.
+ , c s!n=f(x11, x12, x13,){x2}.//e for make function.//u 2025.11.17.21.6,//u 2025.11.16.23.39.
 
-kd o!p=average of A.//u 2025.11.16.23.39.
+kd o!p=average of x1.//u 2025.11.16.23.39.
 
 kg dec!n=decimal number.
 
@@ -1701,17 +1729,17 @@ kh !n=minus one.
 
 kkod !r=heart.
 
-kojb n!r=iq A.
+kojb n!r=iq x1.
 
 }◀k.r
 
 ▶k.s{
 
-knba o,o!t=thing that communicate with A about B.//s reply,
+knba o,o!t=thing that communicate with x1 about x2.//s reply,
 
-knjb o!r=thing that is connect to A.//s communicate,
+knjb o!r=thing that is connect to x1.//s communicate,
 
-klfa o!p=most A.//s average,//u 2025.11.22.21.35.
+klfa o!p=most x1.//s average,//u 2025.11.22.21.35.
 
 kjcg !r=eye.//s see,//u 26.1.9.16.
 
@@ -1729,15 +1757,15 @@ kjhg !r=ear.//s listen,//u26.1.9.16.
 
 ▶l.a{
 
-le o!p=thing that will be A.//a was,
+le o!p=thing that will be x1.//a was,
 
-loag o,n!r=thing that forgive A.//a revenge,
+loag o,n!r=thing that forgive x1.//a revenge,
 
-lmfb o-o!r=thing that unefficiently become A than B.//a efficient,
+lmfb o-o!r=thing that unefficiently become x1 than x2.//a efficient,
 
 lohc n!r=full.//a empty,
 
-lkmg o!r=thing that violate A.//a obey,//d 2025.11.6.22.51.35.
+lkmg o!r=thing that violate x1.//a obey,//d 2025.11.6.22.51.35.
 
 }l.a◀
 
@@ -1747,11 +1775,11 @@ lkmg o!r=thing that violate A.//a obey,//d 2025.11.6.22.51.35.
 
 ▶l.c{
 
-lf s!r=thing that believe that A2 is A1.//c know,as,true,whether,//believe is thing that know whether as true.
+lf s!r=thing that believe that x12 is x11.//c know,as,true,whether,//believe is thing that know whether as true.
 
-lnba o!1p=Aless.//c whose,none,
+lnba o!1p=x1less.//c whose,none,
 
-lkkg o!r=thing that is smaller than A.//c meter3,less,
+lkkg o!r=thing that is smaller than x1.//c meter3,less,
 
 lljb !r=road.//c line,land,//e road is line that is in land.
 
@@ -1759,17 +1787,17 @@ llbd !r=stick.//c line,inflexible,
 
 lloe !r=loaf.//c line,flexible,
 
-ljgc o!r=thing that understand A.//c know,reason,
+ljgc o!r=thing that understand x1.//c know,reason,
 
-ljog s!r=thing that misunderstand A2 as A1.//c know,false,
+ljog s!r=thing that misunderstand x12 as x11.//c know,false,
 
-ljed o!r=thing that interpret A.//c know,mean,
+ljed o!r=thing that interpret x1.//c know,mean,
 
 llgf !r=artificial.//c intend,make,//r intentionally made.
 
 llcc !r=thread.//c line,thin,
 
-ljbb s,o!r=thing that admit that A2 is A1.//c know,true,
+ljbb s,o!r=thing that admit that x12 is x11.//c know,true,
 
 llfd !r=rational.//c intend,profit,
 
@@ -1777,9 +1805,9 @@ ljkg !r=private.//c know,less,//r what few thing know.
 
 llka !r=chopstick.//c stick,inhale,//r stick that is used when inhaling.
 
-llff o!r=thing that research A.//c intend,know,true,//u2025.11.23.15.44.
+llff o!r=thing that research x1.//c intend,know,true,//u2025.11.23.15.44.
 
-lknd o!r=thing that ability to be A.//u25.12.10.0.
+lknd o!r=thing that ability to be x1.//u25.12.10.0.
 
 llee !r=biomimicry.//c imitate, nature,
 
@@ -1787,27 +1815,27 @@ lmld !r=free.//c right to,what,intend,//m liberty,//e free as in freedom.
 
 lmng n!r=dignity.//c right to,what,repect,
 
-llec o!r=thing that count A.//c research,quantity,
+llec o!r=thing that count x1.//c research,quantity,
 
 lkma !r=god.//c can,all,//u 2025.11.6.9.29.16.
 
 llmf !r=knife.//c stick, sharp,//d 2025.11.20.13.38.
 
-lnhd o,s!r=thing that I agree with A's opinion that B2 is B1. .//c belive,other,.//e eg 'ellf he lf ff bd oe' mean 'i agree with your thought'.//d 2025.11.20.16.55..u 2025.11.20.20.12.
+lnhd o,s!r=thing that I agree with x1's opinion that x22 is x21. .//c belive,other,.//e eg 'ellf he lf ff bd oe' mean 'i agree with your thought'.//d 2025.11.20.16.55..u 2025.11.20.20.12.
 
-lkff n!r=thing that is Apercent likely to be possible.//c can,true,//u2025.11.25.13.17.//u 2025.11.22.10.34lkfb.
+lkff n!r=thing that is x1percent likely to be possible.//c can,true,//u2025.11.25.13.17.//u 2025.11.22.10.34lkfb.
 
-lole o,o!r=thing that joke about A to B.//c intend,cause,funny,//d2025.11.27.22.0
+lole o,o!r=thing that joke about x1 to x2.//c intend,cause,funny,//d2025.11.27.22.0
 
-lnac n!r=Aliter.//c meter^3, times, AH, 0.1,//d2025.11.29.11.54.
+lnac n!r=x1liter.//c meter^3, times, x1H, 0.1,//d2025.11.29.11.54.
 
-llle o,n!r=thing that plan to be A.//c intend, will,//d25.11.30.10.3
+llle o,n!r=thing that plan to be x1.//c intend, will,//d25.11.30.10.3
 
 lldb n!r=lookist.//c mind, shell,//d25.11.6.13.
 
-lljd o,n!r=thing that mind A.//c intend,imagine,//u25.12.9.12.
+lljd o,n!r=thing that mind x1.//c intend,imagine,//u25.12.9.12.
 
-lldd o!r=thing that decide to be A.//c promise, self,//r promise to self.//u26.1.30.8.
+lldd o!r=thing that decide to be x1.//c promise, self,//r promise to self.//u26.1.30.8.
 
 }◀l.c
 
@@ -1817,47 +1845,47 @@ lldd o!r=thing that decide to be A.//c promise, self,//r promise to self.//u26.1
 
 ▶l.p{
 
-lmle o,n!r=thing that feel A is funny.//p haha people,
+lmle o,n!r=thing that feel x1 is funny.//p haha people,
 
 }◀l.p
 
 ▶l.r{
 
-la o!r=thing that sense A.//d 2025.11.21.17.47.//u26.1.28.
+la o!r=thing that sense x1.//d 2025.11.21.17.47.//u26.1.28.
 
  efficientmath!n=.//e effiently explain math expression
 
-lb o!r=thing that know A.
+lb o!r=thing that know x1.
 
-lc o,o!n=xor A B.//u26.1.30.8.
+lc o,o!n=xor x1 x2.//u26.1.30.8.
 
-ld o,n!p=thing that intend to be A.
+ld o,n!p=thing that intend to be x1.
 
-lg o,n!p=thing that can be A with B percent probability.
+lg o,n!p=thing that can be x1 with x2 percent probability.
 
 lh !n=one.
 
-llba o,o,o!r=promise.//e if myself is A, then B is C. that is what the promise contains.//u26.1.30.8.
+llba o,o,o!r=promise.//e if myself is x1, then x2 is x3. that is what the promise contains.//u26.1.30.8.
 
 }◀l.r
 
 ▶l.s{
 
-lkda o!p=thing that has right to be A.//s can,
+lkda o!p=thing that has right to be x1.//s can,
 
-lkca !r=thing that deserve A.//s right to,
+lkca !r=thing that deserve x1.//s right to,
 
 lkga !r=particle.//s small,
 
-llma o,n!r=thing that effort to be A.//s intend,
+llma o,n!r=thing that effort to be x1.//s intend,
 
-llga o!r=thing that imitate A.//s intend,
+llga o!r=thing that imitate x1.//s intend,
 
-lnib s!r=thing that sure that A2 is A1.//s belive,
+lnib s!r=thing that sure that x12 is x11.//s belive,
 
-lkfa o,n!1p=thing that is ready to be A.//s can,//d2025.11.27.16.28.
+lkfa o,n!1p=thing that is ready to be x1.//s can,//d2025.11.27.16.28.
 
-llfb o!r=thing that deliberate on A.//s research,//d26
+llfb o!r=thing that deliberate on x1.//s research,//d26
 1.3.23.
 
 }◀l.s
@@ -1868,19 +1896,19 @@ llfb o!r=thing that deliberate on A.//s research,//d26
 
 ▶m.a{
 
-mkfg o!r=thing whose A is friend.//a enemy,//s love,
+mkfg o!r=thing whose x1 is friend.//a enemy,//s love,
 
 mkdf !o=most.//a minus most,//u26.2.6.12.
 
-mjhc o,o!r=thing that sell A to B.//a buy,.
+mjhc o,o!r=thing that sell x1 to x2.//a buy,.
 
-moeg o!r=thing that forgot A.//a remember,
+moeg o!r=thing that forgot x1.//a remember,
 
-moef o,t!p=thing that stop being A after time B.//a remain,
+moef o,t!p=thing that stop being x1 after time x2.//a remain,
 
-mjme o!r=thing that give up being A.//a decide,//u 2025.11.16.7.9
+mjme o!r=thing that give up being x1.//a decide,//u 2025.11.16.7.9
 
-mkgg s!r=thing that allow that A2 is A1.//a reject,
+mkgg s!r=thing that allow that x12 is x11.//a reject,
 
 }◀m.a
 
@@ -1890,27 +1918,27 @@ mkgg s!r=thing that allow that A2 is A1.//a reject,
 
 ▶m.c{
 
-md o!p=thing that become A.//c becoming,ph,
+md o!p=thing that become x1.//c becoming,ph,
 
-mf o,o,n!2p=thing that become B by A.//u26.2.8.17.
+mf o,o,n!2p=thing that become x2 by x1.//u26.2.8.17.
 
-mkdd o,n!r=thing that enjoy to be A.//c pleasure,self,//u 2025.11.5
+mkdd o,n!r=thing that enjoy to be x1.//c pleasure,self,//u 2025.11.5
 
 mnmf c o!p=c intersecrion.//c intersection,intersection,.
 
-moke o,n!r=thing that angry at A.//c hope,cause,victim,
+moke o,n!r=thing that angry at x1.//c hope,cause,victim,
 
-mkfd o,n!r=thing that love A by B percent.//c hope,profit,
+mjob o,n!r=thing that love x1.//c hope,profit,//u26.2.12.2
 
-mlif o!r=thing that get A.//c become,have,.
+mlif o!r=thing that get x1.//c become,have,.
 
-mklb o,n!r=thing that wonder about A.//c hope,know,//u25.12.9.19.
+mklb o,n!r=thing that wonder about x1.//c hope,know,//u25.12.9.19.
 
-mkod o,n!r=thing that feel A is delicious.//c pleasure,food. //u 2025.11.5.
+mkod o,n!r=thing that feel x1 is delicious.//c pleasure,food. //u 2025.11.5.
 
 mlkg !r=decreasing.//c become,less,.
 
-mmlb o!r=thing that learn A.//c becoming,know,.
+mmlb o!r=thing that learn x1.//c becoming,know,.
 
 mlemfa !r=born.//c become,organism,//u25.12.9.12
 
@@ -1922,49 +1950,49 @@ mkka n!r=thing that is hungry.//c hope,eat,
 
 midg !t=always.//c all,time,.
 
-mkgb o,n!r=thing that is proud of A.//c hope,teach,
+mkgb o,n!r=thing that is proud of x1.//c hope,teach,
 
-mmlc o!r=thing that practice A.//c becoming,can,
+mmlc o!r=thing that practice x1.//c becoming,can,
 
-mmkb o!r=thing that looking for A.//c becoming,sense,//u 2025.11.21.21.19
+mmkb o!r=thing that looking for x1.//c becoming,sense,//u 2025.11.21.21.19
 
-mlhc o!r=thing that join A.//c become,is in,
+mlhc o!r=thing that join x1.//c become,is in,
 
-mlgc o,n!r=thing that feel A is interesting.//c hope,know,reason,
+mlgc o,n!r=thing that feel x1 is interesting.//c hope,know,reason,
 
 mmgg !r=melt.//c becoming,liquid,
 
 mkaf !r=dog.//c friend,people,
 
-mkgf o,n!r=thing that feel A is attractive.//c hope,breed,//u25.12.14.17.
+mkgf o,n!r=thing that feel x1 is attractive.//c hope,breed,//u25.12.14.17.
 
-mnkg o!r=thing that is sharper than A.//c sharpness,less,
+mnkg o!r=thing that is sharper than x1.//c sharpness,less,
 
-mkgf o,n!r=thing that feel sexual desire from A.//c hope,breed,
+mkgf o,n!r=thing that feel sexual desire from x1.//c hope,breed,
 
-mlbb o!r=thing that calculate A.//c become, know,BB,
+mlbb o!r=thing that calculate x1.//c become, know,x2x2,
 
 hkmllb !r=calculator.//c engine,calculate,
 
 mlmkid !r=lady.//c girl,like,
 
-mofb o!r=thing that is older than A.//a young,
+mofb o!r=thing that is older than x1.//a young,
 
 mkcb n!r=introvert.//c like,inside,//u 2025.11.4. 
 
-mijb o,o,o!r=∫ B -> C A.//c all,between,//d 2025//e Integral symbol.
+mijb o,o,o!r=∫ x2 -> x3 x1.//c all,between,//d 2025//e Integral symbol.
 
 mlfb !r=occur.//c become, exist,//d 2025.11.5.//u 2025.11.22.10.33
 
-mkdb o,n!r=thing that envy A.//c hope,DB,//d 2025.11.16.23.23.
+mkdb o,n!r=thing that envy x1.//c hope,x4x2,//d 2025.11.16.23.23.
 
 mkef n!r=thing that have conscience.//c hope,obey,//u 2025.11.17.21.22
 
-mjbg o,o!r=thing that surrenders to A in a competition that becomes B.//c give up, compete,//d 2025.11.23.21.30.
+mjbg o,o!r=thing that surrenders to x1 in a competition that becomes x2.//c give up, compete,//d 2025.11.23.21.30.
 
-mjjd o,n!r=thing that feel A is beauty.//c like,shape,//u26.1.11.16.//u26.1.30.8.
+mjjd o,n!r=thing that feel x1 is beauty.//c like,shape,//u26.1.1
 
-mjmd o,n!r=thing that think that feel that A is cute.//c like,baby,//u 2025.11.6.14.30//u26.1.30.8.
+mjmd o,n!r=thing that think that feel that x1 is cute.//c like,baby,//u 2025.11.6.14.30//u26.1.30.8.
 
 }◀m.c
 
@@ -1974,13 +2002,13 @@ mjmd o,n!r=thing that think that feel that A is cute.//c like,baby,//u 2025.11.6
 
 ▶m.r{
 
-ma o!p=all A.//m every,
+ma o!p=all x1.//m every,
 
-mb. s,n!r=thing that hope A2 is A1.//e B is degree of hope.//u26.1.31.19.
+mb o,o,n!r=thing that hope x2 is x1.//e x3 is degree of hope.//u26.1.31.19.
 
-mc t,o!2p=thing that be B when A.//u26.1.31.19.
+mc t,o!2p=thing that be x2 when x1.//u26.1.31.19.
 
-me o,t,n!p=thing that becoming A.
+me o,t,n!p=thing that becoming x1.
 
 mg
 
@@ -1990,37 +2018,37 @@ mlmb !r=women.
 
 mkga n!r=thing that feel emotion.//s hope,
 
-mojb o!r=thing that combined with A.//s plus,
+mojb o!r=thing that combined with x1.//s plus,
 
 mnga n!r=sharpness.
 
-moba o!1p=that A.//d26.1.16.8.
+moba o!1p=that x1.//d26.1.16.8.
 
 }◀m.r
 
 ▶m.s{
 
-mjcb o,n!r=thing that feel pleasure about A.//s love,//u26.1.30.8.
+mjcb o,n!r=thing that feel pleasure about x1.//s love,//u26.1.30.8.
 
-mjib o,n!r=thing that like A.//s love,//u26.1.30.8.
+mjib o,n!r=thing that like x1.//s love,//u26.1.30.8.
 
-mjib o,n!r=thing that feels comfortable be A.//s love,//u26.1.11.16.//u26.1.30.8.
+mjib o,n!r=thing that feels comfortable be x1.//s love,//u26.1.11.16.//u26.1.30.8.
 
-mjeb o,n!r=what A safe for.//s love,//u26.1.30.8.
+mjeb o,n!r=what x1 safe for.//s love,//u26.1.30.8.
 
-mjjb o,n!r=thing that feel A is holy.//s love,//d2025.11.28.11.23.//u26.1.30.8.//u26.2.1.
+mjjb o,n!r=thing that feel x1 is holy.//s love,//d2025.11.28.11.23.//u26.1.30.8.//u26.2.1.
 
-mjmb o,n!r=thing that resfect A.//s love,//u26.1.30.8.
+mjmb o,n!r=thing that resfect x1.//s love,//u26.1.30.8.
 
-mjpb o,n!r=thing that feel A is interesting.//s wonder,//u2025.11.28.11.22.//u26.1.30.8.
+mjpb o,n!r=thing that feel x1 is interesting.//s wonder,//u2025.11.28.11.22.//u26.1.30.8.
 
-mlba o!p=new A.//s become,//r if i become member i am new member.
+mlba o!p=new x1.//s become,//r if i become member i am new member.
 
 mobd !r=blank.//s hungry,
 
-miha o!1p=total A.//s all,
+miha o!1p=total x1.//s all,
 
-mnjb c o!v=similarity between A1 and A2.//s intersection,
+mnjb c o!v=similarity between x11 and x12.//s intersection,
 
 mjgg !n=infinity.//s most,
 
@@ -2034,15 +2062,15 @@ mjdd !r=head.//s nucleus,
 
 ▶n.a{
 
-nofb o!r=thing that is manier than A.//a fewer,
+nofb o!r=thing that is manier than x1.//a fewer,
 
-nlfb o!r=thing that is more expensive than A.//a cheap,
+nlfb o!r=thing that is more expensive than x1.//a cheap,
 
-nnad o!r=thing that met A.//s around,
+nnad o!r=thing that met x1.//s around,
 
-nnfb c!o!r=thing that is thick than A.//a thin,
+nnfb c!o!r=thing that is thick than x1.//a thin,
 
-nokh !r=thing that respect A.//c force,
+nokh !r=thing that respect x1.//c force,
 
 nmdg !r=Integrated.//a differential,
 
@@ -2090,25 +2118,25 @@ npke !r=jwetaism.//c two,group,//d26.2.8.16.
 
 ▶n.r{
 
-na o!1p=this A.//u26.1.28.
+na o!1p=this x1.//u26.1.28.
 
 nb !r=i.//c this,assert,//u26.1.28.2.
 
-nc o,o!1p=A that is nearest to B.
+nc o,o!1p=x1 that is nearest to x2.
 
-ne o!r=location of A.//u26.2.3.18.
+ne o!r=location of x1.//u26.2.3.18.
 
-nf o!1p=part of around of A.
+nf o!1p=part of around of x1.
 
-ng  o!n=thing that is A or less.//u26.1.28.
+ng  o!n=thing that is x1 or less.//u26.1.28.
 
 nh !n=two.
 
-nnib o!p=thing that is from A.//d 13092025,
+nnib o!p=thing that is from x1.//d 13092025,
 
-nnag o!r=thing that revolve A.//d 23.10.2025
+nnag o!r=thing that revolve x1.//d 23.10.2025
 
-nnea o!r=thing that point to A.
+nnea o!r=thing that point to x1.
 
 nkda !r=gender.//d25.12.5.0.
 
@@ -2116,9 +2144,9 @@ nkda !r=gender.//d25.12.5.0.
 
 ▶n.s{
 
-nnca o!r=thing that toward A.//s point,
+nnca o!r=thing that toward x1.//s point,
 
-nlga o!r=thing that greet A.//s call,//u2025.11.22.9.28.
+nlga o!r=thing that greet x1.//s call,//u2025.11.22.9.28.
 
 nkga !r=genitalia.//d25.12.5.0.//s gender,
 
@@ -2132,11 +2160,13 @@ njba !r=place.//s location,//d26.1.11.16.
 
 ▶o.a{
 
-lpfb o!r=thing that stronger than A.//a weaker,
+og o!n=thing that is more than x1.//a less,//u26.1.28.
 
-omfb o!r=thing that is more flexible than A.//a inflexible,
+lpfb o!r=thing that stronger than x1.//a weaker,
 
-ojgc !r=thing that is in a peaceful relationship with A.//a fight,
+omfb o!r=thing that is more flexible than x1.//a inflexible,
+
+ojgc !r=thing that is in a peaceful relationship with x1.//a fight,
 
 okgg !r=on.//a off,//s alive,//u26.2.8.1.
 
@@ -2156,19 +2186,19 @@ oe//g ae,two,//but it target only r, o parameter,.//u26.2.3.18.
 
 oihg !t=time part of today.//c this,day,.
 
-ondb !r=thing that come.//c move,Ath subject,
+ondb !r=thing that come.//c move,x1th subject,
 
-oidf o,n!r=thing that feel that A is noisy.//c suffer,listen,.
+oidf o,n!r=thing that feel that x1 is noisy.//c suffer,listen,.
 
-oncb o,o!r=thing that enter into A from B.//c move,inside,//this word mean to go inside,
+oncb o,o!r=thing that enter into x1 from x2.//c move,inside,//this word mean to go inside,
 
-olgc o,n!r=thing that is for A.//c for being, benefical,.
+olgc o,n!r=thing that is for x1.//c for being, benefical,.
 
 ilgmmc !r=hedonist.//c tend,intend,only,what,hope,//u25.12.9.17.
 
-oidd o-o-n!r=thing that need to be A to be B.//c need,ab,self,
+oidd o-o-n!r=thing that need to be x1 to be x2.//c need,ab,self,
 
-onnf o!r=thing that follow A.//c go,around,
+onnf o!r=thing that follow x1.//c go,around,
 
 olmc !r=cat.//c animal,cute,//u25.12.10.1.
 
@@ -2176,7 +2206,7 @@ olje !r=dessert.//c food,future,//r dessert is food that is eaten future.
 
 olod !r=meat.//c food,animal,//r food that is part of animal.
 
-onjf o!r=thing that advance toward A.//c go,attack,//u26.1.10.13.
+onjf o!r=thing that advance toward x1.//c go,attack,//u26.1.10.13.
 
 }◀o.c
 
@@ -2186,23 +2216,19 @@ onjf o!r=thing that advance toward A.//c go,attack,//u26.1.10.13.
 
 ▶o.r{
 
-oa o!1p=that A.//u26.1.28.
+oa o!1p=that x1.//u26.1.28.
 
 ob n!r=thing that gains profit.//u26.1.28.
 
-od o!r=thing that call A.//u26.1.28.
+od o!r=thing that call x1.//u26.1.28.
 
- o,o,n!2p=B that is with A.
-
-of o,o!r=thing that move from B to A.
-
-og o!n=thing that is more than A.//a less,//A<//u26.1.28.
+of o,o!r=thing that move from x2 to x1.
 
 oh !n=minus three.
 
-oica o!p=inverse of A.
+oica o!p=inverse of x1.
 
-oilb o,o,n!r=thing that need A to be B.
+oilb o,o,n!r=thing that need x1 to be x2.
 
 olma !r=animal.
 
@@ -2220,11 +2246,11 @@ olob n!r=normal.//s profit,//u26.2.8.4.
 
 ▶o.s{
 
-olga o!r=thing that for being A.//s intend,
+olga o!r=thing that for being x1.//s intend,
 
-o!r=thing that stuck A.//s enter,
+o!r=thing that stuck x1.//s enter,
 
-oiob o,o,n!p=thing that A is important for being B.//s need,
+oiob o,o,n!p=thing that x1 is important for being x2.//s need,
 
 }◀o.s
 
@@ -2236,7 +2262,7 @@ oiob o,o,n!p=thing that A is important for being B.//s need,
 
 pljd !r=child.//a parent,//word child can be used as young people but this word mean only organism that parent made.
 
-pjce o!r=thing that fly on A.//a walk,
+pjce o!r=thing that fly on x1.//a walk,
 
 }◀p.a
 
@@ -2246,7 +2272,7 @@ pjce o!r=thing that fly on A.//a walk,
 
 ▶p.c{
 
-pc !o=.//c PA, CF,//e word PA that return sentence..d 2025.11.16.22.52.//e eg 'ea elca pc bd' mean your assert.
+pc !o=.//c Px1, x3F,//e word Px1 that return sentence..d 2025.11.16.22.52.//e eg 'ea elca pc bd' mean your assert.
 
 pkdd !r=fruit.//c child,tree,//r what tree make.
 
@@ -2268,7 +2294,7 @@ pmag !r=this articficial language.
 
 ▶p.r{
 
-pa o!1p=the A.//u26.1.28.
+pa o!1p=the x1.//u26.1.28.
 
 pb//untranslatable word, it is used by ea.
 
@@ -2276,21 +2302,21 @@ pb//untranslatable word, it is used by ea.
 
 pd simpleipa!o=foreign word.
 
-pe o,o!1p=B that is converted into A.//c 2025.11.16.23.2.
+pe o,o!1p=x2 that is converted into x1.//c 2025.11.16.23.2.
 
 pf !o=it.
 
-pg o!n=A that is converted into number.//c converted,number,.
+pg o!n=x1 that is converted into number.//c converted,number,.
 
 ph !n=three.
 
-pkfa unicode!r=A in unicode.
+pkfa unicode!r=x1 in unicode.
 
-pmib o!p=thing that is about A. value of A.
+pmib o!p=thing that is about x1. value of x1.
 
 pigg !r=pig.
 
-pimb o!r=thing that is wearing A.
+pimb o!r=thing that is wearing x1.
 
 poba !si=symbol that cancel sentence.//d26.1.4.10.
 
