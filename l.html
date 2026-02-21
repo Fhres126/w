@@ -16,27 +16,27 @@
       overflow-wrap: anywhere;
     }
     img{
-      width:var(--s);
+      width:calc(var(--s) / 3  * 2);
       height:auto;
     }
     * {
       
       font-weight: bold;
-      font-size: calc(var(--s) / 20);
+      font-size: calc(var(--s) / 18);
       animation: rainbow 3s linear infinite;
     }
     pre{
-      color:#ff0000;
-      background: linear-gradient(to right, #ff6a00, #ee0979);
--webkit-background-clip: text;
-color: transparent;
-    }
+      color:#00ff00;
+      }
     .setcolor{
-      width:calc(var(--s) / 12);
-      height: calc(var(--s) / 12);
+      width:calc(var(--s) / 24);
+      height: calc(var(--s) / 24);
     }
     .freewidthbutton{
-      height: calc(var(--s) / 12);
+      
+    }
+    button{
+      background-color: none;
     }
   </style>
     <meta charset="UTF-8">
@@ -44,46 +44,45 @@ color: transparent;
     <title>lecture for veluil</title>
 </head>
 <body>
-  <button class = 'setcolor' onclick="document.querySelectorAll('pre').forEach(e=>{
+  <button class = 'setcolor' onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{
   e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';
   e.style.webkitBackgroundClip='text';
   e.style.webkitTextFillColor='transparent';
 })">
 </button>
 
-<button class = 'setcolor' onclick="document.querySelectorAll('pre').forEach(e=>{
+<button class = 'setcolor' onclick="document.querySelectorAll(p,span,a,h1,pre).forEach(e=>{
   e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';
   e.style.webkitBackgroundClip='text';
   e.style.webkitTextFillColor='transparent';
 })">
 </button>
   
-  <button class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('body *').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('*').forEach(e=>{
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('body *').forEach(e=>e.style.color='#ff0000')"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ff0000')"></button>
   
   <button class = 'setcolor' style="background-color:#ff8800;" onclick="document.querySelectorAll('body *').forEach(e=>{
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('body *').forEach(e=>e.style.color='#ff8800')"></button>
   
-  <button class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('body *').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('*').forEach(e=>{
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('body *').forEach(e=>e.style.color='#00ff00')"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00')"></button>
   
-  <button class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('body *').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('*').forEach(e=>{
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('body *').forEach(e=>e.style.color='#ffffff')"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff')"></button>
 
 
-<input type="range" min="4" max="50" step="0.1" value="12"
+<input type="range" min="1" max="10" step="0.01" value="12"
 oninput="
-const s = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s'));
-document.querySelectorAll('pre').forEach(e=>{
-  e.style.fontSize = (s * (1 / this.value)) + 'px';
+document.querySelectorAll('pre, button').forEach(e=>{
+  e.style.fontSize = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value / 50) + 'px';
 });
 ">
 
@@ -96,7 +95,7 @@ document.querySelectorAll('pre').forEach(e=>{
     }else{
       smallerline=width;
     }
-    document.documentElement.style.setProperty('--s', String(smallerline/3*2) + 'px');
+    document.documentElement.style.setProperty('--s', String(smallerline) + 'px');
     document.body.style.maxWidth = width.toString() + 'px';
     document.body.style.maxHeight = height.toString() + 'px';
     
@@ -104,182 +103,11 @@ document.querySelectorAll('pre').forEach(e=>{
       
     }
   </script>
-  <pre>
-This artificial language is called veluil(Versatile Efficient Logical Unambiguous International Language) in English.
-
-▶advantage of this language{
-
-this language is most versatile and most efficient and most logical unambiguous eco-friendly language.
-
-This language has many advantages, so I will explain them in three parts: versatility, logic, and efficiency.
-
-▶examples of the versatile{
-
-NLQR1 is this language version of barcode. NLQR1 is most efficient 1D code. it is usually four times more efficient than barcode. barcode use 145cell to mention 'i am person' but NLQR1 use 28cell.
-</pre>
-  <img src="https://fhres126.github.io/w/vsbar.jpg" alt="connect error">
-  <pre>
-NLQR2 is this language version of QR code. QR codes can only store about 3KB or less of data unlike NLQR. NLQR2 is most efficient 2D code. NLQR2 is usually over 4 times more efficient than a QR code. eg QR code use 441cell to mention 'i am person' but NLQR2 use 32cell.
-  </pre>
-  <img src="https://fhres126.github.io/w/vsqr.jpg" alt="connect error">
-  <pre>
-NLQR mean NLQR1, NLQR2, NLQR3. all NLQR have finder pattern so it can be accurately decoded from any orientation.
-  </pre>
-  <img src="https://fhres126.github.io/w/principlenlqr.jpg" alt="connect error">
-  <pre>
-NLQR3 is most efficient code.
-  </pre>
-  <img src="https://fhres126.github.io/w/nlqrs.jpg" alt="connect error">
-  <pre>
-NLQR can help cheating in exam because it is human-readble. it takes up little space and most people won't think of it as a language, so it won't get caught.
-
-imagine what if NLQR replace pictogram. we dont need to learn lot of pictogram.
-  </pre>
-  <img src="https://fhres126.github.io/w/hatepictogram.jpg" alt="connect error">
-  <pre>
-NL morse is this language version of morse code. NL Morse is usually two times more efficient than Morse code. morse code cant explain mathmatical expression but NL morse can express all meaning.
-
-NL braille is this language version of braille. NL braille is usually 1.5 times more efficient than braille. original Braille is ambiguous cuz meaning of original braille depending on direction but NL braille can have same meaning in any direction.
-
-Sign language is difficult or inefficient for expressing new words or slang but this language's sign language is not.
-
-this language is a binary language so it can easily be converted into NLQR and NL morse and NL braille and sign language and minecraft language and etc. you can learn it easily so you can do many things by learning this language so person who learn this language can easily communicate with the blind and the deaf.
-
-this language is efficient. efficient is necessary to be versatile.
-
-keyboard that is for this language is easy to type cuz it has only 2~16letter.
-  </pre>
-  <img src="https://fhres126.github.io/w/easykeyboard.jpg" alt="connect error">
-  <pre>
-this language can be unambiguous interpreted without whitespace so it deosnt need hassle mark eg whitespace and hyphen.
-
-}◀example of the versatile
-
-▶example of the easy{
-
-this language use phonetic script but this language is pronounced differently from english and it is easy to pronounce and unambiguous. this language can express all pronunciation using parameter.
-
-most words are not randomly made.
-
-lot of words is compound words.(eg word 'hnmb' mean music. word 'hnmb' is compound word of sound and fun. word 'bomb' mean sports. it is compound word of compete and fun)
-
-lot of words is abbreviations.(word 'nd' is abbreviation for 'Na Doea'(this time). this word mean now)
-
-lot of words are arranged in an orderly way.(eg bihd mean hydrogen(Atomic number 1). cihd mean helium(Atomic number 2). dihd mean lithium(Atomic number 3). eihd mean beryllium(Atomic number 4))
-
-so it help technology grow cuz it make science easy.
-
-Words used in similar situations or words with similar meanings are made of similar letters. eg mjob mean love. mkib mean like. mkcb mean pleasure so you can easily guess the meaning of abbreviation you see for the first time.
-
-lot of antonym is made by word formation rule for antonym.
-
-this language have very few suffix.(maybe 4)
-
-part of speech of this language is only noun and function.
-
-if you learn a little grammar, then you can explain every meaning, regardless of your native language. grammar is simplest and consistent by using  prefix notation so this language can be used in programming without change of grammar. the programming language is called 'pmfa'. other programming languages have limits. For example, C++ cannot represent numbers beyond a certain size, but pmfa can represent all number.
-
-Word stress is not required for word distinction in this language.
-
-}◀example of the easy
-
-▶example of the logical{
-
-english easly becomes ambiguous. eg 'i love situation that i love person who love cow and people and chicken or he eat meal'. but this language express all situation without ambiguous.
-
-word think have three meaning it is imagine and beilive and ponder so word for think is not exist in this language.
-
-this language dont have slang.
-
-this language doesn't have exceptions.
-
-this language dont have homonyms and synonyms.
-
-unambigous is very good for language cuz it make efficient cuz it doesn't need any additional explanation or images to explain exactly.
-
-}◀example of the logical
-
-▶example of the efficient{
-
-'i know you' is 80bit in ascii code. this language sentence 'lb cg' mean 'i know you'. it is 16bit. this language can express all using only binary. this language dont need whitespace. one letter is just for only expressing 4bit so it is 16bit.
-
-}◀example of the efficient
-  
-▶why this language must be IAL{
-    
-if all human use this language environmental pollution will be reduced.
-
-The prevention of environmental pollution through this language is enormous scale.
-
-most data in world is video data but if someone speak in this language, the someone dont need to speak for long time so video become short.
-
-A sentence that takes 10 seconds to say in English can be said in just 5 seconds in this language.
-
-this language is very consistent so polution by AI and LLM will be reduced.
-    
-An ambiguous IAL creates misunderstandings and promotes conflict.
-    
-it make easy communication between disabled people and non-disabled.
-
-unlogical IAL make mankind uncivilized.
-
-this language pronounce binary so we dont need to learn name when use this language. for example, we dont need to learn this language version of name of ∀, ∞ so it help scholarship.
-    
-}◀why this language must be IAL
-
-}◀advantage of this language
-
-Among the people I’ve seen, those who dislike this language didn’t even properly read this document.
-
-▶refute to concerns{
-
-concerns: lot of words are arranged in an orderly way? so 'foea' mean minute. 'goea' mean hour but the pronunciation is similar so it is hard to distinguish in noisy place.
-
-refute: I recorded 'foea', 'goea', and 'hoea'. Then, I played the video in a noisy place to see whether I could recognize them exaxtly. They were very easy to distinguish. It won't be a problem if you well pronounce them.
-
-concerns: i hate this wrting system. it cant explain interjection and foreign word.
-
-refute: no, this writing system can express interjection and foreign word using specific parameter type. if we change alphabet then we cant use world most efficient system(NLQR, NLmorse). this alphabet make we can easily pronunce all that can be expressed as binary so we can pronunce 🕎 without learning name.
-
-other refute to concerns is appear when explain new thing. Even if I refute it now, you won’t know what I’m talking about. if there are problem we can change.
-
-}◀refute to concerns
-
-▶evidence{
-
-we have some tool. i belive that it can be evidence.
-
-site that convert to other wring system(NLQR1, NLQR2): https://fhres126.github.io/w/nlintovarious.html
-
-site for searching word: https://fhres126.github.io/w/worddictionary.html
-
-this follo(wing video explain principle of this language. i belive that it can be evidence.
-
-NLQR: https://youtu.be/rPGDHublCDI?si=LGGqzc4bVFdQmC9D
-
-NL morse: https://youtu.be/bp8b8FhJHTc?si=uLMRb4zWim0HeDxC
-
-NL braille: https://youtu.be/UKd6Fry-k8g?si=RRccCNANzb7LMkG9
-
-NL sign language one hand: https://youtu.be/4SJ2bu0ngnk?si=w0jSCCvQHDL6AGfP
-
-}◀evidence
-
-this language is beta version. making this language is started in 2023year second month. if this language can become more perfect then it is changed so you can provide feedback for this language or this doucment. also you can ask me using this:
-
-Our chat room: https://discord.gg/VhHBjXbpkz
-
-reddit: r/veluil
-
-YouTube: @veluil (all URL in bio)
-
-email: fhres126@gmail.com
-
-telegram: https://t.me/+PLg57eWiUEU3Nzg1
+  <pre>This artificial language is called veluil(Versatile Efficient Logical Unambiguous International Language) in English.
 
 ▶table of content{
 
-1. advantage of this language.
+1. persuade to learn this language.
 
 2. why this language must and can be international auxillary language.
 
@@ -287,7 +115,7 @@ telegram: https://t.me/+PLg57eWiUEU3Nzg1
 
 4. evidence.
 
-5. word spacing.
+5. how to distinguish word.
 
 6. alphabet.
 
@@ -314,11 +142,155 @@ telegram: https://t.me/+PLg57eWiUEU3Nzg1
 
 }◀table of content
 
-▶why this language is made{
+
+
+
+this language is most versatile and most efficient most logical and unambiguous and easy and simple language. if this language can become more perfect then this language is changed.
+
+this language can help cheating in exam because it takes up very little space and most people won't think of it as a language, so it won't get caught.
+
+ if this language become international language then everybody can easily communicate with the blind and the deaf since this language is a binary language so it can easily be converted into this language version of braille and sign language and morse code and barcode and QR code and etc by simple rule. it is very very easy and simple so you can do many things by learning this language.
+
+NLQR1 is this language version of barcode. NLQR1 is most efficient 1D code. it is usually four times more efficient than barcode. barcode use 145cell to mention 'i am person' but NLQR1 use 28cell.
+</pre>
+  <img src="https://fhres126.github.io/w/vsbar.jpg" alt="connect error">
+  <pre>
+NLQR2 is this language version of QR code. QR codes can only store about 3KB or less of data unlike NLQR. NLQR2 is most efficient 2D code. NLQR2 is usually over 4 times more efficient than a QR code. eg QR code use 441cell to mention 'i am person' but NLQR2 use 32cell.
+  </pre>
+  <img src="https://fhres126.github.io/w/vsqr.jpg" alt="connect error">
+  <pre>
+NLQR mean NLQR1, NLQR2, NLQR3. all NLQR have finder pattern so it can be accurately decoded from any orientation. all NLQR is human readable.
+  </pre>
+  <img src="https://fhres126.github.io/w/principlenlqr.jpg" alt="connect error">
+  <pre>
+NLQR3 is most efficient code.
+  </pre>
+  <img src="https://fhres126.github.io/w/nlqrs.jpg" alt="connect error">
+  <pre>
+
+imagine what if NLQR replace pictogram. we dont need to learn lot of pictogram.
+  </pre>
+  <img src="https://fhres126.github.io/w/hatepictogram.jpg" alt="connect error">
+  <pre>
+NL morse is this language version of morse code. NL Morse is usually two times more efficient than Morse code. morse code cant explain mathmatical expression but NL morse can express all meaning. 'i love you' in morse code is following:
+
+.. / .-.. --- ...- . / -.-- --- ..-
+
+in veluil:
+
+..---.....-- / .-...--
+
+NL braille is this language version of braille. NL braille is usually 1.5 times more efficient than braille. original Braille is ambiguous cuz meaning of original braille depending on direction but NL braille can have same meaning in any direction.
+
+Sign language is difficult or inefficient for expressing new words or slang but this language's sign language is not.
+
+this language is efficient. efficient is necessary to be versatile.
+
+keyboard that is for this language is easy to type cuz it has only 2~16letter.
+  </pre>
+  <img src="https://fhres126.github.io/w/easykeyboard.jpg" alt="connect error">
+  <pre>
+this language can be unambiguous interpreted without whitespace so it deosnt need hassle mark eg whitespace and hyphen.
+
+this language use phonetic script but this language is pronounced differently from english and it is easy to pronounce and unambiguous. this language can express all pronunciation using parameter.
+
+most words are not randomly made.
+
+lot of words is compound words.(eg word 'hnmb' mean music. word 'hnmb' is compound word of sound and fun. word 'bomb' mean sports. it is compound word of compete and fun)
+
+lot of words is abbreviations.(word 'nd' is abbreviation for 'Na Doea'(this time). this word mean now)
+
+lot of words are arranged in an orderly way.(eg bihd mean hydrogen(Atomic number 1). cihd mean helium(Atomic number 2). dihd mean lithium(Atomic number 3). eihd mean beryllium(Atomic number 4))
+
+so it help technology grow cuz it make science easy.
+
+Words used in similar situations or words with similar meanings are made of similar letters. eg mjob mean love. mkib mean like. mkcb mean pleasure so you can easily guess the meaning of abbreviation you see for the first time.
+
+lot of antonym is made by word formation rule for antonym.
+
+this language have very few suffix.(maybe 4)
+
+part of speech of this language is only noun and function.
+
+if you learn a little grammar, then you can explain every meaning, regardless of your native language. grammar is simplest and consistent by using  prefix notation so this language can be used in programming without change of grammar. the programming language is called 'pmfa'. other programming languages have limits. For example, C++ cannot represent numbers beyond a certain size, but pmfa can represent all number.
+
+Word stress is not required for word distinction in this language.
+
+english easly becomes ambiguous. eg 'i love situation that i love person who love cow and people and chicken or he eat meal'. but this language express all situation without ambiguous.
+
+word think have three meaning it is imagine and beilive and ponder so word for think is not exist in this language.
+
+this language dont have slang.
+
+this language doesn't have exceptions.
+
+this language dont have homonyms and synonyms.
+
+unambigous is very good for language cuz it make efficient cuz it doesn't need any additional explanation or images to explain exactly.
+
+'i know you' is 80bit in ascii code. this language sentence 'lb cg' mean 'i know you'. it is 16bit. this language can express all using only binary. this language dont need whitespace. one letter is just for only expressing 4bit so it is 16bit.
+
+why this language must be IAL.
+    
+if all human use this language environmental pollution will be reduced.
+
+The prevention of environmental pollution through this language is enormous scale.
+
+most data in world is video data but if someone speak in this language, the someone dont need to speak for long time so video become short.
+
+A sentence that takes 10 seconds to say in English can be said in just 5 seconds in this language.
+
+this language is very consistent so polution by AI and LLM will be reduced.
+    
+An ambiguous IAL creates misunderstandings and promotes conflict.
+    
+it make easy communication between disabled people and non-disabled.
+
+unlogical IAL make mankind uncivilized.
+
+this language pronounce binary so we dont need to learn name when use this language. for example, we dont need to learn this language version of name of ∀, ∞ so it help scholarship.
+
+Among the people I’ve seen, those who dislike this language didn’t even properly read this document.
+
+concerns: lot of words are arranged in an orderly way? so 'foea' mean minute. 'goea' mean hour but the pronunciation is similar so it is hard to distinguish in noisy place.
+
+refute: I recorded 'foea', 'goea', and 'hoea'. Then, I played the video in a noisy place to see whether I could recognize them exaxtly. They were very easy to distinguish. It won't be a problem if you well pronounce them.
+
+concerns: i hate this wrting system. it cant explain interjection and foreign word.
+
+refute: no, this writing system can express interjection and foreign word using specific parameter type. if we change alphabet then we cant use world most efficient system(NLQR, NLmorse). this alphabet make we can easily pronunce all that can be expressed as binary so we can pronunce 🕎 without learning name.
+
+other refute to concerns is appear when explain new thing. Even if I refute it now, you won’t know what I’m talking about. if there are problem we can change.
+
+we have some tool. i belive that it can be evidence.
+
+site that convert to other wring system(NLQR1, NLQR2): https://fhres126.github.io/w/nlintovarious.html
+
+site for searching word: https://fhres126.github.io/w/worddictionary.html
+
+this follo(wing video explain principle of this language. i belive that it can be evidence.
+
+NLQR: https://youtu.be/rPGDHublCDI?si=LGGqzc4bVFdQmC9D
+
+NL morse: https://youtu.be/bp8b8FhJHTc?si=uLMRb4zWim0HeDxC
+
+NL braille: https://youtu.be/UKd6Fry-k8g?si=RRccCNANzb7LMkG9
+
+NL sign language one hand: https://youtu.be/4SJ2bu0ngnk?si=w0jSCCvQHDL6AGfP
+
+this language is beta version. making this language is started in 2023year second month. if this language can become more perfect then it is changed so you can provide feedback for this language or this doucment. also you can ask me using this:
+
+Our chat room: https://discord.gg/VhHBjXbpkz
+
+reddit: r/veluil
+
+YouTube: @veluil (all URL in bio)
+
+email: fhres126@gmail.com
+
+telegram: https://t.me/+PLg57eWiUEU3Nzg1
 
 Language is extremely important because it makes humans superior. A language must not be inferior, and it must not hinder science, scholarship, or other fields. i made this language using this thought.
-
-}◀why this language is made
 
 ▶alphabet{
 
@@ -334,7 +306,7 @@ P = ⵎ 0
 
 braille is 2×3 and this alphabet is 2×3 so this alphabet can be used as braille. but other braille for this language is exist for efficient.
 
-it can be expressed by latin alphabet.
+if the alphabet cant be used then it can be expressed by latin alphabet.
 
 a = 0000. b = 1000. c = 0100. d = 1100.
 
@@ -345,6 +317,9 @@ i = 0001. j = 1001. k = 0101. l = 1101.
 m = 0011. n = 1011. o = 0111. p = 1111.
 
 }◀alphabet
+
+
+
 
 ▶word separation, spacing{
 
@@ -376,6 +351,9 @@ answer: 3.
 
 }◀word separation, spacing
 
+
+
+
 ▶pronunciation{
 
 purpose of this section: making you know how to pronunce binary.
@@ -399,11 +377,7 @@ then 'anba' is pronounced as 'membu' then it can be simplified as 'meb'.
 
 this language can express all pronunciation using specific parameter.
 
-▶pronunciation chart{
-
-the pronunciation is arranged with lower Hz sounds coming first. so it is not biased toward any specific culture.
-
-▶IPA version{
+pronunciation chart is follwing:
 
 a = /m/, /u/. b = /b/, /o/, . c = /d/, /ʌ/. d = /g/, /ɯ/.
 
@@ -412,10 +386,6 @@ e = /n/, /a/. f = /ɾ/, /ɛ/. g = /p͈/, /i/. h = /t͈/, /wʌ/.
 i = /k͈/, /um/. j = /p/, /om/. k = /t/, /ʌm/. l = /k/, /ɯm/.
 
 m = /tɕ/, /am/. n = /t͈ɕ/, /ɛm/. o = /t͡ʃ/, /im/. p: /s/, /wɛ/.
-
-}◀IPA version
-
-}◀pronunciation chart
 
 ▶read it if you dislike this pronunciation{
 
@@ -438,6 +408,8 @@ sometime we can interpret 'ta' as 'd ha' if we talk slowly.
 if word is long then there are final consonant. This mechanism makes long word difficult to say so user dont wanna made long word so it becomes efficient.
 
 pronuncing binary make we can pronunce all without learning name.
+
+the pronunciation is arranged with lower Hz sounds coming first. so it is not biased toward any specific culture.
 
 }◀read it if you dislike this pronunciation
 
@@ -471,11 +443,11 @@ sentence 'anga nb' mean 'i am human'. the word 'anga' is in left hand side. the 
 
 here we will learn function word. you should know object mean noun or function. word 'fc' is function that must have two object type parameter. word 'fc' is abbreviation for 'fa kf'. 'fa kf' mean 'thing that command to answer'. and in word dictionary, it is expressed as following.
 
-fc o,o!r=thing that ask B about A.//c command,answer,//e omitted B is you.
+fc o,o!r=thing that ask x2 about x1.//c command,answer,//e omitted x2 is you.
 
 the 'o' is in place for explaining parameter that function must have. the 'o' is abbreviation for 'object' so object can be inputed in this function as parameter.
 
-the capital letter in between equal sign and dot must be changed into input value. A must be changed into first input value. B must be changed into second input value. C must be changed into third input value... 'fc anga nb' mean 'thing that ask me about human'. '//e' is used to explain word using sentence. the B mean second parameter.
+the x1 that is in between equal sign and dot must be changed into first input value. x2 must be changed into second input value. x3 must be changed into third input value... 'fc anga nb' mean 'thing that ask me about human'. '//e' is used to explain word using sentence. the x2 mean second parameter.
 
 all sentence of this language consist of left hand side and right hand side. 
 
@@ -485,7 +457,7 @@ here we will learn how to say 'what is your name?' so we need to learn word for 
 
 word 'af' mean 'of'. this word must have two object as parameter. type of word 'af' is type of first input parameter. this word is expressed as following in word dictionary.
 
-af o,o!1p=A of B.//c A that is B, element of A,//r pencil that is element of me is pencil of me.
+af o,o!1p=x1 of x2.//c A that is B, element of A,//r pencil that is element of me is pencil of me.
 
 the '1p' mean type of this word is type of first input parameter.
 
@@ -503,33 +475,33 @@ this word can be expressed as diffrent way. capital letter that is in additional
 
 cg !r=you.//a NB,
 
-sentnece 'fc af blga cg' mean 'i am thing that ask you about name of you'.
+sentnece 'fc af blga cg' mean 'i am thing that ask you about name of you' as well as 'i ask you about name of you' as well as 'what is your name?'.
 
 you can use word 'kf' to answer.
 
-kf o,o!r=thing that answer A to B.//a ask,//e omitted B is you.
+kf o,o!r=thing that answer x1 to x2.//a ask,//e omitted B is you.
 
-sentence 'kf bicc' is sentence 'i am thing that answer bicc to you'.
+sentence 'kf bicc' mean 'i am thing that answer bicc to you' as well as 'i reply you to bicc' as well as 'it is bicc'.
 
 sentence 'gillpa af blga nb' mean 'my name is gillpa' but you can omit second parameter of word 'af'.
 
 here we will learn how to say 'where is bathroom?'.
 
-ne o!r=location of A.
+ne o!r=location of x1.
 
 nnfd !r=bathroom.//c place,emit,shit,
 
-sentence 'fc ne nnfd' mean 'i am thing that ask you about location of bathroom'.
+sentence 'fc ne nnfd' mean 'i am thing that ask you about location of bathroom' as well as 'i ask you about location of bathroom' as well as 'where is bathroom?'.
 
 here we will learn how to say hello.
 
-olga o!r=thing that greet A.//s call,
+olga o!r=thing that greet x1.//s call,
 
-od o!r=thing that call A.
+od o!r=thing that call x1.
 
 form of this word is similar in binary. this language dont need word 'hello' and 'hey'. sentence 'olga' mean 'hello' and 'i am thing that greet'. sentence 'od' mean 'hey' and 'i am thing that call'.
 
-bjjh o!r=thing that bye A.//a greet,
+bjjh o!r=thing that bye x1.//a greet,
 
 you can use this word to bye.
 
@@ -537,33 +509,31 @@ we will learn how to say 'do you have water?'.
 
 word 'ja' must have sentence as parameter. sentence type parameter is just 'o,o'. this word is expressed as following in word dictionary.
 
-ja s!r=whether A2 is A1.
+ja o,o!r=whether x2 is x1.
 
-A1 is first element of first parameter of this function so A1 is first 'o'. A2 is second 'o'.
-
-ke o!r=thing that have A.//a element,
+ke o!r=thing that have x1.//a element,
 
 goda !r=water.//s liquid,
 
-sentence 'fc ja ke goda cg' mean 'i am thing that ask you about whether you are thing that have water'.
+sentence 'fc ja ke goda cg' mean 'i am thing that ask you about whether you are thing that have water' as well as 'i ask you about whether you have water' as well as 'do you have water?'.
 
 here we wiĺl learn how to say 'give me water'.
 
-fa s!r=thing that command A2 to be A1.//e omitted A2 is you.
+fa o,o!r=thing that command x2 to be x1.//e omitted A2 is you.
 
-gb s,n!r=thing that cause A2 be A1.//e B is degree of cause.
+gb o,o,n!r=thing that cause x2 be x1.//e C is degree of cause.
 
-sentence 'fa gb ke goda nb' mean 'i am thing that command you to be thing that cause me be thing that have water'.
+sentence 'fa gb ke goda nb' mean 'i am thing that command you to be thing that cause me be thing that have water' as well as 'make me thing that have water!' as well as 'give me water'. 
 
 here we will learn how to say 'thank you'.
 
-mood o,n!r=thing that thank A.//e B is degree of thank.
+mood o,n!r=thing that thank x1.//e x2 is degree of thank.
 
 sentence 'mood cg' mean 'thank you'.
 
 word 'mjib' must have object and number as parameter. the number is for explainng degree of like.
 
-mjib o,n!r=thing that like A.//s love,//e B is degree of like.
+mjib o,n!r=thing that like x1.//s love,//e B is degree of like.
 
 in sentence 'mjib anga nb', second parameter of word 'mjib' automatically be omitted by other type word. this sentence mean 'i am thing that like you'. the degree of like is expressed as number between zero and one. word 'lh' mean one so sentence 'mjib cg lh nb' mean 'I like you with 100% intensity'.
 
@@ -577,13 +547,13 @@ nh !n=two.
 
 'ea nh mjib anga cg' mean 'how much you like human'.
 
-lb o!r=thing that know A.
+lb o!r=thing that know x1.
 
 word 'pb' causes the parameter at the same position to be returned. in sentence 'mjib anga cg', word 'anga' is in first parameter so 'ea mjib pb cg' is 'anga'.
 
 word 'pc' causes the sentence at the same position to be returned.
 
-lf s!r=thing that belive A2 is A1.//c know,as,true,whether,
+lf o,o!r=thing that belive x2 is x1.//c know,as,true,whether,
 
 'ea lf pc cg' mean 'your belief'.
 
@@ -591,29 +561,29 @@ here we will learn comparative.
 
 jkca n!r=Ameter.
 
-bb o!n=thing that is less than A.
+bb o!n=thing that is less than x1.
 
 in 'jkca bb lh'  mean 'meter whose parameter is less than one' and 'thing that is shorter than one meter'.
 
 'jkca bb ea jkca nb' mean 'thing that is shorter than me'. it can be simplified as 'jkca bb nb'. and there are abbreviation.
 
-jkbb o!r=thing that is shorter than A.//c meter,less,
+jkbb o!r=thing that is shorter than x1.//c meter,less,
 
-og o!n=thing that is more than A.//a less,
+og o!n=thing that is more than x1.//a less,
 
 'jkca og nb' mean 'thing that is longer than me'.
 
-gnog o!r=thing that is longer than A.//a short,
+gnog o!r=thing that is longer than x1.//a short,
 
 sentence 'mjib nb og cg nb' mean 'i am thing that like me than you'.
 
-pg o!n=A that is converted into number.
+pg o!n=x1 that is converted into number.
 
 'jkca pg nb' mean 'thing that is same height as me'.
 
 we learn this language so lets learn how to say 'i learn veluil'.
 
-mmlb o!r=thing that learn A.//c becoming,know,
+mmlb o!r=thing that learn x1.//c becoming,know,
 
 pmag !r=veluil.
 
@@ -621,9 +591,9 @@ so sentence 'mmlb pmag nb' mean 'i am thing that learn veluil'.
 
 here we will learn how to say 'can you speak veluil?'.
 
-lg o,n!p=thing that can be A with B percent probability.
+lg o,n!p=thing that can be x1 with x2 percent probability.
 
-hnda o,o!r=thing that speak A to B.//c sound,mention,
+hnda o,o!r=thing that speak x1 to x2.//c sound,mention,
 
 sentence 'fc ja lg hnda pmag' mean 'i am thing that ask you about wheter you are thing that can be thing that speak veluil'.
 
@@ -667,15 +637,15 @@ we will learn how to say 'meet at 9a.m!'.
 
 word 'goea' mean hour. type of this word is time. this word is next word of word for minute. next word is one bit higher than before word. 
 
-goea n!t=A hour.//n minute,
+goea n!t=x1 hour.//n minute,
 
 '//n minute' mean 'this word is next word of word for minute'.
 
-foea n!t=A minute.//n second,
+foea n!t=x1 minute.//n second,
 
-mc t,o!2p=thing that is B when A.
+mc t,o!2p=thing that is x2 when x1.
 
-nnad o!r=thing that met A.//a around,
+nnad o!r=thing that met x1.//a around,
 
 sentence 'fa mc goea kg ja nnad' mean 'meet at 9a.m!'.
 
@@ -687,21 +657,21 @@ pf !o=it.
 
 if word 'pf' is inputed in time type parameter then this word must be time so word 'pf' that is in time type parameter is translated as 'that time'.
 
-lica o!r=thing that see A.//c sense,photon,
+lica o!r=thing that see x1.//c sense,photon,
 
 sentence 'mb pf lica cg nb' mean 'i am thing that see you at that time'.
 
 here we will learn how to say 'can you speak it agian?'.
 
-lg o,n!p=thing that can be A with B percent probability.
+lg o,n!p=thing that can be x1 with x2 percent probability.
 
-imea n,o!1p=thing that repeat B at A times.
+imea n,o!1p=thing that repeat x2 at x1 times.
 
 in sentence 'fc ja lg imea hnda pf', there are no word for you. omitted parameter is determined by context. this sentence mean 'i am thing that ask you about whether you are thing that can be thing that repeat be thing that speak it'.
 
 here we will learn tense.
 
-ed o!1p=thing that was A.
+ed o!1p=thing that was x1.
 
 sentence 'ed mjib cg nb' mean 'i was thing that like you'.
 
@@ -709,7 +679,7 @@ suffix ep- mean was. this suffix can be used for only function.
 
 sentence 'epmjib cg nb' mean 'i was thing that like you'.
 
-le o!1p=thing that will be A.//a was,
+le o!1p=thing that will be x1.//a was,
 
 sentence 'le mjib cg nb' mean 'i am thing that will be thing that like you'.
 
@@ -719,13 +689,13 @@ sentence 'lpmjib cg nb' mean 'i am thing that will be thing that like you'.
 
 suffix ip- make function to noun.
 
-blca s,o!r=thing that assert A2 is A1 to B.//s code,
+blca o,o,o!r=thing that assert that x2 is x1 to x3.//s code,
 
 'ipblca' mean assert.
 
 here we will learn how to say 'i am from united states of america'.
 
-ondb o!r=thing that come from A.//c move,DB,
+ondb o!r=thing that come from x1.//c move,DB,
 
 word 'aianpd' mean 'united states of america'. pronunciation of this word is derived from 'USA' of english. additional explanation '//p A, B,' mean pronunciation of this word similar to A in language B. ISO 639-1 code is in the B. this word is expressed as following in word dictionary.
 
@@ -737,7 +707,7 @@ here we will learn singular.
 
 if first parameter of word 'ie' is omitted then the first parameter is one.
 
-ie n,o!1p=A B.//e omitted A is one.
+ie n,o!1p=x1 x2.//e omitted x1 is one.
 
 'ie anga' mean 'a human'.
 
@@ -749,13 +719,15 @@ suffix gp- make plural.
 
 you can say 'i see human' even if you see lot of human.
 
+suffix 'mp-' is -ing. 'mpof' mean thing that moving.
+
 here we will learn pronoun.
 
-na o!1p=this A.
+na o!1p=this x1.
 
-oa o!1p=that A.
+oa o!1p=that x2.
 
-pa o!1p=the A.
+pa o!1p=the x3.
 
 pimd !r=she.//c the,women,
 
@@ -797,7 +769,9 @@ here we will learn word for and.
 
 word 'be' have object type parameter until this word met symbol that omit parameter.
 
-be c o!1p=A1 and A2 and A3 and...
+be c o!1p=1x1 and 2x1 and 3x1 and...
+
+'1x1' mean first element of first parameter.
 
 'be cg pf ad' mean 'you and it'.
 
@@ -807,17 +781,17 @@ in 'be cg lb ad ad' first 'ad' omit parameter of word 'lb'. second 'ad' finish p
 
 here we will learn how to say 'why you cant do it?'.
 
-gc s,n!r=why A2 is A1.
+gc o,o,n!r=why x2 is x1.
 
-eb o!1p=thing that is not A.
+eb o!1p=thing that is not x1.
 
 sentence 'fc gc eb lg pf cg' mean 'i am thing that ask you about why you are thing that is not thing that can be it' and 'why you cant do it?'.
 
 here we will learn how to say 'what if he dislike it?'.
 
-jf s,n!r=result of A2 being A1.//a reason,
+jf o,o,n!r=result of x2 being x1.//a reason,
 
-dohg o,n!r=thing that dislike A.//a like,
+dohg o,n!r=thing that dislike x1.//a like,
 
 pide !r=he.//c the,men,
 
@@ -825,11 +799,11 @@ sentence 'fc jf dohg pf pide' mean 'i am thing that ask you about result of he b
 
 here we will how to say 'if you hurry, we can ride bus'.
 
-cf s!r=situation that A2 is A1.
+cf o,o!r=situation that x2 is x1.
 
-gmbb o,o!1p=thing that be A quickly than B.//c GMDA,less,
+gmbb o,o!1p=thing that be x1 quickly than x2.//c GMDA,less,
 
-flfa o!r=thing that is in A.//s part of,
+flfa o!r=thing that is in x1.//s part of,
 
 bkpd !r=bus.//p bus, en,
 
@@ -837,7 +811,7 @@ sentence 'cf lg flfa bkpd bnca jf gmbb bc cg' mean 'result of you being thing th
 
 here we will learn how to say 'she listen to music'.
 
-lihf o!r=thing that listen to A.//c sense,sound,
+lihf o!r=thing that listen to x1.//c sense,sound,
 
 hnmb !r=music.//c sound,like,
 
@@ -845,7 +819,7 @@ sentence 'lihf hnmb pimd' mean 'she is thing that listen to music'.
 
 here we will learn how to say 'what song do you like?'.
 
-ab o,o!1p=A that is B.
+ab o,o!1p=x1 that is x2.
 
 'song that is what you like' mean 'song that you like' sentence 'fc ab hnmb ea mjib cg' mean 'i am thing that ask you about music that is what you like'.
 
@@ -855,7 +829,7 @@ there are abbreviation.
 
 we will learn how to say 'how much is this?'
 
-pe o,o!1p=B that is converted into A.
+pe o,o!1p=x2 that is converted into x1.
 
 coih !r=money.//c dollar,over,zero,
 
@@ -863,7 +837,7 @@ sentence 'fc pe coih na' mean 'i am thing that ask you about this that is conver
 
 here we will learn how to say 'it is funny'.
 
-lmle o,n!r=thing that feel A as funny.//p haha, people,
+lmle o,n!r=thing that feel x1 as funny.//p haha, people,
 
 sentence 'lmle pf' mean 'i am thing that feel it as funny'.
 
@@ -881,39 +855,39 @@ sentence 'fc ea mc nihg pb cg' mean 'i am thing that ask you about what you be i
 
 here we will learn how to say 'i hope this is helpful for you'.
 
-mb s,n!r=thing that hope A2 be A1.
+mb o,o,n!r=thing that hope x2 be x1.
 
-le o!1p=thing that will be A.//a was,
+le o!1p=thing that will be x1.//a was,
 
-gjob o,n!r=thing that benefical A.//c cause,profit,
+gjob o,n!r=thing that benefical x1.//c cause,profit,
 
 sentence 'mb le gjob cg pa' mean 'i am thing that hope this be thing that benefical you'.
 
 here we will learn how to say 'I have a question'.
 
-ld o,n!r=thing that intend to be A.
+ld o,n!r=thing that intend to be x1.
 
 sentence 'ld fc' mean 'i am thing that intend to be thing that ask'.
 
 here we will learn how to say 'can i touch that?'.
 
-mjgg s!r=thing that allow A2 be A1.//s hope,
+mjgg o,o!r=thing that allow x2 be x1.//s hope,
 
-alnd o!r=thing that touch A.
+alnd o!r=thing that touch x.
 
-oa o!1p=that A.
+oa o!1p=that x1.
 
 sentence 'fc ja mjgg alnd oa' mean 'i am thing that ask you about whether you are thing that allow me be thing that touch that'.
 
 here we will learn how to say 'i dont think so'.
 
-lf s!r=thing that belive A2 is A1.//c LB,CA,FF,JA,
+lf o,o!r=thing that belive x2 is x1.//c LB,CA,FF,JA,
 
 sentence 'eb lf ff pf' mean 'i am thing that is not thing that beilive it is true.
 
 here we will learn how to say 'when it is end?'.
 
-ee s!r=when A2 is A1.
+ee o,o!r=when x2 is x1.
 
 cjga !r=end.//n middle,
 
@@ -921,13 +895,54 @@ sentence 'fc ee cjga pf' mean 'i am thing that ask you about when it is end'.
 
 here we will learn how to say 'I left my phone in the car'.
 
-gocb o,o,n!r=thing that put B into A.//c cause,move,inside,
+gocb o,o,n!r=thing that put x2 into x1.//c cause,move,inside,
 
 jjea !r=phone.//p phone, en,
 
 coof !r=vehicle.//c machine,go,
 
 sectence 'ed gocb coof jjea' mean 'i am thing that was thing that put phone into vehicle'.
+
+now just leaning word and logic is enough so we will learn word and logic by guessing. between '(' and ')' is one function.
+
+ma o!1p=all x1.
+
+sentence '(olga (ma cg))' mean 'hello everyone'.
+
+sentence '(mb (kigg ljld)' mean 'i wanna drink coke'.
+
+kigg o!r=thing that drink x1.//c inhale,liquid,
+
+sentence '(mb (gb aifb (af cmfc)))' mean 'i wanna change my dollar into euro'.
+
+sentence '(ab anga plpa) nb' mean 'i am human that is white'.
+
+sentence '(mjib (ab dd (lica bomb)))' mean 'i like to see sports'.
+
+doed o,n!r=thing that regret being x1.//c dread,was,
+
+sentence 'doed pf' mean 'i regret being it'.
+
+alhg o!1p=thing that is x1. right hand side in the sentence.//e this word is be verb.
+
+sentence 'alhg anga nb' mean 'i am human'.
+
+fkad o,o!r=thing that ask x2 about who is x1.//c ask,ALHG,
+
+sentence 'fkad cg' mean 'who are you'.
+
+cf o,o!r=situation that x2 is x1.
+
+mjcb o,n!r=thing that feel pleasure.//e x2 is input value of pleasure.//s like,
+
+jf o,o,n!r=result of x2 being x1.//a reason,
+
+sentence '(cf mjcb ad nb) (jf lihf hnmb nb)' mean 'if i listen music then i feel pleasure'.
+
+ch o,o,o,n!p3=thing that is x3 despite of x2 being x1.
+
+sentence '(ch lb cg nb eb lb nb) cg' mean 'i know you but you dont know me'.
+
 
 
 
@@ -993,7 +1008,7 @@ in this lecture, i wont use word that i didnt teach.
 
 we will learn function word here. you should know object mean noun or function. word 'fc' is function that must have two object type parameter. word 'fc' is abbreviation for 'fa kf'. 'fa kf' is 'thing that command to answer'. and in word dictionary, it is expressed as following.
 
-fc o,o!r=thing that ask B about A.//c command,answer,//e omitted B is you.
+fc o,o!r=thing that ask x2 about x1.//c command,answer,//e omitted B is you.
 
 the 'o' is in place for explaining parameter that function must have. the 'o' is abbreviation for 'object' so object can be inputed in this function as parameter.
 
@@ -1007,12 +1022,6 @@ the capital letter in between equal sign and dot must be changed into input valu
 
 't' is abbreviation for time.
 
-'s' is abbreviation for sentence. it is just o,o. for example,
-
-cf s!r=situation that A2 is A1.
-
-'A1' mean first 'o'. 'A2' is second 'o'.
-
 'what' is 'what' as in 'what i know'.
 
 ea what!r=.
@@ -1021,13 +1030,13 @@ word 'ea' return n-th parameter.
 
 lh !n=one.
 
-jd o!r=thing that imagine A.
+jd o!r=thing that imagine x1.
 
 'ea lh' return first parameter in sentence. 'ea lh jd oe' return first parameter of word 'jd' so it mean what i imagine. if there are no number then it automatically return first parameter. word 'pa' can be used. 'ea jd pa oe' mean 'what i imagine'.
 
 'int' is binary string that consist of integer multiple of 8 bits. for example,
 
-blfa int!r=word A.
+blfa int!r=word x1.
 
 object that is inputed in this function dont have parameter.
 
@@ -1039,13 +1048,16 @@ kg dec!n=.
 
 'a' finish parameter dec. 'b' is 1. 'c' is 2. 'd' is 3. 'e' is 4. 'f' is 5. 'g' is 6. 'h' is 7. 'i' is 8. 'j' is 9. 'k' is 0 since if 'a' is '0' it cant be visible in NLQR. this language use little andian so 'fg bcdeghka' is 7654321.
 
-be c o!1p=A1 and A2 and...
+be c o!1p=1x1 and 2x1 and...
 
 parameter 'c A' mean this word have parameter until this word met symbol that omit parameter.
 
-'be A A A ad' mean 'A and A and A'.
+'be x1 x2 x3 ad' mean 'x1 and x2 and x3'.
 
 }◀parameter dictionary
+
+
+
 
 ▶addiotional explanation dictionary{
 
@@ -1077,7 +1089,10 @@ this word is abbreviation for 'Na Deoa'(this time).
 
 '//s A, B,' mean form of this word similar to word A in language B. if there are no B then the word is derived from this language.
 
-}◀additional explanation dictionary
+}◀additional explanation dictionary.
+
+
+
 
 ▶word type dictionary{
 
@@ -1091,9 +1106,15 @@ t mean time.
 
 }◀word type dictionary
 
+
+
+
 ▶words that cant be explained by this syntax{
 
 }◀words that cant be explained by this syntax
+
+
+
 
 ▶suffix{
 
@@ -1107,9 +1128,15 @@ suffix 'ip-' mean '-tion'.
 
 }◀suffix
 
+
+
+
 ▶words that is used lot{
 
 }◀words that is used lot
+
+
+
 
 ▶language for memory{
 
@@ -1123,9 +1150,12 @@ in sentence 'fc anga nb nb', parameter of 'fc' is full so this function cant hav
 
 }◀grammar
 
+
+
+
 ▶logic{
 
-blca s,o!r=thing that assert that A2 is A1 to B.
+blca o,o,o!r=thing that assert that x2 is x1 to x3.
 
 we will learn how to say 'i assert to you' here.
 
@@ -1135,7 +1165,7 @@ if you omit two parameter in this function then you can say it. 'blca bc cg' mea
 
 ▶word 'db'{
 
-db n!r=Ath right hand side.
+db n!r=x1-th right hand side.
 
 'jd db lh nb'
 
@@ -1151,9 +1181,14 @@ word 'db' that dont have parameter is 'db nh'.
 
 }◀word 'db'
 
+
+
 ▶word 'hb'{
 
 }◀word 'hb'
+
+
+
 
 ▶relative pronoun{
 
@@ -1167,6 +1202,9 @@ you can know why i say it i guess.
 
 }◀logic
 
+
+
+
 ▶frequently used sentence{
 
 }◀frequently used sentence.
@@ -1176,6 +1214,9 @@ you can know why i say it i guess.
 }◀example sentence
 
 }◀language for memory
+
+
+
 
 ▶how to programming using this language{
 
@@ -1193,13 +1234,14 @@ in sentence 'dida gh bc', right hand side is omitted so this sentence command to
 
 here we will learn if statement.
 
-cnjf s, c s!t=.//e if A2 is A1 then B is played.
+cnjf o,o, c (o,o)!t=.//e if B is A then C is played.
 
 sentence 'cnjf gh lh dida gh cc' mean 'if gh is one then say value in gh'.
 
-
-
 }◀how to programming using this language
+
+
+
 
 ▶word formation rule{
 
@@ -1211,25 +1253,37 @@ why this word is not made by word formation rule for antonym.
 
 if pronunciation of antonym similar to original word then the word is made as compound word.
 
-mjob o,n!r=thing that love A.//c hope,profit,
+mjob o,n!r=thing that love x1.//c hope,profit,
 
-doob o,n!r=thing that hate A.//c dread, profit,
+doob o,n!r=thing that hate x1.//c dread, profit,
 
 word for hate didnt be made by word formation rule for antonym. pronunciation of 'dobg' similar to 'dgbg'. meaning of dgbg similar to love cuz it mean thing that dread that something become victim.
 
 }◀word formation rule
 
+
+
+
 ▶how to use tool that search word{
 
 }◀how to use tool that search word
+
+
+
 
 finish.
 
 }◀quickly learn.
 
+
+
+
 ▶complex sentences{
 
 }◀complex sentences
+
+
+
 
 ▶program for this language{
 
@@ -1237,7 +1291,10 @@ how to make this language to english i guess:
 
 }◀program for this language.
 
-obey lisence rule. https://github.com/Fhres126/nl/blob/main/co.txt
+
+
+
+obey lisence rule. https://github.com/Fhres126/w/blob/main/co.txt
 
   
   </pre>
