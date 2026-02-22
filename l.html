@@ -22,7 +22,7 @@
     * {
       
       font-weight: bold;
-      font-size: calc(var(--s) / 18);
+      font-size: calc(var(--s) * 0.05);
       animation: rainbow 3s linear infinite;
     }
     pre{
@@ -51,38 +51,38 @@
 })">
 </button>
 
-<button class = 'setcolor' onclick="document.querySelectorAll(p,span,a,h1,pre).forEach(e=>{
+<button class = 'setcolor' onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{
   e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';
   e.style.webkitBackgroundClip='text';
   e.style.webkitTextFillColor='transparent';
 })">
 </button>
   
-  <button class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('*').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ff0000')"></button>
   
-  <button class = 'setcolor' style="background-color:#ff8800;" onclick="document.querySelectorAll('body *').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#ff8800;" onclick="document.querySelectorAll(''p,span,a,h1,pre'').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('body *').forEach(e=>e.style.color='#ff8800')"></button>
   
-  <button class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('*').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00')"></button>
   
-  <button class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('*').forEach(e=>{
+  <button class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff')"></button>
 
 
-<input type="range" min="1" max="10" step="0.01" value="12"
+<input type="range" min="0.005" max="0.2" step="0.005" value="0.05"
 oninput="
 document.querySelectorAll('pre, button').forEach(e=>{
-  e.style.fontSize = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value / 50) + 'px';
+  e.style.fontSize = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value) + 'px';
 });
 ">
 
@@ -123,74 +123,37 @@ document.querySelectorAll('pre, button').forEach(e=>{
 </pre>
 
 <button class="freewidthbutton" onclick="window.find('▶slowly learn')">8. slowly learn.</button><br><br>
-<button class="freewidthbutton" onclick="window.find('▶quickly learn')">9. ▶quickly learn(for smart person){
+<button class="freewidthbutton" onclick="window.find('▶quickly learn')">9. quickly learn(hard to understand)
 </button>
-
-<pre>9.1 how to interpret word dictionary.
-
-9.2 suffix.
-
-9.3 grammar.
-
-9.4 logic.
-
-9.5 how to use tool that search word.
-
-9.6 how to programming using this language.
-
-}◀
-
+<pre>
 }◀table of content
 
+Among the people I’ve seen, those who dislike this language didn’t even properly read this document. if this language can become more perfect then this language is changed.
 
-
-
-this language is most versatile and most efficient most logical and unambiguous and easy and simple language. if this language can become more perfect then this language is changed.
+this language is most versatile and most efficient most logical and unambiguous and easy and simple language.
 
 this language can help cheating in exam because it takes up very little space and most people won't think of it as a language, so it won't get caught.
 
- if this language become international language then everybody can easily communicate with the blind and the deaf since this language is a binary language so it can easily be converted into this language version of braille and sign language and morse code and barcode and QR code and etc by simple rule. it is very very easy and simple so you can do many things by learning this language.
-
-NLQR1 is this language version of barcode. NLQR1 is most efficient 1D code. it is usually four times more efficient than barcode. barcode use 145cell to mention 'i am person' but NLQR1 use 28cell.
-</pre>
-  <img src="https://fhres126.github.io/w/vsbar.jpg" alt="connect error">
-  <pre>
-NLQR2 is this language version of QR code. QR codes can only store about 3KB or less of data unlike NLQR. NLQR2 is most efficient 2D code. NLQR2 is usually over 4 times more efficient than a QR code. eg QR code use 441cell to mention 'i am person' but NLQR2 use 32cell.
-  </pre>
-  <img src="https://fhres126.github.io/w/vsqr.jpg" alt="connect error">
-  <pre>
-NLQR mean NLQR1, NLQR2, NLQR3. all NLQR have finder pattern so it can be accurately decoded from any orientation. all NLQR is human readable.
-  </pre>
-  <img src="https://fhres126.github.io/w/principlenlqr.jpg" alt="connect error">
-  <pre>
-NLQR3 is most efficient code.
-  </pre>
-  <img src="https://fhres126.github.io/w/nlqrs.jpg" alt="connect error">
-  <pre>
-
-imagine what if NLQR replace pictogram. we dont need to learn lot of pictogram.
+imagine what if this language version of QR code replace pictogram. we dont need to learn lot of pictogram.
   </pre>
   <img src="https://fhres126.github.io/w/hatepictogram.jpg" alt="connect error">
   <pre>
-NL morse is this language version of morse code. NL Morse is usually two times more efficient than Morse code. morse code cant explain mathmatical expression but NL morse can express all meaning. 'i love you' in morse code is following:
 
-.. / .-.. --- ...- . / -.-- --- ..-
+ if this language become international language then everybody can easily communicate with disabled person and blind and the deaf since this language can easily be converted into this language version of braille and sign language and morse code and barcode and QR code and etc by simple rule by being binary language. it is very very easy and simple so you can do many things by learning this language.
 
-in veluil:
+if all human use this language environmental pollution will be reduced.
 
-..---.....-- / .-...--
+The prevention of environmental pollution through this language is enormous scale.
 
-NL braille is this language version of braille. NL braille is usually 1.5 times more efficient than braille. original Braille is ambiguous cuz meaning of original braille depending on direction but NL braille can have same meaning in any direction.
+most data in world is video data but if someone speak in this language, the someone dont need to speak for long time so video become short.
 
-Sign language is difficult or inefficient for expressing new words or slang but this language's sign language is not.
+A sentence that takes 10 seconds to say in English can be said in just 5 seconds in this language.
 
-this language is efficient. efficient is necessary to be versatile.
+this language is very consistent so polution by AI and LLM will be reduced.
+    
+An ambiguous IAL creates misunderstandings and promotes conflict.
 
-keyboard that is for this language is easy to type cuz it has only 2~16letter.
-  </pre>
-  <img src="https://fhres126.github.io/w/easykeyboard.jpg" alt="connect error">
-  <pre>
-this language can be unambiguous interpreted without whitespace so it deosnt need hassle mark eg whitespace and hyphen.
+unlogical IAL make mankind uncivilized.
 
 this language use phonetic script but this language is pronounced differently from english and it is easy to pronounce and unambiguous. this language can express all pronunciation using parameter.
 
@@ -210,11 +173,49 @@ lot of antonym is made by word formation rule for antonym.
 
 this language have very few suffix.(maybe 4)
 
-part of speech of this language is only noun and function.
+part of speech of this language is only three.
 
 if you learn a little grammar, then you can explain every meaning, regardless of your native language. grammar is simplest and consistent by using  prefix notation so this language can be used in programming without change of grammar. the programming language is called 'pmfa'. other programming languages have limits. For example, C++ cannot represent numbers beyond a certain size, but pmfa can represent all number.
 
 Word stress is not required for word distinction in this language.
+
+NLQR1 is this language version of barcode. NLQR1 is most efficient 1D code. it is usually four times more efficient than barcode. barcode use 145cell to mention 'i am person' but NLQR1 use 28cell.
+</pre>
+  <img src="https://fhres126.github.io/w/vsbar.jpg" alt="connect error">
+  <pre>
+NLQR2 is this language version of QR code. QR codes can only store about 3KB or less of data unlike NLQR. NLQR2 is most efficient 2D code. NLQR2 is usually over 4 times more efficient than a QR code. eg QR code use 441cell to mention 'i am person' but NLQR2 use 32cell.
+  </pre>
+  <img src="https://fhres126.github.io/w/vsqr.jpg" alt="connect error">
+  <pre>
+NLQR mean NLQR1, NLQR2, NLQR3. all NLQR have finder pattern so it can be accurately decoded from any orientation. all NLQR is human readable.
+  </pre>
+  <img src="https://fhres126.github.io/w/principlenlqr.jpg" alt="connect error">
+  <pre>
+NLQR3 is most efficient code.
+  </pre>
+  <img src="https://fhres126.github.io/w/nlqrs.jpg" alt="connect error">
+  <pre>
+
+this language can be unambiguous interpreted without whitespace so it deosnt need hassle mark eg whitespace and hyphen.
+    
+NL morse is this language version of morse code. NL Morse is usually two times more efficient than Morse code. morse code cant explain mathmatical expression but NL morse can express all meaning. 'i love you' in morse code is following:
+
+.. / .-.. --- ...- . / -.-- --- ..-
+
+in veluil:
+
+..---.....-- / .-...--
+
+NL braille is this language version of braille. NL braille is usually 1.5 times more efficient than braille. original Braille is ambiguous cuz meaning of original braille depending on direction but NL braille can have same meaning in any direction.
+
+Sign language is difficult or inefficient for expressing new words or slang but this language's sign language is not.
+
+this language is efficient. efficient is necessary to be versatile.
+
+keyboard that is for this language is easy to type cuz it has only 2~16letter.
+  </pre>
+  <img src="https://fhres126.github.io/w/easykeyboard.jpg" alt="connect error">
+  <pre>
 
 english easly becomes ambiguous. eg 'i love situation that i love person who love cow and people and chicken or he eat meal'. but this language express all situation without ambiguous.
 
@@ -228,29 +229,7 @@ this language dont have homonyms and synonyms.
 
 unambigous is very good for language cuz it make efficient cuz it doesn't need any additional explanation or images to explain exactly.
 
-'i know you' is 80bit in ascii code. this language sentence 'lb cg' mean 'i know you'. it is 16bit. this language can express all using only binary. this language dont need whitespace. one letter is just for only expressing 4bit so it is 16bit.
-
-why this language must be IAL.
-    
-if all human use this language environmental pollution will be reduced.
-
-The prevention of environmental pollution through this language is enormous scale.
-
-most data in world is video data but if someone speak in this language, the someone dont need to speak for long time so video become short.
-
-A sentence that takes 10 seconds to say in English can be said in just 5 seconds in this language.
-
-this language is very consistent so polution by AI and LLM will be reduced.
-    
-An ambiguous IAL creates misunderstandings and promotes conflict.
-    
-it make easy communication between disabled people and non-disabled.
-
-unlogical IAL make mankind uncivilized.
-
-this language pronounce binary so we dont need to learn name when use this language. for example, we dont need to learn this language version of name of ∀, ∞ so it help scholarship.
-
-Among the people I’ve seen, those who dislike this language didn’t even properly read this document.
+'i know you' is 80bit in ascii code. this language need 16bit to say 'i know you'.
 
 concerns: lot of words are arranged in an orderly way? so 'foea' mean minute. 'goea' mean hour but the pronunciation is similar so it is hard to distinguish in noisy place.
 
@@ -268,7 +247,7 @@ site that convert to other wring system(NLQR1, NLQR2): https://fhres126.github.i
 
 site for searching word: https://fhres126.github.io/w/worddictionary.html
 
-this follo(wing video explain principle of this language. i belive that it can be evidence.
+this following video explain principle of this language. i belive that it can be evidence.
 
 NLQR: https://youtu.be/rPGDHublCDI?si=LGGqzc4bVFdQmC9D
 
@@ -923,13 +902,9 @@ doed o,n!r=thing that regret being x1.//c dread,was,
 
 sentence 'doed pf' mean 'i regret being it'.
 
-alhg o!1p=thing that is x1. right hand side in the sentence.//e this word is be verb.
+fkpe o,o!r=thing that ask x2 about who is x1.//c ask,PMIB,
 
-sentence 'alhg anga nb' mean 'i am human'.
-
-fkad o,o!r=thing that ask x2 about who is x1.//c ask,ALHG,
-
-sentence 'fkad cg' mean 'who are you'.
+sentence 'fkpe cg' mean 'who are you'.
 
 cf o,o!r=situation that x2 is x1.
 
