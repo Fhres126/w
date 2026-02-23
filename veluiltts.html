@@ -29,7 +29,6 @@
             color: #0f0; 
             text-transform: uppercase; 
             letter-spacing: 2px; 
-            margin-top: 0;
             margin-bottom: 25px;
         }
         textarea { 
@@ -56,7 +55,6 @@
             width: 100%; 
             font-size: 1.5rem; 
             border-radius: 5px; 
-            transition: 0.2s; 
             text-transform: uppercase; 
         }
         button:hover { 
@@ -69,8 +67,8 @@
 
 <div class="container">
     <h2>Veluil TTS Engine</h2>
-    <textarea id="input" placeholder="Enter Veluil..."></textarea>
-    <button onclick="process()">Speak</button>
+    <textarea id="input" placeholder="Only 'Enter' will pause"></textarea>
+    <button id="speakBtn">Speak</button>
 </div>
 
 <script>
@@ -96,56 +94,83 @@
         return String.fromCharCode(44032 + (choIdx * 588) + (jungIdx * 28) + (jongIdx === -1 ? 0 : jongIdx));
     }
 
-    function process() {
-        const rawInput = document.getElementById('input').value.toLowerCase().replace(/[^a-p]/g, '');
-        if (rawInput.length < 2) return;
+    const delay = ms => new Promise(res => setTimeout(res, ms));
 
-        let syllables = [];
-        for (let i = 0; i < rawInput.length; i += 2) {
-            let c1 = rawInput[i];
-            let c2 = rawInput[i+1];
-            if (!c2) break;
-            syllables.push({
-                onset: veluilConsonant[alphabet.indexOf(c1)],
-                vowel: veluilVowel[alphabet.indexOf(c2)].v,
-                coda: veluilVowel[alphabet.indexOf(c2)].c,
-                vowelChar: c2
-            });
-        }
-
-        let resultText = "";
-        for (let i = 0; i < syllables.length; i++) {
-            let cur = syllables[i];
-            let next = syllables[i + 1];
-
-            if (cur.coda === 'ㅁ' && next && next.vowelChar === 'a') {
-                let mappedCoda = '';
-                let shouldAbsorb = false;
-
-                switch(next.onset) {
-                    case 'ㄱ': mappedCoda = 'ㄱ'; shouldAbsorb = true; break;
-                    case 'ㅂ': mappedCoda = 'ㅂ'; shouldAbsorb = true; break;
-                    case 'ㅃ': mappedCoda = 'ㅇ'; shouldAbsorb = true; break;
-                    case 'ㄷ': mappedCoda = 'ㄷ'; shouldAbsorb = true; break;
-                    case 'ㄴ': mappedCoda = 'ㄴ'; shouldAbsorb = true; break;
-                    case 'ㄹ': mappedCoda = 'ㄹ'; shouldAbsorb = true; break;
-                }
-
-                if (shouldAbsorb) {
-                    resultText += combine(cur.onset, cur.vowel, mappedCoda);
-                    i++; 
-                    continue;
-                }
-            }
-            resultText += combine(cur.onset, cur.vowel, cur.coda);
-        }
-
-        const utterance = new SpeechSynthesisUtterance(resultText);
-        utterance.lang = 'ko-KR';
-        utterance.rate = 0.8;
+    async function process() {
+        const rawValue = document.getElementById('input').value.toLowerCase();
+        
+        // 엔터(\n)를 기준으로만 토큰을 분리함
+        const tokens = rawValue.split(/(\n)/);
+        
         window.speechSynthesis.cancel();
-        window.speechSynthesis.speak(utterance);
+
+        for (let i = 0; i < tokens.length; i++) {
+            let token = tokens[i];
+
+            // 엔터 기호인 경우에만 0.5초 대기
+            if (token === '\n') {
+                await delay(500); 
+                continue;
+            }
+
+            // 알파벳이 아닌 모든 문자(공백, 마침표 등)를 제거하여 한 덩어리로 만듦
+            let cleanToken = token.replace(/[^a-p]/g, '');
+            if (!cleanToken) continue;
+
+            let wordResult = "";
+            let chars = cleanToken.split('');
+            let syllables = [];
+
+            for (let j = 0; j < chars.length; j += 2) {
+                if (!chars[j+1]) break;
+                syllables.push({
+                    onset: veluilConsonant[alphabet.indexOf(chars[j])],
+                    vowel: veluilVowel[alphabet.indexOf(chars[j+1])].v,
+                    coda: veluilVowel[alphabet.indexOf(chars[j+1])].c,
+                    vowelChar: chars[j+1]
+                });
+            }
+
+            for (let j = 0; j < syllables.length; j++) {
+                let cur = syllables[j];
+                let next = syllables[j+1];
+
+                if (cur.coda === 'ㅁ' && next && next.vowelChar === 'a') {
+                    let mappedCoda = '';
+                    let shouldAbsorb = false;
+                    switch(next.onset) {
+                        case 'ㄱ': mappedCoda = 'ㄱ'; shouldAbsorb = true; break;
+                        case 'ㅂ': mappedCoda = 'ㅂ'; shouldAbsorb = true; break;
+                        case 'ㅃ': mappedCoda = 'ㅇ'; shouldAbsorb = true; break;
+                        case 'ㄷ': mappedCoda = 'ㄷ'; shouldAbsorb = true; break;
+                        case 'ㄴ': mappedCoda = 'ㄴ'; shouldAbsorb = true; break;
+                        case 'ㄹ': mappedCoda = 'ㄹ'; shouldAbsorb = true; break;
+                    }
+                    if (shouldAbsorb) {
+                        wordResult += combine(cur.onset, cur.vowel, mappedCoda);
+                        j++; continue;
+                    }
+                }
+                wordResult += combine(cur.onset, cur.vowel, cur.coda);
+            }
+
+            if (wordResult) {
+                await speakText(wordResult);
+            }
+        }
     }
+
+    function speakText(text) {
+        return new Promise((resolve) => {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ko-KR';
+            utterance.rate = 1.0;
+            utterance.onend = resolve;
+            window.speechSynthesis.speak(utterance);
+        });
+    }
+
+    document.getElementById('speakBtn').addEventListener('click', process);
 </script>
 
 </body>
