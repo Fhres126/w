@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veluil TTS Engine</title>
+    <style>
+        body { 
+            background-color: #000; 
+            color: #0f0; 
+            font-family: 'Courier New', Courier, monospace; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container { 
+            width: 90%; 
+            max-width: 650px; 
+            border: 2px solid #0f0; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 20px #0f0; 
+        }
+        h2 { 
+            text-align: center; 
+            color: #0f0; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+        textarea { 
+            width: 100%; 
+            height: 150px; 
+            background: #111; 
+            color: #fff; 
+            border: 1px solid #0f0; 
+            padding: 15px; 
+            box-sizing: border-box; 
+            font-size: 1.4rem; 
+            margin-bottom: 20px; 
+            border-radius: 5px; 
+            outline: none; 
+            resize: none;
+        }
+        button { 
+            background-color: #0f0; 
+            color: #000; 
+            border: none; 
+            padding: 20px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            width: 100%; 
+            font-size: 1.5rem; 
+            border-radius: 5px; 
+            transition: 0.2s; 
+            text-transform: uppercase; 
+        }
+        button:hover { 
+            background-color: #fff; 
+            box-shadow: 0 0 15px #fff; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Veluil TTS Engine</h2>
+    <textarea id="input" placeholder="Enter Veluil..."></textarea>
+    <button onclick="process()">Speak</button>
+</div>
+
+<script>
+  alert('pls check about your browser support TTS. if you didnt input veluil text then this is not work')
+    const CHO = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+    const JUNG = ['ㅏ','ㅐ','ㅑ','ㅒ','ㅓ','ㅔ','ㅕ','ㅖ','ㅗ','ㅘ','ㅙ','ㅚ','ㅛ','ㅜ','ㅝ','ㅞ','ㅟ','ㅠ','ㅡ','ㅢ','ㅣ'];
+    const JONG = ['', 'ㄱ','ㄲ','ㄳ','ㄴ','ㄵ','ㄶ','ㄷ','ㄹ','ㄺ','ㄻ','ㄼ','ㄽ','ㄾ','ㄿ','ㅀ','ㅁ','ㅂ','ㅄ','ㅅ','ㅆ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+
+    const veluilConsonant = ['ㅁ','ㅂ','ㄷ','ㄱ','ㄴ','ㄹ','ㅃ','ㄸ','ㄲ','ㅍ','ㅌ','ㅋ','ㅈ','ㅉ','ㅊ','ㅅ'];
+    const veluilVowel = [
+        {v:'ㅜ', c:''},   {v:'ㅗ', c:''},   {v:'ㅓ', c:''},   {v:'ㅡ', c:''},
+        {v:'ㅏ', c:''},   {v:'ㅐ', c:''},   {v:'ㅣ', c:''},   {v:'ㅝ', c:''},
+        {v:'ㅜ', c:'ㅁ'}, {v:'ㅗ', c:'ㅁ'}, {v:'ㅓ', c:'ㅁ'}, {v:'ㅡ', c:'ㅁ'},
+        {v:'ㅏ', c:'ㅁ'}, {v:'ㅐ', c:'ㅁ'}, {v:'ㅣ', c:'ㅁ'}, {v:'ㅙ', c:''}
+    ];
+    const alphabet = "abcdefghijklmnop";
+
+    function combine(choChar, jungChar, jongChar = '') {
+        const choIdx = CHO.indexOf(choChar);
+        const jungIdx = JUNG.indexOf(jungChar);
+        const jongIdx = JONG.indexOf(jongChar || '');
+        if (choIdx === -1 || jungIdx === -1) return choChar + (jungChar || '') + (jongChar || '');
+        return String.fromCharCode(44032 + (choIdx * 588) + (jungIdx * 28) + (jongIdx === -1 ? 0 : jongIdx));
+    }
+
+    function process() {
+        const rawInput = document.getElementById('input').value.toLowerCase().replace(/[^a-p]/g, '');
+        if (rawInput.length < 2) return;
+
+        let syllables = [];
+        for (let i = 0; i < rawInput.length; i += 2) {
+            let c1 = rawInput[i];
+            let c2 = rawInput[i+1];
+            if (!c2) break;
+            syllables.push({
+                onset: veluilConsonant[alphabet.indexOf(c1)],
+                vowel: veluilVowel[alphabet.indexOf(c2)].v,
+                coda: veluilVowel[alphabet.indexOf(c2)].c,
+                vowelChar: c2
+            });
+        }
+
+        let resultText = "";
+        for (let i = 0; i < syllables.length; i++) {
+            let cur = syllables[i];
+            let next = syllables[i + 1];
+
+            if (cur.coda === 'ㅁ' && next && next.vowelChar === 'a') {
+                let mappedCoda = '';
+                let shouldAbsorb = false;
+
+                switch(next.onset) {
+                    case 'ㄱ': mappedCoda = 'ㄱ'; shouldAbsorb = true; break;
+                    case 'ㅂ': mappedCoda = 'ㅂ'; shouldAbsorb = true; break;
+                    case 'ㅃ': mappedCoda = 'ㅇ'; shouldAbsorb = true; break;
+                    case 'ㄷ': mappedCoda = 'ㄷ'; shouldAbsorb = true; break;
+                    case 'ㄴ': mappedCoda = 'ㄴ'; shouldAbsorb = true; break;
+                    case 'ㄹ': mappedCoda = 'ㄹ'; shouldAbsorb = true; break;
+                }
+
+                if (shouldAbsorb) {
+                    resultText += combine(cur.onset, cur.vowel, mappedCoda);
+                    i++; 
+                    continue;
+                }
+            }
+            resultText += combine(cur.onset, cur.vowel, cur.coda);
+        }
+
+        const utterance = new SpeechSynthesisUtterance(resultText);
+        utterance.lang = 'ko-KR';
+        utterance.rate = 0.8;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
+    }
+</script>
+
+</body>
+</html>
