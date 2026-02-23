@@ -12,8 +12,8 @@
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            justify-content: center;
-            height: 100vh;
+            justify-content: center; 
+            min-height: 100vh;
             margin: 0;
         }
         .container { 
@@ -24,13 +24,7 @@
             border-radius: 10px; 
             box-shadow: 0 0 20px #0f0; 
         }
-        h2 { 
-            text-align: center; 
-            color: #0f0; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            margin-bottom: 25px;
-        }
+        h2 { text-align: center; color: #0f0; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px;}
         textarea { 
             width: 100%; 
             height: 150px; 
@@ -45,6 +39,7 @@
             outline: none; 
             resize: none;
         }
+        .btn-group { display: flex; gap: 10px; width: 100%; }
         button { 
             background-color: #0f0; 
             color: #000; 
@@ -52,15 +47,13 @@
             padding: 20px; 
             cursor: pointer; 
             font-weight: bold; 
-            width: 100%; 
+            flex: 1;
             font-size: 1.5rem; 
             border-radius: 5px; 
             text-transform: uppercase; 
         }
-        button:hover { 
-            background-color: #fff; 
-            box-shadow: 0 0 15px #fff; 
-        }
+        button:hover { background-color: #fff; box-shadow: 0 0 15px #fff; }
+        #downloadBtn { background-color: #fff; color: #000; }
     </style>
 </head>
 <body>
@@ -68,7 +61,10 @@
 <div class="container">
     <h2>Veluil TTS Engine</h2>
     <textarea id="input" placeholder="Only 'Enter' will pause"></textarea>
-    <button id="speakBtn">Speak</button>
+    <div class="btn-group">
+        <button id="speakBtn">Speak</button>
+        <button id="downloadBtn">Download</button>
+    </div>
 </div>
 
 <script>
@@ -77,43 +73,29 @@
     const JUNG = ['ㅏ','ㅐ','ㅑ','ㅒ','ㅓ','ㅔ','ㅕ','ㅖ','ㅗ','ㅘ','ㅙ','ㅚ','ㅛ','ㅜ','ㅝ','ㅞ','ㅟ','ㅠ','ㅡ','ㅢ','ㅣ'];
     const JONG = ['', 'ㄱ','ㄲ','ㄳ','ㄴ','ㄵ','ㄶ','ㄷ','ㄹ','ㄺ','ㄻ','ㄼ','ㄽ','ㄾ','ㄿ','ㅀ','ㅁ','ㅂ','ㅄ','ㅅ','ㅆ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
 
-    const veluilConsonant = ['ㅁ','ㅂ','ㄷ','ㄱ','ㄴ','ㄹ','ㅃ','ㄸ','ㄲ','ㅍ','ㅌ','ㅋ','ㅈ','ㅉ','ㅊ','ㅅ'];
-    const veluilVowel = [
-        {v:'ㅜ', c:''},   {v:'ㅗ', c:''},   {v:'ㅓ', c:''},   {v:'ㅡ', c:''},
-        {v:'ㅏ', c:''},   {v:'ㅐ', c:''},   {v:'ㅣ', c:''},   {v:'ㅝ', c:''},
+    const vCons = ['ㅁ','ㅂ','ㄷ','ㄱ','ㄴ','ㄹ','ㅃ','ㄸ','ㄲ','ㅍ','ㅌ','ㅋ','ㅈ','ㅉ','ㅊ','ㅅ'];
+    const vVow = [
+        {v:'ㅜ', c:''}, {v:'ㅗ', c:''}, {v:'ㅓ', c:''}, {v:'ㅡ', c:''},
+        {v:'ㅏ', c:''}, {v:'ㅐ', c:''}, {v:'ㅣ', c:''}, {v:'ㅝ', c:''},
         {v:'ㅜ', c:'ㅁ'}, {v:'ㅗ', c:'ㅁ'}, {v:'ㅓ', c:'ㅁ'}, {v:'ㅡ', c:'ㅁ'},
         {v:'ㅏ', c:'ㅁ'}, {v:'ㅐ', c:'ㅁ'}, {v:'ㅣ', c:'ㅁ'}, {v:'ㅙ', c:''}
     ];
     const alphabet = "abcdefghijklmnop";
 
-    function combine(choChar, jungChar, jongChar = '') {
-        const choIdx = CHO.indexOf(choChar);
-        const jungIdx = JUNG.indexOf(jungChar);
-        const jongIdx = JONG.indexOf(jongChar || '');
-        if (choIdx === -1 || jungIdx === -1) return choChar + (jungChar || '') + (jongChar || '');
-        return String.fromCharCode(44032 + (choIdx * 588) + (jungIdx * 28) + (jongIdx === -1 ? 0 : jongIdx));
+    function combine(cho, jung, jong = '') {
+        const cIdx = CHO.indexOf(cho);
+        const jIdx = JUNG.indexOf(jung);
+        const oIdx = JONG.indexOf(jong || '');
+        if (cIdx === -1 || jIdx === -1) return cho + jung + (jong || '');
+        return String.fromCharCode(44032 + (cIdx * 588) + (jIdx * 28) + (oIdx === -1 ? 0 : oIdx));
     }
 
-    const delay = ms => new Promise(res => setTimeout(res, ms));
+    // [핵심] Veluil 알파벳을 한글 발음으로 변환하는 공통 함수
+    function convertVeluilToKorean(text) {
+        const tokens = text.toLowerCase().split('\n');
+        let results = [];
 
-    async function process() {
-        const rawValue = document.getElementById('input').value.toLowerCase();
-        
-        // 엔터(\n)를 기준으로만 토큰을 분리함
-        const tokens = rawValue.split(/(\n)/);
-        
-        window.speechSynthesis.cancel();
-
-        for (let i = 0; i < tokens.length; i++) {
-            let token = tokens[i];
-
-            // 엔터 기호인 경우에만 0.5초 대기
-            if (token === '\n') {
-                await delay(500); 
-                continue;
-            }
-
-            // 알파벳이 아닌 모든 문자(공백, 마침표 등)를 제거하여 한 덩어리로 만듦
+        for (let token of tokens) {
             let cleanToken = token.replace(/[^a-p]/g, '');
             if (!cleanToken) continue;
 
@@ -124,53 +106,62 @@
             for (let j = 0; j < chars.length; j += 2) {
                 if (!chars[j+1]) break;
                 syllables.push({
-                    onset: veluilConsonant[alphabet.indexOf(chars[j])],
-                    vowel: veluilVowel[alphabet.indexOf(chars[j+1])].v,
-                    coda: veluilVowel[alphabet.indexOf(chars[j+1])].c,
+                    onset: vCons[alphabet.indexOf(chars[j])],
+                    vowel: vVow[alphabet.indexOf(chars[j+1])].v,
+                    coda: vVow[alphabet.indexOf(chars[j+1])].c,
                     vowelChar: chars[j+1]
                 });
             }
 
             for (let j = 0; j < syllables.length; j++) {
-                let cur = syllables[j];
-                let next = syllables[j+1];
-
+                let cur = syllables[j], next = syllables[j+1];
                 if (cur.coda === 'ㅁ' && next && next.vowelChar === 'a') {
-                    let mappedCoda = '';
-                    let shouldAbsorb = false;
-                    switch(next.onset) {
-                        case 'ㄱ': mappedCoda = 'ㄱ'; shouldAbsorb = true; break;
-                        case 'ㅂ': mappedCoda = 'ㅂ'; shouldAbsorb = true; break;
-                        case 'ㅃ': mappedCoda = 'ㅇ'; shouldAbsorb = true; break;
-                        case 'ㄷ': mappedCoda = 'ㄷ'; shouldAbsorb = true; break;
-                        case 'ㄴ': mappedCoda = 'ㄴ'; shouldAbsorb = true; break;
-                        case 'ㄹ': mappedCoda = 'ㄹ'; shouldAbsorb = true; break;
-                    }
-                    if (shouldAbsorb) {
-                        wordResult += combine(cur.onset, cur.vowel, mappedCoda);
-                        j++; continue;
-                    }
+                    let m = {'ㄱ':'ㄱ','ㅂ':'ㅂ','ㅃ':'ㅇ','ㄷ':'ㄷ','ㄴ':'ㄴ','ㄹ':'ㄹ'}[next.onset];
+                    if (m) { wordResult += combine(cur.onset, cur.vowel, m); j++; continue; }
                 }
                 wordResult += combine(cur.onset, cur.vowel, cur.coda);
             }
+            results.push(wordResult);
+        }
+        return results.join('... '); // 엔터 자리에 미세한 공백
+    }
 
-            if (wordResult) {
-                await speakText(wordResult);
+    // 재생 로직
+    document.getElementById('speakBtn').onclick = async () => {
+        const raw = document.getElementById('input').value;
+        const tokens = raw.split(/(\n)/);
+        window.speechSynthesis.cancel();
+        
+        for (let token of tokens) {
+            if (token === '\n') {
+                await new Promise(r => setTimeout(r, 500));
+                continue;
+            }
+            const kor = convertVeluilToKorean(token);
+            if (kor) {
+                await new Promise(res => {
+                    const ut = new SpeechSynthesisUtterance(kor);
+                    ut.lang = 'ko-KR';
+                    ut.onend = res;
+                    window.speechSynthesis.speak(ut);
+                });
             }
         }
-    }
+    };
 
-    function speakText(text) {
-        return new Promise((resolve) => {
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'ko-KR';
-            utterance.rate = 1.0;
-            utterance.onend = resolve;
-            window.speechSynthesis.speak(utterance);
-        });
-    }
+    // 다운로드 로직 (변환된 한글을 구글 TTS로 전송)
+    document.getElementById('downloadBtn').onclick = () => {
+        const raw = document.getElementById('input').value;
+        const korText = convertVeluilToKorean(raw);
+        if (!korText) return;
 
-    document.getElementById('speakBtn').addEventListener('click', process);
+        const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(korText)}&tl=ko&client=tw-ob`;
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `veluil_${Date.now()}.mp3`;
+        a.click();
+    };
 </script>
 
 </body>
