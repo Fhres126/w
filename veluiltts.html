@@ -149,19 +149,19 @@
         }
     };
 
-    // 다운로드 로직 (변환된 한글을 구글 TTS로 전송)
     document.getElementById('downloadBtn').onclick = () => {
-        const raw = document.getElementById('input').value;
-        const korText = convertVeluilToKorean(raw);
-        if (!korText) return;
+    const raw = document.getElementById('input').value;
+    const korText = convertVeluilToKorean(raw);
+    if (!korText) return;
+
+    const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(korText)}&tl=ko&client=tw-ob`;
     
-        // Google TTS URL 생성
-        const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(korText)}&tl=ko&client=tw-ob`;
-        
-        // 다운로드 대신 새 창(또는 새 탭)으로 열기
-        // 사용자가 여기서 '점 세 개' 버튼을 눌러 다운로드하거나 우클릭으로 저장 가능합니다.
-        window.open(url, '_blank'); 
-    };
+    // 새 창에서 오디오가 재생됩니다. 
+    // 여기서 사용자는 마우스 우클릭 -> '다른 이름으로 저장'을 눌러 저장할 수 있습니다.
+    window.open(url, '_blank');
+};
+
+
 
 </script>
 
