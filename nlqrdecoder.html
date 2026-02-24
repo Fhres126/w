@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLQR 비트 추출기</title>
+    <style>
+        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; text-align: center; margin: 0; overflow: hidden; }
+        #camera-container { position: relative; width: 100vw; height: 70vh; background: #111; }
+        video { width: 100%; height: 100%; object-fit: cover; }
+        /* 스캔 가이드 라인 */
+        #guide { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 80%; height: 20px; border: 2px solid red; box-shadow: 0 0 10px red;
+            pointer-events: none;
+        }
+        #result-area { height: 30vh; padding: 10px; overflow-y: auto; border-top: 1px solid #0f0; background: #000; }
+        .bits { color: #fff; word-break: break-all; font-size: 1.2rem; letter-spacing: 2px; }
+        button { background: #0f0; color: #000; border: none; padding: 15px 30px; font-size: 1rem; font-weight: bold; margin: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div id="camera-container">
+    <video id="video" autoplay playsinline></video>
+    <div id="guide"></div>
+</div>
+
+<div id="result-area">
+    <button onclick="scanBits()">비트 추출 실행</button>
+    <div><strong>추출된 비트 스트림:</strong></div>
+    <div id="bitOutput" class="bits">스캔 버튼을 눌러주세요.</div>
+    <canvas id="hiddenCanvas" style="display:none;"></canvas>
+</div>
+
+<script>
+    const video = document.getElementById('video');
+    const bitOutput = document.getElementById('bitOutput');
+    const canvas = document.getElementById('hiddenCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // 1. 카메라 시작 (뒷면 카메라 우선)
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+        .then(stream => { video.srcObject = stream; })
+        .catch(err => { alert("카메라 접근 실패: " + err); });
+
+    function scanBits() {
+        if (!video.videoWidth) return;
+
+        // 2. 가이드 영역의 픽셀 데이터 가져오기
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        // 가이드 라인 위치 계산 (중앙 80% 가로 영역)
+        const scanY = canvas.height / 2;
+        const scanXStart = canvas.width * 0.1;
+        const scanWidth = canvas.width * 0.8;
+        const imageData = ctx.getImageData(scanXStart, scanY, scanWidth, 1).data;
+
+        let bits = "";
+        let lastColor = -1; // 0: 검정, 1: 흰색
+
+        // 3. 픽셀 밝기 분석 (이진화)
+        // NLQR은 0과 1로 구성되며 인간이 읽을 수 있는 구조임
+        for (let i = 0; i < imageData.length; i += 4) {
+            const r = imageData[i];
+            const g = imageData[i+1];
+            const b = imageData[i+2];
+            const brightness = (r + g + b) / 3;
+
+            // 밝기 임계값 128 기준으로 0(검정)과 1(흰색) 판별
+            const bit = brightness < 128 ? "1" : "0"; 
+            
+            // 단순화를 위해 인접한 같은 색상의 픽셀 뭉치를 하나의 비트로 인식하는 로직이 추가로 필요할 수 있음
+            // 여기서는 원시 비트 흐름의 변화를 보여줌
+            if (bit !== lastColor) {
+                bits += bit;
+                lastColor = bit;
+            }
+        }
+
+        // 4. 결과 출력
+        // NLQR1은 보통 28셀 정도로 정보를 표현함
+        bitOutput.innerText = bits;
+        console.log("Extracted Bits:", bits);
+    }
+</script>
+</body>
+</html>
