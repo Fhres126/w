@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veluil</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --green: #00ff00;
+      --blue: #0000ff;
+      --orange: #ff8800;
+      --rainbow: linear-gradient(90deg, #ff6a00, #ee0979, #00ff00, #00ccff, #ff6a00);
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--green);
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .rainbow-text {
+      background: var(--rainbow);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: flow 4s linear infinite;
+      font-weight: bold;
+    }
+
+    @keyframes flow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+    }
+
+    h1 { font-size: 3rem; margin: 0; }
+    h2 { border-left: 4px solid var(--blue); padding-left: 15px; margin-top: 50px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #0a0a0a;
+      border: 1px solid #333;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .highlight { color: var(--orange); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      color: white;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid var(--blue);
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover { background: var(--blue); }
+
+    .binary-box {
+      background: #111;
+      padding: 15px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1 class="rainbow-text">VELUIL</h1>
+    <p>Versatile. Efficient. Logical. Unambiguous. International Language.</p>
+    <p class="highlight">The beta-version language designed for the era of AI and Efficiency.</p>
+  </header>
+
+  <section>
+    <h2 class="rainbow-text">Core Philosophy</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🚀 Extreme Efficiency</h3>
+        <p>English "I know you" = 80 bits (ASCII). <br>
+           Veluil "I know you" = <span class="highlight">16 bits</span>.</p>
+        <p>Sentences that take 10 seconds in English take only 5 in Veluil.</p>
+      </div>
+      <div class="card">
+        <h3>🌍 Universal Conversion</h3>
+        <p>Because it is a binary-based language, it converts instantly into:</p>
+        <ul>
+          <li>NL Braille (1.5x more efficient)</li>
+          <li>NL Morse (2x more efficient)</li>
+          <li>NLQR (4x more efficient than QR)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🧠 Logical Programming</h3>
+        <p>Zero exceptions. Zero homonyms. Zero synonyms.</p>
+        <p>Uses prefix notation, allowing the language to be used in programming (pmfa) without syntax changes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="rainbow-text">The Alphabet System</h2>
+    <p>Veluil uses 16 characters mapping directly to 4-bit binary strings.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Letter</th><th>Binary</th><th>Letter</th><th>Binary</th><th>Letter</th><th>Binary</th><th>Letter</th><th>Binary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>a</td><td>0000</td><td>e</td><td>0010</td><td>i</td><td>0001</td><td>m</td><td>0011</td></tr>
+        <tr><td>b</td><td>1000</td><td>f</td><td>1010</td><td>j</td><td>1001</td><td>n</td><td>1011</td></tr>
+        <tr><td>c</td><td>0100</td><td>g</td><td>0110</td><td>k</td><td>0101</td><td>o</td><td>0111</td></tr>
+        <tr><td>d</td><td>1100</td><td>h</td><td>1110</td><td>l</td><td>1101</td><td>p</td><td>1111</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Word Separation:</strong> No whitespace needed. Every 8n-th bit determines the end of a word.</p>
+  </section>
+
+  <section>
+    <h2 class="rainbow-text">Environmental Impact</h2>
+    <p>By shortening video durations and reducing the data footprint of AI/LLM training, Veluil aims to drastically reduce global environmental pollution.</p>
+  </section>
+
+  <section>
+    <h2 class="rainbow-text">Try the Tools</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Voice & Dictionary</h3>
+        <p>Experience the low-Hz, unambiguous pronunciation of Veluil.</p>
+        <a href="https://fhres126.github.io/w/veluiltts.html" class="cta-button">Veluil TTS</a>
+        <a href="https://fhres126.github.io/w/worddictionary.html" class="cta-button">Dictionary</a>
+      </div>
+      <div class="card">
+        <h3>Visual Systems</h3>
+        <p>Convert text into the world's most efficient 1D and 2D codes.</p>
+        <a href="https://fhres126.github.io/w/nlintovarious.html" class="cta-button">NLQR Converter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="margin-top: 80px; text-align: center; border-top: 1px solid #222; padding-top: 20px;">
+    <p>Join the movement: <span class="highlight">r/veluil</span> | <span class="highlight">fhres126@gmail.com</span></p>
+    <p>© 2026 Veluil Project. Beta Phase.</p>
+  </footer>
+</div>
+
+</body>
+</html>
