@@ -438,6 +438,14 @@ blgd !r=history.//s assert,past,//u26.2.15.20.
 
 bmge o!r=thing that waste x1.//c abnormal, use,//d26.2.17.7.
 
+blfb !r=science.//c reality,exist,//r assert for exist thing.//u25.12.8.1.//u26.2.20.23
+
+blge !r=math.//c assert,number,//r assert for number.//u26.2.20.23
+
+blff !r=religion.//c assert, true,//d2025.11.27.20.12.//u26.2.20.23
+
+bjih !n=negative.//c less,zero,//d26.2.23.5.
+
 }◀b.c
 
 ▶b.n{
@@ -577,6 +585,8 @@ coda o,o!r=thing that write x1 at x2.//c text,mention,//u 2025.11.22.23.50.
 cocg !r=keyboard.//c tool,write,//u2025.11.17.21.25.
 
 cohf !r=instrument.//c tool,sound,
+
+cimd !r=video.//c image,become,//d 2025.11.20.21.37.//u26.2.25.0.
 
 }c.c◀
 
@@ -746,7 +756,7 @@ dnlh o,n!r=thing that is jealous of x1.//c dread, strong,//d 2025.11.16.14.//u20
 
 dnkg o,n!r=thing that pity x1.//c dread, abnormal,//u 2025.11.18.17.7.//d 2025.11.11.22.53..
 
-doge o!r=thing that select x1.//c decide,use,//d 2025.11.20.21.41.
+llmf o!r=thing that select x1.//c decide,use,//d 2025.11.20.21.41.//u26.2.25.23.
 
 doff !r=logic.//c essence,true,//r essence that assert true,//d25.12.20.12.
 
@@ -755,6 +765,10 @@ domc o!r=thing that marry x1.//c promise,love,//d25.12.30.3.
 doef !t=era.//c time,big,//d26.1.21.12.
 
 dnmb !o=minus most.//c minus,most,//u26.2.6.12.
+
+dmae !r=brother.//c men,parent,//d26.2.21.3.
+
+dikf !r=internet.//c electron,communicate,//d26.2.23.19
 
 }◀d.c
 
@@ -885,11 +899,7 @@ endb o!r=thing that obey x1.//c Ex1,Fx1,x4x2,//d 2025.11.6.22.49.
 
 elfh !r=ambigious.//c mean,FH,//d 2025.11.17.23.44.
 
-elff !r=video.//c code, shift,//d 2025.11.20.21.37.
-
 elad o,o!r=thing that express x1 to x2.//c assert, x1x4,//r expressing x1 is maybe assert about x1.//m explain,//u 2025.11.21.17.29.
-
-elfb !r=religion.//c assert, world,//d2025.11.27.20.12.
 
 eibb o!r=thing that is weaker than x1.//c newton,less,//u26.2.13.18.
 
@@ -958,8 +968,6 @@ eoga o!p=same x1.
 ▶e.s{
 
 ejpb o,o!r=thing that revenge x1 for x2 that x1 did.//s win,
-
-enga o!r=thing that react to x1.//s by,
 
 eilc !r=energy.//s newtow,//d26.1.12.21.
 
@@ -1037,11 +1045,9 @@ fooa !r=building.//c solid, need,//u 2025.11.6.16.15.
 
 fjkg o!r=thing that is inferior than x1.//c normal, less,//d 2025.11.9.11.
 
-filc o,o,o!r=thing that pray to x3 to make x2 is x1.//c command, god,//d 2025.11.16.22.39.
+filg o,o,o!r=thing that pray to x3 to make x2 is x1.//c command, god,//d 2025.11.16.22.39.//u26.2.20.23.
 
-fiif !r=rule.//c command,group,//d 2025.11.17.21.15.
-
-fjlb !r=science.//c reality,know,//r knowledge about exist.u25.12.8.1.
+fild !r=rule.//c command,promise,//d 2025.11.17.21.15//u26.2.20.23.
 
 fnoa !r=information.//c true,need,//u25.12.31.19.
 
@@ -1169,8 +1175,6 @@ gmeg o!r=thing that arming x1.//c use,weapon,
 
 gplb o,o,n!r=thing that promote x1 to x2.//c cause,about,know,//To make people aware of a product, service, idea, or event, and encourage them to use, buy, or support it.
 
-gilb !r=math.//c number,know,//r knowledge about number.
-
 gooa !r=saliva.//c liquid,digest,//r liquid that help digest.
 
 gjjg o,o,o!r=thing that exchange x3 for x2 and received x1.//c give,receive,
@@ -1235,7 +1239,7 @@ gc o,o,n!r=reason why x2 is x1.
 
 gd s!t=past of x1.
 
-ge o,o,n!p=thing that is x2 using x1.
+ge o,o,n!2p=thing that become x2 by x1.//u26.2.8.17.//u26.2.25.23.
 
 gg o,o!n=x1 divided by x2.//a times,//u26.1.28.
 
@@ -1243,7 +1247,7 @@ gh !n=x.
 
 gmgd o,o!r=thing that win x1 in competition of being x2.
 
-gida !n,ns=number.//u 2025.11.14.10.30
+gmba !n,ns=number.//u 2025.11.14.10.30//u26.2.20.23
 
 glba n!r=x1 complexity.
 
@@ -1262,6 +1266,8 @@ gljb !r=before.//s past,
 golb o,o!r=thing that report x1 to x2.//s teach,//u26.1.2.21.
 
 gmkd o!r=thing that suddenly be x1.//s quik,
+
+gica o!p1=just x1.//s only,//d26.2.22.7.
 
 }◀g.s
 
@@ -1449,6 +1455,8 @@ indd !r=homeland.//c country, self,//d25.12.2.23.
 
 imea n,o!1p=thing that repeat x2 at x1 times.//s-c IE,was,//u26.2.3.18.
 
+inge !r=sign.//e as in math.//c direction,number,//d26.2.23.5.
+
 }◀i.c
 
 ▶i.n{
@@ -1485,19 +1493,11 @@ innb o,n!r=thing that surround x1.//s have,//m encircle,
 
 ijpb !r=stop.//e stay still.
 
+inba o!r=direction of x1.//d26.2.23.5.
+
 }◀i.r
 
 ▶i.s{
-
-inca !r=group.//s-a element,
-
-inda !r=continuity.//a discontinuity,
-
-inea !r=together.//a alone,
-
-inga !r=country.//s group,
-
-inib o!r=thing that rule x1.//s have,
 
 }◀i.s
 
@@ -1749,6 +1749,16 @@ kihf !r=nose.//s breath,//u26.1.9.16.
 
 kjhg !r=ear.//s listen,//u26.1.9.16.
 
+kmba !r=group.//s-a element,//u26.2.23.5.
+
+kmda !r=continuity.//a discontinuity,//u26.2.23.5.
+
+kmea !r=together.//a alone,//u26.2.23.5.
+
+kmga !r=country.//s group,//u26.2.23.5.
+
+kmib o!r=thing that rule x1.//s have,//u26.2.23.5.
+
 }◀k.s
 
 }◀k
@@ -1920,7 +1930,7 @@ mkgg s!r=thing that allow that x12 is x11.//a reject,
 
 md o!p=thing that become x1.//c becoming,ph,
 
-mf o,o,n!2p=thing that become x2 by x1.//u26.2.8.17.
+mf o,o,n!p=thing that is x2 using x1.//u26.2.25.23.
 
 mkdd o,n!r=thing that enjoy to be x1.//c pleasure,self,//u 2025.11.5
 
@@ -1994,6 +2004,8 @@ mjjd o,n!r=thing that feel x1 is beauty.//c like,shape,//u26.1.1
 
 mjmd o,n!r=thing that think that feel that x1 is cute.//c like,baby,//u 2025.11.6.14.30//u26.1.30.8.
 
+mlae !r=sister.//c women,parent,//d26.2.21.3.
+
 }◀m.c
 
 ▶m.n{
@@ -2023,6 +2035,8 @@ mojb o!r=thing that combined with x1.//s plus,
 mnga n!r=sharpness.
 
 moba o!1p=that x1.//d26.1.16.8.
+
+mnfa o!r=thing that react to x1.//s by,//u26.2.23.3.
 
 }◀m.r
 
@@ -2146,11 +2160,11 @@ nkda !r=gender.//d25.12.5.0.
 
 nnca o!r=thing that toward x1.//s point,
 
-nlga o!r=thing that greet x1.//s call,//u2025.11.22.9.28.
-
 nkga !r=genitalia.//d25.12.5.0.//s gender,
 
-njba !r=place.//s location,//d26.1.11.16.
+nmba !r=place.//s location,//d26.1.11.16.//u26.2.23.5.
+
+nmda !r=filed.//s place,//d26.2.23.5.
 
 }◀n.s
 
@@ -2208,6 +2222,8 @@ olod !r=meat.//c food,animal,//r food that is part of animal.
 
 onjf o!r=thing that advance toward x1.//c go,attack,//u26.1.10.13.
 
+ooih !n=positive.//c more,zero,//d26.2.23.5.
+
 }◀o.c
 
 ▶o.n{
@@ -2251,6 +2267,8 @@ olga o!r=thing that for being x1.//s intend,
 o!r=thing that stuck x1.//s enter,
 
 oiob o,o,n!p=thing that x1 is important for being x2.//s need,
+
+olga o!r=thing that greet x1.//s call,//u2025.11.22.9.28.//u26.2.23.5.
 
 }◀o.s
 
