@@ -107,6 +107,8 @@
       
       let ratioprinted=1-2*shellratio;
       
+      let convertedtxt;
+      
       let speak=function(){
         
       }
@@ -349,7 +351,7 @@
           return false;
         }
         
-        let convertedtxt=convertintobinary(inputedtxt);
+        convertedtxt=convertintobinary(inputedtxt);
         
         makenlqr1(convertedtxt);
         
@@ -393,7 +395,18 @@
       }
       
       function convertintoletter(p){
-        
+        let resultletter = '';
+    
+        for(let i = 0; i < p.length; i += 4){
+          let j = 0;
+          if(p[i]   === '1') j += 1;
+          if(p[i+1] === '1') j += 2;
+          if(p[i+2] === '1') j += 4;
+          if(p[i+3] === '1') j += 8;
+      
+          resultletter += String.fromCharCode(97 + j);
+        }
+        return resultletter;
       }
       
       function makenlqr1(p){
@@ -568,7 +581,7 @@
             link = document.createElement('a');
             
             link.href=imageurl;
-            link.download='nlqr1.png';
+            link.download='2'+convertintoletter(convertedtxt)+'.png';
             document.body.appendChild(link)
             link.click();
             document.body.removeChild(link)
@@ -583,7 +596,7 @@
             link = document.createElement('a');
             
             link.href=imageurl;
-            link.download='nlqr1.png';
+            link.download='1'+convertintoletter(convertedtxt)+'.png';
             document.body.appendChild(link)
             link.click();
             document.body.removeChild(link)
