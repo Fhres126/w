@@ -1,0 +1,630 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>translator for english to norlang</title>
+  <style>
+    body{
+      background-color : #000000;
+      
+    }
+    
+    *{
+      
+      color:#ff0000;
+    }
+    
+    :root {
+            --primary: #ffffff;
+            --bg: #000000;
+            --border: #ffffff;
+            --text: #ffffff;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #000000;
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: black;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg);
+            padding-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Responsive stack for mobile */
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        .label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: block;
+            color: #ffffff;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            font-family: inherit;
+            background-color:#222222;
+        }
+
+        textarea:focus {
+            outline: 2px solid var(--primary);
+            border-color: transparent;
+        }
+
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary { background:#888888; color: #ffffff; }
+        .btn-outline { background: #100198 }
+        button:hover { opacity: 0.8; }
+  </style>
+</head>
+<body>
+ 
+<div class="container">
+    <div class="header">
+        <h2 style="margin:0">Translator</h2>
+        <span id="mode-indicator" style="font-size: 0.9rem; font-weight: bold; color: var(--primary);">EN → Veluil</span>
+    </div>
+
+    <div class="grid">
+        <div>
+            <label class="label" id="label-from">English</label>
+            <textarea id="input" placeholder="Enter text..."></textarea>
+        </div>
+        <div>
+            <label class="label" id="label-to">Veluil</label>
+            <textarea id="output" readonly placeholder="Translation..."></textarea>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button class="btn-primary" onclick="showtranslation(document.getElementById('input').value)">Translate</button>
+        <button class="btn-outline" onclick="toggleMode()">Swap Direction</button>
+        <button class="btn-outline" style="margin-left:auto" onclick="clearAll()">Clear</button>
+    </div>
+</div>
+  <script src="https://unpkg.com/compromise" ></script>
+  
+  <script>
+    
+    
+    
+    //console.log(nlp('my pen exist').json()[0].terms);
+    
+    //console.log(nlp('my').json()[0].terms[0].tags);//[0] = Noun. [1] = pressessive.
+    
+    nlp.addWords({
+      "QR_code": 'Noun'
+    });
+    
+    //console.log(nlp('i love QR_code').json()[0].terms);
+    
+    //console.log(nlp("Hello mr. steve! mr. steve How are you doing? I hope all is well i love you where are you?").sentence().out('array'))
+    
+    
+    console.log(nlp('Hello mr. steve! mr. steve How are you doing? I hope all is well i love you where are you?').json());
+    
+    /*Array
+      0:Object
+        text:Hello mr. steve!
+        terms:Array
+          0:Object
+          text:Hello
+          pre:
+          post: 
+          tags:Array
+          normal:hello
+          index:Array
+          id:hello|001000004
+          dirty:true
+          chunk:Noun
+          __proto__:...
+      1:Object
+      2:Object
+      length:3
+      __proto__:...
+      __proto__:...
+      1:Object
+      text:mr. steve How are you doing?
+      terms:Array
+      __proto__:...
+      2:Object
+      text:I hope all is well i love you where are you?
+      terms:Array
+      __proto__:...
+      length:3
+      __proto__:...
+    */
+    
+    
+    
+    let engtxt =``;
+    let vtxt =``;
+    let engtxttag=new Array(8)
+    let dicurl ="https://raw.githubusercontent.com/Fhres126/w/main/co.txt";
+    let dic =undefined;
+    let engtxtarr;
+    let engspa;
+    let engspatag=new Array(8);//parts of speech,
+    let engent;
+    let resobj;
+  
+    let engdic=[['love','o','v'], ['i', undefined, 'n'], ['you', undefined, 'n'], ['like', 'o', 'v']];
+    
+    let vdic=new Array();
+    
+    let inputtext='';
+    
+    let typeofcommand='engtov';
+    
+    let wordinengsentence=new Array();
+    
+    let typeofwordinengsentence;
+    
+    let lefthandside=new Array();
+    
+    let righthandside=new Array();
+    
+    let locationofaloneverb;
+    
+    let translateresult='';
+    
+    let typeofengsentence=''
+    
+    let inputengsentences=new Array()
+    
+    const CHO = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+    const JUNG = ["ㅏ","ㅐ","ㅑ","ㅒ","ㅓ","ㅔ","ㅕ","ㅖ","ㅗ","ㅘ","ㅙ","ㅚ","ㅛ","ㅜ","ㅝ","ㅞ","ㅟ","ㅠ","ㅡ","ㅢ","ㅣ"];
+    const JONG = ["","ㄱ","ㄲ","ㄳ","ㄴ","ㄵ","ㄶ","ㄷ","ㄹ","ㄺ","ㄻ","ㄼ","ㄽ","ㄾ","ㄿ","ㅀ","ㅁ","ㅂ","ㅄ","ㅅ","ㅆ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+    
+    let veluilconsonant = 
+    ['ㅁ','ㅂ','ㄷ','ㄱ',
+    'ㄴ','ㄹ','ㅃ','ㄸ',
+    'ㄲ','ㅍ','ㅌ','ㅋ',
+    'ㅈ','ㅉ','ㅊ','ㅅ'];
+    
+    let veluilvowel = 
+    ['ㅜ','ㅗ','ㅓ','ㅡ',
+    'ㅏ','ㅐ','ㅣ','ㅝ',
+    'ㅜㅁ','ㅗㅁ','ㅓㅡ','ㅡㅁ',
+    'ㅏㅁ','ㅐㅁ','ㅣㅁ','ㅙ']
+    
+    fetch(dicurl)
+     .then(response => {
+      return response.text();
+    })
+    .then(text => {
+     dic=text;
+     dic=text.substring(text.indexOf('//ewo'), text.indexOf('//eewo')).split(/\r?\n/);
+      
+     vdictoreadable();
+    })
+    .catch(err => {
+     alert(err);
+    });
+     
+      
+      
+      
+      
+    function vwordtoeng(p){
+      for(let i=0;i<vdic.length;i++){
+        if(vdic[i] != undefined){
+          if(p==vdic[i][0]){
+            return vdic[i][3];
+          }
+        }
+      }
+    }
+    
+    
+    
+    
+    function engwordtov(p){
+      for(let i=0;i<vdic.length;i++){
+        if(vdic[i] != undefined){
+          if(p == vdic[i][3]){
+            return vdic[i];
+          }
+        }
+      }
+    }
+    
+    
+    
+    
+    function vtoeng(p){
+      let startstr =0;
+      
+      let arrayword =new Array();
+      
+      let arrayobject =new Array();
+      
+      let arraysentence =new Array();
+      
+      
+      
+      for(let i=0;i<p.length;i++){
+        if(i%2==0){
+          if(/[a-h]/.test(p)){
+            //arrayword.push(p.substring(firststr, i));
+          }else{
+          
+          }
+        }
+      }
+      
+      for(let i=0;i<arrayword.length;i++){
+        
+      }
+    }
+    
+    
+    
+    
+    
+    function vtobitgroup(p){
+      let resultarr=new Array();
+      
+      for(let i=0;i<p.length;i++){
+        if(i%8==7){
+          resultarr.push(p.substring(i-7,i+1))
+        }
+      }
+      return resultarr;
+    }
+    
+    
+    
+    
+    
+    
+    function vlettertobit(p){
+      function apTo4bit(ch){
+        const n = ch.charCodeAt(0) - 97;
+
+        if(n < 0 || n > 15) return null;
+      
+        return n.toString(2).padStart(4,'0').split('').reverse().join('');
+      
+      }
+  
+      return [...p].map(apTo4bit).join('') ;
+    }
+    
+    
+    
+    
+    
+    function vbittoletter(p){
+          
+      let resultletter = '';
+    
+      for(let i = 0; i < p.length; i += 4){
+        let j = 0;
+        if(p[i]   === '1') j += 1;
+        if(p[i+1] === '1') j += 2;
+        if(p[i+2] === '1') j += 4;
+        if(p[i+3] === '1') j += 8;
+    
+        resultletter += String.fromCharCode(97 + j);
+      }
+      return resultletter;
+    }
+    
+    
+ 
+    function showtranslation(p){
+     if(typeofcommand=='engtov'){
+      document.getElementById('output').textContent = engtov(p);
+     }else{
+      document.getElementById('output').textContent = vtoeng(p);
+     }
+     
+    }
+    
+    
+    
+    function engtov(p){
+      
+      //translateresult += engwordtov(inputtext.split(' ')[i])[0] + ' ';
+      
+      let preadableeng=engtoreadable(p);
+      
+      translateresult=[]
+      
+      let plefthandside=[]
+      
+      let prighthandside=[]
+      
+      for(let i=0;i<preadableeng[0].length;i++){
+        plefthandside[i] = [];
+        prighthandside[i] = [];
+       
+        
+       if(preadableeng[1][i]=='assert'){
+        for(let j=0;j<preadableeng[2][i];j++){
+         prighthandside[i].push(engwordtov(preadableeng[0][i].terms[j].text)[0])
+        }
+        
+        for(let j=preadableeng[2][i];j<preadableeng[0][i].terms.length;j++){
+         plefthandside[i].push(engwordtov(preadableeng[0][i].terms[j].text)[0])
+        }
+        
+        
+        for(let j=0;j<preadableeng[0][i].length;j++){
+         
+        }
+         
+       }else if(preadableeng[1][i]=='ask'){
+         
+       }
+       else if(preadableeng[1][i]=='call'){
+         
+       }else if(preadableeng[1][i]=='command'){
+         
+       }else if(preadableeng[1][i]=='reply'){
+         
+       }else{
+        alert('cant translate cuz dont know type of english sentence')
+       }
+       
+      }
+      
+      for(let i=0;i<preadableeng[0].length;i++){
+       translateresult.push(plefthandside[i].join('') + prighthandside[i].join(''))
+      }
+      
+      translateresult = translateresult.join(' ')
+          
+      
+      return translateresult;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+     function engtoreadable(p){
+      
+      lefthandside=''
+      
+      righthandside=''
+      
+      let plocationofaloneverb = new Array()
+      
+      let pstructureofinputeng=nlp(p).json();
+      
+      let ptypeofengsentence=new Array();
+      
+      //gettypeofengsentence(inputtext);
+      
+      for(let i=0;i<pstructureofinputeng.length;i++){
+        for(let j=0;j<pstructureofinputeng[i].terms.length;j++){
+          if(pstructureofinputeng[i].terms[j].tags[0] == 'Verb'){
+            if(j==0){
+              plocationofaloneverb.push(j);
+              break;
+            }else{
+              if(pstructureofinputeng[i].terms[j].tags[1] != 'Possessive'){
+                plocationofaloneverb.push(j)
+                break;
+              }
+            }
+          }
+        }
+        
+        
+        if(plocationofaloneverb.length===0){
+          alert('cant find alone verb')
+        }else{
+          for(let i=0;i<plocationofaloneverb.length;i++){
+            if(plocationofaloneverb[i] == 0){
+              ptypeofengsentence.push('command')
+            }else if(1 < pstructureofinputeng[i].terms.length){
+              ptypeofengsentence.push('assert');
+            }else if(pstructureofinputeng[i].includes('?')){
+              ptypeofengsentence.push('ask')
+            }else{
+             alert('cant get type of sentence')
+            }
+          }
+        }
+       }
+       
+       return [pstructureofinputeng, ptypeofengsentence, plocationofaloneverb]
+      }
+
+
+
+   function vdictoreadable(){
+      
+      for(let i=0;i<dic.length;i++){
+        
+        if(dic[i].includes('=')&&dic[i].includes('.')){
+          
+          vdic[i]=[dic[i].substring(0, dic[i].indexOf(' ')).trim(),
+          
+          dic[i].substring(dic[i].indexOf(' ') + 1, dic[i].indexOf('!')).trim().split(','),
+          
+          dic[i].substring(dic[i].indexOf('!') + 1, dic[i].indexOf('=')).trim(),
+          
+          dic[i].substring(dic[i].indexOf('=') + 1,dic[i].indexOf('.')).trim()];
+          
+          let arrayvdicformular = vdic[i][3].split(' ')
+          
+          let quantityofspaceineachworddic = arrayvdicformular.length - 1;
+          
+          if(0 < quantityofspaceineachworddic){
+            vdic[i][3] = vdic[i][3].replaceAll('thing', '');
+          }
+          if(1 < quantityofspaceineachworddic){
+            vdic[i][3] = vdic[i][3].replaceAll('that', '');
+            
+            vdic[i][3] = vdic[i][3].replaceAll('be', '');
+            
+            vdic[i][3] = vdic[i][3].replaceAll('probability', '');
+            
+            vdic[i][3] = vdic[i][3].replaceAll('intensity', '');
+            
+            vdic[i][3] = vdic[i][3].replaceAll('is', '');
+            
+            vdic[i][3] = vdic[i][3].replaceAll('percent', '');
+            
+            
+            vdic[i][3] = vdic[i][3].replaceAll('about', '');
+          }
+          if(3 < quantityofspaceineachworddic){
+            vdic[i][3] = vdic[i][3].replaceAll('with', '');
+            
+            vdic[i][3] = vdic[i][3].replaceAll('percent', '');
+            
+            
+            vdic[i][3] = vdic[i][3].replaceAll('to', '');
+          }
+          
+          if(4 < quantityofspaceineachworddic){
+            vdic[i][3] = vdic[i][3].replaceAll('by', '');
+          }
+          
+          let worddictdonthavex = new Array();
+          
+          arrayvdicformular = vdic[i][3].split(' ')
+          
+          for(let j = 0; j < quantityofspaceineachworddic+1;j++){
+            if(!/^\d+$/.test(arrayvdicformular[j].replaceAll('x',''))){
+              
+              worddictdonthavex.push(arrayvdicformular[j])
+            }
+          }
+          
+          vdic[i][3] = worddictdonthavex.join(' ');
+          
+          vdic[i][3] = vdic[i][3].trim();
+          
+          //alert(vdic[i][3])
+          
+        }
+        
+      }
+      console.log(vdic)      
+    }
+    
+
+
+
+
+
+
+
+    function playtts(p) {
+      
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(p[1]);
+        
+        utterance.lang = 'ko-KR';
+        utterance.rate = 1;//speed
+        utterance.pitch = 1; //(0 ~ 2)
+
+        window.speechSynthesis.speak(utterance);
+      } else {
+          alert("tts cant be played in this browser");
+      }
+    }
+
+    function stopspeak() {
+        window.speechSynthesis.cancel();
+    }
+
+    
+    
+    
+    
+    function combine(str){
+      const chars = [...str];
+      const cho = CHO.indexOf(chars[0]);
+      const jung = JUNG.indexOf(chars[1]);
+      const jong = chars[2] ? JONG.indexOf(chars[2]) : 0;
+      return String.fromCharCode(44032 + (cho*588) + (jung*28) + jong);
+    }
+    
+    //console.log(combine("ㅂㅜㅁ")); // 붐
+    //console.log(combine("ㅂㅣㄱ")); // 빅
+        
+
+
+
+
+    let isEnToVl = true;
+
+    function toggleMode() {
+        isEnToVl = !isEnToVl;
+        document.getElementById('mode-indicator').innerText = isEnToVl ? "EN → Veluil" : "Veluil → EN";
+        document.getElementById('label-from').innerText = isEnToVl ? "English" : "Veluil";
+        document.getElementById('label-to').innerText = isEnToVl ? "Veluil" : "English";
+    }
+
+    function clearAll() {
+        document.getElementById('input').value = "";
+        document.getElementById('output').value = "";
+    }
+
+  </script>
+</body>
+</html>
