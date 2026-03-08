@@ -392,7 +392,7 @@ bpeg o,o,n!r=thing that dont need x1 to be x2.//a need,
 
 bpme o,o,n=thing that dont need to be x1 to be x2.//a need to,//g OIx4x4 x1x2 x4x4 Ex2,
 
-bjgg !r=dead thing.//a alive,//u26.2.8.1.
+bjhg !r=dead thing.//a alive,//u26.3.8.7.//u26.2.8.1.
 
 bmbg n!r=abnormal.//a normal,//u26.2.8.4.
 
@@ -472,9 +472,9 @@ blnd o!r=thing that hold x1.
 
 bmhg !r=poison.//a food,
 
-bnjb !r=off.//s die,//u26.2.8.1.
+bnob !r=off.//s die,//u26.2.8.1.//u26.3.8.15.
 
-bljb !r=closed.//s off,//u26.2.8.1.
+blob !r=closed thing.//s off,//u26.2.8.1.//u26.3.8.15.
 
 }◀b.r
 
@@ -660,7 +660,7 @@ dh
 
 dogg o,n!r=thing that feel x1 is disgusting.//a holy,//u26.2.1.
 
-dong o,n!r=thing that feel pain about x1.//a pleasure,//u26.2.1.
+dofg o,n!r=thing that feel pain about x1.//a pleasure,//u26.2.1.//26.3.8.7.
 
 dohg o,n!r=thing that dislike x1.//a like,//u26.2.1.
 
@@ -744,7 +744,7 @@ djfb t!r=x1 old.//c remain,exist,//u 2025.11.22.10.32.
 
 djkg o!r=thing that is younger than x1.//c x1 old, less,
 
-dncb n!r=extrovert.//c dislike,inside,
+docb n!r=extrovert.//c dislike,inside,//26.3.8.7.
 
 dnod o,n!r=thing that feel that x1 is tasteless.//c pain,food,//u 2025.11.5.
 
@@ -1084,8 +1084,6 @@ fb !r=exist.//u 2025.11.22.10.32.//s true,
 fida o,o!r=thing that requests that x2 become x1.//mean please,//s command,
 
 fpig o!r=thing that reflect x1.//s emit,
-
-fnjb !r=work.//s normal,
 
 foga !r=stone.//s soild,
 
@@ -1988,7 +1986,7 @@ mlmkid !r=lady.//c girl,like,
 
 mofb o!r=thing that is older than x1.//a young,
 
-mkcb n!r=introvert.//c like,inside,//u 2025.11.4. 
+mjcb n!r=introvert.//c like,inside,//u 2025.11.4.//26.3.8.7. 
 
 mijb o,o,o!r=∫ x2 -> x3 x1.//c all,between,//d 2025//e Integral symbol.
 
@@ -2042,11 +2040,11 @@ mnfa o!r=thing that react to x1.//s by,//u26.2.23.3.
 
 ▶m.s{
 
-mjcb o,n!r=thing that feel pleasure about x1.//s love,//u26.1.30.8.
+mjkb o,n!r=thing that feel pleasure about x1.//s love,//u26.1.30.8.//26.3.8.7.
 
 mjib o,n!r=thing that like x1.//s love,//u26.1.30.8.
 
-mjib o,n!r=thing that feels comfortable be x1.//s love,//u26.1.11.16.//u26.1.30.8.
+mjdb o,n!r=thing that feels comfortable be x1.//s love,//u26.1.11.16.//u26.1.30.8.
 
 mjeb o,n!r=what x1 safe for.//s love,//u26.1.30.8.
 
@@ -2182,9 +2180,9 @@ omfb o!r=thing that is more flexible than x1.//a inflexible,
 
 ojgc !r=thing that is in a peaceful relationship with x1.//a fight,
 
-okgg !r=on.//a off,//s alive,//u26.2.8.1.
+okbg !r=on.//a off,//s alive,//u26.2.8.1.//u26.3.8.15.
 
-omgg !r=opened thing.//a closed,//s on,//u26.2.8.1.
+ombg !r=opened thing.//a closed,//s on,//u26.2.8.1.//u26.3.8.15.
 
 }◀o.a
 
@@ -2248,15 +2246,15 @@ oilb o,o,n!r=thing that need x1 to be x2.
 
 olma !r=animal.
 
-olib !r=food.
+olba !r=food.//u26.3.8.15.
 
 okkb !r=insect.
 
 ojda !r=protein.//d2025.11.27.21.29.
 
-oojb !r=alive thing.//u26.2.8.1.
+ooib !r=alive thing.//u26.3.8.7.//u26.2.8.1.
 
-olob n!r=normal.//s profit,//u26.2.8.4.
+olib n!r=normal.//s profit,//u26.2.8.4.//u26.3.8.15.
 
 }◀o.r
 
@@ -2269,6 +2267,8 @@ o!r=thing that stuck x1.//s enter,
 oiob o,o,n!p=thing that x1 is important for being x2.//s need,
 
 olga o!r=thing that greet x1.//s call,//u2025.11.22.9.28.//u26.2.23.5.
+
+onib !r=work.//s normal,
 
 }◀o.s
 
@@ -2679,7 +2679,7 @@ this document and this language is not free for speific user.
 
 When sharing this document, we recommend sharing only this github link because all documents should be updated with changes when this document is updated.
 
-Large corporations are required to sign license agreement to use it. The standards of large corporations are determined by the rules of their countries.//got moeny is used to promote this lang.
+Large corporations are required to sign license agreement to use it. The standards of large corporations are determined by the rules of their countries.//got moeny is used to promote this lang and etc.
 
 other can use this language legally for free.
 
