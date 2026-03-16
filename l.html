@@ -140,6 +140,31 @@ document.querySelectorAll('pre, button').forEach(e=>{
     function setfontsize(p){
       
     }
+    
+   let isStarted = false;
+   
+   window.addEventListener('click', () => {
+       if (isStarted) return;
+       isStarted = true;
+   
+       const preElements = document.querySelectorAll('pre');
+       
+       preElements.forEach((el) => {
+           const textToRead = el.innerText.trim();
+           
+           if (textToRead.length > 0) {
+               const utterance = new SpeechSynthesisUtterance(textToRead);
+               
+               utterance.lang = 'en-US'; 
+               
+               utterance.rate = 1.35;
+   
+               window.speechSynthesis.speak(utterance);
+           }
+       });
+   });
+  
+
   </script>
   <pre>This artificial language is called veluil(Versatile Efficient Logical Unambiguous International Language) in English.
   
@@ -175,7 +200,7 @@ veluil is most versatile and most efficient most logical and unambiguous and eas
 
 english easily becomes ambiguous. eg 'i love situation that i love person who love cow and people and chicken or he eat meal'. but this language express all situation without ambiguous.
 
-this language can help cheating in exam because it takes up very little space and most people won't think of it as a language, so it won't get caught.
+this language version of 2d code can help cheating in exam because it takes up very little space and most people won't think of it as a language, so it won't get caught.
 
 if this language become international language then everybody can easily communicate with disabled person and blind and the deaf since this language can easily be converted into this language version of braille and sign language and morse code and barcode and QR code and etc by simple rule by being binary language. it is very efficient. this language can be used as programming language. so you can do many things by learning this language.
 
@@ -194,7 +219,7 @@ most data in world is video data but if someone speak in this language, the some
 
 A sentence that takes 10 seconds to say in English can be said in just 5 seconds in this language.
 
-unambigous is very good for language cuz it make efficient cuz it doesn't need any additional explanation or images to explain exactly.
+unambigous is very good for language cuz it make efficient cuz it deosn't need any additional explanation or images to explain exactly.
 
 this language is very consistent so polution by AI and LLM will be reduced.
 
@@ -311,7 +336,7 @@ NL sign language one hand: https://youtu.be/4SJ2bu0ngnk?si=w0jSCCvQHDL6AGfP
 
 ▶how to provide feedback{
 
-this language and this doucment is beta version. making this language is started in 2023year second month. if this language can become more perfect then it is changed so you can provide feedback for this language or this doucment. also you can ask me using this:
+this language and this document is beta version. making this language is started in 2023year second month. if this language can become more perfect then it is changed so you can provide feedback for this language or this doucment. also you can ask me using this:
 
 Our chat room: https://discord.gg/VhHBjXbpkz
 
