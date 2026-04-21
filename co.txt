@@ -2,25 +2,13 @@ this language has no synonyms so just think and use words as appropriate.
 
 eg this language dont have word large so you should use word big instead of word large.
 
-symbol '-' is old version's symbol so convert it into ','.
-
-ignore symbol '<', '>'.
-
-word is listed using two diffrent rule.
-
-left rule is listing using '//n' cuz if it is listed by the rule then hard to find.
-
-the rule is listing by initial letter and word formation rule
-
 //ewo
 
-▶other{
-
-many is first.
+▶ listed //n word {
 
 aiba !r=elementary particle.
 
-aiba !r=none.
+biba !r=none.//u26.3.25.4.
 
 ciba !r=photon.
 
@@ -340,9 +328,9 @@ aojf o,o!r=thing that kick x1 into x2.//c foot,attack,//r attack using foot,//u2
 
 amae r!=mother.//p mama baby.
 
-aime utf8v!r=.//e if scan this word then url is opened. this word is for express letter by utf8. Leading x2yte must move to 8nth bit.//p utf8, en,//d26.2.14.15.
+aime utf8v!r=.//e if scan this word then url is opened. this word is for express letter by utf8. Leading x2yte must move to 8nth bit.//p utf8, english,//d26.2.14.15.
 
-aikg utf8v!=.//e this word is for express letter by utf8. Leading x2yte must move to 8nth bit.//d26.2.13.18.//p utf8, en,//u26.2.14.15.
+aikg utf8v!=.//e this word is for express letter by utf8. Leading x2yte must move to 8nth bit.//d26.2.13.18.//p utf8, english,//u26.2.14.15.
 
 }◀a.p
 
@@ -357,8 +345,6 @@ ac o,o!p=x1 that is in x2.
 ag int,n!n=.//e word for explaining rational number.
 
 ah o,o!1p=x1 according to x2.//u26.3.21.21.
-
- dec,dec!n=decimal rational number.
 
 anga !r=human.
 
@@ -375,6 +361,8 @@ akcg !r=ass.
 aond o!r=thing that walk on x1.//s touch,
 
 aopg !r=foot.//s walk,//u26.1.9.16.
+
+aoib o!r=thing that stick to x1.//s touch,//u26.4.7.4.
 
 }◀a.s
 
@@ -399,6 +387,8 @@ bjhg !r=dead thing.//a alive,//u26.3.8.7.//u26.2.8.1.
 bmhg n!r=abnormal thing.//a normal,//u26.2.8.4.//u26.3.9.4.
 
 bkhg !r=broken.//a work,//u26.3.22.18
+
+blde !r=accident.//a lucky,//d26.4.15.1.
 
 }◀b.a
 
@@ -450,6 +440,8 @@ bjih !n=negative.//c less,zero,//d26.2.23.5.
 
 blgb !r=post.//c doucment,give,//u25.12.3.12.//u26.3.13.20.
 
+blef !r=book.//c document,big,//d26.1.4.22.//u26.3.28.4.
+
 }◀b.c
 
 ▶b.n{
@@ -465,8 +457,6 @@ bb o!n=thing that is less than x1.//u26.1.28.
 bd c o,n!p=1x1 or 2x1 or.//u26.2.8.17.
 
 bg n!r=victim.//a profit,//u26.1.28.
-
- int!n..//e this word is to express integer..u 2025.11.21.17.52.
 
 blda n!r=x1 flexibility.
 
@@ -511,8 +501,6 @@ bode !r=body.//s body en.
 boeg o,o!r=thing that compete to being x2 with x1.//x1 is like enemy,s dont need,
 
 bojf o!r=thing that fight with x1.//s compete,
-
-bjlb !r=logic.//s true,d 2025.11.7.9.25.
 
 bmpe o!1p=even x1.//s too,
 
@@ -598,9 +586,9 @@ cihb !r=video.//c image,become,//d 2025.11.20.21.37.//u26.2.25.0.//u26.3.23.4
 
 ▶c.p{
 
-cmfc o!p=x1 dollar.//p dollar en.
+cmfc o!p=x1 dollar.//p dollar english.
 
-cjeoog !r=germany.//p deutschland de,
+cjeoog !r=germany.//p deutschland german,
 
 }c.p◀
 
@@ -646,7 +634,9 @@ cida !r=color.//s photon,//d 2025.11.6.19.53.//u 2025.11.20.19.49.
 
 cjca o!1p=some x1.//s x3x2,//d2025.11.26.22.41.
 
-cnig !r=economy.//s money,//d25.12.31.17.
+coig !r=economy.//s money,//d25.12.31.17.//u26.4.20.1.cnig->coig
+
+coif !r=capital.//s money,//d26.4.20.1.
 
 }c.s◀
 
@@ -758,8 +748,6 @@ dnlh o,n!r=thing that is jealous of x1.//c dread, strong,//d 2025.11.16.14.//u20
 
 dnkg o,n!r=thing that pity x1.//c dread, abnormal,//u 2025.11.18.17.7.//d 2025.11.11.22.53..
 
-llmf o!r=thing that select x1.//c decide,use,//d 2025.11.20.21.41.//u26.2.25.23.
-
 doff !r=logic.//c essence,true,//r essence that assert true,//d25.12.20.12.
 
 domc o!r=thing that marry x1.//c promise,love,//d25.12.30.3.
@@ -793,6 +781,8 @@ dlee !r=tree.
 diba !r=electron.
 
 dida o,o!r=thing that mention x1 to x2.//u 2025.11.21.19.40.
+
+dkkd !r=straight thing.//d26.4.7.5.56.
 
 }◀d.r
 
@@ -850,14 +840,11 @@ elhf !r=phonetic alphabet.//c letter,sound,
 
 elcjeg !r=german language.//c language,germany,
 
-elkg o-o!r=thing that efficiently become x1 than x2.//co
- efficiency,less,
+elbb o,o!r=thing that efficiently become x1 than x2.//c efficiency,less,//u26.4.4.16.
 
 eleodd !r=english.//c language,england,dofocd !r=english.//c language,england,
 
 eicd c o,n!2p=process of 1x1 becoming x21 becoming.//c what,x3x4,
-
-elmc !r=novel.//c document,fun,//u25.12.9.17.
 
 eiia !r=culture.//c what, tend,// r what something tend to.
 
@@ -915,17 +902,17 @@ eldg !r=clock.//c express,time,//u25.12.9.1.
 
 eloa !r=scholarship.//c code,need,//d25.12.31.16.// u25.12.31.19.
 
-ekhf !r=deaf.//c not,sense,sound,//d26.1.1.11.
+elhf !r=deaf.//c not,sense,sound,//d26.1.1.11.//u26.3.28.4.
 
 elnf !r=global language.//c language,earth,//d26.1.2.7.
-
-elef !r=book.//c document,big,//d26.1.4.22.
 
 eiee !r=fat.//u 26.1.12.21.//e fat as in belly fat. //d26.1.12.21.
 
 elld !r=barcode.//c code,line,//d26.1.13.18.
 
 gmkf !r=QR code.//c quick,reply,//d26.1.13.18.
+
+eoff !r=logic.//c how, true,d 2025.11.7.9.25.//u26.3.28.3.
 
 }◀e.c
 
@@ -935,9 +922,9 @@ gmkf !r=QR code.//c quick,reply,//d26.1.13.18.
 
 ▶e.p{
 
-eodlff !r=england.//p england en,
+eodlff !r=england.//p england english,
 
-eikc n!r=x1newton.//p newton en.
+eikc n!r=x1newton.//p newton english.
 
 }◀e.p
 
@@ -1219,6 +1206,10 @@ gode !r=semen.//c water,men,//d25.12.5.14.
 
 gkid !r=family.//c protect,each other,//d25.12.10.1.
 
+gnlb !r=school.//c make, know,//u26.4.19.21.//u26.4.20.5njlb->gnlb
+
+gnhf !r=speaker.//c make,sound,//d26.4.21.3.
+
 }◀g.c
 
 ▶g.n{
@@ -1239,7 +1230,7 @@ gc o,o,n!r=reason why x2 is x1.
 
 gd s!t=past of x1.
 
-ge
+ge int!n..//e this word is to express integer//u26.4.14.6.//u 2025.11.21.17.52.
 
 gg o,o!n=x1 divided by x2.//a times,//u26.1.28.
 
@@ -1335,6 +1326,8 @@ hnbd !r=anthem.//c music, symbolize,//d 2025.11.15.20.10.//u 2025.11.15.20.12//u
 
 hjbb o!r=thing that is clean than x1.//c cleanliness,less,//d25.12.31.17.//u26.3.22.3.
 
+hmcf !r=subject.//c HE,CF,//d26.4.8.2.54.
+
 }◀h.c
 
 ▶h.n{
@@ -1346,8 +1339,6 @@ hjbb o!r=thing that is clean than x1.//c cleanliness,less,//d25.12.31.17.//u26.3
 ha !r=thing.
 
 hb o!p=thing that become x1.//u26.3.19.21
-
- c o!p=too and.
 
 hc c o!p=between 1x1 and 2x1 and.
 
@@ -1435,8 +1426,6 @@ iimc o,n!r=thing whose x1 is hobby.//c tend,enjoy,
 
 iiha !r=empire.//c country,rule,other,country,//r empire is country that rule other country.//u 2025.11.11.9.
 
-ijjf !r=school.//c buliding,student,
-
 ined !r=folder.//c group,code,//g x1x2,group,for being,include,code,
 
 ioke !r=fire.//c plasma,hot,
@@ -1502,6 +1491,8 @@ innb o,n!r=thing that surround x1.//s have,//m encircle,
 ijpb !r=stop.//e stay still.
 
 inba o!r=direction of x1.//d26.2.23.5.
+
+ilob !r=equality.//d26.3.24.5.
 
 }◀i.r
 
@@ -1605,15 +1596,15 @@ jd o!r=thing that Imagine x1.
 
 je s!t=future of x1.//a past,
 
-jg
+jg dec,dec!n=decimal rational number.//u26.4.10.5.
 
 jh !n=four.
 
 joda !r=fermented thing.
 
-jkib o!r=thing that stick to x1.
-
 jikc o!n=x1!.//d26.1.18.11.
+
+jmfb n!r=.//e unit expressing the degree of splitting.//d26.4.7.4.
 
 }◀j.r
 
@@ -1711,6 +1702,12 @@ kjha o!r=thing that smell x1.//c sense,smell,//d26.1.1.12.
 
 goke !r=lava.//c liquid,hot,//d26.1.18.18.
 
+kkmb !r=novel.//c false,pleasure,//u25.12.9.17.//u26.3.23.8.
+
+kkcf o!1p=.//e "kkcf A B" mean "kkba cf A B".//c false,situation that,//d26.4.11.4.
+
+kmcg !r=bank.//c have,money,//d26.4.15.1
+
 }◀k.c
 
 ▶k.n{
@@ -1767,6 +1764,8 @@ kmga !r=country.//s group,//u26.2.23.5.
 
 kmib o!r=thing that rule x1.//s have,//u26.2.23.5.
 
+kifa o!r=thing that react to x1.//s by,//u26.2.23.3.//26.3.24.5.
+
 }◀k.s
 
 }◀k
@@ -1815,7 +1814,7 @@ llgf !r=artificial.//c intend,make,//r intentionally made.
 
 llcc !r=thread.//c line,thin,
 
-ljbb s,o!r=thing that admit that x12 is x11.//c know,true,
+lnff o,o!r=thing that admit that x2 is x1.//c belive,true,//u26.4.11.3.
 
 llfd !r=rational.//c intend,profit,
 
@@ -1829,7 +1828,7 @@ lknd o!r=thing that ability to be x1.//u25.12.10.0.
 
 llee !r=biomimicry.//c imitate, nature,
 
-lmld !r=free.//c right to,what,intend,//m liberty,//e free as in freedom.
+lmmd !r=free.//c right to,what,intend,//m liberty,//e free as in freedom.//u26.3.24.5.
 
 lmng n!r=dignity.//c right to,what,repect,
 
@@ -1853,8 +1852,6 @@ lldb n!r=lookist.//c mind, shell,//d25.11.6.13.
 
 lljd o,n!r=thing that mind x1.//c intend,imagine,//u25.12.9.12.
 
-lldd o!r=thing that decide to be x1.//c promise, self,//r promise to self.//u26.1.30.8.
-
 }◀l.c
 
 ▶l.n{
@@ -1864,6 +1861,8 @@ lldd o!r=thing that decide to be x1.//c promise, self,//r promise to self.//u26.
 ▶l.p{
 
 lmle o,n!r=thing that feel x1 is funny.//p haha people,
+
+lmgf !r=cafe.//p cafe, english,//d26.4.21.20.
 
 }◀l.p
 
@@ -1882,8 +1881,6 @@ ld
 lg o,n!p=thing that can be x1 with x2 percent probability.
 
 lh !n=one.
-
-llba o,o,o!r=promise.//e if myself is x1, then x2 is x3. that is what the promise contains.//u26.1.30.8.
 
 }◀l.r
 
@@ -1927,6 +1924,8 @@ moef o,t!p=thing that stop being x1 after time x2.//a remain,
 mjme o!r=thing that give up being x1.//a decide,//u 2025.11.16.7.9
 
 mkgg s!r=thing that allow that x12 is x11.//a reject,
+
+mnfe n!r=curved thing.//a straight,//d26.4.7.5.57
 
 }◀m.a
 
@@ -2010,6 +2009,10 @@ mjmd o,n!r=thing that think that feel that x1 is cute.//c like,baby,//u 2025.11.
 
 mlae !r=sister.//c women,parent,//d26.2.21.3.
 
+mldd o!r=thing that decide to be x1.//c promise, self,//r promise to self.//u26.1.30.8.//u26.4.8.8.
+
+mlkd o!r=thing that select x1.//c decide,use,//d 2025.11.20.21.41.//u26.2.25.23.//u26.4.8.8.
+
 }◀m.c
 
 ▶m.n{
@@ -2026,7 +2029,7 @@ mc t,o!2p=thing that be x2 when x1.//u26.1.31.19.
 
 me o!p=average of x1.//u 2025.11.16.23.39.//u26.3.21.21.
 
-mf
+mf c o!p=too and.//u26.4.13.23.
 
 mg
 
@@ -2042,7 +2045,7 @@ mnga n!r=sharpness.
 
 moba o!1p=that x1.//d26.1.16.8.
 
-mnfa o!r=thing that react to x1.//s by,//u26.2.23.3.
+mlba o,o,o!r=promise.//e if myself is x1, then x2 is x3. that is what the promise contains.//u26.1.30.8.//u26.4.8.8.
 
 }◀m.r
 
@@ -2129,6 +2132,8 @@ nnfd !r=bathroom.//c place,emit,shit,//d26.2.3.18.
 npke !r=jwetaism.//c two,group,//d26.2.8.16.
 
 noee !r=hospital.//c place,save,organism,//r place that save organism//u26.3.23.4
+
+njgf !r=factory.//c place, make,//d26.4.15.1.
 
 }◀n.c
 
