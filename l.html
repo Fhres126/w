@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ 
  <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="https://fhres126.github.io/w/teachnl.png">
-  <style>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="title" content="Veluil Official | The Most Efficient Binary Language">
+ <meta name="description" content="5x more information density than ASCII. Veluil is the first 8-bit based logical language designed for humans and AI.">
+
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Veluil: Versatile Efficient Logical Unambiguous International Language">
+ <meta property="og:description" content="Why use 80 bits when 16 bits is enough? Discover the future of communication.">
+ <meta property="og:image" content="https://fhres126.github.io/w/teachnl.png">
+
+ <meta property="twitter:card" content="summary_large_image">
+ <meta property="twitter:title" content="Veluil Project">
+ <meta property="twitter:description" content="Unambiguous, Logical, and 500% more efficient than English.">
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7124347237204373"
+     crossorigin="anonymous"></script>
+     <title>introducing veluil</title>
+     
+ <style>
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap');
+  
     :root {
       --s: 0px;
     }
+    html{
+     font-size: var(--fontsize);
+    }
     body{
+     line-height: 1.5; 
+     letter-spacing: 0.1;
       background-color: #000000;
-      margin:calc(var(--s)*0.1);;
+      margin:calc(var(--s)*0.1);
+       
+      -webkit-text-stroke: 0.04rem;
+      -webkit-text-stroke-color:#000000;
+      
     }
     pre{
       white-space: pre-wrap;
@@ -21,14 +50,12 @@
       width:calc(var(--s) / 3  * 2);
       height:auto;
     }
-    * {
+    pre, summary, p, span {
       
-      font-size: calc(var(--s) * 0.05);
+      font-size: var(--fontsize);!important
       animation: rainbow 3s linear infinite;
-    }
-    pre{
       color:#00FFFF;
-      }
+    }
     .setcolor{
       width:calc(var(--s) / 24);
       height: calc(var(--s) / 24);
@@ -41,74 +68,59 @@
       padding: 4px 8px;
     }
     button{
+      position: fixed;
       background-color: none;
+      top:0px;
     }
-  </style>
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="title" content="Veluil Official | The Most Efficient Binary Language">
-<meta name="description" content="5x more information density than ASCII. Veluil is the first 8-bit based logical language designed for humans and AI.">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Veluil: Versatile Efficient Logical Unambiguous International Language">
-<meta property="og:description" content="Why use 80 bits when 16 bits is enough? Discover the future of communication.">
-<meta property="og:image" content="https://fhres126.github.io/w/teachnl.png">
-
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="Veluil Project">
-<meta property="twitter:description" content="Unambiguous, Logical, and 500% more efficient than English.">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7124347237204373"
-     crossorigin="anonymous"></script>
-     <title>introducing veluil</title>
+    summary {
+     font-weight: bold;
+     cursor: pointer; 
+     -webkit-text-stroke: 0px
+    }
+    input{
+     position:fixed;
+     top:0px;
+    }
+ </style>
 </head>
 <body>
-  <button class = 'setcolor' onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{
-  e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';
-  e.style.webkitBackgroundClip='text';
-  e.style.webkitTextFillColor='transparent';
-})">
-</button>
+  <button id="button_gradient" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:#ff5733 !important;color:#ff5733 !important;}</style>');"></button>
 
-<button class = 'setcolor' onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{
-  e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';
-  e.style.webkitBackgroundClip='text';
-  e.style.webkitTextFillColor='transparent';
-})">
-</button>
+
+<button id="button_rainbow" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:red !important;color:red !important;}</style>');"></button></button>
+
   
-  <button class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{e.style.background = '';
+  <button id = 'button_red' class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#ff0000')"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ff0000');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff0000 !important;-webkit-text-fill-color:#ff0000 !important;}</style>');
+"></button>
   
-  <button class = 'setcolor' style="background-color:#ff8800;" onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{e.style.background = '';
+  <button id = 'button_orange' class = 'setcolor' style="background-color:#ff8800;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#ff8800')"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ff8800');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff8800 !important;-webkit-text-fill-color:#ff8800 !important;}</style>');
+"></button>
   
-  <button class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{e.style.background = '';
+  <button id = 'button_green' class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00')"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ff00 !important;-webkit-text-fill-color:#00ff00 !important;}</style>');"></button>
 
-<button class = 'setcolor' style="background-color:#00ffff;" onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{e.style.background = '';
+<button id = 'button_cyan' class = 'setcolor' style="background-color:#00ffff;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#00ffff')"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#00ffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ffff !important;-webkit-text-fill-color:#00ffff !important;}</style>');"></button>
   
-  <button class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('p,span,a,h1,pre').forEach(e=>{e.style.background = '';
+  <button id = 'button_white' class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff')"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');"></button>
 
 
-<input type="range" min="0.005" max="0.2" step="0.005" value="0.05"
-oninput="
-document.querySelectorAll('pre, button').forEach(e=>{
-  e.style.fontSize = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value) + 'px';
-});
+<input id = 'bar_size' type="range" min="0.005" max="0.2" step="0.005" value="0.05"
+oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value) + 'px')">
 
-">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -139,6 +151,7 @@ document.querySelectorAll('pre, button').forEach(e=>{
       smallerline=width;
     }
     document.documentElement.style.setProperty("--s", String(smallerline) + "px");
+    document.documentElement.style.setProperty("--fontsize", String(smallerline * 0.05) + "px");
     document.body.style.maxWidth = width.toString() + "px";
     document.body.style.maxHeight = height.toString() + "px";
     
@@ -147,6 +160,22 @@ document.querySelectorAll('pre, button').forEach(e=>{
     }
     
    let isStarted = false;
+   
+   document.getElementById("button_gradient").style.left=getComputedStyle(document.body).marginLeft;
+   
+   document.getElementById("button_rainbow").style.left=parseFloat(getComputedStyle(document.getElementById("button_gradient")).left) + parseFloat(document.getElementById("button_gradient").offsetWidth) + "px"
+   
+   document.getElementById("button_red").style.left=parseFloat(getComputedStyle(document.getElementById("button_rainbow")).left) + parseFloat(document.getElementById("button_rainbow").offsetWidth) + "px"
+   
+   document.getElementById("button_orange").style.left=parseFloat(getComputedStyle(document.getElementById("button_red")).left) + parseFloat(document.getElementById("button_red").offsetWidth) + "px"
+   
+   document.getElementById("button_green").style.left=parseFloat(getComputedStyle(document.getElementById("button_orange")).left) + parseFloat(document.getElementById("button_orange").offsetWidth) + "px"
+   
+   document.getElementById("button_cyan").style.left=parseFloat(getComputedStyle(document.getElementById("button_green")).left) + parseFloat(document.getElementById("button_green").offsetWidth) + "px"
+   
+   document.getElementById("button_white").style.left=parseFloat(getComputedStyle(document.getElementById("button_cyan")).left) + parseFloat(document.getElementById("button_cyan").offsetWidth) + "px"
+   
+   document.getElementById("bar_size").style.left=parseFloat(getComputedStyle(document.getElementById("button_white")).left) + parseFloat(document.getElementById("button_white").offsetWidth) + "px"
    
    window.addEventListener("click", () => {
        if (isStarted) return;
@@ -175,7 +204,11 @@ document.querySelectorAll('pre, button').forEach(e=>{
   
 Among the people I’ve seen, those who dislike veluil didn’t even properly read this document. if veluil can become more perfect then veluil is changed.
 
-▶ table of content{
+</pre>
+
+<details>
+ <summary>table of content</summary>
+<pre>
 
 1. persuade to learn veluil.
 
@@ -199,7 +232,11 @@ Among the people I’ve seen, those who dislike veluil didn’t even properly re
 
 }◀ table of content
 
-▶ persuade to learn veluil{
+</pre>
+</details>
+<details open>
+ <summary>persuade to learn veluil</summary>
+<pre>
 
 veluil is most versatile and most efficient most logical and unambiguous and easy and simple language that benefical environmental and disabled person.
 
@@ -214,7 +251,7 @@ imagine what if veluil version of QR code replace pictogram. we dont need to lea
   <img src="https://fhres126.github.io/w/hatepictogram.jpg">
   <pre>
 
-if all human use veluil environmental pollution will be reduced.
+if all human use veluil then environmental pollution will be reduced.
 
 "i know you" is 80bit in ascii code. veluil need 16bit to say "i know you".
 
@@ -339,8 +376,12 @@ NL sign language one hand: https://youtu.be/4SJ2bu0ngnk?si=w0jSCCvQHDL6AGfP
 
 }◀ persuade to learn veluil
 
-▶ how to provide feedback{
+</pre>
+</details>
 
+<details open>
+ <summary>how to provide feedback</summary>
+<pre>
 veluil and this document is beta version. making veluil is started in 2023year second month. if veluil can become more perfect then it is changed so you can provide feedback for veluil or this doucment. also you can ask me using this:
 
 Our chat room: https://discord.gg/VhHBjXbpkz
@@ -354,29 +395,21 @@ email: fhres126@gmail.com
 telegram: https://t.me/+PLg57eWiUEU3Nzg1
 
 }◀ how to provide feedback
-
-▶ why i made veluil{
+</pre>
+</details>
+<details open>
+ <summary>why i made veluil</summary>
+<pre>
 
 Language is important because it is main thing that makes humans superior. language must not be inferior, and it must not hinder science, scholarship, or other fields. i made veluil using this thought.
 
 }◀ why i made veluil
 
 </pre>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7124347237204373"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7124347237204373"
-     data-ad-slot="3352071851"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+</details>
+<details open>
+ <summary>alphabet</summary>
 <pre>
-
-▶ alphabet{
-
 * veluil use only 0 and 1. it can be expressed as this follwing 16 letter.
 </pre>
 <img src="https://fhres126.github.io/w/efficientalphabet.jpg">
@@ -401,11 +434,12 @@ m = 0011. n = 1011. o = 0111. p = 1111.
 
 }◀ alphabet
 
+</pre>
+</details>
 
-
-
-▶ word separation, spacing{
-
+<details open>
+ <summary>word separation, spacing</summary>
+<pre>
 purpose of this section: making you can distinguish border of words.
 
 * one word consist of 8n bits.
@@ -434,11 +468,11 @@ answer: 3.
 
 }◀ word separation, spacing
 
-
-
-
-▶ pronunciation{
-
+</pre>
+</details>
+<details open>
+ <summary>pronunciation</summary>
+<pre>
 purpose of this section: making you know how to pronunce binary.
 
 * Two letters make one syllable.
@@ -509,15 +543,15 @@ the pronunciation is arranged with lower Hz sounds coming first. so it is not bi
 
 }◀ pronunciation
 
-
-
-
-
-
-
+</pre>
+</details>
+<pre>
 you can learn using quickly learn section or slowly learn section.
 
-▶ slowly learn(not finished but can helpful){
+</pre>
+<details open>
+ <summary>slowly learn(not finished but can helpful)</summary>
+<pre>
 
 ▶ basic{
 
@@ -873,9 +907,9 @@ here we will learn how to say "i am from united states of america".
 
 ondb o!r=thing that come from x1.
 
-word "aianpd" mean "united states of america". pronunciation of this word is derived from "USA" of english. additional explanation "//p A, B," mean pronunciation of this word similar to A in language B. ISO 639-1 code is in the B. this word is expressed as following in word dictionary.
+word "aianpd" mean "united states of america". pronunciation of this word is derived from "USA" of english. additional explanation "//p A, B," mean pronunciation of this word similar to A in language B.  this word is expressed as following in word dictionary.
 
-aianpd !r=united states of america.//p USA, en,
+aianpd !r=united states of america.//p USA, english,
 
 in sentence "ed ondb aianpd nb" mean "i am thing that was thing that come from united states of america".
 
@@ -1040,7 +1074,7 @@ gmbb o,o!1p=thing that be x1 quickly than x2.//c GMDA,less,
 
 flfa o!r=thing that is in x1.//s part of,
 
-bkpd !r=bus.//p bus, en,
+bkpd !r=bus.//p bus, english,
 
 sentence "cf lg flfa bkpd bnca jf gmbb bc cg" mean "result of you being thing that quickly be something is situation that we are thing that can be in bus".
 
@@ -1286,32 +1320,11 @@ if library that you wanna import is A. then sentence "ke A ad" import A. in the 
 
 }◀ slowly learn
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-▶ quickly learn(not finished but can be helpful. for smart){
-
+</pre>
+</details>
+<details open>
+ <summary>quickly learn(not finished but can be helpful. for smart)</summary>
+<pre>
 this section quickly teach so remember all that is in this section.
 
 grammar is easy so learning words is impotant so we will learn how to interpret word dictionary formular firstly.
@@ -1603,8 +1616,8 @@ finish.
 
 }◀quickly learn.
 
-
-
+</pre></details>
+<pre>
 
 ▶complex sentences{
 
