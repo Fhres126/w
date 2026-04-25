@@ -36,7 +36,7 @@
       background-color: #000000;
       margin:calc(var(--s)*0.1);
        
-      -webkit-text-stroke: 0.04rem;
+      -webkit-text-stroke: 0.05rem;
       -webkit-text-stroke-color:#000000;
       
     }
@@ -73,13 +73,24 @@
       top:0px;
     }
     summary {
-     font-weight: bold;
      cursor: pointer; 
-     -webkit-text-stroke: 0px
+     -webkit-text-stroke: 0px;
+     font-size:calc(1.3 * var(--fontsize));
+     font-weight: 1000;
+     background: linear-gradient(to top, #333333 10%, transparent 10%);
+     font-style: oblique;
+    }
+   
+    summary:hover {
+     color: #00f7ff;
+     transform: translateX(3px);
     }
     input{
      position:fixed;
      top:0px;
+    }
+    details{
+      
     }
  </style>
 </head>
@@ -178,27 +189,35 @@ oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(ge
    document.getElementById("bar_size").style.left=parseFloat(getComputedStyle(document.getElementById("button_white")).left) + parseFloat(document.getElementById("button_white").offsetWidth) + "px"
    
    window.addEventListener("click", () => {
+       
+       if (!isStarted){
+        const preElements = document.querySelectorAll("pre");
+        
+        preElements.forEach((el) => {
+            const textToRead = el.innerText.trim();
+            
+            if (textToRead.length > 0) {
+                const utterance = new SpeechSynthesisUtterance(textToRead);
+                
+                utterance.lang = "en-US"; 
+                
+                utterance.rate = 1.35;
+    
+                window.speechSynthesis.speak(utterance);
+            }
+        });
+        
+        const bgm = new Audio("https://raw.githubusercontent.com/fhres126/w/main/Gott erhalte Franz den Kaiser(instrumental).mp3");
+     
+        bgm.loop = true;
+        bgm.volume = 0.28;
+        
+        bgm.play();
+       }
        if (isStarted) return;
        isStarted = true;
-   
-       const preElements = document.querySelectorAll("pre");
        
-       preElements.forEach((el) => {
-           const textToRead = el.innerText.trim();
-           
-           if (textToRead.length > 0) {
-               const utterance = new SpeechSynthesisUtterance(textToRead);
-               
-               utterance.lang = "en-US"; 
-               
-               utterance.rate = 1.35;
-   
-               window.speechSynthesis.speak(utterance);
-           }
-       });
    });
-  
-
   </script>
   <pre>This artificial language is called veluil(Versatile Efficient Logical Unambiguous International Language) in English.
   
@@ -334,7 +353,7 @@ NL braille is veluil version of braille. NL braille is usually 1.5 times more ef
 
 Sign language is difficult or inefficient for expressing new words or slang but veluil"s sign language is not.
 
-▶ refute to concerns{
+</pre><details open><summary>refute to concerns</summary><pre>
 
 concerns: The grammar of veluil is too much like a computer language. veluil is not a language for humans.
 
@@ -351,9 +370,9 @@ refute: no, this writing system can express interjection and foreign word using 
 other refute to concerns is appear when explain new thing. Even if I refute it now, you won’t know what I’m talking about. if there are problem we can change.
 
 }◀ refute to concerns
-
-▶ evidence{
-
+</pre></details>
+<details open><summary>evidence</summary>
+<pre>
 we have some tool. i belive that it can be evidence.
 
 site that convert to other wring system(NLQR1, NLQR2): https://fhres126.github.io/w/nlintovarious.html
@@ -373,7 +392,8 @@ NL braille: https://youtu.be/UKd6Fry-k8g?si=RRccCNANzb7LMkG9
 NL sign language one hand: https://youtu.be/4SJ2bu0ngnk?si=w0jSCCvQHDL6AGfP
 
 }◀ evidence
-
+</pre></details>
+<pre>
 }◀ persuade to learn veluil
 
 </pre>
@@ -553,7 +573,10 @@ you can learn using quickly learn section or slowly learn section.
  <summary>slowly learn(not finished but can helpful)</summary>
 <pre>
 
-▶ basic{
+</pre><details open>
+ <summary>basic</summary>
+ 
+ <pre>
 
 veluil word "anga" mean "human".
 
@@ -613,10 +636,10 @@ here we will learn how to say "thank you". "mood A" mean "thing that thanks A". 
 
 in sentence "mjib cg nb", second parameter of word "mjib" automatically be omitted by other type word. this sentence mean "i am thing that like you". the degree of like is expressed as number between zero and one. word "lh" mean one so sentence "mjib cg lh nb" mean "I like you with 100% intensity".
 
-}◀ basic
-
-▶ word "ea"{
-
+</pre></details>
+<details open>
+ <summary>word "ea"</summary>
+<pre>
 word "ea" is "what" as in "what you like". in sentence "mjib anga cg", the word "anga" is in first parameter of the sentence so "ea lh mjib cg" return "anga". it mean "what you like". word "ea" that dont have the number type parameter automatically return first parameter.
 
 if word "ea" target second parameter of word "mjib" then we can say "how much you like human". word "nh" mean two. word "he" is just "ea nh". this word is for efficient.
@@ -642,8 +665,9 @@ here we will learn how to say "what song do you like?".
 sentence "fc ae hnmb mjib cg" mean "i am thing that ask you about music that you like".
 
 }◀ word "ea"
-
-▶ basic way to interpret word dictionary formular {
+</pre></details><details open>
+ <summary>basic way to interpret word dictionary formular</summary>
+<pre>
 
 We will continue to learn veluil, but before that we must learn the word dictionary formula. The word dictionary formula teaches words efficiently and accurately. We will see many words later, so we need to learn it.
 
@@ -654,8 +678,9 @@ mjib o,n!r=thing that like x1.//e x2 is degree of like. //s love,
 veluil word is in far left. parameter that word must have is in between veluil word and !. anything can be inputed in o type parameter. only n type word can be inputed in n type parameter. type of word is in between ! and =. so this word would can be inputed in only r type parameter and o type parameter. meaning is in between = and dot. the x1 must be changed into first parameter. the x2 must be changed into second parameter. the x3 must be changed into third parameter. for example "mjib nb" mean "thing that like me". additional explanation is in right of dot. "//e" is uesd to explain word using sentence. "//s A" mean meaning of this word similar to word A so form of this word similar to word A.
 
 }◀ basic way to interpret word dictionary formular
-
-▶ comparative {
+</pre></details><details open>
+ <summary>comparative</summary>
+<pre>
 
 here we will learn comparative.
 
@@ -685,6 +710,10 @@ pg o!n=x1 that is converted into number.
 
 }◀ comparative
 
+</pre></details>
+
+<pre>
+
 we learn veluil so lets learn how to say "i learn veluil".
 
 suffix hp- is suffix -ing as in becoming, not wearing.
@@ -697,7 +726,7 @@ hplb o!r=thing that learn x1.
 
 pmag !r=veluil.
 
-so sentence "mmlb pmag nb" mean "i am thing that learn veluil".
+so sentence "hplb pmag nb" mean "i am thing that learn veluil".
 
 here we will learn how to say "can you speak veluil?".
 
@@ -713,7 +742,9 @@ ff !r=true.
 
 sentence "ff pf" mean "it is true". sentence "kf ff" mean "i am thing that answer you to true" and "yes".
 
-▶ number {
+</pre>
+
+<details open><summary>number</summary><pre>
 
 here we will learn how to say number.
 
@@ -749,6 +780,10 @@ oh !n=minus three.
 
 }◀ number
 
+</pre></details>
+
+<pre>
+
 we will learn how to say "meet at 9a.m!".
 
 mc t,o!2p=thing that is x2 when x1.
@@ -763,7 +798,9 @@ nnad o!r=thing that met x1.//a around,
 
 sentence "fa mc goea kgja nnad" mean "meet at 9a.m!".
 
-▶ o type word {
+</pre>
+
+<details open><summary>o type word</summary><pre>
 
 we will learn how to say "at that time, i see you".
 
@@ -779,8 +816,11 @@ sentence "mc pf lica cg nb" mean "i am thing that see you at that time".
 
 }◀ o type word
 
-▶ p type word {
+</pre></details>
 
+<details open><summary>p type word</summary>
+
+<pre>
 type of p type word is type of input parameter.
 
 for example,
@@ -797,6 +837,9 @@ if parameter didnt be inputed in p type word then type of p type word is "r".
 
 } ◀ p type word
 
+</pre></details>
+<pre>
+
 here we will learn how to say "can you speak it agian?".
 
 lg o,n!p=thing that can be x1 with x2 percent probability.
@@ -805,7 +848,7 @@ imea n,o!1p=thing that repeat x2 at x1 times.
 
 in sentence "fc ja lg imea hnda pf", there are no word for you. omitted parameter is determined by context. this sentence mean "i am thing that ask you about whether you are thing that can be thing that repeat be thing that speak it".
 
-▶ tense {
+</pre><details open><summary>tense</summary><pre>
 
 here we will learn tense.
 
@@ -826,16 +869,18 @@ suffix lp- mean will. this suffix can be used for only function.
 sentence "lpmjib cg nb" mean "i am thing that will be thing that like you".
 
 }◀ tense
-
+</pre>
+</details><pre>
 suffix ip- make function to noun.
 
 blca o,o,o!r=thing that assert that x2 is x1 to x3.//s code,
 
 "ipblca" mean assert.
 
-▶ singular {
-
+</pre><details open><summary>singular</summary><pre>
 here we will learn singular.
+
+"ie A B" mean "A B" but A must be number. for example "ie nh anga" mean "two human". "one human" mean "a human".
 
 if first parameter of word "ie" is omitted then the first parameter is one.
 
@@ -844,9 +889,8 @@ ie n,o!1p=x1 x2.//e omitted x1 is one.
 "ie anga" mean "a human".
 
 }◀ singular
-
-▶ plural {
-
+</pre>
+</details><details open><summary>plural</summary><pre>
 here we will learn plural.
 
 suffix gp- make plural.
@@ -856,8 +900,8 @@ suffix gp- make plural.
 you can say "i see human" even if you see lot of human.
 
 }◀ plural
-
-▶ pronoun {
+</pre>
+</details><details open><summary>pronoun</summary><pre>
 
 here we will learn pronoun.
 
@@ -878,8 +922,8 @@ bnca !r=we.//e me and you.
 mjnb !r=we.//c friend,me,//e friend of me.
 
 }◀ pronoun
-
-▶ word "db" and "dd"{
+</pre>
+</details><details open><summary>word "db" and "dd"</summary><pre>
 
 we will learn word "db".
 
@@ -902,7 +946,8 @@ mb o,o,n!r=thing that hope x2 is x1.//e x3 is degree of hope
 so "mb A dd" mean "thing that wanna be A".
 
 }◀ word "db" and "dd"
-
+</pre>
+</details><pre>
 here we will learn how to say "i am from united states of america".
 
 ondb o!r=thing that come from x1.
@@ -913,7 +958,7 @@ aianpd !r=united states of america.//p USA, english,
 
 in sentence "ed ondb aianpd nb" mean "i am thing that was thing that come from united states of america".
 
-▶ omitting parameter {
+</pre><details open><summary>omitting parameter </summary><pre>
 
 we will learn all word that omit parameter.
 
@@ -928,8 +973,8 @@ dc !si=word that omit four parameter.
 sentence "mjib ad nb" mean "i am thing that like".
 
 }◀ omitting parameter
-
-▶ parameter c {
+</pre>
+</details><details open><summary>parameter c</summary><pre>
 
 here we will learn word for and.
 
@@ -946,7 +991,8 @@ if there are function word then you should use more word that omit parameter.
 in "be cg lb ad ad" first "ad" omit parameter of word "lb". second "ad" finish parameter of word "be". you can say it as "be cg lb bc".
 
 }◀ parameter c
-
+</pre>
+</details><pre>
 here we will learn how to say "why you cant do it?".
 
 gc o,o,n!r=why x2 is x1.
@@ -1033,8 +1079,7 @@ lf o,o!r=thing that belive x2 is x1.//c LB,CA,FF,JA,
 
 sentence "eb lf ff pf" mean "i am thing that is not thing that beilive it is true.
 
-
-▶ why veluil dont need conjunction {
+</pre><details open><summary>why veluil dont need conjunction</summary><pre>
 
 ch o,o,o,n!3p=thing that is x3 despite of x2 being x1.
 
@@ -1078,16 +1123,12 @@ bkpd !r=bus.//p bus, english,
 
 sentence "cf lg flfa bkpd bnca jf gmbb bc cg" mean "result of you being thing that quickly be something is situation that we are thing that can be in bus".
 
-}◀ why veluil dont need conjunction
+}◀ why veluil dont need conjunction</pre>
+</details><details open><summary>feel The superiority of veluil using this sentence</summary><pre>
 
-
-feel The superiority of veluil using this sentence {
-
-} feel The superiority of veluil using this sentence
-
-
-▶ word mf {
-
+}◀ feel The superiority of veluil using this sentence
+</pre>
+</details><details open><summary>word mf</summary><pre>
 we will learn word "mf".
 
 For the sentence “A is animal” to be true, what A must be?
@@ -1099,13 +1140,12 @@ thing whose word order can be changed are defined by word mf.
 mf c o!1p=.
 
 }◀ word mf
+</pre>
+</details><pre>
 
 
-
-
-▶ word formation rule {
-
-▶ randomly made word {
+</pre><details open><summary>word formation rule</summary><pre>
+</pre><details open><summary>randomly made word</summary><pre>
 
 if there are antonym of new word then the bit of new word must be smaller than the antonym. for example,
 
@@ -1117,9 +1157,8 @@ gc in binary is 01100100. jf in binary is 10011010.
 
 bit of jf that is converted into number is bigger.
 
-}◀ randomly made word
-
-▶ compound word and abbreviation {
+}◀ randomly made word</pre>
+</details><details open><summary>compound word and abbreviation</summary><pre>
 
 compound word or abbreviation is made by impotant word in expression that explain the new word. it must remain order. for example, music mean "sound that average person like". in veluil, it is expressed as "ae hnib mjib kd anga" but making word using the 5 word is inefficient. word for sound and word for like is important word so word for music is made by the two word.
 
@@ -1132,12 +1171,12 @@ if "and", "or", relative pronoun is in expression that explain new abbreviation 
 bnca !r=we.//c and,i,you,AD,
 
 }◀ compound word and abbreviation
-
+</pre>
+</details><pre>
 
 
 if veluil dont have word that you wanna use then you can make word derived from english temporary.
-
-▶ loanwords {
+</pre><details open><summary>loanwords</summary><pre>
 
 you can make loanword in veluil.
 
@@ -1146,22 +1185,11 @@ silent initial consonant become pronunciation m cuz silent initial consonant is 
 h become pronunciation p cuz pronunciation h is not in veluil.
 
 }◀ loanwords
-
+</pre>
+</details><pre>
 }◀ word formation rule.
-
-
-
-
-
-
-
-
-
-
-
-
-
-▶ example sentence {
+</pre>
+</details><details open><summary>example sentence</summary><pre>
 
 now just leaning word and logic is enough so we will learn word and logic by guessing. between "(" and ")" is one function.
 
@@ -1199,13 +1227,11 @@ ch o,o,o,n!p3=thing that is x3 despite of x2 being x1.
 
 sentence "(ch lb cg nb eb lb nb) cg" mean "i know you but you dont know me".
 
-}◀ example sentence
+}◀ example sentence</pre>
+</details><details open><summary>teaching food word</summary><pre>
 
-▶ teaching food word {
-
-}◀ teaching food word
-
-▶ teaching color word {
+}◀ teaching food word</pre>
+</details><details open><summary>teaching color word</summary><pre>
 
 word aipa mean black.
 
@@ -1235,21 +1261,18 @@ nlpa !r=mint.
 
 gipa !r=brown.
 
-}◀ teaching color word
-
-▶ teaching mathmatical word {
-
+}◀ teaching color word</pre>
+</details><details open><summary>teaching mathmatical word</summary><pre>
 
 
 }◀ teaching mathmatical word
-
-▶ teaching animal word {
-
-}◀ teaching animal word
-
-▶ teaching academic word {
-
+</pre>
+</details><details open><summary>teaching animal word</summary><pre>
+}◀ teaching animal word</pre>
+</details><details open><summary>teaching academic word</summary><pre>
 }◀ teaching academic word
+</pre>
+</details><pre>
 
 
 
@@ -1260,10 +1283,7 @@ gipa !r=brown.
 
 
 
-
-
-▶ programming language{
-
+</pre><details open><summary>programming language</summary><pre>
 here we will learn how to use veluil as programming language but one who dont know basic information of programming language might cant understand. and this programming language is not fully made. if you know assembly then you might easily understand.
 
 command of this programming language consist of sentence. sentence command right hand side to be left hand side.
@@ -1317,7 +1337,8 @@ ad !si=symbol that omit one parameter.
 if library that you wanna import is A. then sentence "ke A ad" import A. in the sentence right hand side is omitted so it command to this document.
 
 }◀ programming language
-
+</pre>
+</details><pre>
 }◀ slowly learn
 
 </pre>
@@ -1616,28 +1637,20 @@ finish.
 
 }◀quickly learn.
 
-</pre></details>
-<pre>
-
-▶complex sentences{
-
+</pre></details><details open><summary>complex sentences</summary><pre>
 }◀complex sentences
-
-
-
-
-▶program for veluil{
-
+</pre>
+</details>
+<details open><summary>program for veluil</summary><pre>
 how to make veluil to english i guess: 
 
-}◀program for veluil.
-
-▶ table of content {
-
+}◀program for veluil
+</pre></details><details open><summary>complex sentences</summary><pre>}◀ complex sentences
+</pre></details><details open><summary>table of content</summary><pre>
 
 
 }◀ table of content
-
+</pre></details><pre>
 
 
 
