@@ -2,19 +2,34 @@
 <head>
   <link rel="icon" type="image/png" href="https://fhres126.github.io/w/lookingforword.png">
   <meta charset="UTF-8">
-  <title>search norlang word</title>
-  <style>
+  <title>search veluil word</title>
+    <style>
+     :root {
+      --s: "0";
+     }
     body { font-family: sans-serif; padding: 20px; color:#FFFFFF; background:#000000}
     input, button { padding: 8px; margin: 6px 0; font-size: 14px }
     .result { margin-top: 15px; }
-    pre { background:#008800; padding:10px; border-radius:6px; display:inline-block; whitespace: pre; font-size: 1.5vh; }
+    pre { 
+     background:#008800;
+     padding:10px;
+     border-radius:6px;
+     display:inline-block;
+     display: block;
+     white-space: pre-wrap;
+     word-break: break-all;
+     font-size: 1.5vh;
+     
+    }
   </style>
 </head>
 <body>
-  <h1>search norlang word</h1>
-  <input type="text" id="searchInput" placeholder="search verb instead of Interjection and adverb(eg hello->greet)"; size="68";>
+  <h1>search veluil word</h1>
+  <div>search verb instead of Interjection and adverb(eg hello->greet)</div>
+  <input type="text" id="searchInput">
   <button onclick="searchWord()">search</button>  <div class="result" id="result"></div>  
   <script>
+   
     
     
     let dic=``;
@@ -75,13 +90,24 @@
         }
       }
 
-      if (results.length > 0) {
+      if (results.length > 0){
         let unique = [...new Set(results)];
         resultDiv.innerHTML = `<b>srarch result:</b><br>` + unique.map(r => `<pre>${r}</pre>`).join('');} else {
-    resultDiv.innerHTML = "result is undefined";
-  }
-}
+       resultDiv.innerHTML = "result is undefined";
+     }
+   }
 
+   let width=window.innerWidth;
+    let height=window.innerHeight;
+    let smallerline;
+    if(width>height){
+      smallerline=height;
+    }else{
+      smallerline=width;
+    }
+    document.documentElement.style.setProperty("--s", String(smallerline));
+    
+    document.getElementById("searchInput").style.width=String(Number(getComputedStyle(document.documentElement).getPropertyValue("--s"))/2)+"px";
   </script>
 </body>
 </html>
