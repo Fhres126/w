@@ -18,18 +18,23 @@
      font-family: sans-serif;
      padding: 20px;
      color:#FFFFFF;
-     background:#000000
+     background:#000000;
+     height: 400vh;
     }
     
     input, button {
      padding: 8px;
      margin: 6px 0;
     }
+    input{
+     width:100%;
+    }
+    
     .result {
      margin-top: 15px;
     }
     pre { 
-     background:#008800;
+     background:#222222;
      padding:10px;
      border-radius:6px;
      display:inline-block;
@@ -37,11 +42,20 @@
      white-space: pre-wrap;
      word-break: break-all;
     }
+    div{
+     white-space: pre-wrap;
+    }
+    #randomwordbar {
+     width:100%;
+     background:#330000;
+    }
   </style>
 </head>
 <body>
   <h1>search veluil word</h1>
-  <div>search verb instead of Interjection and adverb(for example, hello->greet)</div>
+  <div>search verb instead of Interjection and adverb. for example, hello->greet.
+  
+if searched word is not found then change expresison. for example, where -> location</div>
   <input type="text" id="searchInput">
   <button onclick="searchWord()">search</button>  <div class="result" id="result"></div>  
   <script>
@@ -50,8 +64,11 @@
     
     let dic=``;
     let lines=``;
+    let randomwordbar=document.createElement("div")
     
     const url = "https://raw.githubusercontent.com/Fhres126/w/main/co.txt";
+    
+    randomwordbar.id="randomwordbar"
 
         fetch(url)
             .then(response => {
@@ -72,61 +89,85 @@
       let resultDiv = document.getElementById("result");
       resultDiv.innerHTML = "";
 
-      if (!inputRaw) {
-        resultDiv.innerHTML = "search";
-        return;
-      }
-
-      let input = inputRaw;
-      let results = [];
-
-      for (let i = 0; i < lines.length; i++) {
-        let line = lines[i];
-        if (!line) continue;
-
-        let parts = line.split('=');
-        if (parts.length < 2) continue;
-
-        let rhs = parts.slice(0).join('');
-
-        let beforeDot = rhs.split('.')[0];
-
-        let tokens = beforeDot.split(/[^A-Za-z0]+/).filter(Boolean);
-
-        let matched = false;
-        for (let t of tokens) {
-          if (t.startsWith(input)) { 
-            matched = true;
-            break;
+      if (inputRaw) {
+        let input = inputRaw;
+        let results = [];
+  
+        for (let i = 0; i < lines.length; i++) {
+          let line = lines[i];
+          if (!line) continue;
+  
+          let parts = line.split('=');
+          if (parts.length < 2) continue;
+  
+          let rhs = parts.slice(0).join('');
+  
+          let beforeDot = rhs.split('.')[0];
+  
+          let tokens = beforeDot.split(/[^A-Za-z0]+/).filter(Boolean);
+  
+          let matched = false;
+          for (let t of tokens) {
+            if (t.startsWith(input)) { 
+              matched = true;
+              break;
+            }
+          }
+          
+          if(line.split("=")[1].startsWith(input)){
+           matched=true;
+          }else{
+           
+          }
+          for(let j = 0;j<line.split(" ").length;j++){
+            if(line.split(" ")[j].startsWith(input)){
+             matched=true;
+            }
+           }
+  
+          if (matched) {
+            results.push(line.trim());
           }
         }
         
-        if(line.split("=")[1].startsWith(input)){
-         matched=true;
-        }else{
-         
-        }
-        for(let j = 0;j<line.split(" ").length;j++){
-          if(line.split(" ")[j].startsWith(input)){
-           matched=true;
-          }
-         }
-
-        if (matched) {
-          results.push(line.trim());
-        }
+       
+  
+        if (results.length > 0){
+          let unique = [...new Set(results)];
+          resultDiv.innerHTML = `<b>searrch result:</b><br>` + unique.map(r => `<pre>${r}</pre>`).join('');} else {
+         resultDiv.innerHTML = "result is undefined";
+       }
+      }else{
+       
       }
 
-      if (results.length > 0){
-        let unique = [...new Set(results)];
-        resultDiv.innerHTML = `<b>srarch result:</b><br>` + unique.map(r => `<pre>${r}</pre>`).join('');} else {
-       resultDiv.innerHTML = "result is undefined";
+      
+     
+     randomwordbar.style=`width:${100}%;`;
+     
+     randomwordbar.textContent="teaching random word:"
+     
+     for(let i=0;i<8;i++){
+      let randomint = Math.floor(Math.random() * lines.length);
+      
+      if(lines[randomint].includes("=")){
+       randomwordbar.textContent += "\n\n" + lines[randomint]
+      }else{
+       i--;
+      }
+      
      }
+     
+     document.body.appendChild(randomwordbar)
+     
    }
 
    let width=window.innerWidth;
+   
     let height=window.innerHeight;
+    
     let smallerline;
+    
     if(width>height){
       smallerline=height;
     }else{
@@ -134,7 +175,8 @@
     }
     document.documentElement.style.setProperty("--s", String(smallerline));
     
-    document.getElementById("searchInput").style.width=String(Number(getComputedStyle(document.documentElement).getPropertyValue("--s"))/2)+"px";
+    //document.getElementById("searchInput").style.width=String(Number(getComputedStyle(document.documentElement).getPropertyValue("--s"))/2)+"px";
+    
     document.documentElement.style.setProperty("--fontsize", String(smallerline * 0.05) + "px");
   </script>
 </body>
