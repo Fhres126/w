@@ -22,12 +22,15 @@
      height: 400vh;
     }
     
-    input, button {
+    button {
      padding: 8px;
      margin: 6px 0;
+     position: fixed;
+     
     }
     input{
-     width:100%;
+     position:fixed;
+     width:calc(var(--s) / 3);
     }
     
     .result {
@@ -44,6 +47,7 @@
     }
     div{
      white-space: pre-wrap;
+     position:relative;
     }
     #randomwordbar {
      width:100%;
@@ -52,12 +56,12 @@
   </style>
 </head>
 <body>
-  <h1>search veluil word</h1>
-  <div>search verb instead of Interjection and adverb. for example, hello->greet.
+ <input type="text" id="searchInput">
+  <button onclick="searchWord()" id = "button_search">search</button>  <div class="result" id="result"></div>
+  <div id="to_do">searching veluil word. search verb instead of Interjection and adverb. for example, hello->greet.
   
 if searched word is not found then change expresison. for example, where -> location</div>
-  <input type="text" id="searchInput">
-  <button onclick="searchWord()">search</button>  <div class="result" id="result"></div>  
+    
   <script>
    
     
@@ -69,6 +73,8 @@ if searched word is not found then change expresison. for example, where -> loca
     const url = "https://raw.githubusercontent.com/Fhres126/w/main/co.txt";
     
     randomwordbar.id="randomwordbar"
+    
+    
 
         fetch(url)
             .then(response => {
@@ -178,6 +184,16 @@ if searched word is not found then change expresison. for example, where -> loca
     //document.getElementById("searchInput").style.width=String(Number(getComputedStyle(document.documentElement).getPropertyValue("--s"))/2)+"px";
     
     document.documentElement.style.setProperty("--fontsize", String(smallerline * 0.05) + "px");
+    
+    document.getElementById("searchInput").style.top="0px"
+    
+    document.getElementById("searchInput").style.zIndex="9999";
+    
+    document.getElementById("button_search").style.top=parseFloat(document.getElementById("searchInput").getBoundingClientRect().top) + parseFloat(document.getElementById("searchInput").offsetHeight) + "px"
+     
+     document.getElementById("button_search").style.zIndex="9999";
+    
+    document.getElementById("to_do").style.top = parseFloat(document.getElementById("button_search").getBoundingClientRect().top) + parseFloat(document.getElementById("button_search").offsetHeight) + "px"
   </script>
 </body>
 </html>
