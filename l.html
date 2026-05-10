@@ -54,7 +54,7 @@
       
       font-size: var(--fontsize);!important
       animation: rainbow 3s linear infinite;
-      color:#00FFFF;
+      color:#FFFF00;
     }
     .setcolor{
       width:calc(var(--s) / 24);
@@ -115,6 +115,12 @@
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ff8800');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff8800 !important;-webkit-text-fill-color:#ff8800 !important;}</style>');
+"></button>
+
+<button id = 'button_yellow' class = 'setcolor' style="background-color:#ffff00;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  e.style.webkitBackgroundClip='';
+  e.style.webkitTextFillColor='';
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ffff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffff00 !important;-webkit-text-fill-color:#ffff00 !important;}</style>');
 "></button>
   
   <button id = 'button_green' class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
@@ -190,7 +196,9 @@ oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(ge
    
    document.getElementById("button_orange").style.left=parseFloat(getComputedStyle(document.getElementById("button_red")).left) + parseFloat(document.getElementById("button_red").offsetWidth) + "px"
    
-   document.getElementById("button_green").style.left=parseFloat(getComputedStyle(document.getElementById("button_orange")).left) + parseFloat(document.getElementById("button_orange").offsetWidth) + "px"
+   document.getElementById("button_yellow").style.left=parseFloat(getComputedStyle(document.getElementById("button_orange")).left) + parseFloat(document.getElementById("button_orange").offsetWidth) + "px"
+   
+   document.getElementById("button_green").style.left=parseFloat(getComputedStyle(document.getElementById("button_yellow")).left) + parseFloat(document.getElementById("button_yellow").offsetWidth) + "px"
    
    document.getElementById("button_cyan").style.left=parseFloat(getComputedStyle(document.getElementById("button_green")).left) + parseFloat(document.getElementById("button_green").offsetWidth) + "px"
    
