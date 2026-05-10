@@ -7,7 +7,7 @@
 
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta name="title" content="Veluil Official | The Most Efficient Binary Language">
- <meta name="description" content="5x more information density than ASCII. Veluil is the first 8-bit based logical language designed for humans and AI.">
+ <meta name="description" content="5x more information density than ASCII. Veluil is the first 8-bit based logical language designed for humans and all.">
 
  <meta property="og:type" content="website">
  <meta property="og:title" content="Veluil: Versatile Efficient Logical Unambiguous International Language">
@@ -47,7 +47,7 @@
       overflow-wrap: anywhere;
      }
     img{
-      width:calc(var(--s) / 3  * 2);
+      width: clamp(var(--s) / 5, var(--fontsize) * 8, var(--s) * 2 / 3);
       height:auto;
     }
     pre, summary, p, span {
@@ -59,6 +59,9 @@
     .setcolor{
       width:calc(var(--s) / 24);
       height: calc(var(--s) / 24);
+    }
+    .bar_size{
+     width:calc(var(--s) / 2)px;
     }
     .freewidthbutton{
       background-color: black;
@@ -92,6 +95,7 @@
     details{
       
     }
+    
  </style>
 </head>
 <body>
@@ -132,13 +136,17 @@
 <input id = 'bar_size' type="range" min="0.005" max="0.2" step="0.005" value="0.05"
 oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value) + 'px')">
 
+<button id="go_random" onclick="go_random()">go random</button></button>
+
+<!-- <button id="toggle-btn">open all sections</button> -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "Veluil: The 8-bit Binary Based International Language",
   "description": "Veluil is a logical, unambiguous language optimized for data efficiency, featuring 8n-bit structures and NLQR compatibility.",
-  "keywords": "Veluil, Conlang, Binary Language, 8-bit Language, NLQR, AI Data Efficiency",
+  "keywords": "Veluil, Conlang, Binary Language, 8-bit Language, NLQR",
   "author": {
     "@type": "Person",
     "name": "fhres126",
@@ -162,7 +170,7 @@ oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(ge
       smallerline=width;
     }
     document.documentElement.style.setProperty("--s", String(smallerline) + "px");
-    document.documentElement.style.setProperty("--fontsize", String(smallerline * 0.05) + "px");
+    document.documentElement.style.setProperty("--fontsize", String(smallerline * 0.04) + "px");
     document.body.style.maxWidth = width.toString() + "px";
     document.body.style.maxHeight = height.toString() + "px";
     
@@ -171,6 +179,8 @@ oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(ge
     }
     
    let isStarted = false;
+   
+   
    
    document.getElementById("button_gradient").style.left=getComputedStyle(document.body).marginLeft;
    
@@ -188,40 +198,81 @@ oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(ge
    
    document.getElementById("bar_size").style.left=parseFloat(getComputedStyle(document.getElementById("button_white")).left) + parseFloat(document.getElementById("button_white").offsetWidth) + "px"
    
-   window.addEventListener("click", () => {
-       
-       if (!isStarted){
-        const preElements = document.querySelectorAll("pre");
-        
-        preElements.forEach((el) => {
-            const textToRead = el.innerText.trim();
-            
-            if (textToRead.length > 0) {
-                const utterance = new SpeechSynthesisUtterance(textToRead);
-                
-                utterance.lang = "en-US"; 
-                
-                utterance.rate = 1.35;
-    
-                window.speechSynthesis.speak(utterance);
-            }
-        });
-        
-        const bgm = new Audio("https://raw.githubusercontent.com/fhres126/w/main/Gott erhalte Franz den Kaiser(instrumental).mp3");
+   if(width < height){
+    document.getElementById("go_random").style.top= Number(document.getElementById("button_white").offsetHeight) + "px";
+   }else{
+    document.getElementById("go_random").style.left= (7+12) * smallerline / 24 + parseFloat(getComputedStyle(document.body).marginLeft) + "px"
+   }
+   
+   
+   
+    window.addEventListener('DOMContentLoaded', () => {
      
-        bgm.loop = true;
-        bgm.volume = 0.14;
-        
-        bgm.play();
-       }
-       if (isStarted) return;
-       isStarted = true;
-       
+     const btn = document.getElementById('toggle-btn');
+     const details = document.querySelectorAll('details');
+     
+    /*btn.addEventListener('click', () => {
+    let isAnyOpen = Array.from(details).some(detail => detail.open);
+
+    if (isAnyOpen) {
+      details.forEach(detail => detail.open = false);
+      btn.textContent = 'open all sections';
+    } else {
+      details.forEach(detail => detail.open = true);
+      btn.textContent = 'close all sections';
+    }
+     
+    });*/
    });
+   
+   
+   try{
+    window.addEventListener("click", () => {
+        
+        if (!isStarted){
+         const preElements = document.querySelectorAll("pre");
+         preElements.forEach((el) => {
+             const textToRead = el.innerText.trim();
+             
+             if (textToRead.length > 0) {
+                 const utterance = new SpeechSynthesisUtterance(textToRead);
+                 
+                 utterance.lang = "en-US";
+                 
+              utterance.volum=1;
+                 
+                 utterance.rate = 1.35;
+     
+                 window.speechSynthesis.speak(utterance);
+             }
+         });
+         
+         const bgm = new Audio("https://raw.githubusercontent.com/fhres126/w/main/Gott%20erhalte%20Franz%20den%20Kaiser(instrumental).mp3");
+      
+         bgm.loop = true;
+         bgm.volume = 0.14;
+         
+         bgm.play();
+        }
+        if (isStarted) return;
+        isStarted = true;
+        
+    });
+   }catch(err){ console.log(err)}
+   
+   function go_random(){
+    window.scrollTo({
+     top: document.documentElement.scrollHeight * Math.random(),
+     behavior: 'auto'
+    });
+   }
+   
   </script>
   <pre>This artificial language is called veluil(Versatile Efficient Logical Unambiguous International Language) in English.
+  veluil is called pmag in veluil.
   
-Among the people I’ve seen, those who dislike veluil didn’t even properly read this document. if veluil can become more perfect then veluil is changed.
+Among the people I’ve seen, those who dislike veluil didn’t even properly read this document.
+if veluil can become more perfect then veluil is changed.
 
 </pre>
 
@@ -229,25 +280,53 @@ Among the people I’ve seen, those who dislike veluil didn’t even properly re
  <summary>table of content</summary>
 <pre>
 
-1. persuade to learn veluil.
-
-1.1. why veluil must and can be international auxillary language.
-
-1.2. refute to concerns.
-
-1.3. evidence.
-
-2. how to provide feedback.
-
-3. how to distinguish word.
-
-4. alphabet.
-
-5. pronunciation.
-
-6. slowly learn.
-
-7. quickly learn(hard to understand)
+[table of content].
+[persuade to learn veluil].
+[refute to concerns].
+[tool&evidence].
+[how to provide feedback].
+[why i made veluil].
+[alphabet].
+[word separation, spacing].
+[pronunciation].
+[slowly learn].
+-basic.
+-word "ea".
+-basic way to interpret word dictionary formular.
+-comparative.
+-number.
+-o type word.
+-p type word.
+-tense.
+-singular.
+-plural.
+-pronoun.
+-word "db" and "dd".
+-omitting parameter.
+-parameter c.
+-why veluil dont need conjunction.
+-feel The superiority of veluil using this sentence.
+-word mf.
+-word formation rule.
+--randomly made word.
+--compound word and abbreviation.
+--loanwords.
+-example sentence.
+-teaching word
+--food word.
+--color word.
+--mathmatical word.
+--animal word.
+-veluil morse code.
+-NLQR.
+-veluil braille.
+-veluil sign language.
+-veluil programming language.
+[quickly learn].
+[complex sentences].
+[program for veluil].
+[complex sentences].
+[table of content].
 
 }◀ table of content
 
@@ -259,13 +338,18 @@ Among the people I’ve seen, those who dislike veluil didn’t even properly re
 
 veluil is most versatile and most efficient most logical and unambiguous and easy and simple language that benefical environmental and disabled person.
 
-english easily becomes ambiguous. eg "i love situation that i love person who love cow and people and chicken or he eat meal". but veluil express all situation without ambiguous.
+english easily becomes ambiguous.
+eg "i love situation that i love person who love cow and people and chicken or he eat meal".
+but veluil express all situation without ambiguous.
 
 veluil version of 2d code can help cheating in exam because it takes up very little space and most people won"t think of it as a language, so it won"t get caught.
 
-if veluil become international language then everybody can easily communicate with disabled person and blind and the deaf since veluil can easily be converted into veluil version of braille and sign language and morse code and barcode and QR code and etc by simple rule by being binary language. it is very efficient. veluil can be used as programming language. so you can do many things by learning veluil.
+if veluil become international language then everybody can easily communicate with disabled person and blind and the deaf since veluil can easily be converted into veluil version of braille and sign language and morse code and barcode and QR code and etc by simple rule by being binary language.
+it is very efficient.
+veluil can be used as programming language. so you can do many things by learning veluil.
 
-imagine what if veluil version of QR code replace pictogram. we dont need to learn lot of pictogram.
+imagine what if veluil version of QR code replace pictogram.
+we dont need to learn lot of pictogram.
   </pre>
   <img src="https://fhres126.github.io/w/hatepictogram.jpg">
   <pre>
@@ -296,19 +380,32 @@ keyboard that is for veluil is easy to type cuz it has only 2~16letter.
   <pre>
 veluil can be unambiguous interpreted without whitespace so it doesn't need hassle mark eg whitespace and hyphen.
 
-veluil use phonetic script but veluil is pronounced differently from english and it is easy to pronounce and unambiguous and dont have digraph. veluil can express all pronunciation using parameter. Word stress is not required for word distinction in veluil.
+veluil use phonetic script but veluil is pronounced differently from english and it is easy to pronounce and unambiguous and dont have digraph.
+veluil can express all pronunciation using parameter.
+Word stress is not required for word distinction in veluil.
 
 most words are not randomly made so veluil is easy to learn.
 
-lot of words is compound words.(eg word "hnmb" mean music. word "hnmb" is compound word of sound and fun. word "bomb" mean sports. it is compound word of compete and fun. "ejee" mean bone(calsium + organism))
+lot of words is compound words.
+(eg word "hnmb" mean music. word "hnmb" is compound word of sound and fun.
+word "bomb" mean sports.
+it is compound word of compete and fun.
+"ejee" mean bone(calsium + organism))
 
-lot of words is abbreviations.(word "nd" is abbreviation for "Na Doea"(this time). this word mean now)
+lot of words is abbreviations.(word "nd" is abbreviation for "Na Doea"(this time).
+this word mean now)
 
-lot of words are arranged in an orderly way.(eg bihd mean hydrogen(Atomic number 1). cihd mean helium(Atomic number 2). dihd mean lithium(Atomic number 3). eihd mean beryllium(Atomic number 4))
+lot of words are arranged in an orderly way.(eg bihd mean hydrogen(Atomic number 1).
+cihd mean helium(Atomic number 2).
+dihd mean lithium(Atomic number 3).
+eihd mean beryllium(Atomic number 4))
 
 so it help technology grow cuz it make science easy.
 
-Words used in similar situations or words with similar meanings are made of similar letters. eg mjob mean love. mjib mean like. mjcb mean pleasure so you can easily guess the meaning of abbreviation you see for the first time.
+Words used in similar situations or words with similar meanings are made of similar letters.
+eg mjob mean love.
+mjib mean like.
+mjcb mean pleasure so you can easily guess the meaning of abbreviation you see for the first time.
 
 lot of antonym is made by word formation rule for antonym.
 
@@ -322,13 +419,25 @@ veluil dont have homonyms and synonyms.
 
 part of speech of veluil is only three.
 
-if you learn a little grammar, then you can explain every meaning, regardless of your native language. grammar is simplest and consistent by using  prefix notation so veluil can be used in programming without change of grammar. the programming language is called "pmfa". other programming languages have limits. For example, C++ cannot represent numbers beyond a certain size, but pmfa can represent all number.
+if you learn a little grammar, then you can explain every meaning, regardless of your native language.
+grammar is simplest and consistent by using  prefix notation so veluil can be used in programming without change of grammar.
+the programming language is called "pmfa".
+other programming languages have limits.
+For example, C++ cannot represent numbers beyond a certain size, but pmfa can represent all number.
 
-NLQR1 is veluil version of barcode. all expression in veluil can be converted as NL QR1. NLQR1 is most efficient 1D code. it is usually four times more efficient than barcode. barcode use 145cell to mention "i am person" but NLQR1 use 28cell. NLQR
+NLQR1 is veluil version of barcode.
+all expression in veluil can be converted as NL QR1.
+NLQR1 is most efficient 1D code.
+it is usually four times more efficient than barcode.
+barcode use 145cell to mention "i am person" but NLQR1 use 28cell.
 </pre>
   <img src="https://fhres126.github.io/w/vsbar.jpg">
   <pre>
-NLQR2 is veluil version of QR code. QR codes can only store about 3KB or less of data unlike NLQR. NLQR2 is most efficient 2D code. NLQR2 is usually over 4 times more efficient than a QR code. eg QR code use 441cell to mention "i am person" but NLQR2 use 32cell.
+NLQR2 is veluil version of QR code.
+QR codes can only store about 3KB or less of data unlike NLQR.
+NLQR2 is most efficient 2D code.
+NLQR2 is usually over 4 times more efficient than a QR code.
+eg QR code use 441cell to mention "i am person" but NLQR2 use 32cell.
   </pre>
   <img src="https://fhres126.github.io/w/vsqr.jpg">
   
@@ -337,11 +446,16 @@ NLQR3 is most efficient code.
   </pre>
   <img src="https://fhres126.github.io/w/nlqrs.jpg">
   <pre>
-NLQR mean NLQR1, NLQR2, NLQR3. all NLQR have finder pattern so all NLQR can be accurately decoded from any orientation. all NLQR is human readable.
+NLQR mean NLQR1, NLQR2, NLQR3.
+all NLQR have finder pattern so all NLQR can be accurately decoded from any orientation.
+all NLQR is human readable.
   </pre>
   <img src="https://fhres126.github.io/w/principlenlqr.jpg">
 <pre>
-NL morse is veluil version of morse code. NL Morse is usually two times more efficient than Morse code. morse code cant explain mathmatical expression but NL morse can express all meaning. "i love you" in morse code is following:
+vmorse is veluil version of morse code.
+vmorse is usually two times more efficient than Morse code.
+morse code cant explain mathmatical expression but vmorse can express all meaning.
+"i love you" in morse code is following:
 
 .. / .-.. --- ...- . / -.-- --- ..-
 
@@ -349,26 +463,38 @@ in veluil:
 
 ..---.....-- / .-...--
 
-NL braille is veluil version of braille. NL braille is usually 1.5 times more efficient than braille. original Braille is ambiguous cuz meaning of original braille depending on direction but NL braille can have same meaning in any direction.
+NL braille is veluil version of braille. NL braille is usually 1.5 times more efficient than braille.
+original Braille is ambiguous cuz meaning of original braille depending on direction but NL braille can have same meaning in any direction.
 
 Sign language is difficult or inefficient for expressing new words or slang but veluil"s sign language is not.
 
 }◀ persuade to learn veluil
 </pre></details><details open><summary>refute to concerns</summary><pre>
 
-concerns: The grammar of veluil is too much like a computer language. veluil is not a language for humans.
+concerns: The grammar of veluil is too much like a computer language.
+veluil is not a language for humans.
 
-refute: The reason humans can easily use natural languages is because they learned them when they were young. When young, learning language is easy. Natural languages are only easy for people who have used them since childhood. Computers use computer-like languages because they are absolutely easy. If learning veluil is difficult, then get used to it.
+refute: The reason humans can easily use natural languages is because they learned them when they were young.
+When young, learning language is easy.
+Natural languages are only easy for people who have used them since childhood. Computers use computer-like languages because they are absolutely easy.
+If learning veluil is difficult, then get used to it.
 
-concerns: lot of words are arranged in an orderly way? so "foea" mean minute. "goea" mean hour but the pronunciation is similar so it is hard to distinguish in noisy place.
+concerns: lot of words are arranged in an orderly way? so "foea" mean minute.
+"goea" mean hour but the pronunciation is similar so it is hard to distinguish in noisy place.
 
-refute: I recorded "foea", "goea", and "hoea". Then, I played the video in a noisy place to see whether I could recognize them exaxtly. They were very easy to distinguish. It won"t be a problem if you well pronounce them.
+refute: I recorded "foea", "goea", and "hoea". Then, I played the video in a noisy place to see whether I could recognize them exaxtly.
+They were very easy to distinguish.
+It won"t be a problem if you well pronounce them.
 
 concerns: i hate this wrting system. it cant explain interjection and foreign word.
 
-refute: no, this writing system can express interjection and foreign word using specific parameter type. if we change alphabet then we cant use world most efficient system(NLQR, NLmorse). this alphabet make we can easily pronunce all that can be expressed as binary so we can pronunce 🕎 without learning name.
+refute: no, this writing system can express interjection and foreign word using specific parameter type.
+if we change alphabet then we cant use world most efficient system(NLQR, vmorse).
+this alphabet make we can easily pronunce all that can be expressed as binary so we can pronunce 🕎 without learning name.
 
-other refute to concerns is appear when explain new thing. Even if I refute it now, you won’t know what I’m talking about. if there are problem we can change.
+other refute to concerns is appear when explain new thing.
+Even if I refute it now, you won’t know what I’m talking about.
+if there are problem we can change.
 
 }◀ refute to concerns
 </pre></details>
@@ -386,7 +512,7 @@ this following video explain principle of veluil. i belive that it can be eviden
 
 NLQR: https://youtu.be/rPGDHublCDI?si=LGGqzc4bVFdQmC9D
 
-NL morse: https://youtu.be/bp8b8FhJHTc?si=uLMRb4zWim0HeDxC
+vmorse: https://youtu.be/bp8b8FhJHTc?si=uLMRb4zWim0HeDxC
 
 NL braille: https://youtu.be/UKd6Fry-k8g?si=RRccCNANzb7LMkG9
 
@@ -578,7 +704,7 @@ word "nb" mean "i" and "me". it is abbreviation for "Na Blca"(this who assert).
 
 in this lecture, i wont use word that i didnt teach.
 
-sentence "anga nb" mean "i am human". the word "anga" is in left hand side. the word "nb" is in right hand side. if you didnt speak right hand side then right hand side automatically be "i". so just speaking "anga" as sentence is enough to assert "i am human". we use word "i" lot so this mechanism increace efficiency of language. if you didnt write right hand side then right hand side automatically be "this" so building that is labeled "restaurant" means that "this is a restaurant". if you use whitespace then even numbered letter a can be omitted. for example "ang nb" mean "anga nb".
+sentence "anga nb" mean "i am human". the word "anga" is in left hand side. the word "nb" is in right hand side. if you didnt speak right hand side then right hand side automatically be "i". so just speaking "anga" as sentence is enough to assert "i am human". we use word "i" lot so this mechanism increace efficiency of language. if you didnt write right hand side then right hand side automatically be "this" so building that is labeled "restaurant" means that "this is a restaurant". if you use whitespace then even numbered letter a can be omitted. for example "ang nb" mean "anga nb". veluil's all message is like " ~ is ~ ".
 
 here we will learn word that must have parameter. word that must have parameter is called function. word "fc" must have two parameter. "fc A B" mean "thing that ask B about A" so "fc anga nb" mean "thing that ask me about human".
 
@@ -590,9 +716,9 @@ word "blga" mean name. meaning of name similar to meaning of code so form of wor
 
 word for you is antonym of me. this word is made by word formation rule for antonym. form of antonym is inversed bit from original word. 8n-th bit must not be changed by being word separation code. for example, antonym of me("nb"(10111000)) is you("cg"(01000110)).
 
-word "af" mean "of". this word must have two parameter. this word is abbreviation for "that is" and "element of" cuz "pencil of me" mean "pencil that is element of me". "af A B" mean "A of B" so "af blga cg" mean "name of you".
+"af A B" mean "A of B". this word must have two parameter. this word is abbreviation for "that is" and "element of" cuz "pencil of me" mean "pencil that is element of me". "af A B" mean "A of B" so "af blga cg" mean "name of you".
 
-sentnece "fc af blga cg" mean "i am thing that ask you about name of you" as well as "i ask you about name of you" as well as "what is your name?".
+in "fc af blga cg", "af blga cg" is in first parameter of "fc" cuz "af blga cg" is one thing. sentnece "fc af blga cg" mean "i am thing that ask you about name of you" as well as "i ask you about name of you" as well as "what is your name?".
 
 "kf A B" mean "thing that answet A to B". you can use word "kf" to answer. word "kf" is antonym of word "fc".
 
@@ -604,9 +730,9 @@ here we will learn how to say "where is bathroom?".
 
 word "nnfd" mean "bathroom". word "nnfd" is compound word of place and emit and shit.
 
-"ne A" mean "location of A" so "ne nnfd" mean "location of bathroom".
+"nc A" mean "location of A" so "nc nnfd" mean "location of bathroom".
 
-sentence "fc ne nnfd" mean "i am thing that ask you about location of bathroom" as well as "i ask you about location of bathroom" as well as "where is bathroom?".
+sentence "fc nc nnfd" mean "i am thing that ask you about location of bathroom" as well as "i ask you about location of bathroom" as well as "where is bathroom?".
 
 here we will learn how to say hello. "olga A" mean "thing that greet A". meaning of word "olga" similar meaning of word for call so form of word "olga" similar to word for call. sentence "olga" mean "hello" and "i am thing that greet". veluil dont need word "hello" and "hey". "od A" mean "thing that call A". form of this word is similar in binary. sentence "od" mean "hey" and "i am thing that call".
 
@@ -640,7 +766,7 @@ if word "ea" target second parameter of word "mjib" then we can say "how much yo
 
 "he mjib anga cg" mean "how much you like human".
 
-word "pb" causes the parameter at the same position to be returned. in sentence "mjib anga lh cg", word "lh" is in second parameter so "ea mjib anga pb cg" is "lh".
+word "pb" causes the parameter at the same position to be returned. in sentence "mjib anga lh cg", word "lh" is in second parameter. in "ea mjib anga pb cg", "pb" is in second parameter so it return "lh".
 
 word "pc" causes the sentence at the same position to be returned. "lf A B" mean "thing that belive B is A". "ea lf pc cg" mean "your belief".
 
@@ -660,47 +786,37 @@ sentence "fc ae hnmb mjib cg" mean "i am thing that ask you about music that you
 
 }◀ word "ea"
 </pre></details><details open>
- <summary>basic way to interpret word dictionary formular</summary>
-<pre>
-
-We will continue to learn veluil, but before that we must learn the word dictionary formula. The word dictionary formula teaches words efficiently and accurately. We will see many words later, so we need to learn it.
-
-do you remember word "mjib"? if you dont remember plz read it again. word "mjib" is expressed as following. i will decode all.
-
-mjib o,n!r=thing that like x1.//e x2 is degree of like. //s love,
-
-veluil word is in far left. parameter that word must have is in between veluil word and !. anything can be inputed in o type parameter. only n type word can be inputed in n type parameter. type of word is in between ! and =. so this word would can be inputed in only r type parameter and o type parameter. meaning is in between = and dot. the x1 must be changed into first parameter. the x2 must be changed into second parameter. the x3 must be changed into third parameter. for example "mjib nb" mean "thing that like me". additional explanation is in right of dot. "//e" is uesd to explain word using sentence. "//s A" mean "meaning of this word similar to word A so form of this word similar to word A".
-
-}◀ basic way to interpret word dictionary formular
-</pre></details><details open>
  <summary>comparative</summary>
 <pre>
 
 here we will learn comparative.
 
-jkca n!r=x1 meter.
+"jkca A" mean "A meter" so only number can be inputed in parameter of this word.
 
-bb o!n=thing that is less than x1.
+"bb A" mean "thing that is less than A". and this word is number.
 
 "jkca bb lh" mean "meter whose parameter is less than one" and "thing that is shorter than one meter".
 
-sentence "jkca nh nb" mean "i am two meter". so "ea jkca nb" is two. "jkca bb ea jkca nb" mean "thing that is shorter than me". it can be simplified as "jkca bb nb". and there are abbreviation.
+sentence "jkca nh nb" mean "i am two meter". so "ea jkca nb" is two.
+"jkca bb ea jkca nb" mean "thing that is shorter than me".
+it can be simplified as "jkca bb nb".
+and there are abbreviation.
+"jkbb A" mean "thing that is shorter than x1". this word is abbreviation for "jkca bb".
 
-jkbb o!r=thing that is shorter than x1.//c meter,less,
+"pg A" mean "A that is converted into number".
 
-og o!n=thing that is more than x1.//a less,
+"jkca pg nb" mean "thing that is same height as me".
+
+"og A" mean "thing that is more than x1". type of this word is number. this word is antonym of word for less.
 
 "jkca og nb" mean "thing that is longer than me".
 
-gnog o!r=thing that is longer than x1.//a short,
+"gnog A" mean "thing that is longer than A". this word is antonym of word for short.
 
-second parameter of word for "mjob" is degree of love.
+"mjob A B" mean "thing that love A".
+second parameter of this word is degree of love.
 
-in sentence "mjob nb og cg nb", "og cg" is in place for explainng degree of love. the "og cg" mean "thing that is less than you" but you are not number so it become number by context. it is "How much I love you"(ea mjob cg pb nb). so "mjob nb og cg nb" mean "i am thing that love me than you".
-
-pg o!n=x1 that is converted into number.
-
-"jkca pg nb" mean "thing that is same height as me".
+in sentence "mjob nb og cg nb", "og cg" is in place for explainng degree of love. the "og cg" mean "thing that is less than you" but word you are not number so it become number by context. it become "How much I love you"(ea mjob cg pb nb). so "mjob nb og cg nb" mean "i am thing that love me than you".
 
 }◀ comparative
 
@@ -712,27 +828,31 @@ we learn veluil so lets learn how to say "i learn veluil".
 
 suffix hp- is suffix "-ing" as in "becoming", not "wearing".
 
-lb o!r=thing that know x1.
+"lb A" mean "thing that know A".
 
 so
 
-hplb o!r=thing that learn x1.
+"hplb A" mean "thing that learn A".
 
-pmag !r=veluil.
+"pmag" mean "veluil".
 
 so sentence "hplb pmag nb" mean "i am thing that learn veluil".
 
 here we will learn how to say "can you speak veluil?".
 
-lg o,n!p=thing that can be x1 with x2 percent probability.
+"ja A B" mean "whether B is A".
 
-hnda o,o!r=thing that speak x1 to x2.//c sound,mention,
+"lg A B" mean "thing that can be x1 with x2 percent probability".
+
+"hnda A B" mean "thing that speak A to B". this word is compound word for sound and mention.
 
 sentence "fc ja lg hnda pmag" mean "i am thing that ask you about wheter you are thing that can be thing that speak veluil".
 
 here we will learn how to say yes.
 
-ff !r=true.
+"ff" mean "true".
+
+"pf" mean "it".
 
 sentence "ff pf" mean "it is true". sentence "kf ff" mean "i am thing that answer you to true" and "yes".
 
@@ -744,33 +864,31 @@ here we will learn how to say number.
 
 word "kg" is for explainng decimal number(base-10).
 
-kg dec!n=.//e this word is for explainng decimal number.
-
-binary that is in dec type parameter is not word. "b" that is in dec type parameter is 1. "a" that is in dec type parameter finish dec type parameter.
+thing that is in parameter of "kg" cant be word. "b" that is in parameter of "kg" is 1. "a" that is in parameter of "kg" finish parameter of "kg".
 
 "kg ba" mean "one".
 
 c is 2. d is 3. e is 4. f is 5. g is 6. h is 7. i is 8. j is 9. k is 0.
 
-veluil use little andian so "kg bcdefgka" mean "654321".
+veluil use little andian so "kg bcdefgka" mean "0654321" and "654321".
 
 we can say some number shortly.
 
-ih !n=zero.
+"ih" mean "zero".
 
-lh !n=one.
+"lh" mean "one".
 
-nh !n=two.
+"nh" mean "two".
 
-ph !n=three.
+"ph" mean "three".
 
-jh !n=four.
+"jh" mean "four".
 
-kh !n=minus one.
+"kh" mean "minus one".
 
-mh !n=minus two.
+"mh" mean "minus two".
 
-oh !n=minus three.
+"oh" mean "minus three".
 
 }◀ number
 
@@ -780,17 +898,17 @@ oh !n=minus three.
 
 we will learn how to say "meet at 9a.m!".
 
-mc t,o!2p=thing that is x2 when x1.
+"mc A B" mean "thing that is B when A".
 
 word "goea" mean hour. type of this word is time. this word is next word of word for minute. next word is one bit higher than before word.
 
-foea n!t=x1 minute.//n second,
+"foea A" mean "A minute".
 
-goea n!t=x1 hour.//n minute,
+"goea A" mean "A hour".
 
-nnad o!r=thing that met x1.//a around,
+"nmad A" mean "thing that met A".
 
-sentence "fa mc goea kgja nnad" mean "meet at 9a.m!".
+sentence "fa mc goea kgja nmad" mean "meet at 9a.m!".
 
 </pre>
 
@@ -798,13 +916,13 @@ sentence "fa mc goea kgja nnad" mean "meet at 9a.m!".
 
 we will learn how to say "at that time, i see you".
 
-word "pf" can be inputed in every type parameter by being object type word.
+"pf" mean "it".
 
-pf !o=it.
+word "pf" can be inputed in every type parameter by being o type word.
 
-if word "pf" is inputed in time type parameter then this word must be time so word "pf" that is in time type parameter is translated as "that time".
+if word "pf" is inputed in time type parameter then this word must be time so word "pf" that is in time type parameter is translated as "that time" so "mc pf A" mean "thing that is A at that time".
 
-lica o!r=thing that see x1.//c sense, photon,
+"lica A" mean "thing that see x1". this word is compound word of sense and photon.
 
 sentence "mc pf lica cg nb" mean "i am thing that see you at that time".
 
@@ -819,15 +937,13 @@ type of p type word is type of input parameter.
 
 for example,
 
-ed o!1p=thing that was x1.
+"ed A" mean "thing that was A". type of this word is type of input word.
 
-the "1p" mean "first parameter".
+"ih" mean "zero". type of this word is number.
 
-ih !n=zero.
+so type of "ed ih" is number.
 
-so type of "ed ih" is "n".
-
-if parameter didnt be inputed in p type word then type of p type word is "r". 
+if parameter didnt be inputed in p type word then type of p type word is "r".
 
 } ◀ p type word
 
@@ -836,9 +952,9 @@ if parameter didnt be inputed in p type word then type of p type word is "r".
 
 here we will learn how to say "can you speak it agian?".
 
-lg o,n!p=thing that can be x1 with x2 percent probability.
+"lg A B" mean "thing that can be A with B percent probability".
 
-imea n,o!1p=thing that repeat x2 at x1 times.
+"imea A B" mean "thing that repeat B at A times".
 
 in sentence "fc ja lg imea hnda pf", there are no word for you. omitted parameter is determined by context. this sentence mean "i am thing that ask you about whether you are thing that can be thing that repeat be thing that speak it".
 
@@ -846,7 +962,7 @@ in sentence "fc ja lg imea hnda pf", there are no word for you. omitted paramete
 
 here we will learn tense.
 
-ed o!1p=thing that was x1.
+"ed A" mean "thing that was A".
 
 sentence "ed mjib cg nb" mean "i was thing that like you".
 
@@ -854,7 +970,7 @@ suffix ep- mean was. this suffix can be used for only function.
 
 sentence "epmjib cg nb" mean "i was thing that like you".
 
-le o!1p=thing that will be x1.//a was,
+"le A" mean "thing that will be A". this word is amtonym of word for was.
 
 sentence "le mjib cg nb" mean "i am thing that will be thing that like you".
 
@@ -867,7 +983,7 @@ sentence "lpmjib cg nb" mean "i am thing that will be thing that like you".
 </details><pre>
 suffix ip- make function to noun.
 
-blca o,o,o!r=thing that assert that x2 is x1 to x3.//s code,
+"blca A B C" mean "thing that assert that B is A to C".
 
 "ipblca" mean assert.
 
@@ -877,8 +993,6 @@ here we will learn singular.
 "ie A B" mean "A B" but A must be number. for example "ie nh anga" mean "two human". "one human" mean "a human".
 
 if first parameter of word "ie" is omitted then the first parameter is one.
-
-ie n,o!1p=x1 x2.//e omitted x1 is one.
 
 "ie anga" mean "a human".
 
@@ -899,21 +1013,21 @@ you can say "i see human" even if you see lot of human.
 
 here we will learn pronoun.
 
-na o!1p=this x1.
+"na A" mean "this A".
 
-oa o!1p=that x2.
+"oa A" mean "that A".
 
-pa o!1p=the x3.
+"pa A" mean "the A".
 
-pimd !r=she.//c the,women,
+"pimd" mean "she". this word is abbreviation for "pa mlmb"(the,women)
 
-pide !r=he.//c the,men,
+"pide" mean "he". this word is abbreviation for "pa dmdg"(the, men)
 
 word for we can mean "me and you" and "friend of me".
 
-bnca !r=we.//e me and you.
+"bnca" mean "me and you". this word is abbreviation for "be nb cg ad"(me and you).
 
-mjnb !r=we.//c friend,me,//e friend of me.
+"mjnb" mean "friend of me". this word is abbreviation for "mjfb nb"(friend of me).
 
 }◀ pronoun
 </pre>
@@ -921,34 +1035,30 @@ mjnb !r=we.//c friend,me,//e friend of me.
 
 we will learn word "db".
 
-db n!r=x1-th right hand side.
+"db A" is "A-th right hand side".
 
 "db lh" return first right hand side.
 
-jd o!r=thing that imagine x1.
+"jd A" mean "thing that imagine A".
 
-in sentence "jd ad nb", word "nb" is in first right hand side so sentence "jd db lh nb" mean "i love me"
+in sentence "jd ad nb", word "nb" is in first right hand side so sentence "jd db lh nb" mean "i imagine me"
 
-"i love me" mean "i love myself".
+"i imagine me" mean "i imagine myself" so "db lh" can mean "self" or "oneself" or "themselves" or etc.
 
-dd !r=self.//c DB,LH,
+word "dd" mean "self". this word is abbreviation for "db lh".
 
 manytime this word can be work as word for oneself and themselves and yourself and myself etc.
 
-mb o,o,n!r=thing that hope x2 is x1.//e x3 is degree of hope
-
-so "mb A dd" mean "thing that wanna be A".
+"mb A B C" mean "thing that hope B is A". C is degree of hope. so "mb A dd" mean "thing that hope oneself is A" and "thing that wanna be A".
 
 }◀ word "db" and "dd"
 </pre>
 </details><pre>
 here we will learn how to say "i am from united states of america".
 
-ondb o!r=thing that come from x1.
+"ondb A" mean "thing that come from A".
 
-word "aianpd" mean "united states of america". pronunciation of this word is derived from "USA" of english. additional explanation "//p A, B," mean pronunciation of this word similar to A in language B.  this word is expressed as following in word dictionary.
-
-aianpd !r=united states of america.//p USA, english,
+word "aianpd" mean "united states of america". pronunciation of this word is derived from "USA" of english.
 
 in sentence "ed ondb aianpd nb" mean "i am thing that was thing that come from united states of america".
 
@@ -956,13 +1066,13 @@ in sentence "ed ondb aianpd nb" mean "i am thing that was thing that come from u
 
 we will learn all word that omit parameter.
 
-ad !si=word that omit one parameter.
+"ad" omit one parameter.
 
-bc !si=word that omit two parameter.
+"bc" omit two parameter.
 
-cc !si=word that omit three parameter.
+"cc" omit three parameter.
 
-dc !si=word that omit four parameter.
+"dc" omit four parameter.
 
 sentence "mjib ad nb" mean "i am thing that like".
 
@@ -972,11 +1082,7 @@ sentence "mjib ad nb" mean "i am thing that like".
 
 here we will learn word for and.
 
-word "be" have object type parameter until this word met symbol that omit parameter.
-
-be c o!1p=1x1 and 2x1 and 3x1 and...
-
-"1x1" mean first element of first parameter.
+word "be" have parameter until this word met symbol that omit parameter.
 
 "be cg pf ad" mean "you and it".
 
@@ -989,133 +1095,133 @@ in "be cg lb ad ad" first "ad" omit parameter of word "lb". second "ad" finish p
 </details><pre>
 here we will learn how to say "why you cant do it?".
 
-gc o,o,n!r=why x2 is x1.
+"gc A B" mean "why B is A".
 
-eb o!1p=thing that is not x1.
+"eb A" mean "thing that is not A".
 
 sentence "fc gc eb lg pf cg" mean "i am thing that ask you about why you are thing that is not thing that can be it" and "why you cant do it?".
 
-jf o,o,n!r=result of x2 being x1. what if x2 is x1.//a reason,
+"jf A B" mean "result of B being A" and "what if B is A". this word is antonym of reason.
 
 sentence "pf jf A B" mean sentence "cuz B is A!"
 
 here we will learn how to say "what if he dislike it?".
 
-dohg o,n!r=thing that dislike x1.//a like,
+"dohg A B" mean "thing that dislike A". B is for explainng devree of dislike so only number can be inputed in B. this word is antonym of like.
 
-pide !r=he.//c the,men,
+"pide" mean "he". this word is abbreviation for "pa dmdg"(the man).
 
 sentence "fc jf dohg pf pide" mean "i am thing that ask you about result of he being thing that dislike it".
 
 here we will learn how to say "she listen to music".
 
-lihf o!r=thing that listen to x1.//c sense,sound,
+"lihf A" mean "thing that listen to A". this word is compound word of sense and sound.
 
-hnmb !r=music.//c sound,like,
+"hnmb" mean "music". this word is compound word of sound and like.
 
 sentence "lihf hnmb pimd" mean "she is thing that listen to music".
 
 we will learn how to say "how much is this?"
 
-pe o,o!1p=x2 that is converted into x1.
+"pe A B" mean "B that is converted into A".
 
-coih !r=money.//c dollar,over,zero,
+"coih" mean "money". this word is abbreviation for "cmfc og ih"(more than 0 dollars).
 
-sentence "fc pe coih na" mean "i am thing that ask you about this that is converted into money".
+sentence "fc pe coih na" mean "i am thing that ask you about (this that is converted into money)".
 
 here we will learn how to say "it is funny".
 
-jmje o,n!r=thing that feel x1 as funny.//p haha, people,
+"jmje A" mean "thing that feel A as funny". pronunciation of this word is derived from "haha".
 
-sentence "jmje pf" mean "i am thing that feel it as funny".
+sentence "jmje pf" mean "i am thing that feel it as funny" as well as "it is funny".
 
 here we will learn how to say "i am hungry".
 
-mjka n!r=hungry.//c hope,eat,
+"mjka" mean "hungry". this word is abbreviation for "mb kiod"(thing that hope to eat).
 
 sentence "mjka" mean "i am hungry".
 
 here we learn how to say "how was your today?"
 
-nihg !t=today.//c this,day,
+"nihg" mean "today". this word is abbreviation for "na hoea"(this, day).
 
 sentence "fc ea mc nihg pb cg" mean "i am thing that ask you about what you be in today".
 
 here we will learn how to say "i hope this is helpful for you".
 
-mb o,o,n!r=thing that hope x2 be x1.
+"mb A B" mean "thing that hope B is A"1.
 
-le o!1p=thing that will be x1.//a was,
+"le A" mean "thing that will be A". this word is antonym of was.
 
-gjob o,n!r=thing that beneficial x1.//c cause,profit,
+"gjob A" mean "thing that beneficial A". this word is compound word of cause and profit.
 
-sentence "mb le gjob cg pa" mean "i am thing that hope this be thing that benefical you".
+sentence "mb le gjob cg na" mean "i am thing that hope this be thing that benefical you".
 
 here we will learn how to say "I have a question".
 
-md o,n!r=thing that intend to be x1.
+"md A" mean "thing that intend to be A".
 
 sentence "md fc" mean "i have question" as well as "i am thing that intend to be thing that ask".
 
 here we will learn how to say "can i touch that?".
 
-mjgg o,o!r=thing that allow x2 be x1.
+"mjgg A B" mean "thing that allow B be A".
 
-alnd o!r=thing that touch x.
+"alnd A" mean "thing that touch A".
 
-oa o!1p=that x1.
+"oa A" mean "that A".
 
 sentence "fc ja mjgg alnd oa" mean "can i touch that" as well as "i ask you about whether you allow me touch that" as well as "i am thing that ask you about whether you are thing that allow me be thing that touch that".
 
 here we will learn how to say "i dont think so".
 
-lf o,o!r=thing that belive x2 is x1.//c LB,CA,FF,JA,
+"lf A B" mean "thing that belive B is A".
 
 sentence "eb lf ff pf" mean "i am thing that is not thing that beilive it is true.
 
 </pre><details open><summary>why veluil dont need conjunction</summary><pre>
 
-ch o,o,o,n!3p=thing that is x3 despite of x2 being x1.
+"ch A B C" mean "thing that is C despite of B being A".
 
-lica o!r=thing that see x1.//c sense,photon,
+"lica A" mean "thing that see A". this word is compound word of sense and photon.
 
-hogd !t=yesterday.//c day,before,
+"hogd" mean "yesterday". this word is compound word of day and before. type of this word is time so "mc hogd A" mean "thing that is A at yesterday".
 
 sentence "ch mc hogd lica cg nb eb mc nihg lica cg nb" mean "i see you yesterday but i dont see you today".
 
-ka o,o,n!2p=thing that is x2 by x1.
+"ka A B" mean "thing that is B by A".
 
 sentence "ka cf anga pimd mjib pimd pide" mean "she is human so he like she".
 
 here we will learn how to say "if he die then i call hospital".
 
-cf o,o!r=situation that x2 is x1.
+"cf A B" mean "situation that B is A".
 
-od o!r=thing that call x1.
+"od A" mean "thing that call A".
 
-noee !r=hospital.//c place,save,organism,//r place that save organism
+"noee" mean "hospital". this word is compound word of place and save and organism.
 
 "cf od noee nb" mean "situation that i stay home".
 
-jf o,o,n!r=result of x2 being x1.//a reason,
+"jf A B" mean "result of B being A". antonnym of reason,
 
-bjhg !r=dead thing.
+"bjhg" mean "dead thing".
 
-"jf bjhg pimd" mean "result of h being dead thing".
+"jf bjhg pimd" mean "result of he being dead thing".
 
 so sentence "cf od noee nb jf bjhg pimd" mean "if he die then i call hospital" and "result of he being dead thing is situation that i call hospital".
 
 here we will how to say "if you hurry, we can ride bus".
 
-cf o,o!r=situation that x2 is x1.
+"cf A B" mean "situation that B is A".
 
-gmbb o,o!1p=thing that be x1 quickly than x2.//c GMDA,less,
+"klbb A B" mean "thing that be A quickly than B".
 
-flfa o!r=thing that is in x1.//s part of,
+"flfa A" mean "thing that is in x1". form of this word similar to word for "part of".
 
-bkpd !r=bus.//p bus, english,
+"bkpd" mean "bus". pronunciation of this word is derived from english word "bus".
 
-sentence "cf lg flfa bkpd bnca jf gmbb bc cg" mean "result of you being thing that quickly be something is situation that we are thing that can be in bus".
+sentence "cf lg flfa bkpd bnca jf klbb bc cg" mean "result of you being thing that quickly be something is situation that we are thing that can be in bus".
 
 }◀ why veluil dont need conjunction</pre>
 </details><details open><summary>feel The superiority of veluil using this sentence</summary><pre>
@@ -1135,10 +1241,37 @@ mf c o!1p=.
 
 }◀ word mf
 </pre>
-</details><pre>
+</details>
 
+<details open>
+ <summary>basic way to interpret word dictionary formular</summary>
+<pre>
 
-</pre><details open><summary>word formation rule</summary><pre>
+We will continue to learn veluil, but before that we must learn the word dictionary formula. The word dictionary formula teaches words efficiently and accurately. We will see many words later, so we need to learn it.
+
+do you remember word "mjib"? if you dont remember plz read it again. word "mjib" is expressed as following. i will decode all.
+
+mjib o,n!r=thing that like x1.//e x2 is degree of like. //s love,
+
+veluil word is in far left. parameter that word must have is in between veluil word and !.
+anything can be inputed in o type parameter.
+only n type word can be inputed in n type parameter.
+type of word is in between ! and =.
+type of word exist to make veluil efficient by automatically omitting parameter.
+so this word would can be inputed in only r type parameter and o type parameter.
+meaning is in between = and dot.
+the x1 must be changed into first parameter.
+the x2 must be changed into second parameter.
+the x3 must be changed into third parameter.
+for example "mjib nb" mean "thing that like me".
+additional explanation is in right of dot.
+"//e" is uesd to explain word using sentence.
+"//s A" mean "meaning of this word similar to word A so form of this word similar to word A".
+
+}◀ basic way to interpret word dictionary formular.
+</pre></details>
+
+<details open><summary>word formation rule</summary><pre>
 </pre><details open><summary>randomly made word</summary><pre>
 
 if there are antonym of new word then the bit of new word must be smaller than the antonym. for example,
@@ -1182,8 +1315,16 @@ h become pronunciation p cuz pronunciation h is not in veluil.
 </pre>
 </details><pre>
 }◀ word formation rule.
-</pre>
-</details><details open><summary>example sentence</summary><pre>
+</pre></details>
+
+<details open><summary>content</summary>
+
+<details><summary>world war1</summary></details>
+
+</details>
+
+
+<details open><summary>example sentence</summary><pre>
 
 now just leaning word and logic is enough so we will learn word and logic by guessing. between "(" and ")" is one function.
 
@@ -1266,15 +1407,32 @@ gipa !r=brown.
 </details><details open><summary>teaching academic word</summary><pre>
 }◀ teaching academic word
 </pre>
-</details><pre>
+</details>
+<details open><summary>veluil morse code</summary><pre>
+how to make veluil to english i guess: 
 
+}◀ veluil morse code
+</pre></details>
 
+<details open><summary>NLQR</summary><pre>
+https://youtu.be/rPGDHublCDI?si=OsxXcVQrFBHjT6Eb
 
+}◀ NLQR
+</pre></details>
 
+</pre>
+<details open><summary>veluil braille</summary><pre>
+https://youtu.be/UKd6Fry-k8g?si=4dOwzAOt7qHO6JVy
 
+}◀ veluil braille
+</pre></details>
 
+</pre>
+<details open><summary>veluil sign language</summary><pre>
+https://youtu.be/gyEgiA66IPc?si=BDhhIaLKcpw7k-6- 
 
-
+}◀ veluil sign language
+</pre></details>
 
 
 </pre><details open><summary>programming language</summary><pre>
@@ -1333,8 +1491,9 @@ if library that you wanna import is A. then sentence "ke A ad" import A. in the 
 }◀ programming language
 </pre>
 </details><pre>
-}◀ slowly learn
-
+}◀ slowly learn</pre>
+</details></details>
+<details open>
 </pre>
 </details>
 <details open>
@@ -1388,7 +1547,7 @@ jd o!r=thing that imagine x1.
 
 "int" is binary string that consist of integer multiple of 8 bits. for example,
 
-blfa int!r=word x1.
+blea int!r=word x1.
 
 object that is inputed in this function dont have parameter.
 
