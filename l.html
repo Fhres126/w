@@ -83,7 +83,7 @@
      -webkit-text-stroke: 0px;
      font-size:calc(2.2 * var(--fontsize));
      font-weight: 1000;
-     background: linear-gradient(to top, #333333 10%, transparent 10%);
+     background: linear-gradient(to top, #555555 10%, transparent 10%);
      font-style: oblique;
      
      
@@ -144,14 +144,14 @@
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');"></button>
 
 
-<input id = 'bar_size' type="range" min="0.005" max="0.2" step="0.005" value="0.05"
+<input id = 'bar_size' type="range" min="0.005" max="0.2" step="0.005" value="0.04"
 oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value) + 'px')">
 
 <button id="go_random" onclick="go_random()">go random</button></button>
 
 <button id="turn_autoscroll" onclick="turn_autoscroll()">auto scroll</button></button>
 
-<input id = 'scale_of_scroll' type="range" min="0.01" max="1" step="0.01" value="0.1"
+<input id = 'scale_of_scroll' type="range" min="0.01" max="1" step="0.01" value="0.06"
 oninput="speed_of_auto_scroll=this.value;">
 
 <!-- <button id="toggle-btn">open all sections</button> -->
@@ -186,7 +186,7 @@ oninput="speed_of_auto_scroll=this.value;">
       smallerline=width;
     }
     document.documentElement.style.setProperty("--s", String(smallerline) + "px");
-    document.documentElement.style.setProperty("--fontsize", String(smallerline * 0.04) + "px");
+    document.documentElement.style.setProperty("--fontsize", String(smallerline * document.getElementById("bar_size").value) + "px");
     document.body.style.maxWidth = width.toString() + "px";
     document.body.style.maxHeight = height.toString() + "px";
     
@@ -200,7 +200,7 @@ oninput="speed_of_auto_scroll=this.value;">
    
    let autoscroll;
    
-   let speed_of_auto_scroll=0.25;
+   let speed_of_auto_scroll=document.getElementById("scale_of_scroll").value;
    
    function turn_autoscroll() {
     if (!autoscroll) {
@@ -545,8 +545,8 @@ It won"t be a problem if you well pronounce them.
 
 concerns: i hate this wrting system. it cant explain interjection and foreign word.
 
-refute: no, this writing system can express interjection and foreign word using specific parameter type.
-if we change alphabet then we cant use world most efficient system(NLQR, vmorse).
+refute: no, this writing system can express interjection and foreign word using specific parameter type and word.
+if we change alphabet then we cant use world most efficient system(NLQR, vmorse). conveying meaning is more important than to conveying context.
 this alphabet make we can easily pronunce all that can be expressed as binary so we can pronunce 🕎 without learning name.
 
 other refute to concerns is appear when explain new thing.
