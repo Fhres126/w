@@ -56,6 +56,9 @@
       animation: rainbow 3s linear infinite;
       color:#FFFF00;
     }
+    input[type="range"] {
+     height: calc(var(--s) / 24);
+    }
     .setcolor{
       width:calc(var(--s) / 24);
       height: calc(var(--s) / 24);
@@ -71,6 +74,7 @@
       padding: 4px 8px;
     }
     button{
+     font-size: var(--fontsize);
       position: fixed;
       background-color: #000;
       color: #ffff00;
@@ -201,14 +205,7 @@ oninput="speed_of_auto_scroll=this.value;">
    let autoscroll;
    
    let speed_of_auto_scroll=document.getElementById("scale_of_scroll").value;
-   autoscroll = setInterval(() => {
-    let scale_of_scroll = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fontsize')) * speed_of_auto_scroll;
-    quantity_of_autoscroll += scale_of_scroll;
-    if (quantity_of_autoscroll > 1) {
-        window.scrollBy(0, quantity_of_autoscroll);
-        quantity_of_autoscroll = 0;
-    }
-   }, 50);
+   
    function turn_autoscroll() {
     if (!autoscroll) {
      autoscroll = setInterval(() => {
@@ -232,41 +229,7 @@ oninput="speed_of_auto_scroll=this.value;">
    
    
    
-   document.getElementById("button_gradient").style.left=getComputedStyle(document.body).marginLeft;
    
-   document.getElementById("button_rainbow").style.left=parseFloat(getComputedStyle(document.getElementById("button_gradient")).left) + parseFloat(document.getElementById("button_gradient").offsetWidth) + "px"
-   
-   document.getElementById("button_red").style.left=parseFloat(getComputedStyle(document.getElementById("button_rainbow")).left) + parseFloat(document.getElementById("button_rainbow").offsetWidth) + "px"
-   
-   document.getElementById("button_orange").style.left=parseFloat(getComputedStyle(document.getElementById("button_red")).left) + parseFloat(document.getElementById("button_red").offsetWidth) + "px"
-   
-   document.getElementById("button_yellow").style.left=parseFloat(getComputedStyle(document.getElementById("button_orange")).left) + parseFloat(document.getElementById("button_orange").offsetWidth) + "px"
-   
-   document.getElementById("button_green").style.left=parseFloat(getComputedStyle(document.getElementById("button_yellow")).left) + parseFloat(document.getElementById("button_yellow").offsetWidth) + "px"
-   
-   document.getElementById("button_cyan").style.left=parseFloat(getComputedStyle(document.getElementById("button_green")).left) + parseFloat(document.getElementById("button_green").offsetWidth) + "px"
-   
-   document.getElementById("button_white").style.left=parseFloat(getComputedStyle(document.getElementById("button_cyan")).left) + parseFloat(document.getElementById("button_cyan").offsetWidth) + "px"
-   
-   document.getElementById("bar_size").style.left=parseFloat(getComputedStyle(document.getElementById("button_white")).left) + parseFloat(document.getElementById("button_white").offsetWidth) + "px"
-   
-   if(width < height){
-    document.getElementById("turn_autoscroll").style.top= parseFloat(document.getElementById("button_white").offsetHeight) + "px";
-    
-    document.getElementById("scale_of_scroll").style.top= parseFloat(document.getElementById("turn_autoscroll").offsetTop) + "px";
-    
-    document.getElementById("scale_of_scroll").style.left=parseFloat(document.getElementById("turn_autoscroll").offsetLeft) + parseFloat(document.getElementById("turn_autoscroll").offsetWidth) + "px";
-    
-    document.getElementById("go_random").style.top= parseFloat(document.getElementById("turn_autoscroll").offsetHeight) + parseFloat(document.getElementById("turn_autoscroll").offsetTop) + "px";
-    
-   }else{
-    document.getElementById("turn_autoscroll").style.left= (7+12) * smallerline / 24 + parseFloat(getComputedStyle(document.body).marginLeft) + "px"
-    
-    document.getElementById("scale_of_scroll").style.left= parseFloat(document.getElementById("turn_autoscroll").offsetLeft) + parseFloat(document.getElementById("turn_autoscroll").offsetWidth) + "px";
-    
-    document.getElementById("go_random").style.left= parseFloat(document.getElementById("scale_of_scroll").offsetLeft) + parseFloat(document.getElementById("scale_of_scroll").offsetWidth) + "px";
-    
-   }
    
    
    
@@ -287,6 +250,42 @@ oninput="speed_of_auto_scroll=this.value;">
     }
      
     });*/
+     
+     document.getElementById("button_gradient").style.left=getComputedStyle(document.body).marginLeft;
+    
+    document.getElementById("button_rainbow").style.left=parseFloat(getComputedStyle(document.getElementById("button_gradient")).left) + parseFloat(document.getElementById("button_gradient").offsetWidth) + "px"
+    
+    document.getElementById("button_red").style.left=parseFloat(getComputedStyle(document.getElementById("button_rainbow")).left) + parseFloat(document.getElementById("button_rainbow").offsetWidth) + "px"
+    
+    document.getElementById("button_orange").style.left=parseFloat(getComputedStyle(document.getElementById("button_red")).left) + parseFloat(document.getElementById("button_red").offsetWidth) + "px"
+    
+    document.getElementById("button_yellow").style.left=parseFloat(getComputedStyle(document.getElementById("button_orange")).left) + parseFloat(document.getElementById("button_orange").offsetWidth) + "px"
+    
+    document.getElementById("button_green").style.left=parseFloat(getComputedStyle(document.getElementById("button_yellow")).left) + parseFloat(document.getElementById("button_yellow").offsetWidth) + "px"
+    
+    document.getElementById("button_cyan").style.left=parseFloat(getComputedStyle(document.getElementById("button_green")).left) + parseFloat(document.getElementById("button_green").offsetWidth) + "px"
+    
+    document.getElementById("button_white").style.left=parseFloat(getComputedStyle(document.getElementById("button_cyan")).left) + parseFloat(document.getElementById("button_cyan").offsetWidth) + "px"
+    
+    document.getElementById("bar_size").style.left=parseFloat(getComputedStyle(document.getElementById("button_white")).left) + parseFloat(document.getElementById("button_white").offsetWidth) + "px"
+    
+    if(width < height){
+     document.getElementById("turn_autoscroll").style.top= parseFloat(document.getElementById("button_white").offsetHeight) + "px";
+     
+     document.getElementById("scale_of_scroll").style.top= parseFloat(document.getElementById("turn_autoscroll").offsetTop) + "px";
+     
+     document.getElementById("scale_of_scroll").style.left=parseFloat(document.getElementById("turn_autoscroll").offsetLeft) + parseFloat(document.getElementById("turn_autoscroll").offsetWidth) + "px";
+     
+     document.getElementById("go_random").style.top= parseFloat(document.getElementById("turn_autoscroll").offsetHeight) + parseFloat(document.getElementById("turn_autoscroll").offsetTop) + "px";
+     
+    }else{
+     document.getElementById("turn_autoscroll").style.left= (7+12) * smallerline / 24 + parseFloat(getComputedStyle(document.body).marginLeft) + "px"
+     
+     document.getElementById("scale_of_scroll").style.left= parseFloat(document.getElementById("turn_autoscroll").offsetLeft) + parseFloat(document.getElementById("turn_autoscroll").offsetWidth) + "px";
+     
+     document.getElementById("go_random").style.left= parseFloat(document.getElementById("scale_of_scroll").offsetLeft) + parseFloat(document.getElementById("scale_of_scroll").offsetWidth) + "px";
+    }
+    turn_autoscroll()
    });
    
    
@@ -338,7 +337,6 @@ oninput="speed_of_auto_scroll=this.value;">
    
 
 This artificial language is called veluil(Versatile Efficient Logical Unambiguous International Language) in English.
-  veluil is called pmag in veluil.
   
 Among the people I’ve seen, those who dislike veluil didn’t even properly read this document.
 if veluil can become more perfect then veluil is changed.
@@ -358,7 +356,7 @@ if veluil can become more perfect then veluil is changed.
 [alphabet].
 [word separation, spacing].
 [pronunciation].
-[slowly learn].
+[detail].
 -basic.
 -word "ea".
 -comparative.
@@ -402,7 +400,7 @@ if veluil can become more perfect then veluil is changed.
 </pre>
 </details>
 <details open>
- <summary>persuade to learn veluil</summary>
+ <summary>persuading to learn veluil</summary>
 <pre>
 
 veluil is most versatile and most efficient most logical and unambiguous and easy and simple language that benefical environmental and disabled person.
@@ -411,7 +409,7 @@ english easily becomes ambiguous.
 eg "i love situation that i love person who love cow and people and chicken or he eat meal".
 but veluil express all situation without ambiguous.
 
-veluil version of 2d code can help cheating in exam because it takes up very little space and most people won"t think of it as a language, so it won"t get caught.
+veluil version of 2d code can help cheating in exam because it takes up very little space and most people won't think it is a language, so it won"t get caught.
 
 if veluil become international language then everybody can easily communicate with disabled person and blind and the deaf since veluil can easily be converted into veluil version of braille and sign language and morse code and barcode and QR code and etc by simple rule by being binary language.
 it is very efficient.
@@ -456,18 +454,18 @@ Word stress is not required for word distinction in veluil.
 most words are not randomly made so veluil is easy to learn.
 
 lot of words is compound words.
-(eg word "hnmb" mean music. word "hnmb" is compound word of sound and fun.
-word "bomb" mean sports.
+(eg word "psrq" mean music. word "psrq" is compound word of sound and fun.
+word "qnrq" mean sports.
 it is compound word of compete and fun.
-"ejee" mean bone(calsium + organism))
+"kckk" mean bone(calsium + organism))
 
-lot of words is abbreviations.(word "nd" is abbreviation for "Na Doea"(this time).
+lot of words is abbreviations.(word "sx" is abbreviation for "Sz Xnkz"(this time).
 this word mean now)
 
-lot of words are arranged in an orderly way.(eg bihd mean hydrogen(Atomic number 1).
-cihd mean helium(Atomic number 2).
-dihd mean lithium(Atomic number 3).
-eihd mean beryllium(Atomic number 4))
+lot of words are arranged in an orderly way.(eg qfpx mean hydrogen(Atomic number 1).
+jfpx mean helium(Atomic number 2).
+xfpx mean lithium(Atomic number 3).
+kfpx mean beryllium(Atomic number 4))
 
 so it help technology grow cuz it make science easy.
 
@@ -490,7 +488,7 @@ part of speech of veluil is only three.
 
 if you learn a little grammar, then you can explain every meaning, regardless of your native language.
 grammar is simplest and consistent by using  prefix notation so veluil can be used in programming without change of grammar.
-the programming language is called "pmfa".
+the programming language is called "trvz".
 other programming languages have limits.
 For example, C++ cannot represent numbers beyond a certain size, but pmfa can represent all number.
 
@@ -537,12 +535,12 @@ original Braille is ambiguous cuz meaning of original braille depending on direc
 
 Sign language is difficult or inefficient for expressing new words or slang but veluil"s sign language is not.
 
-}◀ persuade to learn veluil
+}◀ persuading to learn veluil
 </pre></details><details open><summary>refuting to concerns</summary><pre>
  
 concerns: This language cannot be used in literature.
 
-refute: No, this language can be used in literature. It is possible to express "~", "!", "?", or nuances etc. These are also possible in NLQR, veluil braille and veluil morse code etc.
+refute: No, this language can be used in literature. It is possible to express "~", "!", "?", or nuances etc. These are also possible in NLQR, veluil braille and veluil morse code etc. It is okay to use foreign languages mixed together. Since the number of characters used by Veluil is small, it is easy to distinguish whether something is a foreign language or not.
 
 concerns: The grammar of veluil is too much like a computer language.
 veluil is not a language for humans.
@@ -565,9 +563,9 @@ refute: no, this writing system can express interjection and foreign word using 
 if we change alphabet then we cant use world most efficient system(NLQR, vmorse). conveying meaning is more important than to conveying context.
 this alphabet make we can easily pronunce all that can be expressed as binary so we can pronunce 🕎 without learning name.
 
-refute: this is lie.
+concerns: this is lie.
 
-concerns: we have some tool. i belive that it can be evidence.
+refute: we have some tool. i belive that it can be evidence.
 
 site that convert to other wring system(NLQR1, NLQR2): https://fhres126.github.io/w/nlintovarious.html
 
@@ -637,13 +635,12 @@ braille is 2×3 and this alphabet is 2×3 so this alphabet can be used as braill
 
 if the alphabet cant be used then it can be expressed by latin alphabet.
 
-a = 0000. b = 1000. c = 0100. d = 1100.
+edited by more info
 
-e = 0010. f = 1010. g = 0110. h = 1110.
-
-i = 0001. j = 1001. k = 0101. l = 1101.
-
-m = 0011. n = 1011. o = 0111. p = 1111.
+z = 0000. q = 1000. j = 0100. x = 1100.
+k = 0010. v = 1010. b = 0110. p = 1110.
+f = 0001. c = 1001. l = 0101. d = 1101.
+r = 0011. s = 1011. n = 0111. t = 1111.
 
 }◀ alphabet
 
@@ -671,7 +668,7 @@ veluil dont need whitespace but i will use whitespace to make you easily underst
 
 quiz: How many words does this sentense have?
 
-"mjibcgnb".
+"rcfqjbsq".
 
 (1) 1.
 (2) 2.
@@ -694,39 +691,39 @@ purpose of this section: making you know how to pronunce binary.
 
 * even numbered letter is pronounced as vowel and final consonant.
 
-eg "bb anba" is pronounced as [ bo membu ].
+eg "qq zsqz" is pronounced as [ bo membu ].
 
-if "b" is in odd numbered letter then it pronounced as "b".
+if "q" is in odd numbered letter then it pronounced as "b".
 
-if "b" is in even numbered letter then it is pronounced as "o".
+if "q" is in even numbered letter then it is pronounced as "o".
 
-in pronunciation chart, "b" is expressed as follwing.
+in pronunciation chart, "q" is expressed as follwing.
 
-b = /b/, /o/,
+q = /b/, /o/,
 
-then "anba" is pronounced as "membu" then it can be simplified as "meb".
+then "zsqz" is pronounced as "membu" then it can be simplified as "meb".
 
 veluil can express all pronunciation using specific parameter.
 
 pronunciation chart is follwing:
 
-a = /m/, /u/. b = /b/, /o/, . c = /d/, /ʌ/. d = /g/, /ɯ/.
+z = /m/, /u/. q = /b/, /o/, . j = /d/, /ʌ/. x = /g/, /ɯ/.
 
-e = /n/, /a/. f = /ɾ/, /ɛ/. g = /p͈/, /i/. h = /t͈/, /wʌ/.
+k = /n/, /a/. v = /ɾ/, /ɛ/. b = /p͈/, /i/. p = /t͈/, /wʌ/.
 
-i = /k͈/, /um/. j = /p/, /om/. k = /t/, /ʌm/. l = /k/, /ɯm/.
+f = /k͈/, /um/. c = /p/, /om/. l = /t/, /ʌm/. d = /k/, /ɯm/.
 
-m = /tɕ/, /am/. n = /t͈ɕ/, /ɛm/. o = /t͡ʃ/, /im/. p: /s/, /wɛ/.
+r = /tɕ/, /am/. s = /t͈ɕ/, /ɛm/. n = /t͡ʃ/, /im/.  t: /s/, /wɛ/.
 
 learning pronunciation by sound: https://youtu.be/aozFBjJmpJE?si=WfnbWboPwXzT_3kj
 
 pronunciation of odd numbered letter as english:
 
-a is m as in mom. b is b as in ball. c is d as in doctor. e is n as in no. f is l as in lable. j is p as in pineapple. k is t as in top. m is j as in job. o is ch as in china.
+//a is m as in mom. b is b as in ball. c is d as in doctor. e is n as in no. f is l as in lable. j is p as in pineapple. k is t as in top. m is j as in job. o is ch as in china.
 
 pronunciation of even numbered letter as english:
 
-a is oo as in loop. b is o as in go. c is u as in pronunciation. d is silent vowel like vowel of t. e is a as in nah. f is e as in gender. g is i as in pin. h is u as in fuck. i is pronunciation of odd numbered a + m. j is pronunciation of odd numbered o + m.
+//a is oo as in loop. b is o as in go. c is u as in pronunciation. d is silent vowel like vowel of t. e is a as in nah. f is e as in gender. g is i as in pin. h is u as in fuck. i is pronunciation of odd numbered a + m. j is pronunciation of odd numbered o + m.
 
 </pre><details open><summary>read it if you dislike this pronunciation</summary><pre>
 veluil must have 16 initial consonant cuz it pronunce binary. initial consonant that is easy to distinguish in world is 19.
@@ -758,11 +755,10 @@ the pronunciation is arranged with lower Hz sounds coming first. so it is not bi
 </pre>
 </details>
 <pre>
-you can learn using quickly learn section or slowly learn section.
 
 </pre>
 <details open>
- <summary>slowly learn(not finished but can helpful)</summary>
+ <summary>detail(not finished but can helpful)</summary>
 <pre>
 
 </pre><details open>
@@ -770,65 +766,65 @@ you can learn using quickly learn section or slowly learn section.
  
  <pre>
 
-veluil word "anga" mean "human".
+veluil word "zsbz" mean "human".
 
-word "nb" mean "i" and "me". it is abbreviation for "Na Bd"(this who assert).
+word "sq" mean "i" and "me". it is abbreviation for "Sz Qx"(this who assert).
 
 in this lecture, i wont use word that i didnt teach.
 
-sentence "anga nb" mean "i am human". the word "anga" is in left hand side. the word "nb" is in right hand side. if you didnt speak right hand side then right hand side automatically be "i". so just speaking "anga" as sentence is enough to assert "i am human". we use word "i" lot so this mechanism increace efficiency of language. if you didnt write right hand side then right hand side automatically be "this" so building that is labeled "restaurant" means that "this is a restaurant". if you use whitespace then even numbered letter a can be omitted. for example "ang nb" mean "anga nb". veluil's all message is like " ~ is ~ ".
+sentence "zsbz" mean "i am human". the word "zsbz" is in left hand side. the word "sq" is in right hand side. if you didnt speak right hand side then right hand side automatically be "i". so just speaking "zsbz" as sentence is enough to assert "i am human". we use word "i" lot so this mechanism increace efficiency of language. if you didnt write right hand side then right hand side automatically be "this" so building that is labeled "restaurant" means that "this is a restaurant". if you use whitespace then even numbered letter a can be omitted. for example "jsb sq" mean "zsbz sq". veluil's all message is like " ~ is ~ ".
 
-here we will learn word that must have parameter. word that must have parameter is called function. word "fc" must have two parameter. "fc A B" mean "thing that ask B about A" so "fc anga nb" mean "thing that ask me about human".
+here we will learn word that must have parameter. word that must have parameter is called function. word "vj" must have two parameter. "vj A B" mean "thing that ask B about A" so "vj zsbz sq" mean "thing that ask me about human".
 
-all sentence of veluil consist of left hand side and right hand side. in sentence "fc anga nb nb", parameter of "fc" is full so this function cant have manier parameter so place for left hand side is done. you must remember this mechanism to recognize what is left hand side and right hand side and one sentence.
+all sentence of veluil consist of left hand side and right hand side. in sentence "vj jsbz sq", parameter of "vj" is full so this function cant have manier parameter so place for left hand side is done. you must remember this mechanism to recognize what is left hand side and right hand side and one sentence.
 
 here we will learn how to say "what is your name?" so we need to learn word for of and word for name and word for you.
 
-word "blga" mean name. meaning of name similar to meaning of code so form of word for name similar to word for code. word "blba" mean code.
+word "qdbz" mean name. meaning of name similar to meaning of code so form of word for name similar to word for code. word "qdqz" mean code.
 
-word for you is antonym of me. this word is made by word formation rule for antonym. form of antonym is inversed bit from original word. 8n-th bit must not be changed by being word separation code. for example, antonym of me("nb"(10111000)) is you("cg"(01000110)).
+word for you is antonym of me. this word is made by word formation rule for antonym. form of antonym is inversed bit from original word. 8n-th bit must not be changed by being word separation code. for example, antonym of me("sq"(10111000)) is you("jb"(01000110)).
 
-"af A B" mean "A of B". this word must have two parameter. this word is abbreviation for "that is" and "element of" cuz "pencil of me" mean "pencil that is element of me". "af A B" mean "A of B" so "af blga cg" mean "name of you".
+"zv A B" mean "A of B". this word must have two parameter. this word is abbreviation for "that is" and "element of" cuz "pencil of me" mean "pencil that is element of me". "zv A B" mean "A of B" so "zv qdbz jb" mean "name of you".
 
-in "fc af blga cg", "af blga cg" is in first parameter of "fc" cuz "af blga cg" is one thing. sentnece "fc af blga cg" mean "i am thing that ask you about name of you" as well as "i ask you about name of you" as well as "what is your name?".
+in "vj zv qdbz jb", "zv qdbz jb" is in first parameter of "vj" cuz "zv qdbz jb" is one thing. sentnece "vj zv qdbz jb" mean "i am thing that ask you about name of you" as well as "i ask you about name of you" as well as "what is your name?".
 
-"kf A B" mean "thing that answet A to B". you can use word "kf" to answer. word "kf" is antonym of word "fc".
+"lv A B" mean "thing that answet A to B". you can use word "lv" to answer. word "lv" is antonym of word "vj".
 
-sentence "kf bicc" mean "i am thing that answer bicc to you" as well as "i reply you to bicc" as well as "it is bicc".
+sentence "lv qfjj" mean "i am thing that answer qfjj to you" as well as "i reply you to qfjj" as well as "it is qfjj".
 
-sentence "gillpa af blga nb" mean "my name is gillpa" but you can omit second parameter of word "af".
+sentence "steve zv qdbz sq" mean "my name is steve" but you can omit second parameter of word "zv".
 
 here we will learn how to say "where is bathroom?".
 
-word "nnfd" mean "bathroom". word "nnfd" is compound word of place and emit and shit.
+word "ssvx" mean "bathroom". word "ssvx" is compound word of place and emit and shit.
 
-"nc A" mean "location of A" so "nc nnfd" mean "location of bathroom".
+"sj A" mean "location of A" so "sj ssvx" mean "location of bathroom".
 
-sentence "fc nc nnfd" mean "i am thing that ask you about location of bathroom" as well as "i ask you about location of bathroom" as well as "where is bathroom?".
+sentence "vj sj ssvx" mean "i am thing that ask you about location of bathroom" as well as "i ask you about location of bathroom" as well as "where is bathroom?".
 
-here we will learn how to say hello. "olga A" mean "thing that greet A". meaning of word "olga" similar meaning of word for call so form of word "olga" similar to word for call. sentence "olga" mean "hello" and "i am thing that greet". veluil dont need word "hello" and "hey". "od A" mean "thing that call A". form of this word is similar in binary. sentence "od" mean "hey" and "i am thing that call".
+here we will learn how to say hello. "ndbz A" mean "thing that greet A". meaning of word "zdbz" similar meaning of word for call so form of word "ndbz" similar to word for call. sentence "ndbz" mean "hello" and "i am thing that greet". veluil dont need word "hello" and "hey". "nx A" mean "thing that call A". form of this word is similar in binary. sentence "nx" mean "hey" and "i am thing that call".
 
-here we will learn how to say bye. word bjjh is antonym of word for greet. sentence "bjjh" mean bye.
+here we will learn how to say bye. word qccp is antonym of word for greet. sentence "qccp" mean bye.
 
-here we will learn how to say "do you have water?". "goda" mean "water". form of word "goda" similar to word for liquid by having similar meaning. word for liquid is "goba". "ja A B" mean "whether B is A". "ke A" mean "thing that have A". word "ke" is antonym of word "fd". "fd A" mean "element of A". "ke goda" mean "thing that have water" so "ja ke goda A" mean "whether A is thing that have water" so "fc ja ke goda A B" mean "thing that ask B about whether A is thing that have water".
+here we will learn how to say "do you have water?". "bnxz" mean "water". form of word "bnxz" similar to word for liquid by having similar meaning. word for liquid is "bnqz". "cz A B" mean "whether B is A". "ke A" mean "thing that have A". word "ke" is antonym of word "vx". "vx A" mean "element of A". "lk bnxz" mean "thing that have water" so "cz lk bnxz A" mean "whether A is thing that have water" so "vj cz lk bnxz A B" mean "thing that ask B about whether A is thing that have water".
 
 veluil dont have phrase.
 
-in sentence "fc ja ke goda" second parameter of word "ja" is omitted. Words can be omitted in only informal situations. so omitted thing is determined by context. second parameter of word "ja" is determined as "you" by context. this sentence mean "i am thing that ask you about whether you are thing that have water" as well as "i ask you about whether you have water" as well as "do you have water?".
+in sentence "vj cz lk bnxz" second parameter of word "cz" is omitted. Words can be omitted in only informal situations. so omitted thing is determined by context. second parameter of word "cz" is determined as "jb" by context. this sentence mean "i am thing that ask you about whether you are thing that have water" as well as "i ask you about whether you have water" as well as "do you have water?".
 
 here we will learn how to say "give me water".
 
-"fa A B" mean "thing that command B to be A".
+"vz A B" mean "thing that command B to be A".
 
-"gb A B" mean "thing that cause B to be A" so "gb ke A B" mean "thing that cause B to be thing that have A" so "fa gb ke A B C" mean "thing that command C to be thing that cause B to be thing that have A".
+"bq A B" mean "thing that cause B to be A" so "bq lk A B" mean "thing that cause B to be thing that have A" so "vz bq lk A B C" mean "thing that command C to be thing that cause B to be thing that have A".
 
-sentence "fa gb ke goda nb" mean "i am thing that command you to be thing that cause me to be thing that have water" as well as "make me thing that have water!" as well as "give me water". 
+sentence "vz bq lk bnxz sq" mean "i am thing that command you to be thing that cause me to be thing that have water" as well as "make me thing that have water!" as well as "give me water". 
 
-here we will learn how to say "thank you". "mood A" mean "thing that thanks A". sentence "mood cg" mean "i am thing that thank you" as well as "thank you".
+here we will learn how to say "thank you". "rnnx A" mean "thing that thanks A". sentence "rnnx jb" mean "i am thing that thank you" as well as "thank you".
 
-"mjib A B" mean "thing that like you". B is for explainng degree of like so only number can be in B. if different type is in B then B automatically be omitted. form of word "mjib" similar to form of word for love. "mjob A B" mean thing that love A". B is degree of love.
+"rcfq A B" mean "thing that like you". B is for explainng degree of like so only number can be in B. if different type is in B then B automatically be omitted. form of word "rcfq" similar to form of word for love. "rcnq A B" mean thing that love A". B is degree of love.
 
-in sentence "mjib cg nb", second parameter of word "mjib" automatically be omitted by other type word. this sentence mean "i am thing that like you". the degree of like is expressed as number between zero and one. word "lh" mean one so sentence "mjib cg lh nb" mean "I like you with 100% intensity".
+in sentence "rcfq jb sq", second parameter of word "rcfq jb sq" automatically be omitted by other type word. this sentence mean "i am thing that like you". the degree of like is expressed as number between zero and one. word "dp" mean one so sentence "rcfq jb dp sq" mean "I like you with 100% intensity".
 
 }◀ basic
 
@@ -838,21 +834,21 @@ in sentence "mjib cg nb", second parameter of word "mjib" automatically be omitt
 
 here we will learn tense.
 
-"ed A" mean "thing that was A".
+"kx A" mean "thing that was A".
 
-sentence "ed mjib cg nb" mean "i was thing that like you".
+sentence "kx rcfq jb sq" mean "i was thing that like you".
 
-suffix ep- mean was. this suffix can be used for only function.
+suffix kt- mean was. this suffix can be used for only function.
 
-sentence "epmjib cg nb" mean "i was thing that like you".
+sentence "ktrcfq jb sq" mean "i was thing that like you".
 
-"le A" mean "thing that will be A". this word is amtonym of word for was.
+"dk A" mean "thing that will be A". this word is amtonym of word for was.
 
-sentence "le mjib cg nb" mean "i am thing that will be thing that like you".
+sentence "dk rcfq jb sq" mean "i am thing that will be thing that like you".
 
-suffix lp- mean will. this suffix can be used for only function.
+suffix dt- mean will. this suffix can be used for only function.
 
-sentence "lpmjib cg nb" mean "i am thing that will be thing that like you".
+sentence "dtrcfq jb sq" mean "i am thing that will be thing that like you".
 
 }◀ tense
 </pre>
@@ -862,62 +858,62 @@ sentence "lpmjib cg nb" mean "i am thing that will be thing that like you".
 
 we learn veluil so lets learn how to say "i learn veluil".
 
-suffix hp- is suffix "-ing" as in "becoming", not "wearing".
+suffix pt- is suffix "-ing" as in "becoming", not "wearing".
 
-"lb A" mean "thing that know A".
+"dq A" mean "thing that know A".
 
 so
 
-"hplb A" mean "thing that learn A".
+"ptdq A" mean "thing that learn A".
 
-"pmag" mean "veluil".
+"trzb" mean "veluil".
 
-so sentence "hplb pmag nb" mean "i am thing that learn veluil".
+so sentence "ptdq trzb sq" mean "i am thing that learn veluil".
 
 here we will learn how to say "can you speak veluil?".
 
-"ja A B" mean "whether B is A".
+"cz A B" mean "whether B is A".
 
-"lg A B" mean "thing that can be A with x2 percent probability".
+"db A B" mean "thing that can be A with x2 percent probability".
 
-"hnda A B" mean "thing that speak A to B". this word is compound word for sound and mention.
+"psxz A B" mean "thing that speak A to B". this word is compound word for sound and mention.
 
-sentence "fc ja lg hnda pmag" mean "i am thing that ask you about wheter you are thing that can be thing that speak veluil".
+sentence "vj cz db psxz trzb" mean "i am thing that ask you about wheter you are thing that can be thing that speak veluil".
 
 here we will learn how to say yes.
 
-"ff" mean "true".
+"vv" mean "true".
 
-"pf" mean "it".
+"tv" mean "it".
 
-sentence "ff pf" mean "it is true". sentence "kf ff" mean "i am thing that answer you to true" and "yes".
+sentence "vv tv" mean "it is true". sentence "lv vv" mean "i am thing that answer you to true" and "yes".
 
 </pre>
 
 <pre>
 suffix bp- make function to noun.
 
-"bd A B C" mean "thing that assert that B is A to C".
+"qx A B C" mean "thing that assert that B is A to C".
 
-"bpbd" mean assert.
+"qtqx" mean assert.
 
 </pre><details open><summary>singular</summary><pre>
 here we will learn singular.
 
-"ie A B" mean "A B" but A must be number. for example "ie nh anga" mean "two human". "one human" mean "a human".
+"fk A B" mean "A B" but A must be number. for example "fk sp zsbz" mean "two human". "one human" mean "a human".
 
-if first parameter of word "ie" is omitted then the first parameter is one.
+if first parameter of word "fk" is omitted then the first parameter is one.
 
-"ie anga" mean "a human".
+"fk zsbz" mean "a human".
 
 }◀ singular
 </pre>
 </details><details open><summary>plural</summary><pre>
 here we will learn plural.
 
-suffix gp- make plural.
+suffix bt- make plural.
 
-"gpanga" mean humans.
+"btzsbz" mean humans.
 
 you can say "i see human" even if you see lot of human.
 
@@ -927,21 +923,21 @@ you can say "i see human" even if you see lot of human.
 
 here we will learn pronoun.
 
-"na A" mean "this A".
+"sz A" mean "this A".
 
-"oa A" mean "that A".
+"nz A" mean "that A".
 
-"pa A" mean "the A".
+"tz A" mean "the A".
 
-"pimd" mean "she". this word is abbreviation for "pa mlmb"(the,women)
+"tfrx" mean "she". this word is abbreviation for "tz rdrq"(the,women)
 
-"pide" mean "he". this word is abbreviation for "pa dmdg"(the, men)
+"tfxk" mean "he". this word is abbreviation for "tz xrxb"(the, men)
 
 word for we can mean "me and you" and "friend of me".
 
-"bnca" mean "me and you". this word is abbreviation for "be nb cg ad"(me and you).
+"qsjz" mean "me and you". this word is abbreviation for "qk sq jb zx"(me and you).
 
-"mjnb" mean "friend of me". this word is abbreviation for "mjfb nb"(friend of me).
+"rcsq" mean "friend of me". this word is abbreviation for "rcvq sq"(friend of me).
 
 }◀ pronoun
 </pre>
@@ -949,47 +945,47 @@ word for we can mean "me and you" and "friend of me".
 
 <details open><summary>why veluil dont need conjunction</summary><pre>
 
-"ch A B C" mean "thing that is C despite of B being A".
+"jp A B C" mean "thing that is C despite of B being A".
 
-"lica A" mean "thing that see A". this word is compound word of sense and photon.
+"dfjz A" mean "thing that see A". this word is compound word of sense and photon.
 
-"hogd" mean "yesterday". this word is compound word of day and before. type of this word is time so "mc hogd A" mean "thing that is A at yesterday".
+"pnbx" mean "yesterday". this word is compound word of day and before. type of this word is time so "rj pnbx A" mean "thing that is A at yesterday".
 
-sentence "ch mc hogd lica cg nb eb mc nihg lica cg nb" mean "i see you yesterday but i dont see you today".
+sentence "jp rj pnbx dfjz jb sq kq rj sfpb dfjz jb sq" mean "i see you yesterday but i dont see you today".
 
-"ka A B" mean "thing that is B by A".
+"lz A B" mean "thing that is B by A".
 
-sentence "ka cf anga pimd mjib pimd pide" mean "she is human so he like she".
+sentence "lz jv zsbz tfrx rcfq tfrx tfxk" mean "she is human so he like she".
 
 here we will learn how to say "if he die then i call hospital".
 
-"cf A B" mean "situation that B is A".
+"jv A B" mean "situation that B is A".
 
-"od A" mean "thing that call A".
+"nx A" mean "thing that call A".
 
-"noee" mean "hospital". this word is compound word of place and save and organism.
+"snkk" mean "hospital". this word is compound word of place and save and organism.
 
-"cf od noee nb" mean "situation that i stay home".
+"jv nx snkk sq" mean "situation that i stay home".
 
-"jf A B" mean "result of B being A". antonnym of reason,
+"cv A B" mean "result of B being A". antonnym of reason,
 
-"bjhg" mean "dead thing".
+"qcpb" mean "dead thing".
 
-"jf bjhg pimd" mean "result of he being dead thing".
+"cv qcpb tfrx" mean "result of he being dead thing".
 
-so sentence "cf od noee nb jf bjhg pimd" mean "if he die then i call hospital" and "result of he being dead thing is situation that i call hospital".
+so sentence "jv nx snkk sq cv qcpb tfrx" mean "if he die then i call hospital" and "result of he being dead thing is situation that i call hospital".
 
 here we will how to say "if you hurry, we can ride bus".
 
-"cf A B" mean "situation that B is A".
+"jv A B" mean "situation that B is A".
 
-"klbb A B" mean "thing that be A quickly than B".
+"ldqq A B" mean "thing that be A quickly than B".
 
-"flfa A" mean "thing that is in A". form of this word similar to word for "part of".
+"vdvz A" mean "thing that is in A". form of this word similar to word for "part of".
 
-"bkpd" mean "bus". pronunciation of this word is derived from english word "bus".
+"qltx" mean "bus". pronunciation of this word is derived from english word "bus".
 
-sentence "cf lg flfa bkpd bnca jf klbb bc cg" mean "result of you being thing that quickly be something is situation that we are thing that can be in bus".
+sentence "jv db vdvz qltx qsjz cv ldqq qj jb" mean "result of you being thing that quickly be something is situation that we are thing that can be in bus".
 
 }◀ why veluil dont need conjunction</pre>
 </details>
@@ -998,15 +994,15 @@ sentence "cf lg flfa bkpd bnca jf klbb bc cg" mean "result of you being thing th
 
 we will learn all word that omit parameter.
 
-"ad" omit one parameter.
+"zx" omit one parameter.
 
-"bc" omit two parameter.
+"qj" omit two parameter.
 
-"cc" omit three parameter.
+"jj" omit three parameter.
 
-"dc" omit four parameter.
+"xj" omit four parameter.
 
-sentence "mjib ad nb" mean "i am thing that like".
+sentence "rcfq zx sq" mean "i am thing that like".
 
 }◀ omitting parameter
 </pre>
@@ -1014,102 +1010,102 @@ sentence "mjib ad nb" mean "i am thing that like".
 
 here we will learn word for and.
 
-word "be" have parameter until this word met symbol that omit parameter.
+word "qk" have parameter until this word met symbol that omit parameter.
 
-"be cg pf ad" mean "you and it".
+"qk jb tv zx" mean "you and it".
 
 if there are function word then you should use more word that omit parameter.
 
-in "be cg lb ad ad" first "ad" omit parameter of word "lb". second "ad" finish parameter of word "be". you can say it as "be cg lb bc".
+in "qk jb dq zx zx" first "zx" omit parameter of word "dq". second "zx" finish parameter of word "qk". you can say it as "qk jb dq qj".
 
 }◀ parameter c
 </pre>
 </details><pre>
 here we will learn how to say "why you cant do it?".
 
-"gc A B" mean "why B is A".
+"bj A B" mean "why B is A".
 
-"eb A" mean "thing that is not A".
+"kq A" mean "thing that is not A".
 
-sentence "fc gc eb lg pf cg" mean "i am thing that ask you about why you are thing that is not thing that can be it" and "why you cant do it?".
+sentence "vj bj kq db tv jb" mean "i am thing that ask you about why you are thing that is not thing that can be it" and "why you cant do it?".
 
-"jf A B" mean "result of B being A" and "what if B is A". this word is antonym of reason.
+"cv A B" mean "result of B being A" and "what if B is A". this word is antonym of reason.
 
-sentence "pf jf A B" mean sentence "cuz B is A!"
+sentence "tv cv A B" mean sentence "cuz B is A!"
 
 here we will learn how to say "what if he dislike it?".
 
-"dohg A B" mean "thing that dislike A". B is for explainng devree of dislike so only number can be inputed in B. this word is antonym of like.
+"xnpb A B" mean "thing that dislike A". B is for explainng devree of dislike so only number can be inputed in B. this word is antonym of like.
 
-"pide" mean "he". this word is abbreviation for "pa dmdg"(the man).
+"tfxk" mean "pk". this word is abbreviation for "tz xrxb"(the man).
 
-sentence "fc jf dohg pf pide" mean "i am thing that ask you about result of he being thing that dislike it".
+sentence "vj cv xnpb tv tfxk" mean "i am thing that ask you about result of he being thing that dislike it".
 
 here we will learn how to say "she listen to music".
 
-"lihf A" mean "thing that listen to A". this word is compound word of sense and sound.
+"dfpv A" mean "thing that listen to A". this word is compound word of sense and sound.
 
-"hnmb" mean "music". this word is compound word of sound and like.
+"psrq" mean "music". this word is compound word of sound and like.
 
-sentence "lihf hnmb pimd" mean "she is thing that listen to music".
+sentence "dfpv psrq tfrx" mean "she is thing that listen to music".
 
 we will learn how to say "how much is this?"
 
-"pe A B" mean "B that is converted into A".
+"tk A B" mean "B that is converted into A".
 
-"coih" mean "money". this word is abbreviation for "cmfc og ih"(more than 0 dollars).
+"jnfp" mean "money". this word is abbreviation for "jrvj nb fp"(more than 0 dollars).
 
-sentence "fc pe coih na" mean "i am thing that ask you about (this that is converted into money)".
+sentence "vj tk jnfp sz" mean "i am thing that ask you about (this that is converted into money)".
 
 here we will learn how to say "it is funny".
 
-"jmje A" mean "thing that feel A as funny". pronunciation of this word is derived from "haha".
+"crck A" mean "thing that feel A as funny". pronunciation of this word is derived from "pzpz".
 
-sentence "jmje pf" mean "i am thing that feel it as funny" as well as "it is funny".
+sentence "crck tv" mean "i am thing that feel it as funny" as well as "it is funny".
 
 here we will learn how to say "i am hungry".
 
-"mjka" mean "hungry". this word is abbreviation for "mb kiod"(thing that hope to eat).
+"rclz" mean "hungry". this word is abbreviation for "rq lfnx"(thing that hope to eat).
 
-sentence "mjka" mean "i am hungry".
+sentence "rclz" mean "i am hungry".
 
 here we learn how to say "how was your today?"
 
-"nihg" mean "today". this word is abbreviation for "na hoea"(this, day).
+"sfpb" mean "today". this word is abbreviation for "sz pnkz"(this, day).
 
-sentence "fc ea mc nihg pb cg" mean "i am thing that ask you about what you be in today".
+sentence "vj kz rj sfpb tq jb" mean "i am thing that ask you about what you be in today".
 
 here we will learn how to say "i hope this is helpful for you".
 
-"mb A B" mean "thing that hope B is A"1.
+"rq A B" mean "thing that hope B is A"1.
 
-"le A" mean "thing that will be A". this word is antonym of was.
+"dk A" mean "thing that will be A". this word is antonym of was.
 
-"gjob A" mean "thing that beneficial A". this word is compound word of cause and profit.
+"bcnq A" mean "thing that beneficial A". this word is compound word of cause and profit.
 
-sentence "mb le gjob cg na" mean "i am thing that hope this be thing that benefical you".
+sentence "rq dk bcnq jb sz" mean "i am thing that hope this be thing that benefical you".
 
 here we will learn how to say "I have a question".
 
-"md A" mean "thing that intend to be A".
+"rx A" mean "thing that intend to be A".
 
-sentence "md fc" mean "i have question" as well as "i am thing that intend to be thing that ask".
+sentence "rx vj" mean "i have question" as well as "i am thing that intend to be thing that ask".
 
 here we will learn how to say "can i touch that?".
 
-"mjgg A B" mean "thing that allow B be A".
+"rcbb A B" mean "thing that allow B be A".
 
-"alnd A" mean "thing that touch A".
+"zdsx A" mean "thing that touch A".
 
-"oa A" mean "that A".
+"nz A" mean "that A".
 
-sentence "fc ja mjgg alnd oa" mean "can i touch that" as well as "i ask you about whether you allow me touch that" as well as "i am thing that ask you about whether you are thing that allow me be thing that touch that".
+sentence "vj cz rcbb zdsx nz" mean "can i touch that" as well as "i ask you about whether you allow me touch that" as well as "i am thing that ask you about whether you are thing that allow me be thing that touch that".
 
 here we will learn how to say "i dont think so".
 
-"lf A B" mean "thing that belive B is A".
+"dv A B" mean "thing that belive B is A".
 
-sentence "eb lf ff pf" mean "i am thing that is not thing that beilive it is true.
+sentence "kq dv vv tv" mean "i am thing that is not thing that beilive it is true".
 
 </pre>
 
@@ -1117,15 +1113,15 @@ sentence "eb lf ff pf" mean "i am thing that is not thing that beilive it is tru
 
 we will learn how to say "at that time, i see you".
 
-"pf" mean "it".
+"tv" mean "it".
 
-word "pf" can be inputed in every type parameter by being o type word.
+word "tv" can be inputed in every type parameter by being o type word.
 
-if word "pf" is inputed in time type parameter then this word must be time so word "pf" that is in time type parameter is translated as "that time" so "mc pf A" mean "thing that is A at that time".
+if word "tv" is inputed in time type parameter then this word must be time so word "tv" that is in time type parameter is translated as "that time" so "rj tv A" mean "thing that is A at that time".
 
-"lica A" mean "thing that see A". this word is compound word of sense and photon.
+"dfjz A" mean "thing that see A". this word is compound word of sense and photon.
 
-sentence "mc pf lica cg nb" mean "i am thing that see you at that time".
+sentence "rj tv dfjz jb sq" mean "i am thing that see you at that time".
 
 }◀ o type word
 
@@ -1138,11 +1134,11 @@ type of p type word is type of input parameter.
 
 for example,
 
-"ed A" mean "thing that was A". type of this word is type of input word.
+"kx A" mean "thing that was A". type of this word is type of input word.
 
-"ih" mean "zero". type of this word is number.
+"fp" mean "zero". type of this word is number.
 
-so type of "ed ih" is number.
+so type of "kx fp" is number.
 
 if parameter didnt be inputed in p type word then type of p type word is "r".
 
@@ -1153,96 +1149,96 @@ if parameter didnt be inputed in p type word then type of p type word is "r".
 
 here we will learn how to say "can you speak it agian?".
 
-"lg A B" mean "thing that can be A with B percent probability".
+"db A B" mean "thing that can be A with B percent probability".
 
-"imea A B" mean "thing that repeat B at A times".
+"frkz A B" mean "thing that repeat B at A times".
 
-in sentence "fc ja lg imea hnda pf", there are no word for you. omitted parameter is determined by context. this sentence mean "i am thing that ask you about whether you are thing that can be thing that repeat be thing that speak it".
+in sentence "vj cz db frkz psxz tv", there are no word for you. omitted parameter is determined by context. this sentence mean "i am thing that ask you about whether you are thing that can be thing that repeat be thing that speak it".
 
-</pre><details open><summary>word "db" and "dd"</summary><pre>
+</pre><details open><summary>word "xq" and "xx"</summary><pre>
 
-we will learn word "db".
+we will learn word "xq".
 
-"db A" is "A-th right hand side".
+"xq A" is "A-th right hand side".
 
-"db lh" return first right hand side.
+"xq dp" return first right hand side.
 
-"jd A" mean "thing that imagine A".
+"cx A" mean "thing that imagine A".
 
-in sentence "jd ad nb", word "nb" is in first right hand side so sentence "jd db lh nb" mean "i imagine me"
+in sentence "cx zx sq", word "sq" is in first right hand side so sentence "cx xq dp sq" mean "f frzbfsk rk"
 
-"i imagine me" mean "i imagine myself" so "db lh" can mean "self" or "oneself" or "themselves" or etc.
+"f frzbfsk rk" mean "i imagine myself" so "xq dp" can mean "self" or "oneself" or "themselves" or etc.
 
-word "dd" mean "self". this word is abbreviation for "db lh".
+word "xx" mean "self". this word is abbreviation for "xq dp".
 
 manytime this word can be work as word for oneself and themselves and yourself and myself etc.
 
-"mb A B C" mean "thing that hope B is A". C is degree of hope. so "mb A dd" mean "thing that hope oneself is A" and "thing that wanna be A".
+"rq A B C" mean "thing that hope B is A". C is degree of hope. so "rq A xx" mean "thing that hope oneself is A" and "thing that wanna be A".
 
-}◀ word "db" and "dd"
+}◀ word "xq" and "xx"
 </pre>
 </details>
 
 <details open>
- <summary>word "ea"</summary>
+ <summary>word "kz"</summary>
 <pre>
-word "ea" is "what" as in "what you like". in sentence "mjib anga cg", the word "anga" is in first parameter of the sentence so "ea lh mjib cg" return "anga". it mean "what you like". word "ea" that dont have the number type parameter automatically return first parameter.
+word "kz" is "what" as in "what you like". in sentence "rcfq zsbz jb", the word "zsbz" is in first parameter of the sentence so "kz dp rcfq jb" return "zsbz". it mean "what you like". word "kz" that dont have the number type parameter automatically return first parameter.
 
-if word "ea" target second parameter of word "mjib" then we can say "how much you like human". word "nh" mean two. word "he" is just "ea nh". this word is for efficient.
+if word "kz" target second parameter of word "rcfq" then we can say "how much you like human". word "sp" mean two. word "pk" is just "kz sp". this word is for efficient.
 
-"he mjib anga cg" mean "how much you like human".
+"pk rcfq zsbz jb" mean "how much you like human".
 
-word "pb" causes the parameter at the same position to be returned. in sentence "mjib anga lh cg", word "lh" is in second parameter. in "ea mjib anga pb cg", "pb" is in second parameter so it return "lh".
+word "tq" causes the parameter at the same position to be returned. in sentence "rcfq zsbz dp jb", word "dp" is in second parameter. in "kz rcfq zsbz tq jb", "tq" is in second parameter so it return "dp".
 
-word "pc" causes the sentence at the same position to be returned. "lf A B" mean "thing that belive B is A". "ea lf pc cg" mean "your belief".
+word "tj" causes the sentence at the same position to be returned. "dv A B" mean "thing that belive B is A". "kz dv tj jb" mean "your belief".
 
 "music that i like" is "music that is what i like".
 
-word "hnmb" mean music. this word is compound word of word for sound(hnib) and word for like(mjib).
+word "psrq" mean music. this word is compound word of word for sound(hnib) and word for like(mjib).
 
-"ab A B" mean "A that is B".
+"zq A B" mean "A that is B".
 
-"ab hnmb ea mjib nb" mean "music that is what i like" but abbreviation "ae" can be used for efficient.
+"zq psrq kz rcfq sq" mean "music that is what i like" but abbreviation "zk" can be used for efficient.
 
-"ae hnmb mjib nb" mean "ab hnmb ea mjib nb". word "ae" can have number type parameter "ab hnmb ea lh mjib nb" is "ae lh hnmb mjib nb". word "oe" is "ae nh".
+"zk psrq rcfq sq" mean "zq psrq kz rcfq sq". word "zk" can have number type parameter "zq psrq kz dp rcfq sq" is "zk dp psrq rcfq sq". word "nk" is "zk sp".
 
 here we will learn how to say "what song do you like?".
 
-sentence "fc ae hnmb mjib cg" mean "i am thing that ask you about music that you like".
+sentence "vj zk psrq rcfq jb" mean "i am thing that ask you about music that you like".
 
-}◀ word "ea"
+}◀ word "kz"
 </pre></details><details open>
  <summary>comparative</summary>
 <pre>
 
 here we will learn comparative.
 
-"jkca A" mean "A meter" so only number can be inputed in parameter of this word.
+"cljz A" mean "A meter" so only number can be inputed in parameter of this word.
 
-"bb A" mean "thing that is less than A". and this word is number.
+"qq A" mean "thing that is less than A". and this word is number.
 
-"jkca bb lh" mean "meter whose parameter is less than one" and "thing that is shorter than one meter".
+"cljz qq dp" mean "meter whose parameter is less than one" and "thing that is shorter than one meter".
 
-sentence "jkca nh nb" mean "i am two meter". so "ea jkca nb" is two.
-"jkca bb ea jkca nb" mean "thing that is shorter than me".
-it can be simplified as "jkca bb nb".
+sentence "cljz sp sq" mean "i am two meter". so "kz cljz sq" is two.
+"cljz qq kz cljz sq" mean "thing that is shorter than me".
+it can be simplified as "cljz qq sq".
 and there are abbreviation.
-"jkbb A" mean "thing that is shorter than A". this word is abbreviation for "jkca bb".
+"clqq A" mean "thing that is shorter than A". this word is abbreviation for "cljz qq".
 
-"pg A" mean "A that is converted into number".
+"tb A" mean "A that is converted into number".
 
-"jkca pg nb" mean "thing that is same height as me".
+"cljz tb sq" mean "thing that is same height as me".
 
-"og A" mean "thing that is more than A". type of this word is number. this word is antonym of word for less.
+"nb A" mean "thing that is more than A". type of this word is number. this word is antonym of word for less.
 
-"jkca og nb" mean "thing that is longer than me".
+"cljz nb sq" mean "thing that is longer than me".
 
-"gnog A" mean "thing that is longer than A". this word is antonym of word for short.
+"bsnb A" mean "thing that is longer than A". this word is antonym of word for short.
 
-"mjob A B" mean "thing that love A".
+"rcnq A B" mean "thing that love A".
 second parameter of this word is degree of love.
 
-in sentence "mjob nb og cg nb", "og cg" is in place for explainng degree of love. the "og cg" mean "thing that is less than you" but word you are not number so it become number by context. it become "How much I love you"(ea mjob cg pb nb). so "mjob nb og cg nb" mean "i am thing that love me than you".
+in sentence "rcnq sq nb jb sq", "nb jb" is in place for explainng degree of love. the "nb jb" mean "thing that is less than you" but word you are not number so it become number by context. it become "How much I love you"(ea mjob cg pb nb). so "rcnq sq nb jb sq" mean "i am thing that love me than you".
 
 }◀ comparative
 
@@ -1252,33 +1248,33 @@ in sentence "mjob nb og cg nb", "og cg" is in place for explainng degree of love
 
 here we will learn how to say number.
 
-word "kg" is for explainng decimal number(base-10).
+word "lb" is for explainng decimal number(base-10).
 
-thing that is in parameter of "kg" cant be word. "b" that is in parameter of "kg" is 1. "a" that is in parameter of "kg" finish parameter of "kg".
+thing that is in parameter of "lb" cant be word. "q" that is in parameter of "lb" is 1. "z" that is in parameter of "lb" finish parameter of "lb".
 
-"kg ba" mean "one".
+"lb qz" mean "one".
 
 c is 2. d is 3. e is 4. f is 5. g is 6. h is 7. i is 8. j is 9. k is 0.
 
-veluil use little andian so "kg bcdefgka" mean "0654321" and "654321".
+veluil use little andian so "lb qjxkvblz" mean "0654321" and "654321".
 
 we can say some number shortly.
 
-"ih" mean "zero".
+"fp" mean "zero".
 
-"lh" mean "one".
+"dp" mean "two".
 
-"nh" mean "two".
+"sp" mean "two".
 
-"ph" mean "three".
+"tp" mean "three".
 
-"jh" mean "four".
+"cp" mean "four".
 
-"kh" mean "minus one".
+"lp" mean "minus one".
 
-"mh" mean "minus two".
+"rp" mean "minus two".
 
-"oh" mean "minus three".
+"np" mean "minus three".
 
 }◀ number
 
@@ -1288,28 +1284,28 @@ we can say some number shortly.
 
 we will learn how to say "meet at 9a.m!".
 
-"mc A B" mean "thing that is B when A".
+"rj A B" mean "thing that is B when A".
 
-word "goea" mean hour. type of this word is time. this word is next word of word for minute. next word is one bit higher than before word.
+word "bnkz" mean hour. type of this word is time. this word is next word of word for minute. next word is one bit higher than before word.
 
-"foea A" mean "A minute".
+"vnkz A" mean "A minute".
 
-"goea A" mean "A hour".
+"bnkz A" mean "A hour".
 
-"nmad A" mean "thing that met A".
+"srzx A" mean "thing that met A".
 
-sentence "fa mc goea kgja nmad" mean "meet at 9a.m!".
+sentence "vz rj bnkz lbcz srzx" mean "meet at 9a.m!".
 
 </pre>
 
 <pre>
 here we will learn how to say "i am from united states of america".
 
-"ondb A" mean "thing that come from A".
+"nsxq A" mean "thing that come from A".
 
-word "aianpd" mean "united states of america". pronunciation of this word is derived from "USA" of english.
+word "zfzstx" mean "united states of america". pronunciation of this word is derived from "USA" of english.
 
-in sentence "ed ondb aianpd nb" mean "i am thing that was thing that come from united states of america".
+in sentence "kx nsxq zfzstx sq" mean "i am thing that was thing that come from united states of america".
 
 </pre>
 <details open><summary>word formation rule</summary><details open><summary>randomly made word</summary><pre>
@@ -1581,306 +1577,11 @@ gipa !r=brown.
 </pre>
 </details>
 <pre>
-}◀ slowly learn</pre>
+}◀ detail</pre>
 </details></details>
 <details open>
 </pre>
-</details>
-<details open>
- <summary>quickly learn(not finished but can be helpful. for smart)</summary>
-<pre>
-this section quickly teach so remember all that is in this section.
-
-grammar is easy so learning words is impotant so we will learn how to interpret word dictionary formular firstly.
-
-word "anga" mean "human". and in word dictionary, it is expressed as follwing.
-
-anga !r=human.
-
-this is called word dictionary formular. word dictionary formular is for efficiently explaining words. the "r" is in place for explaining word type. the "r" mean "realty" so this word type is "reality". only thing that can be in reality must be reality type word.
-
-word "nb" mean "i" and "me". it is abbreviation for "Na Bd"(this who assert). and in word dictionary, it is expressed as following.
-
-nb !r=i.//c this, assert,
-
-additional explanation is in right of the dot. you should see additional explaination to easily remember word.
-
-in this lecture, i wont use word that i didnt teach.
-
-we will learn function word here. you should know object mean noun or function. word "fc" is function that must have two object type parameter. word "fc" is abbreviation for "fa kf". "fa kf" is "thing that command to answer". and in word dictionary, it is expressed as following.
-
-fc o,o!r=thing that ask x2 about x1.//c command,answer,//e omitted B is you.
-
-the "o" is in place for explaining parameter that function must have. the "o" is abbreviation for "object" so object can be inputed in this function as parameter.
-
-the capital letter in between equal sign and dot must be changed into input value. A must be changed into first input value. B must be changed into second input value. C must be changed into third input value... "fc anga nb" mean "thing that ask me about human". "//e" is used to explain word using sentence.
-
-▶ parameter dictionary{
-
-"o" is abbreviation for object.
-
-"n" is abbreviation for number.
-
-"t" is abbreviation for time.
-
-"what" is "what" as in "what i know".
-
-ea what!r=.
-
-word "ea" return n-th parameter.
-
-lh !n=one.
-
-jd o!r=thing that imagine x1.
-
-"ea lh" return first parameter in sentence. "ea lh jd oe" return first parameter of word "jd" so it mean what i imagine. if there are no number then it automatically return first parameter. word "pa" can be used. "ea jd pa oe" mean "what i imagine".
-
-"int" is binary string that consist of integer multiple of 8 bits. for example,
-
-blea int!r=word x1.
-
-object that is inputed in this function dont have parameter.
-
-"dec" is for saying decimal number(Base-10). 4bits in parameter is one decimal number.
-
-for example,
-
-kg dec!n=.
-
-"a" finish parameter dec. "b" is 1. "c" is 2. "d" is 3. "e" is 4. "f" is 5. "g" is 6. "h" is 7. "i" is 8. "j" is 9. "k" is 0 since if "a" is "0" it cant be visible in NLQR. veluil use little andian so "fg bcdeghka" is 7654321.
-
-be c o!1p=1x1 and 2x1 and...
-
-parameter "c A" mean this word have parameter until this word met symbol that omit parameter.
-
-"be x1 x2 x3 ad" mean "x1 and x2 and x3".
-
-}◀ parameter dictionary
-
-
-
-
-▶ addiotional explanation dictionary{
-
-"//a A" mean "this word is antonym of A". The antonym form is the inversion of the original word"s bits. 0 becomes 1. 1 becomes 0. for example, antonym of 
-"oojb"(01110111,10011000) is 
-"bjgg"(10001001,01100110). "//a alive," is "//a OOJB,". 8n-th bit dont be changed since it is for explaining length of word.
-
-"//n A" mean this word is next word of A.  for example,
-
-hoea n!t=A hour.//n minute,
-
-goea n!t=A minute.//n second,
-
-the letter is increaced. g into h.
-
-"//c A, B," mean this word consist of A and B. if there are it then this word is compound word or abbreviation. for example,
-
-nd !t=now.//c this, time,
-
-this word is abbreviation for "Na Deoa"(this time).
-
-"//d A," mean this word is made in time A. 
-
-"//e A," mean explanation of this word is A.
-
-"//u A," mean form of this word is changed in time A.
-
-"//p A, B," mean pronunciation of this word similar to A in language B.
-
-"//s A, B," mean form of this word similar to word A in language B. if there are no B then the word is derived from veluil.
-
-}◀ additional explanation dictionary.
-
-
-
-
-▶ word type dictionary{
-
-"si" type word dont impact to grammar defautly. for example, line break is si type.
-
-n mean number.
-
-r mean reality.
-
-t mean time.
-
-}◀ word type dictionary
-
-
-
-
-▶ words that cant be explained by this syntax{
-
-}◀ words that cant be explained by this syntax
-
-
-
-
-▶ suffix{
-
-suffix "gp-" make word into plural. for example, "gpconb" mean tools.
-
-suffix "ep-" and suffix "lp-" can be used to mean tense but it can be used for only function.
-
-"epjd A" mean "thing that imagined A". "lpjd" mean "thing that will imagine A".
-
-suffix "jp-" mean "-tion".
-
-}◀ suffix
-
-
-
-
-▶words that is used lot{
-
-}◀words that is used lot
-
-
-
-
-▶language for memory{
-
-▶grammar{
-
-purpose of this section: making you can know structure of sentence.
-
-all sentence of veluil consist of left hand side and right hand side. 
-
-in sentence "fc anga nb nb", parameter of "fc" is full so this function cant have manier parameter so place for left hand side is done. you must remember this mechanism to recognize what is left hand side and right hand side and one sentence.
-
-}◀grammar
-
-
-
-
-▶logic{
-
-bd o,o,o!r=thing that assert that x2 is x1 to x3.
-
-we will learn how to say "i assert to you" here.
-
-bc !si=symbol that omit two parameter.
-
-if you omit two parameter in this function then you can say it. "bd bc cg" mean "thing that assert to you".
-
-▶word "db"{
-
-db n!r=x1-th right hand side.
-
-"jd db lh nb"
-
-this "db lh" return first subject. the word "nb" is in subject so.
-
-so "db lh" can mean oneself, myself, themselves, youself etc.
-
-dd !r=.//c DB, lh,
-
-"dd" is "db lb".
-
-word "db" that dont have parameter is "db nh". 
-
-}◀word "db"
-
-
-
-▶word "hb"{
-
-}◀word "hb"
-
-
-
-
-▶relative pronoun{
-
-"human that i love" is "human that is what i love".
-
-"human that love you" is "human that is thing that love you". 
-
-you can know why i say it i guess.
-
-}◀relative pronoun
-
-}◀logic
-
-
-
-
-▶frequently used sentence{
-
-}◀frequently used sentence.
-
-▶example sentence{
-
-}◀example sentence
-
-}◀language for memory
-
-
-
-
-▶how to programming using veluil{
-
-the programming language is like machine language.
-
-sentence command right hand side to be left hand side.
-
-"lh gh" mean that "gh is one" so it is how to define value.
-
-here we will learn how to make an IDE generate characters.
-
-dida o,o!r=thing that mention A to B.
-
-in sentence "dida gh bc", right hand side is omitted so this sentence command to this document.
-
-here we will learn if statement.
-
-cnjf o,o, c (o,o)!t=.//e if B is A then C is played.
-
-sentence "cnjf gh lh dida gh cc" mean "if gh is one then say value in gh".
-
-}◀how to programming using veluil
-
-
-
-
-▶word formation rule{
-
-▶ Randomly made word {
-
-The reason happens before the result, so the word "reason" was created earlier than the word "result." so word reason must have smaller bit than word result. antonym should have bigger bit than original word that is randomly made.
-
-}◀ randomly made word
-
-"sound that average human feel pleasure from" is expressed as "ae hnib mjcb kd anga". but if this word is made by 5 words then most people dont know element word or the word would be very long. important word in it is "hnib"(sound) and "mjcb"(pleasure). it is made by the two words. it is abbreviation. earlier used word must be earlier so this compound word must be compund word of "sound" + "pleasure" instead of "pleasure" + "sound".
-
-why this word is not made by word formation rule for antonym.
-
-if pronunciation of antonym similar to original word then the word is made as compound word.
-
-mjob o,n!r=thing that love x1.//c hope,profit,
-
-doob o,n!r=thing that hate x1.//c dread, profit,
-
-word for hate didnt be made by word formation rule for antonym. pronunciation of "dobg" similar to "dgbg". meaning of dgbg similar to love cuz it mean thing that dread that something become victim.
-
-}◀word formation rule
-
-
-
-
-▶how to use tool that search word{
-
-}◀how to use tool that search word
-
-
-
-
-finish.
-
-}◀quickly learn.
-
-</pre></details><details open><summary>complex sentences</summary><pre>
+</details><details open><summary>complex sentences</summary><pre>
 }◀complex sentences
 </pre>
 </details>
