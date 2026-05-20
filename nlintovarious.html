@@ -67,9 +67,10 @@
       
       let nlqr3canvas=document.createElement('canvas');
       
-      let nlmorsebutton=document.createElement('button');
       
-      let nlmorsefield=document.createElement('textarea');
+      let vmorsebutton=document.createElement('button');
+      
+      let vmorsefield=document.createElement('textarea');
       
       let nlbraillebutton=document.createElement('button');
       
@@ -128,7 +129,7 @@
       
       
       
-      title.textContent='tool that convert pmag into NL QR1, NL QR2, NL QR3, NL morse, NL braille, NL sign.';
+      title.textContent='tool that convert veluil into NLQR, NLQR2, NLQR3,  vmorse, vbraille, vsign lang.';
       
       
       
@@ -205,7 +206,7 @@
       
       adjustsizeofquietzone.min = 0;
       
-      adjustsizeofquietzone.max = 1;
+      adjustsizeofquietzone.max = 5;
       
       adjustsizeofquietzone.value = 0.2;
       
@@ -217,17 +218,25 @@
       
       
       
-      nlqr1button.textContent=`⬇ download NL QR1`;
+      nlqr1button.textContent=`⬇ download NLQR1`;
       
       nlqr1button.onclick=()=>{download('nlqr1')};
       
       
       
-      nlqr2button.textContent=`⬇ download NL QR2`;
+      nlqr2button.textContent=`⬇ download NLQR2`;
       
       nlqr2button.onclick=()=>{download('nlqr2')};
       
       
+      
+      nlqr3button.textContent=`⬇ download NLQR3`;
+      
+      nlqr3button.onclick=()=>{download('nlqr3')};
+      
+      vmorsebutton.textContent=`⬇ copy vmorse`;
+      
+      vmorsebutton.onclick=()=>{download('vmorse')};
       
       
       setsize();
@@ -322,6 +331,29 @@
             
             document.body.appendChild(nlqr2canvas);
             
+            
+            
+            
+            nlqr3button.style=`left:0px; top:${nlqr2canvas.offsetTop+nlqr2canvas.offsetHeight}px; background-color: #242f5d;border: ${smallerline/500}px solid red;padding: 3px 3px;border-radius: 4px;cursor: pointer;font-size: ${smallerline/15}px;position: absolute;`;
+            
+            document.body.appendChild(nlqr3button);
+            
+                
+            nlqr3canvas.style=`width:${smallerline}px; height:${smallerline * (nlqr3canvas.height / nlqr3canvas.width)}px;left:0px;top:${nlqr3button.offsetHeight+nlqr3button.offsetTop}px; position:absolute;border: ${height/500}px solid red;image-rendering: pixellated;image-rendering: crisp-edges;`;
+            
+            document.body.appendChild(nlqr3canvas);
+            
+            
+            vmorsebutton.style=`left:0px; top:${nlqr3canvas.offsetTop+nlqr3canvas.offsetHeight}px; background-color: #242f5d;border: ${smallerline/500}px solid red;padding: 3px 3px;border-radius: 4px;cursor: pointer;font-size: ${smallerline/15}px;position: absolute;`;
+            
+            document.body.appendChild(vmorsebutton);
+            
+                
+            vmorsefield.style=`width:${smallerline}px; height:${smallerline * (vmorsebutton.height / vmorsebutton.width)}px;left:0px;top:${vmorsebutton.offsetHeight+vmorsebutton.offsetTop}px; left:0vw; background-color: #333333;box-sizing: border-box;position: absolute;font-size:${smallerline/20}px;`;
+            
+            document.body.appendChild(vmorsefield);
+            
+            
           }
         
       }
@@ -331,31 +363,34 @@
       
       function convert(){
         
-        if(!whetherconverted){
-          window.scrollTo({
-            top: height,
-            behavior: 'smooth'
-          });
-        }
-        
-        
         let inputedtxt=completenl(textarea.value);
         
-        whetherconverted=true;
         
         setsize();
         
         
-        if(!whethernl(inputedtxt)){
-          alert('it seems not nl sentence plz input letter correctly');
+        if(whethernl(inputedtxt)){
+         if(!whetherconverted){
+          window.scrollTo({
+            top: height,
+            behavior: 'smooth'
+          });
+         }
+        }else{
+         alert('it seems not nl sentence plz input letter correctly');
           return false;
         }
+        whetherconverted=true;
         
         convertedtxt=convertintobinary(inputedtxt);
         
         makenlqr1(convertedtxt);
         
         makenlqr2(convertedtxt);
+        
+        makenlqr3(convertedtxt);
+        
+        makevmorse(convertedtxt);
         
         setsize()
         
@@ -365,7 +400,7 @@
       
       
       function whethernl(p){
-        if(/^[01a-p]/.test(p)&&convertintobinary(p).length%8==0){
+        if(/^[zqjxkvbpfcldrsnt]+$/.test(p)&&convertintobinary(p).length%8==0){
           return true;
         }else{
           return false;
@@ -376,22 +411,22 @@
       
       
       function convertintobinary(p) {
-          return p.replace(/a/g, '0000')
-            .replace(/b/g, '1000')
-            .replace(/c/g, '0100')
-            .replace(/d/g, '1100')
-            .replace(/e/g, '0010')
-            .replace(/f/g, '1010')
-            .replace(/g/g, '0110')
-            .replace(/h/g, '1110')
-            .replace(/i/g, '0001')
-            .replace(/j/g, '1001')
-            .replace(/k/g, '0101')
-            .replace(/l/g, '1101')
-            .replace(/m/g, '0011')
-            .replace(/n/g, '1011')
-            .replace(/o/g, '0111').
-            replace(/p/g, '1111');
+          return p.replace(/z/g, '0000')
+            .replace(/q/g, '1000')
+            .replace(/j/g, '0100')
+            .replace(/x/g, '1100')
+            .replace(/k/g, '0010')
+            .replace(/v/g, '1010')
+            .replace(/b/g, '0110')
+            .replace(/p/g, '1110')
+            .replace(/f/g, '0001')
+            .replace(/c/g, '1001')
+            .replace(/l/g, '0101')
+            .replace(/d/g, '1101')
+            .replace(/r/g, '0011')
+            .replace(/s/g, '1011')
+            .replace(/n/g, '0111').
+            replace(/t/g, '1111');
       }
       
       function convertintoletter(p){
@@ -568,6 +603,125 @@
         
       }
       
+      function makenlqr3(p){
+       let nlqr3ctx=nlqr3canvas.getContext('2d');
+        
+        
+       if(whethercomfortablyreadnlqr2){
+          
+          if(nlqr2length>8){
+            nlqr3txt='10111'+'0'.repeat(nlqr2length-7)+'11' +p;
+            
+          }else{
+            nlqr3txt='10100001'+p;
+          }
+        }else{
+          if(nlqr2length>8){
+            nlqr3txt='1011'+"0".repeat(nlqr2length-6)+'11'+p;
+          }else{
+            nlqr3txt='10000011'+p;
+          }
+          
+        }
+        
+        
+        let shortercellnlqr3;
+        
+        if(Math.ceil(nlqr3txt.length/nlqr2length/3)>nlqr2length){
+          shortercellnlqr3=nlqr2length;
+        }else{
+          shortercellnlqr3=Math.ceil(nlqr3txt.length/nlqr2length/3);
+        }
+        
+        let shellsize=shellratio * cellsize * shortercellnlqr3;
+        
+        
+        nlqr3canvas.width=Math.ceil(Math.ceil(nlqr3txt.length/nlqr2length/3)*cellsize + (shortercellnlqr3 * cellsize * shellratio * 2));
+        
+        nlqr3canvas.height=nlqr2length * cellsize + shellsize * 2;
+        
+        let nlqr3smallerline;
+        
+        if(nlqr3canvas.width>nlqr3canvas.height){
+          nlqr3smallerline=parseInt(nlqr3canvas.height);
+        }else{
+          nlqr3smallerline=parseInt(nlqr3canvas.width);
+        }
+        
+        
+        nlqr3ctx.clearRect(0,0,nlqr3canvas.width, nlqr3canvas.height);
+        
+        if(whetherfillbackground){
+          if(whetherinversecolor){
+            nlqr3ctx.fillStyle='#ffffff';
+            nlqr3ctx.fillRect(0,0,nlqr2canvas.width,nlqr2canvas.height);
+          }else{
+            nlqr3ctx.fillStyle='#000000';
+            nlqr3ctx.fillRect(0,0,nlqr3canvas.width,nlqr3canvas.height);
+          }
+        }
+        
+        let mapofnlqr3=new Array()
+        
+        for(let i=0;i<nlqr3txt.length;i++){
+         
+        }
+        
+        for(let i=0;i<nlqr3txt.length;i++){
+         
+         nlqr3ctx.globalCompositeOperation = 'screen';
+          
+          if(nlqr3txt[i]=='1'){
+           
+           switch(parseInt(i/8) % 3){
+            case 0:
+             nlqr3ctx.fillStyle = 'rgb(255, 0, 0)'
+             break;
+             case 1:
+              nlqr3ctx.fillStyle = 'rgb(0, 255, 0)'
+             break;
+             case 2:
+              nlqr3ctx.fillStyle = 'rgb(0, 0, 255)'
+             break;
+           }
+            
+            
+            nlqr3ctx.fillRect(shellsize + Math.floor(i / nlqr2length / 3) * cellsize, nlqr3canvas.height - shellsize - ((i%nlqr2length) * cellsize) - cellsize, cellsize, cellsize);
+            
+          }
+        }
+      }
+      
+      function makevbraille(p){
+       
+      }
+      function makevmorse(p){
+       let vmorsevalue="";
+       let arrvmorsevalue=new Array();
+       let beforei=0;
+       for(let i=0;i<convertedtxt.length;i++){
+        if((i+1)%8==0&&i!="0"){
+         if(convertedtxt[i] == "0"){
+          
+          arrvmorsevalue.push(vmorsevalue.replace(/\.+$/, "") + "/")
+          
+          vmorsevalue=""
+         }
+        }else{
+         if(convertedtxt[i]=="0"){
+          vmorsevalue += "."
+         }else{
+          vmorsevalue += "-"
+         }
+        }
+       }
+       
+       vmorsefield.value = arrvmorsevalue.join("").replace(/\/+$/, "")
+      }
+      function makevsignlang(p){
+       
+      }
+      
       function download(p){
         let imageurl='';
         
@@ -603,6 +757,29 @@
           
           
             
+          break;
+          
+          case 'nlqr3':
+            
+            
+            imageurl = nlqr2canvas.toDataURL('image/png');
+            
+            link = document.createElement('a');
+            
+            link.href=imageurl;
+            link.download='3'+convertintoletter(convertedtxt)+'.png';
+            document.body.appendChild(link)
+            link.click();
+            document.body.removeChild(link)
+          
+          
+            
+          break;
+          
+          case "vmorse":
+           
+           navigator.clipboard.writeText(vmorsefield.value)
+           
           break;
           
         }
