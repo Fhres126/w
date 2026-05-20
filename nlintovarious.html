@@ -430,18 +430,15 @@
       }
       
       function convertintoletter(p){
-        let resultletter = '';
-    
-        for(let i = 0; i < p.length; i += 4){
-          let j = 0;
-          if(p[i]   === '1') j += 1;
-          if(p[i+1] === '1') j += 2;
-          if(p[i+2] === '1') j += 4;
-          if(p[i+3] === '1') j += 8;
-      
-          resultletter += String.fromCharCode(97 + j);
-        }
-        return resultletter;
+       const binaryMap = {
+         '0000': 'z', '1000': 'q', '0100': 'j', '1100': 'x',
+         '0010': 'k', '1010': 'v', '0110': 'b', '1110': 'p',
+         '0001': 'f', '1001': 'c', '0101': 'l', '1101': 'd',
+         '0011': 'r', '1011': 's', '0111': 'n', '1111': 't'
+       };
+     
+     
+       return p.replace(/[01]{4}/g, (match) => binaryMap[match] || match);
       }
       
       function makenlqr1(p){
@@ -651,22 +648,6 @@
         
         nlqr3ctx.clearRect(0,0,nlqr3canvas.width, nlqr3canvas.height);
         
-        if(whetherfillbackground){
-          if(whetherinversecolor){
-            nlqr3ctx.fillStyle='#ffffff';
-            nlqr3ctx.fillRect(0,0,nlqr2canvas.width,nlqr2canvas.height);
-          }else{
-            nlqr3ctx.fillStyle='#000000';
-            nlqr3ctx.fillRect(0,0,nlqr3canvas.width,nlqr3canvas.height);
-          }
-        }
-        
-        let mapofnlqr3=new Array()
-        
-        for(let i=0;i<nlqr3txt.length;i++){
-         
-        }
-        
         for(let i=0;i<nlqr3txt.length;i++){
          
          nlqr3ctx.globalCompositeOperation = 'screen';
@@ -689,6 +670,15 @@
             nlqr3ctx.fillRect(shellsize + Math.floor(i / nlqr2length / 3) * cellsize, nlqr3canvas.height - shellsize - ((i%nlqr2length) * cellsize) - cellsize, cellsize, cellsize);
             
           }
+        }
+        nlqr3ctx.globalCompositeOperation = 'destination-over';
+        if(whetherfillbackground){
+         if(whetherinversecolor){
+          nlqr3ctx.fillStyle="#ffffff"
+         }else{
+          nlqr3ctx.fillStyle="#000000"
+         }
+         nlqr3ctx.fillRect(0,0,nlqr3canvas.width, nlqr3canvas.height)
         }
       }
       
@@ -714,6 +704,12 @@
           vmorsevalue += "-"
          }
         }
+       }
+       
+       if(vmorsevalue==undefined){
+        
+       }else{
+        arrvmorsevalue.push(vmorsevalue)
        }
        
        vmorsefield.value = arrvmorsevalue.join("").replace(/\/+$/, "")
@@ -762,7 +758,7 @@
           case 'nlqr3':
             
             
-            imageurl = nlqr2canvas.toDataURL('image/png');
+            imageurl = nlqr3canvas.toDataURL('image/png');
             
             link = document.createElement('a');
             
