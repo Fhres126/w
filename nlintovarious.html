@@ -674,8 +674,11 @@
         nlqr3ctx.globalCompositeOperation = 'destination-over';
         if(whetherfillbackground){
          if(whetherinversecolor){
+          nlqr3ctx.fillStyle="#000000"
+          nlqr3ctx.fillRect(shellsize,shellsize,nlqr3canvas.width-2*shellsize, nlqr3canvas.height-2*shellsize);
           nlqr3ctx.fillStyle="#ffffff"
          }else{
+          
           nlqr3ctx.fillStyle="#000000"
          }
          nlqr3ctx.fillRect(0,0,nlqr3canvas.width, nlqr3canvas.height)
