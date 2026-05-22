@@ -633,6 +633,28 @@
         let shellsize=shellratio * cellsize * shortercellnlqr3;
         
         
+        let mapnlqr3=new Array(Math.ceil(nlqr3txt.length / 3) * 8);
+        
+        mapnlqr3.fill("")
+        
+        for(let i=0;i<nlqr3txt.length;i++){
+         if(Math.floor(i/8)%3==0){
+          if(nlqr3txt[i]=="1"){
+           mapnlqr3[(Math.floor(i/24)*8)+i%8] += "r"
+          }
+         }
+         if(Math.floor(i/8)%3==1){
+           if(nlqr3txt[i]=="1"){
+           mapnlqr3[(Math.floor(i/24)*8)+i%8] += "g"
+          }
+         }
+         if(Math.floor(i/8)%3==2){
+          if(nlqr3txt[i]=="1"){
+           mapnlqr3[(Math.floor(i/24)*8)+i%8] += "b"
+          }
+         }
+        }
+        
         nlqr3canvas.width=Math.ceil(Math.ceil(nlqr3txt.length/nlqr2length/3)*cellsize + (shortercellnlqr3 * cellsize * shellratio * 2));
         
         nlqr3canvas.height=nlqr2length * cellsize + shellsize * 2;
@@ -648,29 +670,53 @@
         
         nlqr3ctx.clearRect(0,0,nlqr3canvas.width, nlqr3canvas.height);
         
-        for(let i=0;i<nlqr3txt.length;i++){
+        
+        for(let i=0;i<mapnlqr3.length;i++){
+         let whetherred=0;
+         let whethergreen=0;
+         let whetherblue=0;
+         if(mapnlqr3[i].includes("r")){
+          whetherred = 1;
+         }
+         if(mapnlqr3[i].includes("g")){
+          whethergreen = 1;
+         }
+         if(mapnlqr3[i].includes("b")){
+          whetherblue = 1;
+         }
          
-         nlqr3ctx.globalCompositeOperation = 'screen';
-          
-          if(nlqr3txt[i]=='1'){
-           
-           switch(parseInt(i/8) % 3){
-            case 0:
-             nlqr3ctx.fillStyle = 'rgb(255, 0, 0)'
-             break;
-             case 1:
-              nlqr3ctx.fillStyle = 'rgb(0, 255, 0)'
-             break;
-             case 2:
-              nlqr3ctx.fillStyle = 'rgb(0, 0, 255)'
-             break;
+         nlqr3ctx.fillStyle = `rgb(${whetherred * 255}, ${whethergreen * 255}, ${whetherblue * 255})`
+         
+         let whetherdontfill=false;
+         
+         if(whetherfillbackground){
+           if(whetherred==0&&whethergreen==0&&whetherblue==0){
+            if(whetherinversecolor){
+             nlqr3ctx.fillStyle="#ffffff"
+            }else{
+             nlqr3ctx.fillStyle="#000000"
+            }
+           }else if(whetherred==1&&whethergreen==1&&whetherblue==1){
+            if(whetherinversecolor){
+             nlqr3ctx.fillStyle="#000000"
+            }else{
+             nlqr3ctx.fillStyle="#ffffff"
+            }
            }
-            
-            
-            nlqr3ctx.fillRect(shellsize + Math.floor(i / nlqr2length / 3) * cellsize, nlqr3canvas.height - shellsize - ((i%nlqr2length) * cellsize) - cellsize, cellsize, cellsize);
-            
+          }else if(whetherred==0&&whethergreen==0&&whetherblue==0){
+           whetherdontfill=true;
           }
+          
+          if(whetherdontfill){
+           
+          }else{
+           nlqr3ctx.fillRect(shellsize + Math.floor(i / nlqr2length) * cellsize, nlqr3canvas.height - shellsize - ((i%nlqr2length) * cellsize) - cellsize, cellsize, cellsize);
+          }
+          
         }
+        
+        
+        
         nlqr3ctx.globalCompositeOperation = 'destination-over';
         if(whetherfillbackground){
          if(whetherinversecolor){
