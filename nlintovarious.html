@@ -72,6 +72,10 @@
       
       let vmorsefield=document.createElement('textarea');
       
+      let efficientscripthighbutton=document.createElement('button');
+      
+      let efficientscripthighcanvas=document.createElement("canvas");
+      
       let nlbraillebutton=document.createElement('button');
       
       let nlbraillecanvas=document.createElement('canvas');
@@ -124,7 +128,11 @@
         
       }
       
+      let efficientscripthigh = new Image();
+        
+      efficientscripthigh.src = 'https://raw.githubusercontent.com/Fhres126/w/main/efficientscriptforauto.png';
       
+      efficientscripthigh.crossOrigin = 'Anonymous'
       
       
       
@@ -238,6 +246,10 @@
       
       vmorsebutton.onclick=()=>{download('vmorse')};
       
+      
+      efficientscripthighbutton.textContent=`⬇ download efficient script`;
+      
+      efficientscripthighbutton.onclick=()=>{download('efficientscripthigh')};
       
       setsize();
       
@@ -354,6 +366,18 @@
             document.body.appendChild(vmorsefield);
             
             
+            
+            efficientscripthighbutton.style=`left:0px; top:${vmorsefield.offsetTop+vmorsefield.offsetHeight}px; background-color: #242f5d;border: ${smallerline/500}px solid red;padding: 3px 3px;border-radius: 4px;cursor: pointer;font-size: ${smallerline/15}px;position: absolute;`;
+            
+            document.body.appendChild(efficientscripthighbutton);
+            
+                
+            efficientscripthighcanvas.style=`width:${smallerline}px; left:0px;top:${efficientscripthighbutton.offsetHeight+efficientscripthighbutton.offsetTop}px;height:${(2 * smallerline/(convertedtxt.length / 4))}px; position:absolute;border: ${height/500}px solid red;image-rendering: pixellated;image-rendering: crisp-edges;`;
+            
+            
+            document.body.appendChild(efficientscripthighcanvas);
+            
+            
           }
         
       }
@@ -391,6 +415,8 @@
         makenlqr3(convertedtxt);
         
         makevmorse(convertedtxt);
+        
+        makeefficientscripthigh(convertedtxt)
         
         setsize()
         
@@ -731,6 +757,78 @@
         }
       }
       
+      function makeefficientscripthigh(p){
+       let efficientscripthighctx=efficientscripthighcanvas.getContext('2d');
+       
+      let orderefficientscript;
+       
+       efficientscripthighcanvas.style.height = `${(2*smallerline/(convertedtxt.length / 4))}px`
+        
+        efficientscripthighcanvas.width=20*Math.ceil(convertedtxt.length/4);
+        
+        efficientscripthighcanvas.height=40;
+        
+        
+        for(let i=0; i<Math.ceil(convertedtxt.length/4); i++){
+         switch(convertedtxt.substring(i*4,i*4+4)){
+          case "0000":
+           orderefficientscript=0;
+          break;
+          case "1000":
+           orderefficientscript=1;
+          break;
+          case "0100":
+           orderefficientscript=2;
+          break;
+          case "1100":
+           orderefficientscript=3;
+          break;
+          case "0010":
+           orderefficientscript=4;
+          break;
+          case "1010":
+           orderefficientscript=5;
+          break;
+          case "0110":
+           orderefficientscript=6;
+          break;
+          case "1110":
+           orderefficientscript=7;
+          break;
+          case "0001":
+           orderefficientscript=8;
+          break;
+          case "1001":
+           orderefficientscript=9;
+          break;
+          case "0101":
+           orderefficientscript=10;
+          break;
+          case "1101":
+           orderefficientscript=11;
+          break;
+          case "0011":
+           orderefficientscript=12;
+          break;
+          case "1011":
+           orderefficientscript=13;
+          break;
+          case "0111":
+           orderefficientscript=14;
+          break;
+          case "1111":
+           orderefficientscript=15;
+          break;
+         }
+         efficientscripthighctx.drawImage(efficientscripthigh, orderefficientscript * 20, 0, 20, 40, i*20, 0, 20, 40)
+         
+        }
+        
+        
+        
+        
+      }
+      
       function makevbraille(p){
        
       }
@@ -826,6 +924,24 @@
            navigator.clipboard.writeText(vmorsefield.value)
            
           break;
+          
+          case 'efficientscripthigh':
+            
+            
+            imageurl = efficientscripthighcanvas.toDataURL('image/png');
+            
+            link = document.createElement('a');
+            
+            link.href=imageurl;
+            link.download='h'+convertintoletter(convertedtxt)+'.png';
+            document.body.appendChild(link)
+            link.click();
+            document.body.removeChild(link)
+          
+          
+            
+          break;
+          
           
         }
         
