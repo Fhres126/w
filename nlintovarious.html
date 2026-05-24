@@ -76,9 +76,9 @@
       
       let efficientscripthighcanvas=document.createElement("canvas");
       
-      let nlbraillebutton=document.createElement('button');
+      let vbraillebutton=document.createElement('button');
       
-      let nlbraillecanvas=document.createElement('canvas');
+      let vbraillecanvas=document.createElement('canvas');
       
       let cellsize=10;
       
@@ -134,6 +134,11 @@
       
       efficientscripthigh.crossOrigin = 'Anonymous'
       
+      let vbraille = new Image();
+        
+      vbraille.src = 'https://raw.githubusercontent.com/Fhres126/w/main/vbrailleforauto.png';
+      
+      vbraille.crossOrigin = 'Anonymous'
       
       
       
@@ -250,6 +255,10 @@
       efficientscripthighbutton.textContent=`⬇ download efficient script`;
       
       efficientscripthighbutton.onclick=()=>{download('efficientscripthigh')};
+      
+      vbraillebutton.textContent=`⬇ download vbraille`;
+      
+      vbraillebutton.onclick=()=>{download('vbraille')};
       
       setsize();
       
@@ -377,6 +386,16 @@
             
             document.body.appendChild(efficientscripthighcanvas);
             
+            vbraillebutton.style=`left:0px; top:${efficientscripthighcanvas.offsetTop+efficientscripthighcanvas.offsetHeight}px; background-color: #242f5d;border: ${smallerline/500}px solid red;padding: 3px 3px;border-radius: 4px;cursor: pointer;font-size: ${smallerline/15}px;position: absolute;`;
+            
+            document.body.appendChild(vbraillebutton);
+            
+                
+            vbraillecanvas.style=`width:${smallerline}px; left:0px;top:${vbraillebutton.offsetHeight+vbraillebutton.offsetTop}px;height:${((3/2) * smallerline/(convertedtxt.length / 4))}px; position:absolute;border: ${height/500}px solid red;image-rendering: pixellated;image-rendering: crisp-edges;`;
+            
+            
+            document.body.appendChild(vbraillecanvas);
+            
             
           }
         
@@ -417,6 +436,8 @@
         makevmorse(convertedtxt);
         
         makeefficientscripthigh(convertedtxt)
+        
+        makevbraille(convertedtxt);
         
         setsize()
         
@@ -830,8 +851,73 @@
       }
       
       function makevbraille(p){
+       let vbraillectx=vbraillecanvas.getContext('2d');
        
+        let ordervbraille;
+        
+        efficientscripthighcanvas.style.height = `${((3/2)*smallerline/(convertedtxt.length / 4))}px`
+       
+        vbraillecanvas.width=14*Math.ceil(convertedtxt.length/4);
+        
+        vbraillecanvas.height=21;
+        
+        
+        for(let i=0; i<Math.ceil(convertedtxt.length/4); i++){
+         switch(convertedtxt.substring(i*4,i*4+4)){
+          case "0000":
+           ordervbraille=0;
+          break;
+          case "1000":
+           ordervbraille=1;
+          break;
+          case "0100":
+           ordervbraille=2;
+          break;
+          case "1100":
+           ordervbraille=3;
+          break;
+          case "0010":
+           ordervbraille=4;
+          break;
+          case "1010":
+           ordervbraille=5;
+          break;
+          case "0110":
+           ordervbraille=6;
+          break;
+          case "1110":
+           ordervbraille=7;
+          break;
+          case "0001":
+           ordervbraille=8;
+          break;
+          case "1001":
+           ordervbraille=9;
+          break;
+          case "0101":
+           ordervbraille=10;
+          break;
+          case "1101":
+           ordervbraille=11;
+          break;
+          case "0011":
+           ordervbraille=12;
+          break;
+          case "1011":
+           ordervbraille=13;
+          break;
+          case "0111":
+           ordervbraille=14;
+          break;
+          case "1111":
+           ordervbraille=15;
+          break;
+         }
+         vbraillectx.drawImage(vbraille, ordervbraille * 14, 0, 14, 21, i*14, 0, 14, 21)
+        }
+         
       }
+      
       function makevmorse(p){
        let vmorsevalue="";
        let arrvmorsevalue=new Array();
@@ -933,7 +1019,7 @@
             link = document.createElement('a');
             
             link.href=imageurl;
-            link.download='h'+convertintoletter(convertedtxt)+'.png';
+            link.download='H_'+convertintoletter(convertedtxt)+'.png';
             document.body.appendChild(link)
             link.click();
             document.body.removeChild(link)
@@ -941,6 +1027,24 @@
           
             
           break;
+          
+          case 'vbraille':
+            
+            
+            imageurl = vbraillecanvas.toDataURL('image/png');
+            
+            link = document.createElement('a');
+            
+            link.href=imageurl;
+            link.download='B_'+convertintoletter(convertedtxt)+'.png';
+            document.body.appendChild(link)
+            link.click();
+            document.body.removeChild(link)
+          
+          
+            
+          break;
+          
           
           
         }
