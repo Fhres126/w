@@ -40,9 +40,11 @@
      -webkit-text-stroke-color:#444444;
       
     }
+    *{
+     overflow-wrap: break-word;
+    }
     pre{
       white-space: pre-wrap;
-      word-break: break-word;
       max-width: 100vw;
       overflow-wrap: anywhere;
      }
@@ -57,7 +59,9 @@
       color:#FFFF00;
     }
     input[type="range"] {
+     
      height: calc(var(--s) / 24);
+     cursor: pointer;
     }
     .setcolor{
       width:calc(var(--s) / 24);
@@ -74,7 +78,7 @@
       padding: 4px 8px;
     }
     button{
-     font-size: var(--fontsize);
+     
       position: fixed;
       background-color: #000;
       color: #ffff00;
@@ -148,14 +152,14 @@
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');"></button>
 
 
-<input id = 'bar_size' type="range" min="0.005" max="0.2" step="0.005" value="0.04"
-oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value) + 'px')">
+<input id = 'bar_size' type="range" min="0.005" max="0.1" step="0.005" value="0.04"
+oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value) + 'px'); set_();">
 
 <button id="go_random" onclick="go_random()">go random</button></button>
 
 <button id="turn_autoscroll" onclick="turn_autoscroll()">auto scroll</button></button>
 
-<input id = 'scale_of_scroll' type="range" min="0.03" max="0.15" step="0.005" value="0.06"
+<input id = 'scale_of_scroll' type="range" min="0.005" max="0.5" step="0.005" value="0.06"
 oninput="speed_of_auto_scroll=this.value;">
 
 <!-- <button id="toggle-btn">open all sections</button> -->
@@ -209,11 +213,14 @@ oninput="speed_of_auto_scroll=this.value;">
    function turn_autoscroll() {
     if (!autoscroll) {
      autoscroll = setInterval(() => {
-      let scale_of_scroll = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fontsize')) * speed_of_auto_scroll;
-      quantity_of_autoscroll += scale_of_scroll;
+      if(quantitypressed==0){
+       let scale_of_scroll = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fontsize')) * speed_of_auto_scroll;
+       quantity_of_autoscroll += scale_of_scroll;
+      
       if (quantity_of_autoscroll > 1) {
           window.scrollBy(0, quantity_of_autoscroll);
           quantity_of_autoscroll = 0;
+      }
       }
      }, 50);
     } 
@@ -223,35 +230,31 @@ oninput="speed_of_auto_scroll=this.value;">
     }
    }
    
+   let isPressed=false;
+   
+   let quantitypressed=0;
+   
+   window.addEventListener('pointerdown', (e) => {
+    quantitypressed=e.buttons;
+   });
+   
+   window.addEventListener('pointermove', (e) => {
+    quantitypressed=e.buttons;
+   });
+   
+   window.addEventListener('pointercancel', (e) => {
+    quantitypressed=e.buttons;
+   });
+   
+   window.addEventListener('pointerup', (e) => {
+    quantitypressed=e.buttons;
+   });
    
    
    
    
-   
-   
-   
-   
-   
-   
-    window.addEventListener('DOMContentLoaded', () => {
-     
-     const btn = document.getElementById('toggle-btn');
-     const details = document.querySelectorAll('details');
-     
-    /*btn.addEventListener('click', () => {
-    let isAnyOpen = Array.from(details).some(detail => detail.open);
-
-    if (isAnyOpen) {
-      details.forEach(detail => detail.open = false);
-      btn.textContent = 'open all sections';
-    } else {
-      details.forEach(detail => detail.open = true);
-      btn.textContent = 'close all sections';
-    }
-     
-    });*/
-     
-     document.getElementById("button_gradient").style.left=getComputedStyle(document.body).marginLeft;
+   function set_(){
+    document.getElementById("button_gradient").style.left=getComputedStyle(document.body).marginLeft;
     
     document.getElementById("button_rainbow").style.left=parseFloat(getComputedStyle(document.getElementById("button_gradient")).left) + parseFloat(document.getElementById("button_gradient").offsetWidth) + "px"
     
@@ -285,11 +288,60 @@ oninput="speed_of_auto_scroll=this.value;">
      
      document.getElementById("go_random").style.left= parseFloat(document.getElementById("scale_of_scroll").offsetLeft) + parseFloat(document.getElementById("scale_of_scroll").offsetWidth) + "px";
     }
-    turn_autoscroll()
+    
+   }
+   
+   document.querySelectorAll('button').forEach((e) => {
+    e.style.fontSize=getComputedStyle(document.documentElement).getPropertyValue('--fontsize');
+   });
+   
+   
+   
+   
+    window.addEventListener('DOMContentLoaded', () => {
+     
+     const btn = document.getElementById('toggle-btn');
+     const details = document.querySelectorAll('details');
+     
+    /*btn.addEventListener('click', () => {
+    let isAnyOpen = Array.from(details).some(detail => detail.open);
+
+    if (isAnyOpen) {
+      details.forEach(detail => detail.open = false);
+      btn.textContent = 'open all sections';
+    } else {
+      details.forEach(detail => detail.open = true);
+      btn.textContent = 'close all sections';
+    }
+     
+    });*/
+     
+    set_();
+    turn_autoscroll();
+    document.querySelectorAll('pre').forEach((e) => {
+     e.addEventListener("click", ()=>{
+      window.speechSynthesis.cancel();
+      const textToRead = e.innerText.trim();
+          
+      if (textToRead.length > 0) {
+       const utterance = new SpeechSynthesisUtterance(textToRead);
+          
+        utterance.lang = "en-US";
+          
+        utterance.volume=1;
+          
+        utterance.rate = 1.35;
+
+        window.speechSynthesis.speak(utterance);
+      }
+     })
+    });
    });
    
    
    try{
+   
+    
     window.addEventListener("click", () => {
         
         if (!isStarted){
@@ -470,9 +522,9 @@ kfpx mean beryllium(Atomic number 4))
 so it help technology grow cuz it make science easy.
 
 Words used in similar situations or words with similar meanings are made of similar letters.
-eg mjob mean love.
-mjib mean like.
-mjcb mean pleasure so you can easily guess the meaning of abbreviation you see for the first time.
+eg rcnq mean love.
+rcfq mean like.
+rcjq mean pleasure so you can easily guess the meaning of abbreviation you see for the first time.
 
 lot of antonym is made by word formation rule for antonym.
 
@@ -484,7 +536,7 @@ veluil doesn"t have exceptions.
 
 veluil dont have homonyms and synonyms.
 
-part of speech of veluil is only three.
+part of speech of veluil is fewer than other language.
 
 if you learn a little grammar, then you can explain every meaning, regardless of your native language.
 grammar is simplest and consistent by using  prefix notation so veluil can be used in programming without change of grammar.
@@ -611,8 +663,10 @@ telegram: https://t.me/+PLg57eWiUEU3Nzg1
 <details open>
  <summary>why i made veluil</summary>
 <pre>
+ 
+ Ordinary language could not express high-level concepts clearly or properly.
 
-Language is important because it is main thing that makes humans superior. language must not be inferior, and it must not hinder science, scholarship, or other fields. i made veluil using this thought.
+language must not hinder science, scholarship, or other fields.
 
 }◀ why i made veluil
 
@@ -717,14 +771,6 @@ r = /tɕ/, /am/. s = /t͈ɕ/, /ɛm/. n = /t͡ʃ/, /im/.  t: /s/, /wɛ/.
 
 learning pronunciation by sound: https://youtu.be/aozFBjJmpJE?si=WfnbWboPwXzT_3kj
 
-pronunciation of odd numbered letter as english:
-
-//a is m as in mom. b is b as in ball. c is d as in doctor. e is n as in no. f is l as in lable. j is p as in pineapple. k is t as in top. m is j as in job. o is ch as in china.
-
-pronunciation of even numbered letter as english:
-
-//a is oo as in loop. b is o as in go. c is u as in pronunciation. d is silent vowel like vowel of t. e is a as in nah. f is e as in gender. g is i as in pin. h is u as in fuck. i is pronunciation of odd numbered a + m. j is pronunciation of odd numbered o + m.
-
 </pre><details open><summary>read it if you dislike this pronunciation</summary><pre>
 veluil must have 16 initial consonant cuz it pronunce binary. initial consonant that is easy to distinguish in world is 19.
 
@@ -772,7 +818,7 @@ word "sq" mean "i" and "me". it is abbreviation for "Sz Qx"(this who assert).
 
 in this lecture, i wont use word that i didnt teach.
 
-sentence "zsbz" mean "i am human". the word "zsbz" is in left hand side. the word "sq" is in right hand side. if you didnt speak right hand side then right hand side automatically be "i". so just speaking "zsbz" as sentence is enough to assert "i am human". we use word "i" lot so this mechanism increace efficiency of language. if you didnt write right hand side then right hand side automatically be "this" so building that is labeled "restaurant" means that "this is a restaurant". if you use whitespace then even numbered letter a can be omitted. for example "jsb sq" mean "zsbz sq". veluil's all message is like " ~ is ~ ".
+sentence "zsbz sq" mean "i am human". the word "zsbz" is in left hand side. the word "sq" is in right hand side. if you didnt speak right hand side then it is phrase. if you use whitespace then even numbered letter z can be omitted. for example "jsb sq" mean "zsbz sq". veluil's all message is like " ~ is ~ ".
 
 here we will learn word that must have parameter. word that must have parameter is called function. word "vj" must have two parameter. "vj A B" mean "thing that ask B about A" so "vj zsbz sq" mean "thing that ask me about human".
 
@@ -788,7 +834,7 @@ word for you is antonym of me. this word is made by word formation rule for anto
 
 in "vj zv qdbz jb", "zv qdbz jb" is in first parameter of "vj" cuz "zv qdbz jb" is one thing. sentnece "vj zv qdbz jb" mean "i am thing that ask you about name of you" as well as "i ask you about name of you" as well as "what is your name?".
 
-"lv A B" mean "thing that answet A to B". you can use word "lv" to answer. word "lv" is antonym of word "vj".
+"lv A B" mean "thing that answer B by saying A". you can use word "lv" to answer. word "lv" is antonym of word "vj".
 
 sentence "lv qfjj" mean "i am thing that answer qfjj to you" as well as "i reply you to qfjj" as well as "it is qfjj".
 
@@ -806,7 +852,7 @@ here we will learn how to say hello. "ndbz A" mean "thing that greet A". meaning
 
 here we will learn how to say bye. word qccp is antonym of word for greet. sentence "qccp" mean bye.
 
-here we will learn how to say "do you have water?". "bnxz" mean "water". form of word "bnxz" similar to word for liquid by having similar meaning. word for liquid is "bnqz". "cz A B" mean "whether B is A". "ke A" mean "thing that have A". word "ke" is antonym of word "vx". "vx A" mean "element of A". "lk bnxz" mean "thing that have water" so "cz lk bnxz A" mean "whether A is thing that have water" so "vj cz lk bnxz A B" mean "thing that ask B about whether A is thing that have water".
+here we will learn how to say "do you have water?". "bnxz" mean "water". form of word "bnxz" similar to word for liquid by having similar meaning. word for liquid is "bnqz". "cz A B" mean "whether B is A". "lk A" mean "thing that have A". word "lk" is antonym of word "vx". "vx A" mean "element of A". "lk bnxz" mean "thing that have water" so "cz lk bnxz A" mean "whether A is thing that have water" so "vj cz lk bnxz A B" mean "thing that ask B about whether A is thing that have water".
 
 veluil dont have phrase.
 
@@ -1308,7 +1354,15 @@ word "zfzstx" mean "united states of america". pronunciation of this word is der
 in sentence "kx nsxq zfzstx sq" mean "i am thing that was thing that come from united states of america".
 
 </pre>
-<details open><summary>word formation rule</summary><details open><summary>randomly made word</summary><pre>
+<details open><summary>word formation rule</summary>
+
+<pre>
+if you wanna make word using word A and word B.
+if A is noun and B is function.
+if the order is not important then B must be in after of A.
+</pre>
+
+<details open><summary>randomly made word</summary><pre>
 
 if there are antonym of new word then the bit of new word must be smaller than the antonym. for example,
 
