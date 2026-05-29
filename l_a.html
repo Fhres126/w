@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+ <meta charset="UTF-8">
+ 
+     <title>introducing saqmi</title>
+     
+ <style>
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap');
+  
+    :root {
+      --s: 0px;
+    }
+    html{
+     font-size: var(--fontsize);
+    }
+    body{
+     line-height: 1.5; 
+     letter-spacing: 0.1;
+     background-color: #000000;
+     margin:calc(var(--s)*0.1);
+       
+     webkit-text-stroke: 0.02rem;
+     -webkit-text-stroke-color:#444444;
+      
+    }
+    *{
+     overflow-wrap: break-word;
+    }
+    pre{
+      white-space: pre-wrap;
+      max-width: 100vw;
+      overflow-wrap: anywhere;
+     }
+    img{
+      width: clamp(var(--s) / 5, var(--fontsize) * 8, var(--s) * 2 / 3);
+      height:auto;
+    }
+    pre, summary, p, span {
+      
+      font-size: var(--fontsize);!important
+      animation: rainbow 3s linear infinite;
+      color:#FFFF00;
+    }
+    input[type="range"] {
+     
+     height: calc(var(--s) / 24);
+     cursor: pointer;
+    }
+    .setcolor{
+      width:calc(var(--s) / 24);
+      height: calc(var(--s) / 24);
+    }
+    .bar_size{
+     width:calc(var(--s) / 2)px;
+    }
+    .freewidthbutton{
+      background-color: black;
+      border: 2px solid blue;
+      color: white;
+      display: inline-block;
+      padding: 4px 8px;
+    }
+    button{
+     
+      position: fixed;
+      background-color: #000;
+      color: #ffff00;
+      top:0px;
+      border: 1px solid #888800;
+      font-weight: 1000;
+    }
+    summary {
+     cursor: pointer; 
+     -webkit-text-stroke: 0px;
+     font-size:calc(2.2 * var(--fontsize));
+     font-weight: 1000;
+     background: linear-gradient(to top, #555555 10%, transparent 10%);
+     font-style: oblique;
+     
+     
+    }
+   
+    summary:hover {
+     color: #ffff00;
+     transform: translateX(3px);
+    }
+    input{
+     position:fixed;
+     top:0px;
+    }
+    details{
+      
+    }
+    
+ </style>
+</head>
+<body>
+  <button id="button_gradient" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:#ff5733 !important;color:#ff5733 !important;}</style>');"></button>
+
+
+<button id="button_rainbow" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:red !important;color:red !important;}</style>');"></button></button>
+
+  
+  <button id = 'button_red' class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  e.style.webkitBackgroundClip='';
+  e.style.webkitTextFillColor='';
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ff0000');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff0000 !important;-webkit-text-fill-color:#ff0000 !important;}</style>');
+"></button>
+  
+  <button id = 'button_orange' class = 'setcolor' style="background-color:#ff8800;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  e.style.webkitBackgroundClip='';
+  e.style.webkitTextFillColor='';
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ff8800');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff8800 !important;-webkit-text-fill-color:#ff8800 !important;}</style>');
+"></button>
+
+<button id = 'button_yellow' class = 'setcolor' style="background-color:#ffff00;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  e.style.webkitBackgroundClip='';
+  e.style.webkitTextFillColor='';
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ffff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffff00 !important;-webkit-text-fill-color:#ffff00 !important;}</style>');
+"></button>
+  
+  <button id = 'button_green' class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  e.style.webkitBackgroundClip='';
+  e.style.webkitTextFillColor='';
+});document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ff00 !important;-webkit-text-fill-color:#00ff00 !important;}</style>');"></button>
+
+<button id = 'button_cyan' class = 'setcolor' style="background-color:#00ffff;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  e.style.webkitBackgroundClip='';
+  e.style.webkitTextFillColor='';
+});document.querySelectorAll('*').forEach(e=>e.style.color='#00ffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ffff !important;-webkit-text-fill-color:#00ffff !important;}</style>');"></button>
+  
+  <button id = 'button_white' class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  e.style.webkitBackgroundClip='';
+  e.style.webkitTextFillColor='';
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');"></button>
+
+
+<input id = 'bar_size' type="range" min="0.005" max="0.1" step="0.005" value="0.04"
+oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value) + 'px'); set_();">
+
+<button id="go_random" onclick="go_random()">go random</button></button>
+
+<button id="turn_autoscroll" onclick="turn_autoscroll()">auto scroll</button></button>
+
+<input id = 'scale_of_scroll' type="range" min="0.005" max="0.5" step="0.005" value="0.06"
+oninput="speed_of_auto_scroll=this.value;">
+
+<!-- <button id="toggle-btn">open all sections</button> -->
+
+
+  <script>
+    let width=window.innerWidth;
+    let height=window.innerHeight;
+    let smallerline;
+    if(width>height){
+      smallerline=height;
+    }else{
+      smallerline=width;
+    }
+    document.documentElement.style.setProperty("--s", String(smallerline) + "px");
+    document.documentElement.style.setProperty("--fontsize", String(smallerline * document.getElementById("bar_size").value) + "px");
+    document.body.style.maxWidth = width.toString() + "px";
+    document.body.style.maxHeight = height.toString() + "px";
+    
+    function setfontsize(p){
+      
+    }
+    
+   let isStarted = false;
+   
+   let quantity_of_autoscroll=0;
+   
+   let autoscroll;
+   
+   let speed_of_auto_scroll=document.getElementById("scale_of_scroll").value;
+   
+   function turn_autoscroll() {
+    if (!autoscroll) {
+     autoscroll = setInterval(() => {
+      if(quantitypressed==0){
+       let scale_of_scroll = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fontsize')) * speed_of_auto_scroll;
+       quantity_of_autoscroll += scale_of_scroll;
+      
+      if (quantity_of_autoscroll > 1) {
+          window.scrollBy(0, quantity_of_autoscroll);
+          quantity_of_autoscroll = 0;
+      }
+      }
+     }, 50);
+    } 
+    else {
+     clearInterval(autoscroll);
+     autoscroll = null;
+    }
+   }
+   
+   let isPressed=false;
+   
+   let quantitypressed=0;
+   
+   window.addEventListener('pointerdown', (e) => {
+    quantitypressed=e.buttons;
+   });
+   
+   window.addEventListener('pointermove', (e) => {
+    quantitypressed=e.buttons;
+   });
+   
+   window.addEventListener('pointercancel', (e) => {
+    quantitypressed=e.buttons;
+   });
+   
+   window.addEventListener('pointerup', (e) => {
+    quantitypressed=e.buttons;
+   });
+   
+   
+   
+   
+   function set_(){
+    document.getElementById("button_gradient").style.left=getComputedStyle(document.body).marginLeft;
+    
+    document.getElementById("button_rainbow").style.left=parseFloat(getComputedStyle(document.getElementById("button_gradient")).left) + parseFloat(document.getElementById("button_gradient").offsetWidth) + "px"
+    
+    document.getElementById("button_red").style.left=parseFloat(getComputedStyle(document.getElementById("button_rainbow")).left) + parseFloat(document.getElementById("button_rainbow").offsetWidth) + "px"
+    
+    document.getElementById("button_orange").style.left=parseFloat(getComputedStyle(document.getElementById("button_red")).left) + parseFloat(document.getElementById("button_red").offsetWidth) + "px"
+    
+    document.getElementById("button_yellow").style.left=parseFloat(getComputedStyle(document.getElementById("button_orange")).left) + parseFloat(document.getElementById("button_orange").offsetWidth) + "px"
+    
+    document.getElementById("button_green").style.left=parseFloat(getComputedStyle(document.getElementById("button_yellow")).left) + parseFloat(document.getElementById("button_yellow").offsetWidth) + "px"
+    
+    document.getElementById("button_cyan").style.left=parseFloat(getComputedStyle(document.getElementById("button_green")).left) + parseFloat(document.getElementById("button_green").offsetWidth) + "px"
+    
+    document.getElementById("button_white").style.left=parseFloat(getComputedStyle(document.getElementById("button_cyan")).left) + parseFloat(document.getElementById("button_cyan").offsetWidth) + "px"
+    
+    document.getElementById("bar_size").style.left=parseFloat(getComputedStyle(document.getElementById("button_white")).left) + parseFloat(document.getElementById("button_white").offsetWidth) + "px"
+    
+    if(width < height){
+     document.getElementById("turn_autoscroll").style.top= parseFloat(document.getElementById("button_white").offsetHeight) + "px";
+     
+     document.getElementById("scale_of_scroll").style.top= parseFloat(document.getElementById("turn_autoscroll").offsetTop) + "px";
+     
+     document.getElementById("scale_of_scroll").style.left=parseFloat(document.getElementById("turn_autoscroll").offsetLeft) + parseFloat(document.getElementById("turn_autoscroll").offsetWidth) + "px";
+     
+     document.getElementById("go_random").style.top= parseFloat(document.getElementById("turn_autoscroll").offsetHeight) + parseFloat(document.getElementById("turn_autoscroll").offsetTop) + "px";
+     
+    }else{
+     document.getElementById("turn_autoscroll").style.left= (7+12) * smallerline / 24 + parseFloat(getComputedStyle(document.body).marginLeft) + "px"
+     
+     document.getElementById("scale_of_scroll").style.left= parseFloat(document.getElementById("turn_autoscroll").offsetLeft) + parseFloat(document.getElementById("turn_autoscroll").offsetWidth) + "px";
+     
+     document.getElementById("go_random").style.left= parseFloat(document.getElementById("scale_of_scroll").offsetLeft) + parseFloat(document.getElementById("scale_of_scroll").offsetWidth) + "px";
+    }
+    
+   }
+   
+   document.querySelectorAll('button').forEach((e) => {
+    e.style.fontSize=getComputedStyle(document.documentElement).getPropertyValue('--fontsize');
+   });
+   
+   
+   
+   
+    window.addEventListener('DOMContentLoaded', () => {
+     
+     const btn = document.getElementById('toggle-btn');
+     const details = document.querySelectorAll('details');
+     
+    /*btn.addEventListener('click', () => {
+    let isAnyOpen = Array.from(details).some(detail => detail.open);
+
+    if (isAnyOpen) {
+      details.forEach(detail => detail.open = false);
+      btn.textContent = 'open all sections';
+    } else {
+      details.forEach(detail => detail.open = true);
+      btn.textContent = 'close all sections';
+    }
+     
+    });*/
+     
+    set_();
+    turn_autoscroll();
+    document.querySelectorAll('pre').forEach((e) => {
+     e.addEventListener("click", ()=>{
+      window.speechSynthesis.cancel();
+      const textToRead = e.innerText.trim();
+          
+      if (textToRead.length > 0) {
+       const utterance = new SpeechSynthesisUtterance(textToRead);
+          
+        utterance.lang = "en-US";
+          
+        utterance.volume=1;
+          
+        utterance.rate = 1.35;
+
+        window.speechSynthesis.speak(utterance);
+      }
+     })
+    });
+   });
+   
+   
+   try{
+   
+    
+    window.addEventListener("click", () => {
+        
+        if (!isStarted){
+         const preElements = document.querySelectorAll("pre");
+         preElements.forEach((el) => {
+             const textToRead = el.innerText.trim();
+             
+             if (textToRead.length > 0) {
+                 const utterance = new SpeechSynthesisUtterance(textToRead);
+                 
+                 utterance.lang = "en-US";
+                 
+              utterance.volum=1;
+                 
+                 utterance.rate = 1.35;
+     
+                 window.speechSynthesis.speak(utterance);
+             }
+         });
+         
+         const bgm = new Audio("https://raw.githubusercontent.com/fhres126/w/main/Gott%20erhalte%20Franz%20den%20Kaiser(instrumental).mp3");
+      
+         bgm.loop = true;
+         bgm.volume = 0.14;
+         
+         bgm.play();
+        }
+        if (isStarted) return;
+        isStarted = true;
+        
+    });
+   }catch(err){ console.log(err)}
+   
+   function go_random(){
+    window.scrollTo({
+     top: document.documentElement.scrollHeight * Math.random(),
+     behavior: 'auto'
+    });
+   }
+   
+  </script>
+  <pre>
+   
+   
+   
+
+This artificial language is called saqmi. saqmi is constructed IAL.
+
+</pre>
+
+<details>
+ <summary>table of content</summary>
+<pre>
+
+[table of content].
+[persuading to learn saqmi].
+[refuting to concerns].
+[how to provide feedback&community].
+[alphabet].
+[pronunciation].
+[detail].
+
+}◀ table of content
+
+</pre>
+</details>
+<details open>
+ <summary>persuading to learn saqmi</summary>
+<pre>
+ 
+saqmi is easy and logical unambigious language.
+
+It is neutral because words are taken from languages around the world.
+
+lot of words is compound word or abbreviation or made by antonym rule. lot of words is arranged in orderly way.
+
+suffixs is few so pronunciation can be expressed freely.
+
+no double consonants and consonant blend.
+
+}◀ persuading to learn saqmi
+</pre></details><details open><summary>refuting to concerns</summary><pre>
+ 
+
+}◀ refuting to concerns
+</pre></details>
+<details open>
+ <summary>how to provide feedback</summary>
+<pre>
+
+discord: https://discord.gg/BrZwnBwrAx
+
+}◀ how to provide feedback
+</pre>
+</details>
+<details open>
+ <summary>alphabet</summary>
+<pre>
+
+saqmi use latin alphabet.
+
+}◀ alphabet
+
+</pre>
+</details>
+
+
+<details open>
+ <summary>pronunciation</summary>
+<pre>
+
+a = /a/. b = /b/. c = /k/. d = /d/. e = /ɛ/. g = /g/. h = /h/. i = /ɪ/. j = /j/. l = /l/. m = /m/. n = /n/. o = /o/. p = /p/. q = /ŋ/. r = /ʌ/. s = /s/. t = /t/. u = /u/. w = [wo]. s = /s/. z=/tʃ/.
+
+"," make pronunciation strong.
+
+,b = /p͈/
+
+,d = /t͈/
+
+,g = /k͈/
+
+,p = /p͈/
+
+,s = /s͈/
+
+,a = /ja/
+
+,e = /je/
+
+,i = /wi/
+
+,o = /jo/
+
+,r = /jʌ/
+
+,u = /ju/
+
+,w = /we/
+
+</pre><details open><summary>read it if you dislike this pronunciation</summary><pre>
+ 
+"r" is /ʌ/ like german.( "r" in natur is /ʌ/)
+
+"z" is /tʃ/ like german.( "z" in zur is /tʃ/)
+
+"q" is the second least used character. among character that isnt used, "q" is the character most similar to "ng".
+
+}◀ read it if you dislike this pronunciation
+</pre></details><pre>
+}◀ pronunciation
+
+</pre>
+</details>
+
+<details open>
+ <summary>detail(not finished but can helpful)</summary>
+<pre>
+
+</pre></details>
+
+
+</body>
+</html>
