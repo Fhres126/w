@@ -1,0 +1,610 @@
+adolp-hitllr
+
+j in liji ostlia ze. s ot g nen 1945 c tnij ja nen 1933 dita ze.
+
+a = /a/. 
+b = /b/. 
+c = /k/. 
+d = /d/. 
+e = /ɛ/. 
+g = /g/. 
+h = /h/. 
+i = /ɪ/. 
+j = /dʒ/. 
+l = /l/. 
+m = /m/. 
+n = /n/. 
+o = /o/. 
+p = /p/. 
+q = /ŋ/. 
+r = /ʌ/. 
+s = /s/. 
+t = /t/. 
+u = /u/. 
+w = [wo]. 
+y = //. 
+z=/tʃ/.
+
+,g ,n ,d ,l ,m ,b ,q
+
+->suffix{
+
+= -ed thing.
+
+- -qi = make it like adjective.(function/verb only)
+
+- -zc = noun marker.(function/verb only)
+
+- -zj=removing all parameter in word.(function/verb only)
+
+- lq = removing all parameter in word, and make "~ that is ~".(function/verb only)
+
+- -ai=was.(function/verb only)
+
+- -ia=will.(function/verb only)
+
+- -iz= -ist.
+
+-qr = alphabet marker.(only alphabet. aqr mean a)
+
+- -jr =-ical. =-al. =-ic.
+
+}<- suffix
+
+- je !n=zero.
+
+- un !n=one.
+
+- du !n=two
+
+- at !n=three.//igbo @ atọ
+
+- ca !n=four.
+
+- go !n=five.//janpanese @ go
+
+- ena !n=six.//malay @ enam
+
+- sab !n=seven.
+
+- ozo !n=eight.
+
+- tis !n=nine.//arabic
+
+- te !n=ten.//english
+
+▶a{
+
+- so !r=thing that exist.
+- ,w o!r=around of x1.
+- al o,o!p1=x2 as x1.//german @ als
+- amu o,n!r=thing that feel x1 as fun.
+- sal o,n!r=thing that attack x1.//turkiye
+-- las o,o,n!r=thing that defend x1 from x2.
+- asc !r=troops. =army.
+- asi o,n!r=thing that sorry x1.
+
+}◀ a
+
+▶b{
+
+- bo !r=genitalia.//vietnamese @ bộ phận sinh dục
+-- boiq !r=pussy.
+-- boqu !r=penis.
+- ho !r=free with liberty.
+-- hoa !r=independent.
+- bi o!p1=thing that become x1.
+-- bce o!r=thing that get x1.
+-- bso !r=thing that occur.
+-- bizc !r=change.
+-- bic o!p1=succeed in being x1.
+--  ben _o!p1=new x1.
+--- beol _!r=baby.
+-- beji !r=born.
+- bl !r=blue.
+- ba !r=language.
+-- bata !r=conlang.
+- bet !r=child. =자식.
+-- ten !r=adult.
+-- bdl !r=fruit.
+- b n,o!p2=x1-th x2.
+- be o!p1=certain x1.//turkiye
+- bel !r=velocity. =speed.
+- bnu !r=inside.
+-- unb !r=outside.
+- bua !r=dog.
+- ban !r=banner.
+- bid !r=video.
+
+}◀b
+
+▶c{
+
+- sa !r=true.
+-- salo !r=information.
+-- as !r=false.//a
+- c s!t=when 2x1 is 1x1.
+- cos _o!r=thing that kiss x1.//icelandic @ koss
+- ,ao o!r=thing that bite x1.
+--- juj _o!r=thing that chew.
+---- nigal _o!r=thing that swallows x1.
+----- lagin o!r=thinvg that vomit x1.//a
+------ haj _o!r=thing that digest x1.
+- co !r=code.
+-- coi !r=data.
+--- colo !r=academic.
+-- cool !r=gene.//c code, organism,
+-- col _!r=word.//s co,
+-- coy _int!r=word x1.//s co,
+- ab o,n!p1=thing that can be x1.
+-- abu o!p1=thing that right to be x1.
+-- abr o!p1=thing that ready to be x1.
+-- amo !r=god.
+- cij !r=green.
+- coc o!r=think that cook x1.
+- clla !r=classic.
+- cl !r=category.
+-- clin !r=race.
+--- cliniz !r=racist.
+- cla o!r=thing that controll x1.
+-- clu !r=thing that politics.
+- cal !r=empty.
+-- lac=full.
+
+}◀c
+
+▶d{
+
+- ci s!r=situation that 2x1 is 1x1.
+- sun !r=dignity.
+- sec n!t=x1 second.
+- rz o!r=thing that is less than x1.
+-- zr o!r=thing that is more than x1.//a
+- co o!r=thing that know x1.
+-- ctu o!r=thing that understand x1.
+-- cme o!r=thing that interpret x1.
+- dau !r=down.
+-- uad !r=up.
+- dom !r=place
+- dci s!r=where 2x1 is 1x1.
+- duni !r=earth.
+-- duao !r=world war.
+- dis o,o!r=thing that discriminate x2 against x1.
+- din n!r=x1 day.
+- doc !r=document.
+- dle !r=tree.
+- dah !r=gold.
+- dui o!r=thing that is fewer than x1.
+-- iud o!r=thing that is manier than x1.
+
+}◀d
+
+▶e{
+
+- ,am !r=food.
+- ec _o!p1= element of x1.//Luganda @ ekintu
+-- ce _o!r=thing that have x1.
+--- cezc !r=property.
+-- cel !r=group.
+--- ceo !r=association
+--- cni !r=country.
+- e o,o!p1=x1 of x2.
+
+}◀e
+
+▶g{
+
+- ga o!r=thing that detect x1.
+-- glu o!r=thing that see x1.
+--- glue !r=eye.
+-- gba o!r=thing that listen x1.
+--- gbae !r=ear.
+-- gis o!r=thing that smell x1.
+--- gise !r=nose.
+-- gco o!r=thing that read x1.
+- gas !r=gas.
+- gode n!r=size.//Hebrew @ godel
+- g o,o!p1= x1 that is x2.
+- gi o,s!p1=x1 whose 1x2 is 2x2.
+-- eu o!p1=your x1.
+-- ei o!p1=my x1.
+- gan !r=wheat.
+- gal !r=west.
+-- lag !r=east.//a
+- geo !r=ground.
+-- oeg !r=sky.
+- g,y o!p1=thing thag related to x1.
+
+}◀g
+
+▶h{
+
+- hol o!r=thing that is colder than x1.//russian @ холодный
+-- loh o!r=thing that is hotter than x1.//a
+- bah !r=sound.
+-- baul o,o!r=thing that speak x1 to x2.
+-- basi !r=anthem.
+- han o,o!r=thing that slowly be x1 than x2.
+-- nah o,o!r=thing that fastly be x1 than x2.
+--- nabe !r=acceleration.
+- hum o,n!r=thing that feel x1 as funny.
+-- muh o,n!r=sad.
+- h o!p1=x1-s.
+- hol !r=shell.
+-- hool !r=skin.
+-- hoij !r=leather.
+
+}◀h
+
+▶i{
+
+- isi !r=smell.//igbo @ isi ísì
+- in o,o!p1=x1 that is in x2.
+-- iso o!r=thing that stay in x1.
+- i _= i.//english
+- iq _r!=female.//thai @ หญิง
+-- iqsu !r=wife.//c female, like,
+- ita _o!r=thing that call x1.//swahili @ ita,
+-- ite _o!r=thing that greet x1.//s ita,
+- ima o!r=thing that imagine x1.
+- id o,o!r=thing that go x1 from x2.
+- iy !r=mass.//turkish @ yığın
+- i.g o!r=thing that ignore x1.
+-- g.i o!r=thing that mind x1.
+- inp o!r=thing that is inferior than x1.
+-- pni o!r=thing that is superior than x1.
+- jq o!p1=thing that becoming x1.
+
+}◀i
+
+▶j{
+
+- jas o!p1=thing that deserve x1.//serbian @ заслужити
+-- jao o!p1=thing that right to be x1.
+- ja !r=self.//korean @ 자신
+- j o!p1=thing that was x1.
+- ji !r=alive thing.
+-- ij !r=dead thing.//a alive,
+- jo _s,n!r=thing that hope 2x1 is 1x1.//veluil
+-- joco o,n!r=thing that wonder x1.
+-- oj _s,n!r=thing that dread 2x1 is 1x1.//a
+--- ojj o,n!r=thing that regret x1.
+- de s,o!r=thing that assert 2x1 is 1x1 to x2.
+-- dmo s!r=thing thag define 1x1 is 2x1.
+-- deni s,o!r=thing that declare 2x1 is 1x1.
+- jun o!r=thing that is younger than x1.
+-- nuj o!r=thing that is older than x1.
+- jrq n!r=normal.
+- je o,o!p2=x1 square x2.
+-- ej o,o!p2= x1 root x2.
+- jr o!p1=that x1.//korean,
+
+}◀j
+
+▶k{
+
+}◀k
+
+▶l{
+
+- laj !r=rational.//bosnian @ razlog
+- loa o,o,n!r=thing that need x1 to be x2.//Burmese @ လိုအပ်သည်
+-- aol o,o,n!r=thing that fucking dont need x1 to be x2.
+--- aon o,o!r=thing that compete with x1 to be x2.
+---- aoam !r=sports.
+- cu o!n=quantity of x1.
+-- cuin !r=population.
+- litr n!r=A liter.
+- l o!p1=the x1.
+-- lq !r=he.//c the, male,
+-- li !r=she.//c the, female,
+- lo o!r=location of x1.
+- los !r=red
+- pe.l !r=fermented thing.
+-- pega !r=bread.//c fermented, wheat,
+- lu o,n!p1=thing that has been x1 x2 times.
+- lod !r=parent.//russian
+- lea o!p1=real x1.
+-- ael o!p1=fake x1.
+- leg !r=law.
+- pel o,o,n!r=thing that push x1 from x2.
+--  lep o,o,n!r=thing that pull x1 from x2.
+- pe !r=money.
+-- peu !r=economy.
+- lue !r=wheel.
+
+}◀l
+
+▶m{
+
+- m !si=symbol that omit one parameter.
+-- nq !si=symbol that omit one parameter.
+--- oq !si=symbol that omit one parameter.
+---- pq !si=symbol that omit one parameter.
+- mu !r=human.//hausa
+-- muni !r=titan.
+- metr n!r=x1 meter.//french @ mètre @
+- moda !r=trend.
+-- moam !r=meme.
+- miu !n=minimum.
+-- uim !n=most.
+- magi !r=magic.
+- aba s,o!p3=thing that is x2 despite of 1x1 being 2x1.
+- me s!r=how 2x1 be 1x1.
+-- msa !r=logic.
+- mus o,n!r=thing that must be x1.
+- mot !r=pattern.
+- lis !r=mechanics.
+- min n!r=x1 minute.
+- mes n!r=x1 month.
+- mr !r=what.
+- m,a !r=cat.
+- mei o,o,o!r=thing that sell x1 to x2 for x3.
+-- iem o,o!r=thing that buy x1 from x2.
+- mah o!r=thing that is poor than x1.
+-- ham o!r=thing that richer than x1.
+
+}◀m
+
+▶n{
+
+- ni o,n!r=thing that intend to be x1.
+-- nir o!r=thing that decide to be x1.
+--- npo o!r=thing that select x1.
+--- rin o!r=thing that give up being x1.
+-- nico o!r=thing that research x1.
+- na o,o!p1=x1 and x2.//swahili @ na
+-- niu !r=we. =me and you.
+-- nze o!p1=x1 too.
+--- nzi o!p1=even x1.
+- hi o!p1=this x1.
+-- hma !t=now.
+- n _= what.//veluil
+- ti o!p1=thing that is not x1.//indonesian @ tidak
+-- tla o!r=just x1.
+-- ts !r=none.
+- nale o!r=thing that is softer than x1.
+-- elan o!r=thing that js harder than x1.//a
+- nu o!p1=only x1.
+- n,u n!r=x1 newton.
+- nen n!r=x1 year.
+-- nese n!t=x1 century.
+- nat !r=nature.
+-- tan !r=artificial.
+- nam !r=name.
+- no o,n!p1=thing that tend to x1.//hebrew
+
+}◀n
+
+▶o{
+
+- ol _!r=organism.//Georgian @ ორგანიზმი
+-- olli !r=fish.
+- oto !r=auto.
+- op !r=opposite.
+- ot o,o!p1=from x2 to x1.
+- or (c o), n!r=1x1 or 2x1 or..
+
+}◀o
+
+▶p{
+
+- ega !r=equality.
+-- egz n!r=left wing.
+--- zge n!r=right wing.
+-- egai !r=justice.
+- po o,o,n!p2=thing that is x2 by x1.//german @ von
+-- poi o!r=thing that react x1.
+--- pn o,n!r=thing that use x1.
+- papa !r=father.
+- im s!r=thing that bellive 2x1 is 1x1.
+-- ie s!r=thing that guess 1x1 is 2x1.
+- lum !r=light.
+- gut !r=solid.
+-- gh !r=ice.
+- pala !r=paradise.
+- p s!r=thing that command 2x1 to 1x1.
+-- pr o,o!r=thing that ask x2 about x1.
+--- rp o,o!r=thing that answer x2 by saying x1.
+---- rpi o,o!r=thing that communicate with x2 about x1.
+-- pno s!r=thing that prohibit x2 to be x1.//c command, not,
+- pinc !r=pink.
+- plo !r=front.
+-- olp !r=behind.
+- pul o,n!r=thing that enjoy x1. =thing that feel pleasure by x1.
+-- lup o,n!r=thing that feel x1 as boring.
+- pom !r=form.
+- pla !r=plasma.
+-- pllo !r=fire.//c plasma, hot,
+- ple o!r=thing that fly x1.
+-- plee o!r=wing.
+- pl o,o!p2=x1 plus x2.
+-- lp o,o!p2=x1 minus x2.
+--- lni o!p1=minus of x1.
+- pol o!r=thing that follow x1.
+- pi o,o!p2=x1 × x2.
+-- ip o,o!p2=x1 ÷ x2.
+- pec !r=shit.
+- pal o!r=thing that x1.
+- en o!p1=thing that similar to x1.//german
+-- ens !t=early.=초반
+-- eno !t=late. =후반
+- rl  o,o!r=x1 for x2. x2에게 x1인 것. 
+o,o!n=x1 : x2. =x1 per x2.
+- poll !r=police.
+
+}◀p
+
+▶q{
+
+- q n,o!p2=x1 x2.
+
+- qu !r=male.//ewe @ ŋutsu
+
+}◀q
+
+▶r{
+
+- rn o,o!r=thing that answer x1 by saying x2
+- mo o!p1=all x1.
+-- mec o!p1=whole x1.
+-- mohe !t=everyday.//c all, day,
+
+}◀r
+
+▶s{
+
+- sam !r=conscientious thing.//swedish @ samvete
+- nap o!r=thing that inhale x1.
+-- pan o!r=thing that emit x1.//a
+-- na,a o!r=thing that eat x1.
+-- naga o!r=thing that breathe x1.
+-- nali o!r=thing that drink x1.
+- sel n!r=x1°c.//swedish @ celsius
+- s o,t!r=thing that is x2 when x1.
+- se o!p1=thing that will be x1.//vietnam @ sẽ
+- su o,n!r=thing that like x1.
+-- supo o,n!r=thing that feel x1 aa beauty.
+-- si !r=we. =my friend.
+-- us o,n!r=thing that dislike x1.//a
+--- usr o!r=enemy of x1.
+---- rsu o!r=friend of x1.
+-- sue o,n!r=thing that love x1.
+--- eus _o,n!r=thing that hate x1.
+- sa _n!r=profit.//tamil @ சாதனை
+-- as n!r=victim.//a
+- san o!r=thing that is short than x1.//lao @ ສັ້ນ
+-- nas o!r=thing that is longer than x1.//a short,
+- r o,o,n!p2=thing that is x2 by being x1.
+- suo !r=left.
+-- ous !r=right.//a
+- sim !r=symbol. =emblem.
+-- sba !r=flag.
+- sant !r=holy thing.
+- syb !r=habit.
+-- sce !r=cluture.
+-- sup=great.
+- sr !r=each other.
+- s,o !r=start.
+-- o,s !r=end.
+-- s,ur !r=fundamenral. =baaic.
+- s,e !r=thing.
+- sat n!r=x1 hour.
+- sap n!r=x1 week.
+- sid o!r=thing that try to be x1.
+-- sio o,n!t=thing that effort to be x1.
+-- sico o!r=thing that learn x1.
+- sen !n=hundred.
+- sam o!p1=same x1.
+-- mas o!p1=diffrent x1.
+- srq !r=sex.
+- sah !r=stock. =share. =주식.
+- sul !r=letter.
+- s,u o,o,n!r=thing that thank x1.
+
+}◀s
+
+▶t{
+
+- hea !r=animal.
+- t s,n!r=thing that cause 2x1 be 1x1.
+- tm o,n!r=thing that impact x1.
+-- tso o,n!r=thing that make x1.
+--- tsco !r=school.
+--- tsho !r=speaker.
+-- tjin o,n!r=thing that save x1.
+-- tnij o,n!r=thing that kill x1.
+-- tu s,n!r=why 2x1 is 1x1.
+--- ut s,n!r=what if 2x1 is 1x1. =result if 2x1 is 1x1.//a
+- tin o!r=thing that is smaller than x1//amharic @ ትንሽ
+-- nit  o!r=thing that is bigger than x1//a
+- ma !t=time.
+- mani !t=era.//time, big,,
+- te o,t!p1=thing that remain x1 for x2(duration).//sunda @ tetep
+-- tebe !r=inertia.
+-- ten o!p1=thing that is still x1.
+-- tel o!p1=this that is already x1.
+-- teco o!r=thing that remember x1.//c remain, know,
+-- tece o!r=thing that keep x1.//c remain, have,
+-- et o, t!r=thing that stop being x1. =x1이길 x2만에 중단한 것.//a
+--- etco o!r=thing that forgot x1.//c stop, know,
+--- etec o!r=thing that lost x1.//c stop, have,
+- gu !r=tool.//vietnam
+-- gub !r=machine. =device. =apparatus.
+-- tat !r=weapon.//c tool, attack,
+- tli o,o!r=thing that win x1 in competetion of being x2.
+-- ilt o,o!r=thing that lose x1 in competetion of being x2.
+- to o,o!r=thing that is x1 with x2.
+- t,o !r=challenge.
+- tes !r=text.
+- toq c o!r=commonalities between 1x1 and 2x1 and.
+-- tou c o!r=c o!r=intersection of 1x1 and 2x1 and.
+-- qot c o!r=differences between 1x1 and 2x1 and.
+
+}◀t
+
+▶u{
+
+- ul o,o!r=thing that mention x1 to x2.//hindi @ उल्लेख
+- u _= you.//dutch
+- uta !r=north.
+-- atu !r=south.//a
+-
+
+}◀u
+
+▶w{
+
+w n,word...=.//for expressing string or pronunciarion.
+
+}◀w
+
+▶y{
+
+- y d o,o!2p=x1 x2.//yellow apple.
+
+ !r=command marker in right hand side or left hand side.
+
+- yn o!p1=thing that is x1.
+
+}◀y
+
+▶z{
+
+- zu o!p1=main x1.//vietnamese @ chủ yếu 
+-- uz o!p1=sub x1.
+- ze !o=.//this word's meaning is determined by context like word "it".
+- lic !r=liquid.
+-- lni !r=sea.
+-- ligl !r=tear.
+-- lilo !r=lava.
+-- liho !r=sweat.
+-- liio !r=saliva.
+-- lie !r=water.
+-- liol !r=blood.
+-- lima !r=milk.
+-- lup !r=pee.//c liquid, dont need,
+- z s!r=whether 2x1 is 1x1.//esperanto @ ĉu
+- zen !r=center.
+- zib o!r=thing that is cheaper than x1.
+-- biz o!r=thing that is expensive than x1.
+
+}◀z
+
+▶,{
+
+- mena o!r=thing that mean x1.
+- ,al !r=yellow.
+- ,b o,o!p2=x1 according to x2.
+- ,yq !r=king.
+
+}◀,
+
+i love situation that i love person who love cow and people and chicken or he eat meal
+
+brain:?
+
+i love (situation that i love person who love cow) and (people and (chicken or he) eat meal) = 
+sbe na de sbe g mun sbe cau i de sem mil na mun oa zikin mun i
+
+brain: always know
