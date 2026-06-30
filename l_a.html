@@ -20,7 +20,7 @@
      line-height: 1.5; 
      letter-spacing: 0.1;
      background-color: #000000;
-     margin:calc(var(--s)*0.1);
+     margin:calc(var(--s)*0.05);
        
      webkit-text-stroke: 0.02rem;
      -webkit-text-stroke-color:#444444;
@@ -33,10 +33,8 @@
       white-space: pre-wrap;
       max-width: 100vw;
       overflow-wrap: anywhere;
-      font-weight: 1000;
-      text-decoration: underline;
+      line-height: 2.1;
       text-underline-offset: calc(0.4 * var(--fontsize));
-      font-style: italic;
       border: 1px solid #280000;
      }
     img{
@@ -52,8 +50,17 @@
     }
     input[type="range"] {
      
-     height: calc(var(--s) / 24);
+     height: calc(var(--s) / 16);
      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     appearance: none;
+     width: 200px;
+     height: 200px;
+     background: #007bff;
+     border-radius: 50%;
+     margin-top: -5px;
     }
     .setcolor{
       width:calc(var(--s) / 24);
@@ -82,7 +89,7 @@
     summary {
      cursor: pointer; 
      -webkit-text-stroke: 0px;
-     font-size:calc(2.2 * var(--fontsize));
+     font-size:calc(1.25 * var(--fontsize));
      font-weight: 1000;
      background: linear-gradient(to top, #555555 10%, transparent 10%);
      font-style: oblique;
@@ -146,7 +153,7 @@
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');"></button>
 
 
-<input id = 'bar_size' type="range" min="0.005" max="0.1" step="0.005" value="0.025"
+<input id = 'bar_size' type="range" min="0.005" max="0.1" step="0.005" value="0.05"
 oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value) + 'px'); set_();">
 
 <button id="go_random" onclick="go_random()">go random</button></button>
@@ -370,37 +377,44 @@ oninput="speed_of_auto_scroll=this.value;">
 
 
 
+this document and language is alpha version.
 
-
-This artificial language is called samin. samin is constructed international auxiliary language. this IAL is made by one who hate fucking other IAL.
+This artificial language is called samin. samin is constructed international auxiliary language. i made this IAL cuz i reject all other IAL.
 
 </pre>
 
 <details open>
- <summary>table of content</summary>
+ <summary>table of content</summary><br>
  <div class="toc">
   
-  <a href="#persuading to learn samin">- persuading to learn samin</a><br>
+  <a href="#persuading to learn samin">- advertisement&lesson</a><br>
+  <a href="#differences from other international auxiliary language">-- differences from other international auxiliary language</a><br>
   <a href="#Debate that has already taken place">-- Debate that has already taken place</a><br>
   <a href="#how to provide feedback&community">- how to provide feedback&community</a><br>
-  <a href="#alphabet">- alphabet</a><br>
-  <a href="#pronunciation">- pronunciation</a><br>
-  <a href="#detail">- detail</a>
+  <a href="#lesson">- lesson</a><br>
+  <a href="#alphabet">-- alphabet</a><br>
+  <a href="#pronunciation">-- pronunciation</a>
 <pre>}◀ table of content</pre>
 </div>
 </details>
 <details open>
- <summary id="persuading to learn samin">persuading to learn samin</summary>
+ <summary id="persuading to learn samin">advertisement&lesson</summary>
 <pre>
-samin is easy and logical unambigious democratic nutral IAL.
+samin is easy and logical unambigious democratic neutral superior IAL.
 
 It is neutral because words are taken from languages around the world.
 
-lot of words is compound word.
+words is easy to learn.
 
-for example, sid mean try. co mean know. sid + co = sico. sico mean learn.
+- lot of word is made by antonym rule.
 
-Words used in similar situations or words with similar meanings are made of similar letters so it is easy to memorize.
+-- for example, tin mean small. nit mean big.(inversed)
+
+- lot of words is compound word.
+
+- for example, sid mean try. co mean know. sid + co = sico. sico mean learn.
+
+- Words used in similar situations or words with similar meanings are made of similar letters so it is easy to memorize.
 
 - for example,
 
@@ -412,35 +426,29 @@ words is short so efficient and easy to type.
 
 - "All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood".
 
-- in samin, mo mu s c ja bihi se g hog ega sun. ze g sam laj. ze mus pol sublo m poi sr.
+- in samin, mo mu s c ja bihi bi g hog ega sun. ze g sam laj. ze mus pol sublo m poi sr.
 
 - in esperanto, Ĉiuj homoj naskiĝas liberaj kaj egalaj laŭ digno kaj rajtoj. Ili estas dotitaj per racio kaj konscienco kaj devas agi unu rilate al la alia en spirito de frateco.
 
 - in globasa, Moy insan xencu huru ji egal fe sungen ji haki. Ete hare rasona ji yoxin, ji ete ingay na soho konduta fol ruho fe sodarya.
 
-lot of word is made by antonym rule.
-
-- for example, tin mean small. nit mean big.(inversed)
+no double consonants and consonant blend.
 
 suffixs is few so pronunciation can be expressed freely.
-
-no double consonants and consonant blend.
 
 no pronunciation that is hard to pronounce(r, f, v, z).
 
 no slang and homonyms and synonyms.
 </pre>
 
-</details>
-
-<details open>
+<details>
  <summary>differences from other international auxiliary language</summary>
  
-<pre>
-esperanto: samin is not europe centric. many word is derived from globasa. having many suffix is disadvantage cuz such language make user cant express themselves name exactly. samin dont have many suffix. pronunciation of esperanto is hard unlike samin. all suffixes in samin is well designed. For example, in Samin, all the suffixes are designed so they don't cause confusion.
-​For instance, de means 'to assert', and zc turns it into a noun. So you can literally just say 'de + zc' [de.tsk] without any changes. But in Esperanto, it's inconvenient because you have to think about the phonetic blending every time you speak. For example, tranĉ means 'cut' and -ilo means 'tool', so tranĉ + ilo becomes 'scissors'. But instead of just saying [trantʃ] and then [ilo], you actually have to pronounce it merged together as [tran.tʃilo]
+<pre id="differences from other international auxiliary language">
+esperanto: samin is not europe centric. many word is derived from globasa. having many suffix is disadvantage cuz such language make user cant express themselves name exactly. samin dont have many suffix. pronunciation of esperanto is hard unlike samin. all suffixes in samin is well designed. they don't cause confusion.
+​For example, de means 'to assert', and zc turns it into a noun. So you can literally just say 'de + zc' [de.tsk] without any changes. But in Esperanto, it's inconvenient because you have to think about the phonetic blending every time you speak. For example, tranĉ means 'cut' and -ilo means 'tool', so tranĉ + ilo becomes 'scissors'. But instead of just saying [trantʃ] and then [ilo], you actually have to pronounce it merged together as [tran.tʃilo]
 
-globasa: globasa also has many words that originated in Europe. I borrowed vocabulary more equally than Globasa did. Globasa borrows words from only 16 languages, but Samin borrows words from an unlimited number of languages. samin use grammar that cant make ambigious sentence. and words is short so efficient. human is insan in globasa. human is ins in samin. lot of word is compound word or made by antonym rule so it is easy than globasa. pronunciation of globasa is hard. they have r, z, v. "y" in "finfley" is like /i/. it is confuse. globasa user have to memorize both the pronunciation and the spelling. ewropa mean europe. it is pronouncd as [europa] so when user listen "u" user dont know if it is letter w or letter u. pronunciation of r similar to l. but samin dont have such thing. word "oko" in globasa is ambigious cuz it can mean "eye" and "to see". in samin, to see is glu. eye is gli.
+globasa: globasa also has many words that originated in Europe. I borrowed vocabulary more equally than Globasa did. most word of Globasa borrows words from only 16 languages, but Samin borrows words from an unlimited number of languages. samin use grammar that hardly make ambigious sentence. and words is short so efficient. human is insan in globasa. human is ins in samin. lot of word is compound word or made by antonym rule so it is easy than globasa. pronunciation of globasa is hard. they have r, z, v. "y" in "finfley" is like /i/. it is confuse. globasa user have to memorize both the pronunciation and the spelling. However, in Samin, However, in Samin, you can just write words exactly as user sound. ewropa mean europe. it is pronouncd as [europa] so when user listen "u" user dont know if it is letter w or letter u. pronunciation of r similar to l. but samin dont have such thing. word "oko" in globasa is ambigious cuz it can mean "eye" and "to see". in samin, to see is glu. eye is gli. Since writing clear sentences is easier than writing ambiguous ones in Samin, it doesn't force any misunderstandings
 
 viossa: viossa's most vocabulary is deroved from few language.. I think it's just a meme language, so I won't take it seriously.
 
@@ -449,11 +457,14 @@ interlingua: idk interlingua well.
 elefen: idk elefen well.
 
 }◀ differences from other international auxiliary language
-</pre>
-</details>
+</pre></details>
 
 
-<details open><summary id ="Debate that has already taken place">Debate that has already taken place</summary><pre>
+<details><summary id ="Debate that has already taken place">Debate that has already taken place</summary><pre>
+
+A: There is no need for an IAL because machine translation exists.
+
+B: Machine translation has limitations. Translating languages such as Korean or Japanese into English is not always accurate, since subject omission is very common in those languages and can sometimes lead to ambiguity.
 
 A: intonation and punctuation is used to remove ambigious so dont remove ambigious using prefix notation grammar.
 
@@ -470,19 +481,18 @@ A: When words with similar meanings also look and sound alike, they become hard 
 B: To fix this, words with similar meanings are designed to look alike but use different vowels. Vowels are much easier to distinguish than consonants in noisy environments, and they require different mouth shapes. For example, lic means liquid and lie means water; when spoken, these two words have completely different mouth shapes and sound distinct. I think that after a word has already been learned, and after a speaker notices that words with similar meanings tend to share similar letters, this mechanism can help memory when a previously learned word becomes fuzzy or partially forgotten.
 
 }◀ Debate that has already taken place
-
-}◀ persuading to learn samin
-</pre></details>
-
-</details>
+</pre></details><pre>}◀ advertisement&lesson</pre>
+</details></details>
 
 <details open>
  <summary id="how to provide feedback&community">how to provide feedback&community
  </summary>
- <a href="https://discord.gg/BrZwnBwrAx">discord: https://discord.gg/BrZwnBwrAx</a>
+ <br><a href="https://discord.gg/BrZwnBwrAx">discord: https://discord.gg/BrZwnBwrAx</a>
  <pre>
 }◀ how to provide feedback&community</pre>
 </details>
+<details open>
+ <summary id="lesson">lesson</summary>
 <details open>
  <summary>alphabet</summary>
 <pre id="alphabet">
@@ -498,7 +508,29 @@ samin use latin alphabet.
  <summary id="pronunciation">pronunciation</summary>
 <pre>
 
-a = /a/. b = /b/. c = /k/. d = /d/. e = /ɛ/. g = /g/. h = /h/. i = /ɪ/. j = /dʒ/. l = /l/. m = /m/. n = /n/. o = /o/. p = /p/. q = /ŋ/. r = /ʌ/ or /ɚ/ or /ə/. s = /s/. t = /t/. u = /u/. w = [wo]. s = /s/. y = /ɯ/. z=/tʃ/.
+a = /a/. 
+b = /b/. 
+c = /k/. 
+d = /d/. 
+e = /ɛ/. 
+g = /g/. 
+h = /h/. 
+i = /ɪ/. 
+j = /dʒ/. 
+l = /l/. 
+m = /m/. 
+n = /n/. 
+o = /o/. 
+p = /p/. 
+q = /ŋ/. 
+r = /ʌ/ or /ɚ/ or /ə/. 
+s = /s/. 
+t = /t/. 
+u = /u/. 
+w = [wo]. 
+s = /s/. 
+y = /ɯ/. 
+z=/tʃ/. 
 
 "a" is "a" as in "ah". 
 "b" is "b" as in "bee". 
@@ -515,8 +547,8 @@ a = /a/. b = /b/. c = /k/. d = /d/. e = /ɛ/. g = /g/. h = /h/. i = /ɪ/. j = /d
 "o" is "o" as in "on". 
 "p" is "p" as in "pro". 
 "q" is "ng" as in "sing". 
-"r" is "er" as in "barber". 
-"s" is "s" as in "asia". 
+"r" is "u" as in "up". 
+"s" is "s" as in "risk". 
 "t" is "t" as in "top". 
 "u" is "u" as in "rule". 
 "w" is "wo" as in "word". 
@@ -527,13 +559,13 @@ a = /a/. b = /b/. c = /k/. d = /d/. e = /ɛ/. g = /g/. h = /h/. i = /ɪ/. j = /d
 
 ▶ Allowed only in linguistic discussions{
 
-,b = /p͈/. ㅃ 
+,b = is "p" as in french word "pas". /p͈/. ㅃ 
 ,d = /t͈/. ㄸ 
 ,g = /k͈/. ㄲ 
-,s = /s͈/. ㅆ  
+,s is "s" as in "so". = /s͈/.  
 ,j = /țɕ/.  ㅉ 
-,l = /r/. 
-,p = /f/. 
+,l is "r" as in "america". = /r/. 
+,p is "f" as in "soft". = /f/
 
 }◀ Allowed only in linguistic discussions
 
@@ -564,35 +596,54 @@ if "." cant be used then v is used.
 only g and n and d and l and m and b and q can work as final consonant. k and t and p cant work as final consonant.
 
 </pre><details open><summary>read it if you dislike this pronunciation</summary><pre>
-"r" is /ʌ/ like german.( "r" in natur is /ʌ/) so it is not random.
+"r" is /ʌ/ like german.( "r" in "natur" is /ʌ/) so it is not random.
 
-"z" is /tʃ/ like german.( "z" in zur is /tʃ/) so it is not random.
+"z" is /tʃ/ like german.( "z" in "zur" is /tʃ/) so it is not random.
 
 "y" is /ɯ/ in Yale Romanization so it is not random.
 
 "q" is the second least used character in english. among character that isnt used, "q" is the character most similar to "ng".
 
 }◀ read it if you dislike this pronunciation
-
-}◀ pronunciation
 </pre></details>
+<pre>}◀ pronunciation</pre>
 </details>
 
-<details open>
- <summary id="detail">detail(not finished but can helpful)</summary>
 <pre>
 
 "hid" mean "thing that alive".
 
+"hid" mean "thing that alive" so "dih" mean "dead thing"(inversed).
+
 "i" mean "me".
 
-"i j" mean "i am thing that alive". grammar of samin is like SVO. We express this as "the 'i' is in the left hand side".
+"e" is be verb.
 
-"ji" mean "thing that alive" so "ij" mean "dead thing"(inversed).
+"i e hid" mean "i am thing that alive". grammar of samin is like SVO. We express this as "the 'i' is in the left hand side, and the 'hid' is in right hand side".
 
 "u" mean "you".
 
-"ga A" mean "thing that detect A" so "i ga u" mean "i detect you". samin does not distinguish between who and thing.
+"ga A" mean "thing that detect A" everywhere so "i ga u" mean "i detect you". samin does not distinguish between who and thing.
+
+since samin is alpha version, we gonna learn how to develop samin.
+
+</pre>
+
+<details open><summary>how to develop samin</summary>
+
+<details open>
+<summary>word formation rule</summary>
+ <pre>
+https://menalari.globasa.net/eng/
+
+}◀ word formation rule
+</pre>
+ 
+</details>
+<pre>}◀ how to develop samin</pre>
+</details>
+
+<pre>
 
 "e A B" mean "A of B". "nam" mean "name". "e nam u?" mean "what is your name?".
 
@@ -618,23 +669,20 @@ only g and n and d and l and m and b and q can work as final consonant. k and t 
 
 </pre>
 
-<details open>
- 
-<summary>word formation rule</summary>
- <pre>
-https://menalari.globasa.net/eng/
-
-}◀ word formation rule
-</pre>
- 
-</details>
-
 <pre>
 }◀ detail
 </pre>
 
 </details>
 
-
+<details open>
+<summary>donate link</summary>
+<br>
+<a href="https://www.paypal.me/sangminjeong544">
+it dont exist</a>
+<pre>
+}◀ donate link
+</pre>
+</details>
 </body>
 </html>
