@@ -1,216 +1,1059 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <link rel="icon" type="image/png" href="https://fhres126.github.io/w/lookingforword.png">
-  <meta charset="UTF-8">
-  <title>search veluil word</title>
-    <style>
-     :root {
-      --s: "0";
-      --fontsize:"0"
-     }
-    html{
-     font-size: var(--fontsize);
-    }
-    *{
-     font-size: 1rem;
-    }
-    body {
-     font-family: sans-serif;
-     padding: 20px;
-     color:#FFFFFF;
-     background:#000000;
-     height: 400vh;
-    }
-    
-    button {
-     padding: 8px;
-     margin: 6px 0;
-     position: fixed;
-     
-    }
-    input{
-     position:fixed;
-     width:calc(var(--s) / 3);
-    }
-    
-    .result {
-     margin-top: 15px;
-    }
-    pre { 
-     background:#222222;
-     padding:10px;
-     border-radius:6px;
-     display:inline-block;
-     display: block;
-     white-space: pre-wrap;
-     word-break: break-all;
-    }
-    div{
-     white-space: pre-wrap;
-     position:relative;
-    }
-    #randomwordbar {
-     width:100%;
-     background:#330000;
-    }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Veluil Dictionary</title>
+
+<style>
+
+:root{
+    --bg:#000000;
+    --card:#181818;
+    --text:#ffffff;
+    --sub:#aaaaaa;
+    --border:#333333;
+    --accent:#ff5533;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    font-size:18px;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:sans-serif;
+}
+
+header{
+    padding:20px;
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#000000ee;
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+}
+
+h1{
+    margin:0;
+    font-size:1.6rem;
+}
+
+.subtitle{
+    color:var(--sub);
+    font-size:.8rem;
+    margin-top:5px;
+}
+
+
+/* SEARCH */
+
+.searchBox{
+    margin-top:15px;
+}
+
+.searchTitle{
+    font-size:.85rem;
+    color:var(--sub);
+    margin-bottom:5px;
+}
+
+.searchRow{
+    display:flex;
+    gap:7px;
+}
+
+input{
+    flex:1;
+    min-width:0;
+
+    background:#111111;
+    color:white;
+
+    border:1px solid #555;
+    border-radius:7px;
+
+    padding:10px;
+    font-size:1rem;
+}
+
+button{
+    background:#222222;
+    color:white;
+
+    border:1px solid #555;
+    border-radius:7px;
+
+    padding:9px 13px;
+
+    cursor:pointer;
+}
+
+button:hover{
+    background:#333333;
+}
+
+
+/* NAV */
+
+nav{
+    display:flex;
+    gap:7px;
+
+    overflow-x:auto;
+
+    padding:10px 15px;
+
+    border-bottom:1px solid var(--border);
+}
+
+nav button{
+    white-space:nowrap;
+}
+
+
+/* MAIN */
+
+main{
+    max-width:900px;
+    margin:auto;
+
+    padding:15px;
+}
+
+.count{
+    color:var(--sub);
+    margin-bottom:10px;
+}
+
+
+/* ENTRY */
+
+.entry{
+    background:var(--card);
+
+    border:1px solid var(--border);
+    border-radius:9px;
+
+    padding:13px;
+
+    margin-bottom:9px;
+}
+
+.word{
+    color:var(--accent);
+
+    font-size:1.25rem;
+    font-weight:bold;
+}
+
+.meaning{
+    margin-top:5px;
+}
+
+.source{
+    margin-top:8px;
+
+    color:#999999;
+
+    font-family:monospace;
+    font-size:.8rem;
+
+    white-space:pre-wrap;
+    word-break:break-word;
+}
+
+
+/* ALPHABET */
+
+.alphabet{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+
+    margin-bottom:15px;
+}
+
+.alphabet button{
+    padding:7px 10px;
+}
+
+
+/* RANDOM */
+
+.randomCard{
+    background:var(--card);
+
+    border:1px solid var(--border);
+    border-radius:9px;
+
+    padding:20px;
+
+    text-align:center;
+}
+
+.randomCard .word{
+    font-size:2rem;
+}
+
+
+/* ABOUT */
+
+.card{
+    background:var(--card);
+
+    border:1px solid var(--border);
+    border-radius:9px;
+
+    padding:15px;
+
+    margin-bottom:10px;
+}
+
+.card h2{
+    margin-top:0;
+}
+
+a{
+    color:#ff8066;
+}
+
+
+/* OTHER */
+
+.hidden{
+    display:none;
+}
+
+.empty{
+    color:var(--sub);
+    padding:30px 0;
+    text-align:center;
+}
+
+</style>
+
 </head>
+
+
 <body>
- <input type="text" id="searchInput">
-  <button onclick="searchWord()" id = "button_search">search</button>  <div class="result" id="result"></div>
-  <div id="to_do">searching veluil word. search verb instead of Interjection and adverb. for example, hello->greet.
-  
-if searched word is not found then change expresison. for example, where -> location</div>
-    
-  <script>
-   
-    
-    
-    let dic=``;
-    let lines=``;
-    let randomwordbar=document.createElement("div")
-    
-    const url = "https://raw.githubusercontent.com/Fhres126/w/main/co.txt";
-    
-    randomwordbar.id="randomwordbar"
-    
-    
 
-        fetch(url)
-            .then(response => {
-                if (!response.ok) throw new Error("we met error we cant find txt file.");
-                return response.text();
-            })
-            .then(text => {
-                dic=text;
-                dic=dic.substring(dic.indexOf('//ewo'), dic.indexOf('//eewo'));
-                lines = dic.split(/\r?\n/);
-            })
-            .catch(err => {
-                dic=err;
-                lines = dic.split(/\r?\n/);
-            });
-    function searchWord() {
-      let inputRaw = document.getElementById("searchInput").value.trim();
-      let resultDiv = document.getElementById("result");
-      resultDiv.innerHTML = "";
 
-      if (inputRaw) {
-        let input = inputRaw;
-        let results = [];
-  
-        for (let i = 0; i < lines.length; i++) {
-          let line = lines[i];
-          if (!line) continue;
-  
-          let parts = line.split('=');
-          if (parts.length < 2) continue;
-  
-          let rhs = parts.slice(0).join('');
-  
-          let beforeDot = rhs.split('.')[0];
-  
-          let tokens = beforeDot.split(/[^A-Za-z0]+/).filter(Boolean);
-  
-          let matched = false;
-          for (let t of tokens) {
-            if (t.startsWith(input)) { 
-              matched = true;
-              break;
-            }
-          }
-          
-          if(line.split("=")[1].startsWith(input)){
-           matched=true;
-          }else{
-           
-          }
-          for(let j = 0;j<line.split(" ").length;j++){
-            if(line.split(" ")[j].startsWith(input)){
-             matched=true;
-            }
-           }
-  
-          if (matched) {
-            results.push(line.trim());
-          }
-        }
-        
-       
-  
-        if (results.length > 0){
-          let unique = [...new Set(results)];
-          resultDiv.innerHTML = `<b>searrch result:</b><br>` + unique.map(r => `<pre>${r}</pre>`).join('');} else {
-         resultDiv.innerHTML = "result is undefined";
-       }
-      }else{
-       
-      }
+<header>
 
-      
-     
-     randomwordbar.style=`width:${100}%;`;
-     
-     randomwordbar.textContent="teaching random word:"
-     
-     for(let i=0;i<8;i++){
-      let randomint = Math.floor(Math.random() * lines.length);
-      
-      if(lines[randomint].includes("=")){
-       randomwordbar.textContent += "\n\n" + lines[randomint]
-      }else{
-       i--;
-      }
-      
-     }
-     
-     document.body.appendChild(randomwordbar)
-     
-   }
+<h1>Veluil Dictionary</h1>
 
-   let width=window.innerWidth;
-   
-    let height=window.innerHeight;
-    
-    let smallerline;
-    
-    if(width>height){
-      smallerline=height;
-    }else{
-      smallerline=width;
+<div class="subtitle">
+English ↔ Veluil
+</div>
+
+
+<!-- VELUIL SEARCH -->
+
+<div class="searchBox">
+
+<div class="searchTitle">
+Search Veluil
+</div>
+
+<div class="searchRow">
+
+<input
+    id="veluilInput"
+    type="text"
+    placeholder="Veluil word..."
+    autocomplete="off"
+>
+
+<button onclick="searchVeluil()">
+Search
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ENGLISH SEARCH -->
+
+<div class="searchBox">
+
+<div class="searchTitle">
+Search English
+</div>
+
+<div class="searchRow">
+
+<input
+    id="englishInput"
+    type="text"
+    placeholder="English meaning..."
+    autocomplete="off"
+>
+
+<button onclick="searchEnglish()">
+Search
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<nav>
+
+<button onclick="showPage('dictionary')">
+Dictionary
+</button>
+
+<button onclick="showPage('random')">
+Random
+</button>
+
+<button onclick="showPage('alphabet')">
+Alphabetical
+</button>
+
+<button onclick="showPage('about')">
+About
+</button>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- DICTIONARY -->
+
+<section id="dictionaryPage">
+
+<div
+    id="count"
+    class="count"
+>
+Loading dictionary...
+</div>
+
+<div id="results"></div>
+
+</section>
+
+
+
+<!-- RANDOM -->
+
+<section
+    id="randomPage"
+    class="hidden"
+>
+
+<div class="randomCard">
+
+<div id="randomResult"></div>
+
+<br>
+
+<button onclick="randomWord()">
+Another word
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ALPHABET -->
+
+<section
+    id="alphabetPage"
+    class="hidden"
+>
+
+<div
+    id="alphabet"
+    class="alphabet"
+></div>
+
+<div id="alphabetResults"></div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section
+    id="aboutPage"
+    class="hidden"
+>
+
+<div class="card">
+
+<h2>
+About
+</h2>
+
+<p>
+Veluil Dictionary
+</p>
+
+<p>
+The dictionary is based on the Veluil vocabulary
+and uses a structure inspired by the Globasa Menalari dictionary.
+</p>
+
+<p>
+Veluil vocabulary source:
+</p>
+
+<a
+href="https://raw.githubusercontent.com/Fhres126/w/main/co.txt"
+target="_blank"
+>
+co.txt
+</a>
+
+<p>
+Globasa reference:
+</p>
+
+<a
+href="https://menalari.globasa.net/eng/"
+target="_blank"
+>
+Menalari
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<script>
+
+
+/* =========================================
+   SOURCE
+========================================= */
+
+const SOURCE =
+"https://raw.githubusercontent.com/Fhres126/w/main/co.txt";
+
+
+let entries = [];
+
+
+
+/* =========================================
+   LOAD DICTIONARY
+========================================= */
+
+fetch(SOURCE)
+
+.then(function(response){
+
+    if(!response.ok){
+
+        throw new Error(
+            "Could not load dictionary."
+        );
+
     }
-    document.documentElement.style.setProperty("--s", String(smallerline));
-    
-    //document.getElementById("searchInput").style.width=String(Number(getComputedStyle(document.documentElement).getPropertyValue("--s"))/2)+"px";
-    
-    document.documentElement.style.setProperty("--fontsize", String(smallerline * 0.05) + "px");
-    
-    document.getElementById("searchInput").style.top="0px"
-    
-    document.getElementById("searchInput").style.zIndex="9999";
-    
-    document.getElementById("button_search").style.top=parseFloat(document.getElementById("searchInput").getBoundingClientRect().top) + parseFloat(document.getElementById("searchInput").offsetHeight) + "px"
-     
-     document.getElementById("button_search").style.zIndex="9999";
-    
-    document.getElementById("to_do").style.top = parseFloat(document.getElementById("button_search").getBoundingClientRect().top) + parseFloat(document.getElementById("button_search").offsetHeight) + "px"
-  </script>
+
+    return response.text();
+
+})
+
+.then(function(text){
+
+    entries =
+        parseDictionary(text);
+
+    document
+        .getElementById("count")
+        .textContent =
+        entries.length +
+        " entries";
+
+    render(
+        entries.slice(0,100)
+    );
+
+    createAlphabet();
+
+})
+
+.catch(function(error){
+
+    document
+        .getElementById("count")
+        .textContent =
+        "Dictionary loading failed.";
+
+    document
+        .getElementById("results")
+        .innerHTML =
+        '<div class="empty">' +
+        escapeHTML(error.message) +
+        '</div>';
+
+});
+
+
+
+/* =========================================
+   PARSE
+========================================= */
+
+function parseDictionary(text){
+
+    let result = [];
+
+    let lines =
+        text.split(/\r?\n/);
+
+
+    for(let raw of lines){
+
+        let line =
+            raw.trim();
+
+
+        if(!line)
+            continue;
+
+
+        if(!line.includes("="))
+            continue;
+
+
+        if(
+            line.startsWith("//") ||
+            line.startsWith("▶")
+        )
+            continue;
+
+
+        let equal =
+            line.indexOf("=");
+
+
+        let left =
+            line
+            .substring(0,equal)
+            .trim();
+
+
+        let right =
+            line
+            .substring(equal + 1)
+            .trim();
+
+
+        left =
+            left.replace(
+                /^-+/,
+                ""
+            )
+            .trim();
+
+
+        if(!left)
+            continue;
+
+
+        /*
+         First token is treated
+         as the Veluil word.
+        */
+
+        let word =
+            left
+            .split(/\s+/)[0]
+            .trim();
+
+
+        if(
+            !/^[A-Za-z][A-Za-z0-9-]*$/
+            .test(word)
+        )
+            continue;
+
+
+        /*
+         English gloss.
+
+         Everything before //
+         is treated as the meaning.
+        */
+
+        let meaning =
+            right
+            .split("//")[0]
+            .trim();
+
+
+        meaning =
+            meaning.replace(
+                /\s+/g,
+                " "
+            );
+
+
+        if(!meaning)
+            continue;
+
+
+        result.push({
+
+            word:word,
+
+            meaning:meaning,
+
+            raw:line
+
+        });
+
+    }
+
+
+    /*
+    Remove duplicate lines.
+    */
+
+    let seen =
+        new Set();
+
+
+    result =
+        result.filter(function(x){
+
+            if(
+                seen.has(x.raw)
+            )
+                return false;
+
+
+            seen.add(x.raw);
+
+            return true;
+
+        });
+
+
+    return result;
+
+}
+
+
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(text){
+
+    return text.replace(
+        /[&<>"']/g,
+
+        function(char){
+
+            const map = {
+
+                "&":"&amp;",
+                "<":"&lt;",
+                ">":"&gt;",
+                '"':"&quot;",
+                "'":"&#39;"
+
+            };
+
+            return map[char];
+
+        }
+    );
+
+}
+
+
+
+/* =========================================
+   RENDER
+========================================= */
+
+function render(
+    list,
+    target="results"
+){
+
+    const element =
+        document.getElementById(target);
+
+
+    if(!list.length){
+
+        element.innerHTML =
+            '<div class="empty">' +
+            'No result.' +
+            '</div>';
+
+        return;
+
+    }
+
+
+    element.innerHTML =
+        list.map(function(x){
+
+            return `
+
+            <div class="entry">
+
+                <div class="word">
+                    ${escapeHTML(x.word)}
+                </div>
+
+                <div class="meaning">
+                    ${escapeHTML(x.meaning)}
+                </div>
+
+                <div class="source">
+                    ${escapeHTML(x.raw)}
+                </div>
+
+            </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+
+/* =========================================
+   SEARCH VELUIL
+========================================= */
+
+function searchVeluil(){
+
+    let query =
+        document
+        .getElementById("veluilInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    showPage("dictionary");
+
+
+    if(!query){
+
+        document
+        .getElementById("count")
+        .textContent =
+        entries.length +
+        " entries";
+
+        render(
+            entries.slice(0,100)
+        );
+
+        return;
+
+    }
+
+
+    /*
+    IMPORTANT:
+
+    Veluil search searches ONLY
+    the Veluil word.
+    */
+
+    let result =
+        entries.filter(function(x){
+
+            return x.word
+                .toLowerCase()
+                .startsWith(query);
+
+        });
+
+
+    document
+        .getElementById("count")
+        .textContent =
+        result.length +
+        " result" +
+        (
+            result.length === 1
+            ? ""
+            : "s"
+        );
+
+
+    render(result);
+
+}
+
+
+
+/* =========================================
+   SEARCH ENGLISH
+========================================= */
+
+function searchEnglish(){
+
+    let query =
+        document
+        .getElementById("englishInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    showPage("dictionary");
+
+
+    if(!query){
+
+        document
+        .getElementById("count")
+        .textContent =
+        entries.length +
+        " entries";
+
+        render(
+            entries.slice(0,100)
+        );
+
+        return;
+
+    }
+
+
+    /*
+    IMPORTANT:
+
+    English search searches ONLY
+    the English meaning.
+    */
+
+    let result =
+        entries.filter(function(x){
+
+            return x.meaning
+                .toLowerCase()
+                .includes(query);
+
+        });
+
+
+    document
+        .getElementById("count")
+        .textContent =
+        result.length +
+        " result" +
+        (
+            result.length === 1
+            ? ""
+            : "s"
+        );
+
+
+    render(result);
+
+}
+
+
+
+/* =========================================
+   RANDOM WORD
+========================================= */
+
+function randomWord(){
+
+    if(!entries.length)
+        return;
+
+
+    let item =
+        entries[
+            Math.floor(
+                Math.random() *
+                entries.length
+            )
+        ];
+
+
+    render(
+        [item],
+        "randomResult"
+    );
+
+}
+
+
+
+/* =========================================
+   ALPHABET
+========================================= */
+
+function createAlphabet(){
+
+    const letters =
+        "abcdefghijklmnopqrstuvwxyz"
+        .split("");
+
+
+    document
+        .getElementById("alphabet")
+        .innerHTML =
+
+        letters.map(function(letter){
+
+            return `
+
+            <button
+                onclick="alphabetSearch('${letter}')"
+            >
+                ${letter}
+            </button>
+
+            `;
+
+        }).join("");
+
+}
+
+
+function alphabetSearch(letter){
+
+    let result =
+        entries.filter(function(x){
+
+            return x.word
+                .toLowerCase()
+                .startsWith(letter);
+
+        });
+
+
+    render(
+        result,
+        "alphabetResults"
+    );
+
+}
+
+
+
+/* =========================================
+   PAGE NAVIGATION
+========================================= */
+
+function showPage(page){
+
+    document
+        .getElementById("dictionaryPage")
+        .classList
+        .toggle(
+            "hidden",
+            page !== "dictionary"
+        );
+
+
+    document
+        .getElementById("randomPage")
+        .classList
+        .toggle(
+            "hidden",
+            page !== "random"
+        );
+
+
+    document
+        .getElementById("alphabetPage")
+        .classList
+        .toggle(
+            "hidden",
+            page !== "alphabet"
+        );
+
+
+    document
+        .getElementById("aboutPage")
+        .classList
+        .toggle(
+            "hidden",
+            page !== "about"
+        );
+
+
+    if(page === "random"){
+
+        randomWord();
+
+    }
+
+}
+
+
+
+/* =========================================
+   ENTER KEY
+========================================= */
+
+document
+    .getElementById("veluilInput")
+    .addEventListener(
+        "keydown",
+        function(event){
+
+            if(event.key === "Enter")
+                searchVeluil();
+
+        }
+    );
+
+
+document
+    .getElementById("englishInput")
+    .addEventListener(
+        "keydown",
+        function(event){
+
+            if(event.key === "Enter")
+                searchEnglish();
+
+        }
+    );
+
+
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
