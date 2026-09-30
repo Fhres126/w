@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
 >
 
-<title>Veluil Dictionary</title>
+<title>samin Dictionary</title>
 
 <style>
 
@@ -532,35 +532,35 @@ a{
 <header>
 
 <h1>
-Veluil Dictionary
+samin Dictionary
 </h1>
 
 <div class="subtitle">
-English ↔ Veluil
+English ↔ samin
 </div>
 
 
 <!-- =====================
-     VELUIL SEARCH
+     samin SEARCH
 ====================== -->
 
 <div class="searchBox">
 
 <div class="searchTitle">
-Search Veluil
+Search samin
 </div>
 
 <div class="searchRow">
 
 <input
-    id="veluilInput"
+    id="saminInput"
     type="text"
-    placeholder="Enter a Veluil word..."
+    placeholder="Enter a samin word..."
     autocomplete="off"
 >
 
 <button
-    id="veluilButton"
+    id="saminButton"
     type="button"
 >
 Search
@@ -729,11 +729,11 @@ About
 </h2>
 
 <p>
-Veluil Dictionary
+samin Dictionary
 </p>
 
 <p>
-This dictionary uses the Veluil vocabulary
+This dictionary uses the samin vocabulary
 from <code>co_a.txt</code>.
 </p>
 
@@ -981,7 +981,7 @@ function parseDictionary(text){
 
 
         /* ---------------------------------------------
-           Get Veluil word
+           Get samin word
 
            First token is the word.
 
@@ -1248,14 +1248,14 @@ function render(
 
 
 /* =====================================================
-   SEARCH VELUIL
+   SEARCH samin
 ===================================================== */
 
-function searchVeluil(){
+function searchsamin(){
 
     const query =
         document
-        .getElementById("veluilInput")
+        .getElementById("saminInput")
         .value
         .trim()
         .toLowerCase();
@@ -1283,7 +1283,7 @@ function searchVeluil(){
 
 
     /*
-       ONLY SEARCH THE VELUIL WORD.
+       ONLY SEARCH THE samin WORD.
 
        English meanings are NOT searched here.
     */
@@ -1356,7 +1356,7 @@ function searchEnglish(){
     /*
        ONLY SEARCH THE ENGLISH MEANING.
 
-       Veluil words are NOT searched here.
+       samin words are NOT searched here.
     */
 
     const result =
@@ -1563,10 +1563,10 @@ function showPage(page){
 ===================================================== */
 
 document
-    .getElementById("veluilButton")
+    .getElementById("saminButton")
     .addEventListener(
         "click",
-        searchVeluil
+        searchsamin
     );
 
 
@@ -1584,7 +1584,7 @@ document
 ===================================================== */
 
 document
-    .getElementById("veluilInput")
+    .getElementById("saminInput")
     .addEventListener(
         "keydown",
         function(event){
@@ -1593,7 +1593,7 @@ document
 
                 event.preventDefault();
 
-                searchVeluil();
+                searchsamin();
 
             }
 
