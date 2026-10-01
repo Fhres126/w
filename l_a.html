@@ -35,7 +35,7 @@
       overflow-wrap: anywhere;
       line-height: 2.1;
       text-underline-offset: calc(0.4 * var(--fontsize));
-      border: 1px solid #140000;
+      
      }
     h1{
      color: #FF0008;
@@ -93,11 +93,11 @@
     summary {
      cursor: pointer; 
      -webkit-text-stroke: 0px;
-     font-size:calc(1.25 * var(--fontsize));
-     font-weight: 1000;
-     background: linear-gradient(to top, #555555 10%, transparent 10%);
-     font-style: oblique;
-     
+     font-size:calc(1.15 * var(--fontsize));
+     font-weight: 600;
+     background: linear-gradient(to top, #555555 0.2em, transparent 0.2em);
+     font-style: italic;
+     letter-spacing: 0.05em;
      
     }
    
@@ -117,59 +117,44 @@
  </style>
 </head>
 <body>
-  <button id="button_gradient" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:#ff5733 !important;color:#ff5733 !important;}</style>');document.body.style.backgroundColor = '#000000'"></button>
+  <button id="button_gradient" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:#ff5733 !important;color:#ff5733 !important;}</style>');"></button>
 
 
-<button id="button_rainbow" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:red !important;color:red !important;}</style>');document.body.style.backgroundColor = '#000000';"></button></button>
+<button id="button_rainbow" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:red !important;color:red !important;}</style>');"></button></button>
 
   
   <button id = 'button_red' class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ff0000');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff0000 !important;-webkit-text-fill-color:#ff0000 !important;}</style>');
-document.body.style.backgroundColor = '#000000'"></button>
+"></button>
   
   <button id = 'button_orange' class = 'setcolor' style="background-color:#ff8800;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#ff8800');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff8800 !important;-webkit-text-fill-color:#ff8800 !important;}</style>');document.body.style.backgroundColor = '#000000'
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ff8800');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff8800 !important;-webkit-text-fill-color:#ff8800 !important;}</style>');
 "></button>
 
 <button id = 'button_yellow' class = 'setcolor' style="background-color:#ffff00;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ffff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffff00 !important;-webkit-text-fill-color:#ffff00 !important;}</style>');
-
-
-document.body.style.backgroundColor = '#000000'"></button>
+"></button>
   
   <button id = 'button_green' class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ff00 !important;-webkit-text-fill-color:#00ff00 !important;}</style>');
-
-document.body.style.backgroundColor = '#000000'"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ff00 !important;-webkit-text-fill-color:#00ff00 !important;}</style>');"></button>
 
 <button id = 'button_cyan' class = 'setcolor' style="background-color:#00ffff;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#00ffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ffff !important;-webkit-text-fill-color:#00ffff !important;}</style>');
-
-document.body.style.backgroundColor = '#000000'"></button>
-
+});document.querySelectorAll('*').forEach(e=>e.style.color='#00ffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ffff !important;-webkit-text-fill-color:#00ffff !important;}</style>');"></button>
+  
   <button id = 'button_white' class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');
-
-document.body.style.backgroundColor = '#000000'"></button>
-
-  <button id = 'button_black' class = 'setcolor' style="background-color:#888888;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
-  e.style.webkitBackgroundClip='';
-  e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#000000');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');
-
-document.body.style.backgroundColor = '#FFFFFF'"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');"></button>
 
 
 <input id = 'bar_size' type="range" min="0.005" max="0.1" step="0.005" value="0.05"
@@ -194,6 +179,7 @@ oninput="speed_of_auto_scroll=this.value;">
     }else{
       smallerline=width;
     }
+   
     document.documentElement.style.setProperty("--s", String(smallerline) + "px");
     document.documentElement.style.setProperty("--fontsize", String(smallerline * document.getElementById("bar_size").value) + "px");
     document.body.style.maxWidth = width.toString() + "px";
@@ -271,9 +257,7 @@ oninput="speed_of_auto_scroll=this.value;">
     
     document.getElementById("button_white").style.left=parseFloat(getComputedStyle(document.getElementById("button_cyan")).left) + parseFloat(document.getElementById("button_cyan").offsetWidth) + "px"
     
-    document.getElementById("button_black").style.left=parseFloat(getComputedStyle(document.getElementById("button_white")).left) + parseFloat(document.getElementById("button_white").offsetWidth) + "px"
-    
-    document.getElementById("bar_size").style.left=parseFloat(getComputedStyle(document.getElementById("button_black")).left) + parseFloat(document.getElementById("button_black").offsetWidth) + "px"
+    document.getElementById("bar_size").style.left=parseFloat(getComputedStyle(document.getElementById("button_white")).left) + parseFloat(document.getElementById("button_white").offsetWidth) + "px"
     
     if(width < height){
      document.getElementById("turn_autoscroll").style.top= parseFloat(document.getElementById("button_white").offsetHeight) + "px";
@@ -385,94 +369,286 @@ oninput="speed_of_auto_scroll=this.value;">
     });
    }
    
+   document.getElementById("bar_size").value = 0.03;
+   document.getElementById("bar_size").dispatchEvent(new Event('input', { bubbles: true }));
+
+   document.addEventListener("DOMContentLoaded", function () {
+  // 1. 제어할 두 개의 태그(bar_size, scale_of_scroll)를 배열로 가져옵니다
+  const targets = [
+    document.getElementById("bar_size"),
+    document.getElementById("scale_of_scroll"),
+   document.getElementById("turn_autoscroll")
+  ];
+  
+  let count = 0;
+  
+  // 2. 0.3초 간격으로 동시에 깜빡이는 타이머 실행
+  const flashInterval = setInterval(() => {
+    targets.forEach(target => {
+      // 태그가 화면에 실제로 존재할 때만 실행
+      if (target) {
+        if (count % 2 === 0) {
+          // 🌟 번쩍일 때 스타일: 두께 확대, 주황색 강조, 네온 그림자 효과
+          target.style.transform = "scaleY(1.6)";
+          target.style.accentColor = "#2938f8"; 
+          target.style.filter = "drop-shadow(0 0 10px #ff22aa)";
+          target.style.transition = "all 0.15s ease-in-out";
+        } else {
+          // 😴 원래 스타일로 복구
+          target.style.transform = "scaleY(1)";
+          target.style.accentColor = ""; 
+          target.style.filter = "";
+        }
+      }
+    });
+    
+    count++;
+    
+    // 3. 총 6회 반복 후(3번 번쩍인 후) 타이머 종료 및 완전 초기화
+    if (count >= 6) {
+      clearInterval(flashInterval);
+      targets.forEach(target => {
+        if (target) {
+          target.style.transform = "scaleY(1)";
+          target.style.accentColor = "";
+          target.style.filter = "";
+          target.style.transition = "";
+        }
+      });
+    }
+  }, 300); // 300ms = 0.3초 간격
+});
+
   </script>
+  <pre>
 
+
+
+
+
+
+   
+
+   
+
+
+</pre>
+ <h1>SAMIN LESSON FOR ENGLISH SPEAKER </h1>
 <pre>
  
  
  
  
 
-
-this document explain easy and logical unambiguous democratic neutral superior international auxiliary language samin. this document and language is alpha version. i made this IAL cuz i reject all other IAL. I think this language is objectively good. Promise me you won't hate this IAL before reading this document through. making lesson is difficult.
-
 </pre>
+ <details open>
+  <summary> overview</summary>
+  <pre>- this document explain EASY and LOGICAL UNAMBIGIOUS DEMOCRATIC NEUTRAL SUPERIOR IAL samin. this language is made by time bill gates who are introvert who are life loser who are jobless who are OCD patient so i might noticed all problem that you will can notice. the all problem might be already fixed or will be fixed or it might objectly be not problem. this document and language is alpha version. i made this IAL cuz i reject all other IAL.
+
+▲ overview</pre>
+ </details>
+
+ <details open>
+  <summary> table of content</summary>
+  <pre>- overview. 
+- table of content. 
+- persuading to learn samin. 
+- lesson. 
+-- before we begin. 
+-- alphabet.
+-- pronunciation. 
+-- word formation rule. 
+--- The priority order of parts of speech to assign during word formation. 
+--- suffix. 
+---- suffix that can be freely used. 
+---- suffixes that must be allowed to be used. 
+---- how to change suffix into noun.
+--- compound word. 
+--- antonym. 
+--- foreign word.
+--- loanword. 
+-- capital letter rule.
+-- grammar. 
+--- part of speech. 
+---- situation that a part of speech is changed. 
+---- how to omit be verb.
+---- relative pronoun. 
+--- how to change word order. 
+--- command. 
+-- article.
+-- caution. 
+- example setences. 
+- other site.
+-- word dictionary.
+- complaint resolution. 
+-- about the pronunciation. 
+-- why perfectly logical IAL is impossible. 
+--- how samin become perfectly logical IAL, if the world want. 
+
+▲ table of content</pre>
+ </details>
 
 <details open>
- <summary>table of content</summary><br>
- <div class="toc">
-  <a href="#allinone">- all in one</a><br>
-  <a href="#allinone">--core</a><br>
-  <a href="#allinone">--bonus</a><br>
-<pre>}◀ table of content</pre>
-</div>
+ <summary> persuading to learn samin</summary>
+ <pre>
+
+
+▲ persuading to learn samin
+ </pre>
 </details>
 <details open>
- <summary id="persuading to learn samin">all in one</summary>
- <details open><summary>core</summary>
-<pre>
+<summary> lesson</summary>
+ <details open>
+  <summary>- before we begin. </summary>
+  <pre>- I will not cite academic grounds to persuade you because it would make the lecture too long. Do not worry, as most of my arguments are based on academic evidence.
 
-"i e mu" mean "i am human".
-as you see, this IAL is efficient. efficiency save life sometime. the "mu" is derived from african language hausa word "mutum". this IAL's vocabulary derived from various language so it is neutral. as you see, This IAL doesn't have difficult sounds that must be pronounced as English r, f, v, q or z.
+▲- before we begin</pre>
+ </details>
+ <details open>
+  <summary>- alphabet. </summary>
+  <pre>-- no f, k, q. only 23 letters.
 
-"L hai no iah" mean "the alive thing is not dead". "hai" mean "alive". "iah" mean "dead". as you see, antonym is inversed. so it is easy to memorize. The grammar of this language is entirely up to the user. However, if the user's grammar turns out to be illogical, the developer can impact. i think OVS is more practical cuz it say less predictable first but i think i must listen many people's opinion. samin is evloving.
+▲- alphabet
+  </pre>
+ </details>
+ <details open>
+  <summary>- pronunciation</summary>
+  <pre>
+-- A single character can covers a wide range of pronunciations.(d = /d/, /θ/ and etc)
+-- no Consonant digraph and Diphthong. 
+-- s = "s" as in task not "so".
+-- y can make consonant a strong. "ys" = "s" as in "so". it is NOT PROUNCED if it is ALONE.("hay" = ha) 
+-- x = empty consonant or "ng"(xa = a, ax = ang) 
+-- r = schwa. "u" as in "pronunciation".(like german lang) 
+-- v = close back unrounded vowel, represented as [ɯ] in the IPA.(v was vowel in latin). 
+-- only b, d, g, l, m, n, x can be used as final consonant. 
+-- samin's "ala" = a.la.
+-- no consonant cluster. You don't need to link the sounds. "bs" = [bɯsɯ], "b-s".
 
-"i su u aba u ne i" mean "i like you but you hate me". the "su" mean "to like". the "ne" mean "hate". The word for "hate" might seem like it should be "us", as the antonym of "su". However, short words are not formed as antonyms because they can be difficult to distinguish in noisy environments. as you can notice, this IAL creator thought about many things.
+▲- pronunciation</pre>
+ </details>
+ <details open>
+ <summary>- word formation rule</summary>
+  <pre>-- homonyms and synonyms is prohibited. 
+-- only transitive verb can be verb. </pre>
+  <details open>
+   <summary>-- The priority order of parts of speech to assign during word formation. </summary>
+   <pre>--- there are no enough suffix intendly so there are no suffix that make a noun into conjunction but there are suffix that make conjunction into noun so the user must make conjunction fitstly. 
 
-"io olco no inp" mean "my gene is not inferior". "olco" mean "gene". "olco" is compound word of "organism" and "code". as you see, this IAL have many compound word so easy to learn.
-
-"i su to or u, ji i" mean "i like (it or you) and me". user must use "," to remove ambigious so samin is logical IAL. the "r" is schwa "u" as in "pronunciation". IAL need schwa cuz it exist in many natural language. and the "r" was the least shitty choice cuz many language use r when pronounce schwa. for example, german word natur and english word worker. other IAL cant express even korean capital city "서울" correctly. and i think the other IAL user must use IPA lot in real life.
-
-"lie e lic" mean "water is liquid". as you see, word that has similar meaning consist of similar letters so it is easy to memorize if memory is fuzzy. as you see, words with similar meanings differ mainly in their vowels. Different vowels require different mouth shapes, and vowels are generally easier to distinguish than consonants in noisy environments.
-
-"io glu glu uo gluh" mean "my eye see your see". some word can work as noun and verb so it is easy to learn. Some might think that a word having multiple meanings makes language ambiguous and illogical but dont worry, samin keep logical using some rule. if the "glu" is alone then it mean "eye" always. the "h" made verb into adjective. yes samin have suffixs but dont worry all suffix exist as word formation rule. samin dont have lot of suffix cuz we thought Suffixes prevent user freely expressing names. this IAL dont have consonant cluster. "glu" is pronounced as "g.lu"([gɯ.lu] in IPA) . most IAL cant distinguish even "glu" and "gllu" and the most IAL cant pronounce even "g.lu" but samin yeah.
-
-"mas IAL pn [w] ji [u] al [u] aba samin pn nu [u] pu [u]" mean "other IAL use w and u as u but samin use only [u] for [u]. some IAL say "europe" for "ewropa" but sound of "ewropa" very similar to "europa" they must know letter and pronunciation seperatly. and other's "y" is same.
-
-"i im IAL mus e hcrjr cwa hcr e bai" mean "i think IAL must be logical. logic is good".
-
-"IAL e loasa cwa nuc bomb ta" mean "IAL is needed cuz nuclear bomb exist".
-
-"l mon loa IAL cwa ba g omis cavl ta" mean "the world need IAL cuz langiage that omit subject exist". the "cavl" is pronounced as "ca.l". the "v" devide pronunciation. i think it is least bad letter. most IAL cant even express sound "a.m" but samin yeah.
-
-"https://discord.gg/BrZwnBwrAx e discovd srbr pu samin" mean "https://discord.gg/BrZwnBwrAx is discord server for samin". yes it is discord server for samin. you can join.
-
-"L qu su hi iq" mean "the male like this female". yes word male is not formed as antonym of word female cuz it is sexist. the "q" is "ng" as in "sing".  this IAL dont have Consonant Digraph so they have consistent pronunciation. "q" is the second least used character in english. among character that isnt used, "q" is the character most similar to "ng". most IAL cant even express sound "in.ga".
-
-"i no nau uo uan" mean "i dont enjoy your pain". The word 'enjoy' was created first, and the word 'pain' was formed as its antonym, because thing that enjoy is manier than thing that feel pain. Among words that have antonyms, avoid three-letter words with consonant-vowel-consonant or vowel-consonant-vowel patterns.
-
-"syo no men oys" mean "start dont mean end". The word 'start' was created first, and the word 'end' was formed as its antonym, because an end can only exist after a start. the "s" is "s" as in "dask". the "y" make sound to strong so the "ys" is "s" as in "so". if the "y" is alone then the "y" doesnt be pronounced.
-
-"i no ju l bana" mean "i dont know the music". word "music" is compound word of "sound" and "enjoy". "bah" mean "sound". "nau" mean "enjoy". "bah" + "nau" = "bana". the element words within a compound word can be reduced to powers of two. The order of elements within a compound word matters. 'naba' would mean an entity that enjoys sound.
-
-"i ne lomsina ji lom" mean "i hate sealion and sea". word "sealion". The word 'sea lion' is a compound word formed from 'sea' and 'lion.' Since the order of elements within a compound word doesn't matter here, the more semantically important element is placed first
-
-"i hqsu lrndrn" mean "i dislike london". suffix "hq-" make the antonym. 
- Proper nouns are pronounced according to the pronunciation of their native language.
-
-"i e waq" mean "i am king". the word "waq" is derived from globasa word "wangu". Globaasa often uses common vocabulary from many languages, but we sometimes shorten word lengths to make the language more efficient and easier to use. globasa word dictionary: https://menalari.globasa.net/eng/
-
-}◀ core
-
-</pre>
-</details>
-<details open><summary>bonus</summary><pre>
-
-}◀ bonus
-</pre>
+--- interjection -> preposition -> conjunction -> concrete noun -> verb -> adjective -> abstract noun -> adverb. 
  
-</details>
-<pre>}◀ all in one</pre>
-</details></details>
-
+▲-- The priority order of parts of speech to assign during word formation</pre>
+  </details>
+  <details open>
+ <summary>-- suffix</summary>
+ <pre>--- Some suffixes can be used on any word. the others are only allowed on some words.</pre>
+   <details open>
+    <summary>--- suffix that can be freely used. </summary>
+    <pre>---- rn- = un-. 
+---- -es = plural marker.(its logicaly not necessary.)
+---- -ya = abstract noun marker. 
+---- -lo = -ology. 
+---- -do = measurement. 
+---- -ebi = -able. 
+---- -los = -less. 
+---- -jm = -ism. 
+---- -st = -est. 
+---- -rl = -er. 
+---- -il = tool.(cut + this suffix = scissor) 
+     
+     
+▲--- suffix that can be freely used. </pre>
+   </details>
+   <details open>
+    <summary>--- suffixes that must be allowed to be used. </summary>
+    <pre>
+---- -i = causative verb. 
+---- -z = verb marker. 
+     
+▲--- suffixes that must be allowed to be used. </pre>
+   </details>
+   <details open>
+    <summary>--- how to change a suffix into noun</summary>
+    <pre>
+---- if "r" is added before the suffix, it is noun. "r" + suffix for place = "ryo" = place. 
+     
+▲--- how to change a suffix into noun
+    </pre>
+   </details>
+  
+<pre>▲-- suffix </pre>
+  </details>
 <details open>
-<summary>donate link</summary>
-<br>
-<a href="https://www.paypal.me/sangminjeong544">
-it dont exist</a>
+ <summary>-- compound word</summary>
+ <pre>
+--- [verb] + [noun] = doing something toward the noun so "killmyself" would mean suicide. 
+--- [noun pharse] + [verb] is following. "soundenjoy" would mean "song". 
+--- the compound word's length can be compressed for Utility so "bighuman"(titan) would can be "bihu". if it is compressed, all the element words's length must be square of two. 
+
+▲-- compound word</pre>
+</details>
+ <pre>▲- word formation rule</pre>
+ </details>
+ <details open>
+  <summary>- grammar</summary>
+  <details open>
+   <summary>-- part of speech</summary>
+   <pre>--- all word have only one part of speech except this following situation.</pre>
+   <details open>
+    <summary>--- situation that a part of speech is changed</summary>
+    <pre>---- 1.some adjective can work as adverb.(word quick is) 
+---- 2. word "v" can unite words. "coa v su" mean "word like" and "word for like". if there are no the word then it mean "word DO like". and the united word is defautly noun but if other part of speech full, then it is the part of speech. (su v nepa = verb. cuz su & nepa = verb)
+     
+▲--- situation that a part of speech is changed</pre>
+   </details>
+   <details open>
+    <summary>--- relative pronoun</summary>
+    <pre>
+---- g = subject relative pronoun. 
+----- you can make a gerund using it cuz "loving me" can mean "something that love me". 
+---- n = object relative pronoun. 
+----- you can use it as word what cuz "what i love" mean "something that i love". 
+    
+▲--- relative pronoun</pre>
+   </details>
+   <pre>▲-- part of speech</pre>
+  </details>
+  <details open>
+   <summary>-- noun phrase</summary>
+   <pre>--- the noun phrase is remained unitil it met verb. 
+▲-- noun phrase</pre>
+  </details>
+
+  <pre>▲- grammar</pre>
+ </details>
+ <details open>
+ <summary>-- article </summary>
+ <pre>
+--- this lang dont have article "the" but there are temonstrative adjective version of article "the". it is "l". 
+▲-- article 
+ </pre>
+ </details>
+<details open>
+ <summary>- caution</summary>
+ <pre>
+
+-- the determiner's grammartic function is same as adjective. 
+  
+▲- caution. </pre>
+</details>
 <pre>
-}◀ donate link
+▲ lesson
 </pre>
 </details>
+ <details open>
+  <summary>the other site</summary>
+  <details open>
+   <summary>- the word dictionary</summary>
+   <pre>-- https://fhres126.github.io/w/al_worddictionary.html
+    
+▲- the word dictionary</pre>
+  </details>
+  <pre>▲ other site</pre>
+ </details>
 </body>
 </html>
