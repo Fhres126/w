@@ -27,9 +27,9 @@ w = [wo].
 y = //. 
 z=/tʃ/.
 
-,g ,n ,d ,l ,m ,b ,q
+,g ,n ,d ,l ,m ,b ,x
 
-- aq = A.
+- ax = A.
 - bu = B.
 - cwr = C.
 - dya = D.
@@ -38,12 +38,12 @@ z=/tʃ/.
 - hou  =H.
 - idi = I.
 - jyr = J.
-- loq = L.
+- lox = L.
 - mia = M.
 - nran = N.
-- oqo = O.
+- oxo = O.
 - pea = P.
-- qyr = A.
+- vxyr = A.
 - rwr = R.
 - sse = S.
 - tiv = T.
@@ -55,17 +55,17 @@ z=/tʃ/.
 - zugs = Z.
 
 ->suffix{
-▶-suffix that can be freely used
+▼-suffix that can be freely used
 -- -ya = abstract nouns marker. -ness. -ship. -cy.
--- -s= -ed x1.(function/verb only)(Passive.. made by Arbitrary.)
+-- -s= -ed .(function/verb only)(Passive.. made by Arbitrary.)
 - -t= -ed.(function/verb only)(german,norway, turk, hungaryan,)
 - rn- = un-.
 - -is= -ist.
 - -ig =-ical. =-al. =-ic.(hindi, bengol, urdu, uzbek, many european,)
-- -rl = -er x1.(comparative degree only. eg bigger tool)
+- -rl = -er .(comparative degree only. eg bigger tool)
 - -in = -ing as in i cleaning home.(function/verb only
 . english, catalunya,)
-- -st=est x1.(function/verb only).(english, sweden, norway, dannish, dutch,)
+- -st=est .(function/verb only).(english, sweden, norway, dannish, dutch,)
 - -jm = -ism.//european,
 - -il = tool.
 //- -xt = ~ symbol.
@@ -82,23 +82,23 @@ z=/tʃ/.
 - -ebi = -able.(russian, turk, romance,)
 - -los = -less.(romance, german, north europe,idish,)
 - -cul = grand-.(zulu)
-- -siq = -cy.(chinese, english, africans, french, spainish, catalunya, galisia, swedish, norway, dannish, icelandic, tok pisin,)
-- [word]-lecq-[suffix] = literature marker.(from Reconquista, cuz sound good, just.)
-◀-suffix that can be freely used
+- -six = -cy.(chinese, english, africans, french, spainish, catalunya, galisia, swedish, norway, dannish, icelandic, tok pisin,)
+- [word]-lecx-[suffix] = literature marker.(from Reconquista, cuz sound good, just.)
+▲-suffix that can be freely used
 
-▶-suffixes that must be allowed to be used
+▼-suffixes that must be allowed to be used
 //- -ba = language.(group/country only)
 //- -mu = person.(group/country only)
-◀-suffixes that must be allowed to be used
+▲-suffixes that must be allowed to be used
 
-▶ Particle-Postposition{
+▼ Particle-Postposition{
 - -iga =subject.(korean)
 - -z = verb marker.(but Arbitrary not for literature.)
 - -xl = object marker.(korean)
 - -lago = sound marker.
 -  = preposition.
 - -li = adverb marker. Modifying subject.(koream, english, dutch, tok pisin,)
-}◀Particle-Postposition
+}▲Particle-Postposition
 
 }<- suffix
 
@@ -137,7 +137,15 @@ z=/tʃ/.
 -- 11cmo = ​November.
 -- 12cmo = December.
 
-▶a{
+▼a{
+
+▼- a.proper noun{
+
+-- alvhen = argentina.
+-- ainsyutain = eintein.
+-- adolp hitlla = adolf hitler.
+
+▲- a.proper noun
 
 time: no.
 
@@ -153,7 +161,7 @@ time: no.
 - ase !a=origin. =source.
 - apt !a=stupid.(turkiye)
 -- tpa !a=smart.
-- aq =.(subject marker. tagalog)
+- ax =.(subject marker. tagalog)
 - anima !u=animation.
 - ast !r,a=abstract. =추상.(as in abstractly. as in abstract artwork)
 - a !s=.(split marker, going to next parameter.)
@@ -168,7 +176,7 @@ time: no.
 -- tia = over.
 --- tili = too. =overly.(over + adverb suffix. last letter is removed for efficiency)
 - ata = come.
-- aqh = original.(mongol)
+- axh = original.(mongol)
 -- neo= new.
 -- dede !u,r=baby.
 - amin !r,v= safe.(indonesian, persian, arabic,)
@@ -176,13 +184,27 @@ time: no.
 -- nima = dangerous.
 - atom = atom.
 
-}◀ a
+}▲ a
 
-▶b{
+▼b{
 
-- academy. 
+▼- b.proper noun{
+
+-- balat = india.
+-- bughan = north korea.
+-- bienam = vietname.
+-- bwien = vienna.
+-- bealin = berlin.
+-- beizix = biejing.
+-- blajiu = brazil.
+-- benezia = Venice.
+-- balvdelona = Barcelona.
+
+▲- b.proper noun
+
+- rlo = academy( + ology)
 -- bit = bit.
--- byte = byte.
+-- bait = byte.
 
 - pal !r=genitalia.(russian)
 -- empa !r=pussy.(female + genitalia)
@@ -197,8 +219,8 @@ time: no.
 //-- biosa = conquer.
 -- bbi o!r=notice.(become + know)
 -- inz !v=enter.(in + verb marker.)
--- byo o!r=thing that get x1.(become + have)
--- baj !r=thing that occur.(become + exist)
+-- byo o!r=get.(become + have)
+-- baj !r=occur.(become + exist)
 -- bh !r=change.(become + abstract noun marker.)
 -- birl o!p1=succeed.(s)
 --- lrib = fail.(a)
@@ -237,9 +259,17 @@ time: no.
 -- daeb = polite.
 - ban = some, certain.
 
-}◀b
+}▲b
 
-▶c{
+▼c{
+
+▼- c.proper noun{
+
+-- cenana = canada.
+-- cwiiu =kiev.
+-- cebvnhabv = copenhagen.
+
+▲- c. proper noun
 
 - cr !r=true. =fact.(random)
 -- crlo !r=information.(true + need)
@@ -248,17 +278,17 @@ time: no.
 --- blpu !r=novel.(false + fun)
 - c !t=when.
 - cis !v=kiss.
-- juj _o!r=thing that chew.
-- nigal _o!r=thing that swallows x1.
-- lagin o!r=thinvg that vomit x1.(a)
-- haj _o!r=thing that digest x1.
+- juj _o!v=chew.
+- nigal _o!v=swallows.
+- lagin o!v=vomit.(a)
+- haj _o!r,v=digest.
 - co !r=code.
 -- coi !r=data.
 --- alo !r=academic.
 -- olco !r=gene.(organism + code)
 - ab !p=can.
 -- abo = can with probability.(s)
--- abr o!p1=thing that ready to be x1.(s)
+-- abr o!p1,v=ready to.(s)
 //-- aal !r=god.
 - cija !r=green.
 - coc o!r=cook.
@@ -270,18 +300,18 @@ time: no.
 -- hen !r=politics.
 - cal !r=empty.
 -- lac=full.
-- bia o!p1=little x1. =bit. =less.(turk,uzbek,africans,irish,)
--- aib o!p1=very x1.
+- bia o!p1=little . =bit. =less.(turk,uzbek,africans,irish,)
+-- aib o!p1=very .
 --- isan = run.(very + fast + run)
 --- aitp = genious.(very + smart)
---- aipi n,o!p1=great x1.(very + good)
+--- aipi n,o!p1=great .(very + good)
 --- !v=energetic.(very + excite)
 --- aicr !adj=obvious.(very + true)
-- caz o!r=thing that stir x1.(malay)
+- caz o!r,v=stir.(malay)
 - cap !r=head.
 - cua !=than.(latin, spainish, french, finnish, thai, swahili, zulu,)
-- clo !a=closed.
--- olc !a=opened.
+- clo !adj=closed.
+-- olc !adj=opened.
 - juh>con !r=behavior.(do + noun marker)
 - coll !r=colony.
 - cons !r,a=consonant.
@@ -300,6 +330,7 @@ time: no.
 - cote = diameter.(hebrew, persian,)
 - cima = cost.
 - cosmo = universe.
+-- cosmolo = astronomy.(universe + ology)
 - cato = Harsh.(hindi)
 -- otac = Generous.
 - cuga = Resistance.(myanmar,)
@@ -312,10 +343,20 @@ time: no.
 - clya = verb.(thai, hindi,singhala,nepal,bengol,gujarat,irish,marati)
 - catu = quantom.
 - can = physical particle.(hindi, gujarat, begol, nepal)
+- cila = insect.(hindi,urdu,nepal,maraty,sind,malayalam
 
-}◀c
+}▲c
 
-▶d{
+▼d{
+
+- d.proper noun{
+
+-- doiz !u=germany.
+-- docyo = tokyo.
+-- donrld tlrmp = donald trump.
+-- denmac = denmark.
+
+▲- d.proper noun
 
 - time.
 -- din = day.
@@ -338,9 +379,9 @@ time: no.
 - dui n!r=few. =less.
 -- iud n!r=many.
 - d !r=command marker in right hand side or left hand side.
-- drq = into.(french)
+- drx = into.(french)
 - dag !r=mountain.(turkiye)
-- den o,o!=x1 than x2.
+- den o,o!=then.
 - daip = weak.
 -- piad = strong.
 - damu = blood.
@@ -349,20 +390,28 @@ time: no.
 - gwrg = chicken.
 - diba = wall.
 - dwer = door.
-- dli o,o!r=thing that ask x2 about x1.(tibetan)
--- ild o,o!r=thing that answer x2 by saying x1.
---- ilda o,o!r=thing that communicate with x2 about x1.
+- dli o,o!r=ask.(tibetan)
+-- ild o,o!verb=answer.
+--- ilda o,o!verb=communicate.
 //- dawe = unit. =단위.(korean, chinese,)
-- ado = unit. =단위.
+- ado = unit. =단위.( + degree marker)
 - ditat = Dictator.
 - dini = relligion.
 -- diwa = pope.(relligion + king)
 - dule =(duration) for as in "they are united for 100y".(korean)
 - dutu = background music(onomatopoeia)
 
-}◀d
+}▲d
 
-▶e{
+▼e{
+
+▼- e.proper noun{
+
+-- espa = spain.
+-- ella = greece.
+-- espelanto = esperanto.
+
+▲- e.proper noun
 
 - taa !r=food.(arabic, persian, arabic, urdu,//referenced: myanmar, thai, khmer,)
 -- aat = poison.(a)
@@ -372,7 +421,7 @@ time: no.
 ---- yoil = chest.(have + tool suffix)
 ---- yobr = pregnancy.(include + baby)
 --- yor !r=association(s)
-- o !p1=x2 of x1. =x1's x2.
+- o !p1= of . ='s .
 -- io !p1=my.
 -- bio !p1=our.
 -- ijuo !p1=our.
@@ -380,42 +429,48 @@ time: no.
 - epi !p1=efficient.
 - el !p1=.(volapük)
 - cel !r=purpose.
-- elv !r=thing that labor.
+- elv !r=labor.
 - etn !r=ethnic.
 - cae = which.
 - esta = province. =state.
-- eqgi = simple.(mongolian)
--- igqe = complex.
+- exgi = simple.(mongolian)
+-- igxe = complex.
 - esi !prep=out.
 
-}◀e
+}▲e
 
-▶g{
+▼g{
 
-- gan o!r=thing that detect x1.
+▼- g.proper noun{
+
+-- gatacana = gatakana.
+
+▲- g.proper noun
+
+- gan o!r=detect.
 -- his = feel.(arabic, persian, turk,swahili,)
--- glu o!r=thing that see x1.(detect + light)
+-- glu o!r,v=see.(detect + light)
 --- gli !r=eye.(s)
 ---- glho !r=eyeblid.(eye + shell?)
 ---- glis o!v=wink.(eye + sign?)
 -- gso !r,v=listen.(detect + sound)
 --- gbu !r=ear.(s)
--- gis o!r=thing that smell x1.(detect + smell)
+-- gais !verb=smell.(detect + smell)
 --- gise !r=nose.(s)
--- gco o!r=thing that read x1.(detect + code)
+-- gco !verb=read.(detect + code)
 - gas !r=gas.
 -- gar = air.(s)
-- g o,o!p1= x1 that is x2.(A [this word] e B = A that is B)
-- cuq o,s!p1=x1 whose 1x2 is 2x2.(vietnamese, thai, lao, nepal, spain, portugal,galasyan,latbia, lithuania,)
+- g o,o!p1=that is.(A [this word] e B = A that is B)
+- cux o,s!p1=whose.(vietnamese, thai, lao, nepal, spain, portugal,galasyan,latbia, lithuania,)
 - gand !r=wheat.
 - gale !r=west.
 -- elag !r=east.(a)
 - geo !r=ground. =land.
 -- oeg !r=sky.(a)
-- gwa o!p1=thing thag related to x1.
-- gb o!p1=regarding x1. =concerning x1.(igbo)
+- gwa o!p1=relate to.
+- gb o!p1=regarding . =concerning .(igbo)
 - gui = please.(mongolian)
-- goqg = announce.
+- goxg = announce.
 - glan = glad.
 - gadi = angry.
 -- idag = thank.
@@ -427,40 +482,48 @@ time: no.
 - plit !adj=fried.(many european,)
 - gatan = interjection.(chinese,indonesian,malay,thai)
 
-}◀g
+}▲g
 
-▶h{
+▼h{
 
 - time.
 -- har !u=hour.(english)
 
-- hoi o!r=thing that is colder than x1.(mongol, igbo,russian)
--- gola o!r=thing that is hotter than x1.(hindi, polish, urdu, bulgarian, persian,)
+- h.proper noun{
+
+-- hangu !u= korea.
+-- hilagana = hiragana.
+-- huligana = hurigana.
+
+▲- h.proper noun
+
+- hoi !adj=cold.(mongol, igbo,russian)
+-- gola !adj=hot.(hindi, polish, urdu, bulgarian, persian,)
 - soti !r=sound.
 -- sona !r=music.
--- soul o,o!r=thing that speak x1 to x2.(sound + mention)
--- siso !r=anthem.
+-- soul o,o!r=speak.(sound + mention)
+-- siso !r=anthem.(symbol + sound)
 --- nabe !r=acceleration.
-- smi o,n!r=thing that feel x1 as funny.(russian)
--- ims o,n!r=sad.
-- h o!p1=x1-s.
+- smi !verb=feel  as funny.(russian)
+-- ims o,n!verb=sad.
+- h o!p1=-s.
 - hol !r=shell.
--- olho !r=skin.
+-- olho !r=skin.(organism + shell)
 -- hoij !r=leather.
-- hai !r=alive thing.(arabic, philphine, hebrew,)
+- hai !adj=alive.(arabic, philphine, hebrew,)
 -- hau !r=work.
--- iah !r=dead thing.(a)
---- iehe, yehe = hunt.
+-- iah !adj=dead.(a)
+--- iehe, yehe = hunt.(kill + animal)
 --- iun !r=off.
 ---- nui !r=on.
-- hat o!p1=even x1.
-- ha = verb marker. =thing that do x1.(korean.)
--- hula o!r=thing that cheer x1.
--- aluh o!r=thing that curse x1.
-- huc o!r=thing that judge x1.
+- hat o!p1=even .
+//- ha = verb marker. =do.(korean.)
+-- hula o!verb=cheer.
+-- aluh o!verb=curse.(a)
+- huc o!verb=judge.
 - haha !r=laugh.
 - han !r=hand.
--- har o!r=thing that hold x1.
+-- har !r=hold.
 - haya = pet.(arabic.)
 - hupu = excite.
 - hoyo = direction.
@@ -470,25 +533,36 @@ time: no.
 - hase = envy.
 -- esah = pitiful. =poor.(a)
 - slla = while.(indonesian.)
-- hwrq = wind.(Onomatopoeia)
+- hwrx = wind.(Onomatopoeia)
 
-}◀h
+}▲h
 
-▶i{
+▼i{
+
+- i.proper noun{
+
+-- ixgl = england.
+-- itali = italy.
+-- indonesia = indonesia.
+-- illon mrsc = elon musk.
+-- inzrn = inchoen.
+-- inuyasici = inuyashiki.
+
+▲- i.proper noun
 
 - isi !r=smell.(igbo @ isi ísì)
 - in o,o!p1=in.
 -- inh !r=inside.(in + noun marker)
--- iso- o!r=thing that stay in x1.(in + exist)
+-- iaj o!r=stay.(in + exist)
 - i _= i.(english)
 - em _r!=female. =girl. =women.(mongolian, Basque)
 -- emsu !r=wife.(female + like)
-- ima o!r=thing that imagine x1.
+- ima o!r=imagine.
 - id o,o!r=go.
 -- idlr = arrive.
 - iy !r=mass.(turkish @ yığın)
-- ivg o!r=thing that ignore x1.
--- gvi o!r=thing that mind x1.(a)
+- ivg o!r,v=ignore.
+-- gvi o!r=mind.(a)
 - inp n!r=inferior.
 -- pni n!r=superior.
 - impe !r=empire.
@@ -503,90 +577,106 @@ time: no.
 - isul = island.
 - ism = noun.(arab,urdu,turkiye,persian,sind,amharic,ajerbaijan,zulu)
 
-}◀i
+}▲i
 
-▶j{
+▼j{
 
-- laya o,n!p1=thing that deserve x1.(chinese)
--- lase o!p1=thing that right to be x1.(s)
+▼- j.proper noun{
+
+-- joxgr = china.
+-- jrxsaxmin = sangmin jeong.
+
+▲- j.proper noun
+
+- laya o,n!p1=deserve.(chinese)
+-- lase o!p1=right to.(s)
 - ja !r=self.(korean @ 자신)
-- jo _s,n!r=thing that hope 2x1 is 1x1.(veluil)
--- bole o,n!r=thing that want x1.
--- joco o,n!r=thing that wonder x1.(hope + know)
--- pob _s,n!r=thing that dread 2x1 is 1x1. =fear.
---- oja s,n!r=thing that worry if 1x1 be 2x1.
---- ojj o,n!r=thing that regret x1.
-- de s,o!r=thing that assert 2x1 is 1x1 to x2.
--- deba o,o!r=thing that express x1 to x2.(s)
---- debu = explain.(s)
--- dmo s!r=thing thag define 1x1 is 2x1.(assert + all)
--- dade s,o!r=thing that declare 2x1 is 1x1.(big + assert)
+- jo _s,n!r=hope.(veluil)
+-- bole o,n!r=want.
+-- jbi o,n!r=wonder.(hope + know)
+-- pob _s,n!r=dread. =fear.
+--- oja s,n!verb=worry.
+--- ojj o,n!r=regret.
+- de s,o!r=assert.
+-- dmo s!r=define.(assert + all)
+-- dade s,o!r=declare.(big + assert)
 - yuba !r=young.(hindi, some european,)
--- abui o!r=thing that is older than x1.(a)
-- jrq n!r=normal.(korean)
-- je o,o!p2=x1 square x2.
--- ej o,o!p2= x1 root x2.
-- jr o!p1=that x1.//korean,
-- jub s,n!r=thing that help 1x1 be 2x1.
--- buj s,n!r=thing that hinder 1x1 from being 2x1.
--- jui s,n!r=thing that assist 1x1 in being 2x1. =to auxillary.
+-- abui o!r=old.(a)
+- jrx n!r=normal.(korean)
+- je o,o!p2= square .
+-- ej o,o!p2=  root .
+- jr o!p1=that .//korean,
+- jub s,n!r=help.
+-- buj s,n!r,v=hinder.
+-- jui s,n!r,v=assist. =to auxillary.
 - jud !r=bullet.
-- jen s!r=thing that prove x1 is x2.
+- jen s!r=prove.
 - junl = gravity.
 - jiba = life. =인생.
-- juqu = trace. =track. =trail.
+- juxu = trace. =track. =trail.
 - jaye = reward.
 -- eyaj = punish.
 - jupe = random.
 - j = string word.(j A lala A = "lala")
 
-}◀j
+}▲j
 
-▶k{
+▼k{
 
-}◀k
+}▲k
 
-▶l{
+▼l{
+
+▼- l.proper noun{
+
+-- lasi = russia.
+-- lrndrn = london.
+-- lomwa = rome.
+-- lasputin = rasputin.
+-- lobvllogs = roblox.
+-- lugsembulvc = luxemburg.
+
+▲- l.proper noun
 
 - color.
 -- loso = red.
 
 - laj !r=rational.(bosnian @ razlog)
-- loa o,o,n!r=thing that need x1 to be x2.(Burmese,)
--- aol o,o!r=thing that compete with x1 in competion of being x2.
---- aop o,o!r=thing that fight with x1.
+- loa o,o,n!r=need.(Burmese,)
+-- aol o,o!r=compete.
+--- aop o,o!r,v=fight.
 ---- aoni = tactics.
 ---- poa = peace.
---- omao o!r=thing that war with x1.
+--- omao o!r,v=war (with).
 --- apu !r=sports.
-- cu o!n=quantity of x1.
+- cu o!n=quantity of .
 -- mucu !r=population.
 - litr n!r=A liter.
-- l o!p1=the x1.
+- l o!p1=the .
 -- ola !r=they.(turkiye, chezh, portugues, spainish, serbian, croatian,galysian, bengol, khajah, uzbek,)
 -- lna !r=he.
 -- lem !r=she.
-- lo o!r=location of x1. =where is x1.
-- pelv !r=fermented thing.
+- lo o!r=location of . =where is .
+- pelv !r,v=fermented.
 -- pega !r=bread.(fermented + wheat)
-- lu o,n!p1=thing that repeat be x1 x2 times. =x1으로 되길 x2번 반복한 존재.
+- lu o,n!p1=repeat.
 - lod !r=parent.(russian)
-- lir o!p1=real x1.(english)
--- ril o!p1=fake x1.
+- lir o!p1=real .(english)
+-- ril o!p1=fake .
 - leg !r=law.
-- empu o,o,n!r=thing that push x1 from x2.(portigal,spain,catalunya,)
---  upme o,o,n!r=thing that pull x1 from x2.
+- empu o,o,n!r=push.(portigal,spain,catalunya,)
+--  upme o,o,n!r=pull.
 - pe !r=money.
 -- peic = lobby.
 -- peu !r=economy.
 - lue !r=wheel.
 - lec !r=receipt. =영수증.
-- lai o!r=thing that ride x1.(vietnam,english)
+- lai o!r=ride.(vietnam,english)
 - xl = object marker.(korean,)
 - ju = do.(chinese as least bad left choise.)
 - leg !r=legal.
-- leta !r=thing that is lying.
--- atel o!r=thing that stand on x1.
+- leta !r=lying.
+-- atel o!verb=stand (on).
 - lin = line.
 - lrlli = laurel.(Afrikaans)
 - loya = dream.(when sleep,)
@@ -600,9 +690,22 @@ time: no.
 -- lessna = dictionary.(word + group)
 - logi =logic.
 
-}◀l
+}▲l
 
-▶m{
+▼m{
+
+▼- m.proper noun{
+
+-- munhin = munich.
+-- mehico = mexico.
+-- madvli = madrid.
+-- moscba = moscow.
+-- mrxgrl = mongolia.
+-- mrjrlv = hungary.
+-- mislv = egypt.
+-- mainclept = minecraft.
+
+▲- m.proper noun
 
 - time.
 -- minu = minute.
@@ -616,26 +719,26 @@ time: no.
 -- mucl = race.
 --- muclzi = racist.
 -- muni !r=titan.
-- metr n!r=x1 meter.(french @ mètre @)
+- metr n!r= meter.(french @ mètre @)
 - moda !r=trend.
 -- moam !r=meme.
-- miu o!=minimum x1.
--- uim o!n=most x1.
+- miu o!=minimum .
+-- uim o!n=most .
 - magi !r=magic.
 - ama s,o!p3=but.(german,hawaian,arab,persia,turkiye)
 - hoe s!conjunction=how.(japanese)
 -- hoj = principle.
--- hoha o!p1=how to be x1.
-- mus o,n!r=thing that must be x1.
+-- hoha o!p1=how to be .
+- musi o,n!r=must.
 - mot !r=pattern.
 - lis !r=mechanics.
 - mr !r=what.//"mr hi" mean "what is this?". (korean)
 - myau !r=cat.
-- mei o,o,o!r=thing that sell x1 to x2 for x3.
--- iem o,o!r=thing that buy x1 from x2.
-- mah o!r=thing that is poor than x1.
--- ham o!r=thing that richer than x1.
-- mia o!p1=thing that depend on x1.(Malagasy)
+- mei o,o,o!r=sell.
+-- iem o,o!r=.
+- mah o!r=poor.
+-- ham o!r=rich.
+- mia o!p1=depend (on).(Malagasy)
 - mob !r=car.
 - mama !r=mother. =mom.
 - mim !r=obvious.
@@ -649,7 +752,7 @@ time: no.
 ---- jasn !r=homeland. =fatherland. motherland.
 - mab !r=building.
 -- mac !r=home. =house.
-- dea o!r=tt met x1.(japanese)
+- dea o!verb=met.(japanese)
 -- aed = parting.
 - mid = with.(german.)
 - megu = cloud.
@@ -661,48 +764,57 @@ time: no.
 -- weda = bye. farewell.
 - sdo = manual.
 -- ods = auto.
-- mrqa = nod.
+- mrxa = nod.
 - maju = advance.
--- ujam = Withdraw.
+-- ujam = withdraw.
 - muca = face.
 - midi = middle.
 - misa = example.
 - moja = negotiate.
 - mesa = table.
-- mena o!r=thing that mean x1.
+- men o!r=mean.
 - mala !noun= chanse.
 - ajbu = coerce.(arbaic, persian, many lang that releted india)
 
-}◀m
+}▲m
 
-▶n{
+▼n{
 
-- ni o,n!r=thing that intend to be x1.
--- rnni o!r=thing that is in in a state of giving up being x1.
--- nir o!r=thing that decide to be x1.
--- rin o!r=thing that give up being x1.
--- rilo o,o!r=thing that surrender to x1 in competion of being x2.
--- nie o!r=thing that plan to be x1.
---- npo o!r=thing that select x1.
--- nico o!r=thing that research x1.
-- ji o,o!p1=x1 and x2.(swahili @ na)
--- ju = do x1 and x2.
--- jq=.(and for conjunctions, infix notation)
--- jiu !r=we. =me and you.
-- hi o!p1=this x1.
--- hiyo !r=here.
--- hma !t=now.
+▼- n.proper noun{
+
+-- nihon = japan.
+-- namhan = south korea.
+-- nagoya = nagoya.
+-- nanjix = nanjing.
+-- nyuyolc = new york.
+-- nolvge = norway.
+-- napolle = Neapolitan.
+-- nazi = nazi.
+-- napolleox = napoleon.
+
+▼- n.proper noun
+
+- ni o,n!verb=intend to. =plan to.
+-- rnni o!verb=giving up.(antonym marker + intend)
+-- nir o!r=decide.(s)
+-- rilo o,o!verb=surrender.
+--- npo o!v=select.
+-- nico o!r=research.(intend + know)
+- ji o,o!p1= and .(swahili @ na)
+-- iju !r=we. =me and you.(me + and + you)
+- hi o!p1=this.
+-- hiyo !r=here.(this + place marker)
+-- hma !t=now.(this + time)
 - n _= what.(veluil)
-- no o!p1=thing that is not x1.
--- tla o!r=just x1. =그냥 x1.
+- no o!p1=no.
 -- nrn !r=none.
---- nrne = remove. =delete.
-- nale o!r=thing that is softer than x1.
--- elan o!r=thing that js harder than x1.(a)
-- ti o!p1=only x1.(chinese, vietname, polish, ukranine, latbian, lithuanian, )
--- nwe o!p1!adv=just x1. =그저 x1.
-- nyu n!r=x1 newton.
--- nese n!t=x1 century.
+--- nrni = remove. =delete.(none + causetive marker)
+- nale o!r=soft.
+-- elan o!r=hard.(a)
+- ti o!p1=only .(chinese, vietname, polish, ukranine, latbian, lithuanian, )
+-- nwe o!p1!adv=just . =그저 .
+- nutr n!r= newton.
+-- nese n!t= century.
 - imb !r=nature.(zulu)
 -- imba = coincidence.
 --- abim = Inevitability.
@@ -710,7 +822,7 @@ time: no.
 --- BT, bmitpa !r=AI.
 - nam !r=name.
 - nu !n=number.
-- yusi !r!adj=thing that play. =노는 존재.
+- yusi !r!adj=play. =노는 존재.
 - nrmz !r=넘치는 것.
 - nuc = nucleus.
 - namoc = mosquit.
@@ -719,93 +831,106 @@ time: no.
 - nelv = near. =close (to).
 -- vlen = far.
 
-}◀n
+}▲n
 
-▶o{
+▼o{
+
+o.proper noun{
+
+-- olimpi = Olympics.
+-- oosaca = osaka.
+
+▲- o.proper noun
 
 - ol _!r=organism.//Georgian,
--- liol !r=fish.
+-- liol !r=fish.(liquid = organism)
 - oto !r=auto.
 - op !r=opposite.
-- ot o,o!p1=from x2 to x1.
--- nyu=.(and for lupo)
--- nae=.(and for infix notation)
-- os o!p1=average x1. ordinary x1.(hindi)
--- osi o!p1=most x1.
-- on o,o!p2=x2 that is on x1.
-- bli o!r=thing that close to x1. =near of x1.(russian,)
--- ilb o!r=thing that far from x1.
+- ot o,o!prep=from.
+- os o!p1=average . ordinary .(hindi)
+-- osi o!p1=most .
+- on o,o!p2,prep=on.
+- bli o!r=close to..(russian,)
+-- ilb o!r=far.
 -- bh !t=recent.
-- rbcu o!p1=obscure x1.(english short,)
--- ucbr o!p1=famous x1.
+- rbcu o!p1=obscure .(english short,)
+-- ucbr o!p1=famous .
 - od = from.(russian)
 - oi = hey.(vietnamese, japanese,)
--- oiz _o!r=thing that call x1.(hey + verb marker)
+-- oiz _o!r=call.(hey + verb marker)
 - omis = omit.(italian)
 - ona = play.=실행(on + a)
+- ollo = biology.(organism + ology)
 
-}◀o
+}▼o
 
-▶p{
+▼p{
+
+▼- p.proper noun{
+
+-- phrx = france.
+-- polsca = poland.
+-- pwahi = paris.
+-- polvtu = protugal.
+-- platetai = thailand.
+
+▲- p.proper noun
 
 - ega !r=equality.
--- ego !r=justice thing.
-- po o,o,n!p2=thing that is x2 by x1.(german @ von)
--- lea o!r=thing that react x1.(european, hebrew, tagalog, thai, georgian,)
---- meq o,o,n!r=thing that is x2 by using x1.(indonesian, malay, amharic,)
+-- ego !adj,r=justice.
+- po o,o,n!p2=by.(german @ von)
+-- lea o!r=react.(european, hebrew, tagalog, thai, georgian,)
+--- mex o,o,n!r=use.(indonesian, malay, amharic,)
 - ,ba !r=father.
 - min !vs=bellive. =think.(malagasy, vietname, korean, hungary, hindi, arabic,)
--- ie s!r=thing that guess 1x1 is 2x1.
--- ix s!r=1x1에 대한 의견이 2x1인 존재. =thing that opinion.
+-- ie s!r=guess.
 - lum !r=light.
 - gut !r=solid.
 -- hogu !r=ice.
 - pala !r=paradise.
-- pe s!r=thing that command 2x1 to 1x1.
+- pe s!r=command.
 -- peti = request.
--- pno s!r=thing that prohibit x2 to be x1.(command+not,)
+-- pno s!r=prohibit.(command+not,)
 - pinc !r=pink.
 - plo !r=front.
 -- olp !r=behind.
-- nau o,n!r=thing that enjoy x1. =thing that feel pleasure by x1.(finish)
--- nabi o,n!r=thing that feel x1 as taste or delicious.
+- nau o,n!r=enjoy.(finish)
+-- nauya = pleasure.(enjoy + abstract noun marker)
+-- nabi o,n!r=feel  as taste or delicious.
 -- uan o,n!r=pain.
 - pom !r=form.
 - plla !r=plasma.
 -- pllo !r=fire.
-- ple o!r=thing that fly x1.
--- plu o!r=wing.
-- pl o,o!p2=x1 plus x2.
--- mir o,o!p2=x1 minus x2.
+- ple o!r,verb=fly.
+-- pleil o!r=wing.(fly + tool marker)
+- pl o,o!p2= plus .
+-- mir o,o!p2= minus .
 --- mipe=debt.
-//--- lni o!p1=minus of x1.
-- ala o!r=thing that follow x1.(malagasy))
-- pi o,o!p2=x1 × x2.
--- ip o,o!p2=x1 ÷ x2.
+//--- lni o!p1=minus of .
+- ala o!r=follow.(malagasy))
 - pec !r=shit.
 - 
-- mut o!p1=thing that similar to x1.(arabic)
--- enr o!p1=thing that is like x1.
+- mut o!p1=similar to.(arabic)
+-- enr o!p1=is like. 
 -- ens !t=early.=초반
 -- eno !t=late. =후반
-- rl  o,o!r=x1 for x2. x2에게 x1인 것. 
-- pr o,o!n=x1 : x2. =x1 per x2.
+- rl  o,o!r= for . 에게 인 것. 
+- pr o,o!n= : . = per .
 - pol !r!noun=police.
 - pllu !r=flower.
 - pis !r=fee.
-- paq !r=flat.
--- qap !r=hill.
+- pax !r=flat.
+-- ap !r=hill.
 - pep !r=lung.
-- pas o!r=thing that pass x1.
+- pas o!r=pass.
 - piu !r=bird.
 - eg = if.
 - peda !r=foot.
 -- pepl = kick.
 -- peap !r=soccer.
-- pit o,o!p2=thing that is x2 in outside of x1.(hausa)
 - pum !r=product.
-- apo o,o!p1=x2 from x1.(greek)
-- pu o,o=x1 for x2.(yoruba)
+- apo o,o!p1= from .(greek)
+- pu o,o=for.(yoruba)
 -- pue=infix for.
 - poc = focus.
 - pena = coward.
@@ -822,28 +947,34 @@ time: no.
 - poli = Immediate.
 - pilo = tired.
 - panla = rebel.
-- p o,o!p2=x1 according to x2.
+- p o,o!p2= according to .
 - pucu = adverb.(chinese, japanese, vietnamese)
 
-}◀p
+}▲p
 
-▶q{
+▼q{
 
 - q = tend to.(random)
 - na !r=male. =man.(korean, chinese, hindi, punjabi, urdu, vietnamese, persian, curdu,)
-- qai o,o!p1=thing that easily be x1 than x2. =easy.//thai
--- iaq o,o!p1=thing that hardly be x1 than x2. =difficult.
-- qj =.(dont finish one place until met symbol that omit parameter.)
+- qai o,o!adj,adv=easy.//thai
+-- iaq o,o!p1=hard.
+- vxj =.(dont finish one place until met symbol that omit parameter.)
 
-}◀q
+}▲q
 
-▶r{
+▼r{
 
-- rn o,o!r=thing that answer x1 by saying x2
-- al o!p1=all x1.(many, european, myanmar,hawaian, afrikans,)
+▼- r.proper noun{
+
+-- rmelica = america.
+
+▲- r.proper noun
+
+- rn o,o!r,verb=answer.
+- al o!p1=all .(many, european, myanmar,hawaian, afrikans,)
 -- alc = while.
 -- mojr = universal.
--- enti o!p1=whole x1.//french
+-- enti o!p1=whole .//french
 -- modi !t=everyday.
 -- mma !t=always.
 //- da speech!r=.
@@ -851,9 +982,24 @@ time: no.
 -- oyrl = recive.
 - sya = city.
 
-}◀r
+}▲r
 
-▶s{
+▼s{
+
+- s.proper noun{
+
+-- sabejci = soviet union.
+-- swrul = seoul.
+-- syrxhai = shanghai.
+-- saxtpetelv = saint peterburg.
+-- suomi = suomi.
+-- sbeliye = sweden.
+-- stogholv = stokholm.
+-- slobensco = slobacia.
+-- sulia = syria.
+-- saudima = saudi arabia.
+
+}▲- s.proper noun
 
 - time.
 -- sec !u=second.
@@ -862,85 +1008,85 @@ time: no.
 - color.
 -- siya = black.
 --- aiis = white.(a)
-- sam !r=conscientious thing.(swedish @ samvete)
+- sam !r=conscientious.(swedish @ samvete)
 - ist o!r=inhale.(arabic)
 -- tsi o!r=emit.(a)
 -- isga o!r=breathe.(inhale + gas)
 -- isli o!r=drink.(inhale + liquid)
-- sel n!r=x1°c.//swedish @ celsius
-//- s = x1 that x2 do x3.
+- sel n!r=°c.//swedish @ celsius
+//- s =  that  do .
 - hu o!p1=will. =shall. =going to.(chinese)
 - su o,n!r=like. platnic love.
 --- nepa o,n!r=hate. dislike.
 --- nepi !v= jealous of.(hate + strong)
---- atla o,n!r=romantic love. .=feel x1 as attractive.(or sur)
--- meli o,n!r=feel x1 as beauty.
---- ilem = feel x1 as ugly.
+--- atla o,n!r=romantic love. .=feel  as attractive.(or sur)
+-- meli o,n!r=feel  as beauty.
+--- ilem = feel  as ugly.
 - pie !r=enemy.(sweden)
 -- eip !r=friend.
 --- ipi !r=we. =my friend.
-- la _n!r=thing that gain profit.(hindi, bengol, tamil,)
--- pwe n!r=thing that gain damage. =손해.(europe)
+- la _n!r,adj=gain profit.(hindi, bengol, tamil,)
+-- pwe n!r,adj=gain damage. =손해.(europe)
 - colv n!r=short.(european,)
 -- vloc n!r=long.
 --- vlodo = length.
-- r o,o,n!p2=thing that is x2 by being x1.
+- r o,o,n!p2=by doing.
 - suo !r=left.
 -- ous !r=right.(a)
 - sim !r=symbol. =emblem.
 -- sba !r=flag.
-- sant !r=holy thing.
+- sant !r,adj=holy.
 - sb !r=habit.
 -- sce !r=cluture.
 - sr !r=each other.(korean)
 - syo !r=start.
 -- oys !r=end.
 -- syur !r=fundamenral. =baaic.
-- sid o!r=thing that try to be x1.
--- siu o,n!t=thing that effort to be x1.
--- sico o!r=thing that learn x1.
-- sam o!p1=same x1.
--- ini o!p1=diffrent x1.(ukraine,)
-chezch, slovacian,
+- sid o!r=try to.
+-- siu o,n!t=effort to.
+-- sico o!r=learn.
+- sam o!p1=same .
+-- ini o!p1=diffrent .(ukraine,
+chezch, slovacian,)
 - srq !r=sex.
 -- srja = gender.
 - //sah !r=stock. =share. =주식.
 - hal !r=letter. =글자.
-- syu o,o,n!r=thing that thank x1.
+- syucla o,o,n!r=thank.
 - se !r=tax.
 - som !r=sleeping.
-- sbi s!r=thing that allow 1x1 be 2x1.
--- ibs s!r=thing that reject 1x1 be 2x1.
-- lamb o,o!p1=thing that slowly be x1 than x2.(indonesian, malay, german, north europe,french,)
--- bmal o,o!p1=thing that quickly be x1 than x2. =fast.
+- sbi s!r=allow.
+-- ibs s!r=reject.
+- lamb o,o!p1=slow.(indonesian, malay, german, north europe,french,)
+-- bmal o,o!p1=quick. =fast.
 --- bmata = speed. =velocity.
 - sah !r=correct.
-- sob o!r=thing that gather in x1.
+- sob o!verb=gather with.
 - seb
-- srb o!r=thing that serve x1.
+- srb o!r,verb=serve.
 - semp n!r=narrow.
 -- pmes n!r=wide.
-- sice o,n!r=x1에게 실례하는 존재.
+- sice o,n!r=에게 실례하는 존재.
 - sosi !r=social.
 - sul !r=sun.
 - stal = star.
 - sye = science.
 - syat = sand.
 - sele = choise.
-- suho = dry.
+- suho !adj= dry.
 -- suge = desert.
 --- egus = jungle.
--- ohus = wet.
+-- ohus !adĵ= wet.
 - soyo = itchy.
-- sapi = clean
+- sapi !adj= clean. =cleaned.
 -- ipas = dirty.
 - sis = system.
-- swi = like as in he sleep "like" bear.(mongolian. for subject)
+- swi !prep= like as in he sleep "like" bear.(mongolian. for subject)
 - si = what.(veluil's 11111000)
 - saci = disease.(south east asian)
 - sahi = correct, right, accurate,
 -- ihas = wrong.
-- sa = x2 that is converted into x1.(veluil)
+- sa !prep=  that is converted into .(veluil)
 - sili = secret.
 -- ilis = public.(a)
 --- ilyo = street.(public + place marker)
@@ -948,56 +1094,63 @@ chezch, slovacian,
 -- abis !adj=long time.
 --- abwa = era.(long time + time)
 - sixlo = adjective.(chinese cuz few)
+- syu = explain.(chinese, cechuwa, arab,)
 
-}◀s
+}▲s
 
-▶t{
+▼t{
+
+▼- t.proper noun{
+
+-- tilvciye = türkiye. =turkey.
+-- taiwan = taiwan.
+
+▲- t.propee noun
 
 - hea !r=animal.
-- t s,n!r=thing that cause 2x1 be 1x1.
+- t s,n!r=cause.
 -- trb = change.
-- epe o,n!r=thing that impact x1.
--- bei o,n!r=thing that make x1.(albanian,)
---- pax o!r=tt invent x1.
---- ieb o,n!r=thing that remove x1.
+- epe o,n!r=impact.
+-- bei o,n!r=make .(albanian,)
+--- pax o!r=invent .
+--- ieb o,n!r= remove .
 --- paco !r=school.
 --- paho !r=speaker.
-- anc o,n!r=thing that save x1.(arabic)
--- cna o,n!r=thing that kill x1.
-- we s,n!r=why 2x1 is 1x1.(korean)
--- ump s,n!r=what if 2x1 is 1x1. =result if 2x1 is 1x1.(zulu)
+- anc o,n!r= save .(arabic)
+-- cna o,n!r= kill .
+- we s,n!r=why 2 is 1.(korean)
+-- ump s,n!r=what if. =result if.(zulu)
 - smo n!r=small.(english)
 -- dai n!r=big.
 --- daba = treaty.(big + promise)
 --- omwa !t=era.(big + time)
 - wa !t=time.
-- bao o,t!p1=thing that remain x1 for x2(duration).(chinese, german)
+- bao o,t!p1= remain  for (duration).(chinese, german)
 -- haji = yet, still.(reamain + adverb marker)
 --- ijah = already.
 -- teil = inertia.
 -- tebe !r=inertia.
 -- baju o!r=remember.(remain + know)
 -- bayo o!r=keep.(remain + have)
--- sto o, t!r=stop. =x1이길 x2만에 중단한 것.
---- stju o!r=thing that forgot x1.
---- styo o!r=thing that lost x1.(stop + have)
+-- sto o, t!r=stop. =이길 만에 중단한 것.
+--- stbilr o!r=forgot.(stop + know +)
+--- styo o!r=lost.(stop + have)
 - ail !r=tool.(a + tool marker)
 -- nail !r=game.(enjoy + tool maker)
 -- masi !r=machine. =device. =apparatus.
---- gurp !r=thing that telephone x1.
+--- gurp !r=telephone.
 -- gusa !r=weapon.
-- tli o,o!r=thing that win x1 in competetion of being x2.
--- ilt o,o!r=thing that lose x1 in competetion of being x2.
-- hvr o,o!r=thing that is x1 with x2.=with.(chinese)
+- tli o,o!r=win.
+-- ilt o,o!r=lose.
+- hvr o,o!r=with.(chinese)
 - tyo !r=challenge.
 - tes !r=text.
--- teul o,o!r=thing that write x1 on x2.
-- toq c o!r=commonalities between 1x1 and 2x1 and.
--- tou c o!r=c o!r=intersection of 1x1 and 2x1 and.
--- qot c o!r=differences between 1x1 and 2x1 and.
-- tai o,o!r=x1 instead x2.
- - tup o!r=thing that vote x1.
-- ali o,o,n!r=thing that teach x1 to x2.
+-- teul o,o!r=write.(text + mention)
+- tox c o!r=commonalities between 1 and 2 and.
+-- tou c o!r=c o!r=intersection of 1 and 2 and.
+-- qot c o!r=differences between 1 and 2 and.
+- tai o,o!r= instead .
+ - tupyo o!r,verb=vote..
 - tlei = train. =training.
 - tigo = provide.(chinese.)
 - to = it.
@@ -1009,42 +1162,63 @@ chezch, slovacian,
 - tlen = train.
 - tamadu = civilzation.
 
-}◀t
+}▲t
 
-▶u{
+▼u{
 
-- ul o,o!r=thing that mention x1 to x2.(hindi @ उल्लेख)
+▼- u.proper noun{
+
+-- ustrga(ihi) = ostria.
+-- usllo = oslo.
+
+▲ - u.proper noun
+
+- ul o,o!r=mention.(hindi @ उल्लेख)
 - u !r= you.(dutch)
 - utal !r=north.(vietnam)
 -- latu !r=south.
 - unga=united with.(~와 연합된)
 -- agnu = split.
 
-}◀u
+}▲u
 
-▶w{
+▼w{
+
+▼- w.proper noun{
+
+-- wrsitrdisi = washington dc.
+-- wilac = iraq.
+-- wilan = iran.
+
+▲- w.proper noun
 
 - w n,word...=.(for expressing string or pronunciarion.)
 - be= toward.(vietnam, amharic, french, italian, myanmar, persian,)
 - waca = rude.(arabic)
 -- acau = gentle.(a)
 - waji = Minister.
-- waq !r=king.
+- wax !r=king.
 -- wapa = prince.(?)
--- waqc = throne.(king + abstract noun marker)
-- we o!r=thing that face to x1. =thing that head to x1.(amharic, or gonna toward + verb marker)
+-- waxya = throne.(king + abstract noun marker)
+- we o!r= face to . = head to .(amharic, or gonna toward + verb marker)
 - wala !verb=lack.
 -- alau !verb= enough.(a)
 
-}◀w
+}▲w
 
-▶x{
+▼x{
 
 xx !r=cry.
 
-}◀x
+}▲x
 
-▶y{
+▼y{
+
+▼- y.proper noun{
+
+yues = united states of america.
+
+▲- y.proper noun
 
 - time.
 -- yar !u=year.(german, dutch, esperanto,)
@@ -1056,24 +1230,31 @@ xx !r=cry.
 -- yao !r,v=bite.(chinese)
 -- yam !r,v=eat.
 
-- v o,o!2p=.( x1 [this word] x2  = x1 x2. yellow apple.)
+- v o,o!2p=.(  [this word]   =  . yellow apple.)
 - e = be.(be verb for most near sentence. french)
 - di = is.(chinese, swahili, malagasy, turkiye,)
 - juji !r=mouse.
-- yui o!=sole x1.(korean)
+- yui o!=sole .(korean)
 - yema = savage.(chinese)
 - yac = Approximately.(japanese, korean, turkiye,)
 - you !r=oil.
 
-}◀y
+}▲y
 
-▶z{
+▼z{
 
-- zu o!p1=main x1.
+▼- z.proper noun{
+
+-- zulihi = zurich.
+-- zesco = czech.
+
+▲- z.proper noun
+
+- zu o!p1=main .
 -- zusya = capital city.(main + city)
--- maca o!p1=sub x1. =vice.(swahili)
+-- maca o!p1=sub . =vice.(swahili)
 - ze !o=.(this word's meaning is determined by context like word "it".)
--- zji o!p1=x1 too.(it + and)
+-- zji o!p1= too.(it + and)
 - lic !r=liquid.
 -- oli !r=sea.
 -- glli !r=tear.
@@ -1083,7 +1264,7 @@ xx !r=cry.
 -- lir !r=water.
 -- lima !r=milk.
 -- lup !r=pee.(liquid + dont need,)
-- h s!r=whether 2x1 is 1x1.(random)
+- h s!r=whether 2 is 1.(random)
 - zen !r=center.
 - mula !a=cheap.(malay, indonesian, tagalog,)
 -- alum o!r=expensive.(a)
@@ -1107,7 +1288,7 @@ xx !r=cry.
 - zati = boob. =breast.(many indian similar lang)
 - zisc !r=discriminate against.(chinese, many european)
 
-}◀z
+}▲z
 
 i love situation that i love person who love cow and people and chicken or he eat meal
 
