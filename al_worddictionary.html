@@ -90,35 +90,49 @@ h1{
     margin-top:13px;
 }
 
-.searchTitle{
-    margin-bottom:5px;
+.modeGroup{
+    display:flex;
+    gap:6px;
+    margin-bottom:8px;
+}
 
+.modeBtn{
+    padding:6px 12px;
+    background:#161616;
     color:var(--sub);
+    border:1px solid #444;
+    border-radius:20px;
+    font-size:13px;
+    cursor:pointer;
+    transition:all 0.15s ease;
+}
 
-    font-size:.78rem;
+.modeBtn:hover{
+    background:#222;
+    color:#fff;
+}
+
+.modeBtn.active{
+    background:var(--accent);
+    color:#fff;
+    border-color:var(--accent);
+    font-weight:bold;
 }
 
 .searchRow{
     display:flex;
-
     width:100%;
-
-    gap:7px;
 }
 
 .searchRow input{
-    flex:1;
-
-    width:0;
-    min-width:0;
-
-    padding:10px;
+    width:100%;
+    padding:11px 13px;
 
     background:#101010;
     color:white;
 
     border:1px solid #555;
-    border-radius:7px;
+    border-radius:8px;
 
     font-size:16px;
 
@@ -127,10 +141,6 @@ h1{
 
 .searchRow input:focus{
     border-color:var(--accent);
-}
-
-.searchRow button{
-    flex:none;
 }
 
 
@@ -270,6 +280,12 @@ main{
     overflow-wrap:anywhere;
 }
 
+.comment{
+    margin-top:4px;
+    color:var(--sub);
+    font-size:.85rem;
+}
+
 .source{
     margin-top:9px;
 
@@ -282,7 +298,8 @@ main{
     font-family:monospace;
     font-size:.75rem;
 
-    white-space:pre-wrap;
+    white-space:normal;
+    word-break:break-all;
     overflow-wrap:anywhere;
 }
 
@@ -425,16 +442,8 @@ a{
         margin-top:7px;
     }
 
-    .searchTitle{
-        margin-bottom:3px;
-    }
-
     .searchRow input{
         padding:8px;
-    }
-
-    .searchRow button{
-        padding:8px 12px;
     }
 
     nav{
@@ -474,16 +483,8 @@ a{
         margin-top:5px;
     }
 
-    .searchTitle{
-        display:none;
-    }
-
     .searchRow input{
         padding:7px 9px;
-    }
-
-    .searchRow button{
-        padding:7px 10px;
     }
 
     nav{
@@ -536,66 +537,30 @@ samin Dictionary
 </h1>
 
 <div class="subtitle">
-English ↔ samin
+samin ↔ English / Korean
 </div>
 
 
 <!-- =====================
-     samin SEARCH
+     UNIFIED SEARCH
 ====================== -->
 
 <div class="searchBox">
 
-<div class="searchTitle">
-Search samin
+<div class="modeGroup">
+    <button type="button" class="modeBtn active" onclick="setSearchMode('auto', this)">Auto</button>
+    <button type="button" class="modeBtn" onclick="setSearchMode('samin', this)">samin</button>
+    <button type="button" class="modeBtn" onclick="setSearchMode('english', this)">English</button>
 </div>
 
 <div class="searchRow">
 
 <input
-    id="saminInput"
+    id="searchInput"
     type="text"
-    placeholder="Enter a samin word..."
+    placeholder="Type any word, meaning, or tag..."
     autocomplete="off"
 >
-
-<button
-    id="saminButton"
-    type="button"
->
-Search
-</button>
-
-</div>
-
-</div>
-
-
-<!-- =====================
-     ENGLISH SEARCH
-====================== -->
-
-<div class="searchBox">
-
-<div class="searchTitle">
-Search English
-</div>
-
-<div class="searchRow">
-
-<input
-    id="englishInput"
-    type="text"
-    placeholder="Enter an English meaning..."
-    autocomplete="off"
->
-
-<button
-    id="englishButton"
-    type="button"
->
-Search
-</button>
 
 </div>
 
@@ -789,6 +754,8 @@ const SOURCE =
 
 let entries = [];
 
+let currentSearchMode = "auto";
+
 
 
 /* =====================================================
@@ -879,10 +846,6 @@ function parseDictionary(text){
         let raw of lines
     ){
 
-        const original =
-            raw;
-
-
         const line =
             raw.trim();
 
@@ -970,13 +933,42 @@ function parseDictionary(text){
 
 
         /* ---------------------------------------------
-           Get samin word (공백 및 복합어 허용)
+           Get samin word & grammar
+           ! 기호 기준 좌측 마지막 공백으로 단어와 격/품사 분리
         --------------------------------------------- */
 
-        const word =
-            left
-            .split("!")[0]
-            .trim();
+        let word = left;
+        let grammar = "";
+
+        if (left.includes("!")) {
+
+            const exIndex = left.indexOf("!");
+
+            const leftPart = left.substring(0, exIndex).trim();
+
+            const rightGrammar = left.substring(exIndex).trim();
+
+
+            const lastSpaceIndex = leftPart.lastIndexOf(" ");
+
+
+            if (lastSpaceIndex !== -1) {
+
+                word = leftPart.substring(0, lastSpaceIndex).trim();
+
+                const tag = leftPart.substring(lastSpaceIndex + 1).trim();
+
+                grammar = (tag + " " + rightGrammar).trim();
+
+            } else {
+
+                word = leftPart;
+
+                grammar = rightGrammar;
+
+            }
+
+        }
 
 
         if(!word)
@@ -984,47 +976,25 @@ function parseDictionary(text){
 
 
         /* ---------------------------------------------
-           Get grammatical information
+           English meaning (!와 . 사이) & comments (. 이후)
         --------------------------------------------- */
 
-        let grammar = "";
+        let mainMeaning = right;
+        let comment = "";
 
+        if (right.includes(".")) {
 
-        const grammarMatch =
-            left.match(
-                /(![A-Za-z0-9_,!]+)/g
-            );
+            const idx = right.indexOf(".");
 
+            mainMeaning = right.substring(0, idx).trim();
 
-        if(grammarMatch){
-
-            grammar =
-                grammarMatch.join(" ");
-
-        }
-
-
-        /* ---------------------------------------------
-           English meaning (= 와 . 사이 텍스트 추출)
-        --------------------------------------------- */
-
-        let meaningRaw =
-            right
-            .split("//")[0]
-            .trim();
-
-
-        if(meaningRaw.includes(".")){
-
-            meaningRaw =
-                meaningRaw
-                .split(".")[0];
+            comment = right.substring(idx + 1).trim();
 
         }
 
 
         let displayMeaning =
-            meaningRaw
+            mainMeaning
             .replace(/\s+/g," ")
             .trim();
 
@@ -1033,17 +1003,30 @@ function parseDictionary(text){
             continue;
 
 
+        /* ---------------------------------------------
+           Clean Raw Source Display
+        --------------------------------------------- */
+
+        let displayRaw = raw
+            .replace(/\t/g, "")
+            .replace(/^-+/, "")
+            .trim()
+            .replace(/\s+/g, " ");
+
+
         result.push({
 
             word:word,
 
             meaning:displayMeaning,
 
+            comment:comment,
+
             grammar:grammar,
 
             category:currentCategory,
 
-            raw:original.trim()
+            raw:displayRaw
 
         });
 
@@ -1196,6 +1179,18 @@ function render(
                     ${escapeHTML(item.meaning)}
                 </div>
 
+                ${
+                    item.comment
+                    ?
+                    `
+                    <div class="comment">
+                        ${escapeHTML(item.comment)}
+                    </div>
+                    `
+                    :
+                    ""
+                }
+
 
                 <div class="source">
                     ${escapeHTML(item.raw)}
@@ -1216,79 +1211,92 @@ function render(
 
 
 /* =====================================================
-   SEARCH samin
+   REAL-TIME SEARCH & SMART MATCHING (!와 . 사이의 meaning만 검색)
 ===================================================== */
 
-function searchsamin(){
+function setSearchMode(mode, el){
 
-    const query =
-        document
-        .getElementById("saminInput")
-        .value
-        .trim()
-        .toLowerCase();
+    currentSearchMode = mode;
 
 
-    showPage("dictionary");
+    document.querySelectorAll('.modeBtn').forEach(function(btn){
+
+        btn.classList.remove('active');
+
+    });
 
 
-    if(!query){
-
-        document
-        .getElementById("count")
-        .textContent =
-        entries.length +
-        " entries";
+    el.classList.add('active');
 
 
-        render(
-            entries.slice(0,100)
-        );
-
-        return;
-
-    }
-
-
-    const result =
-        entries.filter(
-            function(item){
-
-                return item.word
-                    .toLowerCase()
-                    .startsWith(query);
-
-            }
-        );
-
-
-    document
-    .getElementById("count")
-    .textContent =
-        result.length +
-        " result" +
-        (
-            result.length === 1
-            ? ""
-            : "s"
-        );
-
-
-    render(result);
+    performSearch();
 
 }
 
 
+function getSearchScore(item, query, mode) {
 
-/* =====================================================
-   SEARCH ENGLISH (= 와 . 사이 단어만 검색)
-===================================================== */
+    const word = item.word.toLowerCase();
+    const meaning = item.meaning.toLowerCase();
 
-function searchEnglish(){
+    const wordBoundaryRegex = new RegExp(`\\b${query}\\b`, 'i');
+
+
+    if (mode === "samin") {
+
+        if (word === query) return 100;
+
+        if (word.startsWith(query)) return 80;
+
+        if (wordBoundaryRegex.test(word)) return 60;
+
+        if (word.includes(query)) return 20;
+
+        return 0;
+
+    }
+
+    if (mode === "english") {
+
+        if (meaning === query) return 100;
+
+        if (meaning.startsWith(query)) return 80;
+
+        if (wordBoundaryRegex.test(meaning)) return 60;
+
+        if (meaning.includes(query)) return 30;
+
+        return 0;
+
+    }
+
+    // Auto Mode (!와 . 사이의 meaning 기준)
+    if (word === query) return 100;
+
+    if (meaning === query) return 95;
+
+    if (word.startsWith(query)) return 85;
+
+    if (meaning.startsWith(query)) return 75;
+
+    if (wordBoundaryRegex.test(meaning)) return 65;
+
+    if (wordBoundaryRegex.test(word)) return 60;
+
+    if (meaning.includes(query)) return 30;
+
+    if (word.includes(query)) return 20;
+
+    return 0;
+
+}
+
+
+function performSearch(){
 
     const query =
         document
-        .getElementById("englishInput")
+        .getElementById("searchInput")
         .value
         .trim()
         .toLowerCase();
@@ -1315,16 +1323,26 @@ function searchEnglish(){
     }
 
 
-    const result =
-        entries.filter(
-            function(item){
+    const scored = [];
 
-                return item.meaning
-                    .toLowerCase()
-                    .includes(query);
 
-            }
-        );
+    for (const item of entries) {
+
+        const score = getSearchScore(item, query, currentSearchMode);
+
+        if (score > 0) {
+
+            scored.push({ item: item, score: score });
+
+        }
+
+    }
+
+
+    scored.sort((a, b) => b.score - a.score);
+
+
+    const result = scored.map(s => s.item);
 
 
     document
@@ -1391,6 +1409,18 @@ function randomWord(){
         <div class="randomMeaning">
             ${escapeHTML(item.meaning)}
         </div>
+
+        ${
+            item.comment
+            ?
+            `
+            <div class="comment">
+                ${escapeHTML(item.comment)}
+            </div>
+            `
+            :
+            ""
+        }
 
         <div class="source">
             ${escapeHTML(item.raw)}
@@ -1466,6 +1496,8 @@ function alphabetSearch(letter){
    PAGE NAVIGATION
 ===================================================== */
 
+showPage('dictionary');
+
 function showPage(page){
 
     document
@@ -1515,63 +1547,14 @@ function showPage(page){
 
 
 /* =====================================================
-   BUTTON EVENTS
+   INPUT EVENT (REAL-TIME SEARCH)
 ===================================================== */
 
 document
-    .getElementById("saminButton")
+    .getElementById("searchInput")
     .addEventListener(
-        "click",
-        searchsamin
-    );
-
-
-document
-    .getElementById("englishButton")
-    .addEventListener(
-        "click",
-        searchEnglish
-    );
-
-
-
-/* =====================================================
-   ENTER KEY
-===================================================== */
-
-document
-    .getElementById("saminInput")
-    .addEventListener(
-        "keydown",
-        function(event){
-
-            if(event.key === "Enter"){
-
-                event.preventDefault();
-
-                searchsamin();
-
-            }
-
-        }
-    );
-
-
-document
-    .getElementById("englishInput")
-    .addEventListener(
-        "keydown",
-        function(event){
-
-            if(event.key === "Enter"){
-
-                event.preventDefault();
-
-                searchEnglish();
-
-            }
-
-        }
+        "input",
+        performSearch
     );
 
 </script>
