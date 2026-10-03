@@ -893,11 +893,6 @@ function parseDictionary(text){
 
         /* ---------------------------------------------
            Category headers
-
-           ▶a{
-           ▶b{
-           ▶c{
-           ...
         --------------------------------------------- */
 
         const categoryMatch =
@@ -940,12 +935,6 @@ function parseDictionary(text){
 
         /* ---------------------------------------------
            Dictionary entries require "="
-
-           Example:
-
-           - aj !v=exist.
-           -- aja = make.
-           - mu !r=human.
         --------------------------------------------- */
 
         if(!line.includes("="))
@@ -981,30 +970,17 @@ function parseDictionary(text){
 
 
         /* ---------------------------------------------
-           Get samin word
-
-           First token is the word.
-
-           Examples:
-
-           aj !v
-           mu !r
-           lna !r
-           loa o,o,n!r
+           Get samin word (공백 및 복합어 허용)
         --------------------------------------------- */
 
-        const wordMatch =
-            left.match(
-                /^([A-Za-z][A-Za-z0-9-]*)/
-            );
-
-
-        if(!wordMatch)
-            continue;
-
-
         const word =
-            wordMatch[1];
+            left
+            .split("!")[0]
+            .trim();
+
+
+        if(!word)
+            continue;
 
 
         /* ---------------------------------------------
@@ -1029,35 +1005,32 @@ function parseDictionary(text){
 
 
         /* ---------------------------------------------
-           English meaning
-
-           Remove comments after //
+           English meaning (= 와 . 사이 텍스트 추출)
         --------------------------------------------- */
 
-        let meaning =
+        let meaningRaw =
             right
             .split("//")[0]
             .trim();
 
 
-        meaning =
-            meaning
-            .replace(/\s+/g," ");
+        if(meaningRaw.includes(".")){
 
+            meaningRaw =
+                meaningRaw
+                .split(".")[0];
 
-        if(!meaning)
-            continue;
+        }
 
-
-        /* ---------------------------------------------
-           Remove trailing punctuation only for display
-           but keep original source.
-        --------------------------------------------- */
 
         let displayMeaning =
-            meaning
-            .replace(/\.$/,"")
+            meaningRaw
+            .replace(/\s+/g," ")
             .trim();
+
+
+        if(!displayMeaning)
+            continue;
 
 
         result.push({
@@ -1173,11 +1146,6 @@ function render(
         const item of list
     ){
 
-        /*
-           Only show category headings when
-           displaying the normal dictionary.
-        */
-
         if(
             target === "results" &&
             item.category &&
@@ -1282,12 +1250,6 @@ function searchsamin(){
     }
 
 
-    /*
-       ONLY SEARCH THE samin WORD.
-
-       English meanings are NOT searched here.
-    */
-
     const result =
         entries.filter(
             function(item){
@@ -1319,7 +1281,7 @@ function searchsamin(){
 
 
 /* =====================================================
-   SEARCH ENGLISH
+   SEARCH ENGLISH (= 와 . 사이 단어만 검색)
 ===================================================== */
 
 function searchEnglish(){
@@ -1352,12 +1314,6 @@ function searchEnglish(){
 
     }
 
-
-    /*
-       ONLY SEARCH THE ENGLISH MEANING.
-
-       samin words are NOT searched here.
-    */
 
     const result =
         entries.filter(
