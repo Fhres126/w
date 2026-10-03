@@ -720,18 +720,6 @@ Vocabulary source:
 co_a.txt
 </a>
 
-<p>
-Dictionary reference:
-</p>
-
-<a
-    href="https://menalari.globasa.net/eng/"
-    target="_blank"
-    rel="noopener"
->
-Globasa Menalari
-</a>
-
 </div>
 
 </section>
@@ -920,7 +908,7 @@ function parseDictionary(text){
             .trim();
 
 
-        /* Remove hierarchy markers */
+        /* 계층 기호(-) 제거 */
 
         left =
             left
@@ -933,40 +921,39 @@ function parseDictionary(text){
 
 
         /* ---------------------------------------------
-           Get samin word & grammar
-           ! 기호 기준 좌측 마지막 공백으로 단어와 격/품사 분리
+           [= 이전의 마지막 공백 기준 파싱 로직]
+           - '=' 직전의 마지막 공백을 찾아 태그 특수문자(!, _, (, ,)가
+             포함되어 있으면 태그로 분리하고, 없으면 전체를 단어로 인식합니다.
         --------------------------------------------- */
 
         let word = left;
         let grammar = "";
 
-        if (left.includes("!")) {
+        const lastSpaceIndex = left.lastIndexOf(" ");
 
-            const exIndex = left.indexOf("!");
+        if (lastSpaceIndex !== -1) {
 
-            const leftPart = left.substring(0, exIndex).trim();
+            const possibleTag = left.substring(lastSpaceIndex + 1).trim();
 
-            const rightGrammar = left.substring(exIndex).trim();
+            if (/[!_\(,]/.test(possibleTag)) {
 
+                word = left.substring(0, lastSpaceIndex).trim();
 
-            const lastSpaceIndex = leftPart.lastIndexOf(" ");
-
-
-            if (lastSpaceIndex !== -1) {
-
-                word = leftPart.substring(0, lastSpaceIndex).trim();
-
-                const tag = leftPart.substring(lastSpaceIndex + 1).trim();
-
-                grammar = (tag + " " + rightGrammar).trim();
+                grammar = possibleTag;
 
             } else {
 
-                word = leftPart;
+                word = left.trim();
 
-                grammar = rightGrammar;
+                grammar = "";
 
             }
+
+        } else {
+
+            word = left.trim();
+
+            grammar = "";
 
         }
 
@@ -976,7 +963,7 @@ function parseDictionary(text){
 
 
         /* ---------------------------------------------
-           English meaning (!와 . 사이) & comments (. 이후)
+           English meaning (= 뒤부터 첫번째 . 전까지) & comments (. 이후)
         --------------------------------------------- */
 
         let mainMeaning = right;
@@ -1211,7 +1198,7 @@ function render(
 
 
 /* =====================================================
-   REAL-TIME SEARCH & SMART MATCHING (!와 . 사이의 meaning만 검색)
+   REAL-TIME SEARCH
 ===================================================== */
 
 function setSearchMode(mode, el){
@@ -1270,7 +1257,7 @@ function getSearchScore(item, query, mode) {
 
     }
 
-    // Auto Mode (!와 . 사이의 meaning 기준)
+    // Auto Mode
     if (word === query) return 100;
 
     if (meaning === query) return 95;
