@@ -142,8 +142,12 @@ z=/tʃ/.
 ▼- a.proper noun{
 
 -- alvhen = argentina.
--- ainsyutain = eintein.
+-- ainsyutain = einstein.
 -- adolp hitlla = adolf hitler.
+-- adina = athens.
+-- asia = asia.
+-- aplica = africa.
+-- aijrg nyutrn = isaac newton.
 
 ▲- a.proper noun
 
@@ -167,7 +171,7 @@ time: no.
 - a !s=.(split marker, going to next parameter.)
 - aca !v,r=reside.(arab,)
 - and !v=walk.
-- muhi !v=important.(A important B = B is important for A.)
+- muhi !v=important. =matter to(inversed).(inversed(A important B = B is important for A.)
 -- ihum.
 - andi = stable.
 -- idna.
@@ -199,6 +203,8 @@ time: no.
 -- blajiu = brazil.
 -- benezia = Venice.
 -- balvdelona = Barcelona.
+-- oto pon bismaac = otto von bismark.
+-- bweana haijenbeac = werner heisenberg.
 
 ▲- b.proper noun
 
@@ -410,6 +416,8 @@ time: no.
 -- espa = spain.
 -- ella = greece.
 -- espelanto = esperanto.
+-- eulo = europe.
+-- eabin syuwedixa = erwin schrödinger.
 
 ▲- e.proper noun
 
@@ -444,6 +452,8 @@ time: no.
 ▼- g.proper noun{
 
 -- gatacana = gatakana.
+-- gugvl = google.
+-- gwiwa = kia.(korean car company)
 
 ▲- g.proper noun
 
@@ -494,6 +504,7 @@ time: no.
 -- hangu !u= korea.
 -- hilagana = hiragana.
 -- huligana = hurigana.
+-- hyrnde = hyundai.
 
 ▲- h.proper noun
 
@@ -547,6 +558,8 @@ time: no.
 -- illon mrsc = elon musk.
 -- inzrn = inchoen.
 -- inuyasici = inuyashiki.
+-- instaglem = instagram.
+-- istanbul = istanbul.(turkiye)
 
 ▲- i.proper noun
 
@@ -584,7 +597,10 @@ time: no.
 ▼- j.proper noun{
 
 -- joxgr = china.
--- jrxsaxmin = sangmin jeong.
+-- saxmin jrx = sangmin jeong.
+-- jingecinogyojin = attack on titan.
+-- jrxvn gim = jeongeun kim.
+-- jeims cllrlc megsvwel = james clerk maxwell.
 
 ▲- j.proper noun
 
@@ -618,6 +634,7 @@ time: no.
 -- eyaj = punish.
 - jupe = random.
 - j = string word.(j A lala A = "lala")
+- jeto !v= fight.
 
 }▲j
 
@@ -635,6 +652,7 @@ time: no.
 -- lasputin = rasputin.
 -- lobvllogs = roblox.
 -- lugsembulvc = luxemburg.
+-- lenin = lenin.
 
 ▲- l.proper noun
 
@@ -704,6 +722,11 @@ time: no.
 -- mrjrlv = hungary.
 -- mislv = egypt.
 -- mainclept = minecraft.
+-- ijetoya = mein kampf.(i + fight + abstract noun marker)
+-- meazedrs bwenz = mercedes benz.
+-- meidv = maid.
+-- mags pllaxc = max planck.
+-- megdonrld = mcdonald.
 
 ▲- m.proper noun
 
@@ -717,11 +740,11 @@ time: no.
 - pca !si=symbol that omit four parameter.
 - mu !r=human.(hausa)
 -- mucl = race.
---- muclzi = racist.
--- muni !r=titan.
+--- muclzi = racist.(race + ist)
+-- damu !r=titan.(big + human)
 - metr n!r= meter.(french @ mètre @)
 - moda !r=trend.
--- moam !r=meme.
+-- moam !r=meme.(trend + fun)
 - miu o!=minimum .
 -- uim o!n=most .
 - magi !r=magic.
@@ -782,15 +805,16 @@ time: no.
 
 ▼- n.proper noun{
 
--- nihon = japan.
--- namhan = south korea.
--- nagoya = nagoya.
--- nanjix = nanjing.
--- nyuyolc = new york.
--- nolvge = norway.
--- napolle = Neapolitan.
--- nazi = nazi.
--- napolleox = napoleon.
+-- nihon = japan.(japan)
+-- namhan = south korea.(korea)
+-- nagoya = nagoya.(japan)
+-- nanjix = nanjing.(china)
+-- nyuyolc = new york.(english)
+-- nolvge = norway.(norway)
+-- napolle = Neapolitan.(italy)
+-- nazi = nazi.(germany)
+-- napolleox = napoleon.(france)
+-- nicolla teslla = nikola tesla.
 
 ▼- n.proper noun
 
@@ -830,6 +854,7 @@ time: no.
 -- idun = wearing.
 - nelv = near. =close (to).
 -- vlen = far.
+-- nigrl = nigger. =nigga.(english)
 
 }▲n
 
@@ -873,6 +898,10 @@ o.proper noun{
 -- pwahi = paris.
 -- polvtu = protugal.
 -- platetai = thailand.
+-- peisbug = facebook.
+-- pwelu = peru.(spain)
+-- polcsbagvn = volkswagen.
+-- putin = putin.
 
 ▲- p.proper noun
 
@@ -998,6 +1027,13 @@ o.proper noun{
 -- slobensco = slobacia.
 -- sulia = syria.
 -- saudima = saudi arabia.
+-- syubai = swiss.
+-- stallin = stalin.
+-- spalvti = sparta(greek)
+-- syalc = shark.
+-- soxdo = songdo.
+-- samsrx = samsung.
+-- stibvn jabys = steven jobs.
 
 }▲- s.proper noun
 
@@ -1048,7 +1084,7 @@ o.proper noun{
 - sam o!p1=same .
 -- ini o!p1=diffrent .(ukraine,
 chezch, slovacian,)
-- srq !r=sex.
+- srx !r=sex.
 -- srja = gender.
 - //sah !r=stock. =share. =주식.
 - hal !r=letter. =글자.
@@ -1104,6 +1140,9 @@ chezch, slovacian,)
 
 -- tilvciye = türkiye. =turkey.
 -- taiwan = taiwan.
+-- tigtog = tiktok.
+-- twemu = temu.
+-- tegsas = texas.
 
 ▲- t.propee noun
 
@@ -1170,6 +1209,7 @@ chezch, slovacian,)
 
 -- ustrga(ihi) = ostria.
 -- usllo = oslo.
+-- uclaina = ukraine.
 
 ▲ - u.proper noun
 
@@ -1216,7 +1256,8 @@ xx !r=cry.
 
 ▼- y.proper noun{
 
-yues = united states of america.
+-- yues = united states of america.
+-- yutyubv = youtube.
 
 ▲- y.proper noun
 
@@ -1247,6 +1288,7 @@ yues = united states of america.
 
 -- zulihi = zurich.
 -- zesco = czech.
+-- zrxla = cheongra.
 
 ▲- z.proper noun
 
