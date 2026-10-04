@@ -35,7 +35,9 @@ body{
     margin:0;
     padding:0;
     width:100%;
-    min-height:100%;
+    /* 동적 뷰포트 높이(dvh)로 설정하여 키보드 영역을 제외한 실제 화면 크기에 맞춤 */
+    height:100dvh;
+    min-height:100dvh;
 }
 
 body{
@@ -49,6 +51,9 @@ body{
         sans-serif;
 
     overflow-x:hidden;
+    overflow-y:auto;
+    /* 스크롤 끝에서 바운스되며 하단 빈 공간이 드러나는 현상 방지 */
+    overscroll-behavior-y:none;
 }
 
 
@@ -1534,7 +1539,7 @@ function showPage(page){
 
 
 /* =====================================================
-   INPUT EVENT (REAL-TIME SEARCH)
+   INPUT EVENT & VISUAL VIEWPORT FIX
 ===================================================== */
 
 document
@@ -1543,6 +1548,19 @@ document
         "input",
         performSearch
     );
+
+
+/* 키보드가 열려 있는 상태에서도 높이를 실시간 계산하여 하단 여백 제거 */
+function updateViewportHeight() {
+    if (window.visualViewport) {
+        document.body.style.height = window.visualViewport.height + 'px';
+    }
+}
+
+if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updateViewportHeight);
+    window.visualViewport.addEventListener('scroll', updateViewportHeight);
+}
 
 </script>
 
