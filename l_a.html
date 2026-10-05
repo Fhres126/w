@@ -11,20 +11,18 @@
   
     :root {
       --s: 0px;
+      --ctrl-h: clamp(30px, calc(var(--s) / 12), 52px);
     }
     html{
      font-size: var(--fontsize);
-     
     }
     body{
      line-height: 1.5; 
      letter-spacing: 0.1;
      background-color: #000000;
      margin:calc(var(--s)*0.05);
-       
      webkit-text-stroke: 0.02rem;
      -webkit-text-stroke-color:#444444;
-      
     }
     *{
      overflow-wrap: break-word;
@@ -35,7 +33,6 @@
       overflow-wrap: anywhere;
       line-height: 2.1;
       text-underline-offset: calc(0.4 * var(--fontsize));
-      
      }
     h1{
      color: #FF0008;
@@ -46,49 +43,83 @@
       height:auto;
     }
     pre, summary, p, span, a {
-      
-      font-size: var(--fontsize);!important
+      font-size: var(--fontsize);
       animation: rainbow 3s linear infinite;
       color:#FFFF00;
-      
     }
+
+    /* ============ 슬라이더 (range) — iOS 스타일 ============ */
     input[type="range"] {
-     
-     height: calc(var(--s) / 16);
-     cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      height: calc(var(--s) / 24);
+      width: calc(var(--s) * 0.6);
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: calc(var(--s) / 90);
+      background: #8e8e93;
+      border-radius: 999px;
+      border: none;
     }
     input[type="range"]::-webkit-slider-thumb {
-     -webkit-appearance: none;
-     appearance: none;
-     width: 200px;
-     height: 200px;
-     background: #007bff;
-     border-radius: 50%;
-     margin-top: -5px;
+      -webkit-appearance: none;
+      appearance: none;
+      width:  calc(var(--s) / 30);
+      height: calc(var(--s) / 30);
+      background: #ffffff;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      margin-top: calc((var(--s) / 90 - var(--s) / 30) / 2);
     }
+    input[type="range"]::-moz-range-track {
+      height: calc(var(--s) / 90);
+      background: #8e8e93;
+      border-radius: 999px;
+      border: none;
+    }
+    input[type="range"]::-moz-range-thumb {
+      width:  calc(var(--s) / 30);
+      height: calc(var(--s) / 30);
+      background: #ffffff;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
     .setcolor{
       width:calc(var(--s) / 24);
       height: calc(var(--s) / 24);
+      padding: 0;
     }
     .bar_size{
-     width:calc(var(--s) / 2);
+     width:calc(var(--s) * 0.6);
     }
-    .freewidthbutton{
-      background-color: black;
-      border: 2px solid blue;
-      color: white;
-      display: inline-block;
-      padding: 4px 8px;
-    }
+
+    /* ★ 버튼도 --fontsize 를 CSS 변수로 직접 참조 → 자동 갱신 */
     button{
-     
       position: fixed;
       background-color: #000;
       color: #ffff00;
       top:0px;
       border: 1px solid #888800;
       font-weight: 1000;
-       z-index: 9999; 
+      z-index: 9999;
+      height: var(--ctrl-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 0 8px;
+      line-height: 1;
+      font-size: var(--fontsize);
+      font-family: inherit;
     }
     summary {
      cursor: pointer; 
@@ -98,7 +129,6 @@
      background: linear-gradient(to top, #555555 0.2em, transparent 0.2em);
      font-style: italic;
      letter-spacing: 0.05em;
-     
     }
    
     summary:hover {
@@ -110,9 +140,6 @@
      top:0px;
      z-index: 9999; 
     }
-    details{
-      
-    }
     
  </style>
 </head>
@@ -120,7 +147,7 @@
   <button id="button_gradient" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:#ff5733 !important;color:#ff5733 !important;}</style>');"></button>
 
 
-<button id="button_rainbow" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:red !important;color:red !important;}</style>');"></button></button>
+<button id="button_rainbow" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:red !important;color:red !important;}</style>');"></button>
 
   
   <button id = 'button_red' class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
@@ -144,57 +171,47 @@
   <button id = 'button_green' class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ff00 !important;-webkit-text-fill-color:#00ff00 !important;}</style>');"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ff00 !important;-webkit-text-fill-color:#00ff00 !important;}</style>');
+"></button>
 
 <button id = 'button_cyan' class = 'setcolor' style="background-color:#00ffff;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#00ffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ffff !important;-webkit-text-fill-color:#00ffff !important;}</style>');"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#00ffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ffff !important;-webkit-text-fill-color:#00ffff !important;}</style>');
+"></button>
   
   <button id = 'button_white' class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');"></button>
+});document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');
+"></button>
 
 
-<input id = 'bar_size' type="range" min="0.005" max="0.1" step="0.005" value="0.05"
+<input id = 'bar_size' class="bar_size" type="range" min="0.005" max="0.1" step="0.005" value="0.05"
 oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--s')) * this.value) + 'px'); set_();">
 
-<button id="go_random" onclick="go_random()">go random</button></button>
+<button id="go_random" onclick="go_random()">go random</button>
 
-<button id="turn_autoscroll" onclick="turn_autoscroll()">auto scroll</button></button>
+<button id="turn_autoscroll" onclick="turn_autoscroll()">auto scroll</button>
 
-<input id = 'scale_of_scroll' type="range" min="0.005" max="0.5" step="0.005" value="0.06"
+<input id = 'scale_of_scroll' class="bar_size" type="range" min="0.005" max="0.5" step="0.005" value="0.06"
 oninput="speed_of_auto_scroll=this.value;">
-
-<!-- <button id="toggle-btn">open all sections</button> -->
 
 
   <script>
     let width=window.innerWidth;
     let height=window.innerHeight;
-    let smallerline;
-    if(width>height){
-      smallerline=height;
-    }else{
-      smallerline=width;
-    }
+    /* ★ 세로/가로 완전히 동일한 공식 : min(w, h) */
+    let smallerline = Math.min(width, height);
    
     document.documentElement.style.setProperty("--s", String(smallerline) + "px");
     document.documentElement.style.setProperty("--fontsize", String(smallerline * document.getElementById("bar_size").value) + "px");
     document.body.style.maxWidth = width.toString() + "px";
     document.body.style.maxHeight = height.toString() + "px";
     
-    function setfontsize(p){
-      
-    }
-    
    let isStarted = false;
-   
    let quantity_of_autoscroll=0;
-   
    let autoscroll;
-   
    let speed_of_auto_scroll=document.getElementById("scale_of_scroll").value;
    
    function turn_autoscroll() {
@@ -203,7 +220,6 @@ oninput="speed_of_auto_scroll=this.value;">
       if(quantitypressed==0){
        let scale_of_scroll = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fontsize')) * speed_of_auto_scroll;
        quantity_of_autoscroll += scale_of_scroll;
-      
       if (quantity_of_autoscroll > 1) {
           window.scrollBy(0, quantity_of_autoscroll);
           quantity_of_autoscroll = 0;
@@ -217,148 +233,87 @@ oninput="speed_of_auto_scroll=this.value;">
     }
    }
    
-   let isPressed=false;
-   
    let quantitypressed=0;
    
-   window.addEventListener('pointerdown', (e) => {
-    quantitypressed=e.buttons;
-   });
-   
-   window.addEventListener('pointermove', (e) => {
-    quantitypressed=e.buttons;
-   });
-   
-   window.addEventListener('pointercancel', (e) => {
-    quantitypressed=e.buttons;
-   });
-   
-   window.addEventListener('pointerup', (e) => {
-    quantitypressed=e.buttons;
-   });
+   window.addEventListener('pointerdown', (e) => { quantitypressed=e.buttons; });
+   window.addEventListener('pointermove', (e) => { quantitypressed=e.buttons; });
+   window.addEventListener('pointercancel', (e) => { quantitypressed=e.buttons; });
+   window.addEventListener('pointerup', (e) => { quantitypressed=e.buttons; });
    
    
-   
-   
+   /* ============================================================
+      레이아웃 (세로 / 가로 완전 동일)
+        1행: [색상버튼 8개] gap [bar_size]
+        2행: [auto scroll]  gap [scale_of_scroll]   ← scale 세로 중앙
+        3행: [go random]                             ← auto 바로 아래
+      ============================================================ */
    function set_(){
-    document.getElementById("button_gradient").style.left=getComputedStyle(document.body).marginLeft;
+    const gap = smallerline / 60;
+    const bodyMargin = parseFloat(getComputedStyle(document.body).marginLeft);
     
-    document.getElementById("button_rainbow").style.left=parseFloat(getComputedStyle(document.getElementById("button_gradient")).left) + parseFloat(document.getElementById("button_gradient").offsetWidth) + "px"
+    const colorIds = [
+      "button_gradient","button_rainbow","button_red","button_orange",
+      "button_yellow","button_green","button_cyan","button_white"
+    ];
     
-    document.getElementById("button_red").style.left=parseFloat(getComputedStyle(document.getElementById("button_rainbow")).left) + parseFloat(document.getElementById("button_rainbow").offsetWidth) + "px"
+    // 1행
+    let cursorX = bodyMargin;
+    colorIds.forEach(id => {
+      const el = document.getElementById(id);
+      el.style.left = cursorX + "px";
+      el.style.top = "0px";
+      cursorX += el.offsetWidth;
+    });
     
-    document.getElementById("button_orange").style.left=parseFloat(getComputedStyle(document.getElementById("button_red")).left) + parseFloat(document.getElementById("button_red").offsetWidth) + "px"
+    const barSize = document.getElementById("bar_size");
+    barSize.style.left = (cursorX + gap) + "px";
+    barSize.style.top = "0px";
     
-    document.getElementById("button_yellow").style.left=parseFloat(getComputedStyle(document.getElementById("button_orange")).left) + parseFloat(document.getElementById("button_orange").offsetWidth) + "px"
+    const turnAuto    = document.getElementById("turn_autoscroll");
+    const goRandom    = document.getElementById("go_random");
+    const scaleScroll = document.getElementById("scale_of_scroll");
     
-    document.getElementById("button_green").style.left=parseFloat(getComputedStyle(document.getElementById("button_yellow")).left) + parseFloat(document.getElementById("button_yellow").offsetWidth) + "px"
+    const rowH    = document.getElementById("button_white").offsetHeight;
+    const ctrlH   = turnAuto.offsetHeight;
+    const sliderH = scaleScroll.offsetHeight;
     
-    document.getElementById("button_cyan").style.left=parseFloat(getComputedStyle(document.getElementById("button_green")).left) + parseFloat(document.getElementById("button_green").offsetWidth) + "px"
+    // 2행
+    turnAuto.style.top  = rowH + "px";
+    turnAuto.style.left = bodyMargin + "px";
     
-    document.getElementById("button_white").style.left=parseFloat(getComputedStyle(document.getElementById("button_cyan")).left) + parseFloat(document.getElementById("button_cyan").offsetWidth) + "px"
+    scaleScroll.style.top  = (rowH + (ctrlH - sliderH) / 2) + "px";
+    scaleScroll.style.left = (bodyMargin + turnAuto.offsetWidth + gap) + "px";
     
-    document.getElementById("bar_size").style.left=parseFloat(getComputedStyle(document.getElementById("button_white")).left) + parseFloat(document.getElementById("button_white").offsetWidth) + "px"
-    
-    if(width < height){
-     document.getElementById("turn_autoscroll").style.top= parseFloat(document.getElementById("button_white").offsetHeight) + "px";
-     
-     document.getElementById("scale_of_scroll").style.top= parseFloat(document.getElementById("turn_autoscroll").offsetTop) + "px";
-     
-     document.getElementById("scale_of_scroll").style.left=parseFloat(document.getElementById("turn_autoscroll").offsetLeft) + parseFloat(document.getElementById("turn_autoscroll").offsetWidth) + "px";
-     
-     document.getElementById("go_random").style.top= parseFloat(document.getElementById("turn_autoscroll").offsetHeight) + parseFloat(document.getElementById("turn_autoscroll").offsetTop) + "px";
-     
-    }else{
-     document.getElementById("turn_autoscroll").style.left= (7+12) * smallerline / 24 + parseFloat(getComputedStyle(document.body).marginLeft) + "px"
-     
-     document.getElementById("scale_of_scroll").style.left= parseFloat(document.getElementById("turn_autoscroll").offsetLeft) + parseFloat(document.getElementById("turn_autoscroll").offsetWidth) + "px";
-     
-     document.getElementById("go_random").style.left= parseFloat(document.getElementById("scale_of_scroll").offsetLeft) + parseFloat(document.getElementById("scale_of_scroll").offsetWidth) + "px";
-    }
-    
+    // 3행
+    goRandom.style.top  = (rowH + ctrlH) + "px";
+    goRandom.style.left = bodyMargin + "px";
    }
    
-   document.querySelectorAll('button').forEach((e) => {
-    e.style.fontSize=getComputedStyle(document.documentElement).getPropertyValue('--fontsize');
-   });
-   
-   
-   
-   
     window.addEventListener('DOMContentLoaded', () => {
-     
-     const btn = document.getElementById('toggle-btn');
-     const details = document.querySelectorAll('details');
-     
-    /*btn.addEventListener('click', () => {
-    let isAnyOpen = Array.from(details).some(detail => detail.open);
-
-    if (isAnyOpen) {
-      details.forEach(detail => detail.open = false);
-      btn.textContent = 'open all sections';
-    } else {
-      details.forEach(detail => detail.open = true);
-      btn.textContent = 'close all sections';
-    }
-     
-    });*/
-     
-    set_();
-    turn_autoscroll();
-    document.querySelectorAll('pre').forEach((e) => {
-     e.addEventListener("click", ()=>{
-      window.speechSynthesis.cancel();
-      const textToRead = e.innerText.trim();
-          
-      /*if (textToRead.length > 0) {
-       const utterance = new SpeechSynthesisUtterance(textToRead);
-          
-        utterance.lang = "en-US";
-          
-        utterance.volume=1;
-          
-        utterance.rate = 1;
-
-        window.speechSynthesis.speak(utterance);
-      }*/
-     })
-    });
+     set_();
+     turn_autoscroll();
+     document.querySelectorAll('pre').forEach((e) => {
+      e.addEventListener("click", ()=>{
+       window.speechSynthesis.cancel();
+      })
+     });
    });
-   
    
    try{
-   
-    
     window.addEventListener("click", () => {
-        
         if (!isStarted){
          const preElements = document.querySelectorAll("pre");
          preElements.forEach((el) => {
              const textToRead = el.innerText.trim();
-             
              if (textToRead.length > 0) {
                  const utterance = new SpeechSynthesisUtterance(textToRead);
-                 
                  utterance.lang = "en-US";
-                 
-              utterance.volum=1;
-                 
                  utterance.rate = 1.35;
-     
-                 //window.speechSynthesis.speak(utterance);
              }
          });
-         
-         /*const bgm = new Audio("https://raw.githubusercontent.com/fhres126/w/main/Gott%20erhalte%20Franz%20den%20Kaiser(instrumental).mp3");
-      
-         bgm.loop = true;
-         bgm.volume = 0.14;
-         
-         bgm.play();*/
         }
         if (isStarted) return;
         isStarted = true;
-        
     });
    }catch(err){ console.log(err)}
    
@@ -369,42 +324,44 @@ oninput="speed_of_auto_scroll=this.value;">
     });
    }
    
+   window.addEventListener('resize', () => {
+     width=window.innerWidth;
+     height=window.innerHeight;
+     smallerline = Math.min(width, height);
+     document.documentElement.style.setProperty("--s", String(smallerline) + "px");
+     document.documentElement.style.setProperty('--fontsize', String(smallerline * document.getElementById("bar_size").value) + 'px');
+     document.body.style.maxWidth = width.toString() + "px";
+     document.body.style.maxHeight = height.toString() + "px";
+     set_();
+   });
+   
    document.getElementById("bar_size").value = 0.03;
    document.getElementById("bar_size").dispatchEvent(new Event('input', { bubbles: true }));
 
    document.addEventListener("DOMContentLoaded", function () {
-  // 1. 제어할 두 개의 태그(bar_size, scale_of_scroll)를 배열로 가져옵니다
   const targets = [
     document.getElementById("bar_size"),
     document.getElementById("scale_of_scroll"),
-   document.getElementById("turn_autoscroll")
+    document.getElementById("turn_autoscroll")
   ];
   
   let count = 0;
-  
-  // 2. 0.3초 간격으로 동시에 깜빡이는 타이머 실행
   const flashInterval = setInterval(() => {
     targets.forEach(target => {
-      // 태그가 화면에 실제로 존재할 때만 실행
       if (target) {
         if (count % 2 === 0) {
-          // 🌟 번쩍일 때 스타일: 두께 확대, 주황색 강조, 네온 그림자 효과
           target.style.transform = "scaleY(1.6)";
           target.style.accentColor = "#444444"; 
           target.style.filter = "drop-shadow(0 0 10px #ffffff)";
           target.style.transition = "all 0.15s ease-in-out";
         } else {
-          // 😴 원래 스타일로 복구
           target.style.transform = "scaleY(1)";
           target.style.accentColor = ""; 
           target.style.filter = "";
         }
       }
     });
-    
     count++;
-    
-    // 3. 총 6회 반복 후(3번 번쩍인 후) 타이머 종료 및 완전 초기화
     if (count >= 20) {
       clearInterval(flashInterval);
       targets.forEach(target => {
@@ -416,7 +373,7 @@ oninput="speed_of_auto_scroll=this.value;">
         }
       });
     }
-  }, 300); // 300ms = 0.3초 간격
+  }, 300);
 });
 
   </script>
@@ -648,7 +605,7 @@ example sentence:  "People who use Samin will probably understand pronunciation 
   <summary>the other site</summary>
   <details open>
    <summary>- the word dictionary</summary>
-   <pre>-- https://fhres126.github.io/w/al_worddictionary.html
+   <pre>-- https://fhres126.github.io/w/al_word_dictionary.html
     
 ▲- the word dictionary</pre>
   </details>
