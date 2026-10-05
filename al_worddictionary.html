@@ -33,20 +33,13 @@
 ========================= */
 
 html{
+    /* JS가 이 값을 뷰포트에 맞춰 덮어씀. JS 꺼졌을 때 폴백 */
     font-size: 16px;
     height: 100vh;
     height: 100dvh;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     scrollbar-gutter: stable;
-}
-
-/* 모바일 base 폰트 확대 — GitHub Pages / 인앱 브라우저 편차 대응 */
-@media (max-width: 700px){
-    html{ font-size: 17px; }
-}
-@media (max-width: 420px){
-    html{ font-size: 18px; }
 }
 
 body{
@@ -94,12 +87,11 @@ button{
     min-height: 36px;
 }
 
-@media (max-width: 700px){
-    input,
-    select,
-    textarea{
-        font-size: 16px !important;
-    }
+/* iOS 자동 줌 방지 (인풋만 16px 고정) */
+input,
+select,
+textarea{
+    font-size: 16px;
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
@@ -768,6 +760,43 @@ const SOURCE = "https://raw.githubusercontent.com/Fhres126/w/main/co_a.txt";
 let entries = [];
 let currentSearchMode = "auto";
 let activeAlphabetLetter = "";
+
+
+/* =====================================================
+   RESPONSIVE BASE FONT (뷰포트 폭 기반 px 계산)
+   -----------------------------------------------------
+   좁을수록 base 크게 → 모바일에서 UI가 작아 보이는 문제 해결
+   넓을수록 16px로 수렴 → 데스크톱은 기존과 동일
+===================================================== */
+
+function applyBaseFontSize(){
+    // 실제 레이아웃 뷰포트 폭 (스크롤바 제외)
+    const w = document.documentElement.clientWidth || window.innerWidth || 0;
+
+    let size;
+    if (w <= 320) {
+        size = 18;                        // 초소형 폰
+    } else if (w <= 480) {
+        // 320 → 18, 480 → 17
+        size = 18 - (w - 320) * (18 - 17) / (480 - 320);
+    } else if (w <= 768) {
+        // 480 → 17, 768 → 16
+        size = 17 - (w - 480) * (17 - 16) / (768 - 480);
+    } else {
+        size = 16;                        // 데스크톱
+    }
+
+    document.documentElement.style.fontSize = size.toFixed(2) + "px";
+}
+
+applyBaseFontSize();
+
+window.addEventListener("resize", applyBaseFontSize);
+window.addEventListener("orientationchange", applyBaseFontSize);
+
+if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", applyBaseFontSize);
+}
 
 
 /* =====================================================
