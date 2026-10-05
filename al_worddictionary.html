@@ -15,19 +15,22 @@
 <style>
 
 :root{
-    --bg:#000;
-    --card:#151515;
-    --card2:#1d1d1d;
-    --text:#fff;
-    --sub:#999;
-    --border:#333;
+    --bg:#0a0a0c;
+    --card:#141518;
+    --card2:#1a1c22;
+    --text:#f0f2f5;
+    --sub:#9ba1b0;
+    --border:#282c35;
     --accent:#ff5733;
+    --accent-glow:rgba(255, 87, 51, 0.25);
     --green:#55d66b;
     --blue:#4db8ff;
+    --highlight:rgba(255, 87, 51, 0.35);
 }
 
 *{
     box-sizing:border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -35,7 +38,6 @@ body{
     margin:0;
     padding:0;
     width:100%;
-    /* 동적 뷰포트 높이(dvh)로 설정하여 키보드 영역을 제외한 실제 화면 크기에 맞춤 */
     height:100dvh;
     min-height:100dvh;
 }
@@ -48,11 +50,11 @@ body{
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
+        Roboto,
         sans-serif;
 
     overflow-x:hidden;
     overflow-y:auto;
-    /* 스크롤 끝에서 바운스되며 하단 빈 공간이 드러나는 현상 방지 */
     overscroll-behavior-y:none;
 }
 
@@ -64,24 +66,34 @@ body{
 header{
     width:100%;
     padding:18px 16px 14px;
-
-    background:#000;
-
+    background:rgba(10, 10, 12, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
     border-bottom:1px solid var(--border);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1{
     margin:0;
-
     font-size:1.65rem;
     line-height:1.2;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #fff 40%, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .subtitle{
     margin-top:4px;
-
     color:var(--sub);
-
     font-size:.8rem;
 }
 
@@ -102,50 +114,70 @@ h1{
 }
 
 .modeBtn{
-    padding:6px 12px;
-    background:#161616;
+    padding:6px 14px;
+    background:#16181d;
     color:var(--sub);
-    border:1px solid #444;
+    border:1px solid var(--border);
     border-radius:20px;
     font-size:13px;
     cursor:pointer;
-    transition:all 0.15s ease;
+    transition:all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modeBtn:hover{
-    background:#222;
+    background:#20232a;
     color:#fff;
+    border-color: #444;
 }
 
 .modeBtn.active{
     background:var(--accent);
     color:#fff;
     border-color:var(--accent);
-    font-weight:bold;
+    font-weight:600;
+    box-shadow: 0 2px 10px var(--accent-glow);
 }
 
 .searchRow{
+    position: relative;
     display:flex;
     width:100%;
+    align-items: center;
 }
 
 .searchRow input{
     width:100%;
-    padding:11px 13px;
-
-    background:#101010;
+    padding:11px 38px 11px 13px;
+    background:#101114;
     color:white;
-
-    border:1px solid #555;
-    border-radius:8px;
-
+    border:1px solid #383e4a;
+    border-radius:10px;
     font-size:16px;
-
     outline:none;
+    transition: all 0.2s ease;
 }
 
 .searchRow input:focus{
     border-color:var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.clearBtn {
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: var(--sub);
+    font-size: 16px;
+    padding: 4px 8px;
+    cursor: pointer;
+    display: none;
+    border-radius: 50%;
+}
+
+.clearBtn:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
 }
 
 
@@ -154,25 +186,23 @@ h1{
 ========================= */
 
 button{
-    padding:9px 13px;
-
-    background:#222;
+    padding:9px 15px;
+    background:#1b1d22;
     color:#fff;
-
-    border:1px solid #555;
-    border-radius:7px;
-
-    font-size:15px;
-
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:14px;
     cursor:pointer;
+    transition: all 0.15s ease;
 }
 
 button:hover{
-    background:#303030;
+    background:#282b33;
+    border-color:#4a505e;
 }
 
 button:active{
-    background:#444;
+    transform: scale(0.98);
 }
 
 
@@ -182,18 +212,14 @@ button:active{
 
 nav{
     width:100%;
-
     display:flex;
-    gap:7px;
-
-    padding:9px 15px;
-
+    gap:8px;
+    padding:10px 15px;
     overflow-x:auto;
     overflow-y:hidden;
-
     border-bottom:1px solid var(--border);
-
     scrollbar-width:none;
+    background: #0d0e11;
 }
 
 nav::-webkit-scrollbar{
@@ -203,6 +229,16 @@ nav::-webkit-scrollbar{
 nav button{
     flex:none;
     white-space:nowrap;
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 13.5px;
+}
+
+nav button.nav-active {
+    background: rgba(255, 87, 51, 0.15);
+    color: var(--accent);
+    border-color: var(--accent);
+    font-weight: 600;
 }
 
 
@@ -213,18 +249,17 @@ nav button{
 main{
     width:100%;
     max-width:950px;
-
     margin:auto;
-
-    padding:14px 15px 50px;
+    padding:16px 15px 50px;
 }
 
 .count{
-    margin-bottom:11px;
-
+    margin-bottom:12px;
     color:var(--sub);
-
-    font-size:.9rem;
+    font-size:.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -234,78 +269,92 @@ main{
 
 .entry{
     width:100%;
-
-    margin-bottom:9px;
-    padding:13px;
-
+    margin-bottom:12px;
+    padding:15px;
     background:var(--card);
-
     border:1px solid var(--border);
-    border-radius:9px;
-
+    border-radius:12px;
     overflow:hidden;
+    transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.entry:hover {
+    border-color: #3f4553;
 }
 
 .entryWord{
     display:flex;
-
     align-items:center;
-
     flex-wrap:wrap;
-
-    gap:7px;
+    gap:8px;
 }
 
 .word{
     color:var(--accent);
-
-    font-size:1.3rem;
+    font-size:1.35rem;
     font-weight:700;
-
     word-break:break-word;
+    letter-spacing: 0.01em;
+    display: inline;
+}
+
+.ipaTag{
+    color: var(--blue);
+    font-family: 'Charis SIL', 'Doulos SIL', 'Gentium Plus', 'DejaVu Sans', sans-serif;
+    font-size: 0.92rem;
+    background: rgba(77, 184, 255, 0.1);
+    border: 1px solid rgba(77, 184, 255, 0.25);
+    padding: 2px 6px;
+    border-radius: 6px;
 }
 
 .type{
-    padding:2px 6px;
-
-    color:#111;
-    background:#ddd;
-
-    border-radius:5px;
-
-    font-size:.7rem;
-    font-weight:bold;
+    padding:3px 8px;
+    color:#e0e0e0;
+    background:#222630;
+    border: 1px solid #343946;
+    border-radius:6px;
+    font-size:.72rem;
+    font-weight:600;
+    font-family: monospace;
 }
 
 .meaning{
-    margin-top:5px;
-
-    font-size:1rem;
-
+    margin-top:8px;
+    font-size:1.02rem;
+    line-height: 1.45;
     overflow-wrap:anywhere;
 }
 
 .comment{
-    margin-top:4px;
+    margin-top:6px;
     color:var(--sub);
-    font-size:.85rem;
+    font-size:.88rem;
+    line-height: 1.4;
+    padding-left: 8px;
+    border-left: 2px solid #333;
 }
 
 .source{
-    margin-top:9px;
-
-    padding-top:7px;
-
-    color:#777;
-
-    border-top:1px solid #292929;
-
-    font-family:monospace;
+    margin-top:10px;
+    padding-top:8px;
+    color:#666d7d;
+    border-top:1px solid #1e2128;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
     font-size:.75rem;
-
     white-space:normal;
     word-break:break-all;
     overflow-wrap:anywhere;
+}
+
+mark {
+    background: rgba(255, 87, 51, 0.4);
+    color: inherit;
+    font-weight: bold;
+    padding: 0 1px;
+    margin: 0;
+    display: inline;
+    border-radius: 2px;
 }
 
 
@@ -314,17 +363,14 @@ main{
 ========================= */
 
 .category{
-    margin:20px 0 8px;
-
-    padding:8px 10px;
-
+    margin:22px 0 10px;
+    padding:8px 12px;
     background:var(--card2);
-
-    border-left:3px solid var(--accent);
-
-    border-radius:5px;
-
+    border-left:3.5px solid var(--accent);
+    border-radius:6px;
     font-weight:bold;
+    font-size: 0.95rem;
+    color: #e2e8f0;
 }
 
 
@@ -334,25 +380,20 @@ main{
 
 .randomCard{
     width:100%;
-
-    padding:25px;
-
+    padding:30px 20px;
     background:var(--card);
-
     border:1px solid var(--border);
-    border-radius:10px;
-
+    border-radius:14px;
     text-align:center;
 }
 
 .randomCard .word{
-    font-size:2rem;
+    font-size:2.2rem;
 }
 
 .randomMeaning{
-    margin-top:8px;
-
-    font-size:1.1rem;
+    margin-top:12px;
+    font-size:1.15rem;
 }
 
 
@@ -362,17 +403,22 @@ main{
 
 .alphabet{
     display:flex;
-
     flex-wrap:wrap;
-
-    gap:5px;
-
-    margin-bottom:15px;
+    gap:6px;
+    margin-bottom:18px;
 }
 
 .alphabet button{
-    min-width:38px;
-    padding:7px 9px;
+    min-width:40px;
+    padding:8px 10px;
+    border-radius: 8px;
+}
+
+.alphabet button.activeLetter {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: bold;
 }
 
 
@@ -382,40 +428,60 @@ main{
 
 .card{
     width:100%;
-
-    padding:16px;
-
+    padding:20px;
     background:var(--card);
-
     border:1px solid var(--border);
-    border-radius:9px;
+    border-radius:12px;
+    line-height: 1.6;
 }
 
 .card h2{
     margin-top:0;
+    color: var(--accent);
 }
 
 a{
     color:#ff8066;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+code {
+    background: #20232a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--accent);
 }
 
 
 /* =========================
-   EMPTY
+   EMPTY & LOADING
 ========================= */
 
 .empty{
-    padding:35px 0;
-
+    padding:40px 0;
     color:var(--sub);
-
     text-align:center;
+    font-size: 0.95rem;
 }
 
+.audioBtn {
+    background: transparent;
+    border: none;
+    padding: 2px 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
 
-/* =========================
-   HIDDEN
-========================= */
+.audioBtn:hover {
+    opacity: 1;
+}
 
 .hidden{
     display:none !important;
@@ -423,108 +489,32 @@ a{
 
 
 /* =========================
-   LANDSCAPE
+   RESPONSIVE LAYOUT
 ========================= */
 
 @media (orientation:landscape){
-
-    header{
-        padding:
-            10px
-            15px
-            10px;
-    }
-
-    h1{
-        font-size:1.35rem;
-    }
-
-    .subtitle{
-        font-size:.72rem;
-    }
-
-    .searchBox{
-        margin-top:7px;
-    }
-
-    .searchRow input{
-        padding:8px;
-    }
-
-    nav{
-        padding:7px 15px;
-    }
-
-    main{
-        padding-top:10px;
-    }
-
+    header{ padding:10px 15px; }
+    h1{ font-size:1.35rem; }
+    .subtitle{ font-size:.72rem; }
+    .searchBox{ margin-top:7px; }
+    .searchRow input{ padding:8px 36px 8px 11px; }
+    nav{ padding:7px 15px; }
+    main{ padding-top:12px; }
 }
 
-
-/* =========================
-   SHORT LANDSCAPE
-========================= */
-
-@media (
-    orientation:landscape
-) and (
-    max-height:500px
-){
-
-    header{
-        padding:7px 12px;
-    }
-
-    h1{
-        font-size:1.15rem;
-    }
-
-    .subtitle{
-        display:none;
-    }
-
-    .searchBox{
-        margin-top:5px;
-    }
-
-    .searchRow input{
-        padding:7px 9px;
-    }
-
-    nav{
-        padding:5px 12px;
-    }
-
-    main{
-        padding:
-            8px 12px 30px;
-    }
-
+@media (orientation:landscape) and (max-height:500px){
+    header{ padding:7px 12px; }
+    h1{ font-size:1.15rem; }
+    .subtitle{ display:none; }
+    .searchBox{ margin-top:5px; }
+    nav{ padding:5px 12px; }
+    main{ padding:8px 12px 30px; }
 }
-
-
-/* =========================
-   DESKTOP
-========================= */
 
 @media (min-width:700px){
-
-    header{
-        padding-left:25px;
-        padding-right:25px;
-    }
-
-    nav{
-        padding-left:25px;
-        padding-right:25px;
-    }
-
-    main{
-        padding-left:25px;
-        padding-right:25px;
-    }
-
+    header{ padding-left:25px; padding-right:25px; }
+    nav{ padding-left:25px; padding-right:25px; }
+    main{ padding-left:25px; padding-right:25px; }
 }
 
 </style>
@@ -534,21 +524,14 @@ a{
 
 <body>
 
-
 <header>
 
-<h1>
-samin Dictionary
-</h1>
-
-<div class="subtitle">
-samin ↔ English / Korean
+<div class="header-top">
+    <div>
+        <h1>samin Dictionary</h1>
+        <div class="subtitle">samin ↔ English</div>
+    </div>
 </div>
-
-
-<!-- =====================
-     UNIFIED SEARCH
-====================== -->
 
 <div class="searchBox">
 
@@ -563,9 +546,12 @@ samin ↔ English / Korean
 <input
     id="searchInput"
     type="text"
-    placeholder="Type any word, meaning, or tag..."
+    placeholder="Type any word, meaning, or tag... (Press '/' to focus)"
     autocomplete="off"
+    autocorrect="off"
+    autocapitalize="none"
 >
+<button id="clearBtn" class="clearBtn" onclick="clearSearch()" title="Clear search">✕</button>
 
 </div>
 
@@ -574,21 +560,19 @@ samin ↔ English / Korean
 </header>
 
 
-
-<!-- =====================
-     NAV
-====================== -->
-
-<nav>
+<nav id="topNav">
 
 <button
+    id="nav-dictionary"
     type="button"
+    class="nav-active"
     onclick="showPage('dictionary')"
 >
 Dictionary
 </button>
 
 <button
+    id="nav-random"
     type="button"
     onclick="showPage('random')"
 >
@@ -596,6 +580,7 @@ Random
 </button>
 
 <button
+    id="nav-alphabet"
     type="button"
     onclick="showPage('alphabet')"
 >
@@ -603,6 +588,7 @@ Alphabetical
 </button>
 
 <button
+    id="nav-about"
     type="button"
     onclick="showPage('about')"
 >
@@ -612,21 +598,12 @@ About
 </nav>
 
 
-
 <main>
-
-
-<!-- =====================
-     DICTIONARY
-====================== -->
 
 <section id="dictionaryPage">
 
-<div
-    id="count"
-    class="count"
->
-Loading dictionary...
+<div id="count" class="count">
+    <span>Loading dictionary data...</span>
 </div>
 
 <div id="results"></div>
@@ -634,15 +611,7 @@ Loading dictionary...
 </section>
 
 
-
-<!-- =====================
-     RANDOM
-====================== -->
-
-<section
-    id="randomPage"
-    class="hidden"
->
+<section id="randomPage" class="hidden">
 
 <div class="randomCard">
 
@@ -653,8 +622,9 @@ Loading dictionary...
 <button
     type="button"
     onclick="randomWord()"
+    style="background: var(--accent); border-color: var(--accent); font-weight: bold;"
 >
-Another word
+Another word 🎲
 </button>
 
 </div>
@@ -662,56 +632,37 @@ Another word
 </section>
 
 
+<section id="alphabetPage" class="hidden">
 
-<!-- =====================
-     ALPHABET
-====================== -->
-
-<section
-    id="alphabetPage"
-    class="hidden"
->
-
-<div
-    id="alphabet"
-    class="alphabet"
-></div>
+<div id="alphabet" class="alphabet"></div>
 
 <div id="alphabetResults"></div>
 
 </section>
 
 
-
-<!-- =====================
-     ABOUT
-====================== -->
-
-<section
-    id="aboutPage"
-    class="hidden"
->
+<section id="aboutPage" class="hidden">
 
 <div class="card">
 
-<h2>
-About
-</h2>
+<h2>About samin Dictionary</h2>
 
 <p>
-samin Dictionary
+Welcome to the interactive digital dictionary for the <strong>samin</strong> language.
 </p>
 
 <p>
-This dictionary uses the samin vocabulary
-from <code>co_a.txt</code>.
+This application fetches word listings, meanings, and structural notes dynamically from <code>co_a.txt</code>.
 </p>
 
 <p>
-The vocabulary includes word classes,
-derivations, grammatical markers,
-and English definitions.
+<strong>Features & Shortcuts:</strong>
 </p>
+<ul>
+    <li>Press <kbd>/</kbd> to quickly jump to the search box from anywhere.</li>
+    <li>Press <kbd>Esc</kbd> to clear search input.</li>
+    <li>Interactive speech audio and real-time IPA phonetic generation.</li>
+</ul>
 
 <p>
 Vocabulary source:
@@ -722,7 +673,7 @@ Vocabulary source:
     target="_blank"
     rel="noopener"
 >
-co_a.txt
+📂 co_a.txt on GitHub
 </a>
 
 </div>
@@ -733,824 +684,638 @@ co_a.txt
 </main>
 
 
-
 <script>
 
-
-/* =====================================================
-   SOURCE
-===================================================== */
-
-const SOURCE =
-"https://raw.githubusercontent.com/Fhres126/w/main/co_a.txt";
-
+const SOURCE = "https://raw.githubusercontent.com/Fhres126/w/main/co_a.txt";
 
 let entries = [];
-
 let currentSearchMode = "auto";
-
+let activeAlphabetLetter = "";
 
 
 /* =====================================================
-   LOAD DICTIONARY
+   SAMIN PHONOLOGY ENGINE (규칙 재정의판)
+   -----------------------------------------------------
+   규칙 요약
+   - 한 글자가 여러 발음 커버 (d = /d/, /θ/ 등)
+   - 자음 이중자 / 이중모음 없음
+   - s = "task"의 s, ys/sy = "so"의 s (강한 s → ㅆ)
+   - y는 자음을 강하게 만들거나, 뒤 모음과 결합(yu → ㅠ).
+     단독(모음 뒤/어말)이면 묵음. (hay = ha)
+   - x = 앞이 모음이면 종성 [ŋ], 앞이 자음이면 완전 무음.
+     ax = aŋ, anxa = an.a
+   - r = 슈와 [ə]
+   - v = [ɯ]
+   - 종성 가능: b, d, g, l, m, n, x
+   - 자음군 없음. 모음 없는 자음은 ɯ(ㅡ) 삽입.
+     bs = bɯ.sɯ
+   - z = ㅊ / [tʃ]
+   - wr = ㅝ / [wə]
+   - ala = a.la
 ===================================================== */
 
-loadDictionary();
+const SAMIN_VOWELS = "aeiourv";
+
+const SAMIN_VOWEL_IPA = { a:'a', e:'e', i:'i', o:'o', u:'u', r:'ə', v:'ɯ' };
+const SAMIN_VOWEL_KOR = { a:'ㅏ', e:'ㅔ', i:'ㅣ', o:'ㅗ', u:'ㅜ', r:'ㅓ', v:'ㅡ' };
+
+// y + 모음 → 한국어 이중모음 / IPA 활음
+const Y_VOWEL_IPA = { ya:'ja', ye:'je', yi:'ji', yo:'jo', yu:'ju' };
+const Y_VOWEL_KOR = { ya:'ㅑ', ye:'ㅖ', yi:'ㅣ', yo:'ㅛ', yu:'ㅠ' };
+
+const SAMIN_CONS_IPA = {
+    b:'b', c:'k', d:'d', f:'f', g:'g', h:'h',
+    j:'dʒ', k:'k', l:'l', m:'m', n:'n', p:'p',
+    q:'k', s:'s', t:'t', z:'tʃ'
+};
+const SAMIN_CONS_KOR_INIT = {
+    b:'ㅂ', c:'ㅋ', d:'ㄷ', f:'ㅍ', g:'ㄱ', h:'ㅎ',
+    j:'ㅈ', k:'ㅋ', l:'ㄹ', m:'ㅁ', n:'ㄴ', p:'ㅍ',
+    q:'ㅋ', s:'ㅅ', t:'ㅌ', z:'ㅊ'
+};
+// 종성으로 쓸 수 있는 자음만
+const SAMIN_CONS_KOR_FINAL = {
+    b:'ㅂ', d:'ㄷ', g:'ㄱ', l:'ㄹ', m:'ㅁ', n:'ㄴ'
+    // x는 별도 처리 (항상 종성 ㅇ)
+};
+
+const SAMIN_W_COMBOS = {
+    wr: { ipa:'wə', kor:'ㅝ' },
+    wa: { ipa:'wa', kor:'ㅘ' },
+    we: { ipa:'we', kor:'ㅙ' },
+    wi: { ipa:'wi', kor:'ㅟ' }
+};
 
 
-async function loadDictionary(){
+/* ---------- TOKENIZER ---------- */
 
-    try{
+function saminTokenize(word) {
+    word = String(word).toLowerCase().trim();
+    const tokens = [];
+    let i = 0;
 
-        const response =
-            await fetch(SOURCE);
+    while (i < word.length) {
+        const ch = word[i];
 
-
-        if(!response.ok){
-
-            throw new Error(
-                "Could not load co_a.txt."
-            );
-
+        // y + s → 강한 s (ㅆ)
+        if (ch === 'y' && word[i+1] === 's') {
+            tokens.push({
+                type:'C', ipa:'s', korInit:'ㅆ', korFinal:null,
+                canFinal:false, strong:true, orig:'ys'
+            });
+            i += 2;
+            continue;
         }
 
+        // s + y + 모음 → s + y-모음 (예: syu → 슈)
+        if (ch === 's' && word[i+1] === 'y' && word[i+2] &&
+            SAMIN_VOWELS.includes(word[i+2])) {
+            tokens.push({
+                type:'C', ipa:'s', korInit:'ㅅ', korFinal:null,
+                canFinal:false, orig:'s'
+            });
+            const combo = 'y' + word[i+2];
+            tokens.push({
+                type:'V',
+                ipa: Y_VOWEL_IPA[combo] || word[i+2],
+                kor: Y_VOWEL_KOR[combo] || SAMIN_VOWEL_KOR[word[i+2]],
+                orig: combo
+            });
+            i += 3;
+            continue;
+        }
 
-        const text =
-            await response.text();
+        // s + y (모음 없음) → 강한 s (ㅆ)
+        if (ch === 's' && word[i+1] === 'y') {
+            tokens.push({
+                type:'C', ipa:'s', korInit:'ㅆ', korFinal:null,
+                canFinal:false, strong:true, orig:'sy'
+            });
+            i += 2;
+            continue;
+        }
 
+        // y + 모음 → y-모음
+        if (ch === 'y' && word[i+1] && SAMIN_VOWELS.includes(word[i+1])) {
+            const combo = 'y' + word[i+1];
+            tokens.push({
+                type:'V',
+                ipa: Y_VOWEL_IPA[combo] || word[i+1],
+                kor: Y_VOWEL_KOR[combo] || SAMIN_VOWEL_KOR[word[i+1]],
+                orig: combo
+            });
+            i += 2;
+            continue;
+        }
 
-        entries =
-            parseDictionary(text);
+        // 그 외 y → 묵음
+        if (ch === 'y') { i++; continue; }
 
+        // x → 별도 토큰 (종성 전용)
+        if (ch === 'x') {
+            tokens.push({ type:'X', ipa:'ŋ', korFinal:'ㅇ', orig:'x' });
+            i++;
+            continue;
+        }
 
-        document
-            .getElementById("count")
-            .textContent =
-            entries.length +
-            " entries";
+        // w + 모음 결합 (wr → ㅝ, we → ㅙ)
+        if (ch === 'w' && word[i+1]) {
+            const combo = SAMIN_W_COMBOS[ch + word[i+1]];
+            if (combo) {
+                tokens.push({
+                    type:'V', ipa:combo.ipa, kor:combo.kor,
+                    orig: ch + word[i+1]
+                });
+                i += 2;
+                continue;
+            }
+        }
+        // 홀로 남은 w
+        if (ch === 'w') {
+            tokens.push({
+                type:'C', ipa:'w', korInit:'', korFinal:null,
+                canFinal:false, orig:'w'
+            });
+            i++;
+            continue;
+        }
 
+        // 모음
+        if (SAMIN_VOWELS.includes(ch)) {
+            tokens.push({
+                type:'V',
+                ipa: SAMIN_VOWEL_IPA[ch],
+                kor: SAMIN_VOWEL_KOR[ch],
+                orig: ch
+            });
+            i++;
+            continue;
+        }
 
-        render(
-            entries.slice(0,100)
-        );
+        // 자음
+        if (SAMIN_CONS_IPA[ch]) {
+            const final = SAMIN_CONS_KOR_FINAL[ch] || null;
+            tokens.push({
+                type:'C',
+                ipa: SAMIN_CONS_IPA[ch],
+                korInit: SAMIN_CONS_KOR_INIT[ch],
+                korFinal: final,
+                canFinal: final !== null,
+                orig: ch
+            });
+            i++;
+            continue;
+        }
 
-
-        createAlphabet();
-
+        // 그 외 문자(하이픈 등)는 무시
+        i++;
     }
 
-    catch(error){
-
-        document
-            .getElementById("count")
-            .textContent =
-            "Dictionary loading failed.";
-
-
-        document
-            .getElementById("results")
-            .innerHTML =
-            '<div class="empty">' +
-            escapeHTML(error.message) +
-            '</div>';
-
-    }
-
+    return tokens;
 }
 
 
+/* ---------- SYLLABIFIER ---------- */
+
+function saminSyllabify(word) {
+    const tokens = saminTokenize(word);
+    const syllables = [];
+    let i = 0;
+
+    while (i < tokens.length) {
+        // 앞쪽에 남은 x는 무시
+        while (i < tokens.length && tokens[i].type === 'X') i++;
+        if (i >= tokens.length) break;
+
+        const syl = { onset: null, nucleus: null, coda: null };
+
+        // 초성
+        if (tokens[i].type === 'C') {
+            syl.onset = tokens[i];
+            i++;
+        }
+
+        // 중성
+        if (i < tokens.length && tokens[i].type === 'V') {
+            syl.nucleus = tokens[i];
+            i++;
+        } else if (syl.onset) {
+            // 자음군에 모음이 없으면 ɯ(ㅡ) 삽입
+            syl.nucleus = { type:'V', ipa:'ɯ', kor:'ㅡ', epi:true };
+        }
+
+        if (!syl.nucleus) {
+            i++;
+            continue;
+        }
+
+        // 종성
+        if (i < tokens.length) {
+            if (tokens[i].type === 'X') {
+                // x는 항상 종성 [ŋ]
+                syl.coda = tokens[i];
+                i++;
+            } else if (tokens[i].type === 'C' && tokens[i].canFinal) {
+                const nextIsVowel = (i+1 < tokens.length && tokens[i+1].type === 'V');
+                if (!nextIsVowel) {
+                    syl.coda = tokens[i];
+                    i++;
+                }
+            }
+        }
+
+        syllables.push(syl);
+    }
+
+    return syllables;
+}
+
+
+/* ---------- SYLLABLES → IPA / KOREAN ---------- */
+
+function saminSyllablesToIPA(syllables) {
+    return syllables.map(s => {
+        const onset = s.onset ? (s.onset.ipa || '') : '';
+        const nucleus = s.nucleus ? (s.nucleus.ipa || '') : '';
+        const coda = s.coda ? (s.coda.ipa || '') : '';
+        return onset + nucleus + coda;
+    }).join('.');
+}
+
+function saminSyllablesToKorean(syllables) {
+    return syllables.map(s => {
+        let init = 'ㅇ';
+        if (s.onset && s.onset.korInit) init = s.onset.korInit;
+        const vowel = (s.nucleus && s.nucleus.kor) ? s.nucleus.kor : 'ㅡ';
+        const final = (s.coda && s.coda.korFinal) ? s.coda.korFinal : '';
+        return makeHangul(init, vowel, final);
+    }).join('');
+}
+
+function saminToIPA(rawText) {
+    if (!rawText) return "";
+    const words = String(rawText).toLowerCase().trim().split(/\s+/).filter(Boolean);
+    return "[" + words.map(w => saminSyllablesToIPA(saminSyllabify(w))).join(' ') + "]";
+}
+
+function saminToKoreanPhonetic(rawText) {
+    if (!rawText) return "";
+    const cleaned = String(rawText).replace(/[\/\[].*?[\/\]]/g, '').toLowerCase().trim();
+    const words = cleaned.split(/\s+/).filter(Boolean);
+    return words.map(w => saminSyllablesToKorean(saminSyllabify(w))).join(' ');
+}
+
+
+function makeHangul(cho, jung, jong) {
+    const CHO = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ";
+    const JUNG = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ";
+    const JONG = ["", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
+
+    const cIdx = CHO.indexOf(cho);
+    const jIdx = JUNG.indexOf(jung);
+    const fIdx = jong ? JONG.indexOf(jong) : 0;
+
+    if (cIdx !== -1 && jIdx !== -1 && fIdx !== -1) {
+        return String.fromCharCode(44032 + (cIdx * 588) + (jIdx * 28) + fIdx);
+    }
+    return cho + jung + (jong || '');
+}
+
 
 /* =====================================================
-   PARSER FOR co_a.txt
+   INITIALIZATION & LOAD
 ===================================================== */
 
+window.addEventListener('DOMContentLoaded', () => {
+    loadDictionary();
+    setupKeyboardShortcuts();
+});
+
+
+async function loadDictionary(){
+    try{
+        const response = await fetch(SOURCE);
+
+        if(!response.ok){
+            throw new Error("Could not load dictionary data from co_a.txt");
+        }
+
+        const text = await response.text();
+        entries = parseDictionary(text);
+
+        document.getElementById("count").innerHTML = `<span><strong>${entries.length}</strong> total entries loaded</span>`;
+
+        render(entries.slice(0, 100));
+        createAlphabet();
+
+    } catch(error){
+        document.getElementById("count").innerHTML = '<span>Failed to load dictionary.</span>';
+        document.getElementById("results").innerHTML = `<div class="empty">${escapeHTML(error.message)}</div>`;
+    }
+}
+
+
 function parseDictionary(text){
-
     const result = [];
-
     let currentCategory = "";
 
+    const lines = text.split(/\r?\n/);
 
-    const lines =
-        text.split(/\r?\n/);
+    for(let raw of lines){
+        const line = raw.trim();
+        if(!line) continue;
 
-
-    for(
-        let raw of lines
-    ){
-
-        const line =
-            raw.trim();
-
-
-        if(!line)
-            continue;
-
-
-        /* ---------------------------------------------
-           Category headers
-        --------------------------------------------- */
-
-        const categoryMatch =
-            line.match(
-                /^▶\s*([A-Za-z])\s*\{/
-            );
-
-
+        const categoryMatch = line.match(/^▶\s*([A-Za-z])\s*\{/);
         if(categoryMatch){
-
-            currentCategory =
-                categoryMatch[1].toUpperCase();
-
+            currentCategory = categoryMatch[1].toUpperCase();
             continue;
-
         }
 
+        if(/^}◀/.test(line) || /^}\s*◀/.test(line)) continue;
+        if(line.startsWith("//") || line.startsWith("▶") || line.startsWith("◀")) continue;
 
-        if(
-            /^}◀/.test(line) ||
-            /^}\s*◀/.test(line)
-        ){
+        if(!line.includes("=")) continue;
 
-            continue;
+        const equalIndex = line.indexOf("=");
+        let left = line.substring(0, equalIndex).trim().replace(/^-+/, "").trim();
+        let right = line.substring(equalIndex + 1).trim();
 
-        }
-
-
-        /* ---------------------------------------------
-           Ignore comments / explanatory lines
-        --------------------------------------------- */
-
-        if(
-            line.startsWith("//") ||
-            line.startsWith("▶") ||
-            line.startsWith("◀")
-        )
-            continue;
-
-
-        /* ---------------------------------------------
-           Dictionary entries require "="
-        --------------------------------------------- */
-
-        if(!line.includes("="))
-            continue;
-
-
-        const equal =
-            line.indexOf("=");
-
-
-        let left =
-            line
-            .substring(0,equal)
-            .trim();
-
-
-        let right =
-            line
-            .substring(equal + 1)
-            .trim();
-
-
-        /* 계층 기호(-) 제거 */
-
-        left =
-            left
-            .replace(/^-+/, "")
-            .trim();
-
-
-        if(!left)
-            continue;
-
-
-        /* ---------------------------------------------
-           [= 이전의 마지막 공백 기준 파싱 로직]
-           - '=' 직전의 마지막 공백을 찾아 태그 특수문자(!, _, (, ,)가
-             포함되어 있으면 태그로 분리하고, 없으면 전체를 단어로 인식합니다.
-        --------------------------------------------- */
+        if(!left) continue;
 
         let word = left;
         let grammar = "";
 
         const lastSpaceIndex = left.lastIndexOf(" ");
-
         if (lastSpaceIndex !== -1) {
-
             const possibleTag = left.substring(lastSpaceIndex + 1).trim();
-
             if (/[!_\(,]/.test(possibleTag)) {
-
                 word = left.substring(0, lastSpaceIndex).trim();
-
                 grammar = possibleTag;
-
-            } else {
-
-                word = left.trim();
-
-                grammar = "";
-
             }
-
-        } else {
-
-            word = left.trim();
-
-            grammar = "";
-
         }
 
-
-        if(!word)
-            continue;
-
-
-        /* ---------------------------------------------
-           English meaning (= 뒤부터 첫번째 . 전까지) & comments (. 이후)
-        --------------------------------------------- */
+        if(!word) continue;
 
         let mainMeaning = right;
         let comment = "";
 
         if (right.includes(".")) {
-
             const idx = right.indexOf(".");
-
             mainMeaning = right.substring(0, idx).trim();
-
             comment = right.substring(idx + 1).trim();
-
         }
 
+        let displayMeaning = mainMeaning.trim();
+        if(!displayMeaning) continue;
 
-        let displayMeaning =
-            mainMeaning
-            .replace(/\s+/g," ")
-            .trim();
-
-
-        if(!displayMeaning)
-            continue;
-
-
-        /* ---------------------------------------------
-           Clean Raw Source Display
-        --------------------------------------------- */
-
-        let displayRaw = raw
-            .replace(/\t/g, "")
-            .replace(/^-+/, "")
-            .trim()
-            .replace(/\s+/g, " ");
-
+        let displayRaw = raw.replace(/\t/g, "").replace(/^-+/, "").trim();
 
         result.push({
-
-            word:word,
-
-            meaning:displayMeaning,
-
-            comment:comment,
-
-            grammar:grammar,
-
-            category:currentCategory,
-
-            raw:displayRaw
-
+            word: word,
+            meaning: displayMeaning,
+            comment: comment,
+            grammar: grammar,
+            category: currentCategory,
+            raw: displayRaw
         });
-
     }
 
-
-    /* ---------------------------------------------
-       Remove exact duplicates
-    --------------------------------------------- */
-
-    const seen =
-        new Set();
-
-
-    return result.filter(
-        function(item){
-
-            const key =
-                item.raw;
-
-
-            if(seen.has(key))
-                return false;
-
-
-            seen.add(key);
-
-            return true;
-
-        }
-    );
-
+    const seen = new Set();
+    return result.filter(item => {
+        const key = item.raw;
+        if(seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
 }
 
-
-
-/* =====================================================
-   HTML ESCAPE
-===================================================== */
 
 function escapeHTML(text){
+    return String(text).replace(/[&<>"']/g, char => ({
+        "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+    }[char]));
+}
 
-    return String(text)
-    .replace(
-        /[&<>"']/g,
+function highlightMatch(text, query) {
+    if (!query) return escapeHTML(text);
 
-        function(char){
+    const escapedQuery = query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const regex = new RegExp(`(${escapedQuery})`, 'gi');
 
-            const map = {
-
-                "&":"&amp;",
-                "<":"&lt;",
-                ">":"&gt;",
-                '"':"&quot;",
-                "'":"&#39;"
-
-            };
-
-            return map[char];
-
+    const parts = text.split(regex);
+    return parts.map(part => {
+        if (part.toLowerCase() === query.toLowerCase()) {
+            return `<mark>${escapeHTML(part)}</mark>`;
         }
-    );
-
+        return escapeHTML(part);
+    }).join("");
 }
 
 
-
-/* =====================================================
-   RENDER
-===================================================== */
-
-function render(
-    list,
-    target="results"
-){
-
-    const element =
-        document.getElementById(target);
-
+function render(list, target="results", query=""){
+    const element = document.getElementById(target);
 
     if(!list.length){
-
-        element.innerHTML =
-            '<div class="empty">' +
-            'No result.' +
-            '</div>';
-
+        element.innerHTML = '<div class="empty">No matching entries found.</div>';
         return;
-
     }
-
 
     let html = "";
-
-
     let lastCategory = "";
 
-
-    for(
-        const item of list
-    ){
-
-        if(
-            target === "results" &&
-            item.category &&
-            item.category !== lastCategory
-        ){
-
-            html += `
-
-                <div class="category">
-                    ${escapeHTML(item.category)}
-                </div>
-
-            `;
-
-
-            lastCategory =
-                item.category;
-
+    for(const item of list){
+        if(target === "results" && item.category && item.category !== lastCategory){
+            html += `<div class="category">Category ${escapeHTML(item.category)}</div>`;
+            lastCategory = item.category;
         }
 
+        let wordHtml = escapeHTML(item.word);
+        let meaningHtml = escapeHTML(item.meaning);
+        let commentHtml = item.comment ? escapeHTML(item.comment) : "";
 
-        html += `
+        if (query) {
+            if (currentSearchMode === "samin") {
+                wordHtml = highlightMatch(item.word, query);
+            } else if (currentSearchMode === "english") {
+                meaningHtml = highlightMatch(item.meaning, query);
+                if (item.comment) commentHtml = highlightMatch(item.comment, query);
+            } else {
+                wordHtml = highlightMatch(item.word, query);
+                meaningHtml = highlightMatch(item.meaning, query);
+                if (item.comment) commentHtml = highlightMatch(item.comment, query);
+            }
+        }
 
-            <article class="entry">
+        const ipaText = saminToIPA(item.word);
 
-                <div class="entryWord">
-
-                    <div class="word">
-                        ${escapeHTML(item.word)}
-                    </div>
-
-                    ${
-                        item.grammar
-                        ?
-                        `
-                        <div class="type">
-                            ${escapeHTML(item.grammar)}
-                        </div>
-                        `
-                        :
-                        ""
-                    }
-
-                </div>
-
-
-                <div class="meaning">
-                    ${escapeHTML(item.meaning)}
-                </div>
-
-                ${
-                    item.comment
-                    ?
-                    `
-                    <div class="comment">
-                        ${escapeHTML(item.comment)}
-                    </div>
-                    `
-                    :
-                    ""
-                }
-
-
-                <div class="source">
-                    ${escapeHTML(item.raw)}
-                </div>
-
-            </article>
-
-        `;
-
+        html += `<article class="entry"><div class="entryWord"><div class="word">${wordHtml}</div><div class="ipaTag">${escapeHTML(ipaText)}</div>${item.grammar ? `<div class="type">${escapeHTML(item.grammar)}</div>` : ""}<button class="audioBtn" title="Listen" onclick="speakText('${escapeHTML(item.word)}')">🔊</button></div><div class="meaning">${meaningHtml}</div>${item.comment ? `<div class="comment">${commentHtml}</div>` : ""}<div class="source">${escapeHTML(item.raw)}</div></article>`;
     }
 
-
-    element.innerHTML =
-        html;
-
+    element.innerHTML = html;
 }
 
-
-
-/* =====================================================
-   REAL-TIME SEARCH
-===================================================== */
 
 function setSearchMode(mode, el){
-
     currentSearchMode = mode;
-
-
-    document.querySelectorAll('.modeBtn').forEach(function(btn){
-
-        btn.classList.remove('active');
-
-    });
-
-
+    document.querySelectorAll('.modeBtn').forEach(btn => btn.classList.remove('active'));
     el.classList.add('active');
-
-
     performSearch();
-
 }
 
-
 function getSearchScore(item, query, mode) {
-
     const word = item.word.toLowerCase();
     const meaning = item.meaning.toLowerCase();
-
     const wordBoundaryRegex = new RegExp(`\\b${query}\\b`, 'i');
 
-
     if (mode === "samin") {
-
         if (word === query) return 100;
-
         if (word.startsWith(query)) return 80;
-
         if (wordBoundaryRegex.test(word)) return 60;
-
         if (word.includes(query)) return 20;
-
         return 0;
-
     }
 
     if (mode === "english") {
-
         if (meaning === query) return 100;
-
         if (meaning.startsWith(query)) return 80;
-
         if (wordBoundaryRegex.test(meaning)) return 60;
-
         if (meaning.includes(query)) return 30;
-
         return 0;
-
     }
 
-    // Auto Mode
     if (word === query) return 100;
-
     if (meaning === query) return 95;
-
     if (word.startsWith(query)) return 85;
-
     if (meaning.startsWith(query)) return 75;
-
     if (wordBoundaryRegex.test(meaning)) return 65;
-
     if (wordBoundaryRegex.test(word)) return 60;
-
     if (meaning.includes(query)) return 30;
-
     if (word.includes(query)) return 20;
 
     return 0;
-
 }
 
 
 function performSearch(){
+    const inputEl = document.getElementById("searchInput");
+    const clearBtn = document.getElementById("clearBtn");
+    const query = inputEl.value.trim().toLowerCase();
 
-    const query =
-        document
-        .getElementById("searchInput")
-        .value
-        .trim()
-        .toLowerCase();
-
+    clearBtn.style.display = inputEl.value ? "block" : "none";
 
     showPage("dictionary");
 
-
     if(!query){
-
-        document
-        .getElementById("count")
-        .textContent =
-        entries.length +
-        " entries";
-
-
-        render(
-            entries.slice(0,100)
-        );
-
+        document.getElementById("count").innerHTML = `<span><strong>${entries.length}</strong> total entries</span>`;
+        render(entries.slice(0, 100));
         return;
-
     }
-
 
     const scored = [];
-
-
     for (const item of entries) {
-
         const score = getSearchScore(item, query, currentSearchMode);
-
         if (score > 0) {
-
             scored.push({ item: item, score: score });
-
         }
-
     }
-
 
     scored.sort((a, b) => b.score - a.score);
-
-
     const result = scored.map(s => s.item);
 
-
-    document
-    .getElementById("count")
-    .textContent =
-        result.length +
-        " result" +
-        (
-            result.length === 1
-            ? ""
-            : "s"
-        );
-
-
-    render(result);
-
+    document.getElementById("count").innerHTML = `<span>Found <strong>${result.length}</strong> result${result.length === 1 ? "" : "s"}</span>`;
+    render(result, "results", query);
 }
 
+function clearSearch(){
+    const inputEl = document.getElementById("searchInput");
+    inputEl.value = "";
+    performSearch();
+    inputEl.focus();
+}
 
-
-/* =====================================================
-   RANDOM
-===================================================== */
 
 function randomWord(){
+    if(!entries.length) return;
 
-    if(!entries.length)
-        return;
-
-
-    const item =
-        entries[
-            Math.floor(
-                Math.random() *
-                entries.length
-            )
-        ];
-
-
-    const element =
-        document
-        .getElementById("randomResult");
-
+    const item = entries[Math.floor(Math.random() * entries.length)];
+    const element = document.getElementById("randomResult");
+    const ipaText = saminToIPA(item.word);
 
     element.innerHTML = `
-
-        <div class="word">
-            ${escapeHTML(item.word)}
-        </div>
-
-        ${
-            item.grammar
-            ?
-            `
-            <div class="type"
-                 style="display:inline-block;margin-top:8px">
-                ${escapeHTML(item.grammar)}
-            </div>
-            `
-            :
-            ""
-        }
-
-        <div class="randomMeaning">
-            ${escapeHTML(item.meaning)}
-        </div>
-
-        ${
-            item.comment
-            ?
-            `
-            <div class="comment">
-                ${escapeHTML(item.comment)}
-            </div>
-            `
-            :
-            ""
-        }
-
-        <div class="source">
-            ${escapeHTML(item.raw)}
-        </div>
-
+        <div class="word">${escapeHTML(item.word)}</div>
+        <div class="ipaTag" style="display:inline-block;margin-left:6px">${escapeHTML(ipaText)}</div>
+        ${item.grammar ? `<div class="type" style="display:inline-block;margin-top:8px">${escapeHTML(item.grammar)}</div>` : ""}
+        <button class="audioBtn" style="font-size:1.3rem;margin-left:6px" onclick="speakText('${escapeHTML(item.word)}')">🔊</button>
+        <div class="randomMeaning">${escapeHTML(item.meaning)}</div>
+        ${item.comment ? `<div class="comment" style="display:inline-block;text-align:left;">${escapeHTML(item.comment)}</div>` : ""}
+        <div class="source" style="text-align:center">${escapeHTML(item.raw)}</div>
     `;
-
 }
-
-
-
-/* =====================================================
-   ALPHABET
-===================================================== */
 
 function createAlphabet(){
-
-    const letters =
-        "abcdefghijklmnopqrstuvwxyz"
-        .split("");
-
-
-    document
-    .getElementById("alphabet")
-    .innerHTML =
-
-        letters
-        .map(
-            function(letter){
-
-                return `
-
-                    <button
-                        type="button"
-                        onclick="alphabetSearch('${letter}')"
-                    >
-                        ${letter}
-                    </button>
-
-                `;
-
-            }
-        )
-        .join("");
-
+    const letters = "abcdefghijklmnopqrstuvwxyz".split("");
+    document.getElementById("alphabet").innerHTML = letters.map(letter => `
+        <button type="button" id="alpha-${letter}" onclick="alphabetSearch('${letter}')">${letter.toUpperCase()}</button>
+    `).join("");
 }
-
 
 function alphabetSearch(letter){
+    activeAlphabetLetter = letter;
+    document.querySelectorAll('.alphabet button').forEach(b => b.classList.remove('activeLetter'));
+    const activeBtn = document.getElementById(`alpha-${letter}`);
+    if (activeBtn) activeBtn.classList.add('activeLetter');
 
-    const result =
-        entries.filter(
-            function(item){
-
-                return item.word
-                    .toLowerCase()
-                    .startsWith(letter);
-
-            }
-        );
-
-
-    render(
-        result,
-        "alphabetResults"
-    );
-
+    const result = entries.filter(item => item.word.toLowerCase().startsWith(letter));
+    render(result, "alphabetResults");
 }
 
 
-
 /* =====================================================
-   PAGE NAVIGATION
+   TTS
 ===================================================== */
 
-showPage('dictionary');
+function speakText(text) {
+    if ('speechSynthesis' in window) {
+        const phoneticKorean = saminToKoreanPhonetic(text);
+
+        const utterance = new SpeechSynthesisUtterance(phoneticKorean);
+        utterance.rate = 0.85;
+        utterance.lang = 'ko-KR';
+
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
+    }
+}
+
+function setupKeyboardShortcuts() {
+    const searchInput = document.getElementById("searchInput");
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "/" && document.activeElement !== searchInput) {
+            e.preventDefault();
+            searchInput.focus();
+        } else if (e.key === "Escape" && document.activeElement === searchInput) {
+            clearSearch();
+        }
+    });
+}
 
 function showPage(page){
+    document.getElementById("dictionaryPage").classList.toggle("hidden", page !== "dictionary");
+    document.getElementById("randomPage").classList.toggle("hidden", page !== "random");
+    document.getElementById("alphabetPage").classList.toggle("hidden", page !== "alphabet");
+    document.getElementById("aboutPage").classList.toggle("hidden", page !== "about");
 
-    document
-        .getElementById("dictionaryPage")
-        .classList
-        .toggle(
-            "hidden",
-            page !== "dictionary"
-        );
-
-
-    document
-        .getElementById("randomPage")
-        .classList
-        .toggle(
-            "hidden",
-            page !== "random"
-        );
-
-
-    document
-        .getElementById("alphabetPage")
-        .classList
-        .toggle(
-            "hidden",
-            page !== "alphabet"
-        );
-
-
-    document
-        .getElementById("aboutPage")
-        .classList
-        .toggle(
-            "hidden",
-            page !== "about"
-        );
-
+    document.querySelectorAll("nav button").forEach(btn => btn.classList.remove("nav-active"));
+    const activeNav = document.getElementById(`nav-${page}`);
+    if (activeNav) activeNav.classList.add("nav-active");
 
     if(page === "random"){
-
         randomWord();
-
     }
-
 }
 
+document.getElementById("searchInput").addEventListener("input", performSearch);
 
-
-/* =====================================================
-   INPUT EVENT & VISUAL VIEWPORT FIX
-===================================================== */
-
-document
-    .getElementById("searchInput")
-    .addEventListener(
-        "input",
-        performSearch
-    );
-
-
-/* 키보드가 열려 있는 상태에서도 높이를 실시간 계산하여 하단 여백 제거 */
 function updateViewportHeight() {
     if (window.visualViewport) {
         document.body.style.height = window.visualViewport.height + 'px';
@@ -1565,5 +1330,4 @@ if (window.visualViewport) {
 </script>
 
 </body>
-
 </html>
