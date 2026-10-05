@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
 
@@ -28,31 +28,106 @@
     --highlight:rgba(255, 87, 51, 0.35);
 }
 
-*{
-    box-sizing:border-box;
+/* =========================
+   CROSS-BROWSER NORMALIZE
+========================= */
+
+html{
+    font-size: 16px;
+    height: 100vh;
+    height: 100dvh;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scrollbar-gutter: stable;
+}
+
+/* 모바일 base 폰트 확대 — GitHub Pages / 인앱 브라우저 편차 대응 */
+@media (max-width: 700px){
+    html{ font-size: 17px; }
+}
+@media (max-width: 420px){
+    html{ font-size: 18px; }
+}
+
+body{
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans KR",
+        "Malgun Gothic",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
+
+button,
+input,
+select,
+textarea{
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+button{
+    background-image: none;
+    cursor: pointer;
+    min-height: 36px;
+}
+
+@media (max-width: 700px){
+    input,
+    select,
+    textarea{
+        font-size: 16px !important;
+    }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+    header{ background: #0a0a0c !important; }
+}
+
+@supports not (-webkit-background-clip: text){
+    h1{
+        -webkit-text-fill-color: initial;
+        color: #fff;
+        background: none;
+    }
+}
+
+/* =========================
+   BASE
+========================= */
 
 html,
 body{
     margin:0;
     padding:0;
     width:100%;
-    height:100dvh;
-    min-height:100dvh;
 }
 
 body{
     background:var(--bg);
     color:var(--text);
-    font-family:
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        sans-serif;
-
     overflow-x:hidden;
     overflow-y:auto;
     overscroll-behavior-y:none;
@@ -173,6 +248,7 @@ h1{
     cursor: pointer;
     display: none;
     border-radius: 50%;
+    min-height: 0;
 }
 
 .clearBtn:hover {
@@ -477,6 +553,7 @@ code {
     font-size: 1.1rem;
     opacity: 0.7;
     transition: opacity 0.2s;
+    min-height: 0;
 }
 
 .audioBtn:hover {
@@ -694,24 +771,7 @@ let activeAlphabetLetter = "";
 
 
 /* =====================================================
-   SAMIN PHONOLOGY ENGINE (규칙 재정의판)
-   -----------------------------------------------------
-   규칙 요약
-   - 한 글자가 여러 발음 커버 (d = /d/, /θ/ 등)
-   - 자음 이중자 / 이중모음 없음
-   - s = "task"의 s, ys/sy = "so"의 s (강한 s → ㅆ)
-   - y는 자음을 강하게 만들거나, 뒤 모음과 결합(yu → ㅠ).
-     단독(모음 뒤/어말)이면 묵음. (hay = ha)
-   - x = 앞이 모음이면 종성 [ŋ], 앞이 자음이면 완전 무음.
-     ax = aŋ, anxa = an.a
-   - r = 슈와 [ə]
-   - v = [ɯ]
-   - 종성 가능: b, d, g, l, m, n, x
-   - 자음군 없음. 모음 없는 자음은 ɯ(ㅡ) 삽입.
-     bs = bɯ.sɯ
-   - z = ㅊ / [tʃ]
-   - wr = ㅝ / [wə]
-   - ala = a.la
+   SAMIN PHONOLOGY ENGINE
 ===================================================== */
 
 const SAMIN_VOWELS = "aeiourv";
@@ -719,9 +779,8 @@ const SAMIN_VOWELS = "aeiourv";
 const SAMIN_VOWEL_IPA = { a:'a', e:'e', i:'i', o:'o', u:'u', r:'ə', v:'ɯ' };
 const SAMIN_VOWEL_KOR = { a:'ㅏ', e:'ㅔ', i:'ㅣ', o:'ㅗ', u:'ㅜ', r:'ㅓ', v:'ㅡ' };
 
-// y + 모음 → 한국어 이중모음 / IPA 활음
-const Y_VOWEL_IPA = { ya:'ja', ye:'je', yo:'jo', yu:'ju', yr:'jə' };
-const Y_VOWEL_KOR = { ya:'ㅑ', ye:'ㅖ', yo:'ㅛ', yu:'ㅠ', yr:'ㅕ'  };
+const Y_VOWEL_IPA = { ya:'ja', ye:'je', yi:'ji', yo:'jo', yu:'ju', yr:'jə' };
+const Y_VOWEL_KOR = { ya:'ㅑ', ye:'ㅖ', yi:'ㅣ', yo:'ㅛ', yu:'ㅠ', yr:'ㅕ' };
 
 const SAMIN_CONS_IPA = {
     b:'b', c:'k', d:'d', f:'f', g:'g', h:'h',
@@ -733,10 +792,8 @@ const SAMIN_CONS_KOR_INIT = {
     j:'ㅈ', k:'ㅋ', l:'ㄹ', m:'ㅁ', n:'ㄴ', p:'ㅍ',
     q:'ㅋ', s:'ㅅ', t:'ㅌ', z:'ㅊ'
 };
-// 종성으로 쓸 수 있는 자음만
 const SAMIN_CONS_KOR_FINAL = {
     b:'ㅂ', d:'ㄷ', g:'ㄱ', l:'ㄹ', m:'ㅁ', n:'ㄴ'
-    // x는 별도 처리 (항상 종성 ㅇ)
 };
 
 const SAMIN_W_COMBOS = {
@@ -747,8 +804,6 @@ const SAMIN_W_COMBOS = {
 };
 
 
-/* ---------- TOKENIZER ---------- */
-
 function saminTokenize(word) {
     word = String(word).toLowerCase().trim();
     const tokens = [];
@@ -757,7 +812,6 @@ function saminTokenize(word) {
     while (i < word.length) {
         const ch = word[i];
 
-        // y + s → 강한 s (ㅆ)
         if (ch === 'y' && word[i+1] === 's') {
             tokens.push({
                 type:'C', ipa:'s', korInit:'ㅆ', korFinal:null,
@@ -767,7 +821,6 @@ function saminTokenize(word) {
             continue;
         }
 
-        // s + y + 모음 → s + y-모음 (예: syu → 슈)
         if (ch === 's' && word[i+1] === 'y' && word[i+2] &&
             SAMIN_VOWELS.includes(word[i+2])) {
             tokens.push({
@@ -785,7 +838,6 @@ function saminTokenize(word) {
             continue;
         }
 
-        // s + y (모음 없음) → 강한 s (ㅆ)
         if (ch === 's' && word[i+1] === 'y') {
             tokens.push({
                 type:'C', ipa:'s', korInit:'ㅆ', korFinal:null,
@@ -795,7 +847,6 @@ function saminTokenize(word) {
             continue;
         }
 
-        // y + 모음 → y-모음
         if (ch === 'y' && word[i+1] && SAMIN_VOWELS.includes(word[i+1])) {
             const combo = 'y' + word[i+1];
             tokens.push({
@@ -808,17 +859,14 @@ function saminTokenize(word) {
             continue;
         }
 
-        // 그 외 y → 묵음
         if (ch === 'y') { i++; continue; }
 
-        // x → 별도 토큰 (종성 전용)
         if (ch === 'x') {
             tokens.push({ type:'X', ipa:'ŋ', korFinal:'ㅇ', orig:'x' });
             i++;
             continue;
         }
 
-        // w + 모음 결합 (wr → ㅝ, we → ㅙ)
         if (ch === 'w' && word[i+1]) {
             const combo = SAMIN_W_COMBOS[ch + word[i+1]];
             if (combo) {
@@ -830,7 +878,7 @@ function saminTokenize(word) {
                 continue;
             }
         }
-        // 홀로 남은 w
+
         if (ch === 'w') {
             tokens.push({
                 type:'C', ipa:'w', korInit:'', korFinal:null,
@@ -840,7 +888,6 @@ function saminTokenize(word) {
             continue;
         }
 
-        // 모음
         if (SAMIN_VOWELS.includes(ch)) {
             tokens.push({
                 type:'V',
@@ -852,7 +899,6 @@ function saminTokenize(word) {
             continue;
         }
 
-        // 자음
         if (SAMIN_CONS_IPA[ch]) {
             const final = SAMIN_CONS_KOR_FINAL[ch] || null;
             tokens.push({
@@ -867,7 +913,6 @@ function saminTokenize(word) {
             continue;
         }
 
-        // 그 외 문자(하이픈 등)는 무시
         i++;
     }
 
@@ -875,32 +920,26 @@ function saminTokenize(word) {
 }
 
 
-/* ---------- SYLLABIFIER ---------- */
-
 function saminSyllabify(word) {
     const tokens = saminTokenize(word);
     const syllables = [];
     let i = 0;
 
     while (i < tokens.length) {
-        // 앞쪽에 남은 x는 무시
         while (i < tokens.length && tokens[i].type === 'X') i++;
         if (i >= tokens.length) break;
 
         const syl = { onset: null, nucleus: null, coda: null };
 
-        // 초성
         if (tokens[i].type === 'C') {
             syl.onset = tokens[i];
             i++;
         }
 
-        // 중성
         if (i < tokens.length && tokens[i].type === 'V') {
             syl.nucleus = tokens[i];
             i++;
         } else if (syl.onset) {
-            // 자음군에 모음이 없으면 ɯ(ㅡ) 삽입
             syl.nucleus = { type:'V', ipa:'ɯ', kor:'ㅡ', epi:true };
         }
 
@@ -909,10 +948,8 @@ function saminSyllabify(word) {
             continue;
         }
 
-        // 종성
         if (i < tokens.length) {
             if (tokens[i].type === 'X') {
-                // x는 항상 종성 [ŋ]
                 syl.coda = tokens[i];
                 i++;
             } else if (tokens[i].type === 'C' && tokens[i].canFinal) {
@@ -930,8 +967,6 @@ function saminSyllabify(word) {
     return syllables;
 }
 
-
-/* ---------- SYLLABLES → IPA / KOREAN ---------- */
 
 function saminSyllablesToIPA(syllables) {
     return syllables.map(s => {
@@ -1315,17 +1350,6 @@ function showPage(page){
 }
 
 document.getElementById("searchInput").addEventListener("input", performSearch);
-
-function updateViewportHeight() {
-    if (window.visualViewport) {
-        document.body.style.height = window.visualViewport.height + 'px';
-    }
-}
-
-if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', updateViewportHeight);
-    window.visualViewport.addEventListener('scroll', updateViewportHeight);
-}
 
 </script>
 
