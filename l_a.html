@@ -11,8 +11,19 @@
   
     :root {
       --s: 0px;
-      --ctrl-h: clamp(30px, calc(var(--s) / 12), 52px);
+      /* 세로 모드 기본 : 1.5배 */
+      --ctrl-h: clamp(45px, calc(var(--s) / 8), 78px);
+      --btn-fs: 4.5vmin;
+      --btn-w: calc(var(--s) * 0.32);
     }
+
+    /* ★ 가로 모드 : 높이만 낮춤 (폭은 JS가 캡) */
+    @media (orientation: landscape) {
+      :root {
+        --ctrl-h: clamp(28px, calc(var(--s) / 12), 48px);
+      }
+    }
+
     html{
      font-size: var(--fontsize);
     }
@@ -53,13 +64,13 @@
       -webkit-appearance: none;
       appearance: none;
       height: calc(var(--s) / 24);
-      width: calc(var(--s) * 0.6);
       background: transparent;
       cursor: pointer;
       padding: 0;
       margin: 0;
       display: inline-block;
       vertical-align: middle;
+      box-sizing: border-box;
     }
     input[type="range"]::-webkit-slider-runnable-track {
       height: calc(var(--s) / 90);
@@ -98,11 +109,7 @@
       height: calc(var(--s) / 24);
       padding: 0;
     }
-    .bar_size{
-     width:calc(var(--s) * 0.6);
-    }
 
-    /* ★ 버튼도 --fontsize 를 CSS 변수로 직접 참조 → 자동 갱신 */
     button{
       position: fixed;
       background-color: #000;
@@ -116,11 +123,17 @@
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
-      padding: 0 8px;
+      padding: 0;
       line-height: 1;
-      font-size: var(--fontsize);
+      font-size: var(--btn-fs);
       font-family: inherit;
     }
+
+    #turn_autoscroll,
+    #go_random{
+      width: var(--btn-w);
+    }
+
     summary {
      cursor: pointer; 
      -webkit-text-stroke: 0px;
@@ -201,7 +214,6 @@ oninput="speed_of_auto_scroll=this.value;">
   <script>
     let width=window.innerWidth;
     let height=window.innerHeight;
-    /* ★ 세로/가로 완전히 동일한 공식 : min(w, h) */
     let smallerline = Math.min(width, height);
    
     document.documentElement.style.setProperty("--s", String(smallerline) + "px");
@@ -242,10 +254,11 @@ oninput="speed_of_auto_scroll=this.value;">
    
    
    /* ============================================================
-      레이아웃 (세로 / 가로 완전 동일)
-        1행: [색상버튼 8개] gap [bar_size]
-        2행: [auto scroll]  gap [scale_of_scroll]   ← scale 세로 중앙
-        3행: [go random]                             ← auto 바로 아래
+      레이아웃
+        1행: [색상버튼 8개]  gap  [bar_size────────────]
+        2행: [auto scroll]        [scale_of_scroll────────────]
+        3행: [go random ]
+      ★ 버튼 폭은 (barLeft - bodyMargin - gap) 안에 무조건 들어가도록 캡
       ============================================================ */
    function set_(){
     const gap = smallerline / 60;
@@ -256,7 +269,7 @@ oninput="speed_of_auto_scroll=this.value;">
       "button_yellow","button_green","button_cyan","button_white"
     ];
     
-    // 1행
+    // 색상 버튼 나열
     let cursorX = bodyMargin;
     colorIds.forEach(id => {
       const el = document.getElementById(id);
@@ -265,13 +278,32 @@ oninput="speed_of_auto_scroll=this.value;">
       cursorX += el.offsetWidth;
     });
     
-    const barSize = document.getElementById("bar_size");
-    barSize.style.left = (cursorX + gap) + "px";
-    barSize.style.top = "0px";
+    const barSize    = document.getElementById("bar_size");
+    const turnAuto   = document.getElementById("turn_autoscroll");
+    const goRandom   = document.getElementById("go_random");
+    const scaleScroll= document.getElementById("scale_of_scroll");
     
-    const turnAuto    = document.getElementById("turn_autoscroll");
-    const goRandom    = document.getElementById("go_random");
-    const scaleScroll = document.getElementById("scale_of_scroll");
+    // 두 바가 시작할 공통 X
+    const barLeft = cursorX + gap;
+    
+    // ★ 버튼 최대 폭 : 왼쪽 여백부터 두 번째 바 시작 전까지
+    const maxBtnW = barLeft - bodyMargin - gap;
+    const desiredBtnW = smallerline * 0.32;
+    const btnW = Math.max(60, Math.min(desiredBtnW, maxBtnW));  // 최소 60px 확보
+    
+    turnAuto.style.width  = btnW + "px";
+    goRandom.style.width  = btnW + "px";
+    
+    // 바 폭 (화면 안에 들어가도록)
+    const maxAvailableW = width - barLeft - bodyMargin;
+    const barW = Math.min(smallerline * 0.6, maxAvailableW);
+    
+    barSize.style.width     = barW + "px";
+    scaleScroll.style.width = barW + "px";
+    
+    // 1행
+    barSize.style.left = barLeft + "px";
+    barSize.style.top  = "0px";
     
     const rowH    = document.getElementById("button_white").offsetHeight;
     const ctrlH   = turnAuto.offsetHeight;
@@ -282,7 +314,7 @@ oninput="speed_of_auto_scroll=this.value;">
     turnAuto.style.left = bodyMargin + "px";
     
     scaleScroll.style.top  = (rowH + (ctrlH - sliderH) / 2) + "px";
-    scaleScroll.style.left = (bodyMargin + turnAuto.offsetWidth + gap) + "px";
+    scaleScroll.style.left = barLeft + "px";
     
     // 3행
     goRandom.style.top  = (rowH + ctrlH) + "px";
@@ -362,7 +394,7 @@ oninput="speed_of_auto_scroll=this.value;">
       }
     });
     count++;
-    if (count >= 20) {
+    if (count >= 6) {
       clearInterval(flashInterval);
       targets.forEach(target => {
         if (target) {
@@ -386,18 +418,13 @@ oninput="speed_of_auto_scroll=this.value;">
 
    
 
-   
-
-
-</pre>
+  </pre>
  <h1>SAMIN LESSON FOR ENGLISH SPEAKER </h1>
 <pre>
  
  
  
- 
-
-</pre>
+ </pre>
  <details open>
   <summary> overview</summary>
   <pre>- this document explain EASY and LOGICAL UNAMBIGIOUS DEMOCRATIC NEUTRAL SUPERIOR IAL samin. this language is made by time bill gates who are introvert who are OCD patient so i might noticed all problem that you will can notice. the all problem might be already fixed or will be fixed or it might objectly be not problem. this document and language is alpha version. i made this IAL cuz i reject all other IAL.
@@ -478,7 +505,7 @@ oninput="speed_of_auto_scroll=this.value;">
 -- no consonant digraph and diphthong. 
 -- s = "s" as in task not "so".
 -- y can make consonant a strong. "ys" = "s" as in "so". it is NOT PROUNCED if it is ALONE.("hay" = ha) 
--- x = "ng". if it is im before final consonant, it is empty consonant(ax = ang. anxa = an.a) 
+-- x = "ng". if it is in before final consonant, it is empty consonant(ax = ang. anxa = an.a) 
 -- r = schwa. "u" as in "pronunciation".(like german lang) 
 -- v = close back unrounded vowel, represented as [ɯ] in the IPA.(v was vowel in latin). 
 -- only b, d, g, l, m, n, x can be used as final consonant. 
@@ -604,8 +631,8 @@ example sentence:  "People who use Samin will probably understand pronunciation 
  <details open>
   <summary>the other site</summary>
   <details open>
-   <summary>- the word dictionary</summary>
-   <pre>-- https://fhres126.github.io/w/al_word_dictionary.html
+   <summary>-- the word dictionary</summary>
+   <pre>-- https://fhres126.github.io/w/al_worddictionary.html
     
 ▲- the word dictionary</pre>
   </details>
