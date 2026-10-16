@@ -228,6 +228,7 @@ time: no.
 --- uwijyo = jail.(oppres + location suffix)
 -- jiyao !r=independent.
 - b !v=become. =to start.
+-- bnohuir = 꺼지다.(become + no + fire)
 -- cau !v=join.(thai)
 -- bcr = happen.(become + true)
 //-- biosa = conquer.
@@ -316,8 +317,8 @@ time: no.
 -- hen !r=politics.
 - cal !r=empty.
 -- lac=full.
-- bia o!p1=little . =bit. =less.(turk,uzbek,africans,irish,)
--- aib o!p1=very .
+- crm o!p1=little . =bit. =less.(india)
+-- mrc o!p1=very.(a)
 -- adamu !r=titan.(very + big + human)
 --- isan = run.(very + fast + walk)
 --- aitp = genious.(very + smart)
@@ -326,9 +327,10 @@ time: no.
 --- aicr !adj=obvious.(very + true)
 - cala o!r,v=stir, agitate, whisk , beat, whirl, twirl.
 - cap !r=head.
-- cua !=than.(latin, spainish, french, finnish, thai, swahili, zulu,)
-- clo !adj=closed.
--- olc !adj=opened.
+- cujo !adj=closed.(west europe)
+-- cujoi = close.(closed + caustive marker)
+-- ojuc !adj=opened.
+--- ojuci = open.(opened + caustive marker)
 - juya !r=behavior.(do + noun marker)
 - coll !r=colony.
 - cons !r,a=consonant.
@@ -336,7 +338,7 @@ time: no.
 - cam !r=road.(spainish)
 - crl = color.
 -- crlazi=rainbow.(color + )
-- cwa = because.
+- cwa = because.(swahili. 3letter is good)
 - so = so.
 - cita = book.
 - cota = cut.
@@ -395,20 +397,19 @@ time: no.
 - doc !r=document.
 - dle !r=tree.
 -- dlsn= forest.(tree + gruop.)
-- daha !r=gold.
 - dui n!r=few. =less.
 -- iud n!r=many.
 - d !r=command marker in right hand side or left hand side.
 - dag !r=mountain.(turkiye)
-- den o,o!=then.
-- daip = weak.
+- den o,o!=then.(eng?)
+- daip = weak.(arab,indonesia,persia,swahili, turkiye)
 -- piad = strong.
-- damu = blood.
-- dlama = drama.
-- doto = doctor.
-- gwrg = chicken.
-- diba = wall.
-- dwer = door.
+- damu = blood.(arab, hebrew, swahili, telugu)
+- dlama = drama.(global)
+- doto = doctor.(arab, germany, english, spain, france, hindi, indonesia, persia, russia, swahili, telugu, turkiye)
+- gwrg = chicken.(sound)
+- diba = wall.(hindi, persia, turkiye)
+- dwer = door.(english, hindi, netherland, persia, russia)
 - dli o,o!r=ask.(tibetan)
 -- ild o,o!verb=answer.
 --- ilda o,o!verb=communicate.
@@ -451,7 +452,7 @@ time: no.
 - el !p1=.(volapük)
 - cel !r=purpose.
 - elv !r=labor.
-- etn !r=ethnic.
+- etno !r=ethnic.(germany, english, spain, france, indonesia, russiax turkiye)
 - cae = which.
 - esta = province. =state.
 - pazi = simple.(french, italian, spain, portugal, arab?, persia?, urdu?, turkiye?, indonesia?)
@@ -475,7 +476,7 @@ time: no.
 ▲- g.proper noun
 
 - gan o!r=detect.
--- his = feel.(arabic, persian, turk,swahili,)
+-- hisi = feel.(arabic, persian, turk,swahili,)
 -- glu o!r,v=see.(detect + light)
 --- gli !r=eye.(s)
 ---- glho !r=eyeblid.(eye + shell?)
@@ -494,20 +495,21 @@ time: no.
 -- elag !r=east.(a)
 - geo !r=ground. =land.
 -- oeg !r=sky.(a)
-- gwa o!p1=relate to.
+- gwa o!p1=relate to.(korea,china)
 - gb o!p1=regarding . =concerning .(igbo)
 - gui = please.(mongolian)
 - goxg = announce.
-- glan = glad.
-- gadi = angry.
--- idag = thank.
-- galv = neck.
+- glan = glad.(arab,germany,greek,english,spain,france,indonesia,tagalog, russia, swahili, turkiye)
+- gadi = angry.(arab, swahili)
+-- idag = thank.(a)
+- galv = neck.(hindi, persia, turkiye)
 -- gaba = voice.(neck + sound)
 --- gabaz = pronounce.(voice + verb marker)
 - glam = gram.(french,)
-- golo = moan. groan.
+- golo = moan. groan.(english, spain, hindi, indonesia, swahili)
 - plit !adj=fried.(many european,)
 - gatan = interjection.(chinese,indonesian,malay,thai)
+- gold = gold.(global word)
 
 }▲g
 
@@ -528,7 +530,8 @@ time: no.
 - hoi !adj=cold.(mongol, igbo,russian)
 -- gola !adj=hot.(hindi, polish, urdu, bulgarian, persian,)
 - soti !r=sound.
--- sona !r=music.
+-- sona !r=music.(sound + enjoy)
+--- sonari = intrument.(music + tool)
 -- soul o,o!r=speak.(sound + mention)
 -- siso !r=anthem.(symbol + sound)
 --- nabe !r=acceleration.
@@ -564,6 +567,8 @@ time: no.
 - hwrx = wind.(Onomatopoeia)
 - hina n!r=inferior.(hindi, bengol, urdu, ponjab, maraty, gujarat, nepal, indinesia, malay, tagalog)
 -- anih n!r=superior.(a)
+- hail = hail.(english, germany, global word)
+- helo = hero.(germany, greek, english, spain, france, hindi, japan,  russia, telugu)
 
 }▲h
 
@@ -571,41 +576,42 @@ time: no.
 
 - i.proper noun{
 
--- ixgl = england.
--- itali = italy.
--- indonesia = indonesia.
--- illon mrsc = elon musk.
--- inzrn = inchoen.
--- inuyasici = inuyashiki.
--- instaglem = instagram.
+-- ixgl = england.(english)
+-- itali = italy.(italy)
+-- indonesia = indonesia.(indonesia)
+-- illon mrsc = elon musk.(english)
+-- inzrn = inchoen.(korea)
+-- inuyasici = inuyashiki.(japan)
+-- instaglem = instagram.(english)
 -- istanbul = istanbul.(turkiye)
--- islael = israel.
+-- islael = israel.(israel)
 
 ▲- i.proper noun
 
 - isi !r=smell.(igbo @ isi ísì)
-- in o,o!p1=in.
+- in o,o!p1=in.(europe)
 -- inh !r=inside.(in + noun marker)
 -- iaj o!r=stay.(in + exist)
 - i _= i.(english)
 - em _r!=female. =girl. =women.(mongolian, Basque)
 - ima o!r=imagine.
 - id o,o!r=go.
--- idlr = arrive.
+-- idlr = arrive.(go + finish marker)
 - iy !r=mass.(turkish @ yığın)
 - igno o!r,v=ignore.(europe)
 -- ongi o!r=mind.(a)
-- impe !r=empire.
+- impe !r=empire.(arab, germany, english, spain, france, persia, philphine, russia, turkiye)
 - il = to.//as in i go to you.(arabic, hawai, samoan, swedish, dannish, norwegian,)
 - ida =.(end speech)
-- inti = wait.
-- intr=between. =inter.
+- inti = wait.(arab, hindi, persia)
+- intr=between. =inter.(germany, english, spain, france ,hindi, indonesia, russia, telugu)
 -- insn = international.(inter + nation)
-- insyo !v=impress.
+- insyo !v=impress.(korea, japan, china, vietname)
 - icna !v= persuade.(or, little + intend + causative marker)
-- isya = sign.
-- isul = island.
+- isya = sign.(arab, hindi, indonesia, swahili, turkiye)
+- isul = island.(germany, english, spain, france, philphine, russia, turkiye)
 - ism = noun.(arab,urdu,turkiye,persian,sind,amharic,ajerbaijan,zulu)
+- ito = that. =あの. =저 ~.(Something further away than "this". slavic, indonesia, malay, greek, )
 
 }▲i
 
@@ -627,13 +633,14 @@ time: no.
 -- lase o!p1=right to.(s)
 - ja !r=self.(china, korea, japan)
 - jo _s,n!r=hope.(veluil)
+-- joyr = hungry.(hope + eat)
 -- bole o,n!r=want.
 -- jbi o,n!r=wonder.(hope + know)
 -- pob _s,n!r=dread. =fear.
 --- oja s,n!verb=worry.
 --- ojj o,n!r=regret.
 - de s,o!r=assert.
--- dmo s!r=define.(assert + all)
+-- demo s!r=define.(assert + all)
 -- dade s,o!r=declare.(big + assert)
 - yuba !r=young.(hindi, some european,)
 -- abui o!r=old.(a)
@@ -731,6 +738,8 @@ time: no.
 -- lessna = dictionary.(word + group)
 - logi =logic.
 - lyu = into.(china, japan)
+- lapi = stick to.(slavic,turk,arabic)
+-- lahu !adj= adhere. =burning. =ablaze.
 
 }▲l
 
@@ -769,7 +778,7 @@ time: no.
 - moda !r=trend.
 -- moam !r=meme.(trend + fun)
 - miu o!=minimum .
--- uim o!n=most .
+-- uim o!n=most.(as in im most good person)
 - magi !r=magic.
 - ama s,o!p3=but.(german,hawaian,arab,persia,turkiye)
 - ho s!conjunction=how.(japanese)
@@ -791,7 +800,7 @@ time: no.
 -- dunij = universal.(world + ical)
 - moin !r,adj=vowel.
 - uns !r=element.(arab, persia, turk, urdu, indonesia, malay, swahili, china, korea)
---- osn !r=country. =nation.
+--- uma !r=country. =nation.(arab, swahili, hausa, somalli, malay, indonesia, urdu, persia)
 ---- snbi !r=border.
 ---- jasn !r=homeland. =fatherland. motherland.
 - mab !r=building.
@@ -818,7 +827,8 @@ time: no.
 - men o!r=mean.
 - mala !noun= chanse.
 - ajbu = coerce.(arbaic, persian, many lang that releted india)
-- moto = vehicle.(hausa, yoruba, zulu, xhosa, bemba)
+- moto = vehicle.(hausa, yoruba, zulu, xhosa, bemba, german's auto?)
+- moge = brain.(arab, hindi, persia, russia)
 
 }▲m
 
@@ -881,6 +891,7 @@ time: no.
 -- nigrl = nigger. =nigga.(english)
 - natna = gay.(male + love + male)
 - nyoca = snake.(swahili,zulu,xhosa, cuz there r too few african)
+- nedrland = netherlands.
 
 }▲n
 
@@ -899,7 +910,7 @@ o.proper noun{
 - op !r=opposite.
 - ot o,o!prep=from.
 - os o!p1=average . ordinary .(hindi)
--- osi o!p1=most .
+-- osi o!p1=most.(as in most person like me)
 - on o,o!p2,prep=on.
 - bli o!r=close to..(russian,)
 -- ilb o!r=far.
@@ -929,6 +940,7 @@ o.proper noun{
 -- polcsbagvn = volkswagen.
 -- putin = putin.
 -- pilastina = palestein.
+- plebo = preposition.(europe,india)
 
 ▲- p.proper noun
 
@@ -955,7 +967,7 @@ o.proper noun{
 -- uan o,n!r=pain.
 - pom !r=form.
 - plla !r=plasma.
--- pllo !r=fire.
+- huir  !r=fire.(china, germany, sound)
 - ple o!r,verb=fly.
 -- pleil o!r=wing.(fly + tool marker)
 - pl o,o!p2= plus .
@@ -974,7 +986,8 @@ o.proper noun{
 - pol !r!noun=police.
 - pllu !r=flower.
 - pis !r=fee.
-- pax !r=flat.
+- pix !r=flat.(chinese,korea,vietname)
+-- xip !adj=arduous. =steep.
 -- ap !r=hill.
 - pep !r=lung.
 - pas o!r=pass by.(무언가를 통과하여 지나가다)
@@ -992,7 +1005,7 @@ o.proper noun{
 -- anep = brave.
 - plas = experience.
 - pami = family.
-- ptla = stone. rock.
+- ptla = stone. rock.(west europe, india)
 - prze = percentage.
 - pwici = think.
 - pace = package.
@@ -1005,6 +1018,11 @@ o.proper noun{
 - p o,o!p2= according to .
 - pucu = adverb.(chinese, japanese, vietnamese)
 - pwan !prep= aginst.(chinese, vietnamese, japanese, korean)
+- pelep !adj=perfect.(spain,portugal,italy,german,dutch,dannish,indonesia,malay,zulu,xhosa,sotho)
+- ibi !u=phrase.(india,turkiye,middle east, zulu, xhosa)
+- pixgo = apple.(china,japan)
+- pahu !verb= be proud of.
+- pi !prep=than.(china, hausa)
 
 }▲p
 
@@ -1028,14 +1046,13 @@ o.proper noun{
 
 - rn o,o!r,verb=answer.
 - al o!p1=all .(many, european, myanmar,hawaian, afrikans,)
--- alc = while.
--- mojr = universal.
+-- alc = while.(all + when)
 -- enti o!p1=whole .//french
--- modi !t=everyday.
--- mma !t=always.
+-- aldin !t=everyday.(all + day)
+-- alsi !t=always.(all + time)
 //- da speech!r=.
-- ryo = give.
--- oyrl = recive.
+- ryo = give.(have + caustive verb)
+-- oyrl = recive.(a)
 - sya = city.
 - rmo = among.(indian "madhya" isnt bad but we think also utility so it must be short)
 
@@ -1074,29 +1091,30 @@ o.proper noun{
 -- siya = black.
 --- awis = white.(a)
 - sam !r=conscientious.(swedish @ samvete)
-- ist o!r=inhale.(arabic)
--- tsi o!r=emit.(a)
--- isga o!r=breathe.(inhale + gas)
--- isli o!r=drink.(inhale + liquid)
+- silu o!r=inhale.(china,indonesia)
+-- ulis o!r=emit.(a)
+--- ullu !verb=shine.(emit + light)
+-- siga o!r=breathe.(inhale + gas)
+-- sili o!r=drink.(inhale + liquid)
 - sel n!r=°c.//swedish @ celsius
 //- s =  that  do .
 - hu o!p1=will. =shall. =going to.(chinese)
-- su o,n!r=like. platnic love.
---- nepa o,n!r=hate. dislike.
+- su o,n!r=like. platnic love.(hindi, indonesia, japan)
+--- nepa o,n!r=hate. dislike.(arab, hindi, persia, turkiye)
 --- nepi !v= jealous of.(hate + strong)
 --- atla o,n!r=romantic love. .=feel  as attractive.(or sur)
--- meli o,n!r=feel  as beauty.
---- ilem = feel  as ugly.
+-- meli o,n!r=feel  as beauty.(china, vietname)
+--- ilem = feel as ugly.(a)
 - dusi !r=enemy.(india,turk)
--- isud !r=friend.
---- ipi !r=we. =my friend.
+-- isud !r=friend.(a)
+-- bia !r=we. =my friend.(germanic, turk. there are lot of -i@a- in world langs)
 - la _n!r,verb=gain profit.(hindi, bengol, tamil,)
 -- laya = profit.(gain profit + abstract noun)
 -- pwe n!r,verb=gain damage. =손해.(europe)
 -- pweya = damage.(gain damage + abstract noun)
 - colv n!r=short.(european,)
--- vloc n!r=long.
---- vlodo = length.
+-- vloc n!r=long.(a)
+--- vlodo = length.(long + degree marker)
 - r o,o,n!p2=by doing.(korean @ ~하여)
 -- rnome !prep= without.(by doing + no + use)
 - suo !r=left.
@@ -1137,7 +1155,7 @@ chezch, slovacian,)
 - sosi !r=social.
 - sul !r=sun.
 - stal = star.
-- sye = science.
+- seir = science.(west europe. most lang that develop science most)
 - syat = sand.
 - sele = choise.
 - suho !adj= dry.
@@ -1148,8 +1166,8 @@ chezch, slovacian,)
 - sapi !adj= clean. =cleaned.
 -- ipas = dirty.
 - sis = system.
-- swi !prep= like as in he sleep "like" bear.(mongolian. for subject)
-- si = what.(veluil's 11111000)
+- cac !prep=like as in "he sleep 'like' bear".(slavic. for subject. camo is best(west europe, middle east) but this word is used lot so it must be 3letters. and slavic is not many in this lang.)
+//- si = what.(veluil's 11111000)
 - saci = disease.(south east asian)
 - sahi = correct, right, accurate,
 -- ihas = wrong.
@@ -1164,6 +1182,7 @@ chezch, slovacian,)
 - syu = explain.(chinese, cechuwa, arab,)
 - syen = god.(china, korea)
 - salla !verb= pray.(swahili,hausa,arabic, cuz there r too few african words)
+- sue = water(china, turkiye, korea, japan)
 
 }▲s
 
@@ -1314,6 +1333,7 @@ xx !r=cry.
 - yema = savage.(chinese)
 - yac = Approximately.(japanese, korean, turkiye,)
 - you !r=oil.
+- yase = key.(as in car key. not piano key. korea, philiphine, china)
 
 }▲y
 
@@ -1339,7 +1359,6 @@ xx !r=cry.
 -- lilo !r=lava.
 -- liho !r=sweat.
 -- liio !r=saliva.
--- lir !r=water.
 -- lima !r=milk.
 -- lup !r=pee.(liquid + dont need,)
 - h s!r=whether 2 is 1.(random)
@@ -1361,8 +1380,8 @@ xx !r=cry.
 - zi = thing.(hindi)
 - zanr = channel.
 - zibe = cyber. =internet.
-- zota = low.
--- atoz = high.
+- diam = low.(china, vietname, thai, khmer)
+-- maid = high.(a)
 - zati = boob. =breast.(many indian similar lang)
 - zisc !r=discriminate against.(chinese, many european)
 - zwax = bed.(china, korea?)
