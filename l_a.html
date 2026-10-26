@@ -139,8 +139,8 @@
      -webkit-text-stroke: 0px;
      font-size:calc(1.15 * var(--fontsize));
      font-weight: 600;
-     background: linear-gradient(to top, #555555 0.5em, transparent 0.2em);
-     background-position: 0 -0.05em;
+     background: linear-gradient(to top, #555555 0.3em, transparent 1.5em);
+     background-position: 0 -0.03em;
      font-style: italic;
      letter-spacing: 0.05em;
     }
@@ -158,14 +158,12 @@
   .discord-btn {
       position: static !important;
   top: auto !important;
-  height: calc(var(--fontsize) * 4); !important;
-  width: calc(var(--fontsize) * 15);!important;
   z-index: auto !important;
 
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 0.5em 0.5em;
   background: #5865F2 !important;
   color: white !important;
   border: none;
@@ -181,14 +179,12 @@
   .paypal-btn {
       position: static !important;
    top: auto !important;
-  height: calc(var(--fontsize) * 4); !important;
-  width: calc(var(--fontsize) * 15);!important;
   z-index: auto !important;
 
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 0.5em 0.5em;
   background: #0070ba !important;
   color: white !important;
   border: none;
@@ -216,46 +212,57 @@
  </style>
 </head>
 <body>
-  <button id="button_gradient" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:#ff5733 !important;color:#ff5733 !important;}</style>');"></button>
+  <button id="button_gradient" class="setcolor" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:#ff5733 !important;color:#ff5733 !important;}</style>');"></button>
 
 
-<button id="button_rainbow" class="setcolor" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:red !important;color:red !important;}</style>');"></button>
+<button id="button_rainbow" class="setcolor" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:red !important;color:red !important;}</style>');"></button>
 
   
-  <button id = 'button_red' class = 'setcolor' style="background-color:#ff0000;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  <button id = 'button_red' class = 'setcolor' style="background-color:#ff0000;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ff0000');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff0000 !important;-webkit-text-fill-color:#ff0000 !important;}</style>');
 "></button>
   
-  <button id = 'button_orange' class = 'setcolor' style="background-color:#ff8800;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  <button id = 'button_orange' class = 'setcolor' style="background-color:#ff8800;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ff8800');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff8800 !important;-webkit-text-fill-color:#ff8800 !important;}</style>');
 "></button>
 
-<button id = 'button_yellow' class = 'setcolor' style="background-color:#ffff00;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+<button id = 'button_yellow' class = 'setcolor' style="background-color:#ffff00;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ffff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffff00 !important;-webkit-text-fill-color:#ffff00 !important;}</style>');
 "></button>
   
-  <button id = 'button_green' class = 'setcolor' style="background-color:#00ff00;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  <button id = 'button_green' class = 'setcolor' style="background-color:#00ff00;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ff00 !important;-webkit-text-fill-color:#00ff00 !important;}</style>');
 "></button>
 
-<button id = 'button_cyan' class = 'setcolor' style="background-color:#00ffff;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+<button id = 'button_cyan' class = 'setcolor' style="background-color:#00ffff;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#00ffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ffff !important;-webkit-text-fill-color:#00ffff !important;}</style>');
 "></button>
   
-  <button id = 'button_white' class = 'setcolor' style="background-color:#ffffff;" onclick="document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  <button id = 'button_white' class = 'setcolor' style="background-color:#ffffff;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
 });document.querySelectorAll('*').forEach(e=>e.style.color='#ffffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;}</style>');
+"></button>
+
+ <button id="button_light" class="setcolor" style="background:#ffffff; border:2px solid #00ff00;" onclick="
+  document.body.style.background = '#ffffff';
+  document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{
+    e.style.color='#000000';
+    e.style.background='';
+    e.style.webkitBackgroundClip='';
+    e.style.webkitTextFillColor='';
+  });
+  document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#000 !important;-webkit-text-fill-color:#000 !important;}</style>');
 "></button>
 
 
@@ -325,7 +332,7 @@ oninput="speed_of_auto_scroll=this.value;">
     
     const colorIds = [
       "button_gradient","button_rainbow","button_red","button_orange",
-      "button_yellow","button_green","button_cyan","button_white"
+      "button_yellow","button_green","button_cyan","button_white", "button_light"
     ];
     
     // 색상 버튼 나열
@@ -490,11 +497,12 @@ oninput="speed_of_auto_scroll=this.value;">
 
 ▲ overview</pre>
   <button  class="discord-btn" onclick="window.open('https://discord.gg/A7B4983VQq', '_blank')">
-   join discord for feedback or etc</button>
+   button for join discord for feedback or etc</button>
+  <pre></pre>
   <button class="paypal-btn" onclick="window.open('https://paypal.me/sangminjeong544', '_blank')">
-  donate me by paypal
+  button for donate using paypal
   </button>
-  <pre>if you are korean.. 토스뱅크 1001-5397-0116</pre>
+  <pre>if you are korean.. 토스뱅크 1001-5397-0116(for donate)</pre>
  </details>
 
  <details open>
