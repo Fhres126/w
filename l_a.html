@@ -46,17 +46,17 @@
       text-underline-offset: calc(0.4 * var(--fontsize));
      }
     h1{
-     color: #FF0008;
-     font-size: calc(1.5* var(--fontsize));
+     color: #D55E00;
+     font-size: calc(2.5* var(--fontsize));
     }
     img{
       width: clamp(var(--s) / 5, var(--fontsize) * 8, var(--s) * 2 / 3);
       height:auto;
     }
-    pre, summary, p, span, a {
+    pre, summary, p, span, a, button {
       font-size: var(--fontsize);
       animation: rainbow 3s linear infinite;
-      color:#FFFF00;
+      color:#D55E00; !important
     }
 
     /* ============ 슬라이더 (range) — iOS 스타일 ============ */
@@ -113,7 +113,6 @@
     button{
       position: fixed;
       background-color: #000;
-      color: #ffff00;
       top:0px;
       border: 1px solid #888800;
       font-weight: 1000;
@@ -139,8 +138,9 @@
      -webkit-text-stroke: 0px;
      font-size:calc(1.15 * var(--fontsize));
      font-weight: 600;
-     background: linear-gradient(to top, #555555 0.3em, transparent 1.5em);
-     background-position: 0 -0.03em;
+     background: linear-gradient(to top, #555555 0.1em, transparent 0.9em);
+     background-position: 0 -0.01em;
+     padding-bottom: 0.1em;
      font-style: italic;
      letter-spacing: 0.05em;
     }
@@ -156,6 +156,8 @@
     }
 
   .discord-btn {
+   height: auto !important;
+   width: auto !important;
       position: static !important;
   top: auto !important;
   z-index: auto !important;
@@ -165,7 +167,7 @@
   gap: 8px;
   padding: 0.5em 0.5em;
   background: #5865F2 !important;
-  color: white !important;
+  color: #000000 !important;
   border: none;
   border-radius: 6px;
   font-size: var(--fontsize);;
@@ -178,6 +180,8 @@
 
   .paypal-btn {
       position: static !important;
+   height: auto !important;
+   width: auto !important;
    top: auto !important;
   z-index: auto !important;
 
@@ -186,7 +190,7 @@
   gap: 8px;
   padding: 0.5em 0.5em;
   background: #0070ba !important;
-  color: white !important;
+  color: #000000 !important;
   border: none;
   border-radius: 6px;
   font-size: var(--fontsize);;
@@ -606,7 +610,7 @@ oninput="speed_of_auto_scroll=this.value;">
    <summary>-- The priority order of parts of speech to assign during word formation. </summary>
    <pre>--- there are no enough suffix intendly so there are no suffix that make a noun into conjunction but there are suffix that make conjunction into noun so the user must make conjunction fitstly. 
 
---- interjection -> preposition -> conjunction -> concrete noun -> verb -> adjective -> abstract noun -> adverb. 
+---  -> preposition -> conjunction -> concrete noun -> verb -> adjective -> abstract noun -> adverb. 
  
 ▲-- The priority order of parts of speech to assign during word formation</pre>
   </details>
