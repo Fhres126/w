@@ -138,15 +138,14 @@
      -webkit-text-stroke: 0px;
      font-size:calc(1.15 * var(--fontsize));
      font-weight: 600;
-     background: linear-gradient(to top, #555555 0.1em, transparent 0.9em);
-     background-position: 0 -0.01em;
+     background: linear-gradient(to top, #555555 0.01em, transparent 0.9em);
+     background-position: 0 -0.05em;
      padding-bottom: 0.1em;
      font-style: italic;
      letter-spacing: 0.05em;
     }
    
     summary:hover {
-     color: #ffff00;
      transform: translateX(3px);
     }
     input{
@@ -171,7 +170,7 @@
   border: none;
   border-radius: 6px;
   font-size: var(--fontsize);;
-  font-weight: 600;
+  font-weight: 1000;
   cursor: pointer;
   font-family: sans-serif;
   line-height: normal;
@@ -194,7 +193,7 @@
   border: none;
   border-radius: 6px;
   font-size: var(--fontsize);;
-  font-weight: 600;
+  font-weight: 1000;
   cursor: pointer;
   font-family: sans-serif;
   line-height: normal;
@@ -222,34 +221,34 @@
 <button id="button_rainbow" class="setcolor" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:red !important;color:red !important;}</style>');"></button>
 
   
-  <button id = 'button_red' class = 'setcolor' style="background-color:#ff0000;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  <button id = 'button_red' class = 'setcolor' style="background-color:#CC79A7;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#ff0000');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff0000 !important;-webkit-text-fill-color:#ff0000 !important;}</style>');
+});document.querySelectorAll('*').forEach(e=>e.style.color='#CC79A7');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#CC79A7 !important;-webkit-text-fill-color:#CC79A7 !important;}</style>');
 "></button>
   
-  <button id = 'button_orange' class = 'setcolor' style="background-color:#ff8800;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  <button id = 'button_orange' class = 'setcolor' style="background-color:#D55E00;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#ff8800');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ff8800 !important;-webkit-text-fill-color:#ff8800 !important;}</style>');
+});document.querySelectorAll('*').forEach(e=>e.style.color='#D55E00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#D55E00 !important;-webkit-text-fill-color:#D55E00 !important;}</style>');
 "></button>
 
-<button id = 'button_yellow' class = 'setcolor' style="background-color:#ffff00;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+<button id = 'button_yellow' class = 'setcolor' style="background-color:#F0E442;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#ffff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#ffff00 !important;-webkit-text-fill-color:#ffff00 !important;}</style>');
+});document.querySelectorAll('*').forEach(e=>e.style.color='#F0E442');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#F0E442 !important;-webkit-text-fill-color:#F0E442 !important;}</style>');
 "></button>
   
-  <button id = 'button_green' class = 'setcolor' style="background-color:#00ff00;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+  <button id = 'button_green' class = 'setcolor' style="background-color:#009E73;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#00ff00');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ff00 !important;-webkit-text-fill-color:#00ff00 !important;}</style>');
+});document.querySelectorAll('*').forEach(e=>e.style.color='#009E73');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#009E73 !important;-webkit-text-fill-color:#009E73 !important;}</style>');
 "></button>
 
-<button id = 'button_cyan' class = 'setcolor' style="background-color:#00ffff;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
+<button id = 'button_cyan' class = 'setcolor' style="background-color:#56B4E9;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
   e.style.webkitBackgroundClip='';
   e.style.webkitTextFillColor='';
-});document.querySelectorAll('*').forEach(e=>e.style.color='#00ffff');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#00ffff !important;-webkit-text-fill-color:#00ffff !important;}</style>');
+});document.querySelectorAll('*').forEach(e=>e.style.color='#56B4E9');document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{color:#56B4E9 !important;-webkit-text-fill-color:#56B4E9 !important;}</style>');
 "></button>
   
   <button id = 'button_white' class = 'setcolor' style="background-color:#ffffff;" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background = '';
