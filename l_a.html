@@ -104,6 +104,24 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.5);
     }
 
+    /* ============ 슬라이더 라벨 (슬라이더 왼쪽) ============ */
+    /* --fontsize 로 정의, JS가 첫 로드 시 computed 값 인라인 캡처 → 이후 --fontsize 바뀌어도 고정 */
+    .slider-label {
+      position: fixed;
+      color: #CC79A7 !important;
+      font-size: var(--fontsize);       /* ★ --fontsize 그대로 */
+      font-family: sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      z-index: 9998;
+      white-space: nowrap;
+      pointer-events: none;
+      -webkit-text-stroke: 0 !important;
+      animation: none !important;
+      line-height: 1;
+      text-shadow: 0 0 4px rgba(0,0,0,0.9);
+    }
+
     .setcolor{
       width:calc(var(--s) / 24);
       height: calc(var(--s) / 24);
@@ -276,6 +294,9 @@ oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(ge
 <input id = 'scale_of_scroll' class="bar_size" type="range" min="0" max="0.5" step="0.005" value="0.06"
 oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 
+<span class="slider-label" id="label_bar_size">size</span>
+<span class="slider-label" id="label_scale_scroll">speed</span>
+
 
   <script>
     let width=window.innerWidth;
@@ -295,13 +316,12 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
    function start_autoscroll() {
     if (autoscroll) return;
     autoscroll = setInterval(() => {
-     if(quantitypressed==0){
-      let scale_of_scroll = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fontsize')) * parseFloat(speed_of_auto_scroll);
-      quantity_of_autoscroll += scale_of_scroll;
-      if (quantity_of_autoscroll > 1) {
-          window.scrollBy(0, quantity_of_autoscroll);
-          quantity_of_autoscroll = 0;
-      }
+     if (user_scroll_pause) return;
+     let scale_of_scroll = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fontsize')) * parseFloat(speed_of_auto_scroll);
+     quantity_of_autoscroll += scale_of_scroll;
+     if (quantity_of_autoscroll > 1) {
+         window.scrollBy(0, quantity_of_autoscroll);
+         quantity_of_autoscroll = 0;
      }
     }, 50);
    }
@@ -321,19 +341,50 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
     }
    }
    
-   let quantitypressed=0;
+   /* ★ 라벨 font-size 프리즈 (한 번만)
+      - CSS: font-size: var(--fontsize)
+      - JS: 첫 로드 시 computed 값(예: "12px")을 인라인으로 캡처 → 이후 슬라이더 조작해도 라벨 고정 */
+   let labels_frozen = false;
+   function freeze_label_font_size() {
+    document.querySelectorAll('.slider-label').forEach(el => {
+      const computed = getComputedStyle(el).fontSize;
+      el.style.fontSize = computed;
+    });
+    labels_frozen = true;
+   }
    
-   window.addEventListener('pointerdown', (e) => { quantitypressed=e.buttons; });
-   window.addEventListener('pointermove', (e) => { quantitypressed=e.buttons; });
-   window.addEventListener('pointercancel', (e) => { quantitypressed=e.buttons; });
-   window.addEventListener('pointerup', (e) => { quantitypressed=e.buttons; });
+   /* ===== 사용자 스크롤 감지 ===== */
+   let user_scroll_pause = false;
+   let user_scroll_pause_timer = null;
+   
+   function is_ui_control(el) {
+    return el && (
+     el.tagName === 'INPUT' ||
+     el.tagName === 'BUTTON' ||
+     (el.closest && el.closest('.discord-btn, .paypal-btn'))
+    );
+   }
+   
+   function mark_user_scrolling() {
+    user_scroll_pause = true;
+    clearTimeout(user_scroll_pause_timer);
+    user_scroll_pause_timer = setTimeout(() => { user_scroll_pause = false; }, 500);
+   }
+   
+   window.addEventListener('wheel', () => { mark_user_scrolling(); }, { passive: true });
+   window.addEventListener('touchmove', (e) => {
+    if (!is_ui_control(e.target)) mark_user_scrolling();
+   }, { passive: true });
+   window.addEventListener('pointermove', (e) => {
+    if (e.buttons && !is_ui_control(e.target)) mark_user_scrolling();
+   });
    
    
    /* ============================================================
       레이아웃
-        1행: [색상버튼 8개]  gap  [bar_size────────────]
-        2행: [go random ]          [scale_of_scroll─────]
-      ★ 버튼 폭은 (barLeft - bodyMargin - gap) 안에 무조건 들어가도록 캡
+        [색상버튼 x9]   [size][bar────────]      ← 1행
+        [go random]     [speed][bar────────]     ← 2행
+      라벨은 슬라이더 왼쪽에 위치
       ============================================================ */
    function set_(){
     const gap = smallerline / 60;
@@ -344,7 +395,6 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
       "button_yellow","button_green","button_cyan","button_white", "button_light"
     ];
     
-    // 색상 버튼 나열
     let cursorX = bodyMargin;
     colorIds.forEach(id => {
       const el = document.getElementById(id);
@@ -356,26 +406,34 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
     const barSize     = document.getElementById("bar_size");
     const goRandom    = document.getElementById("go_random");
     const scaleScroll = document.getElementById("scale_of_scroll");
+    const labelBar    = document.getElementById("label_bar_size");
+    const labelScroll = document.getElementById("label_scale_scroll");
     
-    // 두 바가 시작할 공통 X
     const barLeft = cursorX + gap;
     
-    // ★ 버튼 최대 폭 : 왼쪽 여백부터 두 번째 바 시작 전까지
-    const maxBtnW = barLeft - bodyMargin - gap;
-    const desiredBtnW = smallerline * 0.32;
-    const btnW = Math.max(60, Math.min(desiredBtnW, maxBtnW));  // 최소 60px 확보
+    // ① 라벨 먼저 위치 (슬라이더 왼쪽 기준)
+    if (labelBar)    labelBar.style.left    = barLeft + "px";
+    if (labelScroll) labelScroll.style.left = barLeft + "px";
     
-    goRandom.style.width = btnW + "px";
+    // ② 폰트 사이즈 한 번만 프리즈
+    if (!labels_frozen) freeze_label_font_size();
     
-    // 바 폭 (화면 안에 들어가도록)
-    const maxAvailableW = width - barLeft - bodyMargin;
-    const barW = Math.min(smallerline * 0.6, maxAvailableW);
+    // ③ 라벨 폭 측정 → 슬라이더 시작점 계산
+    const labelW = Math.max(
+      labelBar    ? labelBar.offsetWidth    : 0,
+      labelScroll ? labelScroll.offsetWidth : 0
+    );
+    const sliderLeft = barLeft + labelW + gap;
+    
+    // ④ 슬라이더 폭/위치
+    const maxAvailableW = width - sliderLeft - bodyMargin;
+    const barW = Math.max(40, Math.min(smallerline * 0.6, maxAvailableW));
     
     barSize.style.width     = barW + "px";
     scaleScroll.style.width = barW + "px";
     
     // 1행
-    barSize.style.left = barLeft + "px";
+    barSize.style.left = sliderLeft + "px";
     barSize.style.top  = "0px";
     
     const rowH    = document.getElementById("button_white").offsetHeight;
@@ -383,11 +441,21 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
     const sliderH = scaleScroll.offsetHeight;
     
     // 2행
-    goRandom.style.top  = rowH + "px";
-    goRandom.style.left = bodyMargin + "px";
+    const sliderTop2 = (rowH + (ctrlH - sliderH) / 2);
+    scaleScroll.style.top  = sliderTop2 + "px";
+    scaleScroll.style.left = sliderLeft + "px";
     
-    scaleScroll.style.top  = (rowH + (ctrlH - sliderH) / 2) + "px";
-    scaleScroll.style.left = barLeft + "px";
+    goRandom.style.width = Math.max(60, Math.min(smallerline * 0.32, sliderLeft - bodyMargin - gap)) + "px";
+    goRandom.style.top   = rowH + "px";
+    goRandom.style.left  = bodyMargin + "px";
+    
+    // ⑤ 라벨 세로 중앙 정렬
+    if (labelBar) {
+      labelBar.style.top = Math.max(0, (barSize.offsetHeight - labelBar.offsetHeight) / 2) + "px";
+    }
+    if (labelScroll) {
+      labelScroll.style.top = Math.max(0, sliderTop2 + (sliderH - labelScroll.offsetHeight) / 2) + "px";
+    }
    }
    
     window.addEventListener('DOMContentLoaded', () => {
@@ -434,6 +502,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
      document.body.style.maxWidth = width.toString() + "px";
      document.body.style.maxHeight = height.toString() + "px";
      set_();
+     // labels_frozen 이므로 재프리즈 안 함
    });
    
    document.getElementById("bar_size").value = 0.03;
