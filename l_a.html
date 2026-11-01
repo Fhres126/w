@@ -128,7 +128,6 @@
       font-family: inherit;
     }
 
-    #turn_autoscroll,
     #go_random{
       width: var(--btn-w);
     }
@@ -274,10 +273,8 @@ oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(ge
 
 <button id="go_random" onclick="go_random()">go random</button>
 
-<button id="turn_autoscroll" onclick="turn_autoscroll()">auto scroll</button>
-
-<input id = 'scale_of_scroll' class="bar_size" type="range" min="0.005" max="0.5" step="0.005" value="0.06"
-oninput="speed_of_auto_scroll=this.value;">
+<input id = 'scale_of_scroll' class="bar_size" type="range" min="0" max="0.5" step="0.005" value="0.06"
+oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 
 
   <script>
@@ -292,25 +289,35 @@ oninput="speed_of_auto_scroll=this.value;">
     
    let isStarted = false;
    let quantity_of_autoscroll=0;
-   let autoscroll;
-   let speed_of_auto_scroll=document.getElementById("scale_of_scroll").value;
+   let autoscroll = null;
+   let speed_of_auto_scroll = document.getElementById("scale_of_scroll").value;
    
-   function turn_autoscroll() {
-    if (!autoscroll) {
-     autoscroll = setInterval(() => {
-      if(quantitypressed==0){
-       let scale_of_scroll = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fontsize')) * speed_of_auto_scroll;
-       quantity_of_autoscroll += scale_of_scroll;
+   function start_autoscroll() {
+    if (autoscroll) return;
+    autoscroll = setInterval(() => {
+     if(quantitypressed==0){
+      let scale_of_scroll = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fontsize')) * parseFloat(speed_of_auto_scroll);
+      quantity_of_autoscroll += scale_of_scroll;
       if (quantity_of_autoscroll > 1) {
           window.scrollBy(0, quantity_of_autoscroll);
           quantity_of_autoscroll = 0;
       }
-      }
-     }, 50);
-    } 
-    else {
+     }
+    }, 50);
+   }
+   
+   function stop_autoscroll() {
+    if (autoscroll) {
      clearInterval(autoscroll);
      autoscroll = null;
+    }
+   }
+   
+   function update_autoscroll() {
+    if (parseFloat(speed_of_auto_scroll) <= 0) {
+     stop_autoscroll();
+    } else {
+     start_autoscroll();
     }
    }
    
@@ -325,8 +332,7 @@ oninput="speed_of_auto_scroll=this.value;">
    /* ============================================================
       레이아웃
         1행: [색상버튼 8개]  gap  [bar_size────────────]
-        2행: [auto scroll]        [scale_of_scroll────────────]
-        3행: [go random ]
+        2행: [go random ]          [scale_of_scroll─────]
       ★ 버튼 폭은 (barLeft - bodyMargin - gap) 안에 무조건 들어가도록 캡
       ============================================================ */
    function set_(){
@@ -347,10 +353,9 @@ oninput="speed_of_auto_scroll=this.value;">
       cursorX += el.offsetWidth;
     });
     
-    const barSize    = document.getElementById("bar_size");
-    const turnAuto   = document.getElementById("turn_autoscroll");
-    const goRandom   = document.getElementById("go_random");
-    const scaleScroll= document.getElementById("scale_of_scroll");
+    const barSize     = document.getElementById("bar_size");
+    const goRandom    = document.getElementById("go_random");
+    const scaleScroll = document.getElementById("scale_of_scroll");
     
     // 두 바가 시작할 공통 X
     const barLeft = cursorX + gap;
@@ -360,8 +365,7 @@ oninput="speed_of_auto_scroll=this.value;">
     const desiredBtnW = smallerline * 0.32;
     const btnW = Math.max(60, Math.min(desiredBtnW, maxBtnW));  // 최소 60px 확보
     
-    turnAuto.style.width  = btnW + "px";
-    goRandom.style.width  = btnW + "px";
+    goRandom.style.width = btnW + "px";
     
     // 바 폭 (화면 안에 들어가도록)
     const maxAvailableW = width - barLeft - bodyMargin;
@@ -375,24 +379,20 @@ oninput="speed_of_auto_scroll=this.value;">
     barSize.style.top  = "0px";
     
     const rowH    = document.getElementById("button_white").offsetHeight;
-    const ctrlH   = turnAuto.offsetHeight;
+    const ctrlH   = goRandom.offsetHeight;
     const sliderH = scaleScroll.offsetHeight;
     
     // 2행
-    turnAuto.style.top  = rowH + "px";
-    turnAuto.style.left = bodyMargin + "px";
+    goRandom.style.top  = rowH + "px";
+    goRandom.style.left = bodyMargin + "px";
     
     scaleScroll.style.top  = (rowH + (ctrlH - sliderH) / 2) + "px";
     scaleScroll.style.left = barLeft + "px";
-    
-    // 3행
-    goRandom.style.top  = (rowH + ctrlH) + "px";
-    goRandom.style.left = bodyMargin + "px";
    }
    
     window.addEventListener('DOMContentLoaded', () => {
      set_();
-     turn_autoscroll();
+     update_autoscroll();
      document.querySelectorAll('pre').forEach((e) => {
       e.addEventListener("click", ()=>{
        window.speechSynthesis.cancel();
@@ -442,8 +442,7 @@ oninput="speed_of_auto_scroll=this.value;">
    document.addEventListener("DOMContentLoaded", function () {
   const targets = [
     document.getElementById("bar_size"),
-    document.getElementById("scale_of_scroll"),
-    document.getElementById("turn_autoscroll")
+    document.getElementById("scale_of_scroll")
   ];
   
   let count = 0;
@@ -527,19 +526,20 @@ oninput="speed_of_auto_scroll=this.value;">
 --- compound word. 
 --- antonym. 
 --- translating a word. 
--- capital letter rule.
+-- capital letter rule. 
+-- words. 
+--- preposition. 
 -- grammar. 
 --- part of speech. 
 ---- situation that a part of speech is changed. 
 ---- all the omissions. 
 ---- how to change word order. 
+--- question. 
+--- command. 
+--- logic. 
 -- relative pronoun. 
 --- subject relative pronoun. 
 --- object relative pronoun. 
--- words. 
---- preposition. 
--- command. 
--- logic. 
 -- spliting a meaning. 
 -- marking a string.  
 -- article.
@@ -602,7 +602,7 @@ oninput="speed_of_auto_scroll=this.value;">
 ▲- pronunciation</pre>
  </details>
  <details open>
- <summary>- word formation rule</summary>
+  <summary>- word formation rule</summary>
   <pre>-- homonyms and synonyms is prohibited. 
 -- word that is used lot must be short for practicality but word that can make conflict dont must be short. </pre>
   <details open>
@@ -619,15 +619,15 @@ oninput="speed_of_auto_scroll=this.value;">
    <details open>
     <summary>--- suffix that can be freely used. </summary>
     <pre>---- rn- = un-. 
----- -s = plural marker.(its logicaly not necessary.)
----- -t = -ed. 
----- -lr = -ed.(i learned it = i did learn it. i learn[this suffix] it ="i did learn it and i know it now". )
----- -ya = abstract noun marker. 
+---- -s = plural marker.(but explaining quantity isnt musted) 
+---- -t = -ed.(i killed it but idk if it still dead) 
+---- -lr = -ed.(i killed it and it still dead) 
+---- -ya = abstract noun marker or noun marker. 
 ---- -lo = -ology. 
 ---- -do = measurement. 
 ---- -ebi = -able. 
 ---- -bej = -less. 
----- -jm = -ism. 
+---- -ijm = -ism. 
 ---- -st = -est. 
 ---- -rl = -er. 
 ---- -il = tool.(cut + this suffix = scissor) 
@@ -638,7 +638,8 @@ oninput="speed_of_auto_scroll=this.value;">
    <details open>
     <summary>--- suffixes that must be allowed to be used. </summary>
     <pre>
----- -i = causative verb. 
+---- suffix that change something into verb tend to need allow. 
+---- -i/-wi = causative verb. if there are vowel in the word then the -wi is used. 
 ---- -z = verb marker. 
      
 ▲--- suffixes that must be allowed to be used. </pre>
@@ -663,6 +664,12 @@ oninput="speed_of_auto_scroll=this.value;">
 
 ▲-- compound word</pre>
 </details>
+  <details open>
+   <summary>-- antonym</summary>
+   <pre> --- the antonym can be made by inverse if the word length is more than 3 so "evol" would mean "hate" as antonym of "love". 
+    
+-- antonym</pre>
+  </details>
  <pre>▲- word formation rule</pre>
  </details>
  <details open>
@@ -731,6 +738,7 @@ oninput="speed_of_auto_scroll=this.value;">
  <summary>- caution</summary>
  <pre>
 
+-- this lang say family name firstly cuz this lang tend to say bigger thing firstly. car key as example. but we can say name without family name so its not utility problem. 
 -- the determiner's grammartic function is same as adjective. 
 -- "no A" mean "something that is not A" sometime so "i love no cat" mean "i love something that isnt cat". 
 -- "i believe that you are human" is awkward cuz "i believe you" mean "i belive you will do well" so "i believe that you are human" mean "i believe (situation that you are human) will do well". you must say "i believe you as (be) human". 
