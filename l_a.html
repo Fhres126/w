@@ -8,7 +8,7 @@
      
  <style>
  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap');
-  
+  @import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css");
     :root {
       --s: 0px;
       /* 세로 모드 기본 : 1.5배 */
@@ -30,11 +30,14 @@
     body{
      line-height: 1.5; 
      letter-spacing: 0.1;
+     font-display: swap;
      background-color: #000000;
-     margin:calc(var(--s)*0.05);
-     webkit-text-stroke: 0.02rem;
-     -webkit-text-stroke-color:#444444;
+     margin:calc(var(--s)*0.085);
+     -webkit-text-stroke: 0.001rem #444;
+     font-family: "NanumSquareNeo", var(--font-sans);
     }
+  
+
     *{
      overflow-wrap: break-word;
     }
@@ -105,11 +108,12 @@
     }
 
     /* ============ 슬라이더 라벨 (슬라이더 왼쪽) ============ */
-    /* --fontsize 로 정의, JS가 첫 로드 시 computed 값 인라인 캡처 → 이후 --fontsize 바뀌어도 고정 */
+    /* ★ --s 에 비례해서 스케일 → 회전/리사이즈 시 슬라이더 높이(--s/24)와 항상 같은 비율 유지
+       (size 슬라이더 값과는 무관하게 --s * 0.03 고정 = 기존 freeze 의도 유지) */
     .slider-label {
       position: fixed;
       color: #CC79A7 !important;
-      font-size: var(--fontsize);       /* ★ --fontsize 그대로 */
+      font-size: calc(var(--s) * 0.03);    /* ★ 변경: var(--fontsize) → calc(var(--s) * 0.03) */
       font-family: sans-serif;
       font-weight: 700;
       letter-spacing: 0.02em;
@@ -291,7 +295,7 @@ oninput="document.documentElement.style.setProperty('--fontsize', (parseFloat(ge
 
 <button id="go_random" onclick="go_random()">go random</button>
 
-<input id = 'scale_of_scroll' class="bar_size" type="range" min="0" max="0.5" step="0.005" value="0.06"
+<input id = 'scale_of_scroll' class="bar_size" type="range" min="0" max="2" step="0.005" value="0.06"
 oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 
 <span class="slider-label" id="label_bar_size">size</span>
@@ -339,18 +343,6 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
     } else {
      start_autoscroll();
     }
-   }
-   
-   /* ★ 라벨 font-size 프리즈 (한 번만)
-      - CSS: font-size: var(--fontsize)
-      - JS: 첫 로드 시 computed 값(예: "12px")을 인라인으로 캡처 → 이후 슬라이더 조작해도 라벨 고정 */
-   let labels_frozen = false;
-   function freeze_label_font_size() {
-    document.querySelectorAll('.slider-label').forEach(el => {
-      const computed = getComputedStyle(el).fontSize;
-      el.style.fontSize = computed;
-    });
-    labels_frozen = true;
    }
    
    /* ===== 사용자 스크롤 감지 ===== */
@@ -415,9 +407,6 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
     if (labelBar)    labelBar.style.left    = barLeft + "px";
     if (labelScroll) labelScroll.style.left = barLeft + "px";
     
-    // ② 폰트 사이즈 한 번만 프리즈
-    if (!labels_frozen) freeze_label_font_size();
-    
     // ③ 라벨 폭 측정 → 슬라이더 시작점 계산
     const labelW = Math.max(
       labelBar    ? labelBar.offsetWidth    : 0,
@@ -449,12 +438,12 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
     goRandom.style.top   = rowH + "px";
     goRandom.style.left  = bodyMargin + "px";
     
-    // ⑤ 라벨 세로 중앙 정렬
+    // ⑤ 라벨 세로 중앙 정렬 (Math.max 클램프 제거 → 라벨이 슬라이더보다 커져도 정확히 중앙)
     if (labelBar) {
-      labelBar.style.top = Math.max(0, (barSize.offsetHeight - labelBar.offsetHeight) / 2) + "px";
+      labelBar.style.top = ((barSize.offsetHeight - labelBar.offsetHeight) / 2) + "px";
     }
     if (labelScroll) {
-      labelScroll.style.top = Math.max(0, sliderTop2 + (sliderH - labelScroll.offsetHeight) / 2) + "px";
+      labelScroll.style.top = (sliderTop2 + (sliderH - labelScroll.offsetHeight) / 2) + "px";
     }
    }
    
@@ -502,7 +491,6 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
      document.body.style.maxWidth = width.toString() + "px";
      document.body.style.maxHeight = height.toString() + "px";
      set_();
-     // labels_frozen 이므로 재프리즈 안 함
    });
    
    document.getElementById("bar_size").value = 0.03;
@@ -641,7 +629,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 <summary> lesson</summary>
  <details open>
   <summary>- before we begin. </summary>
-  <pre>- I will not cite academic grounds to persuade you because it would make the lecture too long. Do not worry, as most of my arguments are based on academic evidence.
+  <pre>- I will not cite academic grounds to persuade you because it would make the lecture too long. Do not worry, as most of my arguments are based on academic evidence. ill dont use samin or samin words lot cuz it can be changed. 
 
 ▲- before we begin</pre>
  </details>
@@ -655,75 +643,45 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
  <details open>
   <summary>- pronunciation</summary>
   <pre>
--- A single character can covers a wide range of pronunciations.(d = /d/, /θ/ and etc)
--- no consonant digraph and diphthong. 
+-- A single character can covers a wide range of pronunciations.(b = /b/, /v/ and etc)
+-- no consonant digraph and diphthong and consonant cluster. You don't need to link the sounds. "bs" = [bɯsɯ], "b-s".. 
 -- s = "s" as in task not "so".
 -- y can make consonant a strong. "ys" = "s" as in "so". it is NOT PROUNCED if it is ALONE.("hay" = ha) 
 -- x = "ng". if it is in before final consonant, it is empty consonant(ax = ang. anxa = an.a) 
--- r = schwa. "u" as in "pronunciation".(like german lang) 
+-- r = schwa among vocalized r in many natural language. "u" as in "pronunciation".(like german lang) 
 -- v = close back unrounded vowel, represented as [ɯ] in the IPA.(v was vowel in latin). 
 -- only b, d, g, l, m, n, x can be used as final consonant. 
 -- samin's "ala" = a.la.
--- no consonant cluster. You don't need to link the sounds. "bs" = [bɯsɯ], "b-s".
-
 -- example sentence:  "People who use Samin will probably understand pronunciation of something better without the international phonetic alphabet than those who use other international auxiliary language" -> "pipl hu yuj samin wil plobabvlli rndrlstend plrnrnysieisyrn obv ysrmydix belrl widaud di intrnesyrnrl ypwrnetig alypwrbed den drj hu yuj adrl intrnesyrnrl ogjillirlli lexgwij". but me and AI didnt know english pronunciation well.
 
 ▲- pronunciation</pre>
  </details>
  <details open>
   <summary>- word formation rule</summary>
-  <pre>-- homonyms and synonyms is prohibited. 
--- word that is used lot must be short for practicality but word that can make conflict dont must be short. </pre>
   <details open>
-   <summary>-- The priority order of parts of speech to assign during word formation. </summary>
+   <summary>-- basic rule</summary>
+   <pre>--- homonyms and synonyms is prohibited. 
+--- word that is used lot must be short for practicality but word that can make conflict dont must be short. 
+--- all the word must be easy to pronounce. 
+-- basic rule</pre>
+  </details>
+  <details open>
+   <summary>-- The priority order of words to assign during word formation. </summary>
    <pre>--- there are no enough suffix intendly so there are no suffix that make a noun into conjunction but there are suffix that make conjunction into noun so the user must make conjunction fitstly. 
 
----  -> preposition -> conjunction -> concrete noun -> verb -> adjective -> abstract noun -> adverb. 
+---  -> preposition -> conjunction -> concrete noun -> adjective -> verb -> passive voice -> caustive verb -> abstract noun -> adverb. 
  
-▲-- The priority order of parts of speech to assign during word formation</pre>
+▲-- The priority order of words to assign during word formation</pre>
   </details>
-  <details open>
- <summary>-- suffix</summary>
- <pre>--- Some suffixes can be used on any word. the others are only allowed on some words.</pre>
+   
    <details open>
-    <summary>--- suffix that can be freely used. </summary>
-    <pre>---- rn- = un-. 
----- -s = plural marker.(but explaining quantity isnt musted) 
----- -t = -ed.(i killed it but idk if it still dead) 
----- -lr = -ed.(i killed it and it still dead) 
----- -ya = abstract noun marker or noun marker. 
----- -lo = -ology. 
----- -do = measurement. 
----- -ebi = -able. 
----- -bej = -less. 
----- -ijm = -ism. 
----- -st = -est. 
----- -rl = -er. 
----- -il = tool.(cut + this suffix = scissor) 
-     
-     
-▲--- suffix that can be freely used. </pre>
-   </details>
-   <details open>
-    <summary>--- suffixes that must be allowed to be used. </summary>
+    <summary>-- how to change a suffix into noun</summary>
     <pre>
----- suffix that change something into verb tend to need allow. 
----- -i/-wi = causative verb. if there are vowel in the word then the -wi is used. 
----- -z = verb marker. 
+--- if "r" is added before the suffix, it is noun. "r" + suffix for place = place. 
      
-▲--- suffixes that must be allowed to be used. </pre>
-   </details>
-   <details open>
-    <summary>--- how to change a suffix into noun</summary>
-    <pre>
----- if "r" is added before the suffix, it is noun. "r" + suffix for place = "ryo" = place. 
-     
-▲--- how to change a suffix into noun
+▲-- how to change a suffix into noun
     </pre>
    </details>
-  
-<pre>▲-- suffix </pre>
-  </details>
 <details open>
  <summary>-- compound word</summary>
  <pre>
@@ -795,8 +753,8 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 ▲- marking string</pre>
  </details>
  <details open>
- <summary>- article </summary>
- <pre>
+  <summary>- article </summary>
+  <pre>
 -- this lang dont have article "the" but there are temonstrative adjective version of article "the". it is "l". 
 -- the user doesnt must explain quantity of something defaulty. article "a" is not neccesarry. word for one can be used instead. 
 
@@ -820,16 +778,11 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 ▲ lesson
 </pre>
 </details>
- <details open>
   <summary>the other site</summary>
   <details open>
-   <summary>- the word dictionary</summary>
-   <pre>-- https://fhres126.github.io/w/al_worddictionary.html
-    
-▲- the word dictionary</pre>
+   <pre>- the word dictionary: https://fhres126.github.io/w/al_worddictionary.html</pre>
   </details>
   <pre>▲ other site</pre>
- </details>
  <details open>
   <summary> ☆ ~《《 complaint resolution 》》~ ☆.</summary>
   <details open>
@@ -837,11 +790,11 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
    <pre>-- cuz its too difficult and inefficient and there are lieature problem. we can use infix notation to make a language perfect logical but it might must have seperate word for and for noun, and for verb, and for conjunction. </pre>
    <details open>
     <summary>-- how samin become perfectly logical IAL, if the world want. </summary>
-    <pre>--- samin can be perfecrly logical IAL if the world want cuz it is already bit logical. we can use infix notation and OVS grammar. and we must defeine a setence into group of noun phrase. it might dont have verb so "i love you" must become this sentence that include only noun pharse "i am something that love you". 
+    <pre>--- samin can be perfecrly logical IAL if the world want cuz it is already bit logical. we can use infix notation and OVS grammar. and we must defeine a setence into group of noun phrase. it might dont have verb so we must define word for love as something that love the parameter so "i love you" must become this sentence that include only noun pharse "i am something that love you". 
 
 ---- example sentence: "my name is elon musk" -> "(elon musk [word that unite words]) ((name i of) is)". 
 
----- we can temporally use this system using word "ai". 
+---- we can temporally use this system using word "ai". and we must use ".." in end of sentence to claim the basic samin sentence is basic samin sentence.
 
 ▲-- how samin become perfectly logical IAL, if the world want. </pre>
    </details>
