@@ -232,8 +232,40 @@
   outline: 3px solid #99d6ff;
   outline-offset: 3px;
 }
-  
+  /* ===== 테스트용 더미 광고 ===== */
+.ad-placeholder {
+  position: relative;        /* ★ fixed 아님 → 스크롤과 함께 이동 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 728px;          /* 리더보드 배너 크기 */
+  height: 90px;
+  margin: calc(var(--s) * 0.03) auto;
+  background: repeating-linear-gradient(
+    45deg,
+    #1a1a1a,
+    #1a1a1a 10px,
+    #222 10px,
+    #222 20px
+  );
+  border: 1px dashed #555;
+  border-radius: 8px;
+  color: #888 !important;     /* rainbow 애니메이션 무시 */
+  font-family: sans-serif;
+  font-size: calc(var(--s) * 0.025);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: none !important; /* 전역 rainbow 애니메이션 차단 */
+  z-index: 1;                 /* 고정 버튼(9999) 아래 */
+  box-sizing: border-box;
+}
+.ad-placeholder span {
+  animation: none !important;
+  color: inherit !important;
+}
  </style>
+
 </head>
 <body>
   <button id="button_gradient" class="setcolor" onclick="document.body.style.background = '#000000';document.querySelectorAll('p,span,a,h1,pre,details,summary').forEach(e=>{e.style.background='linear-gradient(90deg,#ff6a00,#ee0979)';e.style.webkitBackgroundClip='text';e.style.webkitTextFillColor='transparent';});document.head.insertAdjacentHTML('beforeend','<style>summary::marker,summary::-webkit-details-marker{-webkit-text-fill-color:#ff5733 !important;color:#ff5733 !important;}</style>');"></button>
@@ -545,6 +577,10 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 
   </pre>
  <h1>SAMIN LESSON FOR ENGLISH SPEAKER </h1>
+ <!-- AdSense 로더: 한 번만 -->
+ <div class="ad-placeholder">
+    <span>Advertisement (test) · 728 × 90</span>
+  </div>
 <pre>
  
  
@@ -555,18 +591,25 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
   <pre>- this document explain EASY and LOGICAL UNAMBIGIOUS DEMOCRATIC NEUTRAL SUPERIOR IAL samin. this language is made by introvert who are OCD patient so i might noticed all problem that you will can notice. the all problem might be already fixed or will be fixed or it might objectly be not problem. this document and language is alpha version. i made this IAL cuz i reject all other IAL.
 
 ▲ overview</pre>
+ </details>
+ <details open>
+  <summary>support</summary>
+  <pre></pre>
   <button  class="discord-btn" onclick="window.open('https://discord.gg/A7B4983VQq', '_blank')">
    button for join discord for feedback or etc</button>
   <pre></pre>
   <button class="paypal-btn" onclick="window.open('https://paypal.me/sangminjeong544', '_blank')">
   button for donate using paypal
   </button>
-  <pre>if you are korean.. 토스뱅크 1001-5397-0116(for donate)</pre>
+  <pre>- if you are korean.. 토스뱅크 1001-5397-0116(for donate)
+- we receiving money in exchange for advertisements to grow this language. The price is $1 per two months.</pre>
+<pre>▲ support</pre>
  </details>
 
  <details open>
   <summary> table of content</summary>
   <pre>- overview. 
+- support. 
 - table of content. 
 - persuading to learn samin. 
 - lesson. 
@@ -602,6 +645,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 --- marking a string.  
 -- article.
 -- caution. 
+-- tips. 
 - example setences. 
 - other site.
 -- dictionary.
@@ -666,6 +710,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
    <pre>--- homonyms and synonyms is prohibited. 
 --- word that is used lot must be short for practicality but word that can make conflict dont must be short. 
 --- all the word must be easy to pronounce. 
+--- word that include whitespace is noun phrase and it cant be official word. 
 ▲-- basic rule</pre>
   </details>
   <details open>
@@ -696,7 +741,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 </details>
   <details open>
    <summary>-- antonym</summary>
-   <pre> --- the antonym can be made by inverse if the inversed word is easy to disringuish from the inverseless word. if "evol" mean "to love" would mean "to hate". 
+   <pre> --- the antonym can be made by inverse if the inversed word is easy to disringuish from the inverseless word. if "love" mean "to love" "evol" would mean "to hate". 
     
 -- antonym</pre>
   </details>
@@ -709,8 +754,8 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
    <pre>--- all word have only one part of speech except this following situation.</pre>
    <details open>
     <summary>--- situation that a part of speech is changed</summary>
-    <pre>---- 1.some adjective can work as adverb.(word quick is) 
----- 2. word "v" can unite words. example sentence : "les v su e clya. al les no ab su cu zi" mean "word like is verb. all word cant like some thing". the united word is defautly noun but if other part of speech full, then it is the part of speech. example sentence : "i su v glu u" mean "i like to see you". 
+    <pre>---- 1. some adjective can work as adverb.(word quick is) 
+---- 2. word "v" can unite words. example sentence : "les v su e clya. al les no ab su cu zi" mean "word like is verb. all word cant like some thing". the united word is defautly noun but if other part of speech full, then it is the part of speech. example sentence : "in IAL, p yo ti mo ZLEI e gut AMA bia laj bya les v su AS ismu c cu te" mean "in IAL, having one PART OF SPEECH is good BUT we must express word love AS noun sometime". 
      
 ▲--- situation that a part of speech is changed</pre>
    </details>
@@ -719,7 +764,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
     <pre>
 ---- p = subject relative pronoun. 
 ----- you can make a gerund using it cuz "loving me" can mean "something that love me". The preposition after the subject relative pronoun is considered a verb so "g in A" mean "thing that is in A". if it is noun, the be verb can be omitted so "[first noun] g [second noun]" mean "first noun that is second noun". 
----- n = object relative pronoun so you can use it as word what cuz "what i love" mean "something that i love". The preposition after the object relative pronoun is considered a noun phrase so "n in A love" mean "what something that is in A love". 
+---- n = object relative pronoun so you can use it as word for what cuz "what i love" mean "something that i love". The preposition after the object relative pronoun is considered a noun phrase so "n in A love" mean "what something that is in A love". 
     
 ▲--- relative pronoun</pre>
    </details>
@@ -727,7 +772,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
   </details>
   <details open>
    <summary>-- noun phrase</summary>
-   <pre>--- only a verb can break noun phrase so "person i see" isnt a noun phrase. 
+   <pre>--- only a verb can break noun phrase so "person i see" isnt a noun phrase. and "i the good car" isnt awkard. 
 ▲-- noun phrase</pre>
   </details>
 
@@ -736,7 +781,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
  <details open>
   <summary>- logic</summary>
  <pre>
--- if there are "your name and car", it means "your (name and car)". if you wanna split it, you can put word "a" into the middle. 
+-- if there are "your name and car" as this language sentence, it is ambigious sentence. if you wanna clarify it you can split some word or comma. "your name and 'A' car" mean "(your name) and car". 
   
 ▲- logic</pre>
  </details>
