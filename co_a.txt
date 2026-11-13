@@ -30,16 +30,17 @@ z=/tʃ/.
 ,g ,n ,d ,l ,m ,b ,x
 
 - ax = A.
-- bu = B.
+- be = B.(german, north europe, polish)
 - cwr = C.
 - dya = D.
 - ewr = E.
-- gon = G.
+- epe = F.(spain, german, french)
+- gwi = G.
 - hou  =H.
-- idi = I.
+- yai = I.
 - jyr = J.
 - lox = L.
-- mia = M.
+- emme = M.(french, english)
 - nran = N.
 - oxo = O.
 - pea = P.
@@ -50,16 +51,16 @@ z=/tʃ/.
 - umu = U.
 - avn = V.
 - wrz = W.
-- elxi = X.
+- igs = X.(french, german)
 - yrl = Y.
-- zugs = Z.
+- zet = Z.(german, englisg)
 
 ->suffix{
 ▼-suffix that can be freely used
 -- -ya = abstract nouns marker. -ness. -ship. -cy.
 -- -s= -ed .(function/verb only)(Passive.. made by Arbitrary.)
 - -t= -ed.(function/verb only)(german,norway, turk, hungaryan,)
-- rn- = un-.
+- bu- = un-.(china, korea)
 - -ist= -ist.(DoycisaElinisaEnglisaEspanisaFransesaIndonesisaParsisaPilipinasaRusisaTurkisa)
 - -ig =-ical. =-al. =-ic.(hindi, bengol, urdu, uzbek, many european,)
 - -rl = -er .(comparative degree only. eg bigger tool)
@@ -103,11 +104,11 @@ z=/tʃ/.
 
 - je !n,a=zero.(global word. zero sugar)
 -- mo !n,a=one.(rusian, vietname, khmer, swahili,)
--- du !n,a=two.(romance, korea)
+-- du !n,a=two.(romance, korea,persian)
 -- cr !n,a=three.(random)
 -- si !n,a=four.(korean, chinese, thai, lao,)
 -- pa !n,a=five.(english, persian, urdu,tajik, marati, gujarat,punjab, singhala, nepal,)
--- ses !n,a=six.(many european,)
+-- ses !n,a=six.(many european,persian)
 -- hit !n,a=seven.(hungary, malagsy, maory, hawai, piji, samoa,)
 -- balu !n,a=eight.(korean, china, gaungdung, malagsy, samoa,hawai, maori)
 -- nai !n,a=nine.(english, hindi, urdu, bengol, nepal, sinhala, german, norway, dannsih, ireland, bislama,)
@@ -159,18 +160,18 @@ time: no.
 - juei !p=around.(korea,china)
 - as !p=as.(many european,)
 - amu !v=fun.(A [this word] B = A feel B as fun)
-- pla !v=attack.(Sinhala)
--- alp !v=defend.(a)
+- tace !v=attack.(영어(인도유럽·게르만)프랑스어(로망스)스페인어(로망스)이탈리아어(로망스)러시아어(슬라브)폴란드어(슬라브)터키어(투르크)미얀마어(중국티베트)베트남어(오스트로아시아))
+//-- alp !v=defend.(a)
 - asc !r=troops, army.
 - asi !v=sorry.
 - ase !a=origin. =source.
-- apt !a=stupid.(turkiye)
--- tpa !a=smart.
+- bobo !a=.dumb, stupid, foolish.(EspanisaIndonesisaKoreasaPilipinasaSwahilisa)
+- smat !a=smart.(global wrod. smartphone, smart TV)
 - ax =.(subject marker. tagalog)
 - anima !u=animation.
 - ast !r,a=abstract. =추상.(as in abstractly. as in abstract artwork)
 - a !s=.(split marker, going to next parameter.)
-- aca !v,r=reside.(arab,)
+- habi !v,=reside, dwell, live. =inhabit. =live in.(europe)
 - and !v=walk.
 - muhi !v=important. =matter to(inversed).(inversed(A important B = B is important for A.)
 -- ihum.
@@ -185,9 +186,10 @@ time: no.
 -- neo= new.
 -- dede !u,r=baby.(sound)
 -- dezwax = cradle.(baby + bed)
-- amin !r,v= safe.(indonesian, persian, arabic,)
--- amini=save.(safe + causative suffix)
--- nima = dangerous.(a)
+- anze !r,v= safe.(japan, china, korea, vietname)
+-- anzej = safe.(safe + passive voice)
+-- anzei=save.(safe + causative suffix)
+-- ezna !v= dangerous.(a)
 - atom = atom.
 - acli !r=rational.(arab,urdu,persia,turk,indonesia,malay,swahili,hindi,ponjab)
 - adal !adj,r= justice.(persia,turkiye,urdu,hausa,malay)
@@ -195,6 +197,10 @@ time: no.
 - apat = apartment.(global)
 - asli = native.(indonesia, malay, arbic,persia,urdu,turkiye,hausa,seahili,)
 - atice = article.(as grammar. europe, indonesia, turkiye)
+- ain !r=eye.(ain /ain/: 아랍어·히브리어·암하라어 4억. 3글자, 셈어 대표. 다만 인두음 /ʕ/는 IAL에서 /a/로 단순화. english eye.)
+-- glho !r=eyeblid.(eye + shell?)
+-- glis o!v=wink.(eye + sign?)
+- adol = muscle.(Arabisa Parsisa Turkisa)
 
 }▲ a
 
@@ -232,7 +238,7 @@ time: no.
 -- cau !v=join.(thai)
 -- bcr = happen.(become + true)
 //-- biosa = conquer.
--- bbi o!r=notice.(become + know)
+-- bebi o!r=notice.(become + know. but pronunciation is changed for atached suffix)
 -- inz !v=enter.(in + verb marker.)
 -- byo o!r=get.(become + have)
 -- baj !r=occur.(become + exist)
@@ -251,9 +257,9 @@ time: no.
 - bye !r=edge.
 - wada !v=promise.(arab, hindi, urdu, bengol, ponjab, persia, turk)
 - bui !v=would.(china,german).
-- pii !a,adv=well, good.(japan, turkiye, somalian,)
--- pige = advantages.(s)
---- rnpige = disadvantages.(antonym suffix + advantage)
+- gut !a,adv=well. =good.(europe. and german is too few)
+//-- pige = advantages.(s)
+//--- rnpige = disadvantages.(antonym suffix + advantage)
 - bulu = bad.(indonesian, malay, yoruba, hinidi,)
 -- bohi !r=diligent.(s)
 //- bwr o!p1=.(veluil)
@@ -283,7 +289,10 @@ time: no.
 - boti = bottle.(Englisa Espanisa Fransesa Hindi Indonesisa  Parsisa Pilipinasa Rusisa)
 - bila = beer.(DoycisaEnglisaFransesaHindi
 IndonesisaSwahilisaTurkisa)
-- bar = stick. =rod. =club. =bar. =stake.(global word)
+- bar =bar.(global word)
+- brs = bus.(global)
+- buel = hair.(DoycisaEspanisaHindiIndonesisaKorea)
+- bya = express.(hindi, telugu)
 
 }▲b
 
@@ -353,7 +362,7 @@ IndonesisaNiponsaPilipinasaRusisaSwahilisaTurkisa)
 - cwa = because.(swahili. 3letter is good)
 - so = so.(english)
 - cita = book.(Arabisa Hindi Indonesisa SwahilisaTurkisa)
-- cata = cut.(Arabisa Englisa Espanisa Hindi Vyetnamsa)
+- cuta = cut.(Arabisa Englisa Espanisa Hindi Vyetnamsa)
 -- cotil = knife.(cut + tool marker)
 -- atac = attach. =connect.(a)
 - sujet = subject.(grammar. as in subject-verb-obj. Arabisa Englisa Espanisa Hindi Vyetnamsa) 
@@ -382,6 +391,11 @@ IndonesisaNiponsaPilipinasaRusisaSwahilisaTurkisa)
 Indonesisa Turkisa)
 - cemo = 과목. =subject.(in class. east asia)
 - clim = cream.(global)
+- cllrb = club.(global word)
+- coclit = concrete.(global)
+- condom = condom.(global)
+- curn = should.(thai,lao,khmer... or chinese ixga. but its like subject marker? 이가)
+- catap = shoulder.(아랍어(아프로아시아.셈)히브리어(아프로아시아^셈)하우사어(아프로아시아·차드)일본어(일본어족)타칼로그어(오스트로네시아)순다어(오스트로네시아))
 
 }▲c
 
@@ -442,6 +456,8 @@ Indonesisa Turkisa)
 - dom !r=home. =house.(slavic, english)
 - dallr = dollar.
 data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinasaSwabilisaTurkisaVyetnamsa)
+- dlon = drone.(global)
+- dena = calling. =contact.(china, vietnam, japan)
 
 }▲d
 
@@ -481,7 +497,7 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - esi !prep=out.
 - eatem = lesbian.(female + love + female)
 - esi s,n!r,prep=what if. =result if.(europe, japan?)
--- esiya = result.(what if + result)
+-- esiya = result.(what if + noun marker)
 
 }▲e
 
@@ -499,9 +515,6 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - gan o!r=detect.
 -- hisi = feel.(arabic, persian, turk,swahili,)
 -- glu o!r,v=see.(detect + light)
---- gli !r=eye.(s)
----- glho !r=eyeblid.(eye + shell?)
----- glis o!v=wink.(eye + sign?)
 -- gso !r,v=listen.(detect + sound)
 --- gbu !r=ear.(s)
 -- gais !verb=smell.(detect + smell)
@@ -510,7 +523,7 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - gas !r=gas.
 -- gar = air.(s)
 - g o,o!p1=that is.(A [this word] e B = A that is B)
-- cux -> cu o,s!p1=whose.(vietnamese, thai, lao, nepal, spain, portugal,galasyan,latbia, lithuania,)
+- cu o,s!p1=whose.(vietnamese, thai, lao, nepal, spain, portugal,galasyan,latbia, lithuania,)
 - gand !r=wheat.
 - gale !r=west.
 -- elag !r=east.(a)
@@ -532,6 +545,7 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - plit !adj=fried.(many european,)
 - gatan = interjection.(chinese,indonesian,malay,thai)
 - gold = gold.(global word)
+- gamel = camel.(Arabisa Doycisa Pilipinasa Swahilisa)
 
 }▲g
 
@@ -563,15 +577,14 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - hol !r=shell.
 -- olho !r=skin.(organism + shell)
 -- hoij !r=leather.
-- hai !adj=alive.(arabic, philphine, hebrew,)
--- hau !r=work.
--- iah !adj=dead.(a)
+- jiwa !adj=alive.(HindiIndonesisaPilipinasaRusisaTelugusa)
+-- jiwr !r=work. =작동(s)
+-- molv !adj=dead.(EnglisaEspanisaFransesaHindiParsisaRusisa)
 --- iehe, yehe = hunt.(kill + animal)
 --- iun !r=off.
 ---- nui !r=on.
-- hat o!p1=even .
-//- ha = verb marker. =do.(korean.)
--- hula o!verb=cheer.
+- hata o!p1=even.(Arabisa Espanisa Swahilisa)
+- hula o!verb=cheer.
 -- aluh o!verb=curse.(a)
 - huc o!verb=judge.
 - haha !r,verb=laugh.(sound)
@@ -584,7 +597,7 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - hadi = iron.
 - hase = envy.
 -- esah = pitiful. =poor.(a)
-- slla = while.(indonesian.)
+- tan = while.(indonesian.3~4개 독립 기원: 중국어 当(중국티베트) + 한국어 동안(한국어족) + 링갈라어 tango·키콩고어 ntangu(니제르콩고)가 서로 차용 없이 /t/+/a~o/+/ŋ/으로 수렴. 일본어 時に·베트남어 trong도 부분 일치.)
 - hwrx = wind.(Onomatopoeia)
 - hina n!r=inferior.(hindi, bengol, urdu, ponjab, maraty, gujarat, nepal, indinesia, malay, tagalog)
 -- anih n!r=superior.(a)
@@ -593,6 +606,7 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - hali = map.(arab,persia,turkiye)
 - huaji = chopstick.(bangladesh,japan,portuguese,china)
 - haj = need.(Arabisa Parsisa Swahilisa)
+- halv = escape.(india, east middle, turkiye)
 
 }▲h
 
@@ -613,11 +627,11 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 ▲- i.proper noun
 
 - isi !r=smell.(igbo @ isi ísì)
-- in o,o!p1=in.(europe)
+- na o,o!p1=in.(lingala @ na, hausa @ a, japanese @ ni. myanmar @ ne. african is few in basic word!!)
 -- inh !r=inside.(in + noun marker)
 -- iaj o!r=stay.(in + exist)
 - i _= i.(english)
-- em _r!=female. =girl. =women.(mongolian, Basque)
+- pem _r!=female. =girl. =women.(mongolian, Basque,global word)
 - id o,o!r=go.
 -- idlr = arrive.(go + finish marker)
 - iy !r=mass.(turkish @ yığın)
@@ -633,10 +647,11 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - icna !v= persuade.(or, little + intend + causative marker)
 - isya = sign.(arab, hindi, indonesia, swahili, turkiye)
 - isul = island.(germany, english, spain, france, philphine, russia, turkiye)
-- ism = noun.(arab,urdu,turkiye,persian,sind,amharic,ajerbaijan,zulu)
+- ismu = noun.(arab,urdu,turkiye,persian,sind,amharic,ajerbaijan,zulu)
 - ito = that. =あの. =저 ~.(Something further away than "this". slavic, indonesia, malay, greek, )
 - imij = image.(global word)
 - itne = internet.(global word)
+- inax = bank.(korea, china, vietname, japan)
 
 }▲i
 
@@ -656,7 +671,7 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 
 - laya o,n!p1=deserve.(chinese)
 -- lase o!p1=right to.(s)
-- ja !r=self.(china, korea, japan)
+- ja !r=self. =themselves. =myself.(depending the subject. china, korea, japan)
 - jo _s,n!r=hope.(veluil)
 -- joyr = hungry.(hope + eat)
 -- jbi o,n!r=wonder.(hope + know)
@@ -691,6 +706,11 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 -- jamb = scam.(hausa, swahili, cuz there r too few african)
 - jeda = free.(zero + dollar)
 -- adej = paid. =toll?.(a)
+- jei = most.(as in most good. china,korea)
+- juga = subjective.(china, korea, japan)
+-- aguj = objective.(a)
+- jrx = whole.(china, korea)
+- jsmu = body.(arab,hindi,persian)
 
 }▲j
 
@@ -738,7 +758,7 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - pe !r=money.
 -- peic = lobby.
 -- peu !r=economy.
-- lue !r=wheel.
+- lui !r=wheel.(china, japan)
 - lec !r=receipt. =영수증.
 - lai o!r=ride.(vietnam,english)
 - vl !prep= object marker.(korean,)
@@ -795,7 +815,7 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - ndu !si=symbol that omit two parameter.
 - oat !si=symbol that omit three parameter.
 - pca !si=symbol that omit four parameter.
-- mu !r=human.(hausa)
+- nu !r=human.(afar language cuz human birth place)
 -- mucl = race.
 --- muclzi = racist.(race + ist)
 - metr n!r= meter.(french @ mètre @)
@@ -806,7 +826,7 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - ho s!conjunction=how.(japanese)
 -- hoya = principle.=method.(how + noun marker)
 -- hoha o!p1=how to be .
-- musi o,n!r=must.(chezch, germany, english, indonesia)
+- laj o,n!r=must.(아랍어(아프로아시아)페르시아어(인도유럽)우르두어(인도유럽)힌디어(인도유럽)터키어(투르크)스와힐리어(니제르콩고)하우사어(아프로아시아))
 - mot !r=pattern.=leitmotif.=motif.(germany,english,spain,france,indonesia,japan,persia,russia,turkiye,vietname)
 - lis !r=mechanics.
 - mr !r=what.//"mr hi" mean "what is this?". (korean)
@@ -823,7 +843,7 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - muin !r,adj=vowel.(japan, china)
 - uns !r=element.(arab, persia, turk, urdu, indonesia, malay, swahili, china, korea)
 --- uma !r=country. =nation.(arab, swahili, hausa, somalli, malay, indonesia, urdu, persia)
----- snbi !r=border.
+---- umbi !r=border.(country + side)
 ---- jasn !r=homeland. =fatherland. motherland.
 - mab !r=building.
 - dea o!verb=met.(japanese)
@@ -852,6 +872,9 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 - moge = brain.(arab, hindi, persia, russia)
 - meha = guest.(hindi, urdu, persia)
 - menu = manu.(global word)
+- mazri = to anesthesia. =마취하다.(korea, china, japan)
+- manju = be satisfied with.(korea, china, japan, vietname)
+- mellon = melon.(global)
 
 }▲m
 
@@ -895,10 +918,10 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 -- nwe o!p1!adv=just . =그저 .
 - nutr n!r= newton.
 -- nese n!t= century.
-- imb !r=nature.(zulu)
+- tabi !r=nature.(아랍어(아프로아시아.셈 르시아어(인도유럽.이란)우르두어(인도유럽.인도아리아)터키어(투르크)소말리어(아프로아시아.쿠시)하우사어(아프로아시아.차드)스와힐리어(니제르콩고). 하지만 중국어로거 jla도 고려중 왜냐면 많이 사용 예상)
 -- imba = coincidence.
 --- abim = Inevitability.
--- bmi !r=artificial.
+- gox !r=artificial.(china, korea)
 --- BT, bmitpa !r=AI.
 - nam !r=name.
 - nu !n=number.
@@ -910,12 +933,13 @@ data = data.(DoycisaEnglisaEspanisaHindiIndonesisaKoreasaNiponsaParsisaPilipinas
 -- idun = wearing.
 - nelv !verb.=close to.
 -- nelvj !adj=near.(close to + passive voice marker)
--- vlen = far.
+-- vlen =far. =remote. =distant.
 -- nigrl = nigger. =nigga.(english)
 - natna = gay.(male + love + male)
 - nyoca = snake.(swahili,zulu,xhosa, cuz there r too few african)
 - nedrland = netherlands.
 - nyus = news. =article(publication. global word)
+- naha = river.(Arabisa Hindi Parsisa Turkisa)
 
 }▲n
 
@@ -932,15 +956,11 @@ o.proper noun{
 -- liol !r=fish.(liquid = organism)
 - oto !r=auto.
 - op !r=opposite.
-- ot o,o!prep=from.
 - os o!p1=average . ordinary .(hindi)
 -- osi o!p1=most.(as in most person like me)
-- bli o!r=close to..(russian,)
--- ilb o!r=far.
 -- bh !t=recent.
 - rbcu o!p1=obscure .(english short,)
 -- ucbr o!p1=famous .
-- od = from.(russian)
 - hei = hey.(Englisa Espanisa Fransesa Hindi Indonesisa Magyarsa Parsisa Pilipinasa Putunhwa Rusisa Swerisa Turkisa Vyetnamsa)
 -- heiz _o!r=call.(hey + verb marker)
 - omis = omit.(italian)
@@ -971,7 +991,7 @@ o.proper noun{
 
 ▲- p.proper noun
 
-- ega !r=equality.
+- pixd !r=equality.(china, korea, japan, vietname)
 - po o,o,n!p2=by.(german @ von)
 -- lea o!r=react.(european, hebrew, tagalog, thai, georgian,)
 --- mex o,o,n!r=use.(indonesian, malay, amharic,)
@@ -986,8 +1006,8 @@ o.proper noun{
 -- peti = request.
 -- pno s!r=prohibit.(command+not,)
 - pinc !r=pink.
-- plo !r=front.
--- olp !r=behind.
+- mbe !r=front.(줄루어·코사어 phambili, 쇼나어 pamberi, 스와힐리어 mbele. japans mae)
+-- hru !r=behind.(china, korea 후 as in 후면. vietname)
 - pula o,n!r=enjoy.(arab,swahili,shona)
 -- pulaya = pleasure.(enjoy + abstract noun marker)
 -- pubo o,n!r=feel  as taste or delicious.(enjoy + food)
@@ -1018,13 +1038,13 @@ o.proper noun{
 - pep !r=lung.
 - pas o!r=pass by.(무언가를 통과하여 지나가다)
 - piu !r=bird.
-- eg = if.
-- peda !r=foot.
+- lu = if.(china 要)
+- pyes !r=foot.(spain, latin, german, hindi, italy)
 -- pepl = kick.
 -- peap !r=soccer.
 - pum !r=product.
-- apo o,o!p1= from .(greek)
-- pu o,o=for.(yoruba,english)
+- pox o,o!p1= from .(china, german)
+- li o,o=for.(hindi, urdu, punjab, arab, hebrew, amharic)
 - poc = focus.
 - pena = coward.
 -- anep = brave.
@@ -1048,18 +1068,21 @@ o.proper noun{
 - pixgo = apple.(china,japan)
 - pahu !verb= be proud of.
 - pi !prep=than.(china, hausa, italia?)
-- pawr = power.(global word)
+- par = power.(global word)
 - pai !prep=on, upon, over, aboard.(hindi, sweden?, telugu)
 - pwai = pie.(global)
+- paji = prevent.(china, korea)
+- pobi = feel fear from.(europe, indonesia, persia, turkiye)
+- potata = potato.(europe, asia)
 
 }▲p
 
 ▼q{
 
 - x = tend to.(random)
-- na !r=male. =man.(korean, chinese, hindi, punjabi, urdu, vietnamese, persian, curdu,)
-- qai o,o!adj,adv=easy.//thai
--- iaq o,o!p1=hard.
+- man !r=male. =man.(DoycisaEnglisaEspanisaFransesaHindiKoreasaNiponsaParsisaPutunhwaVyetnamsa,tamil, malayam)
+- asan o,o!adj,adv=easy.(AzerbayjansaHindiParsisa)
+-- musi o,o!p1=hard. =difficult.( 페르시아어·우르두어·힌디어·스와힐리어·하우사어·인도네시아어)
 - vxj =.(dont finish one place until met symbol that omit parameter.)
 
 }▲q
@@ -1135,7 +1158,7 @@ o.proper noun{
 --- ilem = feel as ugly.(a)
 - dusi !r=enemy.(india,turk)
 -- isud !r=friend.(a)
--- bia !r=we. =my friend.(germanic, turk. there are lot of -i@a- in world langs)
+-- bia !r=we. =my friend.(germanic, turk. mongol. there are lot of -i@a- in world langs)
 - la _n!r,verb=gain profit.(hindi, bengol, tamil,)
 -- laya = profit.(gain profit + abstract noun)
 -- pwe n!r,verb=gain damage. =손해.(europe)
@@ -1166,13 +1189,14 @@ o.proper noun{
 - hal !r=letter. =글자.
 - syucla o,o,n!r=thank.
 - se !r=tax.
-- som !r=sleeping.
+- jagv !verb=awake.(india. not changement verb)
+- vgaj !verb=sleeping.(a)
 - sbi s!r=allow.
 -- ibs s!r=reject.
 - lamb o,o!p1=slow.(indonesian, malay, german, north europe,french,)
 -- bmal o,o!p1=quick. =fast.
 --- bmata = speed. =velocity.
-- sah !r=correct.
+- sah !r=correct. =right.
 - sob o!verb=gather with.
 - seb
 - srb o!r,verb=serve.
@@ -1186,9 +1210,9 @@ o.proper noun{
 - syat = sand.
 - sele = choise.
 - suho !adj= dry.
--- suge = desert.
---- egus = jungle.
--- ohus !adĵ= wet.
+-- suge = desert.(dry + land)
+--- egus = jungle.(a)
+-- ohus !adĵ= wet.(a)
 - soyo = itchy.
 - sapi !adj= clean. =cleaned.
 -- ipas = dirty.
@@ -1198,8 +1222,8 @@ o.proper noun{
 //- si = what.(veluil's 11111000)
 - saci = disease.(south east asian)
 - sahi = correct, right, accurate,
--- ihas = wrong.
-- sa !prep=  that is converted into .(veluil)
+-- ihas = wrong.(a)
+//- sa !prep=  that is converted into .(veluil)
 - sili = secret.
 -- ilis = public.(a)
 --- ilyo = street.(public + place marker)
@@ -1215,6 +1239,8 @@ o.proper noun{
 - supla = super.(global word)
 - silbr = silver.(global word)
 - scul = school.(DovcisaEnglisaEspanisaFransesaHindiIndonesisaPilipinasaRusisaSwahilisaTurkisa)
+- sia = bottom.(china cuz too few for basic wrd)
+- situn = pillar. =column.(ParsisaSanskritamTelugusaTurkisaUrduKorea)
 
 }▲s
 
@@ -1285,6 +1311,11 @@ o.proper noun{
 - tibi = television.=tv.(global word)
 - texc = tank.(global word)
 - tlrg = truck.(global word)
+- tegsi = taxi.(global)
+- tena = again.(baseyu)
+-- tenaz = repeat.(again + verb marker)
+- tei = tea.(africa, europe. global word)
+- taige = tiger.(europe, hebrew, swahili, zulu, hausa, amharic)
 
 }▲t
 
@@ -1304,6 +1335,8 @@ o.proper noun{
 -- latu !r=south.
 - unga=united with.(~와 연합된)
 -- agnu = split.
+- upo = top.(india, english up)
+- undo = exercise.(korea, china, vietname, japan)
 
 }▲u
 
@@ -1367,7 +1400,7 @@ xx !r=cry.
 -- yrm !r,v=eat.
 
 - v o,o!2p=.(  [this word]   =  . yellow apple.)
-- e = be.(be verb for most near sentence. french)
+- e = be. =is. =am. =are.(italy,portugues. cuz short is good)
 - di = is.(chinese, swahili, malagasy, turkiye,)
 - juji !r=mouse.
 - yui o!=sole .(korean)
@@ -1400,7 +1433,6 @@ xx !r=cry.
 -- liho !r=sweat.
 -- liio !r=saliva.
 -- lima !r=milk.
--- lup !r=pee.(liquid + dont need,)
 - h s!r=whether 2 is 1.(random)
 - zen !r=center.
 - mula !a=cheap.(malay, indonesian, tagalog,)
@@ -1418,7 +1450,7 @@ xx !r=cry.
 -- epas = night.
 - zand = moon.
 - zi = thing.(hindi)
-- zanr = channel.
+- zenrl = channel.(global)
 - sibe = cyber.(germany, english, spain, france, hindi, indonesia, italy, russia, turkiye)
 - diam = low.(china, vietname, thai, khmer)
 -- maid = high.(a)
@@ -1427,14 +1459,6 @@ xx !r=cry.
 - zwax = bed.(china, korea?)
 - zocola = chocolate.(arab, germany, english, spain, france, hindi, indonesia, korea, japan, persia, philphine, just global word)
 - ziju = cheese.(global)
+- zlei = part of speech.(china. cuz other lang express it as tooooooo long word)
 
 }▲z
-
-i love situation that i love person who love cow and people and chicken or he eat meal
-
-brain:?
-
-i love (situation that i love person who love cow) and (people and (chicken or he) eat meal) = 
-sbe na de sbe g mun sbe cau i de sem mil na mun oa zikin mun i
-
-brain: always know
