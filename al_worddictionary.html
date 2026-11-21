@@ -33,7 +33,6 @@
 ========================= */
 
 html{
-    /* JS가 이 값을 뷰포트에 맞춰 덮어씀. JS 꺼졌을 때 폴백 */
     font-size: 16px;
     height: 100vh;
     height: 100dvh;
@@ -87,7 +86,6 @@ button{
     min-height: 36px;
 }
 
-/* iOS 자동 줌 방지 (인풋만 16px 고정) */
 input,
 select,
 textarea{
@@ -517,6 +515,10 @@ a:hover {
     text-decoration: underline;
 }
 
+a code {
+    text-decoration: underline;
+}
+
 code {
     background: #20232a;
     padding: 2px 6px;
@@ -615,7 +617,7 @@ code {
 <input
     id="searchInput"
     type="text"
-    placeholder="Type any word, meaning, or tag... (Press '/' to focus)"
+    placeholder="do type like 'suffix for adverb' or 'love'"
     autocomplete="off"
     autocorrect="off"
     autocapitalize="none"
@@ -717,11 +719,12 @@ Another word 🎲
 <h2>About samin Dictionary</h2>
 
 <p>
-Welcome to the interactive digital dictionary for the <strong>samin</strong> language.
+Welcome to the digital dictionary for the <strong>samin</strong> language.
 </p>
 
 <p>
-This application fetches word listings, meanings, and structural notes dynamically from <code>co_a.txt</code>.
+This application fetches word listings, meanings, and structural notes dynamically from
+📂 <a href="https://raw.githubusercontent.com/Fhres126/w/main/co_a.txt" target="_blank" rel="noopener"><code>co_a.txt</code></a>.
 </p>
 
 <p>
@@ -730,20 +733,8 @@ This application fetches word listings, meanings, and structural notes dynamical
 <ul>
     <li>Press <kbd>/</kbd> to quickly jump to the search box from anywhere.</li>
     <li>Press <kbd>Esc</kbd> to clear search input.</li>
-    <li>Interactive speech audio and real-time IPA phonetic generation.</li>
+    <li>Speech audio and real-time IPA phonetic generation.</li>
 </ul>
-
-<p>
-Vocabulary source:
-</p>
-
-<a
-    href="https://raw.githubusercontent.com/Fhres126/w/main/co_a.txt"
-    target="_blank"
-    rel="noopener"
->
-📂 co_a.txt on GitHub
-</a>
 
 </div>
 
@@ -764,26 +755,20 @@ let activeAlphabetLetter = "";
 
 /* =====================================================
    RESPONSIVE BASE FONT (뷰포트 폭 기반 px 계산)
-   -----------------------------------------------------
-   좁을수록 base 크게 → 모바일에서 UI가 작아 보이는 문제 해결
-   넓을수록 16px로 수렴 → 데스크톱은 기존과 동일
 ===================================================== */
 
 function applyBaseFontSize(){
-    // 실제 레이아웃 뷰포트 폭 (스크롤바 제외)
     const w = document.documentElement.clientWidth || window.innerWidth || 0;
 
     let size;
     if (w <= 320) {
-        size = 18;                        // 초소형 폰
+        size = 18;
     } else if (w <= 480) {
-        // 320 → 18, 480 → 17
         size = 18 - (w - 320) * (18 - 17) / (480 - 320);
     } else if (w <= 768) {
-        // 480 → 17, 768 → 16
         size = 17 - (w - 480) * (17 - 16) / (768 - 480);
     } else {
-        size = 16;                        // 데스크톱
+        size = 16;
     }
 
     document.documentElement.style.fontSize = size.toFixed(2) + "px";
@@ -801,6 +786,8 @@ if (window.visualViewport) {
 
 /* =====================================================
    SAMIN PHONOLOGY ENGINE
+   -----------------------------------------------------
+   - w는 wa/we/wi/wr 조합일 때만 발음. 홀로 있으면 묵음.
 ===================================================== */
 
 const SAMIN_VOWELS = "aeiourv";
@@ -908,14 +895,8 @@ function saminTokenize(word) {
             }
         }
 
-        if (ch === 'w') {
-            tokens.push({
-                type:'C', ipa:'w', korInit:'', korFinal:null,
-                canFinal:false, orig:'w'
-            });
-            i++;
-            continue;
-        }
+        // 홀로 남은 w는 묵음
+        if (ch === 'w') { i++; continue; }
 
         if (SAMIN_VOWELS.includes(ch)) {
             tokens.push({
@@ -955,13 +936,48 @@ function saminSyllabify(word) {
     let i = 0;
 
     while (i < tokens.length) {
-        while (i < tokens.length && tokens[i].type === 'X') i++;
-        if (i >= tokens.length) break;
+        const t = tokens[i];
 
+        /* -------- X 토큰 (x) -------- */
+        if (t.type === 'X') {
+            if (syllables.length === 0) {
+                syllables.push({
+                    onset: null,
+                    nucleus: { type:'V', ipa:'ɯ', kor:'ㅡ', epi:true },
+                    coda: t
+                });
+                i++;
+                continue;
+            }
+            const prev = syllables[syllables.length - 1];
+            if (!prev.coda) {
+                prev.coda = t;
+                i++;
+                continue;
+            }
+            if (i + 1 < tokens.length && tokens[i+1].type === 'V') {
+                syllables.push({
+                    onset: null,
+                    nucleus: tokens[i+1],
+                    coda: null
+                });
+                i += 2;
+            } else {
+                syllables.push({
+                    onset: null,
+                    nucleus: { type:'V', ipa:'ɯ', kor:'ㅡ', epi:true },
+                    coda: null
+                });
+                i++;
+            }
+            continue;
+        }
+
+        /* -------- C / V 토큰 -------- */
         const syl = { onset: null, nucleus: null, coda: null };
 
-        if (tokens[i].type === 'C') {
-            syl.onset = tokens[i];
+        if (t.type === 'C') {
+            syl.onset = t;
             i++;
         }
 
