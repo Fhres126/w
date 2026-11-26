@@ -132,6 +132,7 @@
       height: calc(var(--s) / 24);
       padding: 0;
     }
+ 
 
     button{
       position: fixed;
@@ -155,29 +156,120 @@
       width: var(--btn-w);
     }
 
-    summary {
+.stopsection {
+  position: relative;
+  overflow: visible;               /* pre에서 잘리지 않게 */
+  animation: none !important;
+  text-align: right;
+  opacity: 1;
+  font-size: calc(1.3 * var(--fontsize));
+  letter-spacing: 0.12em;
+  -webkit-text-stroke: 0;
+
+  background: none;
+  border: none;
+  padding-top: 0.1em;
+  margin-top: 0.7em;
+}
+
+/* 선 */
+.stopsection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.1em;                     /* em 말고 px */
+  background: linear-gradient(to right,
+    transparent 0%,
+    #56B4E9 55%,
+    #56B4E9 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 선 위로 올라가는 그라데이션 */
+.stopsection::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% - 1px);        /* 선 바로 위에서 시작 */
+  height: 0.7em;                   /* 위로 퍼지는 높이, 조절 가능 */
+  background: linear-gradient(to top,
+    rgba(86, 180, 233, 0.35),
+    rgba(86, 180, 233, 0));
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 55%, #000 100%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 55%, #000 100%);
+  pointer-events: none;
+}
+ summary {
+  position: relative;
+  isolation: isolate;   /* ::before의 z-index:-1을 summary 안에 가둠 */
   cursor: pointer;
   font-size: calc(1.618 * var(--fontsize));
   font-weight: 600;
   font-style: italic;
   letter-spacing: 0.01em;
+  padding-bottom: 0.1em;
+  /* background-image 없음 ← 두꺼운 밴드는 ::before로 옮김 */
+}
 
-  background-image: linear-gradient(to top, #56B4E9 0%, transparent 50%);
-  background-size: 100% 0.7em;
+/* 두꺼운 형광펜 밴드 — 오른쪽으로 흐려짐 */
+summary::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.7em;
+  background: linear-gradient(to top,
+    #56B4E9 0%,
+    rgba(86, 180, 233, 0) 100%);
+  -webkit-mask-image: linear-gradient(to right,
+    white 0%, white 40%, transparent 100%);
+          mask-image: linear-gradient(to right,
+    white 0%, white 40%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* 얇은 밑줄 — 오른쪽으로 흐려짐 */
+summary::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.1em;
+  background: linear-gradient(to right,
+    #56B4E9 0%,
+    #56B4E9 40%,
+    rgba(86, 180, 233, 0) 100%);
+  pointer-events: none;
+}
+  /* 1) 닫힌 상태에서는 ::before(형광밴드) / ::after(밑줄) 그라데이션 제거 */
+details:not([open]) > summary::before,
+details:not([open]) > summary::after {
+  content: none !important;
+}
+
+/* 2) 닫힌 상태 summary 자체엔 D55E00 점선 밑줄만 */
+details:not([open]) > summary {
+  background-image: repeating-linear-gradient(
+    to right,
+    #D55E00, #D55E00 0.1em,
+    transparent 0.1em, transparent 0.2em
+  );
+  background-size: 100% 0.15em;
   background-repeat: no-repeat;
   background-position: 0 100%;
-
-  padding-bottom: 0.1em;
+  opacity: 0.75;
 }
-
-summary:focus-visible {
-  outline: 2px solid #56B4E9;
-  outline-offset: 2px;
-}
-   
-    summary:hover {
-     transform: translateX(3px);
-    }
     input{
      position:fixed;
      top:0px;
@@ -596,9 +688,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
  </pre>
  <details open>
   <summary> overview</summary>
-  <pre>- this document explain EASY DEMOCRATIC NEUTRAL SUPERIOR IAL called samin. this language is made by introvert who are OCD patient so i might noticed all problem that you will can notice. the all problem might be already fixed or will be fixed or objectly be not problem. this document and language is beta version. i made this IAL cuz i reject all other IAL.
-
-▲ overview</pre>
+  <pre>- this document explain EASY DEMOCRATIC NEUTRAL SUPERIOR IAL called samin. this language is made by introvert who are OCD patient so i might noticed all problem that you will can notice. the all problem might be already fixed or will be fixed or objectly be not problem. this document and language is beta version. i made this IAL cuz i reject all other IAL.<pre class="stopsection">▲ overview</pre></pre>
  </details>
  <details open>
   <summary>how to support</summary>
@@ -608,8 +698,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
   <button class="paypal-btn" onclick="window.open('https://paypal.me/sangminjeong544', '_blank')">- button for donate using paypal
   </button>
   <pre>- if you are korean.. 토스뱅크 1001-5397-0116(for donate)
-- we receiving money in exchange for advertisements to grow this language. The price is $1 per two months.(the Price can increase due to demand.)</pre>
-<pre>▲ how to support</pre>
+- we receiving money in exchange for advertisements to grow this language. The price is $1 per two months.(the Price can increase due to demand.)</pre><pre class="stopsection">▲ how to support</pre>
  </details>
 
  <details open>
@@ -658,9 +747,8 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 - ☆ ~~《《 complaint resolution 》》~~ ☆. 
 -- about the pronunciation. 
 -- why perfectly logical IAL is impossible. 
---- how samin become perfectly logical IAL, if the world want. 
-
-▲ table of content</pre>
+--- how samin become perfectly logical IAL, if the world want. </pre>
+  <pre class="stopsection">▲ table of content</pre>
  </details>
 
 <details open>
@@ -672,25 +760,20 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 - easy using consistent. 
 - high expressiveness. 
 - If there is a money profit, we promise to distribute it as follows. the creator = 0%. advertiser or content maker = 80%. developers = 20%. some advanced humans = 0%.(but can be changed freely). someone might think its stupid but i just wanna some diffrent from other IAL cuz its faild. 
-- it gonna have many contents in https://youtube.com/@in_veluil
-
-▲ persuading to learn samin
- </pre>
+- it gonna have many contents in https://youtube.com/@in_veluil</pre>
+ <pre class="stopsection">▲ persuading to learn samin</pre>
 </details>
 <details open>
 <summary> lesson</summary>
  <details open>
   <summary>- before we begin. </summary>
-  <pre>-- I will not cite academic grounds to persuade you because it would make the lecture too long. Do not worry, as most of my arguments are based on academic evidence. This constructed language works like a natural language. You can also help develop it a lot, and you can use it however you like. I will cover things you can figure out by thinking in the example sentence section or the tips section. ill dont use samin or samin words lot cuz it can be changed. you can search words using this. https://fhres126.github.io/w/al_worddictionary.html
-
-▲- before we begin</pre>
+  <pre>-- I will not cite academic grounds to persuade you because it would make the lecture too long. Do not worry, as most of my arguments are based on academic evidence. This constructed language works like a natural language. You can also help develop it a lot, and you can use it however you like. I will cover things you can figure out by thinking in the example sentence section or the tips section. ill dont use samin or samin words lot cuz it can be changed. you can search words using this. https://fhres126.github.io/w/al_worddictionary.html</pre>
+  <pre class="stopsection">▲- before we begin</pre>
  </details>
  <details open>
   <summary>- alphabet. </summary>
-  <pre>-- no f, k, q. only 23 letters.
-
-▲- alphabet
-  </pre>
+  <pre>-- no f, k, q. only 23 letters.</pre>
+  <pre class="stopsection">▲- alphabet</pre>
  </details>
  <details open>
   <summary>- pronunciation</summary>
@@ -705,9 +788,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 -- only b, d, g, l, m, n, x can be used as final consonant. 
 -- samin's "ala" = a.la.
 -- w and y that is in before vowel is vowel. 
--- example sentence:  "People who use Samin will probably understand pronunciation of something better without the international phonetic alphabet than those who use other international auxiliary language so as a result, this language is easier. " -> "pipl hu yuj samin wil plobabvlli rndrlstend plrnrnysieisyrn obv ysrmydix belrl widaud di intrnesyrnrl ypwrnetig alypwrbed den drj hu yuj adrl intrnesyrnrl ogjillirlli lexgwij yso rys r lijrlt diys lexgwij ij ijirl. ". but me and AI didnt know english pronunciation well.
-
-▲- pronunciation</pre>
+-- example sentence:  "People who use Samin will probably understand pronunciation of something better without the international phonetic alphabet than those who use other international auxiliary language so as a result, this language is easier. " -> "pipl hu yuj samin wil plobabvlli rndrlstend plrnrnysieisyrn obv ysrmydix belrl widaud di intrnesyrnrl ypwrnetig alypwrbed den drj hu yuj adrl intrnesyrnrl ogjillirlli lexgwij yso rys r lijrlt diys lexgwij ij ijirl. ". but me and AI didnt know english pronunciation well.</pre><pre class="stopsection">▲- pronunciation</pre>
  </details>
  <details open>
   <summary>- word formation rule</summary>
@@ -717,8 +798,7 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 --- word that is used lot must be short for practicality but word that can make conflict and damage and problem dont must be short so word for hate and drug and porn doesnt be short. 
 --- all the word must be easy to pronounce. 
 --- word that include whitespace cant be official word. 
---- the words list must be neutral excluding proper noun. 
-▲-- basic rule</pre>
+--- the words list must be neutral excluding proper noun. </pre><pre class="stopsection">▲-- basic rule</pre>
   </details>
   <details open>
    <summary>-- The priority order of words to assign during word formation. </summary>
@@ -726,43 +806,33 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 
 ---  -> preposition -> conjunction -> concrete noun -> adjective -> verb -> caustive verb -> passive voice -> abstract noun -> adverb. 
 
---- word for explaining spacetime must be preposition firstly like in, at, under, on, until. 
- 
-▲-- The priority order of words to assign during word formation</pre>
+--- word for explaining spacetime must be preposition firstly like in, at, under, on, until. </pre><pre class="stopsection">▲-- The priority order of words to assign during word formation</pre>
   </details>
    
    <details open>
     <summary>-- how to change a suffix into noun</summary>
     <pre>
---- if "r" is added before the suffix, it is noun. "r" + -ology = academic(science, math...) as in study or reserch. 
-     
-▲-- how to change a suffix into noun
-    </pre>
+--- if "r" is added before the suffix, it is noun. "r" + -ology = academic(science, math...) as in study or reserch. </pre><pre class="stopsection">▲-- how to change a suffix into noun</pre>
    </details>
 <details open>
  <summary>-- compound word</summary>
  <pre>
 --- [verb] + [noun] = doing something toward the noun so "detect-light" can mean "see". 
 --- [noun pharse] + [verb] is like following. "sound-enjoy" can mean "song" as "enjoyed song". 
---- the compound word's length can be compressed for utility so "anesthetize-whole-body"(general anesthesia) would can be "an-wh-body". if it is compressed, all the element words's length must be square of two. but the next word's length must be same or manier than previous element word. 
-
-▲-- compound word</pre>
+--- the compound word's length can be compressed for utility so "anesthetize-whole-body"(general anesthesia) would can be "an-wh-body". if it is compressed, all the element words's length must be square of two. but the next word's length must be same or manier than previous element word. </pre><pre class="stopsection">▲-- compound word</pre>
 </details>
   <details open>
    <summary>-- antonym</summary>
-   <pre> --- the antonym can be made by inverse if the inversed word is easy to disringuish from the inverseless word. if "love" mean "to love" "evol" would mean "to hate". 
-    
--- antonym</pre>
+   <pre> --- the antonym can be made by inverse if the pronunciation of inversed word is easy to disringuish from the inverseless word and the other words. if "love" mean "to love" "evol" would mean "to hate". </pre>
+   <pre class="stopsection">▲-- antonym</pre>
   </details>
- <pre>▲- word formation rule</pre>
+ <pre class="stopsection">▲- word formation rule</pre>
  </details>
  <details open>
   <summary>- capital letter rule</summary>
   <pre>
 -- the abbreviations start with capital letter. 
--- we defaulty use only lowercase or capital letter. 
-  </pre>
-  <pre>▲- capital letter rule</pre>
+-- we defaulty use only lowercase or capital letter. </pre><pre class="stopsection">▲- capital letter rule</pre>
  </details>
  <details open>
   <summary>- grammar</summary>
@@ -772,60 +842,44 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
    <details open>
     <summary>--- situation that a part of speech is changed</summary>
     <pre>---- 1. some adjective can work as adverb.(word quick is) 
----- 2. word "v" can unite words. example sentence : "les v su e clya. al les no ab su cu zi" mean "word like is verb. all word cant like some thing". the united word is defautly noun but if other part of speech full, then it is the part of speech. example sentence : "in IAL, p yo ti mo ZLEI e gut AMA bia laj bya les v su AS ismu c cu te" mean "in IAL, having one PART OF SPEECH is good BUT we must express word love AS noun sometime". 
-     
-▲--- situation that a part of speech is changed</pre>
+---- 2. word "v" can unite words. example sentence : "les v su e clya. al les no ab su cu zi" mean "word like is verb. all word cant like some thing". the united word is defautly noun but if other part of speech full, then it is the part of speech. example sentence : "in IAL, p yo ti mo ZLEI e gut AMA bia laj bya les v su AS ismu c cu te" mean "in IAL, having one PART OF SPEECH is good BUT we must express word love AS noun sometime". </pre>
+    <pre class="stopsection">▲--- situation that a part of speech is changed</pre>
    </details>
    <details open>
     <summary>--- relative pronoun</summary>
     <pre>
 ---- p = subject relative pronoun. 
 ----- you can make a gerund using it cuz "loving me" can mean "something that love me". The preposition after the subject relative pronoun is considered a verb so "g in A" mean "thing that is in A". if it is noun, the be verb can be omitted so "[first noun] g [second noun]" mean "first noun that is second noun". 
----- n = object relative pronoun so you can use it as word for what cuz "what i love" mean "something that i love". The preposition after the object relative pronoun is considered a noun phrase so "n in A love" mean "what something that is in A love". 
-    
-▲--- relative pronoun</pre>
+---- n = object relative pronoun so you can use it as word for what cuz "what i love" mean "something that i love". The preposition after the object relative pronoun is considered a noun phrase so "n in A love" mean "what something that is in A love". </pre>
+    <pre class="stopsection">▲-- relative pronoun</pre>
    </details>
-   <pre>▲-- part of speech</pre>
+   <pre class="stopsection">▲-- part of speech</pre>
   </details>
   <details open>
    <summary>-- noun phrase</summary>
    <pre>--- only a verb can break noun phrase so "person i see" isnt a noun phrase. and "i the good car" isnt awkard. 
---- we tend to say more big firstly. 
-▲-- noun phrase</pre>
-  </details>
-
-  <pre>▲- grammar</pre>
+--- we tend to say more big firstly. </pre><pre class="stopsection">▲-- noun phrase</pre>
+  </details><pre class="stopsection">▲- grammar</pre>
  </details>
  <details open>
   <summary>- logic</summary>
  <pre>
--- if there are "your name and car" as this language sentence, it is ambigious sentence. if you wanna clarify it you can split some word or comma. "your name and 'A' car" mean "(your name) and car". 
-  
-▲- logic</pre>
+-- if there are "your name and car" as this language sentence, it is ambigious sentence. if you wanna clarify it you can split some word or comma. "your name and 'A' car" mean "(your name) and car". </pre><pre class="stopsection">▲- logic</pre>
  </details>
  <details open>
   <summary>- splliting a mean</summary>
-  <pre>
-
--- you can tie a meaning. if there are "A and B or C" then its a ambigious so its needed. m [word that will finish it] blahblahblahblah [the word]. so "A and (m 1 B or C 1)" isnt ambigious. 
-   
-▲- splliting a mean</pre>
+  <pre>-- you can tie a meaning. if there are "A and B or C" then its a ambigious so its needed. m [word that will finish it] blahblahblahblah [the word]. so "A and (m 1 B or C 1)" isnt ambigious. </pre><pre class="stopsection">▲- spliting a mean</pre>
  </details>
  <details open>
   <summary>- marking string</summary>
   <pre>
--- you can assert something is string to avoid a misunderstanding. "he say 'i love you'" mean "he say he love you". "he say i love you" mean "he said the speaker love you". (j 1 blahblahblah 1) = "blahblahblah"(string). 
- 
-▲- marking string</pre>
+-- you can assert something is string to avoid a misunderstanding. "he say 'i love you'" mean "he say he love you". "he say i love you" mean "he said the speaker love you". (j 1 blahblahblah 1) = "blahblahblah"(string). </pre><pre class="stopsection">▲- marking string</pre>
  </details>
  <details open>
   <summary>- article </summary>
   <pre>
 -- this lang dont have article "the" but there are temonstrative adjective version of article "the". it is "l". 
--- the users doesnt must explain quantity of something defaulty. article "a" is not neccesarry. word for one can be used instead. 
-
-▲- article 
- </pre>
+-- the users doesnt must explain quantity of something defaulty. article "a" is not neccesarry. word for one can be used instead. </pre><pre class="stopsection">▲- article</pre>
  </details>
 <details open>
  <summary>- caution</summary>
@@ -836,18 +890,14 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 -- "no A" mean "something that is not A" sometime so "i love no cat" mean "i love something that isnt cat". 
 -- "i believe that you are human" is awkward cuz "i believe you" mean "i belive you will do well" so "i believe that you are human" mean "i believe (situation that you are human) will do well". you must say "i believe you as (be) human". 
 -- all the verb is verb at almost time. "love of fatherland" mean "do love something of fatherland". 
--- "lion make it" mean "something that is lion make something that is it". so "exist + caustive verb marker" mean "make a~~" not to creat. 
-  
-▲- caution. </pre>
+-- "lion make it" mean "something that is lion make something that is it". so "exist + caustive verb marker" mean "make a~~" not to creat. </pre><pre class="stopsection">▲- caution</pre>
 </details>
-<pre>
-▲ lesson
-</pre>
+<pre class="stopsection">▲ lesson</pre>
 </details>
   <details open>
    <summary>the other site</summary>
    <pre>- the dictionary: https://fhres126.github.io/w/al_worddictionary.html</pre>
-   <pre>▲ other site</pre>
+   <pre class="stopsection">▲ other site</pre>
   </details>
  <details open>
   <summary> ☆ ~《《 complaint resolution 》》~ ☆.</summary>
@@ -860,15 +910,10 @@ oninput="speed_of_auto_scroll=this.value; update_autoscroll();">
 
 ---- example sentence: "my name is elon musk" -> "(elon musk [word that unite words]) ((name i of) is)". 
 
----- we can temporally use this system using word "ai". and we must use ".." in end of sentence to claim the basic samin sentence is basic samin sentence.
-
-▲-- how samin become perfectly logical IAL, if the world want. </pre>
+---- we can temporally use this system using word "ai". and we must use ".." in end of sentence to claim the basic samin sentence is basic samin sentence. </pre><pre class="stopsection">▲-- how samin become perfectly logical IAL, if the world want. </pre>
    </details>
-   <pre>▲- why perfectly logical IAL is impossible</pre>
-  </details>
-  <pre>
-   
-▲ ☆ ~《《 complaint resolution 》》~ ☆.</pre>
+   <pre class="stopsection">▲- why perfectly logical IAL is impossible</pre>
+  </details><pre class="stopsection">▲ ☆ ~《《 complaint resolution 》》~ ☆.</pre>
  </details>
 </body>
 </html>
