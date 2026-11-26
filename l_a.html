@@ -23,7 +23,9 @@
         --ctrl-h: clamp(28px, calc(var(--s) / 12), 48px);
       }
     }
-
+  html, body, * {
+  -webkit-tap-highlight-color: transparent;
+  }
     html{
      font-size: var(--fontsize);
     }
@@ -270,6 +272,7 @@ details:not([open]) > summary {
   background-position: 0 100%;
   opacity: 0.75;
 }
+  
     input{
      position:fixed;
      top:0px;
